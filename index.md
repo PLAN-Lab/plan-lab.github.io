@@ -20,6 +20,7 @@ Our Perception and LANguage (PLAN) research lab is broadly interested in multimo
 {% include banner.html image="images/members/lab_picture.jpg" %}
 
 {% include section.html full=true %}
+{% include news.html %}
 # News
 - **December 2023:** Congratulations to [Meghana](members/meghana-holla.html) for her AAAI'24 paper on zero-shot language video localization.
 - **December 2023:** Congratulations to [Hulya](members/hulya-dogan.html) and [Kiet](members/kiet-nguyen.html) for their CSCW'24 paper on examining online U.S. political discourse related to refugees.
