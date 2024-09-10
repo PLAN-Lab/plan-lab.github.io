@@ -1,0 +1,64 @@
+<div id="news-section">
+  <ul id="news-list">
+    <li>**December 2023:** Congratulations to <a href="members/meghana-holla.html">Meghana</a> for her AAAI'24 paper on zero-shot language video localization.</li>
+    <li>**December 2023:** Congratulations to <a href="members/hulya-dogan.html">Hulya</a> and <a href="members/kiet-nguyen.html">Kiet</a> for their CSCW'24 paper on examining online U.S. political discourse related to refugees.</li>
+    <li>**December 2023:** Congratulations to <a href="members/afrina-tabassum.html">Afrina</a> for her ICASSP'24 paper on finetuning audio Transformers with unsupervised audio mixtures (internship work @ Microsoft Research).</li>
+    <li>**December 2023:** Congratulations to <a href="members/muntasir-wahed.html">Muntasir</a>, <a href="members/xiaona-zhou.html">Xiaona</a>, and <a href="members/tianjiao(joey)-yu.html">Joey</a> for their WACV'24 paper on fine-grained alignment for cross-modal recipe retrieval.</li>
+    <li>**October 2023:** Congratulations to <a href="members/ying-shen.html">Ying</a> for receiving an <a href="https://www.amazon.science/news-and-features/amazon-and-virginia-tech-announce-2023-2024-fellowship-faculty-research-award-recipients">Amazon-VT Fellowship</a>!</li>
+    <li>**October 2023:** PLAN Lab has received new Amazon-VT funding to continue work on Embodied AI.</li>
+    <li>**September 2023:** 🏆 Congratulations to the VT PLANBot team for advancing to the <a href="https://www.amazon.science/alexa-prize/taskbot-challenge/2022">AlexaPrize TaskBot Challenge 2 finals</a>! 🚀 Go Hokies!</li>
+    <li>**August 2023:** Our lab has received DARPA ECOLE funding!</li>
+    <!-- Add more news items as needed -->
+  </ul>
+  <button id="toggle-news">See More</button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var newsList = document.getElementById("news-list");
+    var newsItems = newsList.getElementsByTagName("li");
+    var toggleButton = document.getElementById("toggle-news");
+    var isCollapsed = true;
+
+    // Show only the top 5 news items by default
+    function updateNewsDisplay() {
+      for (var i = 0; i < newsItems.length; i++) {
+        if (i < 5) {
+          newsItems[i].style.display = "list-item";
+        } else {
+          newsItems[i].style.display = isCollapsed ? "none" : "list-item";
+        }
+      }
+      toggleButton.innerText = isCollapsed ? "See More" : "See Less";
+    }
+
+    // Toggle between collapsed and expanded states
+    toggleButton.addEventListener("click", function() {
+      isCollapsed = !isCollapsed;
+      updateNewsDisplay();
+    });
+
+    // Initialize the news section
+    updateNewsDisplay();
+  });
+</script>
+
+<style>
+  #news-section {
+    padding: 10px;
+  }
+
+  #toggle-news {
+    background-color: #f1f1f1;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    font-size: 16px;
+  }
+
+  #toggle-news:hover {
+    background-color: #ccc;
+  }
+</style>
