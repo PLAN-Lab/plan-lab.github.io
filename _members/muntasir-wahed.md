@@ -14,4 +14,4 @@ links:
   google-scholar: ItE5a5cAAAAJ
 ---
 
-Muntasir is currently pursuing a Ph.D. in Computer Science at Virginia Tech. Broadly he is interested in robust machine learning and information retrieval. He is presently working on contrastive learning, mixture-of-experts, and out-of-distribution detection. He has previously interned at IBM Research in Summer 2022 and will return for Summer 2023. 
+Muntasir Wahed is a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign, with research expertise in Information Retrieval, Robust ML, Multimodal ML, and Self-Supervised Learning. Alongside his academic work, he has extensive industry experience as a Software and ML Engineer, having completed three internships at IBM Research where he worked on advanced projects in ontology construction and large language model evaluation. His academic and industry experiences provide him with a well-rounded perspective on the challenges and ethical considerations of AI content generation, enabling him to lead innovative research efforts aimed at addressing real-world problems.
