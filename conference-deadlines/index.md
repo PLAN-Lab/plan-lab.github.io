@@ -1,9 +1,6 @@
 ---
 title: Conference deadlines
 description: Artificial Intelligence related conference deadlines & other important information
-nav:
-  order: 5
-  tooltip: Conference deadlines
 ---
 
 {% include search-box.html other="sort_button" %}
