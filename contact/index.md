@@ -24,7 +24,7 @@ Our lab is part of the [School of information Sciences](https://ischool.illinois
   icon=""
   text="Interest Form"
   tooltip="Please fill out this form if you are interested in joining this lab."
-  link="https://forms.gle/gtFmAEFebwh2GYJX9"
+  link="https://forms.gle/biPTEzwSR5841T4eA"
   style="button"
 %}
 {%
