@@ -55,6 +55,7 @@
     - scene-graphs
     - medical imaging
 - id: doi:10.1016/j.ymssp.2022.109910
+  image: images/publications/SHM.PNG
 - id: doi:10.1109/BigData55660.2022.10020861
 - id: doi:10.48550/arXiv.2302.04865
   publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
