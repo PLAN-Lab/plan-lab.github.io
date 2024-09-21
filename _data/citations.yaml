@@ -212,7 +212,8 @@
   publisher: Mechanical Systems and Signal Processing
   date: '2023-03-01'
   link: https://doi.org/gstd72
-  _cache: 23b154c26d7d2e346dcac88eba18520a71ee17d3424119a91934e8fc84da1443
+  image: images/publications/SHM.PNG
+  _cache: cef62d14f2dd6993325059ae79684922df47d44aa4139d20e0f175ed40c1f548
 - id: doi:10.1109/BigData55660.2022.10020861
   title: Task-Driven Privacy-Preserving Data-Sharing Framework for the Industrial
     Internet
