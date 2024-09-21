@@ -241,6 +241,40 @@
   - multimodal learning
   - embodied AI
   _cache: 12cfbcd18164c9026f9b06144523c64d15e872051fa18ea7b1b40fa1bdfd94d3
+- id: doi:10.1145/3653703
+  title: 'Narrative Characteristics in Refugee Discourse: An Analysis of American
+    Public Opinion on the Afghan Refugee Crisis After the Taliban Takeover'
+  authors:
+  - Hulya Dogan
+  - Kiet Nguyen
+  - Ismini Lourentzou
+  publisher: Proceedings of the ACM on Human-Computer Interaction
+  date: '2024-04-17'
+  link: https://doi.org/g3qmk2
+  _cache: 7fbbb02d994bc11e805527a1ee0dd9729401b2dde1b4c156eb3f920bc4d1c171
+- id: doi:10.1109/ICASSP48485.2024.10446342
+  title: 'uaMix-MAE: Efficient Tuning of Pretrained Audio Transformers with Unsupervised
+    Audio Mixtures'
+  authors:
+  - Afrina Tabassum
+  - Dung Tran
+  - Trung Dang
+  - Ismini Lourentzou
+  - Kazuhito Koishida
+  publisher: ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech
+    and Signal Processing (ICASSP)
+  date: '2024-04-14'
+  link: https://doi.org/g3qmk9
+  _cache: 628792b56a12c6d3bcbeb711ad8bcf2f6bf6b2827f3518cfabb9b05bbf4c0383
+- id: doi:10.1609/aaai.v38i3.27989
+  title: Commonsense for Zero-Shot Natural Language Video Localization
+  authors:
+  - Meghana Holla
+  - Ismini Lourentzou
+  publisher: Proceedings of the AAAI Conference on Artificial Intelligence
+  date: '2024-03-24'
+  link: https://doi.org/g3qmmj
+  _cache: c9d8a557fe96cb7a72075f9c366167ea5ebbf9e6a312493389f958596f756e85
 - id: doi:10.1371/journal.pdig.0000205
   title: ChatGPT passing USMLE shines a spotlight on the flaws of medical education
   authors:
