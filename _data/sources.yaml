@@ -7,8 +7,8 @@
 - id: doi:10.1145/3404835.3462959
   image: images/publications/DeepQAMVS.PNG
   tags:
-    - video summarization
     - multimodal learning
+    - video summarization
     - video understanding
 - id: doi:10.1007/978-3-030-87240-3_77
   image: images/publications/anaxnet.PNG
@@ -67,6 +67,11 @@
 - id: doi:10.1145/3653703
 - id: doi:10.1109/ICASSP48485.2024.10446342
 - id: doi:10.1609/aaai.v38i3.27989
+  image: images/publications/CORONET.PNG
+  tags:
+    - multimodal learning
+    - video localization
+    - video understanding
 - id: doi:10.1371/journal.pdig.0000205
 - id: doi:10.1145/3543507.3583514
 - id: doi:10.1016/j.ebiom.2023.104525
