@@ -236,9 +236,9 @@
   date: '2025-01-04'
   link: https://doi.org/gstd74
   tags:
-  - multi-modal learning
+  - multimodal learning
   - embodied AI
-  _cache: 1c0a36c4c57eeac6486f06676f36df348d596d4173b2ef8ce520a058ed33a0be
+  _cache: a9530f65e572e2855f652eae231177f009951ee13e572e4678997dfdf21eb34f
 - id: doi:10.1371/journal.pdig.0000205
   title: ChatGPT passing USMLE shines a spotlight on the flaws of medical education
   authors:
@@ -318,6 +318,6 @@
   date: '2024-01-04'
   link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
   tags:
-  - multi-modal learning
+  - multimodal learning
   - robust representations
-  _cache: 0423abe2ad1c60c377200e5c2a3f8ef932c30001667a358f08ee5e9b66793750
+  _cache: 5d93f10a7eb78bb3d5385473d93a92a8e2622b34f68fe2692142363b622edc25
