@@ -7,7 +7,7 @@ nav:
 
 # <i class="fas fa-envelope"></i>Contact
 
-Our lab is part of the [School of information Sciences](https://ischool.illinois.edu/) at [University of Illinois Urbana-Champaign](https://illinois.edu/). We are located at 614 E. Daniel St, Champaign, IL.
+Our lab is part of the [School of information Sciences](https://ischool.illinois.edu/) at [University of Illinois Urbana-Champaign](https://illinois.edu/).
 
 {%
   include link.html
@@ -42,7 +42,7 @@ Our lab is part of the [School of information Sciences](https://ischool.illinois
 
 ### <i class="fas fa-mail-bulk"></i>Mailing Address
 
-Room 5154, 614 E. Daniel St.
+614 E. Daniel St.
 Champaign, IL 61820
 USA
 {:.center}
