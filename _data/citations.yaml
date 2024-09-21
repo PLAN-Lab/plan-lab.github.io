@@ -192,14 +192,14 @@
   - Leo A. Celi
   - Mehdi Moradi
   - Ismini Lourentzou
-  publisher: "Medical Image Computing and Computer Assisted Intervention \u2013 MICCAI"
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
   date: '2022-01-01'
   link: https://doi.org/gtdh4d
   image: images/publications/CheXRelNet.PNG
   tags:
   - scene-graphs
   - medical imaging
-  _cache: d217e500465db9f48ebac4dcaa4ec6b935d96257b1a5612d921d02eca6d84efe
+  _cache: f57a3adf73e142b4f09fdb12e1618807507a8cd3710cadab135ffabfd5f44fbc
 - id: doi:10.1016/j.ymssp.2022.109910
   title: On the effectiveness of dimensionality reduction for unsupervised structural
     health monitoring anomaly detection
@@ -236,10 +236,11 @@
   publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
   date: '2025-01-04'
   link: https://doi.org/gstd74
+  image: images/publications/ELBA.PNG
   tags:
   - multimodal learning
   - embodied AI
-  _cache: a9530f65e572e2855f652eae231177f009951ee13e572e4678997dfdf21eb34f
+  _cache: 12cfbcd18164c9026f9b06144523c64d15e872051fa18ea7b1b40fa1bdfd94d3
 - id: doi:10.1371/journal.pdig.0000205
   title: ChatGPT passing USMLE shines a spotlight on the flaws of medical education
   authors:
@@ -304,10 +305,10 @@
   - Lyuyang Wang
   - Mehdi Moradi
   - Ismini Lourentzou
-  publisher: "Medical Image Computing and Computer Assisted Intervention \u2013 MICCAI"
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
   date: '2023-01-01'
   link: https://doi.org/gs24mk
-  _cache: f5e46c8f57d9a425358277d256e6cf9738d6f6c2179313fc58b0548d293f2e53
+  _cache: 7169986d319664321eaf6e4c11eb90e1772b3f7465bb9cc845021fa462ff7a88
 - id: doi:10.1145/3583780.3615485
   title: Fine-Grained Alignment for Cross-Modal Recipe Retrieval
   authors:
