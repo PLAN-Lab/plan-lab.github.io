@@ -1,8 +1,9 @@
 - id: doi:10.1038/s41597-021-00863-5
   image: images/publications/chest_xray_dataset.PNG
   tags:
-    - eye tracking device
-    - chest radiography
+    - multimodal learning
+    - eye-tracking
+    - medical imaging
 - id: doi:10.1145/3404835.3462959
   image: images/publications/DeepQAMVS.PNG
   tags:
@@ -24,6 +25,7 @@
 - id: doi:10.48550/arXiv.2108.00316
   image: images/publications/chest_imagenome.PNG
   tags:
+    - multimodal learning
     - scene-graphs
     - medical imaging
 - id: doi:10.48550/arXiv.2204.10314
@@ -55,6 +57,11 @@
 - id: doi:10.1016/j.ymssp.2022.109910
 - id: doi:10.1109/BigData55660.2022.10020861
 - id: doi:10.48550/arXiv.2302.04865
+  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+  date: '2025-01-04'
+  tags: 
+  - multi-modal learning
+  - embodied AI
 - id: doi:10.1371/journal.pdig.0000205
 - id: doi:10.1145/3543507.3583514
 - id: doi:10.1016/j.ebiom.2023.104525
@@ -69,9 +76,9 @@
   - Xiaona Zhou
   - Tianjiao Yu
   - Ismini Lourentzou
-  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision
+  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
   date: '2024-01-04'
   tags: 
   - multi-modal learning
   - robust representations
-  link: https://wacv2024.thecvf.com/
+  link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
