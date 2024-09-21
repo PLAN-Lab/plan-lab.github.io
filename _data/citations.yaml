@@ -41,10 +41,10 @@
   link: https://doi.org/gqt862
   image: images/publications/DeepQAMVS.PNG
   tags:
-  - video summarization
   - multimodal learning
+  - video summarization
   - video understanding
-  _cache: 313b370818b0af055bb5c0cb8dbf973a061f02e291586ce75eecb3647c0bfc41
+  _cache: 23c12e7147b1401f063e89324e1184c7bb3d01a45bb194f85d2fb138f7051705
 - id: doi:10.1007/978-3-030-87240-3_77
   title: 'AnaXNet: Anatomy Aware Multi-label Finding Classification in Chest X-Ray'
   authors:
@@ -274,7 +274,12 @@
   publisher: Proceedings of the AAAI Conference on Artificial Intelligence
   date: '2024-03-24'
   link: https://doi.org/g3qmmj
-  _cache: c9d8a557fe96cb7a72075f9c366167ea5ebbf9e6a312493389f958596f756e85
+  image: images/publications/CORONET.PNG
+  tags:
+  - multimodal learning
+  - video localization
+  - video understanding
+  _cache: e8b4ab209d3f4b076d59387e4bc00b47acf846db1a5c2b718ddb8672add8facc
 - id: doi:10.1371/journal.pdig.0000205
   title: ChatGPT passing USMLE shines a spotlight on the flaws of medical education
   authors:
