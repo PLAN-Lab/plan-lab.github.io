@@ -21,9 +21,10 @@
   link: https://doi.org/gqt86z
   image: images/publications/chest_xray_dataset.PNG
   tags:
-  - eye tracking device
-  - chest radiography
-  _cache: fe3a205d19600730d1dfc25b8d77cf82ae6d8237fcbf571e56c56348abb41980
+  - multimodal learning
+  - eye-tracking
+  - medical imaging
+  _cache: b60a79280329a22f585749710dbf1732e4dc684dd27e1a54de60463945e4b938
 - id: doi:10.1145/3404835.3462959
   title: 'DeepQAMVS: Query-Aware Hierarchical Pointer Networks for Multi-Video Summarization'
   authors:
@@ -118,9 +119,10 @@
   link: https://doi.org/gqt865
   image: images/publications/chest_imagenome.PNG
   tags:
+  - multimodal learning
   - scene-graphs
   - medical imaging
-  _cache: 7e93e0da85eb6dbd7c2307f46f4cf3b8e861a03a9a9907f33f76b8704ae08c11
+  _cache: 1422041f1d498877f1c68693d3db9d820fcb923b0c01071ffe493a944e85471e
 - id: doi:10.48550/arXiv.2204.10314
   title: Adversarial Contrastive Learning by Permuting Cluster Assignments
   authors:
@@ -230,10 +232,13 @@
   authors:
   - Ying Shen
   - Ismini Lourentzou
-  publisher: arXiv
-  date: '2023-01-01'
+  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+  date: '2025-01-04'
   link: https://doi.org/gstd74
-  _cache: c5b6fb338472b80816471a896b15a2549baf55c91a4487b1569abce3527f6999
+  tags:
+  - multi-modal learning
+  - embodied AI
+  _cache: 1c0a36c4c57eeac6486f06676f36df348d596d4173b2ef8ce520a058ed33a0be
 - id: doi:10.1371/journal.pdig.0000205
   title: ChatGPT passing USMLE shines a spotlight on the flaws of medical education
   authors:
@@ -309,10 +314,10 @@
   - Xiaona Zhou
   - Tianjiao Yu
   - Ismini Lourentzou
-  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision
+  publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
   date: '2024-01-04'
-  link: https://wacv2024.thecvf.com/
+  link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
   tags:
   - multi-modal learning
   - robust representations
-  _cache: 4811f03a664d1c5276a0b88cababb66e34f60d00c82ab673b8ad8a58f3344524
+  _cache: 0423abe2ad1c60c377200e5c2a3f8ef932c30001667a358f08ee5e9b66793750
