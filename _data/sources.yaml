@@ -68,7 +68,7 @@
   image: images/publications/CSCW.PNG
   tags:
     - social media
-    - text understanding
+    - natural language processing
 - id: doi:10.1109/ICASSP48485.2024.10446342
   image: images/publications/UAMIXMAE.PNG
   tags:
@@ -86,6 +86,11 @@
 - id: doi:10.1016/j.ebiom.2023.104525
 - id: doi:10.1007/978-3-031-43849-3_22
 - id: doi:10.1145/3583780.3615485
+  image: images/publications/MARBLE.PNG
+  tags:
+    - human-in-the-loop entity extraction
+    - model selection
+    - natural language processing
 - id: doi:10.1007/978-3-031-43904-9_66
   publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
 - id: doi:10.1145/3583780.3615485
