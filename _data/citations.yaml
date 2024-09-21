@@ -97,8 +97,8 @@
   publisher: Computer-Aided Civil and Infrastructure Engineering
   date: '2022-01-21'
   link: https://doi.org/gp5xhh
-  tags: null
-  _cache: 805b4a283fc94cd449e707859f3cc3258075d3c21fd7c130849ef55b775aea85
+  image: images/publications/SHM.PNG
+  _cache: be95fcddeda157283daceeee5f8f295f9292a5a4e909a857e7e8fbf017790bb5
 - id: doi:10.48550/arXiv.2108.00316
   title: Chest ImaGenome Dataset for Clinical Reasoning
   authors:
@@ -347,10 +347,11 @@
   publisher: Lecture Notes in Computer Science
   date: '2023-01-01'
   link: https://doi.org/gstd77
+  image: images/publications/MGCN.PNG
   tags:
   - text representations
   - natural language processing
-  _cache: 7b546aa33497b951869465209c72173d2e233bcfe7497eb11b83cd50d7b466b7
+  _cache: c29b85ad5da31dab0bf4624a1ddc7c986605b8f965fb90fa2f9225e7de1a4d94
 - id: doi:10.1145/3583780.3615485
   title: 'MArBLE: Hierarchical Multi-Armed Bandits for Human-in-the-Loop Set Expansion'
   authors:
