@@ -70,6 +70,11 @@
     - social media
     - text understanding
 - id: doi:10.1109/ICASSP48485.2024.10446342
+  image: images/publications/UAMIXMAE.PNG
+  tags:
+    - contrastive learning
+    - self-supervised learning
+    - audio understanding
 - id: doi:10.1609/aaai.v38i3.27989
   image: images/publications/CORONET.PNG
   tags:
@@ -95,5 +100,6 @@
   image: images/publications/FARM.PNG
   tags: 
   - multimodal learning
+  - contrastive learning
   - robust representations
   link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
