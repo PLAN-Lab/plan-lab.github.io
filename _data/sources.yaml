@@ -82,9 +82,21 @@
     - video localization
     - video understanding
 - id: doi:10.1371/journal.pdig.0000205
+  tags:
+    - editorial
+    - AI in healthcare
 - id: doi:10.1145/3543507.3583514
+  tags:
+    - social media
+    - natural language processing
 - id: doi:10.1016/j.ebiom.2023.104525
+  tags:
+    - editorial
+    - AI in healthcare
 - id: doi:10.1007/978-3-031-43849-3_22
+  tags:
+    - text representations
+    - natural language processing
 - id: doi:10.1145/3583780.3615485
   image: images/publications/MARBLE.PNG
   tags:
@@ -93,6 +105,9 @@
     - natural language processing
 - id: doi:10.1007/978-3-031-43904-9_66
   publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
+  image: images/publications/CheXRelFormer.PNG
+  tags:
+    - medical imaging
 - id: doi:10.1145/3583780.3615485
   title: Fine-Grained Alignment for Cross-Modal Recipe Retrieval
   authors:
