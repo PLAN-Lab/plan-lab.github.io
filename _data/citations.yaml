@@ -254,8 +254,8 @@
   image: images/publications/CSCW.PNG
   tags:
   - social media
-  - text understanding
-  _cache: 517eb92d3c9d5c8e4688649bae62c15fbc2cf6d63e3ff75887299ab3906890ff
+  - natural language processing
+  _cache: 27488d32cff69ed316d78fad65d88428ca554a41f2da917116dc7701efd86155
 - id: doi:10.1109/ICASSP48485.2024.10446342
   title: 'uaMix-MAE: Efficient Tuning of Pretrained Audio Transformers with Unsupervised
     Audio Mixtures'
@@ -344,7 +344,12 @@
     Knowledge Management
   date: '2023-10-21'
   link: https://doi.org/gs24mj
-  _cache: ad13af329b6552495b88b3c82dde6c0623cf9b311ce7ad4602fadea605cb0047
+  image: images/publications/MARBLE.PNG
+  tags:
+  - human-in-the-loop entity extraction
+  - model selection
+  - natural language processing
+  _cache: e670d5e4da85b5662b0f84573e75d2a6bf3ee1510aae0a35a5fb08de8edd111a
 - id: doi:10.1007/978-3-031-43904-9_66
   title: "Hierarchical Vision Transformers for\_Disease Progression Detection in\_\
     Chest X-Ray Images"
