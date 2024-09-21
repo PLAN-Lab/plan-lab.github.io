@@ -21,7 +21,7 @@
   tags:
     - information retrieval
 - id: doi:10.1111/mice.12812
-  tags:
+  image: images/publications/SHM.PNG
 - id: doi:10.48550/arXiv.2108.00316
   image: images/publications/chest_imagenome.PNG
   tags:
@@ -99,6 +99,7 @@
     - editorial
     - AI in healthcare
 - id: doi:10.1007/978-3-031-43849-3_22
+  image: images/publications/MGCN.PNG
   tags:
     - text representations
     - natural language processing
