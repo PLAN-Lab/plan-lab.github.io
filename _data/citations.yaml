@@ -300,7 +300,10 @@
   publisher: PLOS Digital Health
   date: '2023-02-09'
   link: https://doi.org/gstd75
-  _cache: 31cb80fa5ce51bcaa702c698f89543e70b8468b7b5c7be55f3c61c03e4032256
+  tags:
+  - editorial
+  - AI in healthcare
+  _cache: 6c2fe1af36d97d4afbc70ccfb1537076adb7ba0f79e29c029ae7c0b413acf0c7
 - id: doi:10.1145/3543507.3583514
   title: 'Sedition Hunters: A Quantitative Study of the Crowdsourced Investigation
     into the 2021 U.S. Capitol Attack'
@@ -312,7 +315,10 @@
   publisher: Proceedings of the ACM Web Conference 2023
   date: '2023-04-30'
   link: https://doi.org/gr63zs
-  _cache: 13ae81c8e4facc9c38fe089307fc36ce28bb23b5142e969c97c2f09a96186ec8
+  tags:
+  - social media
+  - natural language processing
+  _cache: 3606ba77c89841daf7a651274edde17884aea2e530f9da0420928aaf847026d4
 - id: doi:10.1016/j.ebiom.2023.104525
   title: 'Fairness metrics for health AI: we have a long way to go'
   authors:
@@ -323,17 +329,23 @@
   publisher: eBioMedicine
   date: '2023-04-01'
   link: https://doi.org/gstd76
-  _cache: 284df99a8d88d753aef2e7692a3636ec3f02e3dad0fd85644cdbdf9079875aec
+  tags:
+  - editorial
+  - AI in healthcare
+  _cache: 016f1277e1d59d5d85de5ba100463686cbca6d195f918337027e0da04f9cb71a
 - id: doi:10.1007/978-3-031-43849-3_22
   title: "Multi-view Graph-Based Text Representations for\_Imbalanced Classification"
   authors:
   - Ola Karajeh
   - Ismini Lourentzou
   - Edward A. Fox
-  publisher: Linking Theory and Practice of Digital Libraries
+  publisher: Lecture Notes in Computer Science
   date: '2023-01-01'
   link: https://doi.org/gstd77
-  _cache: cf0bbb41340cfa13c9dc8cfa5e6062f850e72d93af0d604a1f847c3e867316d7
+  tags:
+  - text representations
+  - natural language processing
+  _cache: 7b546aa33497b951869465209c72173d2e233bcfe7497eb11b83cd50d7b466b7
 - id: doi:10.1145/3583780.3615485
   title: 'MArBLE: Hierarchical Multi-Armed Bandits for Human-in-the-Loop Set Expansion'
   authors:
@@ -361,7 +373,10 @@
   publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
   date: '2023-01-01'
   link: https://doi.org/gs24mk
-  _cache: 7169986d319664321eaf6e4c11eb90e1772b3f7465bb9cc845021fa462ff7a88
+  image: images/publications/CheXRelFormer.PNG
+  tags:
+  - medical imaging
+  _cache: 08dd7c094b12921145e6cb1b7b67e95626535cf8f3488abaae5b3b54fcfa5817
 - id: doi:10.1145/3583780.3615485
   title: Fine-Grained Alignment for Cross-Modal Recipe Retrieval
   authors:
