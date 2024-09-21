@@ -100,6 +100,8 @@
     - AI in healthcare
 - id: doi:10.1007/978-3-031-43849-3_22
   image: images/publications/MGCN.PNG
+  publisher: International Conference on Theory and Practice of Digital Libraries (TPDL)
+  date: '2023-09-22'
   tags:
     - text representations
     - natural language processing
