@@ -251,7 +251,11 @@
   publisher: Proceedings of the ACM on Human-Computer Interaction
   date: '2024-04-17'
   link: https://doi.org/g3qmk2
-  _cache: 7fbbb02d994bc11e805527a1ee0dd9729401b2dde1b4c156eb3f920bc4d1c171
+  image: images/publications/CSCW.PNG
+  tags:
+  - social media
+  - text understanding
+  _cache: 517eb92d3c9d5c8e4688649bae62c15fbc2cf6d63e3ff75887299ab3906890ff
 - id: doi:10.1109/ICASSP48485.2024.10446342
   title: 'uaMix-MAE: Efficient Tuning of Pretrained Audio Transformers with Unsupervised
     Audio Mixtures'
