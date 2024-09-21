@@ -333,11 +333,11 @@
   publisher: eBioMedicine
   date: '2023-04-01'
   link: https://doi.org/gstd76
-  image: images/publications/AIHealth2.PNG
+  image: images/publications/AIHealth.PNG
   tags:
   - editorial
   - AI in healthcare
-  _cache: ba8772b643b6b6831e26d75f993d35550e1bc4566956e6acc570cf238e34ceec
+  _cache: ee27e7ef3d2d48bf45922d80c27d8d47a90aa8ac0c38dd52ea825d250fa3d1b8
 - id: doi:10.1007/978-3-031-43849-3_22
   title: "Multi-view Graph-Based Text Representations for\_Imbalanced Classification"
   authors:
