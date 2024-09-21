@@ -319,7 +319,8 @@
   publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
   date: '2024-01-04'
   link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
+  image: images/publications/FARM.PNG
   tags:
   - multimodal learning
   - robust representations
-  _cache: 5d93f10a7eb78bb3d5385473d93a92a8e2622b34f68fe2692142363b622edc25
+  _cache: 2aa4dcfb73f5b424ca43321f26dd008b9ed4e99546ba13cd4d0b3f486700e844
