@@ -300,10 +300,11 @@
   publisher: PLOS Digital Health
   date: '2023-02-09'
   link: https://doi.org/gstd75
+  image: images/publications/AIHealth.PNG
   tags:
   - editorial
   - AI in healthcare
-  _cache: 6c2fe1af36d97d4afbc70ccfb1537076adb7ba0f79e29c029ae7c0b413acf0c7
+  _cache: e2cd0f9845617e4a216b617df169a2dd13d7c926490e34254834beb53f4c5c94
 - id: doi:10.1145/3543507.3583514
   title: 'Sedition Hunters: A Quantitative Study of the Crowdsourced Investigation
     into the 2021 U.S. Capitol Attack'
@@ -329,10 +330,11 @@
   publisher: eBioMedicine
   date: '2023-04-01'
   link: https://doi.org/gstd76
+  image: images/publications/AIHealth2.PNG
   tags:
   - editorial
   - AI in healthcare
-  _cache: 016f1277e1d59d5d85de5ba100463686cbca6d195f918337027e0da04f9cb71a
+  _cache: ba8772b643b6b6831e26d75f993d35550e1bc4566956e6acc570cf238e34ceec
 - id: doi:10.1007/978-3-031-43849-3_22
   title: "Multi-view Graph-Based Text Representations for\_Imbalanced Classification"
   authors:
