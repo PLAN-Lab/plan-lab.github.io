@@ -269,7 +269,12 @@
     and Signal Processing (ICASSP)
   date: '2024-04-14'
   link: https://doi.org/g3qmk9
-  _cache: 628792b56a12c6d3bcbeb711ad8bcf2f6bf6b2827f3518cfabb9b05bbf4c0383
+  image: images/publications/UAMIXMAE.PNG
+  tags:
+  - contrastive learning
+  - self-supervised learning
+  - audio understanding
+  _cache: 65886f1cd2446d15fea79d080ff3e1d9e3d43e47fc9e0191abad73b06714b5e4
 - id: doi:10.1609/aaai.v38i3.27989
   title: Commonsense for Zero-Shot Natural Language Video Localization
   authors:
@@ -365,5 +370,6 @@
   image: images/publications/FARM.PNG
   tags:
   - multimodal learning
+  - contrastive learning
   - robust representations
-  _cache: 2aa4dcfb73f5b424ca43321f26dd008b9ed4e99546ba13cd4d0b3f486700e844
+  _cache: 23c997743d403325c8bd3a300cb9c621fc0a54481b86b30fb37990acbb220126
