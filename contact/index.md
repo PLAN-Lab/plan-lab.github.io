@@ -7,7 +7,9 @@ nav:
 
 # <i class="fas fa-envelope"></i>Contact
 
-Our lab is part of the [School of information Sciences](https://ischool.illinois.edu/) at [University of Illinois Urbana-Champaign](https://illinois.edu/).
+<div style="text-align: center;">
+Our lab is part of the [School of Information Sciences](https://ischool.illinois.edu/) at [University of Illinois Urbana-Champaign](https://illinois.edu/).
+</div>
 
 {%
   include link.html
