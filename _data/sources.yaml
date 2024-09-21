@@ -65,6 +65,10 @@
   - multimodal learning
   - embodied AI
 - id: doi:10.1145/3653703
+  image: images/publications/CSCW.PNG
+  tags:
+    - social media
+    - text understanding
 - id: doi:10.1109/ICASSP48485.2024.10446342
 - id: doi:10.1609/aaai.v38i3.27989
   image: images/publications/CORONET.PNG
