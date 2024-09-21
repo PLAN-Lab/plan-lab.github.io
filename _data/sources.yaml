@@ -49,7 +49,7 @@
   tags:
     - data quality
 - id: doi:10.1007/978-3-031-16431-6_55
-  publisher: Medical Image Computing and Computer Assisted Intervention – MICCAI
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
   image: images/publications/CheXRelNet.PNG
   tags:
     - scene-graphs
@@ -60,6 +60,7 @@
 - id: doi:10.48550/arXiv.2302.04865
   publisher: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
   date: '2025-01-04'
+  image: images/publications/ELBA.PNG
   tags: 
   - multimodal learning
   - embodied AI
@@ -69,7 +70,7 @@
 - id: doi:10.1007/978-3-031-43849-3_22
 - id: doi:10.1145/3583780.3615485
 - id: doi:10.1007/978-3-031-43904-9_66
-  publisher: Medical Image Computing and Computer Assisted Intervention – MICCAI
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
 - id: doi:10.1145/3583780.3615485
   title: Fine-Grained Alignment for Cross-Modal Recipe Retrieval
   authors:
