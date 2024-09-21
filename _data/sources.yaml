@@ -44,6 +44,7 @@
   image: images/publications/fixeval.PNG
   tags:
     - code repair
+    - natural language processing
 - id: doi:10.1145/3529190.3529222
   image: images/publications/data_quality.PNG
   tags:
@@ -108,7 +109,7 @@
 - id: doi:10.1145/3583780.3615485
   image: images/publications/MARBLE.PNG
   tags:
-    - human-in-the-loop entity extraction
+    - entity extraction
     - model selection
     - natural language processing
 - id: doi:10.1007/978-3-031-43904-9_66
