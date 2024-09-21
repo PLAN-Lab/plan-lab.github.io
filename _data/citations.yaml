@@ -227,7 +227,10 @@
   publisher: 2022 IEEE International Conference on Big Data (Big Data)
   date: '2022-12-17'
   link: https://doi.org/gstd73
-  _cache: a32d4dc4799890c00ca98d5b7631e142b87e14dfa5ee0372b980887b6fc997de
+  image: images/publications/PRIED.PNG
+  tags:
+  - privacy-preserving ML
+  _cache: 42b53e448ac6b28845ad2fe1706f6b7d23234fb8bf78d94ecabf0fb01e946f9e
 - id: doi:10.48550/arXiv.2302.04865
   title: Learning by Asking for Embodied Visual Navigation and Task Completion
   authors:
