@@ -344,14 +344,15 @@
   - Ola Karajeh
   - Ismini Lourentzou
   - Edward A. Fox
-  publisher: Lecture Notes in Computer Science
-  date: '2023-01-01'
+  publisher: International Conference on Theory and Practice of Digital Libraries
+    (TPDL)
+  date: '2023-09-22'
   link: https://doi.org/gstd77
   image: images/publications/MGCN.PNG
   tags:
   - text representations
   - natural language processing
-  _cache: c29b85ad5da31dab0bf4624a1ddc7c986605b8f965fb90fa2f9225e7de1a4d94
+  _cache: 4a6aadba5269220973dd78afe5d76d6b1242f72ea126aecb65f90c938aadcce1
 - id: doi:10.1145/3583780.3615485
   title: 'MArBLE: Hierarchical Multi-Armed Bandits for Human-in-the-Loop Set Expansion'
   authors:
