@@ -41,27 +41,27 @@ for idx, row in enumerate(sheets_data['table']['rows']):
         else:
             new_dict['title'] = f'{vals[2]["v"]} ({vals[1]["v"]})'
             
-    new_dict['h5-index'] = vals[3]['f'] if vals[3] is not None else 'N/A'
-    new_dict['core-ranking'] = vals[4]["v"] if vals[4] is not None else '-'
-    new_dict['call-for-papers'] = vals[7]["v"] if vals[7] is not None else '-'
-    new_dict['abstract-deadline'] = vals[8]['v'] if vals[8] is not None else '-'
+    new_dict['h5-index'] = vals[4]['f'] if vals[4] is not None else 'N/A'
+    new_dict['core-ranking'] = vals[5]["v"] if vals[5] is not None else '-'
+    new_dict['call-for-papers'] = vals[8]["v"] if vals[8] is not None else '-'
+    new_dict['abstract-deadline'] = vals[9]['v'] if vals[9] is not None else '-'
     # Convert date string
-    if vals[9] is not None:
-        y, m, d = vals[9]['v'][5:-1].split(',')
+    if vals[10] is not None:
+        y, m, d = vals[10]['v'][5:-1].split(',')
         ymd = datetime(int(y), int(m)+1, int(d))
         date_string = ymd.strftime('%b %d %Y')
     else:
         date_string = 'TBA'
     new_dict['submission-deadline'] = date_string
-    new_dict['rebuttal-starts'] = vals[10]['v'] if vals[10] is not None else '-'
-    new_dict['notification-date'] = vals[11]['v'] if vals[11] is not None else '-'
-    new_dict['conference-date'] = vals[12]['v'] if vals[12] is not None else '-'
-    new_dict['conference-location'] = vals[13]['v'] if vals[13] is not None else '-'
-    new_dict['tags'] = vals[14]['v'].split(',') if vals[14] is not None else '-'
-    new_dict['acceptance-rate-2022'] = vals[15]['v'] if vals[15] is not None else '-'
-    new_dict['acceptance-rate-2021'] = vals[16]['v'] if vals[16] is not None else '-'
-    new_dict['acceptance-rate-2020'] = vals[17]['v'] if vals[17] is not None else '-'
-    new_dict['acceptance-rate-2019'] = vals[18]['v'] if vals[18] is not None else '-'
+    new_dict['rebuttal-starts'] = vals[11]['v'] if vals[11] is not None else '-'
+    new_dict['notification-date'] = vals[12]['v'] if vals[12] is not None else '-'
+    new_dict['conference-date'] = vals[13]['v'] if vals[13] is not None else '-'
+    new_dict['conference-location'] = vals[14]['v'] if vals[14] is not None else '-'
+    new_dict['tags'] = vals[15]['v'].split(',') if vals[15] is not None else '-'
+    # new_dict['acceptance-rate-2022'] = vals[15]['v'] if vals[15] is not None else '-'
+    # new_dict['acceptance-rate-2021'] = vals[16]['v'] if vals[16] is not None else '-'
+    # new_dict['acceptance-rate-2020'] = vals[17]['v'] if vals[17] is not None else '-'
+    # new_dict['acceptance-rate-2019'] = vals[18]['v'] if vals[18] is not None else '-'
     new_dict['sd-for-sorting'] = ymd
     
     today = datetime.now()

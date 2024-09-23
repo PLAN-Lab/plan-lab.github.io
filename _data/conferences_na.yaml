@@ -1,95 +1,4 @@
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://www.acmmm2023.org/
-  conference-date: '-'
-  conference-location: Ottawa, Canada
-  core-ranking: A*
-  h5-index: '71'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: 2023-01-26 00:00:00
-  submission-deadline: TBA
-  tags:
-  - multimedia
-  title: ACM Multimedia (ACMMM)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: TBA
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: A*
-  h5-index: '114'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: &id001 2023-04-20 00:00:00
-  submission-deadline: TBA
-  tags:
-  - data mining
-  title: ACM SIGKDD International Conference on Knowledge discovery and data mining
-    (SIGKDD)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: TBA
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: A
-  h5-index: '105'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id001
-  submission-deadline: TBA
-  tags:
-  - natural language processing
-  title: North American Chapter of the Association for Computational Linguistics (NAACL)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://www2023.thewebconf.org/
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: A*
-  h5-index: '98'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id001
-  submission-deadline: TBA
-  tags:
-  - web
-  - ' social network analysis'
-  title: International World Wide Web Conference (WWW)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: Will be organized in 2024
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: A*
-  h5-index: '186'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: &id002 2023-03-01 00:00:00
-  submission-deadline: TBA
-  tags:
-  - computer vision
-  title: European Conference on Computer Vision (ECCV)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://www.jair.org/index.php/jair/about/submissions
   conference-date: '-'
   conference-location: '-'
@@ -97,177 +6,60 @@
   h5-index: '123'
   notification-date: '-'
   rebuttal-starts: '-'
-  sd-for-sorting: *id002
+  sd-for-sorting: &id001 2024-09-03 00:00:00
   submission-deadline: TBA
   tags:
-  - '-'
+  - machine learning
   title: Journal of Artificial Intelligence Research (JAIR)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: '-'
+  call-for-papers: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34
   conference-date: '-'
   conference-location: '-'
   core-ranking: '-'
   h5-index: '165'
   notification-date: '-'
   rebuttal-starts: '-'
-  sd-for-sorting: *id002
+  sd-for-sorting: *id001
   submission-deadline: TBA
   tags:
-  - '-'
+  - computer vision
   title: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: '-'
+  call-for-papers: https://www.sciencedirect.com/journal/pattern-recognition
   conference-date: '-'
   conference-location: '-'
   core-ranking: '-'
   h5-index: '110'
   notification-date: '-'
   rebuttal-starts: '-'
-  sd-for-sorting: *id002
+  sd-for-sorting: *id001
   submission-deadline: TBA
   tags:
-  - '-'
-  title: Pattern Recognition (-)
+  - computer vision
+  title: Pattern Recognition (PR)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: '-'
+  call-for-papers: 'https://www.springer.com/journal/11263 '
+  conference-date: '-'
+  conference-location: '-'
+  core-ranking: '-'
+  h5-index: '195'
+  notification-date: '-'
+  rebuttal-starts: '-'
+  sd-for-sorting: *id001
+  submission-deadline: TBA
+  tags:
+  - computer vision
+  title: International Journal of Computer Vision (IJCV)
+- abstract-deadline: '-'
+  call-for-papers: https://www.sciencedirect.com/journal/medical-image-analysis
   conference-date: '-'
   conference-location: '-'
   core-ranking: '-'
   h5-index: '90'
   notification-date: '-'
   rebuttal-starts: '-'
-  sd-for-sorting: *id002
+  sd-for-sorting: *id001
   submission-deadline: TBA
   tags:
-  - '-'
-  title: Medical Image Analysis (-)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: 'Submission: June'
-  call-for-papers: https://corl2022.org/
-  conference-date: TBA
-  conference-location: TBA
-  core-ranking: '-'
-  h5-index: '64'
-  notification-date: '-'
-  rebuttal-starts: TBA
-  sd-for-sorting: *id002
-  submission-deadline: TBA
-  tags:
-  - robotics and machine learning
-  title: Conference on Robot Learning (CoRL)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: 'Submission: May'
-  call-for-papers: TBA
-  conference-date: TBA
-  conference-location: TBA
-  core-ranking: A
-  h5-index: '58'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id002
-  submission-deadline: TBA
-  tags:
-  - information retrieval
-  title: International Conference on Computational Linguistics (COLING)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: 'Submission: June'
-  call-for-papers: TBA
-  conference-date: TBA
-  conference-location: TBA
-  core-ranking: A
-  h5-index: '44'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id002
-  submission-deadline: TBA
-  tags:
-  - computational linguistics
-  title: Conference on Computational Natural Language Learning (CoNLL)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: TBA
-  conference-date: TBA
-  conference-location: TBA
-  core-ranking: A*
-  h5-index: '63'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: 2022-05-19 00:00:00
-  submission-deadline: TBA
-  tags:
-  - machine learning
-  title: Conference on Learning Theory (COLT)
-- abstract-deadline: TBA
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: 'Abstract: March'
-  call-for-papers: https://2023.ecmlpkdd.org/submissions/
-  conference-date: September 18 -22 2023
-  conference-location: Turin, Italy
-  core-ranking: A
-  h5-index: '40'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: &id003 2022-07-06 00:00:00
-  submission-deadline: TBA
-  tags:
-  - machine learning and data mining
-  title: European Conference on Machine learning and knowledge discovery in databases
-    (ECML PKDD)
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: '-'
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: '-'
-  h5-index: N/A
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id003
-  submission-deadline: TBA
-  tags: '-'
-  title: ML4Health
-- abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: '-'
-  conference-date: '-'
-  conference-location: '-'
-  core-ranking: '-'
-  h5-index: N/A
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: *id003
-  submission-deadline: TBA
-  tags: '-'
-  title: FACCT
+  - medical imaging
+  title: Medical Image Analysis (MICCAI_MIA)

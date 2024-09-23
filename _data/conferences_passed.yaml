@@ -1,42 +1,310 @@
+- abstract-deadline: '-'
+  call-for-papers: https://www3.cs.stonybrook.edu/~ieeebigdata2024/
+  conference-date: December 15-18, 2024
+  conference-location: Washington DC, USA
+  core-ranking: B
+  h5-index: '53'
+  notification-date: Date(2024,9,27)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2024-09-03 00:00:00
+  submission-deadline: Sep 03 2024
+  tags:
+  - data mining
+  - ' big data'
+  title: IEEE International Conference on Big Data (IEEE BigData)
+- abstract-deadline: '-'
+  call-for-papers: https://kdd2024.kdd.org/
+  conference-date: August 25-29, 2024
+  conference-location: Barcelona, Spain
+  core-ranking: A*
+  h5-index: '114'
+  notification-date: Date(2024,4,16)
+  rebuttal-starts: Date(2024,3,4)
+  sd-for-sorting: 2024-02-01 00:00:00
+  submission-deadline: Feb 01 2024
+  tags:
+  - data mining
+  title: ACM SIGKDD International Conference on Knowledge discovery and data mining
+    (SIGKDD)
+- abstract-deadline: Nov 3, 2023
+  call-for-papers: https://cvpr.thecvf.com
+  conference-date: Jun 17-21, 2023
+  conference-location: Seattle, WA, USA
+  core-ranking: A*
+  h5-index: '389'
+  notification-date: Date(2024,1,26)
+  rebuttal-starts: Date(2024,0,23)
+  sd-for-sorting: 2023-11-10 00:00:00
+  submission-deadline: Nov 10 2023
+  tags:
+  - computer vision
+  title: IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+- abstract-deadline: Sep 21, 2023
+  call-for-papers: https://iclr.cc/Conferences/2023/CallForPapers
+  conference-date: May 1-5, 2023
+  conference-location: Kigali, Rwanda
+  core-ranking: A*
+  h5-index: '286'
+  notification-date: Date(2023,0,20)
+  rebuttal-starts: Date(2023,10,4)
+  sd-for-sorting: 2023-09-28 00:00:00
+  submission-deadline: Sep 28 2023
+  tags:
+  - machine learning
+  title: International Conference on Learning Representations (ICLR )
+- abstract-deadline: Aug 8, 2023
+  call-for-papers: https://aaai.org/aaai-conference/
+  conference-date: Feb 20-27, 2024
+  conference-location: Vancouver, Canada
+  core-ranking: A*
+  h5-index: '180'
+  notification-date: Date(3023,11,3)
+  rebuttal-starts: Date(2023,10,2)
+  sd-for-sorting: 2023-08-15 00:00:00
+  submission-deadline: Aug 15 2023
+  tags:
+  - machine learning
+  title: Association for the Advancement of Artificial Intelligence (AAAI)
+- abstract-deadline: Jun 21, 2023
+  call-for-papers: 'https://wacv2024.thecvf.com '
+  conference-date: Jan 3 - 7, 2023
+  conference-location: Waikoloa, Hawaii
+  core-ranking: A
+  h5-index: '76'
+  notification-date: Date(2023,9,20)
+  rebuttal-starts: Date(2023,7,11)
+  sd-for-sorting: 2023-06-28 00:00:00
+  submission-deadline: Jun 28 2023
+  tags:
+  - computer vision
+  - ' artificial intelligence'
+  title: Winter Conference on Applications of Computer Vision (WACV)
+- abstract-deadline: Jun 16, 2023
+  call-for-papers: https://2023.emnlp.org/
+  conference-date: December 6-10, 2023
+  conference-location: Singapore
+  core-ranking: A
+  h5-index: '154'
+  notification-date: Date(2023,9,6)
+  rebuttal-starts: Date(2023,7,22)
+  sd-for-sorting: 2023-06-23 00:00:00
+  submission-deadline: Jun 23 2023
+  tags:
+  - natural language processing
+  title: Conference on Empirical Methods in Natural Language Processing (EMNLP)
+- abstract-deadline: '-'
+  call-for-papers: https://www.corl2023.org/
+  conference-date: Nov 6-9, 2023
+  conference-location: Atlanta, GA
+  core-ranking: '-'
+  h5-index: '64'
+  notification-date: Date(2023,7,30)
+  rebuttal-starts: Date(2023,7,8)
+  sd-for-sorting: 2023-06-08 00:00:00
+  submission-deadline: Jun 08 2023
+  tags:
+  - robotics and machine learning
+  title: Conference on Robot Learning (CoRL)
+- abstract-deadline: May 26, 2023
+  call-for-papers: https://cikm2023.github.io/
+  conference-date: October 21-25, 2023
+  conference-location: Birmingham, UK
+  core-ranking: A
+  h5-index: '69'
+  notification-date: Date(2023,7,4)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2023-06-02 00:00:00
+  submission-deadline: Jun 02 2023
+  tags:
+  - information retrieval
+  title: ACM International Conference on Information and Knowledge Management (CIKM)
+- abstract-deadline: May 11, 2023
+  call-for-papers: https://nips.cc/Conferences/2023/CallForPapers
+  conference-date: December 10-16, 2023
+  conference-location: New Orleans, LA, USA
+  core-ranking: A*
+  h5-index: '278'
+  notification-date: Date(2023,8,21)
+  rebuttal-starts: Date(2022,6,26)
+  sd-for-sorting: 2023-05-17 00:00:00
+  submission-deadline: May 17 2023
+  tags:
+  - machine learning
+  title: Neural Information Processing Systems (NeurIPS )
+- abstract-deadline: '-'
+  call-for-papers: https://www.bmvc2023.org/authors/call-for-papers/
+  conference-date: November 20-23, 2023
+  conference-location: Aberdeen, Scotland
+  core-ranking: A
+  h5-index: '75'
+  notification-date: Date(2023,7,21)
+  rebuttal-starts: Date(2023,6,7)
+  sd-for-sorting: 2023-05-12 00:00:00
+  submission-deadline: May 12 2023
+  tags:
+  - computer vision
+  title: British Machine Vision Conference (BMVC)
+- abstract-deadline: May 2, 2023
+  call-for-papers: https://ecai2023.eu/
+  conference-date: October 1-6, 2023
+  conference-location: "Krak\xF3w, Poland"
+  core-ranking: A
+  h5-index: '23'
+  notification-date: Date(2023,6,15)
+  rebuttal-starts: Date(2023,5,25)
+  sd-for-sorting: 2023-05-08 00:00:00
+  submission-deadline: May 08 2023
+  tags:
+  - machine learning
+  title: European Conference on Artificial Intelligence (ECAI)
+- abstract-deadline: Apr 23, 2023
+  call-for-papers: https://www.acmmm2023.org/cfp/
+  conference-date: "October 28 \u2013 November 3, 2023"
+  conference-location: Ottawa, Canada
+  core-ranking: A*
+  h5-index: '71'
+  notification-date: Date(2023,6,25)
+  rebuttal-starts: Date(2023,6,2)
+  sd-for-sorting: 2023-04-30 00:00:00
+  submission-deadline: Apr 30 2023
+  tags:
+  - multimedia
+  title: ACM Multimedia (ACMMM)
+- abstract-deadline: Mar 26, 2023
+  call-for-papers: https://2023.ecmlpkdd.org/submissions/key-dates-deadlines/
+  conference-date: September 18-22, 2023
+  conference-location: Turin, Italy
+  core-ranking: A
+  h5-index: '40'
+  notification-date: Date(2023,5,5)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2023-04-06 00:00:00
+  submission-deadline: Apr 06 2023
+  tags:
+  - machine learning and data mining
+  title: European Conference on Machine learning and knowledge discovery in databases
+    (ECML PKDD)
+- abstract-deadline: '-'
+  call-for-papers: https://conferences.miccai.org/2023/en/
+  conference-date: Oct 8 - 12, 2023
+  conference-location: Vancouver, Canada
+  core-ranking: A
+  h5-index: '78'
+  notification-date: Date(2023,5,23)
+  rebuttal-starts: Date(2023,4,24)
+  sd-for-sorting: 2023-03-09 00:00:00
+  submission-deadline: Mar 09 2023
+  tags:
+  - medical imaging
+  title: International Conference on Medical Image Computing and Computer Assisted
+    Intervention (MICCAI)
+- abstract-deadline: '-'
+  call-for-papers: https://iccv2023.thecvf.com/
+  conference-date: Sep 30 - Oct 6, 2023
+  conference-location: Paris, France
+  core-ranking: A*
+  h5-index: '239'
+  notification-date: Date(2023,6,13)
+  rebuttal-starts: Date(2023,4,23)
+  sd-for-sorting: 2023-03-08 00:00:00
+  submission-deadline: Mar 08 2023
+  tags:
+  - computer vision
+  title: International Conference on Computer Vision (ICCV )
+- abstract-deadline: '-'
+  call-for-papers: https://ieee-iros.org
+  conference-date: October 1-5, 2023
+  conference-location: Detroit, USA
+  core-ranking: A
+  h5-index: '80'
+  notification-date: Date(2023,5,30)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2023-03-01 00:00:00
+  submission-deadline: Mar 01 2023
+  tags:
+  - robotics
+  title: International Conference on Intelligent Robots and Systems (IROS)
+- abstract-deadline: '-'
+  call-for-papers: https://www.auai.org/uai2023/call_for_papers
+  conference-date: 31 July - August 4, 2023
+  conference-location: Pittsburgh, PA, USA
+  core-ranking: A
+  h5-index: '45'
+  notification-date: Date(2023,4,8)
+  rebuttal-starts: Date(2023,3,11)
+  sd-for-sorting: 2023-02-17 00:00:00
+  submission-deadline: Feb 17 2023
+  tags:
+  - uncertainty
+  - ' artificial intelligence'
+  title: Conference on Uncertainty in Artificial Intelligence (UAI)
+- abstract-deadline: '-'
+  call-for-papers: https://www.learningtheory.org/colt2023/
+  conference-date: July 12-15, 2023
+  conference-location: Bangalore, India
+  core-ranking: A*
+  h5-index: '63'
+  notification-date: Date(2023,4,15)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2023-02-10 00:00:00
+  submission-deadline: Feb 10 2023
+  tags:
+  - machine learning
+  title: Conference on Learning Theory (COLT)
+- abstract-deadline: Jan 24, 2023
+  call-for-papers: https://sigir.org/sigir2023/submit/call-for-full-papers/
+  conference-date: July 23-27, 2023
+  conference-location: Taipei, Taiwan
+  core-ranking: A*
+  h5-index: '75'
+  notification-date: Date(2023,3,4)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2023-01-31 00:00:00
+  submission-deadline: Jan 31 2023
+  tags:
+  - infromation retrieval
+  title: International ACM SIGIR Conference on Research and Development in Information
+    Retrieval (SIGIR)
+- abstract-deadline: Jan 9, 2023
+  call-for-papers: https://icml.cc/Conferences/2023/Dates
+  conference-date: Jul 24 - 30, 2023
+  conference-location: Honolulu, Hawai'i, USA
+  core-ranking: A*
+  h5-index: '237'
+  notification-date: Date(2022,4,14)
+  rebuttal-starts: Date(2022,3,6)
+  sd-for-sorting: 2023-01-26 00:00:00
+  submission-deadline: Jan 26 2023
+  tags:
+  - machine learning
+  title: International Conference on Machine Learning (ICML)
+- abstract-deadline: Jan 13, 2023
+  call-for-papers: https://2023.aclweb.org/
+  conference-date: July 9-14, 2023
+  conference-location: Toronto, Canada
+  core-ranking: A*
+  h5-index: '169'
+  notification-date: Date(2023,4,1)
+  rebuttal-starts: Date(2023,2,17)
+  sd-for-sorting: 2023-01-20 00:00:00
+  submission-deadline: Jan 20 2023
+  tags:
+  - natural language processing
+  title: Annual Meeting of the Association for Computational Linguistics (ACL)
 - abstract-deadline: Jan 11, 2023
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://ijcai-23.org/
   conference-date: August 19-25, 2023
   conference-location: Cape Town, South Africa
   core-ranking: A*
   h5-index: '120'
   notification-date: Date(2022,3,20)
-  rebuttal-starts: March 20, 2023
+  rebuttal-starts: Date(2023,2,20)
   sd-for-sorting: 2023-01-18 00:00:00
   submission-deadline: Jan 18 2023
   tags:
   - machine learning
   title: International Joint Conference on Artificial Intelligence (IJCAI)
-- abstract-deadline: Nov 4, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://cvpr2023.thecvf.com/
-  conference-date: Jun 18-22, 2023
-  conference-location: Vancouver, Canada
-  core-ranking: A*
-  h5-index: '389'
-  notification-date: Date(2023,1,27)
-  rebuttal-starts: Jan 24, 2023
-  sd-for-sorting: 2022-11-11 00:00:00
-  submission-deadline: Nov 11 2022
-  tags:
-  - computer vision
-  title: IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
 - abstract-deadline: Oct 21, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://aamas2023.soton.ac.uk/calls/call-for-papers/
   conference-date: May 29 - Jun 2, 2023
   conference-location: London
@@ -51,67 +319,52 @@
   - ' multiagent systems'
   title: International Conference on Autonomous Agents and Multiagent Systems (AAMAS)
 - abstract-deadline: Oct 13, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://2023.eacl.org/calls/papers/
   conference-date: "3\u20135 May 2023"
   conference-location: Hybrid + Croatia
   core-ranking: A
   h5-index: '62'
   notification-date: Date(2023,0,20)
-  rebuttal-starts: 6 December 2022
+  rebuttal-starts: Date(2022,11,6)
   sd-for-sorting: 2022-10-20 00:00:00
   submission-deadline: Oct 20 2022
   tags:
   - natural language processing
   title: European Chapter of the Association for Computational Linguistics (EACL)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://2023.ieeeicassp.org/
-  conference-date: '-'
-  conference-location: '-'
+  conference-date: June 4-10, 2023
+  conference-location: Rhodes Island, Greece
   core-ranking: B
   h5-index: '110'
-  notification-date: '-'
-  rebuttal-starts: '-'
+  notification-date: Date(2023,1,15)
+  rebuttal-starts: Date(2023,0,13)
   sd-for-sorting: 2022-10-19 00:00:00
   submission-deadline: Oct 19 2022
   tags:
   - speech processing
   title: International Conference on Acoustics, Speech and Signal Processing (ICASSP)
-- abstract-deadline: Sep 30, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://ecir2023.org/papers.html?v=1.4
-  conference-date: Apr 3 - 5, 2023
-  conference-location: Dublin, Ireland
-  core-ranking: A
-  h5-index: '31'
-  notification-date: '-'
-  rebuttal-starts: '-'
-  sd-for-sorting: 2022-10-07 00:00:00
-  submission-deadline: Oct 07 2022
+- abstract-deadline: Oct 6, 2022
+  call-for-papers: https://www2023.thewebconf.org/
+  conference-date: Apr 30 - May 4, 2023
+  conference-location: Austin, TX, USA
+  core-ranking: A*
+  h5-index: '98'
+  notification-date: Date(2023,0,25)
+  rebuttal-starts: Date(2022,11,15)
+  sd-for-sorting: 2022-10-13 00:00:00
+  submission-deadline: Oct 13 2022
   tags:
-  - information retrieval
-  title: European Conference on Information Retrieval (ECIR)
+  - web
+  - ' social network analysis'
+  title: International World Wide Web Conference (WWW)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://aistats.org/aistats2023/
   conference-date: Mar 30 - Apr 1, 2023
   conference-location: USA
   core-ranking: A
   h5-index: '85'
-  notification-date: '-'
+  notification-date: Date(2023,0,19)
   rebuttal-starts: '-'
   sd-for-sorting: 2022-10-06 00:00:00
   submission-deadline: Oct 06 2022
@@ -119,28 +372,7 @@
   - machine learning
   - ' artificial intelligence'
   title: International Conference on Artificial Intelligence and Statistics (AISTATS)
-- abstract-deadline: Sep 21, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://iclr.cc/Conferences/2023/CallForPapers
-  conference-date: May 1-5, 2023
-  conference-location: Kigali, Rwanda
-  core-ranking: A*
-  h5-index: '286'
-  notification-date: Date(2023,0,20)
-  rebuttal-starts: Nov 4, 2022
-  sd-for-sorting: 2022-09-29 00:00:00
-  submission-deadline: Sep 29 2022
-  tags:
-  - machine learning
-  title: International Conference on Learning Representations (ICLR )
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
   call-for-papers: https://www.icra2023.org/programme/call-contributions
   conference-date: "May 29 \u2013 Jun 2, 2023"
   conference-location: London, UK
@@ -153,123 +385,68 @@
   tags:
   - robotics
   title: International Conference on Robotics and Automation (ICRA)
-- abstract-deadline: Aug 22, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://wacv2023.thecvf.com/node/135
-  conference-date: Jan 4 - 6, 2023
-  conference-location: Waikoloa, Hawaii
-  core-ranking: A
-  h5-index: '76'
-  notification-date: Date(2022,9,10)
-  rebuttal-starts: '-'
-  sd-for-sorting: 2022-08-29 00:00:00
-  submission-deadline: Aug 29 2022
-  tags:
-  - computer vision
-  - ' artificial intelligence'
-  title: Winter Conference on Applications of Computer Vision (WACV)
-- abstract-deadline: Aug 8, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://aaai.org/Conferences/AAAI-23/aaai23call/
-  conference-date: Feb 7 - 14, 2023
-  conference-location: Washington D.C.
-  core-ranking: A*
-  h5-index: '180'
-  notification-date: Date(2022,10,18)
-  rebuttal-starts: October 20, 2022
-  sd-for-sorting: 2022-08-15 00:00:00
-  submission-deadline: Aug 15 2022
-  tags:
-  - machine learning
-  title: Association for the Advancement of Artificial Intelligence (AAAI)
-- abstract-deadline: Jul 25, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://bmvc2022.org/authors/call-for-papers/
-  conference-date: November 21-24, 2022
-  conference-location: TBA
-  core-ranking: A
-  h5-index: '75'
-  notification-date: Date(2022,8,30)
-  rebuttal-starts: September 2, 2022
-  sd-for-sorting: 2022-07-29 00:00:00
-  submission-deadline: Jul 29 2022
-  tags:
-  - computer vision
-  title: British Machine Vision Conference (BMVC)
 - abstract-deadline: '-'
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: 'Submission: July'
-  call-for-papers: TBA
+  call-for-papers: https://www.accv2022.org/en/CALL-FOR-PAPERS.html
   conference-date: December 1, 2023
   conference-location: TBA
   core-ranking: B
   h5-index: '46'
   notification-date: Date(2022,8,16)
-  rebuttal-starts: Sep 2, 2022
+  rebuttal-starts: Date(2022,8,2)
   sd-for-sorting: 2022-07-06 00:00:00
   submission-deadline: Jul 06 2022
   tags:
   - computer vision
   title: Asian Conference on Computer Vision (ACCV)
-- abstract-deadline: Jun 17, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://2022.emnlp.org/calls/
-  conference-date: '-'
-  conference-location: '-'
+- abstract-deadline: '-'
+  call-for-papers: https://www.conll.org/2022
+  conference-date: December 7-8, 2022
+  conference-location: Abu Dhabi, UAE
   core-ranking: A
-  h5-index: '154'
-  notification-date: Date(2022,9,6)
-  rebuttal-starts: Aug 23, 2022
-  sd-for-sorting: 2022-06-24 00:00:00
-  submission-deadline: Jun 24 2022
+  h5-index: '44'
+  notification-date: Date(2022,8,15)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2022-06-30 00:00:00
+  submission-deadline: Jun 30 2022
+  tags:
+  - computational linguistics
+  title: Conference on Computational Natural Language Learning (CoNLL)
+- abstract-deadline: '-'
+  call-for-papers: https://coling2022.org/
+  conference-date: October 12-17, 2022
+  conference-location: Gyeongju, Republic of Korea
+  core-ranking: A
+  h5-index: '58'
+  notification-date: Date(2022,7,15)
+  rebuttal-starts: Date(2022,6,16)
+  sd-for-sorting: 2022-05-17 00:00:00
+  submission-deadline: May 17 2022
   tags:
   - natural language processing
-  title: Conference on Empirical Methods in Natural Language Processing (EMNLP)
-- abstract-deadline: May 16, 2022
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: https://nips.cc/Conferences/2022/Dates
-  conference-date: '-'
-  conference-location: '-'
+  title: International Conference on Computational Linguistics (COLING)
+- abstract-deadline: '-'
+  call-for-papers: https://eccv2022.ecva.net/
+  conference-date: Oct 25-27, 2022
+  conference-location: Tel Aviv, Israel
   core-ranking: A*
-  h5-index: '278'
-  notification-date: Date(2022,8,14)
-  rebuttal-starts: Jul 26, 2022
-  sd-for-sorting: 2022-05-19 00:00:00
-  submission-deadline: May 19 2022
-  tags:
-  - machine learning
-  title: Neural Information Processing Systems (NeurIPS )
-- abstract-deadline: "May\_12, 2022"
-  acceptance-rate-2019: '-'
-  acceptance-rate-2020: '-'
-  acceptance-rate-2021: '-'
-  acceptance-rate-2022: '-'
-  call-for-papers: TBA
-  conference-date: October 1, 2023
-  conference-location: Birmingham, UK
-  core-ranking: A
-  h5-index: '69'
-  notification-date: Date(2022,7,1)
+  h5-index: '186'
+  notification-date: Date(2022,6,3)
   rebuttal-starts: '-'
-  sd-for-sorting: 2022-05-19 00:00:00
-  submission-deadline: May 19 2022
+  sd-for-sorting: 2022-03-07 00:00:00
+  submission-deadline: Mar 07 2022
   tags:
-  - machine learning
-  title: ACM International Conference on Information and Knowledge Management (CIKM)
+  - computer vision
+  title: European Conference on Computer Vision (ECCV)
+- abstract-deadline: '-'
+  call-for-papers: https://2022.naacl.org/
+  conference-date: "July 10\u201315, 2022"
+  conference-location: Seattle, Washington
+  core-ranking: A
+  h5-index: '105'
+  notification-date: Date(2022,3,7)
+  rebuttal-starts: '-'
+  sd-for-sorting: 2022-01-15 00:00:00
+  submission-deadline: Jan 15 2022
+  tags:
+  - natural language processing
+  title: North American Chapter of the Association for Computational Linguistics (NAACL)
