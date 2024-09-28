@@ -65,5 +65,5 @@ for idx, row in enumerate(sheets_data['table']['rows']):
     # dump file contents to a file
     filename = f'{first_name.lower()}-{last_name.lower()}.md'
     filepath = os.path.join('_members', filename)
-    with open(filename, 'w') as f:
+    with open(filepath, 'w') as f:
         f.write(file_content)

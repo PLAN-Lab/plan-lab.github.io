@@ -1,17 +1,20 @@
----
-name: Amarachi Blessing Mbakwe
-image: images/members/AmarachiMbakwe.jpeg
-description: Ph.D. Student
-role: phd-student
-aliases:
-  - Amarachi Blessing
-  - A Blessing
-  - A. Blessing
-links:
-  home-page: https://sites.google.com/vt.edu/amarachiblessingmbakwe/home
-  email: bmamarachi@vt.edu
-  github: 
-  google-scholar: GDt7O1AAAAAJ
----
 
-I am currently a Ph.D.  student in the Department of Computer Science at Virginia Tech under the supervision of Dr. Ismini Lourentzou. Before that, I obtained my M.Sc. degree in Computer Science at Austin Peay State University, Clarksville, Tennessee, USA and B.Sc. in Mathematics at Nnamdi Azikiwe University, Awka, Anambra State, Nigeria.  I love reading exciting articles and books or watching interesting discoveries. I also love mentoring young people.
+    ---
+    name: Amarachi Blessing Madu
+    image: images/members/AmarachiMbakwe.jpeg
+    description: Ph.D. Student
+    role: phd-student
+    aliases:
+        - Amarachi Blessing Madu
+        - A Blessing
+        - A. Blessing
+    links: 
+        home-page: https://sites.google.com/vt.edu/amarachiblessingmbakwe/home
+        email: bmamarachi@vt.edu
+        github: AmarachiBlessingMbakwe
+        google-scholar: GDt7O1AAAAAJ
+    ---
+
+    I am a Ph.D. Candidate in Computer Science at Virginia Tech, working under the supervision of Dr. Ismini Lourentzou. My research focuses on artificial intelligence, deep learning, multimodal machine learning, and natural language processing, with applications in healthcare and other sectors. I leverage the synergy between vision and language in my work to develop models aimed at creating a positive societal impact.
+
+    
