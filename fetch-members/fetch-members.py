@@ -42,25 +42,23 @@ for idx, row in enumerate(sheets_data['table']['rows']):
     alias_3 = f'{first_name[0]}. {last_name}'
     
     # start long string named file_content
-    file_content = f'''
-    ---
-    name: {name}
-    image: {image_path}
-    description: {description}
-    role: {role}
-    aliases:
-        - {name}
-        - {alias_2}
-        - {alias_3}
-    links: 
-        home-page: {website}
-        email: {email}
-        github: {github_username}
-        google-scholar: {scholar_id}
-    ---
+    file_content = f'''---
+name: {name}
+image: {image_path}
+description: {description}
+role: {role}
+aliases:
+    - {name}
+    - {alias_2}
+    - {alias_3}
+links: 
+    home-page: {website}
+    email: {email}
+    github: {github_username}
+    google-scholar: {scholar_id}
+---
 
-    {about_me}
-    '''
+{about_me}'''
     
     # dump file contents to a file
     filename = f'{first_name.lower()}-{last_name.lower()}.md'
