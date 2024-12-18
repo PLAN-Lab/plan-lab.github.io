@@ -2,6 +2,11 @@
 title: Home
 ---
 
+{% if page.url == "/calico" %}
+<meta http-equiv="refresh" content="0; url=/projects/calico">
+<p>If you are not redirected automatically, follow this <a href="/projects/calico">link</a>.</p>
+{% endif %}
+
 # Perception and LANguage (PLAN) Group
 
 Our Perception and LANguage (PLAN) research lab is broadly interested in multimodal machine learning and learning with limited supervision. We are particularly interested in building intelligent task assistants that can fuse linguistic, visual, and other types of modalities to perceive and interact with the world. Current language + vision projects involve multimodal representation learning, contrastive self-supervision, embodied AI, video localization and multi-agent communication. Applications include healthcare, medical imaging, manufacturing and misinformation detection.
