@@ -4,6 +4,12 @@
   <body>
     {% include header.html %}
     <main>
+        <script>
+            // Redirect logic for specific paths
+            if (window.location.pathname === '/calico/' || window.location.pathname === '/calico') {
+                window.location.href = '/projects/calico/';
+            }
+        </script>
       {% include content.html content=content %}
     </main>
     {% include footer.html %}
