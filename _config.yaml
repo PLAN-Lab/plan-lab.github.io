@@ -7,8 +7,6 @@ logo: images/plan_lab_logo.png
 header: ""
 footer: ""
 baseurl: ""
-redirects:
-  "/calico": "/projects/calico"
 
 # site social media and other links
 links:
