@@ -8,8 +8,8 @@ header: ""
 footer: ""
 baseurl: ""
 redirects:
-  - from: "/calico"
-    to: "/projects/calico"
+  - from: "/plan-lab/calico"
+    to: "/plan-lab/projects/calico"
 
 # site social media and other links
 links:
