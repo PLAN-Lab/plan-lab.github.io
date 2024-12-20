@@ -2,4 +2,342 @@
 permalink: /prima/
 ---
 
-Coming soon.
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation.">
+  <meta name="keywords" content="PRIMA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><img src="static/images/prima_ballerina.svg" alt="PRIMA logo"
+                width="80px"><span class="model-name">PRIMA</span>: Multi-Image Vision-Language Models for Reasoning Segmentation</h1>
+            <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                  <a href="https://mwahed.com/">Muntasir Wahed<sup class="illini-orange">1*</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/kanguyen-vn/" >Kiet A. Nguyen<sup class="illini-orange">1*</sup></a>,
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/juvekaradheesh/" >Adheesh Juvekar<sup class="illini-orange">1</sup></a>,</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/xinzhuo-li" >Xinzhuo Li<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/xnz" >Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+                </span>
+              </div>
+              <div>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/shahvedant" >Vedant Shah<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                <a href="https://tianjiao-yu.github.io/" >Tianjiao Yu<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://pinguar.org/" >Pinar Yanardag<sup class="vt-maroon">2</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://isminoula.github.io/" >Ismini Lourentzou<sup class="illini-orange">1</sup></a>
+                </span>
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block illini-orange"><sup>1</sup>University of Illinois Urbana-Champaign</span>, 
+              <span class="author-block vt-maroon"><sup>2</sup>Virginia Tech</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (coming soon)</span>
+                  </a>
+                </span>
+                <!-- Demo Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We introduce 
+          the task of <span style="font-style: italic;">multi-image pixel-grounded reasoning segmentation</span>, 
+          with the release of the <span class="model-name">M<sup>4</sup>Seg</span> benchmark consisting of ∼224K question-answer pairs 
+          that require fine-grained visual understanding across multiple images,
+          and the <span class="model-name">PRIMA</span> LVLM model that combines 
+          pixel-level grounding with multi-image reasoning capabilities.
+        </div>
+        <img src="./static/images/prima_teaser.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
+        <div class="content has-text-justified">
+          Our proposed <span style="font-style: italic;">multi-image pixel-grounded reasoning segmentation</span> task 
+          at both object and part levels, where the goal is to achieve fine-grained comparison and contextual understanding
+          across multiple images at pixel level and produce responses grounded in specific objects and parts.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📝 Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Despite significant advancements in Large Vision-Language Models (LVLMs), 
+              existing pixel-grounding models operate on single-image settings, 
+              limiting their ability to perform detailed, fine-grained comparisons across multiple images. 
+              Conversely, current multi-image understanding models lack pixel-level grounding. 
+              Our work addresses this gap by introducing the task of 
+              <span style="font-style: italic; font-weight: bold;">multi-image pixel-grounded reasoning segmentation</span>, 
+              and <span class="model-name">PRIMA</span>, a novel LVLM that integrates pixel-level grounding with robust multi-image reasoning capabilities 
+              to produce contextually rich, pixel-grounded explanations. 
+              Central to PRIMA is an efficient vision module that queries fine-grained visual representations 
+              across multiple images, reducing TFLOPs by 25.3%. To support training and evaluation, 
+              we curate <span class="model-name">M<sup>4</sup>Seg</span>, a new reasoning segmentation benchmark consisting of ∼224K question-answer pairs 
+              that require fine-grained visual understanding across multiple images. 
+              Experimental results demonstrate PRIMA outperforms state-of-the-art baselines.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">💡 Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Novel Task</b>. We propose the novel task of 
+                <span style="font-style: italic; font-weight: bold;">multi-image pixel-grounded reasoning segmentation</span>, 
+                which necessitates fine-grained comparison and contextual understanding 
+                across multiple images at the pixel level, requiring models 
+                to produce responses grounded in specific objects and parts.</li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. We introduce 
+                <span class="model-name">M<sup>4</sup>Seg</span>, a new challenging benchmark with over 224K multi-image QA pairs, 
+                annotated with multiple object and part segmentation masks to enable and evaluate 
+                pixel-grounded multi-image visual understanding.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Multi-Image Pixel-Grounded LVLM</b>. We propose 
+                <span class="model-name">PRIMA</span>, 
+                a vision-language model specifically designed for this new task. Unlike existing models, 
+                <span class="model-name">PRIMA</span> excels in generating natural language responses 
+                accompanied by contextually grounded segmentations across multiple images. 
+                <span class="model-name">PRIMA</span> is optimized for computational efficiency 
+                by incorporating a cross-modal attention mechanism, which enables instruction-guided alignment 
+                of relevant visual features across images, reducing overhead while maintaining high accuracy in 
+                pixel-level reasoning. Extensive experiments demonstrate <span class="model-name">PRIMA</span>’s 
+                performance and efficiency against strong baselines.</li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name"><img src="static/images/prima_ballerina.svg" alt="PRIMA logo"
+            width="40px"> PRIMA</span> Architecture</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/prima_arch.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              <span class="model-name">PRIMA</span>  integrates a multi-image vision encoder that combines DINOv2 
+              for dense semantic feature extraction and Q-Former’s selective query-based cross-attention 
+              to fuse relevant representations across images. The encoder outputs are mapped to a shared 
+              semantic space to facilitate precise pixel-level multi-image grounding. 
+              Leveraging a LoRA-finetuned language model and a SAM-based decoder, 
+              PRIMA dynamically generates segmentation masks corresponding to objects and parts 
+              referenced in natural language queries, supporting pixel-grounded reasoning in complex multi-image tasks.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📊 Quantitative Results</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/results.png" class="interpolation-image" alt="PRIMA results." width="85%" />
+              <p class="has-text-justified">
+                Experimental Results on <span class="model-name">M<sup>4</sup>Seg</span>. 
+                We report performance metrics for segmentation (mIoU and Recall) and reasoning 
+                (Semantic Similarity and S-IoU) to evaluate each model's ability in multi-image pixel-grounded 
+                reasoning segmentation. Computational efficiency metrics (TFLOPs and #samples/sec.) showcase 
+                <span class="model-name">PRIMA</span>’s optimized processing for multi-image tasks.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">🔎 PRIMA in the Wild</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/prima_in_the_wild.png" class="interpolation-image" alt="PRIMA in the wild results." width="85%" />
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <span class="model-name">PRIMA</span>’s performance on unseen images found on the web. 
+            For conciseness, we only visualize relevant segmentation masks.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title">BibTeX</h2>
+          <pre style="justify-content: left;display:flex;">
+            <code>@article{wahed2024prima
+              ...
+            }
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href=".">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+              <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
+              <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a
+                href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a
+                href="https://arxiv.org/pdf/2308.04152">Cheetah</a> for open-sourcing their models
+              and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
