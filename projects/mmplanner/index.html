@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning.">
+  <meta name="keywords" content="MMPlanner">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6K9XMSJM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-X6K9XMSJM2');
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</h1>
+            <div class="is-size-5 publication-authors">
+              
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/afrina-tabassum-a1a3a1102/">Afrina Tabassum<sup class="vt-maroon">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="">Bin Guo<sup
+                      class="illini-blue">2</sup></a>,
+                  <span class="author-block">
+                    <a href="">Xiyao Ma<sup
+                        class="illini-blue">2</sup></a>,</span>
+                  <span class="author-block">
+                    <a href="https://people.cs.vt.edu/hdardiry/">Hoda Eldardiry<sup class="vt-maroon">1</sup></a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">3</sup></a>,
+                  </span>
+              </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block vt-maroon"><sup>1</sup>Virginia Tech</span>
+              <span class="author-block illini-blue"><sup>2</sup>Amazon</span>,
+              <span class="author-block illini-orange"><sup>3</sup>University of Illinois Urbana-Champaign</span>,
+              
+            </div>
+            
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We introduce <u><strong>M</strong></u>ulti<u><strong>M</strong></u>odal <strong>Planner</strong> (<strong>MMPlanner</strong>), 
+            a zero-shot method to generate consistent multimodal plans capturing both explicit and implicit object state changes in visual plan sequences.
+            <strong>MMPlanner</strong> employs a novel Chain-of-Thought (<strong>CoT</strong>) prompting with <u><strong>O</strong></u>bject <u><strong>S</strong></u>tate <u><strong>R</strong></u>easoning 
+              (<strong>OSR-CoT</strong>) to reason about object state changes across sequential steps.
+          </div>
+        <img src="./static/images/mmplanner_teaser.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
+        <div class="content has-text-justified">
+          <p>To scale multimodal procedural planning evaluation and automatically assess the generated multimodal plans, we introduce customized multimodal LLM scorers and propose a comprehensive evaluation covering: 
+(1) <u><strong>T</strong></u>extual-<strong>Plan</strong> <strong>Score</strong> (<strong>T-PlanScore</strong>), a metric that evaluates the planning accuracy and temporal coherence of the generated textual plan;
+(2) <u><strong>C</strong></u>ross-modal <u><strong>A</strong></u>lignment <strong>Score</strong> (<strong>CA-Score</strong>), which evaluates cross-modal alignment between generated visuals and textual steps; and
+(3) <u><strong>V</strong></u>isual <u><strong>S</strong></u>tep <strong>Ordering</strong> (<strong>VS-Ordering</strong>), a task that assesses the informativeness and temporal coherence of the visual plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📝 Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Key challenges in Multimodal Procedural Planning (MPP) include ensuring object-state consistency across multimodal steps and 
+              effectively evaluating planning accuracy, temporal coherence, and informativeness of the multimodal plan. While LLMs improve textual steps, visual object-state alignment 
+              and robust evaluation remain underexplored. We propose <i>MMPlanner</i>, a zero-shot framework using LLMs with Object State Reasoning 
+              Chain-of-Thought (OSR-CoT) prompting to generate plans with accurate object-state transitions. 
+              To assess multimodal plan quality, we introduce two metrics, <i>T-PlanScore</i> and <i>CA-Score</i>, 
+              along with an evaluation task, <i>VS-Ordering</i>, measuring planning accuracy, cross-modal alignment, and temporal coherence collectively. 
+              Experiments demonstrate that <i>MMPlanner</i> surpasses state-of-the-art methods, improving textual evaluation by 6.8%, cross-modal alignment by 11.9%, 
+              and visual step ordering by 26.7%.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <!-- Contributions. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">💡 Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We introduce <b><i>MMPlanner</i></b>, 
+                a zero-shot MPP method that generates coherent multimodal plans with accurate explicit and implicit object state changes in visual plan sequences.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><i>MMPlanner</i> incorporates background context 
+                from previous textual steps through a novel Chain-of-Thought (CoT) with Object State Reasoning (<b>OSR-CoT</b>) prompting method, 
+                ensuring precise visual representations of object states across steps. OSR-CoT reduces inference time by ~46.25% compared to SoTA MPP baselines.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We propose a comprehensive evaluation framework with two metrics, 
+                <b><i>T-PlanScore</i></b> and <b><i>CA-Score</i></b>, and an evaluation task, <b><i>VS-Ordering</i></b>, to collectively assess the planning accuracy, 
+                cross-modal alignment, temporal coherence, and visual informativeness of the generated plans.
+              </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      <!--/ Contributions. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"> MMPlanner</span> Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/mmplanner_overview.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              <b><i>MMPlanner</i></b> consists of three stages: (1) a <b>Textual Plan Generator</b> that produces a sequence of textual steps from the goal, 
+              (2) an <b>Image Description Generator</b> that creates image descriptions from the textual steps, incorporating both explicit 
+              and implicit object state changes, and (3) a <b>Visual Plan Generator</b> that generates the visual plans from the image descriptions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📊 Quantitative Results</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/mmplanner_textual_evaluation.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                <b>Textual Evaluation on <span style="font-variant: small-caps;">RecipePlan</span> and <span style="font-variant: small-caps;">WikiPlan</span>.
+                </b>MMPlanner consistently achieves higher scores, maintaining textual planning accuracy, 
+                while improving cross-modal alignment between visual and textual steps.
+              </p>
+
+              <img src="./static/images/mmplanner_crossmodal_evaluation.png" class="interpolation-image" alt="PRIMA results." width="65%" />
+              <p class="has-text-justified">
+                <b> Step-level cross-modal evaluation.</b> MMPlanner achieves substantial improvements across metrics, 
+                indicating better visual-textual alignment compared to other baselines.
+              </p>
+
+              <img src="./static/images/mmplanner_vs_ordering.png" class="interpolation-image" alt="PRIMA results." width="65%" />
+              <p class="has-text-justified">
+                <b>Visual sequence ordering (VS-Ordering) performance comparison over baselines.</b> 
+                MMPlanner consistently outperforms baselines, demonstrating its ability to generate coherent and informative visual steps.
+              </p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">🔎 Qualitative Examples</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/mmplanner_qualitative.png" class="interpolation-image"
+                alt="Qualitative Examples." width="95%" />
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <b>Qualitative comparison between TIP and MMPlanner</b> for the task of <i><q>How to make broiled grapefruit recipe?</q></i>
+            along with T-PlanScore, CA-Score, and VS-Ordering metrics. 
+            Explicit state changes refer to changes that are explicitly present in both textual and visual steps. 
+            Implicit state changes refer to changes that are not explicitly present in the textual steps but need to be present in the visual steps. 
+            <b>(Left)</b> TIP fails to incorporate explicit and implicit object state changes into the visual steps 
+            (<span style="color: red; font-weight: bold;">red texts and bboxes</span>). <b>(Right)</b> Conversely, MMPlanner incorporates both explicit 
+            (<span style="color: blue; font-weight: bold;">blue texts and bboxes</span>)  and implicit 
+            (<span style="color: green; font-weight: bold;">green texts and bboxes</span>) state changes of the associated objects into the visual steps. 
+            Implicit state changes present/not present in the visual step are mentioned in the <span style="color: orange; font-weight: bold;">orange text</span>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{tabassum2025mmplanner,
+  title={MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning},
+  author={Tabassum, Afrina and Guo, Bin and Ma, Xiyao and Eldardiry, Hoda and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+             We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+              <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
+              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a
+                href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
