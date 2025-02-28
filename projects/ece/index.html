@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Uncertainty in Action: Confidence Elicitation in Embodied Agents">
+  <meta name="keywords" content="ECE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uncertainty in Action: Confidence Elicitation in Embodied Agents</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/player_head.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6K9XMSJM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-X6K9XMSJM2');
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">`
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><img src="static/images/player_head.png" alt="ECE logo"
+                width="40px"><span class="model-name"> Uncertainty in Action: Confidence
+                    Elicitation in Embodied Agents</span></h1>
+            <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                    <a href="https://tianjiao-yu.github.io/" class=illini-orange>Tianjiao Yu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/shahvedant" class=illini-orange>Vedant Shah</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://mwahed.com/" class=illini-orange>Muntasir Wahed</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/kanguyen-vn/" class=illini-orange>Kiet A. Nguyen</a>,
+                </span>
+                
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/juvekaradheesh/" class=illini-orange>Adheesh Juvekar</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://talaugust.github.io/" class=illini-orange>Tal August</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://isminoula.github.io/" class=illini-orange>Ismini Lourentzou</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block">University of Illinois Urbana-Champaign</span>
+
+            </div>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+            <span style="font-weight: bold;">TL;DR:</span>
+            <i class="fa fa-star" style="color:#ff8400;"></i> We propose a framework for embodied verbalized confidence elicitation, designed for multimodal and
+            action-driven environments. 
+            <i class="fa fa-star" style="color:#ff8400;"></i> We introduce 
+            <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> and 
+            <span style="font-style: italic; font-weight: bold;">Execution Policies</span> to enhance confidence estimation in embodied settings. 
+            <i class="fa fa-star" style="color:#ff8400;"></i> We provide the 
+            first structured analysis of <span style="font-style: italic">open-world embodied uncertainty</span> and identify effective methods
+            for improving confidence calibration and failure prediction, while also pinpointing persistent challenges.
+          </div>
+        <div style="text-align: center; padding: 0 0 20px 0;">
+            <img src="./static/images/teaser.png" class="interpolation-image"
+            alt="Interpolate start reference image." style="width: 50%; height: auto;" />
+            <p class="has-text-justified">
+                Our proposed <span style="font-style: italic">Confidence Estimation Framework</span> introduces a structured approach to assessing and expressing an agent’s confidence through
+                 <span style="font-style: italic">Elicitation Policies</span> and <span style="font-style: italic">Execution Policies</span>.
+                  Operating at both perception and action stages, Elicitation Modules prompt the agent to evaluate uncertainty in its observations and decisions.
+                   Execution Policies further refine confidence calibration by expanding the agent’s reasoning space, enabling more robust and context-aware decision-making.
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Expressing confidence is crucial for embodied agents as they navigate dynamic, multimodal environments where uncertainty arises from both perception and decision-making processes.
+                To the best of our knowledge, this is the first work investigating <span style="font-style: italic">open-world embodied confidence elicitation</span>, focusing on settings where agents,
+                powered by large language models and vision-language models, lack direct access to their internal reasoning processes.
+                We introduce <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> designed to address inductive, deductive, and abductive uncertainties,
+                along with <span style="font-style: italic; font-weight: bold;">Execution Policies</span> for scenario reinterpretation, action sampling, and hypothetical reasoning.
+                Evaluating agents on calibration and failure prediction tasks in the Minecraft environment, we show that structured reasoning approaches,
+                such as Chain-of-Thoughts, improve confidence calibration performance. However, our findings also reveal persistent challenges in distinguishing uncertainty,
+                particularly under abductive settings, highlighting the need for more sophisticated embodied confidence elicitation methods.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <!-- <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We propose a framework for embodied verbalized confidence elicitation, designed for multimodal and
+                action-driven environments.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We introduce <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> and
+                 <span style="font-style: italic; font-weight: bold;">Execution Policies</span> to enhance confidence estimation in embodied settings.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We provide the <span style="font-style: italic">first</span> structured analysis of embodied uncertainty and identify effective methods
+                 for improving confidence calibration and failure prediction, while also pinpointing persistent challenges.
+              </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name"></span> Embodied Confidence Elicitation</h2>
+          <div class="content has-text-justified" style="text-align: center; padding: 0 0 20px 0;">
+            <img src="static/images/policy_examplev3.1.drawio.png" class="interpolation-image" alt="ECE Architecture" width="95%" 
+     style="display: block; margin: 0 auto;">
+            <p class="has-text-justified">
+                <b>Embodied Confidence Elicitation.</b> 
+                <i>Elicitation Policies</i> enable agents to express uncertainty, 
+                while <i>Execution Policies</i> refine and expand confidence assessment through scenario reinterpretation, 
+                action sampling, and hypothetical reasoning. Together, they enhance confidence calibration in embodied agents. 
+                The <span style="color: rgb(255, 140, 0); font-weight: bold;">orange text</span> represents the vanilla elicitation policy, 
+                which incorporates the vanilla confidence prompt into the original instruction. 
+                The <span style="color: rgb(94, 53, 2); font-weight: bold;">brown arrows</span> denote
+                 the Scenario-Reinterpretation execution policy, prompting the agent to generate additional scene insights. 
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/r1.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                    <b>Confidence Metrics Across Elicitation Policies</b> with three models (GPT-4V, MineLLM, and LLaMA-based STEVE) using different elicitation strategies:  
+                    <b>Vanilla</b> (basic task understanding),  
+                    <b>Self-Intervention</b> (reflection on own actions),  
+                    <b>Chain-of-Thought</b> (step-by-step reasoning),  
+                    <b>Plan & Solve</b> (explicit planning before execution), and  
+                    <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.  
+                    The best performance across each model is in <b>bold</b>.
+              </p>
+            </div>
+              <br>
+              <br>
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/r2.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <b>ECE and AUROC across models and Execution Policies.</b>  
+                Each row contains metrics for <b>ECE</b> (top) and <b>AUROC</b> (bottom) for three different models: GPT-4V, MineLLM, and STEVE,  
+                under different uncertainty elicitation and execution policies.  
+                <span style="color: red;">Red lines</span> represent the average ECE and AUROC with no execution policy applied.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <!-- <pre><code>@article{wahed2024prima,
+  title={PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation},
+  author={Wahed, Muntasir and Nguyen, Kiet A and Juvekar, Adheesh Sunil and Li, Xinzhuo and Zhou, Xiaona and Shah, Vedant and Yu, Tianjiao and Yanardag, Pinar and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:2412.15209},
+  year={2024}
+}</code></pre> -->
+        <pre><code>xxxxxx
+        </code></pre>    
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/abs/2206.08853">Minedojo</a>,
+                <a href="https://arxiv.org/abs/2305.16291">Voyager</a>, and 
+              <a href="https://arxiv.org/abs/2312.07472v2">MP5</a>
+              for open-sourcing their projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
