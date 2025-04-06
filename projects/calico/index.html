@@ -31,10 +31,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
+            <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
                 width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
               Vision-Language Models</h1>
-            <h1 class="title is-3 publication-venue illini-orange">🚀Accepted to CVPR 2025🚀</h1>
+            <h1 class="title is-3 publication-venue illini-orange">CVPR 2025</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>
@@ -158,8 +158,8 @@
               manner. To support training and evaluation, we curate
               <span class="model-name">MixedParts</span>, a large-scale multi-image segmentation dataset containing
               ~2.4M samples across
-              ~44K images spanning diverse object and part categories. Experimental results demonstrate that <span
-                class="model-name">Calico</span>, with just 0.3% of its parameters finetuned, achieves strong
+              ~44K images spanning diverse object and part categories. With just 0.3% of its parameters finetuned, <span
+                class="model-name">Calico</span> achieves strong
               performance on this challenging task.
             </p>
           </div>
@@ -245,17 +245,7 @@
         <div class="column">
           <h2 class="title is-3"><span class="model-name">MixedParts</span> Dataset</h2>
           <div class="content has-text-justified">
-            <p>
-              Although multi-image datasets of various scales are available, they exhibit combinations of limitations,
-              making them
-              unsuitable for the part-focused semantic co-segmentation
-              task. Limitations include the absence of fine-grained
-              masks for segmentation, datasets being too small or domain-specific to facilitate generalizable LVLM
-              training despite containing localized labels, or the lack of part-level information altogether.</p>
-
-            <p>To address these
-              challenges and enable effective training and evaluation of our part-focused semantic
-              co-segmentation model, we introduce a novel dataset named
+            <p>To support training and evaluation for part-focused co-segmentation, we introduce a novel dataset named
               <span class="model-name">MixedParts</span>, curated from publicly available part segmentation datasets:
               <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a
                 href="https://github.com/facebookresearch/paco">PACO</a>, and <a
@@ -307,6 +297,12 @@
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Qualitative Results</h2>
+          <p class="has-text-justified" style="padding-bottom:30px;">
+            <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
+            humans, animals)
+            and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
+            of a pool table):
+          </p>
           <div class="qual-example">
             <div class="image-container">
               <img src="static/images/qualitatives/preds_object_object_0.png" alt="Image 1" class="image">
@@ -365,14 +361,13 @@
               <span class="highlight ten">a&nbsp;bed</span>, and <span class="highlight eleven">a&nbsp;pocket</span>.
             </p>
           </div>
-
-          <p class="has-text-justified" style="padding-bottom:40px;">
-            <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
-            humans, animals)
-            and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
-            of a pool table).
+          <p class="has-text-justified" style="padding-bottom:30px;">
+            <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
+            across
+            images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
+            model to segment different objects accordingly, rather than
+            defaulting to the most salient object in each image:
           </p>
-
           <div class="qual-example">
             <div class="image-container">
               <img src="static/images/qualitatives/in_context_0_0.png" alt="Image 1" class="image">
@@ -392,13 +387,6 @@
                 class="highlight thirteen">a&nbsp;car</span>.
             </p>
           </div>
-          <p class="has-text-justified">
-            <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
-            across
-            images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
-            model to segment different objects accordingly, rather than
-            defaulting to the most salient object in each image.
-          </p>
         </div>
       </div>
     </div>
@@ -413,7 +401,7 @@
       <pre><code>@article{nguyen2025calico,
   title={CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models},
   author={Nguyen, Kiet A. and Juvekar, Adheesh and Yu, Tianjiao and Wahed, Muntasir and Lourentzou, Ismini},
-  journal={The IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  journal={In Proceedings for the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2025}
 }</code></pre>
     </div>
