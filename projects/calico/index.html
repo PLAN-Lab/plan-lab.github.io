@@ -34,7 +34,7 @@
             <h1 class="title is-1 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
                 width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
               Vision-Language Models</h1>
-            <h2 class="publication-venue illini-orange">Accepted to CVPR 2025</h2>
+            <h1 class="title is-3 publication-venue illini-orange">🚀Accepted to CVPR 2025🚀</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>
@@ -139,30 +139,28 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Recent advances in Large Vision-Language Models (LVLMs) have sparked significant progress in
-              general-purpose vision tasks through visual instruction tuning. While some works have demonstrated the
-              capability of LVLMs to generate segmentation masks that align phrases with natural language descriptions
-              in a single image, they struggle with segmentation-grounded comparisons across multiple images,
-              particularly at finer granularities such as object parts. In this paper, we introduce the new task of
+              Recent advances in Large Vision-Language Models (LVLMs) have enabled general-purpose vision tasks through
+              visual instruction tuning.
+              While existing LVLMs can generate segmentation masks from text prompts for single images, they struggle
+              with segmentation-grounded reasoning across images, especially at finer granularities such as object
+              parts. In this paper, we introduce the new task of
               <span style="font-style: italic; font-weight: bold;">part-focused semantic co-segmentation</span>, which
-              seeks to identify
-              and segment common and unique
-              objects and parts across multiple images.
+              involves identifying and segmenting common objects, as well as common and unique object parts across
+              images.
             </p>
 
             <p>To address this task, we present <span class="model-name">Calico</span>, the first LVLM
-              that can segment and reason over multiple masks across images, enabling object comparison based on their
-              constituent parts. <span class="model-name">Calico</span> features two proposed components, a novel
+              designed for multi-image part-level reasoning segmentation. <span class="model-name">Calico</span>
+              features two proposed components, a novel
               Correspondence Extraction
-              Module, which captures semantic-rich information to identify part-level correspondences between objects,
-              and a Correspondence Adaptation Module, which embeds this information into the LLM and facilitates
-              multi-image understanding in a parameter-efficient manner. To support training and evaluation, we curate
-              <span class="model-name">MixedParts</span>, a comprehensive multi-image segmentation dataset containing
+              Module that identifies semantic part-level correspondences, and Correspondence Adaptation Modules that
+              embed this information into the LVLM to facilitate multi-image understanding in a parameter-efficient
+              manner. To support training and evaluation, we curate
+              <span class="model-name">MixedParts</span>, a large-scale multi-image segmentation dataset containing
               ~2.4M samples across
-              ~44K images with diverse object and part categories. Experimental results show <span
-                class="model-name">Calico</span>,
-              finetuned on only 0.3% of its architecture, achieves robust performance in part-focused semantic
-              co-segmentation.
+              ~44K images spanning diverse object and part categories. Experimental results demonstrate that <span
+                class="model-name">Calico</span>, with just 0.3% of its parameters finetuned, achieves strong
+              performance on this challenging task.
             </p>
           </div>
         </div>
@@ -188,7 +186,8 @@
                   style="font-weight: bold;">C</u>omponent-Focused <u style="font-weight: bold;">A</u>daptive
                 <u style="font-weight: bold;">L</u>earning for Multi-<u style="font-weight: bold;">I</u>mage <u
                   style="font-weight: bold;">C</u>o-Localization of <u style="font-weight: bold;">O</u>bjects),
-                an LVLM designed for part-focused semantic co-segmentation. CALICO incorporates a novel correspondence
+                an LVLM designed for part-focused semantic co-segmentation. <span class="model-name">Calico</span>
+                incorporates a novel correspondence
                 extraction module to learn cross-image semantic correspondences and an
                 adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient
                 manner.
@@ -325,8 +324,8 @@
               <img src="static/images/qualitatives/preds_object_object_3.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The object present in the images is
-              <span class="highlight two">the&nbsp;car</span>.
+              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include
+              <span class="highlight two">a&nbsp;car</span>.
             </p>
           </div>
 
@@ -344,8 +343,8 @@
             <p class="caption has-text-centered">
               <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
                 class="highlight three">a&nbsp;snake</span> and <span class="highlight four">a&nbsp;dog</span>.<br>The
-              common parts in both objects are <span class="highlight five">the&nbsp;body</span> and <span
-                class="highlight six">the&nbsp;head</span>.
+              detected common parts are <span class="highlight five">a&nbsp;body</span> and <span
+                class="highlight six">a&nbsp;head</span>.
             </p>
           </div>
 
@@ -359,12 +358,47 @@
               <img src="static/images/qualitatives/preds_unique_part_parts_1.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images contain <span
-                class="highlight seven">a&nbsp;bed</span> and <span class="highlight eight">a&nbsp;table</span>.<br>The
-              unique parts between the objects are <span class="highlight nine">a&nbsp;headboard</span>,
-              <span class="highlight ten">a&nbsp;top</span>, and <span class="highlight eleven">a&nbsp;leg</span>.
+              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
+                class="highlight seven">a&nbsp;bed</span> and <span
+                class="highlight eight">a&nbsp;pool&nbsp;table</span>.<br>The
+              unique parts present are <span class="highlight nine">a&nbsp;headboard</span>,
+              <span class="highlight ten">a&nbsp;bed</span>, and <span class="highlight eleven">a&nbsp;pocket</span>.
             </p>
           </div>
+
+          <p class="has-text-justified" style="padding-bottom:40px;">
+            <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
+            humans, animals)
+            and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
+            of a pool table).
+          </p>
+
+          <div class="qual-example">
+            <div class="image-container">
+              <img src="static/images/qualitatives/in_context_0_0.png" alt="Image 1" class="image">
+              <img src="static/images/qualitatives/in_context_0_1.png" alt="Image 2" class="image">
+            </div>
+            <p class="caption has-text-centered">
+              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
+                class="highlight twelve">a&nbsp;dog</span>.
+            </p>
+            <hr style="background-color:LightGray;margin:50px;">
+            <div class="image-container">
+              <img src="static/images/qualitatives/in_context_1_0.png" alt="Image 1" class="image">
+              <img src="static/images/qualitatives/in_context_1_1.png" alt="Image 2" class="image">
+            </div>
+            <p class="caption has-text-centered">
+              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include <span
+                class="highlight thirteen">a&nbsp;car</span>.
+            </p>
+          </div>
+          <p class="has-text-justified">
+            <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
+            across
+            images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
+            model to segment different objects accordingly, rather than
+            defaulting to the most salient object in each image.
+          </p>
         </div>
       </div>
     </div>

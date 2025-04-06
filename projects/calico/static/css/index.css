@@ -59,8 +59,8 @@ body {
 
 .publication-venue {
   color: #555;
-  width: fit-content;
   font-weight: bold;
+  font-family: 'Google Sans', sans-serif;
 }
 
 .publication-awards {
@@ -218,47 +218,55 @@ li {
 }
 
 .caption .highlight.one {
-  background-color: #c5062950;
+  background-color: #5d0b6d50;
 }
 
 .caption .highlight.two {
-  background-color: #a8f24a50;
+  background-color: #a8f24a80;
 }
 
 .caption .highlight.three {
-  background-color: #5d0b6d50;
+  background-color: #c5062950;
 }
 
 .caption .highlight.four {
-  background-color: #84eef450;
+  background-color: #930f0d50;
 }
 
 .caption .highlight.five {
-  background-color: #a8f24a50;
+  background-color: #84eef480;
 }
 
 .caption .highlight.six {
-  background-color: #930f0d50;
+  background-color: #1804e050;
 }
 
 .caption .highlight.seven {
-  background-color: #cbfca750;
+  background-color: #84eef480;
 }
 
 .caption .highlight.eight {
-  background-color: #5d0b6d50;
+  background-color: #c5062950;
 }
 
 .caption .highlight.nine {
-  background-color: #bc008250;
+  background-color: #6e0d7050;
 }
 
 .caption .highlight.ten {
-  background-color: #930f0d50;
+  background-color: #3603c950;
 }
 
 .caption .highlight.eleven {
-  background-color: #3603c950;
+  background-color: #f6fa4080;
+}
+
+.caption .highlight.twelve {
+  background-color: #bc008250;
+}
+
+.caption .highlight.thirteen {
+  background-color: #a8f24a80;
 }
 
 .qual-example {
@@ -278,5 +286,5 @@ li {
 }
 
 .illini-orange {
-  color: #FF5F05;
+  color: #F07B41;
 }
