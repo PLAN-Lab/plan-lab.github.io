@@ -1,8 +1,8 @@
 ---
 name: Kajal Patel
 image: images/members/KajalPatelPhoto.jpg
-description: M.S. Student 
-role: ms-student
+description: Undergraduate Student 
+role: undergrad
 aliases:
   - Kajal Patel
   - K Patel
