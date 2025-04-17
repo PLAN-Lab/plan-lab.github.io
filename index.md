@@ -73,13 +73,14 @@ Our Perception and LANguage (PLAN) research lab is broadly interested in multimo
   tooltip4="Center for Advanced Innovation in Agriculture"
 
 %}
--->
+
 {% include section.html %}
 # Funding
 
 Our work is made possible by funding from several organizations.
 {:.center}
 {% include banner.html image="images/funding/funding_merged.png" %}
+-->
 
 <!--
 # Affiliations
