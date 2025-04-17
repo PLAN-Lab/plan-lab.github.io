@@ -1,15 +1,15 @@
 ---
 name: Kajal Patel
 image: images/members/KajalPatelPhoto.jpg
-description: B.S. Student 
+description: M.S. Student 
 role: ms-student
 aliases:
   - Kajal Patel
   - K Patel
   - K. Patel
 links:
-  home-page: 
-  email: 
+  home-page: https://www.linkedin.com/in/kajalpatelinfo 
+  email: kpate457@illinois.edu
   github: 
   google-scholar: 
 ---
