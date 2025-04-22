@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main>
+        <script>
+            // Redirect logic for specific paths
+            if (window.location.pathname === '/calico/' || window.location.pathname === '/calico') {
+                window.location.href = '/projects/calico/';
+            }
+	    if (window.location.pathname === '/prima/' || window.location.pathname === '/prima') {
+                window.location.href = '/projects/prima/';
+            }
+	    if (window.location.pathname === '/ece/' || window.location.pathname === '/ece') {
+                window.location.href = '/projects/ece/';
+            }
+	    if (window.location.pathname === '/mmplanner/' || window.location.pathname === '/mmplanner') {
+                window.location.href = '/projects/mmplanner/';
+            }
+        </script>
+      {% include navbar.html %}
+      {% include content.html content=content %}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
