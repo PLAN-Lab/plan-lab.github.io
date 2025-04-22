@@ -1,45 +1,45 @@
-.project-page body {
+body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-.project-page .footer {
+.footer {
   background-color: #dadada81;
 }
 
 
-.project-page .footer .icon-link {
+.footer .icon-link {
   font-size: 25px;
   color: #000;
 }
 
-.project-page .link-block a {
+.link-block a {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.project-page .dnerf {
+.dnerf {
   font-variant: small-caps;
 }
 
 
-.project-page .teaser .hero-body {
+.teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
 }
 
-.project-page .teaser {
+.teaser {
   font-family: 'Google Sans', sans-serif;
 }
 
 
 .publication-title {}
 
-.project-page .publication-banner {
+.publication-banner {
   max-height: parent;
 
 }
 
-.project-page .publication-banner video {
+.publication-banner video {
   position: relative;
   left: auto;
   top: auto;
@@ -49,21 +49,21 @@
 
 .publication-header .hero-body {}
 
-.project-page .publication-title {
+.publication-title {
   font-family: 'Google Sans', sans-serif;
 }
 
-.project-page .publication-authors {
+.publication-authors {
   font-family: 'Google Sans', sans-serif;
 }
 
-.project-page .publication-venue {
+.publication-venue {
   color: #555;
   font-weight: bold;
   font-family: 'Google Sans', sans-serif;
 }
 
-.project-page .publication-awards {
+.publication-awards {
   color: #ff3860;
   width: fit-content;
   font-weight: bolder;
@@ -71,27 +71,27 @@
 
 .publication-authors {}
 
-.project-page .publication-authors a {
+.publication-authors a {
   /* color: hsl(204, 86%, 53%) !important; */
   color: #13294B !important;
   /* font-weight: bold; */
 }
 
-.project-page .publication-authors a:hover {
+.publication-authors a:hover {
   text-decoration: underline;
 }
 
-.project-page .author-block {
+.author-block {
   display: inline-block;
 }
 
 .publication-banner img {}
 
-.project-page .publication-authors {
+.publication-authors {
   /*color: #4286f4;*/
 }
 
-.project-page .publication-video {
+.publication-video {
   position: relative;
   width: 100%;
   height: 0;
@@ -101,7 +101,7 @@
   border-radius: 10px !important;
 }
 
-.project-page .publication-video iframe {
+.publication-video iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -111,11 +111,11 @@
 
 .publication-body img {}
 
-.project-page .results-carousel {
+.results-carousel {
   overflow: hidden;
 }
 
-.project-page .results-carousel .item {
+.results-carousel .item {
   margin: 5px;
   overflow: hidden;
   border: 1px solid #bbb;
@@ -124,65 +124,65 @@
   font-size: 0;
 }
 
-.project-page .results-carousel video {
+.results-carousel video {
   margin: 0;
 }
 
 
-.project-page .interpolation-panel {
+.interpolation-panel {
   background: #f5f5f5;
   border-radius: 10px;
 }
 
-.project-page .interpolation-panel .interpolation-image {
+.interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;
 }
 
 .interpolation-video-column {}
 
-.project-page .interpolation-panel .slider {
+.interpolation-panel .slider {
   margin: 0 !important;
 }
 
-.project-page .interpolation-panel .slider {
+.interpolation-panel .slider {
   margin: 0 !important;
 }
 
-.project-page #interpolation-image-wrapper {
+#interpolation-image-wrapper {
   width: 100%;
 }
 
-.project-page #interpolation-image-wrapper img {
+#interpolation-image-wrapper img {
   border-radius: 5px;
 }
 
-.project-page .model-name {
+.model-name {
   font-variant: small-caps;
   font-weight: bolder;
 }
 
-.project-page li {
+li {
   list-style-type: none;
 }
 
-.project-page .horizontal-container {
+.horizontal-container {
   display: flex;
   align-items: top;
 }
 
-.project-page .horizontal-container p {
+.horizontal-container p {
   flex: 1;
   margin-right: 16px;
 }
 
-.project-page .horizontal-container img {
+.horizontal-container img {
   flex: 0 0 50%;
   max-width: 42%;
   height: auto;
 }
 
-.project-page .image-container-container {
+.image-container-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,7 +190,7 @@
   flex-direction: column;
 }
 
-.project-page .image-container {
+.image-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,78 +198,78 @@
   /* Ensures a consistent 10px gap between images */
 }
 
-.project-page .image {
+.image {
   height: 300px;
   width: 400px;
   display: block;
 }
 
-.project-page .caption {
+.caption {
   margin-top: 10px;
   font-size: 16px;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.project-page .caption .highlight {
+.caption .highlight {
   padding: 2px 5px;
   border-radius: 3px;
   font-weight: bold;
 }
 
-.project-page .caption .highlight.one {
+.caption .highlight.one {
   background-color: #5d0b6d50;
 }
 
-.project-page .caption .highlight.two {
+.caption .highlight.two {
   background-color: #a8f24a80;
 }
 
-.project-page .caption .highlight.three {
+.caption .highlight.three {
   background-color: #c5062950;
 }
 
-.project-page .caption .highlight.four {
+.caption .highlight.four {
   background-color: #930f0d50;
 }
 
-.project-page .caption .highlight.five {
+.caption .highlight.five {
   background-color: #84eef480;
 }
 
-.project-page .caption .highlight.six {
+.caption .highlight.six {
   background-color: #1804e050;
 }
 
-.project-page .caption .highlight.seven {
+.caption .highlight.seven {
   background-color: #84eef480;
 }
 
-.project-page .caption .highlight.eight {
+.caption .highlight.eight {
   background-color: #c5062950;
 }
 
-.project-page .caption .highlight.nine {
+.caption .highlight.nine {
   background-color: #6e0d7050;
 }
 
-.project-page .caption .highlight.ten {
+.caption .highlight.ten {
   background-color: #3603c950;
 }
 
-.project-page .caption .highlight.eleven {
+.caption .highlight.eleven {
   background-color: #f6fa4080;
 }
 
-.project-page .caption .highlight.twelve {
+.caption .highlight.twelve {
   background-color: #bc008250;
 }
 
-.project-page .caption .highlight.thirteen {
+.caption .highlight.thirteen {
   background-color: #a8f24a80;
 }
 
-.project-page .qual-example {
+.qual-example {
   border: 2px solid #00000000;
   border-radius: 30px;
   padding: 20px;
@@ -277,14 +277,14 @@
   margin-bottom: 30px;
 }
 
-.project-page .qual-example:last-child {
+.qual-example:last-child {
   margin-bottom: 0px;
 }
 
-.project-page .illini-blue {
+.illini-blue {
   color: #13294B;
 }
 
-.project-page .illini-orange {
+.illini-orange {
   color: #F07B41;
 }
