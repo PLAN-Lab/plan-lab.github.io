@@ -143,7 +143,6 @@
   tags:
     - vision-language models
     - pixel-grounding
-
 - id: doi:10.48550/arXiv.2503.10628
   tags:
     - embodied AI
