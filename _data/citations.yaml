@@ -401,3 +401,70 @@
   - contrastive learning
   - robust representations
   _cache: 23c997743d403325c8bd3a300cb9c621fc0a54481b86b30fb37990acbb220126
+- id: doi:10.48550/arXiv.2412.15209
+  title: 'PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation'
+  authors:
+  - Muntasir Wahed
+  - Kiet A. Nguyen
+  - Adheesh Sunil Juvekar
+  - Xinzhuo Li
+  - Xiaona Zhou
+  - Vedant Shah
+  - Tianjiao Yu
+  - Pinar Yanardag
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2024-01-01'
+  link: https://doi.org/g9mwdb
+  tags:
+  - vision-language models
+  - pixel-grounding
+  _cache: e79960c1bdffa7721c509a76ee0c8e8a8f2d84ceaeb152b765b8a56566388c0d
+- id: doi:10.48550/arXiv.2412.19331
+  title: null
+  authors:
+  - Kiet A. Nguyen
+  - Adheesh Juvekar
+  - Tianjiao Yu
+  - Muntasir Wahed
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2024-01-01'
+  link: https://doi.org/g9mwdc
+  tags:
+  - vision-language models
+  - pixel-grounding
+  _cache: d3467978cea0e413e247d2ff265e0b03e864a3f85c13dc8ca93a68497c4f55d0
+- id: doi:10.48550/arXiv.2503.10628
+  title: 'Uncertainty in Action: Confidence Elicitation in Embodied Agents'
+  authors:
+  - Tianjiao Yu
+  - Vedant Shah
+  - Muntasir Wahed
+  - Kiet A. Nguyen
+  - Adheesh Juvekar
+  - Tal August
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g9mwdd
+  tags:
+  - embodied AI
+  - uncertainty estimation
+  _cache: fd02480cade4b713ce8cd9faf6196821ecef7a4a31bb60a97cfc7159654210ec
+- id: doi:10.1145/3691620.3695524
+  title: Semi-Supervised Code Translation Overcoming the Scarcity of Parallel Code
+    Data
+  authors:
+  - Ming Zhu
+  - Mohimenul Karim
+  - Ismini Lourentzou
+  - Daphne Yao
+  publisher: Proceedings of the 39th IEEE/ACM International Conference on Automated
+    Software Engineering
+  date: '2024-10-27'
+  link: https://doi.org/g9mwdf
+  tags:
+  - code translation
+  - semi-supervised learning
+  _cache: b19a884f23642534ee8fda9de8ee15c19e3668e05989235c20bc81a799d8c701
