@@ -134,12 +134,15 @@
   link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
 
 - id: doi:10.48550/arXiv.2412.15209
+  image: images/publications/prima.png
   tags:
     - vision-language models
     - pixel-grounding
 
 - id: doi:10.48550/arXiv.2412.19331
-  title: 
+  image: images/publications/calico.png
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition 
+  date: '2025-06-12'
   tags:
     - vision-language models
     - pixel-grounding
@@ -148,6 +151,7 @@
     - embodied AI
     - uncertainty estimation
 - id: doi:10.1145/3691620.3695524
+  image: images/publications/miracle.png
   tags:
     - code translation
     - semi-supervised learning
