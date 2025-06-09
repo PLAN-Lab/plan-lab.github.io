@@ -414,13 +414,13 @@
   - Pinar Yanardag
   - Ismini Lourentzou
   publisher: arXiv
-  date: '2024-01-01'
+  date: '2024-12-31'
   link: https://doi.org/g9mwdb
   image: images/publications/prima.png
   tags:
   - vision-language models
   - pixel-grounding
-  _cache: a4fc13217a2fd5ccf510f8e40fd9ef58399f81bdfc6fc9b0501d8f22ef851475
+  _cache: f24c2cf0d14cc069293d4094dc2b1ca74b42aa2108d2f5ebcddc678c717fe4cd
 - id: doi:10.48550/arXiv.2412.19331
   title: 'CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language
     Models'
@@ -451,10 +451,11 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g9mwdd
+  image: images/publications/uncertainty.png
   tags:
   - embodied AI
   - uncertainty estimation
-  _cache: fd02480cade4b713ce8cd9faf6196821ecef7a4a31bb60a97cfc7159654210ec
+  _cache: 9db3d2d079b8d5523c26adb76787bff60ca010d5387d4aff78600d77a476eb04
 - id: doi:10.1145/3691620.3695524
   title: Semi-Supervised Code Translation Overcoming the Scarcity of Parallel Code
     Data
