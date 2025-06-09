@@ -134,6 +134,7 @@
   link: https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf
 
 - id: doi:10.48550/arXiv.2412.15209
+  date: '2024-12-31'
   image: images/publications/prima.png
   tags:
     - vision-language models
@@ -147,6 +148,7 @@
     - vision-language models
     - pixel-grounding
 - id: doi:10.48550/arXiv.2503.10628
+  image: images/publications/uncertainty.png
   tags:
     - embodied AI
     - uncertainty estimation
