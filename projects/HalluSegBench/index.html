@@ -60,8 +60,10 @@ title: HalluSegBench
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">PLAN Lab</span>,
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>*</span> Equal Contribution</span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
             </div>
+
+            <div class="is-size-5 publication-authors">*</span> Equal Contribution</span></div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -291,107 +293,47 @@ title: HalluSegBench
   </section>
 
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Qualitative Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            <span class="model-name">HalluSegBench</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
-            humans, animals)
-            and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
-            of a pool table):
+            <span class="model-name">HalluSegBench</span> demonstrates the hallucination severity of different reasoning-based segmentation models. 
+            We present qualitative examples that illustrate the predictions of benchmarked models across the four query-image combinations, 
+            along with the corresponding ground truth mask
           </p>
           <div class="qual-example">
             <div class="image-container">
-              <img src="static/images/qualitatives/preds_object_object_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_object_object_1.png" alt="Image 2" class="image">
+              <img src="static/images/example1.png" alt="Image 1" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The common object is <span
-                class="highlight one">the&nbsp;person</span>.
+              Here, <i>c</i> = “the middle elephant” and <i>c′</i> = “a rhinoceros”.
+            </p>
+          </div>
+          <div class="qual-example">
+            <div class="image-container">
+              <img src="static/images/example3.png" alt="Image 1" class="image">
+            </div>
+            <p class="caption has-text-centered">
+              Here, <i>c</i> = “ull grown sheep” and <i>c′</i> = “a cow”.
+            </p>
+          </div>
+          <div class="qual-example">
+            <div class="image-container">
+              <img src="static/images/example2.png" alt="Image 1" class="image">
+            </div>
+            <p class="caption has-text-centered">
+              Here, <i>c</i> = “front cow” and <i>c′</i> = “front pig”.
             </p>
           </div>
 
-          <div class="qual-example">
-            <div class="image-container">
-              <img src="static/images/qualitatives/preds_object_object_2.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_object_object_3.png" alt="Image 2" class="image">
-            </div>
-            <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include
-              <span class="highlight two">a&nbsp;car</span>.
-            </p>
-          </div>
-
-          <div class="qual-example">
-            <div class="image-container-container">
-              <div class="image-container">
-                <img src="static/images/qualitatives/preds_common_part_object_0.png" alt="Image 1" class="image">
-                <img src="static/images/qualitatives/preds_common_part_object_1.png" alt="Image 2" class="image">
-              </div>
-              <div class="image-container">
-                <img src="static/images/qualitatives/preds_common_part_parts_0.png" alt="Image 1" class="image">
-                <img src="static/images/qualitatives/preds_common_part_parts_1.png" alt="Image 2" class="image">
-              </div>
-            </div>
-            <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight three">a&nbsp;snake</span> and <span class="highlight four">a&nbsp;dog</span>.<br>The
-              detected common parts are <span class="highlight five">a&nbsp;body</span> and <span
-                class="highlight six">a&nbsp;head</span>.
-            </p>
-          </div>
-
-          <div class="qual-example">
-            <div class="image-container">
-              <img src="static/images/qualitatives/preds_unique_part_object_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_unique_part_object_1.png" alt="Image 2" class="image">
-            </div>
-            <div class="image-container">
-              <img src="static/images/qualitatives/preds_unique_part_parts_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_unique_part_parts_1.png" alt="Image 2" class="image">
-            </div>
-            <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight seven">a&nbsp;bed</span> and <span
-                class="highlight eight">a&nbsp;pool&nbsp;table</span>.<br>The
-              unique parts present are <span class="highlight nine">a&nbsp;headboard</span>,
-              <span class="highlight ten">a&nbsp;bed</span>, and <span class="highlight eleven">a&nbsp;pocket</span>.
-            </p>
-          </div>
-          <p class="has-text-justified" style="padding-bottom:30px;">
-            <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
-            across
-            images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
-            model to segment different objects accordingly, rather than
-            defaulting to the most salient object in each image:
-          </p>
-          <div class="qual-example">
-            <div class="image-container">
-              <img src="static/images/qualitatives/in_context_0_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/in_context_0_1.png" alt="Image 2" class="image">
-            </div>
-            <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight twelve">a&nbsp;dog</span>.
-            </p>
-            <hr style="background-color:LightGray;margin:50px;">
-            <div class="image-container">
-              <img src="static/images/qualitatives/in_context_1_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/in_context_1_1.png" alt="Image 2" class="image">
-            </div>
-            <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include <span
-                class="highlight thirteen">a&nbsp;car</span>.
-            </p>
-          </div>
         </div>
       </div>
     </div>
     </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!-- <section class="section" id="BibTeX">
