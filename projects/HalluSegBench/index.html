@@ -60,7 +60,7 @@ title: HalluSegBench
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">PLAN Lab</span>,
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>*</span> Equal Contribution</span>
             </div>
 
             <div class="column has-text-centered">
@@ -150,7 +150,7 @@ title: HalluSegBench
               However, these models often exhibit hallucination by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. 
               Current evaluation paradigms primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. 
               In response, we introduce <span class="model-name">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>.
-              Our benchmark consists of a novel dataset of 1.4K counterfactual image pairs spanning 287 unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
+              Our benchmark consists of a novel dataset of 1.4K factual-counterfactual instance pairs spanning 287 unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
               Experiments on <span class="model-name">HalluSegBench</span> with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
             </p>
           </div>
@@ -297,7 +297,7 @@ title: HalluSegBench
         <div class="column">
           <h2 class="title is-3">Qualitative Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
+            <span class="model-name">HalluSegBench</span> demonstrates pixel-grounded understanding of various non-rigid (e.g.,
             humans, animals)
             and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
             of a pool table):
@@ -397,10 +397,10 @@ title: HalluSegBench
   <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{nguyen2025calico,
-  title={CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models},
-  author={Nguyen, Kiet A. and Juvekar, Adheesh and Yu, Tianjiao and Wahed, Muntasir and Lourentzou, Ismini},
-  journal={In Proceedings for the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      <pre><code>@article{,
+  title={},
+  author={},
+  journal={},
   year={2025}
 }</code></pre>
     </div>
