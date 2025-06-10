@@ -114,7 +114,7 @@ title: HalluSegBench
     </div>
   </section>
 
-  <section class="hero teaser">
+  <!-- <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <div class="content has-text-justified">
@@ -127,16 +127,16 @@ title: HalluSegBench
           <span class="model-name">Calico</span> achieves strong
           performance in this domain with just 0.3% of its architecture finetuned.
         </div>
-        <img src="./static/images/teaser.pdf" class="interpolation-image"
-          alt="Interpolate start reference image." />
+        <img src="./static/images/teaser.png" class="interpolation-image"
+          alt="Interpolate start reference image." /> -->
         <!-- <div class="content has-text-justified">
           Our proposed <span style="font-style: italic;">part-focused semantic
             co-segmentation</span> task, where the goal is to identify, segment, and label
           common objects, as well as common and unique object parts across multiple images.
         </div> -->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
 
 
   <section class="section">
@@ -149,12 +149,13 @@ title: HalluSegBench
               Recent progress in vision-language models and segmentation methods has significantly advanced grounded visual understanding. 
               However, these models often exhibit hallucination by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. 
               Current evaluation paradigms primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. 
-              In response, we introduce <span class="model-name">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of \textbf{counterfactual visual reasoning}.
+              In response, we introduce <span class="model-name">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>.
               Our benchmark consists of a novel dataset of $1.4$K counterfactual image pairs spanning $287$ unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
-              Experiments on \benchmarkname{} with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
+              Experiments on <span class="model-name">HalluSegBench</span> with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
             </p>
           </div>
-
+          <img src="./static/images/teaser.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
         </div>
       </div>
 
