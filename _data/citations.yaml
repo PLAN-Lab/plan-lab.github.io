@@ -414,27 +414,30 @@
   - Pinar Yanardag
   - Ismini Lourentzou
   publisher: arXiv
-  date: '2024-01-01'
+  date: '2024-12-31'
   link: https://doi.org/g9mwdb
+  image: images/publications/prima.png
   tags:
   - vision-language models
   - pixel-grounding
-  _cache: e79960c1bdffa7721c509a76ee0c8e8a8f2d84ceaeb152b765b8a56566388c0d
+  _cache: f24c2cf0d14cc069293d4094dc2b1ca74b42aa2108d2f5ebcddc678c717fe4cd
 - id: doi:10.48550/arXiv.2412.19331
-  title: null
+  title: 'CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language
+    Models'
   authors:
   - Kiet A. Nguyen
   - Adheesh Juvekar
   - Tianjiao Yu
   - Muntasir Wahed
   - Ismini Lourentzou
-  publisher: arXiv
-  date: '2024-01-01'
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  date: '2025-06-12'
   link: https://doi.org/g9mwdc
+  image: images/publications/calico.png
   tags:
   - vision-language models
   - pixel-grounding
-  _cache: d3467978cea0e413e247d2ff265e0b03e864a3f85c13dc8ca93a68497c4f55d0
+  _cache: 8638e2969bf3856e6ec22507f1bdcdb113de09e4edd14c00d71f3cc86118760d
 - id: doi:10.48550/arXiv.2503.10628
   title: 'Uncertainty in Action: Confidence Elicitation in Embodied Agents'
   authors:
@@ -448,10 +451,11 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g9mwdd
+  image: images/publications/uncertainty.png
   tags:
   - embodied AI
   - uncertainty estimation
-  _cache: fd02480cade4b713ce8cd9faf6196821ecef7a4a31bb60a97cfc7159654210ec
+  _cache: 9db3d2d079b8d5523c26adb76787bff60ca010d5387d4aff78600d77a476eb04
 - id: doi:10.1145/3691620.3695524
   title: Semi-Supervised Code Translation Overcoming the Scarcity of Parallel Code
     Data
@@ -464,7 +468,8 @@
     Software Engineering
   date: '2024-10-27'
   link: https://doi.org/g9mwdf
+  image: images/publications/miracle.png
   tags:
   - code translation
   - semi-supervised learning
-  _cache: b19a884f23642534ee8fda9de8ee15c19e3668e05989235c20bc81a799d8c701
+  _cache: 9ecd9547ee5fa1c2b088695a8e8c5e2f807e9b396b6b443566e76a3d5b07aff2
