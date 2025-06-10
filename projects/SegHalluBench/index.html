@@ -150,12 +150,12 @@ title: HalluSegBench
               However, these models often exhibit hallucination by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. 
               Current evaluation paradigms primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. 
               In response, we introduce <span class="model-name">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>.
-              Our benchmark consists of a novel dataset of $1.4$K counterfactual image pairs spanning $287$ unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
+              Our benchmark consists of a novel dataset of 1.4K counterfactual image pairs spanning 287 unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
               Experiments on <span class="model-name">HalluSegBench</span> with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
             </p>
           </div>
           <img src="./static/images/teaser.png" class="interpolation-image"
-          alt="Interpolate start reference image." />
+          alt="Interpolate start reference image." width="85%" />
         </div>
       </div>
 
@@ -180,37 +180,25 @@ title: HalluSegBench
   </div>
   </section>
 
-  <!-- <section class="section" style="background-color:#dadada81">
+  <section class="section" style="background-color:#dadada81">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">✅ Contributions</h2>
           <div class="content has-text-justified">
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>Novel Task</b>. We introduce
-                the novel task of <span style="font-style: italic;">part-focused
-                  semantic co-segmentation</span>, which aims to co-segment and label common and unique parts between
-                objects across images for granular object comparison. To the best of our
-                knowledge, this is the first work to formalize this multi-image object/part co-segmentation task. </li>
+              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>New Benchmark</b>. We present <span class="model-name">SegHalluBench</span>, 
+                the first benchmark for evaluating segmentation hallucinations using counterfactual image-text pairs, 
+                covering 1,411 pairs across 287 object classes. </li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Multi-Image
-                  Pixel-Grounded LVLM</b>. We propose <span class="model-name">Calico</span> (<u
-                  style="font-weight: bold;">C</u>omponent-Focused <u style="font-weight: bold;">A</u>daptive
-                <u style="font-weight: bold;">L</u>earning for Multi-<u style="font-weight: bold;">I</u>mage <u
-                  style="font-weight: bold;">C</u>o-Localization of <u style="font-weight: bold;">O</u>bjects),
-                an LVLM designed for part-focused semantic co-segmentation. <span class="model-name">Calico</span>
-                incorporates a novel correspondence
-                extraction module to learn cross-image semantic correspondences and an
-                adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient
-                manner.
+              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Novel Metrics</b>. 
+                We introduce four new metrics that quantify hallucination severity under visual/textual counterfactuals, 
+                reveal over-reliance on semantic priors, and assess spatial plausibility of hallucinated masks.
               </li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Dataset</b>. We
-                introduce the <span class="model-name">MixedParts</span> dataset for
-                part-focused
-                semantic co-segmentation, compiled from diverse part
-                segmentation datasets and featuring images of logically
-                comparable objects and parts.</li>
+              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Empirical Insights</b>. 
+                Experiments on state-of-the-art vision-language segmentation models show they hallucinate more under visual edits than textual ones, 
+                highlighting the limitations of label-only evaluations and the need for counterfactual-based diagnostics.</li>
               </ol>
           </div>
         </div>
@@ -219,7 +207,7 @@ title: HalluSegBench
   </section>
 
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
@@ -248,10 +236,10 @@ title: HalluSegBench
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
@@ -279,7 +267,7 @@ title: HalluSegBench
       </div>
     </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -288,20 +276,19 @@ title: HalluSegBench
           <h2 class="title is-3">Quantitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/results.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <img src="./static/images/quat_result.png" class="interpolation-image" alt="SegHalluBench results." width="85%" />
               <p class="has-text-justified">
-                Experimental Results on <span class="model-name">MixedParts</span>. The first three
-                metrics are segmentation-based, while the last two are text-based.
-                <span class="model-name">Calico</span> outperforms baselines across all metrics.
+                Comparison of Reasoning Segmentation Models on <span class="model-name">SegHalluBench</span> Metrics. 
+                We evaluate metrics including textual and visual IoU drop (<code>&Delta;IoU<sub>textual</sub></code>, <code>&Delta;IoU<sub>visual</sub></code>), 
+                factual and counterfactual Confusion Mask Score (CMS), and the contrastive hallucination metric CCMS.              
               </p>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!-- <section class="section">
@@ -437,11 +424,10 @@ title: HalluSegBench
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge 
-              <!-- <a  href="https://arxiv.org/pdf/2304.08485">LLaVA</a>, -->
+              <a  href="https://arxiv.org/pdf/2308.00692">LISA</a>,
               <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
-              <!-- <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a -->
-                <!-- href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a -->
-                <!-- href="https://arxiv.org/pdf/2308.04152">Cheetah</a>  -->
+              <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>, and <a
+                href="https://arxiv.org/pdf/2312.08366">SESAME</a>
                 for open-sourcing their models
               and code.
             </p>
