@@ -200,76 +200,13 @@ title: HalluSegBench
               <br>
               <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Empirical Insights</b>. 
                 Experiments on state-of-the-art vision-language segmentation models show they hallucinate more under visual edits than textual ones, 
-                highlighting the limitations of label-only evaluations and the need for counterfactual-based diagnostics.</li>
+                highlighting the need for counterfactual-based diagnostics.</li>
               </ol>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3"><span class="model-name">Calico</span> Architecture</h2>
-          <div class="content has-text-justified">
-            <img src="./static/images/calico_arch.svg" class="interpolation-image" alt="CALICO Model Architecture." />
-            <div class="horizontal-container">
-              <p><span class="model-name">Calico</span> uses a Q-Former cross-attention module to query efficient image
-                embeddings from a pretrained image encoder, which are passed
-                into a Vicuna-based LLM
-                as image features. We extract <code>[SEG]</code> tokens from the output text, which are used to prompt a
-                SAM decoder to output corresponding
-                segmentation masks. <br> <br> We propose two modules, the Correspondence Extraction Module (CEM) and the
-                Correspondence Adaptation
-                Module (CAM), to enable the learning of semantic-rich features for multi-image correspondence. In
-                <span class="model-name">Calico</span>, k CAMs are strategically placed every N/k layers within the
-                N-layered LLM. CEM focuses on
-                extracting fine-grained semantic information at the part level, capturing correspondences across similar
-                yet distinct object categories by leveraging self-supervised DINO features. CAMs then reintegrate this
-                part-level correspondence information back into the next layer of the model.
-              </p>
-              <img src="./static/images/cemcam.svg" class="interpolation-image"
-                alt="CALICO novel modules CEM and CAM." />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3"><span class="model-name">MixedParts</span> Dataset</h2>
-          <div class="content has-text-justified">
-            <p>To support training and evaluation for part-focused co-segmentation, we introduce a novel dataset named
-              <span class="model-name">MixedParts</span>, curated from publicly available part segmentation datasets:
-              <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a
-                href="https://github.com/facebookresearch/paco">PACO</a>, and <a
-                href="https://github.com/TACJu/PartImageNet">PartImageNet</a>.
-            </p>
-            <img src="./static/images/mixed_parts_example.png" class="interpolation-image"
-              alt="MixedParts dataset examples." />
-
-            <p>Example image pairs in <span class="model-name">MixedParts</span> with objects, common parts, and unique
-              parts segmented and labeled. Each
-              column represents a different image pair, derived from a set of diverse datasets with various levels of
-              detail, PACO, PartImageNet, and
-              ADE20K-Part-234, covering both rigid and non-rigid objects and parts. Each image pair is displayed across
-              3 rows to illustrate (i) the
-              (possibly common) object, (ii) the common object parts, and (iii) the unique object parts in each pair.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -280,9 +217,8 @@ title: HalluSegBench
             <div style="text-align: center; padding: 0 0 20px 0;">
               <img src="./static/images/qua.png" class="interpolation-image" alt="HalluSegBench results." width="85%" />
               <p class="has-text-justified">
-                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics. 
-                We evaluate metrics including textual and visual IoU drop (<code>&Delta;IoU<sub>textual</sub></code>, <code>&Delta;IoU<sub>visual</sub></code>), 
-                factual and counterfactual Confusion Mask Score (CMS), and the contrastive hallucination metric CCMS.              
+                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop (<code>&Delta;IoU<sub>textual</sub></code>, <code>&Delta;IoU<sub>visual</sub></code>), 
+                factual and counterfactual Confusion Mask Score ( <code>CMS</code>), and the contrastive hallucination metric <code>CCMS</code>.              
               </p>
             </div>
           </div>
