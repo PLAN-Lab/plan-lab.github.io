@@ -1,0 +1,310 @@
+---
+layout: project
+title: SpatialReasoner
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs">
+  <meta name="keywords" content="spatial reasoning, vision language models, preference optimization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .pdf-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .pdf-embed {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+{% include navbar.html %}
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title" style="display: flex; align-items: center; justify-content: center; gap: 15px;"><img src="static/images/logo.png" alt="SpatialReasoner Logo" width="80px"><span>Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs</span></h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <span class="illini-blue">Yifan Shen</span><sup>1</sup>,</span>
+              <span class="author-block">
+                <span class="illini-blue">Yuanzhe Liu</span><sup>2</sup>,</span>
+              <span class="author-block">
+                <span class="illini-blue">Jingyuan Zhu</span><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">Xu Cao</span><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">Xiaofeng Zhang</span><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">Yixiao He</span><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">Wenming Ye</span><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">James Matthew Rehg</span><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <span class="illini-blue">Ismini Lourentzou</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors" style="margin-top: 30px;">
+              <div>
+                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>,
+                <span class="author-block"><sup>2</sup>University of Pennsylvania</span>
+              </div>
+              <div>
+                <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>,
+                <span class="author-block"><sup>4</sup>Google</span>
+              </div>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We propose a novel fine-grained preference optimization approach that significantly improves spatial reasoning capabilities in Vision-Language Models (VLMs). Our method leverages carefully designed preference data and training strategies to enhance spatial understanding without compromising general visual capabilities.
+        </div>
+        <div class="pdf-container">
+          <img src="./static/images/main.png" alt="Workflow Overview" style="width: 120%; border-radius: 8px;">
+        </div>
+        <!-- <div class="content has-text-justified">
+          Our fine-grained preference optimization framework for improving spatial reasoning in Vision-Language Models through targeted training on spatial understanding tasks.
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce SpatialReasoner, a novel VLM designed to address these limitations. First, we propose Multi-LLM Guided Monte Carlo Tree Search (M3CTS) and Fine-Grained Spatial Rewards methods to construct a high-quality dataset. Second, we use fine-grained Direct Preference Optimization (fDPO) to train our model. fDPO introduces segment-specific preference granularity for descriptive grounding and logical reasoning, achieving an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% boost in spatial quantity tasks. To address the scarcity of multi-step spatial reasoning data, M3CTS enables collaborative exploration of diverse reasoning paths, significantly enriching spatial comprehension and logical coherence. Empirical evaluations demonstrate that SpatialReasoner sets a new state-of-the-art on SpatialRGPT-Bench, outperforming the strongest baseline by 9.8% in average accuracy, while maintaining competitive performance on general vision-language tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">✅ Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>SpatialReasoner</b>. We introduce SpatialReasoner, a VLM designed for fine-grained LongCoT spatial reasoning. SpatialReasoner effectively generates interpretable, step-by-step explanations directly from 2D images, establishing a new state-of-the-art in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.</li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>fine-grained Direct Preference Optimization</b>. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.</li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Multi-Model Monte Carlo Tree Search</b>. To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search  (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <div class="pdf-container">
+              <img src="./static/images/workflow_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border-radius: 4px;">
+            </div>
+            <div class="horizontal-container">
+              <p>Method Overview including model architecture and training pipeline. Training pipeline consisting of three stages: (1) generating reasoning paths using M3CTS; (2) constructing fine-grained preference pairs via reward-based selection; (3) training with fine-grained DPO (fDPO) to optimize descriptive and logical reasoning separately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Fine-Grained Spatial Rewards</h2>
+          <div class="content has-text-justified">
+            <div class="pdf-container">
+              <img src="./static/images/workflow_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border-radius: 4px;">
+            </div>
+            <div class="horizontal-container">
+                             <p>Fine-Grained Spatial Rewards. Candidate reasoning paths are decomposed into three aspects, <em>descriptive</em>, <em>spatial</em>, and <em>reasoning</em>, scored separately; the higher value in each row is marked by ✅ and the lower by ❌.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Spatial Reasoning Evaluation</h2>
+          <div class="content has-text-justified">
+            <p>We conduct comprehensive evaluation on spatial reasoning tasks to demonstrate the effectiveness of our approach.</p>
+            <div class="pdf-container" style="width: 65%; margin: 0 auto;">
+              <img src="./static/images/result.png" alt="Comparison Results" style="width: 100%; border-radius: 8px;">
+            </div>
+            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Examples and Results</h2>
+          <p class="has-text-justified" style="padding-bottom:30px;">
+            Our method demonstrates improved spatial reasoning across various scenarios and object types:
+          </p>
+          
+          <div style="text-align: center; padding: 0 0 30px 0;">
+            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
+              <img src="./static/images/spatial_comparison_c.png" alt="Spatial Comparison" style="width: 100%; border-radius: 8px;">
+            </div>
+            <p class="has-text-justified" style="margin-top: 20px;">
+              <!-- Comparison of spatial reasoning performance across different models and approaches. -->
+            </p>
+          </div>
+
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
+              <img src="./static/images/additionexample1.png" alt="Additional Examples" style="width: 100%; border-radius: 8px;">
+            </div>
+            <p class="has-text-justified" style="margin-top: 20px;">
+              <!-- Additional examples showing the improved spatial reasoning capabilities of our fine-grained preference optimized models. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{shen2024finegrained,
+  title={Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs},
+  author={Shen, Yifan and Liu, Yuanzhe and Zhu, Jingyuan and Cao, Xu and Zhang, Xiaofeng and He, Yixiao and Ye, Wenming and Rehg, James Matthew and Lourentzou, Ismini},
+  journal={arXiv preprint},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <!-- <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We acknowledge the open-source community for their valuable contributions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+</body>
+
+</html>
