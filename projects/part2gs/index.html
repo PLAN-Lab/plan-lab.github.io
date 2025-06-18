@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Part<sup>2</sup>GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting">
+  <meta name="keywords" content="Part<sup>2</sup>GS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part²GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/player_head.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="x"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0E73Z1HTTW');
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">`
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
+               <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art</span>-aware Modeling of <span style="color:rgb(183,55,35); font-weight:bold;">art</span>iculated Objects using 3D <span style="color:rgb(88,41,0); font-weight:bold;">G</span>aussian <span style="color:rgb(88,41,0); font-weight:bold;">S</span>platting</span></h1>
+            <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                    <a href="https://tianjiao-yu.github.io/" class=illini-blue>Tianjiao Yu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/shahvedant" class=illini-blue>Vedant Shah</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://mwahed.com/" class=illini-blue>Muntasir Wahed</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://yingshen-ys.github.io/" class=illini-blue>Shen Ying</a>,
+              </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/kanguyen-vn/" class=illini-blue>Kiet A. Nguyen</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://isminoula.github.io/" class=illini-blue>Ismini Lourentzou</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span>
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          We propose 
+          <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>, 
+          a part-aware framework for modeling articulated objects using 3D Gaussian Splatting.
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          Our method introduces motion-informed part discovery and physically grounded articulation learning, guided by contact, velocity, and vector-field constraints.
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          <span style="color:rgb(88,41,0); font-weight:bold;">Part</span><span style="color:rgb(183,55,35); font-weight:bold;">²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
+          outperforms state-of-the-art baselines on geometry and motion fidelity, enabling clean part disentanglement and collision-free articulation in complex multi-part objects.
+        </div>
+        
+        <!-- <div style="text-align: center; padding: 0 0 20px 0;">
+            <img src="./static/images/teaser.png" class="interpolation-image"
+            alt="Interpolate start reference image." style="width: 50%; height: auto;" />
+            <p class="has-text-justified">
+                Our proposed <span style="font-style: italic">Confidence Estimation Framework</span> introduces a structured approach to assessing and expressing an agent’s confidence through
+                 <span style="font-style: italic">Elicitation Policies</span> and <span style="font-style: italic">Execution Policies</span>.
+                  Operating at both perception and action stages, Elicitation Modules prompt the agent to evaluate uncertainty in its observations and decisions.
+                   Execution Policies further refine confidence calibration by expanding the agent’s reasoning space, enabling more robust and context-aware decision-making.
+            </p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                x
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <!-- <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We propose a framework for embodied verbalized confidence elicitation, designed for multimodal and
+                action-driven environments.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We introduce <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> and
+                 <span style="font-style: italic; font-weight: bold;">Execution Policies</span> to enhance confidence estimation in embodied settings.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We provide the <span style="font-style: italic">first</span> structured analysis of embodied uncertainty and identify effective methods
+                 for improving confidence calibration and failure prediction, while also pinpointing persistent challenges.
+              </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name"></span> Framework Name</h2>
+          <div class="content has-text-justified" style="text-align: center; padding: 0 0 20px 0;">
+            <img src="static/images/xxx" class="interpolation-image" alt="framework figure" width="95%" 
+     style="display: block; margin: 0 auto;">
+            <p class="has-text-justified">
+                framework caption
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results</h2>
+          <!-- <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/r1.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                    <b>Confidence Metrics Across Elicitation Policies</b> with three models (GPT-4V, MineLLM, and LLaMA-based STEVE) using different elicitation strategies:  
+                    <b>Vanilla</b> (basic task understanding),  
+                    <b>Self-Intervention</b> (reflection on own actions),  
+                    <b>Chain-of-Thought</b> (step-by-step reasoning),  
+                    <b>Plan & Solve</b> (explicit planning before execution), and  
+                    <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.  
+                    The best performance across each model is in <b>bold</b>.
+              </p>
+            </div> -->
+              <br>
+              <br>
+              <!-- <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/r2.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                 <b>ECE and AUROC across Models and Execution Policies.</b> Bars present ECE (top, lower is better) and AUROC (bottom, higher is better)
+                 under different elicitation strategies. <span style="color: rgb(238, 3, 3); font-weight: bold;">Red dashed lines</span> are metrics for Vanilla elicitation with no execution policy applied.
+              </p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@misc{xxx,
+      title={Part²GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting}, 
+      author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Ying Shen and Kiet A. Nguyen and Ismini Lourentzou},
+      year={2025},
+      eprint={2503.10628},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={xxx}, 
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/abs/2206.08853">Minedojo</a>,
+                <a href="https://arxiv.org/abs/2305.16291">Voyager</a>, and 
+              <a href="https://arxiv.org/abs/2312.07472v2">MP5</a>
+              for open-sourcing their projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
