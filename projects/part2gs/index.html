@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="static/images/player_head.png"> -->
+  <link rel="icon" href="static/images/object_icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -126,24 +126,24 @@
           <i class="fa fa-star" style="color:#ff8400;"></i>
           We propose 
           <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>, 
-          a part-aware framework for modeling articulated objects using 3D Gaussian Splatting.
+          a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and physically consistent articulation.
           <i class="fa fa-star" style="color:#ff8400;"></i>
-          Our method introduces motion-informed part discovery and physically grounded articulation learning, guided by contact, velocity, and vector-field constraints.
+          Our method introduces motion-aware canonical representation guided by physics-based constraints. Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths
           <i class="fa fa-star" style="color:#ff8400;"></i>
           <span style="color:rgb(88,41,0); font-weight:bold;">Part</span><span style="color:rgb(183,55,35); font-weight:bold;">²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
-          outperforms state-of-the-art baselines on geometry and motion fidelity, enabling clean part disentanglement and collision-free articulation in complex multi-part objects.
+          outperforms state-of-the-art baselines by up to 10× in Chamfer Distance for movable parts.
         </div>
         
-        <!-- <div style="text-align: center; padding: 0 0 20px 0;">
-            <img src="./static/images/teaser.png" class="interpolation-image"
-            alt="Interpolate start reference image." style="width: 50%; height: auto;" />
-            <p class="has-text-justified">
-                Our proposed <span style="font-style: italic">Confidence Estimation Framework</span> introduces a structured approach to assessing and expressing an agent’s confidence through
-                 <span style="font-style: italic">Elicitation Policies</span> and <span style="font-style: italic">Execution Policies</span>.
-                  Operating at both perception and action stages, Elicitation Modules prompt the agent to evaluate uncertainty in its observations and decisions.
-                   Execution Policies further refine confidence calibration by expanding the agent’s reasoning space, enabling more robust and context-aware decision-making.
-            </p>
-        </div> -->
+        <div style="text-align: center; padding: 0 0 20px 0;">
+          <img src="./static/images/PartGS-main-3-resized.png" width="100%" height="800px" style="border: none;">
+          <p class="has-text-justified">
+            Given two sets of multi-view images of an object, we first reconstruct independent coarse 3D Gaussian models and learn a motion-informed, part-aware canonical Gaussian. We optimize the canonical Gaussian under physical constraints 
+            <strong style="color:#633E36;">𝓛<sub>phys</sub></strong> and part awareness 
+            <strong style="color:#633E36;">𝓛<sub>part</sub></strong>. Finally, we learn the articulation model with repel points 
+            <strong style="color:#B22222;">𝓕<sub>repel</sub></strong> and 
+            <strong style="color:#B22222;">𝓛<sub>articulation</sub></strong>.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -157,7 +157,14 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                x
+              Articulated objects are common in the real world, yet modeling their structure and motion remains a challenging task for 3D reconstruction methods. 
+              In this work, we introduce <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>, a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and
+               physically consistent articulation. Part²GS leverages a part-aware 3D Gaussian representation that encodes articulated components with learnable
+                attributes, enabling structured, disentangled transformations that preserve high-fidelity geometry. To ensure physically consistent motion, we propose
+                 a motion-aware canonical representation guided by physics-based constraints, including contact enforcement, velocity consistency, and vector-field alignment.
+                  Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths, significantly improving motion
+                   coherence over baselines. Extensive evaluations on both synthetic and real-world datasets show that Part²GS consistently outperforms
+                    state-of-the-art methods by up to 10x in Chamfer Distance for movable parts. 
             </p>
           </div>
         </div>
@@ -166,44 +173,36 @@
     </div>
   </section>
 
-  <!-- <section class="section" style="background-color:#dadada81">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Contributions</h2>
-          <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We propose a framework for embodied verbalized confidence elicitation, designed for multimodal and
-                action-driven environments.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We introduce <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> and
-                 <span style="font-style: italic; font-weight: bold;">Execution Policies</span> to enhance confidence estimation in embodied settings.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#ff8400"></i></span> We provide the <span style="font-style: italic">first</span> structured analysis of embodied uncertainty and identify effective methods
-                 for improving confidence calibration and failure prediction, while also pinpointing persistent challenges.
-              </li>
-              </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
 
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span class="model-name"></span> Framework Name</h2>
-          <div class="content has-text-justified" style="text-align: center; padding: 0 0 20px 0;">
-            <img src="static/images/xxx" class="interpolation-image" alt="framework figure" width="95%" 
-     style="display: block; margin: 0 auto;">
-            <p class="has-text-justified">
-                framework caption
-              </p>
-          </div>
+          <h2 class="title is-3"><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Architecture</h2>
+          <div class="content has-text-justified">
+          <p>
+            <strong>Part<sup>2</sup>GS</strong> constructs articulated 3D objects using 3D Gaussian Splatting for joint part discovery and motion modeling.
+             Given multi-view images from two articulation states, we generate a unified part-aware representation enabling controllable motion and physical plausibility.
+          
+            The pipeline consists of two stages:
+              <strong style="color:#582900;">(1) Part-Aware Gaussian Generation</strong>: 
+              We first generate canonical Gaussian representations independently for each joint state 
+              (𝓘₀, 𝓘₁) and subsequently infer per-Gaussian part identities implicitly through 
+              multi-view geometric cues. Specifically, each Gaussian 𝓖ᵢ is augmented with a compact, 
+              learnable part-identification parameter ψᵢ that enables unsupervised clustering 
+              of Gaussians into meaningful, physically consistent parts. 
+              <strong style="color:#b73723;">(2) Articulation Learning</strong>: 
+              Once the part-aware canonical Gaussian representation is learned, we model the transformations 
+              of each articulated part using SE(3) rigid body motions.
+            </p>
+
+          <p>
+            <img src="./static/images/phys_combined-4-resized.png" width="100%" height="800px" style="border: none;">
+            To ensure stable and interpretable motion, we additionally introduce <strong>physical constraints</strong> including contact regularization, velocity consistency, and vector-field alignment. 
+            These physical constraints provide a simple yet effective barrier against self-collision while keeping per-part motion rigid and coherent. 
+          </p>
+
+        </div>
         </div>
       </div>
     </div>
@@ -214,28 +213,59 @@
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Results</h2>
-          <!-- <div class="content has-text-justified">
+          <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/r1.png" class="interpolation-image" alt="ece results." width="95%" />
+              <img src="./static/images/main_result.png" class="interpolation-image" alt="ece results." width="95%" />
               <p class="has-text-justified">
-                    <b>Confidence Metrics Across Elicitation Policies</b> with three models (GPT-4V, MineLLM, and LLaMA-based STEVE) using different elicitation strategies:  
-                    <b>Vanilla</b> (basic task understanding),  
-                    <b>Self-Intervention</b> (reflection on own actions),  
-                    <b>Chain-of-Thought</b> (step-by-step reasoning),  
-                    <b>Plan & Solve</b> (explicit planning before execution), and  
-                    <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.  
-                    The best performance across each model is in <b>bold</b>.
+                <strong>Quantitative Results on <span style="font-variant: small-caps;">Paris</span>.</strong>
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better across all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights best performing results.
+                Objects with <strong>*</strong> are seen categories trained in Ditto.
+                <strong>F</strong> indicates wrong motion type predictions.
+                Pos Err is omitted for prismatic joint only objects (Blade, Storage*, and Real-Storage).              
               </p>
-            </div> -->
+            </div>
               <br>
               <br>
-              <!-- <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/r2.png" class="interpolation-image" alt="ece results." width="95%" />
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/main_result2.png" class="interpolation-image" alt="ece results." width="95%" />
               <p class="has-text-justified">
-                 <b>ECE and AUROC across Models and Execution Policies.</b> Bars present ECE (top, lower is better) and AUROC (bottom, higher is better)
-                 under different elicitation strategies. <span style="color: rgb(238, 3, 3); font-weight: bold;">Red dashed lines</span> are metrics for Vanilla elicitation with no execution policy applied.
+                <strong>Results on <span style="font-variant: small-caps;"><strong>DTA</strong>-Multi</span> and <span style="font-variant: small-caps;"><strong>ArtGS</strong>-Multi</span>.</strong>
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better across all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights best performing results.
+                Pos Err is omitted for prismatic-joint-only objects (Table 4 parts).   
               </p>
-            </div> -->
+              </div>
+              <br>
+              <br>
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/part_result.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong>Qualitative Comparison of Part Discovery Across Object States (columns) and Discovery Methods (rows).</strong>
+                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
+                accurately isolates moving parts. In contrast, ArtGS struggles to maintain part groupings, leading to blurred or collapsed representations.                
+              </p>
+              </div>
+              <br>
+              <br>
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/ablate.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Ablations</strong>
+                on the two most complex objects in our evaluation, <em>Table (5 parts)</em> and <em>Storage (7 parts)</em>.
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better on all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                shows results with <strong>all <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> modules</strong>,
+                while
+                <span style="background-color: rgba(88, 41, 0, 0.3); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights severe failures caused by removing components of our method.
+                Severe failures are defined as metrics that are more than 5× worse than the full 
+                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> for the same object.
+              
+              </p>
+              </div>
           </div>
         </div>
       </div>
@@ -249,15 +279,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@misc{xxx,
-      title={Part²GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting}, 
-      author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Ying Shen and Kiet A. Nguyen and Ismini Lourentzou},
-      year={2025},
-      eprint={2503.10628},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={xxx}, 
-      }</code></pre>
+      <pre><code>TBD
+      
+      
+      </code></pre>
     </div>
   </section>
 
@@ -279,9 +304,8 @@
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                href="https://arxiv.org/abs/2206.08853">Minedojo</a>,
-                <a href="https://arxiv.org/abs/2305.16291">Voyager</a>, and 
-              <a href="https://arxiv.org/abs/2312.07472v2">MP5</a>
+                href="https://arxiv.org/pdf/2308.04079">3DGS</a> and 
+              <a href="https://arxiv.org/pdf/2502.19459">ArtGS</a>
               for open-sourcing their projects.
             </p>
           </div>
