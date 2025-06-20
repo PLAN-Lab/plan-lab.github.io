@@ -40,7 +40,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">`
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
+            <h1 class="title is-1 publication-title" style="font-size:2.8rem;"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art</span>-aware Modeling of <span style="color:rgb(183,55,35); font-weight:bold;">art</span>iculated Objects using 3D <span style="color:rgb(88,41,0); font-weight:bold;">G</span>aussian <span style="color:rgb(88,41,0); font-weight:bold;">S</span>platting</span></h1>
             <div class="is-size-5 publication-authors">
               <div>
@@ -181,15 +181,12 @@
           <h2 class="title is-3"><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Architecture</h2>
           <div class="content has-text-justified">
           <p>
-            <strong>Part<sup>2</sup>GS</strong> constructs articulated 3D objects using 3D Gaussian Splatting for joint part discovery and motion modeling.
-             Given multi-view images from two articulation states, we generate a unified part-aware representation enabling controllable motion and physical plausibility.
-          
-            The pipeline consists of two stages:
-              <strong style="color:#582900;">(1) Part-Aware Gaussian Generation</strong>: 
-              We first generate canonical Gaussian representations independently for each joint state 
+            <strong>Part<sup>2</sup>GS</strong> constructs articulated 3D objects from multi-view images using 3D Gaussian Splatting for joint part discovery and motion modeling.
+             The framework consists of two stages:
+              <strong style="color:#582900;">(1) Part-Aware Gaussian Generation</strong>: We generate canonical Gaussian representations independently for each joint state 
               (𝓘₀, 𝓘₁) and subsequently infer per-Gaussian part identities implicitly through 
               multi-view geometric cues. Specifically, each Gaussian 𝓖ᵢ is augmented with a compact, 
-              learnable part-identification parameter ψᵢ that enables unsupervised clustering 
+              learnable part-identification parameter <i>ψ</i><sub>i</sub> that enables unsupervised clustering 
               of Gaussians into meaningful, physically consistent parts. 
               <strong style="color:#b73723;">(2) Articulation Learning</strong>: 
               Once the part-aware canonical Gaussian representation is learned, we model the transformations 
@@ -199,7 +196,7 @@
           <p>
             <img src="./static/images/phys_combined-4-resized.png" width="100%" height="800px" style="border: none;">
             To ensure stable and interpretable motion, we additionally introduce <strong>physical constraints</strong> including contact regularization, velocity consistency, and vector-field alignment. 
-            These physical constraints provide a simple yet effective barrier against self-collision while keeping per-part motion rigid and coherent. 
+            These physical constraints provide a simple yet effective regularization against self-collision while keeping per-part motion rigid and coherent. 
           </p>
 
         </div>
@@ -223,7 +220,7 @@
                 highlights best performing results.
                 Objects with <strong>*</strong> are seen categories trained in Ditto.
                 <strong>F</strong> indicates wrong motion type predictions.
-                Pos Err is omitted for prismatic joint only objects (Blade, Storage*, and Real-Storage).              
+                Pos Err is omitted for objects with only prismatic joints (Blade, Storage*, and Real-Storage).              
               </p>
             </div>
               <br>
@@ -235,7 +232,7 @@
                 Lower (<span style="font-size: 0.9em;">↓</span>) is better across all metrics.
                 <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
                 highlights best performing results.
-                Pos Err is omitted for prismatic-joint-only objects (Table 4 parts).   
+                Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
               </p>
               </div>
               <br>
@@ -245,7 +242,7 @@
               <p class="has-text-justified">
                 <strong>Qualitative Comparison of Part Discovery Across Object States (columns) and Discovery Methods (rows).</strong>
                 <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
-                accurately isolates moving parts. In contrast, ArtGS struggles to maintain part groupings, leading to blurred or collapsed representations.                
+                accurately isolates moving parts across start, end, and canonical states.               
               </p>
               </div>
               <br>
