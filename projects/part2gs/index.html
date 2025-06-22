@@ -33,6 +33,17 @@
 
     gtag('config', 'G-0E73Z1HTTW');
   </script>
+  <style>
+    .gif-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* space out the gifs */
+    }
+    .gif-grid img {
+      width: 30%;           /* roughly three gifs per row */
+      margin: 5px;
+    }
+    </style>
 </head>
 
 <body>
@@ -236,8 +247,51 @@
                 Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
               </p>
               </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Qualitative Results</h2>
+
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <div class="gif-grid">
+              <img src="./static/part2gs_videos/2parts/blade_103706.gif" alt="GIF 1">
+              <img src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="GIF 2">
+              <img src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="GIF 3">
+              <img src="./static/part2gs_videos/2parts/USB_100109.gif" alt="GIF 4">
+              <img src="./static/part2gs_videos/2parts/storage_45135.gif" alt="GIF 5">
+              <img src="./static/part2gs_videos/2parts/washer_103776.gif" alt="GIF 6">
+            </div>
+            <p class="has-text-justified">
+              <strong>Rendering Results of Simple (two-parts) objets</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
+               Our method captures part-aware geometry and consistent transformations, even in minimal degrees of freedom, demonstrating the effectiveness of Part²GS in simple settings.          
+            </p>
+            </div>
+            <br>
+            <br>
+
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <div class="gif-grid">
+                <img src="./static/part2gs_videos/fridge_10489.gif" alt="GIF 1">
+                <img src="./static/part2gs_videos/table_25493.gif" alt="GIF 2">
+                <img src="./static/part2gs_videos/table_31249.gif" alt="GIF 3">
+                <img src="./static/part2gs_videos/oven_101908.gif" alt="GIF 4">
+                <img src="./static/part2gs_videos/storage_47254.gif" alt="GIF 5">
+                <img src="./static/part2gs_videos/storage_47648.gif" alt="GIF 6">
+              </div>
+              <p class="has-text-justified">
+                <strong>Rendering Results of Complex (Multi-parts) objets</strong>. Our method captures accurate part-aware geometry and consistent transformations,
+                 even for complex objects, demonstrating the effectiveness of Part²GS.          
+              </p>
+              </div>
               <br>
               <br>
+
               <div style="text-align: center; padding: 0 0 20px 0;">
               <img src="./static/images/part_result.png" class="interpolation-image" alt="ece results." width="95%" />
               <p class="has-text-justified">
