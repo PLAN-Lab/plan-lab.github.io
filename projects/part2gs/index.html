@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="static/images/object_icon.png">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -33,6 +32,7 @@
 
     gtag('config', 'G-0E73Z1HTTW');
   </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <style>
     .gif-grid {
       display: flex;
@@ -44,7 +44,24 @@
       margin: 5px;
     }
     </style>
-</head>
+    <style>
+      model-viewer {
+        width: 800px;
+        height: 480px;
+        margin: 20px auto;
+        display: block;
+      }
+      .checkbox-group {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .checkbox-group label {
+        margin-right: 15px;
+      }
+    </style>
+
+    
+  </head>
 
 <body>
   <section class="hero">
@@ -223,6 +240,76 @@
         <div class="column">
           <h2 class="title is-3">Results</h2>
           <div class="content has-text-justified">
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+              <!-- === Viewer 1 Block === -->
+              <div style="text-align: center;">
+                <model-viewer
+                  id="viewer1"
+                  src="./static/part2gs_glbs/oven_101908.glb"
+                  autoplay
+                  auto-rotate
+                  camera-controls
+                  animation-name="start_1Action"
+                  shadow-intensity="1"
+                  style="width: 400px; height: 300px;">
+                </model-viewer>
+          
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="anim1" value="start_1Action" checked onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 0</label><br>
+                  <label><input type="checkbox" name="anim1" value="start_2Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 1</label><br>
+                  <label><input type="checkbox" name="anim1" value="start_3Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 2</label>
+                </div>
+              </div>
+          
+              <!-- === Viewer 2 Block === -->
+              <div style="text-align: center;">
+                <model-viewer
+                  id="viewer2"
+                  src="./static/part2gs_glbs/fridge_10489.glb"
+                  autoplay
+                  auto-rotate
+                  camera-controls
+                  animation-name="start_1Action"
+                  shadow-intensity="1"
+                  style="width: 400px; height: 300px;">
+                </model-viewer>
+          
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="anim2" value="start_1Action" checked onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 0</label><br>
+                  <label><input type="checkbox" name="anim2" value="start_2Action" onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 1</label><br>
+                </div>
+              </div>
+          
+
+              
+              <script>
+                function toggleAnimation(viewerId, groupName, checkbox) {
+                  const viewer = document.getElementById(viewerId);
+                  
+                  // Deselect all other checkboxes in the same group
+                  document.querySelectorAll(`input[name="${groupName}"]`).forEach(cb => {
+                    if (cb !== checkbox) cb.checked = false;
+                  });
+              
+                  // Set or pause animation based on checkbox state
+                  if (checkbox.checked) {
+                    viewer.animationName = checkbox.value;
+                    viewer.play();
+                  } else {
+                    viewer.pause();
+                  }
+                }
+              </script>
+              
+              <p class="has-text-justified">
+                <strong>Articulated Meshes in a Simulation.</strong>            
+              </p>
+
+            </div>
+              <br>
+              <br>
+
             <div style="text-align: center; padding: 0 0 20px 0;">
               <img src="./static/images/main_result.png" class="interpolation-image" alt="ece results." width="95%" />
               <p class="has-text-justified">
@@ -247,7 +334,7 @@
                 Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
               </p>
               </div>
-      </div>
+          </div>
     </div>
     </div>
   </section>
