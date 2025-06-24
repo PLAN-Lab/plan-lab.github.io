@@ -29,7 +29,7 @@
       width: 100%;
       max-width: 800px;
       margin: 0 auto;
-      border: 1px solid #ddd;
+      border: none;
       border-radius: 8px;
       overflow: hidden;
     }
@@ -130,7 +130,7 @@
           <span style="font-weight: bold;">TL;DR:</span> We propose a novel fine-grained preference optimization approach that significantly improves spatial reasoning capabilities in Vision-Language Models (VLMs). Our method leverages carefully designed preference data and training strategies to enhance spatial understanding without compromising general visual capabilities.
         </div>
         <div class="pdf-container">
-          <img src="./static/images/teaser.png" alt="Workflow Overview" style="width: 120%; border-radius: 8px;">
+          <img src="./static/images/teaser.png" alt="Workflow Overview" style="width: 120%; border: none;">
         </div>
         <!-- <div class="content has-text-justified">
           Our fine-grained preference optimization framework for improving spatial reasoning in Vision-Language Models through targeted training on spatial understanding tasks.
@@ -147,8 +147,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce SpatialReasoner-R1, a novel VLM designed to address these limitations. First, we propose Multi-LLM Guided Monte Carlo Tree Search (M3CTS) and Fine-Grained Spatial Rewards methods to construct a high-quality dataset. Second, we use fine-grained Direct Preference Optimization (fDPO) to train our model. fDPO introduces segment-specific preference granularity for descriptive grounding and logical reasoning, achieving an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% boost in spatial quantity tasks. To address the scarcity of multi-step spatial reasoning data, M3CTS enables collaborative exploration of diverse reasoning paths, significantly enriching spatial comprehension and logical coherence. Empirical evaluations demonstrate that SpatialReasoner-R1 sets a new state-of-the-art on SpatialRGPT-Bench, outperforming the strongest baseline by 9.8% in average accuracy, while maintaining competitive performance on general vision-language tasks.
-            </p>
+              Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce SpatialReasoner-R1, a vision-language reasoning model designed to address these limitations. To construct high-quality supervision for spatial reasoning, we design a Multi-Model Monte Carlo Tree Search (M3CTS) method that generates diverse, logically consistent Long Chain-of-Thought (LongCoT) reasoning trajectories. In addition, we propose fine-grained Direct Preference Optimization (fDPO), which introduces segment-specific preference granularity for descriptive grounding and logical reasoning, guided by a spatial reward mechanism that evaluates candidate responses based on visual consistency, spatial grounding, and logical coherence. Experimental results demonstrate that fDPO achieves an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% gain in spatial quantity tasks. SpatialReasoner-R1, trained with fDPO, sets a new SoTA on SpatialRGPT-Bench, outperforming the strongest baseline by 9.8% in average accuracy, while maintaining competitive performance on general vision-language tasks.           </p>
           </div>
         </div>
       </div>
@@ -164,7 +163,7 @@
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fa fa-check"></i></span><b>SpatialReasoner-R1</b>. We introduce SpatialReasoner-R1, a VLM designed for fine-grained LongCoT spatial reasoning. SpatialReasoner-R1 effectively generates interpretable, step-by-step explanations directly from 2D images, establishing a new state-of-the-art in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.</li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>fine-grained Direct Preference Optimization</b>. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.</li>
+              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Fine-grained Direct Preference Optimization</b>. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.</li>
               <br>
               <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Multi-Model Monte Carlo Tree Search</b>. To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search  (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training.</li>
             </ul>
@@ -182,7 +181,7 @@
           <h2 class="title is-3">Method Overview</h2>
           <div class="content has-text-justified">
             <div class="pdf-container">
-              <img src="./static/images/workflow_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border-radius: 4px;">
+              <img src="./static/images/workflow_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border: none;">
             </div>
             <div class="horizontal-container">
               <p>Method Overview including model architecture and training pipeline. Training pipeline consisting of three stages: (1) generating reasoning paths using M3CTS; (2) constructing fine-grained preference pairs via reward-based selection; (3) training with fine-grained DPO (fDPO) to optimize descriptive and logical reasoning separately.</p>
@@ -200,10 +199,10 @@
           <h2 class="title is-3">Fine-Grained Spatial Rewards</h2>
           <div class="content has-text-justified">
             <div class="pdf-container">
-              <img src="./static/images/fdpo_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border-radius: 4px;">
+              <img src="./static/images/fdpo_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border: none;">
             </div>
             <div class="horizontal-container">
-                             <p>Fine-Grained Spatial Rewards. Candidate reasoning paths are decomposed into three aspects, <em>descriptive</em>, <em>spatial</em>, and <em>reasoning</em>, scored separately; the higher value in each row is marked by ✅ and the lower by ❌.</p>
+                             <p>Fine-Grained Spatial Rewards. Candidate reasoning paths are decomposed into three aspects, <em>descriptive</em>, <em>spatial</em>, and <em>reasoning</em>, scored separately; the higher value in each row is marked by <span style="color: green;">✔</span> and the lower by <span style="color: red;">✖</span>.</p>
             </div>
           </div>
         </div>
@@ -220,9 +219,9 @@
           <div class="content has-text-justified">
             <p>We conduct comprehensive evaluation on spatial reasoning tasks to demonstrate the effectiveness of our approach.</p>
             <div class="pdf-container" style="width: 65%; margin: 0 auto;">
-              <img src="./static/images/result.png" alt="Comparison Results" style="width: 100%; border-radius: 8px;">
+              <img src="./static/images/result.png" alt="Comparison Results" style="width: 100%; border: none;">
             </div>
-            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric.</p>
+            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric. SpatialReasoner-R1 8B, trained with fDPO, establishes a new SoTA in spatial reasoning.</p>
           </div>
         </div>
       </div>
@@ -236,12 +235,12 @@
         <div class="column">
           <h2 class="title is-3">Examples and Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            Our method demonstrates improved spatial reasoning across various scenarios and object types:
+            SpatialReasoner-R1 demonstrates improved spatial reasoning across various scenarios and object types:
           </p>
           
           <div style="text-align: center; padding: 0 0 30px 0;">
             <div class="pdf-container" style="width: 80%; margin: 0 auto;">
-              <img src="./static/images/spatial_comparison_c.png" alt="Spatial Comparison" style="width: 100%; border-radius: 8px;">
+              <img src="./static/images/spatial_comparison_c.png" alt="Spatial Comparison" style="width: 100%; border: none;">
             </div>
             <p class="has-text-justified" style="margin-top: 20px;">
               <!-- Comparison of spatial reasoning performance across different models and approaches. -->
@@ -250,10 +249,19 @@
 
           <div style="text-align: center; padding: 0 0 20px 0;">
             <div class="pdf-container" style="width: 80%; margin: 0 auto;">
-              <img src="./static/images/additionexample1.png" alt="Additional Examples" style="width: 100%; border-radius: 8px;">
+              <img src="./static/images/additionexample1.png" alt="Additional Examples" style="width: 100%; border: none;">
             </div>
             <p class="has-text-justified" style="margin-top: 20px;">
               <!-- Additional examples showing the improved spatial reasoning capabilities of our fine-grained preference optimized models. -->
+            </p>
+          </div>
+
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
+              <img src="./static/images/additional_example2.png" alt="Additional Examples 2" style="width: 100%; border: none;">
+            </div>
+            <p class="has-text-justified" style="margin-top: 20px;">
+              <!-- More examples demonstrating enhanced spatial reasoning capabilities through fine-grained preference optimization. -->
             </p>
           </div>
         </div>
