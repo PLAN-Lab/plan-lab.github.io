@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Part<sup>2</sup>GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting">
+  <meta name="keywords" content="Part<sup>2</sup>GS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part²GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/object_icon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E73Z1HTTW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0E73Z1HTTW');
+  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <style>
+    .gif-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; /* space out the gifs */
+    }
+    .gif-grid img {
+      width: 30%;           /* roughly three gifs per row */
+      margin: 5px;
+    }
+    </style>
+    <style>
+      model-viewer {
+        width: 800px;
+        height: 480px;
+        margin: 20px auto;
+        display: block;
+      }
+      .checkbox-group {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .checkbox-group label {
+        margin-right: 15px;
+      }
+    </style>
+
+    
+  </head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">`
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="font-size:2.8rem;"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
+               <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art</span>-aware Modeling of <span style="color:rgb(183,55,35); font-weight:bold;">art</span>iculated Objects using 3D <span style="color:rgb(88,41,0); font-weight:bold;">G</span>aussian <span style="color:rgb(88,41,0); font-weight:bold;">S</span>platting</span></h1>
+            <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                    <a href="https://tianjiao-yu.github.io/" class=illini-blue>Tianjiao Yu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/shahvedant" class=illini-blue>Vedant Shah</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://mwahed.com/" class=illini-blue>Muntasir Wahed</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://yingshen-ys.github.io/" class=illini-blue>Shen Ying</a>,
+              </span>
+                <span class="author-block">
+                    <a href="https://www.linkedin.com/in/kanguyen-vn/" class=illini-blue>Kiet A. Nguyen</a>,
+                </span>
+                <span class="author-block">
+                    <a href="https://isminoula.github.io/" class=illini-blue>Ismini Lourentzou</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span>
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          We propose 
+          <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>, 
+          a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and physically consistent articulation.
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          Our method introduces motion-aware canonical representation guided by physics-based constraints. Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          <span style="color:rgb(88,41,0); font-weight:bold;">Part</span><span style="color:rgb(183,55,35); font-weight:bold;">²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
+          outperforms state-of-the-art baselines by up to 10× in Chamfer Distance for movable parts.
+        </div>
+        
+        <div style="text-align: center; padding: 0 0 20px 0;">
+          <img src="./static/images/PartGS-main-3-resized.png" width="100%" height="800px" style="border: none;">
+          <p class="has-text-justified">
+            Given two sets of multi-view images of an object, we first reconstruct independent coarse 3D Gaussian models and learn a motion-informed, part-aware canonical Gaussian. We optimize the canonical Gaussian under physical constraints 
+            <strong style="color:#633E36;">𝓛<sub>phys</sub></strong> and part awareness 
+            <strong style="color:#633E36;">𝓛<sub>part</sub></strong>. Finally, we learn the articulation model with repel points 
+            <strong style="color:#B22222;">𝓕<sub>repel</sub></strong> and 
+            <strong style="color:#B22222;">𝓛<sub>articulation</sub></strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Articulated objects are common in the real world, yet modeling their structure and motion remains a challenging task for 3D reconstruction methods. 
+              In this work, we introduce <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>, a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and
+               physically consistent articulation. Part²GS leverages a part-aware 3D Gaussian representation that encodes articulated components with learnable
+                attributes, enabling structured, disentangled transformations that preserve high-fidelity geometry. To ensure physically consistent motion, we propose
+                 a motion-aware canonical representation guided by physics-based constraints, including contact enforcement, velocity consistency, and vector-field alignment.
+                  Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths, significantly improving motion
+                   coherence over baselines. Extensive evaluations on both synthetic and real-world datasets show that Part²GS consistently outperforms
+                    state-of-the-art methods by up to 10x in Chamfer Distance for movable parts. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Architecture</h2>
+          <div class="content has-text-justified">
+          <p>
+            <strong>Part<sup>2</sup>GS</strong> constructs articulated 3D objects from multi-view images using 3D Gaussian Splatting for joint part discovery and motion modeling.
+             The framework consists of two stages:
+              <strong style="color:#582900;">(1) Part-Aware Gaussian Generation</strong>: We generate canonical Gaussian representations independently for each joint state 
+              (𝓘₀, 𝓘₁) and subsequently infer per-Gaussian part identities implicitly through 
+              multi-view geometric cues. Specifically, each Gaussian 𝓖ᵢ is augmented with a compact, 
+              learnable part-identification parameter <i>ψ</i><sub>i</sub> that enables unsupervised clustering 
+              of Gaussians into meaningful, physically consistent parts. 
+              <strong style="color:#b73723;">(2) Articulation Learning</strong>: 
+              Once the part-aware canonical Gaussian representation is learned, we model the transformations 
+              of each articulated part using SE(3) rigid body motions.
+            </p>
+
+          <p>
+            <img src="./static/images/phys_combined-4-resized.png" width="100%" height="800px" style="border: none;">
+            To ensure stable and interpretable motion, we additionally introduce <strong>physical constraints</strong> including contact regularization, velocity consistency, and vector-field alignment. 
+            These physical constraints provide a simple yet effective regularization against self-collision while keeping per-part motion rigid and coherent. 
+          </p>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+              <!-- === Viewer 1 Block === -->
+              <div style="text-align: center;">
+                <model-viewer
+                  id="viewer1"
+                  src="./static/part2gs_glbs/oven_101908.glb"
+                  autoplay
+                  auto-rotate
+                  camera-controls
+                  animation-name="start_1Action"
+                  shadow-intensity="1"
+                  style="width: 400px; height: 300px;">
+                </model-viewer>
+          
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="anim1" value="start_1Action" checked onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 0</label><br>
+                  <label><input type="checkbox" name="anim1" value="start_2Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 1</label><br>
+                  <label><input type="checkbox" name="anim1" value="start_3Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 2</label>
+                </div>
+              </div>
+          
+              <!-- === Viewer 2 Block === -->
+              <div style="text-align: center;">
+                <model-viewer
+                  id="viewer2"
+                  src="./static/part2gs_glbs/fridge_10489.glb"
+                  autoplay
+                  auto-rotate
+                  camera-controls
+                  animation-name="start_1Action"
+                  shadow-intensity="1"
+                  style="width: 400px; height: 300px;">
+                </model-viewer>
+          
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="anim2" value="start_1Action" checked onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 0</label><br>
+                  <label><input type="checkbox" name="anim2" value="start_2Action" onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 1</label><br>
+                </div>
+              </div>
+          
+
+              
+              <script>
+                function toggleAnimation(viewerId, groupName, checkbox) {
+                  const viewer = document.getElementById(viewerId);
+                  
+                  // Deselect all other checkboxes in the same group
+                  document.querySelectorAll(`input[name="${groupName}"]`).forEach(cb => {
+                    if (cb !== checkbox) cb.checked = false;
+                  });
+              
+                  // Set or pause animation based on checkbox state
+                  if (checkbox.checked) {
+                    viewer.animationName = checkbox.value;
+                    viewer.play();
+                  } else {
+                    viewer.pause();
+                  }
+                }
+              </script>
+              
+              <p class="has-text-justified">
+                <strong>Articulated Meshes in a Simulation.</strong>            
+              </p>
+
+            </div>
+              <br>
+              <br>
+
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/main_result.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong>Quantitative Results on <span style="font-variant: small-caps;">Paris</span>.</strong>
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better across all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights best performing results.
+                Objects with <strong>*</strong> are seen categories trained in Ditto.
+                <strong>F</strong> indicates wrong motion type predictions.
+                Pos Err is omitted for objects with only prismatic joints (Blade, Storage*, and Real-Storage).              
+              </p>
+            </div>
+              <br>
+              <br>
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/main_result2.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong>Results on <span style="font-variant: small-caps;"><strong>DTA</strong>-Multi</span> and <span style="font-variant: small-caps;"><strong>ArtGS</strong>-Multi</span>.</strong>
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better across all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights best performing results.
+                Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
+              </p>
+              </div>
+          </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Qualitative Results</h2>
+
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <div class="gif-grid">
+              <img src="./static/part2gs_videos/2parts/blade_103706.gif" alt="GIF 1">
+              <img src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="GIF 2">
+              <img src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="GIF 3">
+              <img src="./static/part2gs_videos/2parts/USB_100109.gif" alt="GIF 4">
+              <img src="./static/part2gs_videos/2parts/storage_45135.gif" alt="GIF 5">
+              <img src="./static/part2gs_videos/2parts/washer_103776.gif" alt="GIF 6">
+            </div>
+            <p class="has-text-justified">
+              <strong>Rendering Results of Simple (two-parts) objets</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
+               Our method captures part-aware geometry and consistent transformations, even in minimal degrees of freedom, demonstrating the effectiveness of Part²GS in simple settings.          
+            </p>
+            </div>
+            <br>
+            <br>
+
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <div class="gif-grid">
+                <img src="./static/part2gs_videos/fridge_10489.gif" alt="GIF 1">
+                <img src="./static/part2gs_videos/table_25493.gif" alt="GIF 2">
+                <img src="./static/part2gs_videos/table_31249.gif" alt="GIF 3">
+                <img src="./static/part2gs_videos/oven_101908.gif" alt="GIF 4">
+                <img src="./static/part2gs_videos/storage_47254.gif" alt="GIF 5">
+                <img src="./static/part2gs_videos/storage_47648.gif" alt="GIF 6">
+              </div>
+              <p class="has-text-justified">
+                <strong>Rendering Results of Complex (Multi-parts) objets</strong>. Our method captures accurate part-aware geometry and consistent transformations,
+                 even for complex objects, demonstrating the effectiveness of Part²GS.          
+              </p>
+              </div>
+              <br>
+              <br>
+
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/part_result.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong>Qualitative Comparison of Part Discovery Across Object States (columns) and Discovery Methods (rows).</strong>
+                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
+                accurately isolates moving parts across start, end, and canonical states.               
+              </p>
+              </div>
+              <br>
+              <br>
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/ablate.png" class="interpolation-image" alt="ece results." width="95%" />
+              <p class="has-text-justified">
+                <strong><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Ablations</strong>
+                on the two most complex objects in our evaluation, <em>Table (5 parts)</em> and <em>Storage (7 parts)</em>.
+                Lower (<span style="font-size: 0.9em;">↓</span>) is better on all metrics.
+                <span style="background-color: rgba(183, 55, 35, 0.6); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                shows results with <strong>all <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> modules</strong>,
+                while
+                <span style="background-color: rgba(88, 41, 0, 0.3); padding: 0 0.4em; border-radius: 3px;">&nbsp;</span>
+                highlights severe failures caused by removing components of our method.
+                Severe failures are defined as metrics that are more than 5× worse than the full 
+                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> for the same object.
+              
+              </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@misc{yu2025part2gspartawaremodelingarticulated,
+        title={Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting}, 
+        author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Ying Shen and Kiet A. Nguyen and Ismini Lourentzou},
+        year={2025},
+        eprint={2506.17212},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2506.17212}, 
+        }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2308.04079">3DGS</a> and 
+              <a href="https://arxiv.org/pdf/2502.19459">ArtGS</a>
+              for open-sourcing their projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
