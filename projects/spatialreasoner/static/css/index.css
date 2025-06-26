@@ -162,6 +162,14 @@ body {
   font-weight: bolder;
 }
 
+.logo-blue {
+    color: #1A4E8A; 
+}
+
+.logo-cyan {
+    color: #56BBCC; 
+}
+
 li {
   list-style-type: none;
 }
