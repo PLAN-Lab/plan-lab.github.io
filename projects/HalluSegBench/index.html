@@ -39,9 +39,7 @@ title: HalluSegBench
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title" style="font-size:2.4rem;"><img src="static/images/logo.png" alt="HalluSegBench logo"
-                width="80px"><span class="model-name" style=" font-weight: bold; font-variant: small-caps; background: linear-gradient(to right, rgb(0, 0, 205), rgb(255, 94, 0));
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        display: inline-block;">HalluSegBench</span>: Counterfactual Visual Reasoning for Segmentation Hallucination Evaluation</h1>
+                width="80px"><span class="model-name-gradient">HalluSegBench</span>: Counterfactual Visual Reasoning for Segmentation Hallucination Evaluation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/xinzhuo-li/" class="illini-blue">Xinzhuo Li<sup class="illini-orange">*</sup></a>,</span>
@@ -123,34 +121,15 @@ title: HalluSegBench
               Recent progress in vision-language models and segmentation methods has significantly advanced grounded visual understanding. 
               However, these models often exhibit hallucination by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. 
               Current evaluation paradigms primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. 
-              In response, we introduce <span class="model-name">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>.
+              In response, we introduce <span class="model-name-gradient">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucination in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>.
               Our benchmark consists of a novel dataset of 1340 factual-counterfactual instance pairs spanning 281 unique object classes, and a set of newly introduced metrics to assess hallucination robustness in reasoning-based segmentation models. 
-              Experiments on <span class="model-name">HalluSegBench</span> with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
+              Experiments on <span class="model-name-gradient">HalluSegBench</span> with state-of-the-art pixel-grounding models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the necessity for counterfactual reasoning to diagnose true visual grounding.
             </p>
           </div>
           <img src="./static/images/teaser.png" class="interpolation-image"
           alt="Interpolate start reference image." width="85%" />
         </div>
       </div>
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
-
-  <!-- <div class="columns is-centered has-text-centered">
-    <div class="container">
-      <h2 class="title is-3">Poster</h2>
-      <iframe  src="static/calicoposter.pdf" width="100%" height="550"></iframe>
-      </div>
-    </div> -->
   </div>
   </section>
 
@@ -161,16 +140,16 @@ title: HalluSegBench
           <h2 class="title is-3">✅ Contributions</h2>
           <div class="content has-text-justified">
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>New Benchmark</b>. We present <span class="model-name">HalluSegBench</span>, 
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. We present <span class="model-name">HalluSegBench</span>, 
                 the first benchmark for evaluating segmentation hallucinations using counterfactual image-text pairs, 
                 covering 1,340 pairs across 281 object classes. </li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Novel Metrics</b>. 
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Novel Metrics</b>. 
                 We introduce four new metrics that quantify hallucination severity under visual/textual counterfactuals, 
                 reveal over-reliance on semantic priors, and assess spatial plausibility of hallucinated masks.
               </li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Empirical Insights</b>. 
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Empirical Insights</b>. 
                 Experiments on state-of-the-art vision-language segmentation models show they hallucinate more under visual edits than textual ones, 
                 highlighting the need for counterfactual-based diagnostics.</li>
               </ol>
