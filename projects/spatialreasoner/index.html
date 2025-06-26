@@ -132,9 +132,6 @@
         <div class="pdf-container">
           <img src="./static/images/teaser.png" alt="Workflow Overview" style="width: 120%; border: none;">
         </div>
-        <!-- <div class="content has-text-justified">
-          Our fine-grained preference optimization framework for improving spatial reasoning in Vision-Language Models through targeted training on spatial understanding tasks.
-        </div> -->
       </div>
     </div>
   </section>
@@ -147,7 +144,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce SpatialReasoner-R1, a vision-language reasoning model designed to address these limitations. To construct high-quality supervision for spatial reasoning, we design a Multi-Model Monte Carlo Tree Search (M3CTS) method that generates diverse, logically consistent Long Chain-of-Thought (LongCoT) reasoning trajectories. In addition, we propose fine-grained Direct Preference Optimization (fDPO), which introduces segment-specific preference granularity for descriptive grounding and logical reasoning, guided by a spatial reward mechanism that evaluates candidate responses based on visual consistency, spatial grounding, and logical coherence. Experimental results demonstrate that fDPO achieves an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% gain in spatial quantity tasks. SpatialReasoner-R1, trained with fDPO, sets a new SoTA on SpatialRGPT-Bench, outperforming the strongest baseline by 9.8% in average accuracy, while maintaining competitive performance on general vision-language tasks.           </p>
+              Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span>, a vision-language reasoning model designed to address these limitations. To construct high-quality supervision for spatial reasoning, we design a Multi-Model Monte Carlo Tree Search (M3CTS) method that generates diverse, logically consistent Long Chain-of-Thought (LongCoT) reasoning trajectories. In addition, we propose fine-grained Direct Preference Optimization (fDPO), which introduces segment-specific preference granularity for descriptive grounding and logical reasoning, guided by a spatial reward mechanism that evaluates candidate responses based on visual consistency, spatial grounding, and logical coherence. Experimental results demonstrate that fDPO achieves an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% gain in spatial quantity tasks. SpatialReasoner-R1, trained with fDPO, sets a new SoTA on SpatialRGPT-Bench, outperforming the strongest baseline by 9.8% in average accuracy, while maintaining competitive performance on general vision-language tasks.           </p>
           </div>
         </div>
       </div>
@@ -184,7 +181,7 @@
               <img src="./static/images/workflow_c.png" alt="Fine-Grained Preference Optimization" style="width: 120%; border: none;">
             </div>
             <div class="horizontal-container">
-              <p>Method Overview including model architecture and training pipeline. Training pipeline consisting of three stages: (1) generating reasoning paths using M3CTS; (2) constructing fine-grained preference pairs via reward-based selection; (3) training with fine-grained DPO (fDPO) to optimize descriptive and logical reasoning separately.</p>
+              <p>Method Overview including <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> model architecture and training pipeline. Training pipeline consisting of three stages: (1) generating reasoning paths using M3CTS; (2) constructing fine-grained preference pairs via reward-based selection; (3) training with fine-grained DPO (fDPO) to optimize descriptive and logical reasoning separately.</p>
             </div>
           </div>
         </div>
@@ -221,7 +218,7 @@
             <div class="pdf-container" style="width: 65%; margin: 0 auto;">
               <img src="./static/images/result.png" alt="Comparison Results" style="width: 100%; border: none;">
             </div>
-            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric. SpatialReasoner-R1 8B, trained with fDPO, establishes a new SoTA in spatial reasoning.</p>
+            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric. <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> 8B, trained with fDPO, establishes a new SoTA in spatial reasoning.</p>
           </div>
         </div>
       </div>
@@ -235,7 +232,7 @@
         <div class="column">
           <h2 class="title is-3">Examples and Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            SpatialReasoner-R1 demonstrates improved spatial reasoning across various scenarios and object types:
+            <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> demonstrates improved spatial reasoning across various scenarios and object types:
           </p>
           
           <div style="text-align: center; padding: 0 0 30px 0;">
@@ -284,7 +281,7 @@
   </section>
 
 
-  <!-- <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
         <a class="icon-link" href="#">
@@ -300,13 +297,13 @@
             <p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We acknowledge the open-source community for their valuable contributions.
+                Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
           </div>
         </div>
       </div>
     </div>
-  </footer> -->
+  </footer> 
 </body>
 
 </html>
