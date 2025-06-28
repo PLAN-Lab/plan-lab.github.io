@@ -162,6 +162,16 @@ body {
   font-weight: bolder;
 }
 
+.model-name-gradient {
+    font-variant: small-caps;
+    font-weight: bolder;
+    background: linear-gradient(to right, rgb(0, 0, 205), rgb(255, 94, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; 
+}
+
+
 li {
   list-style-type: none;
 }
