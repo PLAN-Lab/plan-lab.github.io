@@ -1,0 +1,403 @@
+---
+layout: project
+title: Calico
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models">
+  <meta name="keywords" content="part segmentation, part co-segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[TMLR'25] EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+<!-- {% include navbar.html %} -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
+                width="80px"><span class="model-name">EC-VLM</span>: Emergent Corpus Pre-training Benefits Vision Language Models</h1>
+            <h1 class="title is-3 publication-venue vt-maroon">TMLR 2025</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://makanju0la.github.io/">Makanjuola Ogunleye<sup class="vt-maroon">1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://chasedvickery.github.io/">Chase Vickery<sup class="vt-maroon">1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">2</sup></a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://plan-lab.github.io/">PLAN Lab</a>
+                (<span class="author-affiliations">
+                  <sup>1</sup><span class="vt-maroon">Virginia Tech</span>,
+                  <sup>2</sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                </span>)
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We present <span class="model-name">EC-VLM</span>, a pretraining 
+          strategy using emergent communication tokens from artificial agents—as a way to 
+          boost sample efficiency in vision-language models. Our method, tested on multiple reasoning tasks, 
+          achieves major gains in low-resource settings and outperforms strong baselines like <span class="model-name">BLIP-2</span>.
+          We release <span class="model-name">LLaVA-1.5-EC</span>, a fully EC-trained variant of <span class="model-name">LLaVA</span>, 
+          which sets new state-of-the-art results on several benchmarks. 
+        </div>
+        <img src="./static/images/overview_paper.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">Overview of our EC Pretraining Framework.</span> A speaker-listener pair engages in a referential game, 
+          where the speaker generates an Emergent Communication (EC) message to describe a target image, and 
+          the listener must identify the correct image among distractors. The resulting EC tokens serve as 
+          pretraining supervision for a Vision-Language Model (VLM). This EC-pretrained VLM is then fine-tuned 
+          on a range of downstream vision-language tasks, including Visual Entailment, Visual Referring Expression, 
+          Image Captioning, and Visual Question Answering. The framework enables transferable visual 
+          grounding from synthetic EC messages to natural language tasks.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Vision-Language Pre-trained Models (VL-PTMs) have achieved impressive performance across a 
+              wide range of tasks, but their success often hinges on access to large-scale multimodal 
+              datasets. While effective in high-resource settings, these models tend to struggle in 
+              data-scarce regimes. In this work, we investigate Emergent Communication (EC) as a mechanism
+               to improve sample efficiency in VL-PTMs. We pre-train a Vision-Language Model (VLM) using 
+               EC tokens generated through a referential game between two artificial agents. 
+               Across three diverse cross-modal matching and reasoning benchmarks, EC pretraining yields 
+               substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6\% and 
+               Visual Entailment (VE) by 69.6\%.
+              </p>
+               
+              <p>
+               To further validate the effectiveness of EC pretraining, we introduce LLaVA-1.5-EC, 
+               a LLaVA variant trained entirely on EC tokens. LLaVA-1.5-EC outperforms strong 
+               LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23\% on VizWiz, 
+               34.8\% on GQA, and 10.8\% on VQAv2, and top performance on MMBench, a challenging instruction-following 
+               benchmark. 
+              </p>
+               
+              <p>
+               These results highlight the transferability and generalization capacity of EC pretraining 
+               and underscore the potential of leveraging grounded EC tokens to enhance vision-language 
+               reasoning in low-resource settings, especially in settings with limited natural language data. 
+               We discuss implications and propose avenues for future research to explore the connections between 
+               EC and VL for multimodal understanding and effective human-machine communication.
+              </p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    / Paper video.
+  -->
+
+  <div class="columns is-centered has-text-centered">
+    <div class="container">
+      <h2 class="title is-3">Poster</h2>
+      <iframe  src="static/images/ecvlm-poster.pdf" width="100%" height="550"></iframe>
+      </div>
+    </div>
+  </div>
+  </section> 
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>Novel Pretraining Framework</b>. We introduce a vision-language 
+                pretraining framework that employs Emergent Communication (EC) between agents to 
+                generate supervision signals for pretraining. We demonstrate that EC pretraining
+                transfers effectively to diverse downstream multimodal tasks. </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Understanding of EC's Structure</b>. 
+                We empirically show that EC tokens encode structured and compositional semantics that generalize
+                across tasks and modalities, positioning EC as a scalable, annotation-free alternative to natural
+                language supervision in multimodal learning.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>Theoretical and Empirical Insights.</b>. We provide 
+                deep insights into the structure and transferability of emergent language for vision-language
+                pretraining and outline future research opportunities at the intersection of EC, multimodal repre-
+                sentation learning, and human-machine communication.</li>
+              </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Quantitative Results on the Visual Entailment Task </h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/snlive result.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <p class="has-text-justified">
+                <span style="font-weight: bold;">Visual Entailment (VE) Accuracy with Varying Training Sizes.</span> EC 
+                pretraining substantially improves VE accuracy compared to the baseline across all training sizes, and 
+                approaches NL pretraining performance as more downstream data becomes available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Instruction Following LVLM Tasks</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/instruc-following.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <p class="has-text-justified">
+                We compare LLaVA-1.5-EC, which is trained exclusively on EC tokens, against a range of state-of-the-art 
+                LVLMs across five benchmarks: VQAv2, GQA, VizWiz, SciQA-IMG, and TextVQA. Despite using only 558K images
+                 and no natural language supervision, LLaVA-1.5-EC achieves competitive performance, outperforming 
+                 well-established models such as BLIP-2 (13B) and InstructBLIP (13B) across most datasets. 
+                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and 
+                 10.8% on VQAv2. 
+              </p>
+              <p class="has-text-justified">
+                 It also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs 
+                 and fine-tuned on 1.2M additional examples, highlighting the impressive representational capacity of EC pretraining. 
+                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- it achieves 
+                 strong results despite having seen 2–3 orders of magnitude fewer samples and no human-written captions. 
+                 For example, on VizWiz, LLaVA-1.5-EC even outperforms Qwen-VL (40.03 vs. 35.2), showing its effectiveness on visually grounded tasks. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results on MMBench</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/mmbench.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <p class="has-text-justified">
+                <span style="font-weight: bold;">Comparison of LLaVA-1.5-EC with SoTA Instruction-Following Models on the MM-
+                  Bench Benchmark (English and Chinese).</span>  LLaVA-1.5-EC, pretrained using Emergent Communication 
+                  tokens, surpasses all baselines, highlighting the potential of EC-based pretraining.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Qualitative Results</h2>
+  
+          <p class="has-text-justified" style="padding-bottom: 30px;">
+            We conduct an in-depth qualitative analysis to uncover potential patterns in the generated Emergent 
+            Communication (EC) text. We show some interesting insights below.
+          </p>
+  
+          <!-- Image 1 -->
+          <figure class="qual-example" style="margin-bottom: 40px;">
+            <img src="static/images/brocolli-qual1.png" alt="Image 1" style="width: 100%; height: auto; border-radius: 8px;" />
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>EC Sequences Exhibiting Semantic Clustering.</strong> (a) The repeated 
+              occurrence of token 2430 is consistently associated with images containing broccoli. (b) Token 222 
+              functions as a higher-level food category marker. (c) Varying the tokens that follow 222 refines the 
+              type of food being described, suggesting contextual disambiguation. (d) The bigram 222 3967 remains 
+              food-associated but often appears in scenes involving people interacting with food, such as eating or 
+              holding it, indicating compositional encoding of both object and action.
+            </figcaption>
+          </figure>
+  
+          <!-- Image 2 -->
+          <figure class="qual-example" style="margin-bottom: 40px;">
+            <img src="static/images/zebra-qual.png" alt="Image 2" style="width: 100%; height: auto; border-radius: 8px;" />
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>EC Sequences Reveal Visual Grounding, Compositionality, and Latent Structure.</strong> (a) Token 3293 
+              consistently appears in zebra-related images, demonstrating strong visual grounding. (b) A variation in the third 
+              token of the trigram suggests fine-grained visual distinctions between zebra scenes, pointing to contextual 
+              compositionality. (c) The same trigram from (a) appears at a different sequence position, indicating positional 
+              flexibility and implying that EC meaning is carried by token patterns rather than fixed positions — a possible 
+              marker of syntactic invariance. Occasional co-occurrence with giraffes suggests token reuse across visually 
+              related concepts and hints at fuzzy semantic boundaries between visually similar classes. (d) The trigram from 
+              (b), when shifted to position 1, remains strongly correlated with zebra images, reinforcing compositional 
+              consistency and semantic robustness.
+            </figcaption>
+          </figure>
+  
+          <!-- Image 3 -->
+          <figure class="qual-example">
+            <img src="static/images/vehicle-qual.png" alt="Image 3" style="width: 100%; height: auto; border-radius: 8px;" />
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>EC Sequences Exhibit Semantic Specificity and Structural Roles.</strong> (a) Token 309 is associated with vehicles, and 
+              its position appears to modulate meaning, <i>e.g.</i> at position 2, it tends to refer to motorbikes. (b) The same token 
+              in different positions corresponds to trucks, suggesting context-dependent semantic refinement. (c) Token 2512 may 
+              denote giraffes, while (d) token 1915 appears to generalize to a broader animal category. Notably, token 3355 
+              occurs across all examples, suggesting a structural or functional role, potentially indicating count, emphasis, 
+              or grouping within the sequence.
+            </figcaption>
+          </figure>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{ogunleye2025ecvlm,
+  title={EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models},
+  author={Ogunleye, Makanjuola A. and Vickery, Chase and Lourentzou, Ismini},
+  journal={Transactions on machine learning research},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2304.08485">LLaVA</a> for open-sourcing their models
+              and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
