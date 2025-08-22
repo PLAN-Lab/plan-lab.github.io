@@ -1,7 +1,7 @@
 ---
 name: Afrina Tabassum
 image: images/members/AfrinaTabassum.jpg
-description: Ph.D. Student
+description: Alumni
 role: phd-student
 aliases:
     - Afrina Tabassum
@@ -14,4 +14,4 @@ links:
     google-scholar: JZsyjdMAAAAJ
 ---
 
-Afrina Tabassum is currently pursuing a Ph.D. in Computer Science at Virginia Tech. She is interested in multi-modal machine learning and video generation. Her current projects include multi-modal contrastive learning, hard negative sampling, multimodal plan generation.
+Afrina Tabassum joined Amazon after completing her Ph.D. in Computer Science at Virginia Tech. Her thesis centered on challenges in multi-modal contrastive learning, hard negative sampling, and multimodal procedural planning. During her graduate studies, Afrina served as co-lead of our PLANBot team competing in the Alexa Prize Taskbot Challenge 2. 
