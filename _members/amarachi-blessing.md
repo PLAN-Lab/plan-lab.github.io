@@ -2,7 +2,7 @@
 name: Amarachi Blessing Madu
 image: images/members/AmarachiMbakwe.jpeg
 description: Ph.D. Student
-role: phd-student
+role: Alumni
 aliases:
     - Amarachi Blessing Madu
     - A Blessing
@@ -14,4 +14,4 @@ links:
     google-scholar: GDt7O1AAAAAJ
 ---
 
-I am a Ph.D. Candidate in Computer Science at Virginia Tech, working under the supervision of Dr. Ismini Lourentzou. My research focuses on artificial intelligence, deep learning, multimodal machine learning, and natural language processing, with applications in healthcare and other sectors. I leverage the synergy between vision and language in my work to develop models aimed at creating a positive societal impact.
+Amarachi completed her Ph.D. in Computer Science at Virginia Tech. Her research interests are AI and multimodal machine learning, with applications in healthcare and finance. Her thesis focused on disease progression monitoring and longitudinal radiology report generation.
