@@ -1,8 +1,8 @@
 ---
 name: Amarachi Blessing Madu
 image: images/members/AmarachiMbakwe.jpeg
-description: Ph.D. Student
-role: Alumni
+description: Alumni
+role: phd-student
 aliases:
     - Amarachi Blessing Madu
     - A Blessing
