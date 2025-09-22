@@ -473,3 +473,126 @@
   - code translation
   - semi-supervised learning
   _cache: 9ecd9547ee5fa1c2b088695a8e8c5e2f807e9b396b6b443566e76a3d5b07aff2
+- id: doi:10.48550/arXiv.2507.19598
+  title: 'MOCHA: Are Code Language Models Robust Against Multi-Turn Malicious Coding
+    Prompts?'
+  authors:
+  - Muntasir Wahed
+  - Xiaona Zhou
+  - Kiet A. Nguyen
+  - Tianjiao Yu
+  - Nirav Diwan
+  - Gang Wang
+  - "Dilek Hakkani-T\xFCr"
+  - Ismini Lourentzou
+  publisher: Conference on Empirical Methods in Natural Language Processing (EMNLP)
+    Findings
+  date: '2025-11-04'
+  link: https://doi.org/g939vh
+  _cache: a1c172566365427657f78c83394ca0e4195b56d6860de0e59a7b8940ab9d66ee
+- id: doi:10.48550/arXiv.2507.19060
+  title: 'PurpCode: Reasoning for Safer Code Generation'
+  authors:
+  - Jiawei Liu
+  - Nirav Diwan
+  - Zhe Wang
+  - Haoyu Zhai
+  - Xiaona Zhou
+  - Kiet A. Nguyen
+  - Tianjiao Yu
+  - Muntasir Wahed
+  - Yinlin Deng
+  - Hadjer Benkraouda
+  - Yuxiang Wei
+  - Lingming Zhang
+  - Ismini Lourentzou
+  - Gang Wang
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2025-12-07'
+  link: https://doi.org/g939vj
+  _cache: 8fd252187b9866bf24a23322ea15fa2625c8e7c5dc616c903f18e590fdb36950
+- id: doi:10.48550/arXiv.2506.21656
+  title: Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs
+  authors:
+  - Yifan Shen
+  - Yuanzhe Liu
+  - Jingyuan Zhu
+  - Xu Cao
+  - Xiaofeng Zhang
+  - Yixiao He
+  - Wenming Ye
+  - James Matthew Rehg
+  - Ismini Lourentzou
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2025-12-07'
+  link: https://doi.org/g939vk
+  _cache: 8a3c59b44cb1c2ceea9744b89fdb67ef22854924e6da66e68deb94a9ae12f209
+- id: doi:10.48550/arXiv.2506.21550
+  title: 'mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model
+    Selection at Scale'
+  authors:
+  - Xiaona Zhou
+  - Constantin Brif
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g939vm
+  _cache: de38559ae513a5ef4e2f19773ea48a579497d4d19b996e2477139b74fafdf05e
+- id: doi:10.48550/arXiv.2506.21546
+  title: 'HalluSegBench: Counterfactual Visual Reasoning for Segmentation Hallucination
+    Evaluation'
+  authors:
+  - Xinzhuo Li
+  - Adheesh Juvekar
+  - Xingyou Liu
+  - Muntasir Wahed
+  - Kiet A. Nguyen
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g939vn
+  _cache: 9277b818544b64f4810f26d4bfb38202ed7411933e2cc9ece4b381f5094f7f49
+- id: doi:10.48550/arXiv.2506.17212
+  title: 'Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian
+    Splatting'
+  authors:
+  - Tianjiao Yu
+  - Vedant Shah
+  - Muntasir Wahed
+  - Ying Shen
+  - Kiet A. Nguyen
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g939vp
+  _cache: 03b89f6a8f83da446fd8f8fb24cca9e57772fce8dde2d2cbe300e7af58333ec6
+- id: doi:10.48550/arXiv.2506.06952
+  title: 'LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer'
+  authors:
+  - Ying Shen
+  - Zhiyang Xu
+  - Jiuhai Chen
+  - Shizhe Diao
+  - Jiaxin Zhang
+  - Yuguang Yao
+  - Joy Rimchala
+  - Ismini Lourentzou
+  - Lifu Huang
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g939vq
+  _cache: bdbf907664b04aecd63c6f85df2e02834029df6365ca76b34bd904e18cd5802f
+- id: doi:10.48550/arXiv.2503.10628
+  title: 'Uncertainty in Action: Confidence Elicitation in Embodied Agents'
+  authors:
+  - Tianjiao Yu
+  - Vedant Shah
+  - Muntasir Wahed
+  - Kiet A. Nguyen
+  - Adheesh Juvekar
+  - Tal August
+  - Ismini Lourentzou
+  publisher: arXiv
+  date: '2025-01-01'
+  link: https://doi.org/g9mwdd
+  _cache: 6e62392bce9fc799db6174475fa14bbed26cd8a9b8389cdb1aa6daa664f21677
