@@ -582,17 +582,3 @@
   date: '2025-01-01'
   link: https://doi.org/g939vq
   _cache: bdbf907664b04aecd63c6f85df2e02834029df6365ca76b34bd904e18cd5802f
-- id: doi:10.48550/arXiv.2503.10628
-  title: 'Uncertainty in Action: Confidence Elicitation in Embodied Agents'
-  authors:
-  - Tianjiao Yu
-  - Vedant Shah
-  - Muntasir Wahed
-  - Kiet A. Nguyen
-  - Adheesh Juvekar
-  - Tal August
-  - Ismini Lourentzou
-  publisher: arXiv
-  date: '2025-01-01'
-  link: https://doi.org/g9mwdd
-  _cache: 6e62392bce9fc799db6174475fa14bbed26cd8a9b8389cdb1aa6daa664f21677
