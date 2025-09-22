@@ -157,4 +157,17 @@
   tags:
     - code translation
     - semi-supervised learning
-
+- id: doi:10.48550/arXiv.2507.19598
+  publisher: Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings
+  date: '2025-11-04'
+- id: doi:10.48550/arXiv.2507.19060
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2025-12-07'
+- id: doi:10.48550/arXiv.2506.21656
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2025-12-07'
+- id: doi:10.48550/arXiv.2506.21550
+- id: doi:10.48550/arXiv.2506.21546
+- id: doi:10.48550/arXiv.2506.17212
+- id: doi:10.48550/arXiv.2506.06952
+- id: doi:10.48550/arXiv.2503.10628
