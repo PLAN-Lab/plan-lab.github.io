@@ -489,7 +489,8 @@
     Findings
   date: '2025-11-04'
   link: https://doi.org/g939vh
-  _cache: a1c172566365427657f78c83394ca0e4195b56d6860de0e59a7b8940ab9d66ee
+  image: images/publications/mocha.png
+  _cache: 90268639f086da4068b3eaff1153cb69efd35d1fab7778ddad481318aaeb2f21
 - id: doi:10.48550/arXiv.2507.19060
   title: 'PurpCode: Reasoning for Safer Code Generation'
   authors:
@@ -510,7 +511,8 @@
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2025-12-07'
   link: https://doi.org/g939vj
-  _cache: 8fd252187b9866bf24a23322ea15fa2625c8e7c5dc616c903f18e590fdb36950
+  image: images/publications/purpcode.png
+  _cache: af247d9841be93f0c27393db48cfd9be6284762e8c3113a0fb41212d04904d3a
 - id: doi:10.48550/arXiv.2506.21656
   title: Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs
   authors:
@@ -526,7 +528,8 @@
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2025-12-07'
   link: https://doi.org/g939vk
-  _cache: 8a3c59b44cb1c2ceea9744b89fdb67ef22854924e6da66e68deb94a9ae12f209
+  image: images/publications/sreasoner.png
+  _cache: a7b8c591d7717f72e5a3c524872b862cefd2f1271fccb38e163779f86d71ba18
 - id: doi:10.48550/arXiv.2506.21550
   title: 'mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model
     Selection at Scale'
@@ -537,7 +540,8 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g939vm
-  _cache: de38559ae513a5ef4e2f19773ea48a579497d4d19b996e2477139b74fafdf05e
+  image: images/publications/mtsbench.png
+  _cache: b5a4f5e25d6c5c12013883d6f4b12919c1ba8ef27e3c1dbd8d7437146493422e
 - id: doi:10.48550/arXiv.2506.21546
   title: 'HalluSegBench: Counterfactual Visual Reasoning for Segmentation Hallucination
     Evaluation'
@@ -551,7 +555,8 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g939vn
-  _cache: 9277b818544b64f4810f26d4bfb38202ed7411933e2cc9ece4b381f5094f7f49
+  image: images/publications/hallusegbench.png
+  _cache: 6f013c10981489012c6cd3f28db306e133e1061e6b9690411fcba5586834e989
 - id: doi:10.48550/arXiv.2506.17212
   title: 'Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian
     Splatting'
@@ -565,7 +570,8 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g939vp
-  _cache: 03b89f6a8f83da446fd8f8fb24cca9e57772fce8dde2d2cbe300e7af58333ec6
+  image: images/publications/part2gs.gif
+  _cache: be52c3c80bf5cb38cc650dd2511bab2d42615e28a5678e992dab64eb87164133
 - id: doi:10.48550/arXiv.2506.06952
   title: 'LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer'
   authors:
@@ -581,4 +587,5 @@
   publisher: arXiv
   date: '2025-01-01'
   link: https://doi.org/g939vq
-  _cache: bdbf907664b04aecd63c6f85df2e02834029df6365ca76b34bd904e18cd5802f
+  image: images/publications/latteflow.png
+  _cache: 21373fde3cefd03d90f9102105904d831b3bd7cd09bb8fe1452a457076992557
