@@ -6,7 +6,7 @@ on:
 
 jobs:
   update_research:
-    name: Fetch Conferences
+    name: Fetch Members
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
