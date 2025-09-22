@@ -1,6 +1,6 @@
 ---
 name: Jiaxun Zhang
-image: https://drive.google.com/file/d/1Ot2tPKtSG2birtPd0WQiTazssoBp5BAi/view?usp=sharing
+image: images/members/JiaxunZhang.JPG
 description: Undergraduate Student 
 role:  undergrad
 aliases:
