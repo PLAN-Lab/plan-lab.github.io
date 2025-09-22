@@ -158,15 +158,23 @@
     - code translation
     - semi-supervised learning
 - id: doi:10.48550/arXiv.2507.19598
+  image: images/publications/mocha.png
   publisher: Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings
   date: '2025-11-04'
 - id: doi:10.48550/arXiv.2507.19060
+  image: images/publications/purpcode.png
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2025-12-07'
 - id: doi:10.48550/arXiv.2506.21656
+  image: images/publications/sreasoner.png
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2025-12-07'
 - id: doi:10.48550/arXiv.2506.21550
+  image: images/publications/mtsbench.png
 - id: doi:10.48550/arXiv.2506.21546
+  image: images/publications/hallusegbench.png
 - id: doi:10.48550/arXiv.2506.17212
+  image: images/publications/part2gs.gif
 - id: doi:10.48550/arXiv.2506.06952
+  image: images/publications/latteflow.png
+
