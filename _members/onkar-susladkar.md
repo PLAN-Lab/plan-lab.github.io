@@ -1,6 +1,6 @@
 ---
 name: Onkar Susladkar
-image: https://photos.app.goo.gl/yGTLfazunBbtaxjs8
+image: https://lh3.googleusercontent.com/pw/AP1GczMq1u2N_mOVPr8vTWCMLfWvqz0oNqPyGW7zvJUm6KXsDGwRTNF2-GqttL9TWLbgqABqqKv6kLSlwz92djjIr7Qz-ED8GhJ81Nj9s4Vh7jIdYZajQVFcYJiWS5Tm0qKL_gY_1-h-pK0qJyY67TJ4A2FT0A=w936-h911-s-no-gm
 description: Ph.D. Student
 role:  
 aliases:

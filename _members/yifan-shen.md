@@ -1,6 +1,6 @@
 ---
 name: Yifan Shen
-image: https://shenyifans.github.io/
+image: https://shenyifans.github.io/images/yifan1.jpg
 description: Ph.D. Student
 role:  
 aliases:
