@@ -7,6 +7,7 @@ aliases:
     - Kiet Nguyen
     - K Nguyen
     - K. Nguyen
+    - Kiet A. Nguyen
 links: 
     home-page:  
     email: kietan2@illinois.edu
