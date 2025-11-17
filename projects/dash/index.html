@@ -130,7 +130,7 @@
           <span style="font-weight: bold;">TL;DR:</span> We introduce <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies 
           (<strong>DaSH</strong>), a method for selecting entire datasets from large, heterogeneous multi-source collections. 
           <strong>DaSH</strong> models utility at both dataset and group levels to guide efficient selection under resource constraints, 
-          achieving up to 26.2% accuracy improvements on <strong>Digit-Five</strong> and <strong>DomainNet</strong> while using far fewer exploration steps.
+          achieving up to 26.2% accuracy improvements on <strong>Digit-Five</strong> and <strong>DomainNet</strong> while using fewer exploration steps.
           </div>
         <img src="./static/images/DaSH_teaser.png" class="interpolation-image"
           alt="Interpolate start reference image." />
@@ -160,11 +160,12 @@
               yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences 
               between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire 
               datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. 
-              We propose <i>Dataset Selection via Hierarchies (DaSH)</i>, a dataset selection method that models utility at both 
+              We propose <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies 
+              (<strong>DaSH</strong>), a dataset selection method that models utility at both 
               dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. 
-              Across two public benchmarks (<i>Digit-Five</i> and <i>DomainNet</i>), <i>DaSH</i> outperforms state-of-the-art data 
+              Across two public benchmarks (<i>Digit-Five</i> and <i>DomainNet</i>), <b>DaSH</b> outperforms state-of-the-art data 
               selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. 
-              Ablations show <i>DaSH</i> is robust to low-resource settings and lack of relevant datasets, making it suitable for 
+              Ablations show <b>DaSH</b> is robust to low-resource settings and lack of relevant datasets, making it suitable for 
               scalable and adaptive dataset selection in practical multi-source learning workflows.
             </p>
           </div>
@@ -210,16 +211,16 @@
           <h2 class="title is-3"><span style="font-weight: bold;"> DaSH</span> Overview</h2>
           <div class="content has-text-justified">
             <img src="./static/images/DaSH_overview.png" class="interpolation-image" alt="PRIMA Model Architecture." />
-            <body>
-              Each dataset and its corresponding group are modeled using Gaussian distributions 
-              <script type="math/tex">\mathcal{N}(\theta_{i}, \hat{\sigma}_i^2)</script> and 
-              <script type="math/tex">\mathcal{N}(\mu_i, \sigma_i^2)</script> for datasets and dataset groups, respectively. 
-              The selection process involves choosing a dataset group, followed by a specific dataset within that group. 
-              Upon receiving a reward, the posterior distributions for the dataset and the dataset group are updated to 
-              <script type="math/tex">\mathcal{N}(\mu', \sigma'^2)</script> and 
-              <script type="math/tex">\mathcal{N}(\theta', \hat{\sigma}'^2)</script> respectively. 
-              After training, dataset groups and datasets with higher posterior means are selected
-            </body>
+            <p>
+              Each dataset and its corresponding group are modeled using Gaussian distributions
+              N(&theta;<sub>i</sub>, &sigma;&#770;<sub>i</sub><sup>2</sup>) and
+              N(&mu;<sub>i</sub>, &sigma;<sub>i</sub><sup>2</sup>) for datasets and dataset groups, respectively.
+              The selection process involves choosing a dataset group, followed by a specific dataset within that group.
+              Upon receiving a reward, the posterior distributions for the dataset and the dataset group are updated to
+              N(&mu;&#8242;, &sigma;&#8242;<sup>2</sup>) and
+              N(&theta;&#8242;, &sigma;&#770;&#8242;<sup>2</sup>) respectively.
+              After training, dataset groups and datasets with higher posterior means are selected.
+            </p>
           </div>
         </div>
       </div>
@@ -238,7 +239,7 @@
                 <b>Performance comparison on <span style="font-variant: small-caps;">Digit-Five</span> </b>against baselines (averaged over 5 runs). 
                 Best performance is <b>bold</b>. 
                 Red downward arrows (<span style="color: red;">&#8595;</span>) indicate absolute drops in accuracy relative to the best-performing method.
-                Across all five domains, <i>DaSH</i> matches the global model, achieving an average accuracy of 78.3%, 
+                Across all five domains, <b>DaSH</b> matches the global model, achieving an average accuracy of 78.3%, 
                 which is only 0.5% below the global upper bound (78.8%) and significantly higher than the local lower bound (51.2%). 
               </p>
 
@@ -248,7 +249,7 @@
                 (averaged over 5 runs). Best performance is <b>bold</b>. 
                 Red downward arrows (<span style="color: red;">&#8595;</span>) indicate absolute drops in accuracy 
                 relative to the best-performing method. While performance margins are narrower than in <span style="font-variant: small-caps;">Digit-Five</span>, 
-                <i>DaSH</i> still outperforms all baselines by 3.3–10.8%.
+                <b>DaSH</b> still outperforms all baselines by 3.3–10.8%.
                   
               </p>
 
@@ -297,7 +298,7 @@
             Each selected image is labeled by its source domain (above), with green borders indicating a correct domain 
             match to the target and red borders indicating a mismatch. 
             Unlike prior methods, which frequently select subsets from mismatched domains in the first exploration step, 
-            <i>DaSH</i> consistently identifies subsets from the correct domain, even in challenging settings with visually 
+            <b>DaSH</b> consistently identifies subsets from the correct domain, even in challenging settings with visually 
             similar categories.
 
           </div>
