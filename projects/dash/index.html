@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing.">
+  <meta name="keywords" content="DaSH">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DaSH: MMPlanner</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLM0VKTX0T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MLM0VKTX0T');
+  </script>
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing</h1>
+            <div class="is-size-5 publication-authors">
+              
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/xnz">Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://yyzeng43.github.io/">Yingyan Zeng<sup class="cincinnati-red">2</sup></a>,
+                </span>
+                  <span class="author-block">
+                    <a href="https://www.ise.vt.edu/people/faculty/jin.html">Ran Jin<sup class="vt-maroon">3</sup></a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">1</sup></a>,
+                  </span>
+              </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block illini-orange"><sup>1</sup>University of Illinois Urbana-Champaign</span>,
+              <span class="author-block cincinnati-red"><sup>2</sup>University of Cincinnati</span>,
+              <span class="author-block vt-maroon"><sup>3</sup>Virginia Tech</span>
+              
+              
+            </div>
+            
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We introduce <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies 
+          (<strong>DaSH</strong>), a method for selecting entire datasets from large, heterogeneous multi-source collections. 
+          <strong>DaSH</strong> models utility at both dataset and group levels to guide efficient selection under resource constraints, 
+          achieving up to 26.2% accuracy improvements on <strong>Digit-Five</strong> and <strong>DomainNet</strong> while using far fewer exploration steps.
+          </div>
+        <img src="./static/images/DaSH_teaser.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
+        <div class="content has-text-justified">
+          <p>Dataset selection aims to select entire datasets from external sources to improve local model performance. 
+            Instance-level methods, such as active learning and subset selection, ignore dataset structure and often select 
+            irrelevant or misleading samples. In contrast, <b>DaSH</b> leverages hierarchical grouping to efficiently identify 
+            relevant datasets, avoiding noisy sources and achieving higher downstream accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📝 Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, 
+              such as acquiring data from public repositories or sharing across institutions, data is naturally organized into 
+              discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to 
+              search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, 
+              yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences 
+              between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire 
+              datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. 
+              We propose <i>Dataset Selection via Hierarchies (DaSH)</i>, a dataset selection method that models utility at both 
+              dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. 
+              Across two public benchmarks (<i>Digit-Five</i> and <i>DomainNet</i>), <i>DaSH</i> outperforms state-of-the-art data 
+              selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. 
+              Ablations show <i>DaSH</i> is robust to low-resource settings and lack of relevant datasets, making it suitable for 
+              scalable and adaptive dataset selection in practical multi-source learning workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <!-- Contributions. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">💡 Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We formalize the task of dataset selection from a heterogeneous pool of external datasets, 
+                a setting common in real-world workflows such as public data acquisition and cross-institutional collaboration, where data is organized into discrete, variably relevant sources.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We propose <b>DaSH</b>, the first dataset selection method that models dataset utility 
+                through hierarchical inference over groups and datasets, enabling efficient and robust selection under limited feedback.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We benchmark <b>DaSH</b> against four state-of-the-art data selection methods across two public datasets, 
+                demonstrating consistent performance improvements, improves accuracy by up to 26.2% <i>Digit-Five</i> and 10.8\% on <i>DomainNet</i>. Ablation studies show DaSH remains robust to grouping noise 
+                and scales effectively to large dataset pools, whereas existing methods frequently select irrelevant or low-utility data samples.
+              </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      <!--/ Contributions. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"> DaSH</span> Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/DaSH_overview.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <body>
+              Each dataset and its corresponding group are modeled using Gaussian distributions 
+              <script type="math/tex">\mathcal{N}(\theta_{i}, \hat{\sigma}_i^2)</script> and 
+              <script type="math/tex">\mathcal{N}(\mu_i, \sigma_i^2)</script> for datasets and dataset groups, respectively. 
+              The selection process involves choosing a dataset group, followed by a specific dataset within that group. 
+              Upon receiving a reward, the posterior distributions for the dataset and the dataset group are updated to 
+              <script type="math/tex">\mathcal{N}(\mu', \sigma'^2)</script> and 
+              <script type="math/tex">\mathcal{N}(\theta', \hat{\sigma}'^2)</script> respectively. 
+              After training, dataset groups and datasets with higher posterior means are selected
+            </body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📊 Quantitative Results</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/table1.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                <b>Performance comparison on <span style="font-variant: small-caps;">Digit-Five</span> </b>against baselines (averaged over 5 runs). 
+                Best performance is <b>bold</b>. 
+                Red downward arrows (<span style="color: red;">&#8595;</span>) indicate absolute drops in accuracy relative to the best-performing method.
+                Across all five domains, <i>DaSH</i> matches the global model, achieving an average accuracy of 78.3%, 
+                which is only 0.5% below the global upper bound (78.8%) and significantly higher than the local lower bound (51.2%). 
+              </p>
+
+              <img src="./static/images/table2.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                <b>Performance comparison on <span style="font-variant: small-caps;">DomainNet</span> </b>against baselines 
+                (averaged over 5 runs). Best performance is <b>bold</b>. 
+                Red downward arrows (<span style="color: red;">&#8595;</span>) indicate absolute drops in accuracy 
+                relative to the best-performing method. While performance margins are narrower than in <span style="font-variant: small-caps;">Digit-Five</span>, 
+                <i>DaSH</i> still outperforms all baselines by 3.3–10.8%.
+                  
+              </p>
+
+              <img src="./static/images/pareto.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                <b>Pareto trade-offs between accuracy and selection cost.</b> Each point is a method–domain result 
+                (<span style="font-variant: small-caps;">Digit-Five</span> left, 
+                <span style="font-variant: small-caps;">DomainNet</span> right). 
+                Marker shape encodes the domain, while color distinguishes the methods: 
+                <b><span style="color: #F5A36C;">DaSH-Flat</span></b>, 
+                <b><span style="color: #4AA6A8;">DaSH (mixed)</span></b>, and 
+                <b><span style="color: #4A79D1;">DaSH</span></b>. 
+                Points toward the upper-right represent better trade-offs (higher accuracy, fewer steps). 
+                Across both benchmarks, the upper-right region is occupied by hierarchical variants, with 
+                <b><span style="color: #4A79D1;">DaSH</span></b> contributing most of the frontier on 
+                <span style="font-variant: small-caps;">Digit-Five</span> and sharing the frontier with 
+                <b><span style="color: #4AA6A8;">DaSH (mixed)</span></b> on 
+                <span style="font-variant: small-caps;">DomainNet</span>.
+              </p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">🔎 Qualitative Examples</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/qualitative.png" class="interpolation-image"
+                alt="Qualitative Examples." width="100%" />
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <b>Qualitative comparisons on <span style="font-variant: small-caps;">Digit-Five</span> 
+            (target: <span style="font-variant: small-caps;">MNIST</span>) and 
+            <span style="font-variant: small-caps;">DomainNet</span> 
+            (target: <span style="font-variant: small-caps;">SKETCH</span>).</b>
+            Each selected image is labeled by its source domain (above), with green borders indicating a correct domain 
+            match to the target and red borders indicating a mismatch. 
+            Unlike prior methods, which frequently select subsets from mismatched domains in the first exploration step, 
+            <i>DaSH</i> consistently identifies subsets from the correct domain, even in challenging settings with visually 
+            similar categories.
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{xzhou2025dash,
+  title={Hierarchical Dataset Selection for High-Quality Data Sharing},
+  author={Zhou, Xiaona and Zeng, Yingyan and Jin, Ran and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+              <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
+              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a
+                href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
