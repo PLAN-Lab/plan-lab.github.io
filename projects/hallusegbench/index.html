@@ -126,10 +126,10 @@ title: HalluSegBench
               Existing evaluations rely almost entirely on text- or label-based perturbations, which check only whether the predicted mask matches the queried label. Such evaluations overlook the spatial footprint and severity of hallucination and therefore fail to reveal vision-driven hallucinations, which are more challenging and more prevalent.
               To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span>, where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart. 
               To support this task, we curate <span class="model-name-gradient">HalluSegBench</span>, the first large-scale benchmark to diagnose referring and reasoning expression segmentation hallucinations using controlled visual counterfactuals, alongside new evaluation metrics that measure hallucination severity and disentangle vision- and language-driven failure modes.
-              We further introduce <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).\\
+              We further introduce <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).
             </p>
           </div>
-          <img src="./static/images/teaser.png" class="interpolation-image"
+          <img src="./static/images/teaser_new.jpg" class="interpolation-image"
           alt="Interpolate start reference image." width="85%" />
         </div>
       </div>
@@ -166,7 +166,7 @@ title: HalluSegBench
           <h2 class="title is-3">Quantitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/quat_result.png" class="interpolation-image" alt="HalluSegBench results." width="85%" />
+              <img src="./static/images/quat_new.jpg" class="interpolation-image" alt="HalluSegBench results." width="85%" />
               <p class="has-text-justified">
                 Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>&Delta;IoU Referral</code>, <code>&Delta;IoU Reasoning</code>), 
                 factual and counterfactual Confusion Mask Score ( <code>CMS</code>).              
@@ -200,10 +200,10 @@ title: HalluSegBench
           </div> -->
           <!-- <div class="qual-example"> -->
             <div>
-              <img src="static/images/example3.png" alt="Image 2" style="height: 800px; width: auto;">
+              <img src="static/images/example1_new.jpg" alt="Image 2" style="height: 800px; width: auto;">
             </div>
             <p class="caption has-text-centered">
-              Here, <i>c</i> = “full grown sheep” and <i>c′</i> = “a cow”.
+              Here, <i>c</i> = “giant refrigerator” and <i>c′</i> = “microwave oven”.
             </p>
           <!-- </div> -->
           <!-- <div class="qual-example"> -->
@@ -211,10 +211,10 @@ title: HalluSegBench
             </br>
             </br>
            <div>
-              <img src="static/images/example2.png" alt="Image 3" style="height: 800px; width: auto;">
+              <img src="static/images/example2_new.jpg" alt="Image 3" style="height: 800px; width: auto;">
             </div>
             <p class="caption has-text-centered">
-              Here, <i>c</i> = “front cow” and <i>c′</i> = “front pig”.
+              Here, <i>c</i> = “Where in the picture would be suitable for storing wine?” and <i>c′</i> = “Where in the picture would be suitablefor resting one's feet?”.
             </p>
           <!-- </div> -->
 
@@ -258,8 +258,10 @@ title: HalluSegBench
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge 
               <a  href="https://arxiv.org/pdf/2308.00692">LISA</a>,
               <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
-              <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>, and <a
-                href="https://arxiv.org/pdf/2312.08366">SESAME</a>
+              <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>, 
+              <a href="https://arxiv.org/pdf/2503.06520">Seg-Zero</a>,
+              <a href="https://arxiv.org/pdf/2505.12081">VisionReasoner</a>,
+              and <a href="https://arxiv.org/pdf/2312.08366">SESAME</a>
                 for open-sourcing their models.
             </p>
           </div>
