@@ -8,10 +8,10 @@ title: HalluSegBench
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Counterfactual Visual Reasoning for Segmentation Hallucination Evaluation">
+  <meta name="description" content="Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination">
   <meta name="keywords" content="reasoning segmentation, hallucination, counterfactual">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Counterfactual Visual Reasoning for Segmentation Hallucination Evaluations</title>
+  <title>Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -39,23 +39,27 @@ title: HalluSegBench
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title" style="font-size:2.4rem;"><img src="static/images/logo.png" alt="HalluSegBench logo"
-                width="80px"><span class="model-name-gradient">HalluSegBench</span>: Counterfactual Visual Reasoning for Segmentation Hallucination Evaluation</h1>
+                width="80px">Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/xinzhuo-li/" class="illini-blue">Xinzhuo Li<sup class="illini-orange">*</sup></a>,</span>
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/juvekaradheesh/" class="illini-blue">Adheesh Juvekar<sup class="illini-orange">*</sup></a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/" class="illini-blue">Xingyou Liu</a>,</span>
-              </span>
+                <a href="https://www.linkedin.com/in/jiaxun-zhang-337848270/" class="illini-blue">Jiaxun Zhang&dagger;</sup></a>,</span>  
               <span class="author-block">
-                <a href="https://mwahed.com/" class="illini-blue">Muntasir Wahed</a>,
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>             
-              </span>
-              <span class="author-block">
-                <a href="https://isminoula.github.io/" class="illini-blue">Ismini Lourentzou</a>
-              </span>
+            <a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/" class="illini-blue">Xingyou Liu&dagger;</sup></a>,</span>
+            <span class="author-block">
+              <a href="https://mwahed.com/" class="illini-blue">Muntasir Wahed</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>   
+            <span class="author-block">
+              <a href="https://shenyifans.github.io/" class="illini-blue">Yifan Shen</a>,</span> 
+            <span class="author-block">
+                <a href="https://tianjiao-yu.github.io/" class="illini-blue">Tianjiao Yu</a>,</span>           
+            <span class="author-block">
+              <a href="https://isminoula.github.io/" class="illini-blue">Ismini Lourentzou</a>
+            </span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -64,7 +68,7 @@ title: HalluSegBench
             </div>
 
              <div class="is-size-5 publication-authors">
-              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>
+              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>, &dagger;</span> Equal Contribution</span>
             </div>
 
             <div class="column has-text-centered">
@@ -118,12 +122,11 @@ title: HalluSegBench
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Recent progress in vision-language segmentation has significantly advanced grounded visual understanding. 
-              However, these models often exhibit hallucinations by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. 
-              Existing evaluation protocols for segmentation hallucination primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. 
-              In response, we introduce <span class="model-name-gradient">HalluSegBench</span>, the first benchmark specifically designed to evaluate hallucinations in visual grounding through the lens of <span style="font-style: italic;">counterfactual visual reasoning</span>. 
-              Our benchmark consists of a novel dataset of 1340 counterfactual instance pairs spanning 281 unique object classes, and a set of newly introduced metrics that quantify hallucination sensitivity under visually coherent scene edits. 
-              Experiments on <span class="model-name-gradient">HalluSegBench</span> with state-of-the-art vision-language segmentation models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the need for counterfactual reasoning to diagnose grounding fidelity.
+              Segmentation Vision-Language Models (VLMs) have significantly advanced grounded visual understanding, yet they remain prone to pixel-grounding hallucinations, producing masks for incorrect objects or for objects that are entirely absent. 
+              Existing evaluations rely almost entirely on text- or label-based perturbations, which check only whether the predicted mask matches the queried label. Such evaluations overlook the spatial footprint and severity of hallucination and therefore fail to reveal vision-driven hallucinations, which are more challenging and more prevalent.
+              To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span>, where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart. 
+              To support this task, we curate <span class="model-name-gradient">HalluSegBench</span>, the first large-scale benchmark to diagnose referring and reasoning expression segmentation hallucinations using controlled visual counterfactuals, alongside new evaluation metrics that measure hallucination severity and disentangle vision- and language-driven failure modes.
+              We further introduce <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).\\
             </p>
           </div>
           <img src="./static/images/teaser.png" class="interpolation-image"
@@ -140,18 +143,15 @@ title: HalluSegBench
           <h2 class="title is-3">✅ Contributions</h2>
           <div class="content has-text-justified">
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. We present <span class="model-name">HalluSegBench</span>, 
-                the first benchmark for evaluating segmentation hallucinations using counterfactual image-text pairs, 
-                covering 1,340 pairs across 281 object classes. </li>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Task</b>. To assess segmentation fidelity, we introduce the novel task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span>, which assesses whether segmentation models correctly adapt to counterfactual visual changes.
+                Our experiments show that vision-driven hallucinations are far more severe than label-driven ones, highlighting critical gaps in current grounding capabilities.</li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Novel Metrics</b>. 
-                We introduce four new metrics that quantify hallucination severity under visual/textual counterfactuals, 
-                reveal over-reliance on semantic priors, and assess spatial plausibility of hallucinated masks.
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. 
+                We curate <span class="model-name-gradient">HalluSegBench</span>, the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.
               </li>
               <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Empirical Insights</b>. 
-                Experiments on state-of-the-art vision-language segmentation models show they hallucinate more under visual edits than textual ones, 
-                highlighting the need for counterfactual-based diagnostics.</li>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Model</b>. 
+                We present <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. <span class="model-name-gradient">RobustSeg</span> learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity.</li>
               </ol>
           </div>
         </div>
@@ -168,8 +168,8 @@ title: HalluSegBench
             <div style="text-align: center; padding: 0 0 20px 0;">
               <img src="./static/images/quat_result.png" class="interpolation-image" alt="HalluSegBench results." width="85%" />
               <p class="has-text-justified">
-                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop (<code>&Delta;IoU<sub>textual</sub></code>, <code>&Delta;IoU<sub>visual</sub></code>), 
-                factual and counterfactual Confusion Mask Score ( <code>CMS</code>), and the contrastive hallucination metric <code>CCMS</code>.              
+                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>&Delta;IoU Referral</code>, <code>&Delta;IoU Reasoning</code>), 
+                factual and counterfactual Confusion Mask Score ( <code>CMS</code>).              
               </p>
             </div>
           </div>
@@ -186,8 +186,8 @@ title: HalluSegBench
         <div class="column">
           <h2 class="title is-3">Qualitative Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            <span class="model-name">HalluSegBench</span> demonstrates the hallucination severity of different reasoning-based segmentation models. 
-            We present qualitative examples that illustrate the predictions of benchmarked models across the four query-image combinations, 
+            <span class="model-name">RobustSeg</span> demonstrates hallucination mitigation capabilities compared with other reasoning-based segmentation models. 
+            We present qualitative examples that illustrate the predictions of benchmarked models across the four query-image combinations in both referral and reasoning tasks, 
             along with the corresponding ground truth mask.
           </p>
           <!-- <div class="qual-example">
