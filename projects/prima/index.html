@@ -146,7 +146,7 @@
         <div class="content has-text-justified">
           <span style="font-weight: bold;">TL;DR:</span> We introduce
           the task of <span style="font-style: italic;">multi-image pixel-grounded reasoning segmentation</span>,
-          with the release of the <span class="model-name">M<sup>4</sup>Seg</span> benchmark consisting of ∼224K
+          with the release of the <span class="model-name">M<sup>4</sup>Seg</span> benchmark consisting of ∼744K
           question-answer pairs
           that require fine-grained visual understanding across multiple images,
           and the <span class="model-name">PRIMA</span> LVLM model that combines
@@ -155,10 +155,15 @@
         <img src="./static/images/prima_teaser.png" class="interpolation-image"
           alt="Interpolate start reference image." />
         <div class="content has-text-justified">
-          Our proposed <span style="font-style: italic;">multi-image pixel-grounded reasoning segmentation</span> task
-          at both object and part levels, where the goal is to achieve fine-grained comparison and contextual
-          understanding
-          across multiple images at pixel level and produce responses grounded in specific objects and parts.
+          We introduce the new task of 
+          <span style="font-style: italic; font-weight: bold;">multi-image pixel-grounded reasoning segmentation</span>. 
+          To support this task, we curate <span class="model-name">M<sup>4</sup>Seg</span>, 
+          a benchmark providing question-answer (QA) pairs alongside image sets with 
+          pixel-level annotations. Additionally, we propose 
+          <span class="model-name">PRIMA</span>, a model trained on 
+          <span class="model-name">M<sup>4</sup>Seg</span>, designed to efficiently identify 
+          and compare objects' contextual relationships across scenes. 
+          We focus on four key categories essential for multi-image understanding: functional, spatial, numerical, and open-ended reasoning.
         </div>
       </div>
     </div>
@@ -173,22 +178,24 @@
           <h2 class="title is-3">📝 Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Despite significant advancements in Large Vision-Language Models (LVLMs),
-              existing pixel-grounding models operate on single-image settings,
-              limiting their ability to perform detailed, fine-grained comparisons across multiple images.
-              Conversely, current multi-image understanding models lack pixel-level grounding.
-              Our work addresses this gap by introducing the task of
+              Despite significant advancements in Large Vision-Language Models (LVLMs)' capabilities, 
+              existing pixel-grounding models operate in single-image settings, 
+              limiting their ability to perform detailed, fine-grained comparisons across 
+              multiple images. Conversely, current multi-image understanding models lack 
+              pixel-level grounding. Our work addresses this gap by introducing the task of 
               <span style="font-style: italic; font-weight: bold;">multi-image pixel-grounded reasoning
-                segmentation</span>,
-              and <span class="model-name">PRIMA</span>, a novel LVLM that integrates pixel-level grounding with robust
-              multi-image reasoning capabilities
-              to produce contextually rich, pixel-grounded explanations.
-              Central to PRIMA is an efficient vision module that queries fine-grained visual representations
-              across multiple images, reducing TFLOPs by 25.3%. To support training and evaluation,
-              we curate <span class="model-name">M<sup>4</sup>Seg</span>, a new reasoning segmentation benchmark
-              consisting of ∼224K question-answer pairs
-              that require fine-grained visual understanding across multiple images.
-              Experimental results demonstrate PRIMA outperforms state-of-the-art baselines.
+                segmentation</span> alongside <span class="model-name">PRIMA</span>, 
+                an LVLM that integrates pixel-level grounding with robust multi-image reasoning 
+                to produce contextually rich, pixel-grounded explanations. 
+                Central to <span class="model-name">PRIMA</span> is <span class="model-name">SQuARE</span>, 
+                a vision module that injects cross-image relational context into compact query-based 
+                visual tokens before fusing them with the language backbone. 
+                To support training and evaluation, we curate <span class="model-name">M<sup>4</sup>Seg</span>, a new multi-image reasoning 
+                segmentation benchmark consisting of ~744K question-answer pairs that require 
+                fine-grained visual understanding across multiple images. 
+                <span class="model-name">PRIMA</span> outperforms state-of-the-art baselines with 7.83% and 11.25% improvements 
+                in Recall and S-IoU, respectively. Ablation studies further demonstrate the 
+                effectiveness of the proposed SQuARE module in capturing cross-image relationships.
             </p>
           </div>
         </div>
@@ -208,31 +215,27 @@
               <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Novel Task</b>. We
                 propose the novel task of
                 <span style="font-style: italic; font-weight: bold;">multi-image pixel-grounded reasoning
-                  segmentation</span>,
-                which necessitates fine-grained comparison and contextual understanding
-                across multiple images at the pixel level, requiring models
-                to produce responses grounded in specific objects and parts.
+                  segmentation</span>, which requires fine-grained comparison and contextual 
+                  understanding across multiple images at pixel level and natural language reasoning.
               </li>
               <br>
               <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. We
-                introduce
-                <span class="model-name">M<sup>4</sup>Seg</span>, a new challenging benchmark with over 224K multi-image
-                QA pairs,
-                annotated with multiple object and part segmentation masks to enable and evaluate
-                pixel-grounded multi-image visual understanding.
+                curate
+                <span class="model-name">M<sup>4</sup>Seg</span>, a new challenging benchmark with ~744K multi-image QA 
+                pairs, annotated with multiple object and part segmentation masks to train and evaluate 
+                multi-image pixel-grounding models.
               </li>
               <br>
               <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Multi-Image
                   Pixel-Grounded LVLM</b>. We propose
                 <span class="model-name">PRIMA</span>,
-                a vision-language model specifically designed for this new task. Unlike existing models,
-                <span class="model-name">PRIMA</span> excels in generating natural language responses
-                accompanied by contextually grounded segmentations across multiple images.
-                <span class="model-name">PRIMA</span> is optimized for computational efficiency
-                by incorporating a cross-modal attention mechanism, which enables instruction-guided alignment
-                of relevant visual features across images, reducing overhead while maintaining high accuracy in
-                pixel-level reasoning. Extensive experiments demonstrate <span class="model-name">PRIMA</span>’s
-                performance and efficiency against strong baselines.
+                an LVLM designed to perform instruction-guided cross-image alignment of relevant visual features via a 
+                novel <span class="model-name">SQuARE</span> module, enabling reasoning with contextually grounded segmentation masks across multiple 
+                images. Experiments demonstrate <span class="model-name">PRIMA</span>'s impressive performance 
+                compared to strong baselines across segmentation (<span style="color: #6B8E23; font-weight: bold;">+↑</span>8.11% mIoU 
+                and <span style="color: #6B8E23; font-weight: bold;">+↑</span>7.83% Recall) and text-based metrics 
+                (<span style="color: #6B8E23; font-weight: bold;">+↑</span>6.45% Semantic Similarity and 
+                <span style="color: #6B8E23; font-weight: bold;">+↑</span>11.25% S-IoU). 
               </li>
               </ol>
           </div>
@@ -252,13 +255,26 @@
           <div class="content has-text-justified">
             <img src="./static/images/prima_arch.png" class="interpolation-image" alt="PRIMA Model Architecture." />
             <p>
-              <span class="model-name">PRIMA</span> integrates a multi-image vision encoder that combines DINOv2
-              for dense semantic feature extraction and Q-Former’s selective query-based cross-attention
-              to fuse relevant representations across images. The encoder outputs are mapped to a shared
-              semantic space to facilitate precise pixel-level multi-image grounding.
-              Leveraging a LoRA-finetuned language model and a SAM-based decoder,
-              PRIMA dynamically generates segmentation masks corresponding to objects and parts
-              referenced in natural language queries, supporting pixel-grounded reasoning in complex multi-image tasks.
+              Overview of the proposed <span class="model-name">PRIMA</span> architecture. Leveraging a LoRA-finetuned language model, a novel SQUARE vision encoder, and a SAM-based decoder, PRIMA dynamically generates segmentation masks corresponding to objects referenced in natural language queries, supporting pixel-grounded reasoning in complex multi-image tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name"><img src="static/images/prima_ballerina.svg" alt="PRIMA logo"
+                width="40px"> SQuARE</span> module</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center;">
+              <img src="./static/images/prima_arch_square.png" class="interpolation-image" alt="SQuARE Module." width="50%" />
+            </div>
+            <p>
+              Our proposed <span class="model-name">SQuARE</span> module. Learnable relational queries attend over the concatenated multi-image features to form a shared relational representation. This representation is injected into the query pathway for global feature extraction, producing enriched visual representations that capture cross-image interactions.
             </p>
           </div>
         </div>
@@ -275,11 +291,17 @@
             <div style="text-align: center; padding: 0 0 20px 0;">
               <img src="./static/images/results.png" class="interpolation-image" alt="PRIMA results." width="85%" />
               <p class="has-text-justified">
-                Experimental Results on <span class="model-name">M<sup>4</sup>Seg</span>.
-                We report performance metrics for segmentation (mIoU and Recall) and reasoning
-                (Semantic Similarity and S-IoU) to evaluate each model's ability in multi-image pixel-grounded
-                reasoning segmentation. Computational efficiency metrics (TFLOPs and #samples/sec.) showcase
-                <span class="model-name">PRIMA</span>’s optimized processing for multi-image tasks.
+                Experimental Results on <span class="model-name">M<sup>4</sup>Seg</span>. 
+                <span class="model-name">PRIMA</span> significantly outperforms both general-purpose and pixel-grounding LVLM 
+                baselines. The general-purpose LVLMs struggle with this task, a limitation we attribute 
+                to their lack of task-specific training and cascading errors from using SAM on the text-based 
+                grounding information. While Gemini-2.5 Pro is the top performer in this category, its 
+                performance remains limited with 30.21% mIoU and 68.51% SS. The reasoning segmentation 
+                baselines perform better, as they leverage pixel grounding capabilities and are finetuned on 
+                <span class="model-name">M<sup>4</sup>Seg</span>. GLaMM, for instance, outperforms the general-purpose LVLMs with 38.12% 
+                mIoU and 74.05% SS. Compared to all baselines, <span class="model-name">PRIMA</span> sets a new benchmark, surpassing 
+                the next best baseline by 8.11% and 12.33% in terms of mIoU and I-SS, respectively. 
+                <span class="model-name">PRIMA</span> also achieves a gain of up to 6.45% and 11.25% on the text metrics SS and SIoU.
               </p>
 
             </div>
@@ -287,6 +309,35 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">🔎 Qualitative Examples</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/qualitative.png" class="interpolation-image"
+                alt="Qualitative Examples." width="85%" />
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            Qualitative Results. <span class="model-name">PRIMA</span> exhibits strong qualitative performance 
+            in both segmentation and reasoning. Each example shows the posted question, the textual 
+            responses from each model, and the corresponding segmentation masks alongside the Ground 
+            Truth reference. For clarity, we use consistent colors between the segmentation masks 
+            and the highlighted text spans referring to each object or part. The results indicate that 
+            <span class="model-name">PRIMA</span> produces high-quality textual responses together with crisp, well-localized 
+            segmentation masks, whereas GLaMM often yields noisy masks, attends to incorrect objects 
+            (e.g., treating the cabinet as a surface for placing small items), and hallucinates 
+            categories (e.g., misidentifying the horse as a truck or a dog). We also include a 
+            failure case in which <span class="model-name">PRIMA</span> predicts the correct number of objects but fails to 
+            precisely distinguish individual instances, instead producing overlapping masks.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -302,8 +353,14 @@
             </div>
           </div>
           <div class="content has-text-justified">
-            <span class="model-name">PRIMA</span>’s performance on unseen images found on the web.
-            For conciseness, we only visualize relevant segmentation masks.
+            <span class="model-name">PRIMA</span>'s performance on unseen images found on the web. 
+            Notably, our model generates consistently superior segmentation masks compared to baselines, 
+            as exemplified by the fine-grained details of the hammers in Example 3 and the dining chairs 
+            in Example 4. Moreover, we observe that the baselines are more prone to hallucinations, 
+            e.g., "pizza is shown with multiple slices" in the first example (GLaMM), "watch" 
+            in the second example (both GLaMM and LISA). Beyond visual recognition, these examples 
+            underscore <span class="model-name">PRIMA</span>'s capability to retain compositional reasoning capabilities when 
+            transferring to diverse and noisy real-world images.
           </div>
         </div>
       </div>
