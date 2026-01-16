@@ -1,65 +1,209 @@
----
-layout: project
-title: Calico
----
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!DOCTYPE html>
-<html>
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models" />
+    <title>[CVPR'25] CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models">
-  <meta name="keywords" content="part segmentation, part co-segmentation">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[CVPR'25] CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+      .calico-arch-split {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
+      .calico-arch-text {
+        flex: 0 0 55%;
+        min-width: 0;
+      }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+      .calico-arch-figure {
+        flex: 0 0 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: center;
+      }
+
+      .calico-arch-figure img {
+        background: #ffffff;
+        width: 100%;
+        height: auto;
+        max-width: 520px;
+      }
+
+      @media (max-width: 860px) {
+        .calico-arch-split {
+          flex-direction: column;
+        }
+
+        .calico-arch-text,
+        .calico-arch-figure {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+
+        .calico-arch-figure img {
+          max-width: 560px;
+          margin: 0 auto;
+        }
+      }
+
+      .qual-example .image-container,
+      .qual-example .image-container-container {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .qual-example .image-container {
+        width: 100%;
+      }
+
+      .qual-example .image-container .image {
+        flex: 0 0 47%;
+        width: 47%;
+        height: 220px;
+        object-fit: fill;
+      }
+
+      .qual-example:not(.qual-left-aspect) .image-container .image:last-child {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .qual-example.qual-left-aspect .image-container .image:first-child {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .qual-example.qual-left-aspect .image-container .image:last-child {
+        height: 220px;
+        object-fit: fill;
+      }
+
+      .qual-example .image-container-container {
+        flex-direction: column;
+      }
+
+      .qual-example .image-container-container .image-container + .image-container {
+        margin-top: 1rem;
+      }
+
+      .qual-example .image-container {
+        margin-bottom: 1rem;
+      }
+
+      .qual-example {
+        margin-bottom: 2rem;
+      }
+
+      .highlight {
+        padding: 0 0.25em;
+        border-radius: 6px;
+        background: transparent;
+      }
+
+      .highlight.one { background-color: #5d0b6d50; }
+      .highlight.two { background-color: #a8f24a80; }
+      .highlight.three { background-color: #c5062950; }
+      .highlight.four { background-color: #930f0d50; }
+      .highlight.five { background-color: #84eef480; }
+      .highlight.six { background-color: #1804e050; }
+      .highlight.seven { background-color: #84eef480; }
+      .highlight.eight { background-color: #c5062950; }
+      .highlight.nine { background-color: #6e0d7050; }
+      .highlight.ten { background-color: #3603c950; }
+      .highlight.eleven { background-color: #f6fa4080; }
+      .highlight.twelve { background-color: #bc008250; }
+      .highlight.thirteen { background-color: #a8f24a80; }
+    </style>
 </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
 
-<body>
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
 <!-- {% include navbar.html %} -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
-                width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
+            <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat" width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
               Vision-Language Models</h1>
-            <h1 class="title is-3 publication-venue illini-orange">CVPR 2025</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>
+                <a href="/team/phd-kiet-nguyen" class="illini-blue" >Kiet A. Nguyen</a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/juvekaradheesh/" class="illini-blue">Adheesh Juvekar</a>,</span>
+                <a href="/team/phd-adheesh-juvekar" class="illini-blue" >Adheesh Juvekar</a>,</span>
               <span class="author-block">
-                <a href="https://tianjiao-yu.github.io/" class="illini-blue">Tianjiao Yu</a>,
+                <a href="/team/phd-tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
               </span>
               <span class="author-block">
-                <a href="https://mwahed.com/" class="illini-blue">Muntasir Wahed</a>,
+                <a href="/team/phd-muntasir-wahed" class="illini-blue" >Muntasir Wahed</a>,
               </span>
               <span class="author-block">
-                <a href="https://isminoula.github.io/" class="illini-blue">Ismini Lourentzou</a>
+                <a href="/team/pi-ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>,
+              <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>
               <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+            </div>
+
+            <div class="has-text-centered" style="margin: 5px 0;">
+              <h1 class="title is-3 publication-venue illini-orange">CVPR 2025</h1>
             </div>
 
             <div class="column has-text-centered">
@@ -117,17 +261,15 @@ title: Calico
     <div class="container is-max-desktop">
       <div class="hero-body">
         <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span> We present <span class="model-name">Calico</span>, the first
+          <span style="font-weight: bold;">TL;DR:</span> We present <span class="model-name">Calico</span> the first
           LVLM
-          designed for <span style="font-style: italic;">part-focused semantic co-segmentation</span>, a new task that
+          designed for <span style="font-style: italic;">part-focused semantic co-segmentation</span> a new task that
           identifies and
-          segments common and unique object parts across multiple images. Trained on <span
-            class="model-name">MixedParts</span>, our new dataset with ~2.4M samples across ~44K images,
+          segments common and unique object parts across multiple images. Trained on <span class="model-name">MixedParts</span> our new dataset with ~2.4M samples across ~44K images,
           <span class="model-name">Calico</span> achieves strong
           performance in this domain with just 0.3% of its architecture finetuned.
         </div>
-        <img src="./static/images/calico_teaser.svg" class="interpolation-image"
-          alt="Interpolate start reference image." />
+        <img src="./static/images/calico_teaser.svg" class="interpolation-image" alt="Interpolate start reference image.">
         <div class="content has-text-justified">
           Our proposed <span style="font-style: italic;">part-focused semantic
             co-segmentation</span> task, where the goal is to identify, segment, and label
@@ -150,22 +292,21 @@ title: Calico
               While existing LVLMs can generate segmentation masks from text prompts for single images, they struggle
               with segmentation-grounded reasoning across images, especially at finer granularities such as object
               parts. In this paper, we introduce the new task of
-              <span style="font-style: italic; font-weight: bold;">part-focused semantic co-segmentation</span>, which
+              <span style="font-style: italic; font-weight: bold;">part-focused semantic co-segmentation</span> which
               involves identifying and segmenting common objects, as well as common and unique object parts across
               images.
             </p>
 
-            <p>To address this task, we present <span class="model-name">Calico</span>, the first LVLM
+            <p>To address this task, we present <span class="model-name">Calico</span> the first LVLM
               designed for multi-image part-level reasoning segmentation. <span class="model-name">Calico</span>
               features two proposed components, a novel
               Correspondence Extraction
               Module that identifies semantic part-level correspondences, and Correspondence Adaptation Modules that
               embed this information into the LVLM to facilitate multi-image understanding in a parameter-efficient
               manner. To support training and evaluation, we curate
-              <span class="model-name">MixedParts</span>, a large-scale multi-image segmentation dataset containing
+              <span class="model-name">MixedParts</span> a large-scale multi-image segmentation dataset containing
               ~2.4M samples across
-              ~44K images spanning diverse object and part categories. With just 0.3% of its parameters finetuned, <span
-                class="model-name">Calico</span> achieves strong
+              ~44K images spanning diverse object and part categories. With just 0.3% of its parameters finetuned, <span class="model-name">Calico</span> achieves strong
               performance on this challenging task.
             </p>
           </div>
@@ -177,8 +318,7 @@ title: Calico
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -187,13 +327,13 @@ title: Calico
   <div class="columns is-centered has-text-centered">
     <div class="container">
       <h2 class="title is-3">Poster</h2>
-      <iframe  src="static/calicoposter.pdf" width="100%" height="550"></iframe>
+      <iframe loading="lazy" src="about:blank" data-pdf-src="static/calicoposter.pdf" width="100%" height="550"></iframe>
       </div>
     </div>
   </div>
   </section>
 
-  <section class="section" style="background-color:#dadada81">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
@@ -202,15 +342,13 @@ title: Calico
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>Novel Task</b>. We introduce
                 the novel task of <span style="font-style: italic;">part-focused
-                  semantic co-segmentation</span>, which aims to co-segment and label common and unique parts between
+                  semantic co-segmentation</span> which aims to co-segment and label common and unique parts between
                 objects across images for granular object comparison. To the best of our
                 knowledge, this is the first work to formalize this multi-image object/part co-segmentation task. </li>
               <br>
               <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Multi-Image
-                  Pixel-Grounded LVLM</b>. We propose <span class="model-name">Calico</span> (<u
-                  style="font-weight: bold;">C</u>omponent-Focused <u style="font-weight: bold;">A</u>daptive
-                <u style="font-weight: bold;">L</u>earning for Multi-<u style="font-weight: bold;">I</u>mage <u
-                  style="font-weight: bold;">C</u>o-Localization of <u style="font-weight: bold;">O</u>bjects),
+                  Pixel-Grounded LVLM</b>. We propose <span class="model-name">Calico</span> (<u style="font-weight: bold;">C</u>omponent-Focused <u style="font-weight: bold;">A</u>daptive
+                <u style="font-weight: bold;">L</u>earning for Multi-<u style="font-weight: bold;">I</u>mage <u style="font-weight: bold;">C</u>o-Localization of <u style="font-weight: bold;">O</u>bjects),
                 an LVLM designed for part-focused semantic co-segmentation. <span class="model-name">Calico</span>
                 incorporates a novel correspondence
                 extraction module to learn cross-image semantic correspondences and an
@@ -224,8 +362,8 @@ title: Calico
                 semantic co-segmentation, compiled from diverse part
                 segmentation datasets and featuring images of logically
                 comparable objects and parts.</li>
-              </ol>
-          </div>
+              
+          </ul></div>
         </div>
       </div>
     </div>
@@ -238,24 +376,27 @@ title: Calico
         <div class="column">
           <h2 class="title is-3"><span class="model-name">Calico</span> Architecture</h2>
           <div class="content has-text-justified">
-            <img src="./static/images/calico_arch.svg" class="interpolation-image" alt="CALICO Model Architecture." />
-            <div class="horizontal-container">
-              <p><span class="model-name">Calico</span> uses a Q-Former cross-attention module to query efficient image
-                embeddings from a pretrained image encoder, which are passed
-                into a Vicuna-based LLM
-                as image features. We extract <code>[SEG]</code> tokens from the output text, which are used to prompt a
-                SAM decoder to output corresponding
-                segmentation masks. <br> <br> We propose two modules, the Correspondence Extraction Module (CEM) and the
-                Correspondence Adaptation
-                Module (CAM), to enable the learning of semantic-rich features for multi-image correspondence. In
-                <span class="model-name">Calico</span>, k CAMs are strategically placed every N/k layers within the
-                N-layered LLM. CEM focuses on
-                extracting fine-grained semantic information at the part level, capturing correspondences across similar
-                yet distinct object categories by leveraging self-supervised DINO features. CAMs then reintegrate this
-                part-level correspondence information back into the next layer of the model.
-              </p>
-              <img src="./static/images/cemcam.svg" class="interpolation-image"
-                alt="CALICO novel modules CEM and CAM." />
+            <img loading="lazy" decoding="async" src="./static/images/calico_arch.svg" class="interpolation-image" alt="CALICO Model Architecture.">
+            <div class="calico-arch-split">
+              <div class="calico-arch-text">
+                <p><span class="model-name">Calico</span> uses a Q-Former cross-attention module to query efficient image
+                  embeddings from a pretrained image encoder, which are passed
+                  into a Vicuna-based LLM
+                  as image features. We extract <code>[SEG]</code> tokens from the output text, which are used to prompt a
+                  SAM decoder to output corresponding
+                  segmentation masks. <br> <br> We propose two modules, the Correspondence Extraction Module (CEM) and the
+                  Correspondence Adaptation
+                  Module (CAM), to enable the learning of semantic-rich features for multi-image correspondence. In
+                  <span class="model-name">Calico</span> k CAMs are strategically placed every N/k layers within the
+                  N-layered LLM. CEM focuses on
+                  extracting fine-grained semantic information at the part level, capturing correspondences across similar
+                  yet distinct object categories by leveraging self-supervised DINO features. CAMs then reintegrate this
+                  part-level correspondence information back into the next layer of the model.
+                </p>
+              </div>
+              <div class="calico-arch-figure">
+                <img loading="lazy" decoding="async" src="./static/images/cemcam.svg" alt="CALICO novel modules CEM and CAM.">
+              </div>
             </div>
           </div>
         </div>
@@ -271,13 +412,10 @@ title: Calico
           <h2 class="title is-3"><span class="model-name">MixedParts</span> Dataset</h2>
           <div class="content has-text-justified">
             <p>To support training and evaluation for part-focused co-segmentation, we introduce a novel dataset named
-              <span class="model-name">MixedParts</span>, curated from publicly available part segmentation datasets:
-              <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a
-                href="https://github.com/facebookresearch/paco">PACO</a>, and <a
-                href="https://github.com/TACJu/PartImageNet">PartImageNet</a>.
+              <span class="model-name">MixedParts</span> curated from publicly available part segmentation datasets:
+              <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a href="https://github.com/facebookresearch/paco">PACO</a>, and <a href="https://github.com/TACJu/PartImageNet">PartImageNet</a>.
             </p>
-            <img src="./static/images/mixed_parts_example.png" class="interpolation-image"
-              alt="MixedParts dataset examples." />
+            <img loading="lazy" decoding="async" src="./static/images/mixed_parts_example.png" class="interpolation-image" alt="MixedParts dataset examples.">
 
             <p>Example image pairs in <span class="model-name">MixedParts</span> with objects, common parts, and unique
               parts segmented and labeled. Each
@@ -291,7 +429,7 @@ title: Calico
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
   <section class="section">
@@ -301,7 +439,7 @@ title: Calico
           <h2 class="title is-3">Quantitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/results.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <img loading="lazy" decoding="async" src="./static/images/results.png" class="interpolation-image" alt="Calico results." width="85%">
               <p class="has-text-justified">
                 Experimental Results on <span class="model-name">MixedParts</span>. The first three
                 metrics are segmentation-based, while the last two are text-based.
@@ -313,7 +451,7 @@ title: Calico
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
 
@@ -328,62 +466,57 @@ title: Calico
             and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and pocket
             of a pool table):
           </p>
-          <div class="qual-example">
+          <div class="qual-example qual-left-aspect">
             <div class="image-container">
-              <img src="static/images/qualitatives/preds_object_object_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_object_object_1.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_0.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_1.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The common object is <span
-                class="highlight one">the&nbsp;person</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The common object is <span class="highlight one">the person</span>.
             </p>
           </div>
 
           <div class="qual-example">
             <div class="image-container">
-              <img src="static/images/qualitatives/preds_object_object_2.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_object_object_3.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_2.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_3.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include
-              <span class="highlight two">a&nbsp;car</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include
+              <span class="highlight two">a car</span>.
             </p>
           </div>
 
           <div class="qual-example">
             <div class="image-container-container">
               <div class="image-container">
-                <img src="static/images/qualitatives/preds_common_part_object_0.png" alt="Image 1" class="image">
-                <img src="static/images/qualitatives/preds_common_part_object_1.png" alt="Image 2" class="image">
+                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_0.png" alt="Image 1" class="image">
+                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_1.png" alt="Image 2" class="image">
               </div>
               <div class="image-container">
-                <img src="static/images/qualitatives/preds_common_part_parts_0.png" alt="Image 1" class="image">
-                <img src="static/images/qualitatives/preds_common_part_parts_1.png" alt="Image 2" class="image">
+                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_0.png" alt="Image 1" class="image">
+                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_1.png" alt="Image 2" class="image">
               </div>
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight three">a&nbsp;snake</span> and <span class="highlight four">a&nbsp;dog</span>.<br>The
-              detected common parts are <span class="highlight five">a&nbsp;body</span> and <span
-                class="highlight six">a&nbsp;head</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span class="highlight three">a snake</span> and <span class="highlight four">a dog</span>.<br>The
+              detected common parts are <span class="highlight five">a body</span> and <span class="highlight six">a head</span>.
             </p>
           </div>
 
-          <div class="qual-example">
+          <div class="qual-example qual-left-aspect">
             <div class="image-container">
-              <img src="static/images/qualitatives/preds_unique_part_object_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_unique_part_object_1.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_0.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_1.png" alt="Image 2" class="image">
             </div>
             <div class="image-container">
-              <img src="static/images/qualitatives/preds_unique_part_parts_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/preds_unique_part_parts_1.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_0.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_1.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight seven">a&nbsp;bed</span> and <span
-                class="highlight eight">a&nbsp;pool&nbsp;table</span>.<br>The
-              unique parts present are <span class="highlight nine">a&nbsp;headboard</span>,
-              <span class="highlight ten">a&nbsp;bed</span>, and <span class="highlight eleven">a&nbsp;pocket</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span class="highlight seven">a bed</span> and <span class="highlight eight">a pool table</span>.<br>The
+              unique parts present are <span class="highlight nine">a headboard</span>
+              <span class="highlight ten">a bed</span> and <span class="highlight eleven">a pocket</span>.
             </p>
           </div>
           <p class="has-text-justified" style="padding-bottom:30px;">
@@ -395,28 +528,26 @@ title: Calico
           </p>
           <div class="qual-example">
             <div class="image-container">
-              <img src="static/images/qualitatives/in_context_0_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/in_context_0_1.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_0.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_1.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span
-                class="highlight twelve">a&nbsp;dog</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images show <span class="highlight twelve">a dog</span>.
             </p>
-            <hr style="background-color:LightGray;margin:50px;">
+            <hr>
             <div class="image-container">
-              <img src="static/images/qualitatives/in_context_1_0.png" alt="Image 1" class="image">
-              <img src="static/images/qualitatives/in_context_1_1.png" alt="Image 2" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_0.png" alt="Image 1" class="image">
+              <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_1.png" alt="Image 2" class="image">
             </div>
             <p class="caption has-text-centered">
-              <img src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include <span
-                class="highlight thirteen">a&nbsp;car</span>.
+              <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The images include <span class="highlight thirteen">a car</span>.
             </p>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>
+    
+    
   </section>
 
 
@@ -439,7 +570,7 @@ title: Calico
         <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -449,12 +580,9 @@ title: Calico
             <p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
               <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
-              <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a
-                href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a
-                href="https://arxiv.org/pdf/2308.04152">Cheetah</a> for open-sourcing their models
+              <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a href="https://arxiv.org/pdf/2308.04152">Cheetah</a> for open-sourcing their models
               and code.
             </p>
           </div>
@@ -462,6 +590,42 @@ title: Calico
       </div>
     </div>
   </footer>
-</body>
+  <script>
+    (function () {
+      function syncQualHeights() {
+        document.querySelectorAll('.qual-example .image-container').forEach((container) => {
+          const imgs = container.querySelectorAll('img.image');
+          if (imgs.length !== 2) return;
+          const left = imgs[0];
+          const right = imgs[1];
+          const useLeft = container.closest('.qual-example')?.classList.contains('qual-left-aspect');
+          const anchor = useLeft ? left : right;
+          const stretch = useLeft ? right : left;
+          if (!anchor.complete) return;
+          const h = anchor.getBoundingClientRect().height;
+          stretch.style.height = h ? `${h}px` : '';
+        });
+      }
 
+      function init() {
+        syncQualHeights();
+        window.addEventListener('resize', () => {
+          requestAnimationFrame(syncQualHeights);
+        });
+        document.querySelectorAll('.qual-example .image-container img.image').forEach((img) => {
+          if (!img.complete) {
+            img.addEventListener('load', syncQualHeights);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+    </main>
+  </body>
 </html>

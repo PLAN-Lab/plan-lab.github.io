@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PLAN Lab | Perception AND LANguage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></noscript>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
+    </head>
+<body class="page-plan">
+
+    <nav class="glass-nav">
+        <a href="index.html#hero" class="nav-logo">
+            <img src="assets/images/logo.svg" alt="PLAN Lab Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="publications.html" class="nav-item" aria-label="Publications">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Publications</span>
+            </a>
+            <a href="index.html#team" class="nav-item" aria-label="Team">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="game.html" class="nav-item" aria-label="PLAN Cubes Game">
+                <i class="fa-solid fa-cube"></i>
+                <span>PLAN Cubes</span>
+            </a>
+            <a href="index.html#partners" class="nav-item" aria-label="Partner with Us">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Partner with Us</span>
+            </a>
+            <a href="index.html#contact" class="nav-item" aria-label="Join Us">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Join Us</span>
+            </a>
+        </div>
+    </nav>
+
+
+
+    <div id="canvas-container"></div>
+    <div id="cube-layer"></div>
+
+    
+
+    <div class="controls-ui">
+        <label for="cubeSize">Cube Size</label>
+        <input type="range" id="cubeSize" min="0.5" max="2.5" step="0.1" value="1.2">
+    </div>
+
+    <section id="hero" class="hero">
+        <h1>
+            <span class="plan-trigger">PLAN</span> Lab
+        </h1>
+        <p> The Perception and LANguage (PLAN) Lab focuses on multimodal machine learning, particularly vision–language models, 2D/3D generative models, and reasoning. We develop methods that make generative and multimodal models more interpretable, reliable, and controllable.</p>
+        <div class="scroll-hint">
+            <span class="hint-text">Scroll to Explore</span>
+            <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="cards-wrap">
+            <div class="track-cards">
+                
+	                <div class="intro-text-block">
+	                    <h2>Explore<br>Our<br>Latest<br>Research</h2>
+	                </div>
+
+                <div class="view-all-wrapper" onclick="window.location.href='publications.html'">
+                    <div class="view-all-inner">
+                        <div class="view-all-content">
+                            <h3>View All</h3>
+                            <p>Publications</p>
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="team-container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-category">
+                <h3 class="category-title">Principal Investigator</h3>
+                <div class="team-grid" id="team-pi-grid"></div>
+            </div>
+            <div class="team-category">
+                <h3 class="category-title">Current Students</h3>
+                <div class="team-grid" id="team-current-grid"></div>
+            </div>
+             <div class="team-category">
+                <h3 class="category-title">Alumni</h3>
+                <div class="team-grid" id="team-alumni-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+        <div class="partners-container">
+            <h3 class="section-title">Drive AI Innovation</h3>
+
+            <div class="funding-cta">
+                <p>Partner with us to accelerate advances in multimodal perception and generative modeling. Connect with exceptional student talent to build next-generation intelligent systems.
+                </p>
+                <a href="mailto:your-email@illinois.edu" class="btn-primary">
+                    <i class="fa-solid fa-envelope" style="margin-right:8px;"></i> Partner with Us
+                </a>
+            </div>
+        </div>
+
+<div class="sponsors-panel">
+    <h2>Current Sponsors and Partners</h2>
+    
+    <div class="logo-grid">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+             alt="Google" class="logo-item" title="Google Research" loading="lazy">
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" 
+             alt="Amazon" class="logo-item" title="Amazon Science" loading="lazy">
+       
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/DARPA_Logo_2010.png" 
+             alt="DARPA" class="logo-item" title="Defense Advanced Research Projects Agency" loading="lazy">
+        
+        <img src="https://www.onr.navy.mil/themes/custom/onr/logo.png" 
+             alt="Office of Naval Research" class="logo-item" title="Office of Naval Research" loading="lazy">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Lawrence_Livermore_National_Laboratory_logo.svg" 
+             alt="Lawrence Livermore National Laboratory" class="logo-item" title="Lawrence Livermore National Laboratory" loading="lazy">
+    </div>
+</div>
+
+    </section>
+
+	    <section id="contact">
+	        <div class="join-card">
+		            <div class="carousel-container">
+		                <div class="carousel-track" id="teamCarousel">
+                            <div class="carousel-slide active" role="img" aria-label="Lab Retreat" data-bg="assets/images/group/retreat.jpg"></div>
+		                    <div class="carousel-slide" role="img" aria-label="Afrina Ming" data-bg="assets/images/group/Afrina_Ming.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Onkar Xinzhuo Ismini" data-bg="assets/images/group/ICCV25_2.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Yifan" data-bg="assets/images/group/ICCV25_Yifan.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025" data-bg="assets/images/group/ICCV25.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="Joey Amazon" data-bg="assets/images/group/JoeyAmazon.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="Meghana Poster VT" data-bg="assets/images/group/MeghanaVT.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="Ming Graduation" data-bg="assets/images/group/MingGraduation.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="WACV 2024 Muntasir" data-bg="assets/images/group/MuntasirWACV24.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 2025 Onkar" data-bg="assets/images/group/Onkar.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Xinzhuo" data-bg="assets/images/group/Xinzhuo.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="NeurIPS 2025 Yifan" data-bg="assets/images/group/YifanNeurIPS25.jpg"></div>
+		                </div>
+		                <div class="carousel-badge">Our Team</div>
+		            </div>
+	            <div class="join-content">
+	                <h2>Join Us</h2>
+	                <p>We are actively recruiting highly motivated students with a strong background in computer vision and multimodal ML (specifically generative modeling, embodied AI, or 3D vision) to build the next generation of models for perception, reasoning, and action.</p>
+					<p>If you are excited to tackle these research problems within a fast-paced, diverse, and collaborative team, consider joining PLAN Lab.</p>
+	                <div class="btn-group">
+	                    <a href="https://grad.illinois.edu/admissions/apply" target="_blank" class="btn-primary">Apply</a>
+	                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScV-Kl2-LPGVQEjceGXQbasXh3_e6N5xtqIIE56iUHI0yE9bg/viewform" target="_blank" rel="noreferrer" class="btn-outline">Interest Form →</a>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="tabs-container" id="tabs-section">
+	            <div class="tab-buttons">
+	                <button class="tab-btn active" onclick="openTab('prospective')">Prospective Students</button>
+	                <button class="tab-btn" onclick="openTab('current')">Current Illinois Students</button>
+	            </div>
+	            <div id="prospective" class="tab-content active">
+	                <p>If you are interested in joining PLAN Lab as a graduate student, please submit a formal application to your preferred University of Illinois Urbana-Champaign graduate program(s) from the list below:</p>
+	                <ul>
+	                    <li><strong>Ph.D. or M.S. in Information Sciences</strong> (School of Information Sciences)</li>
+	                    <li><strong>Ph.D. in Computer Science</strong> (Siebel School of Computing and Data Science)</li>
+	                    <li><strong>Ph.D. in Electrical and Computer Engineering</strong> (ECE Department)</li>
+	                    <li><strong>Ph.D. in Informatics</strong> (School of Information Sciences)</li>
+	                </ul>
+	                <p>In your application, please list <strong>Ismini Lourentzou</strong> as a potential advisor. We especially encourage applications from candidates with experience in generative modeling, embodied AI, or 3D vision and a strong research background in computer vision or multimodal machine learning.</p>
+	                <p>Please also complete this <a href="https://docs.google.com/forms/d/e/1FAIpQLScV-Kl2-LPGVQEjceGXQbasXh3_e6N5xtqIIE56iUHI0yE9bg/viewform" target="_blank" rel="noreferrer" style="color:var(--accent-orange)">interest form</a> so that we can better understand your background and research interests. PLAN Lab typically reviews applications in December–February and schedules interviews during this period.</p>
+	                <div class="important-note">
+	                    <h4>Important Note</h4>
+	                    <p>Please note we may not be able to respond to individual queries via email. If you do not hear back, it may just reflect bandwidth constraints. The best way to be considered is to submit a formal application.</p>
+	                </div>
+	            </div>
+	            <div id="current" class="tab-content">
+	                <p>We welcome current UIUC graduate and undergraduate students to join or collaborate with the PLAN Lab. We also recruit through programs such as <a href="https://spin.ncsa.illinois.edu/" target="_blank" rel="noreferrer" style="color:var(--accent-orange)">NCSA SPIN</a> or work with students on their IS/CS/ECE independent studies. If you are interested, fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW0eQkGIchpeqhNDg2MYBc0YaMet2yd-ooQBFZQZAQLln9yA/viewform?usp=dialog" target="_blank" rel="noreferrer" style="color:var(--accent-orange)">interest form</a>. We will reach out if there are available positions aligning with your background and research interests. It is expected that you have completed at least one core ML-related course and have experience with PyTorch.</p>
+	            </div>
+	        </div>
+	        <div class="location-container">
+	            <div class="address-box">
+		                <h2 style="margin-bottom:2rem; color:var(--text-primary);"><i class="fa-solid fa-location-dot" style="color:var(--accent-orange); margin-right: 0.5rem;"></i>Addresses</h2>
+                <div class="address-item"><h4>Lab</h4><p>614 E Daniel St., 5140<br>Champaign, IL 61820</p></div>
+                <div class="address-item"><h4>Ismini Lourentzou</h4><p>614 E Daniel St., 5146<br>Champaign, IL 61820</p></div>
+                <a href="https://maps.google.com/?q=614+E+Daniel+St,+Champaign,+IL" target="_blank" style="color:var(--accent-blue); text-decoration:underline;">Open in Google Maps</a>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.627763661642!2d-88.23098522396345!3d40.10808267150654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd738d8d7b3eb%3A0x6b77c5d336829150!2s614%20E%20Daniel%20St%2C%20Champaign%2C%20IL%2061820!5e0!3m2!1sen!2sus!4v1709230000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+	    <footer>
+	        <div class="footer-logo">PLAN</div>
+	        <div class="footer-socials">
+	            <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+	            <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+	        </div>
+	        <div class="footer-copy">© 2026 PLAN-Lab</div>
+	    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.set(0, 0, 15); 
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.PlaneGeometry(35, 12, 200, 64);
+            const uniforms = {
+                uTime: { value: 0 }, uScrollOffset: { value: 0 },
+                uColorBlue: { value: new THREE.Color('#2d7dd2') }, 
+                uColorOrange: { value: new THREE.Color('#FF5F05') }, 
+                uColorDark: { value: new THREE.Color('#13294B') }
+            };
+            const vertexShader = `
+                uniform float uTime; uniform float uScrollOffset; varying vec2 vUv; varying float vElevation; varying float vFlow; 
+                void main() { 
+                    vUv = uv; 
+                    vec3 pos = position; 
+                    float t = uTime * 0.3 + uScrollOffset * 0.0005; 
+                    float mainWave = sin(pos.x * 0.3 + t) * 2.0; 
+                    float ripple = cos(pos.x * 1.5 + t * 1.5) * 0.2; 
+                    float twist = sin(pos.x * 0.5 + t) * pos.y * 0.5; 
+                    pos.z = mainWave + ripple + twist; 
+                    vElevation = pos.z; 
+                    vFlow = sin(pos.x * 0.3 + t); 
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0); 
+                }
+            `;
+            const fragmentShader = `
+                uniform vec3 uColorBlue; uniform vec3 uColorOrange; uniform vec3 uColorDark; varying float vElevation; varying float vFlow; 
+                void main() { 
+                    float colorMix = vFlow * 0.5 + 0.5; 
+                    vec3 color = mix(uColorBlue, uColorOrange, colorMix); 
+                    float depth = smoothstep(-2.0, 3.0, vElevation); 
+                    color = mix(uColorDark, color, depth); 
+                    color += (colorMix * 0.15); 
+                    gl_FragColor = vec4(color, 1.0); 
+                }
+            `;
+            const materialMain = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide });
+            const meshMain = new THREE.Mesh(geometry, materialMain);
+            meshMain.rotation.x = -0.3; 
+            scene.add(meshMain);
+            const materialWire = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide, wireframe: true, transparent: true, opacity: 0.15 });
+            const meshWire = new THREE.Mesh(geometry, materialWire);
+            meshWire.position.z = -1.0; 
+            meshWire.scale.set(1.1, 1.1, 1);
+            scene.add(meshWire);
+            const clock = new THREE.Clock();
+            const animate = () => {
+                const t = clock.getElapsedTime(); 
+                uniforms.uTime.value = t; 
+                uniforms.uScrollOffset.value = window.scrollY;
+                renderer.render(scene, camera); 
+                requestAnimationFrame(animate);
+            };
+            animate();
+            window.addEventListener('resize', () => { 
+                camera.aspect = window.innerWidth / window.innerHeight; 
+                camera.updateProjectionMatrix(); 
+                renderer.setSize(window.innerWidth, window.innerHeight); 
+            });
+	        };
+	        if (window.THREE) {
+	            try { initThreeJS(); } catch (e) { console.error(e); }
+	        } else {
+	            console.warn('[PLAN] THREE.js not available; skipping background.');
+	        }
+
+	        if (window.gsap && window.ScrollTrigger) {
+	            gsap.registerPlugin(ScrollTrigger);
+	            
+	            ScrollTrigger.create({
+	                start: "top -100",
+	                end: 99999,
+	                toggleClass: { className: "scrolled-nav", targets: ".glass-nav" }
+	            });
+	        } else {
+	            console.warn('[PLAN] GSAP/ScrollTrigger not available; skipping scroll effects.');
+	        }
+
+        // ----- GSAP HORIZONTAL SCROLL SETUP (DISABLE ON MOBILE) -----
+        const track = document.querySelector('.track-cards');
+        let scrollTween = null;
+
+        function setupHorizontalScroll(force) {
+            if (!track || !window.gsap || !window.ScrollTrigger) return;
+
+            const isMobile = window.innerWidth < 900;
+
+            function killCardTriggers() {
+                ScrollTrigger.getAll().forEach(t => {
+                    const vars = t.vars || {};
+                    if (vars.containerAnimation && vars.trigger && vars.trigger.classList && vars.trigger.classList.contains('vid-card')) {
+                        t.kill();
+                    }
+                });
+            }
+
+            // On mobile: kill any existing pinned animation and clear transforms
+            if (isMobile) {
+                if (scrollTween) {
+                    if (scrollTween.scrollTrigger) scrollTween.scrollTrigger.kill();
+                    scrollTween.kill();
+                    scrollTween = null;
+                }
+                gsap.set(track, { clearProps: "transform" });
+
+                // Kill any card ScrollTriggers that depended on containerAnimation
+                killCardTriggers();
+                return;
+            }
+
+            // Desktop: rebuild if forced (e.g., dynamic cards / resize)
+            if (scrollTween) {
+                if (!force) return;
+                killCardTriggers();
+                if (scrollTween.scrollTrigger) scrollTween.scrollTrigger.kill();
+                scrollTween.kill();
+                scrollTween = null;
+                gsap.set(track, { clearProps: "transform" });
+            }
+
+            const scrollDuration = 0.7;
+
+            scrollTween = gsap.to(track, {
+                x: () => -(track.scrollWidth - window.innerWidth + 200),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".cards-wrap",
+                    pin: true,
+                    scrub: 1,
+                    start: "top top",
+                    end: () => "+=" + (track.scrollWidth * scrollDuration),
+                    anticipatePin: 1
+                }
+            });
+
+            const cards = gsap.utils.toArray('.vid-card');
+            cards.forEach((card) => {
+                const img = card.querySelector('.vid-card-img');
+                const caption = card.querySelector('.vid-card-caption');
+
+                if (img) {
+                    gsap.to(img, {
+                        backgroundPosition: "100% center",
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: card,
+                            containerAnimation: scrollTween,
+                            start: "left right",
+                            end: "right left",
+                            scrub: true
+                        }
+                    });
+                }
+
+                if (caption) {
+                    gsap.fromTo(
+                        caption,
+                        { xPercent: 40 },
+                        {
+                            xPercent: -40,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: card,
+                                containerAnimation: scrollTween,
+                                start: "left right",
+                                end: "right left",
+                                scrub: true
+                            }
+                        }
+                    );
+                }
+            });
+        }
+
+        window.PLAN_setupHorizontalScroll = setupHorizontalScroll;
+
+        // Initial setup
+        setupHorizontalScroll();
+
+        // Recalculate on resize (e.g., rotate phone, resize browser)
+        window.addEventListener('resize', () => {
+            setupHorizontalScroll(true);
+        });
+
+        // ----- CAROUSEL + TABS -----
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
+        function openTab(tabName) {
+            const contents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < contents.length; i++) { contents[i].classList.remove("active"); }
+            const buttons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < buttons.length; i++) { buttons[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // ----- LAZY LOAD CAROUSEL IMAGES -----
+        const lazyLoadCarousel = () => {
+            const lazySlides = document.querySelectorAll('.carousel-slide[data-bg]');
+            
+            const observer = new IntersectionObserver((entries, self) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slide = entry.target;
+                        const bg = slide.getAttribute('data-bg');
+                        slide.style.backgroundImage = `url('${bg}')`;
+                        slide.removeAttribute('data-bg');
+                        self.unobserve(slide);
+                    }
+                });
+            }, { rootMargin: '0px 0px 200px 0px' }); // Load images 200px before they enter the viewport
+
+            lazySlides.forEach(slide => {
+                observer.observe(slide);
+            });
+        };
+        lazyLoadCarousel();
+    </script>
+
+    <script>
+    (function() {
+        if (!window.THREE) return;
+        var cubeLayer = document.getElementById('cube-layer');
+        if (!cubeLayer) return;
+
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 18);
+
+        var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.domElement.style.pointerEvents = "auto";
+        cubeLayer.appendChild(renderer.domElement);
+
+        var clock = new THREE.Clock();
+        var interactiveCubes = [];
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
+        var UIUC_BLUE = new THREE.Color('#13294B');
+        var UIUC_ORANGE = new THREE.Color('#FF5F05');
+
+        function InteractiveCube(scene, color, position, id) {
+            this.scene = scene;
+            this.id = id;
+            this.startPos = position.clone();
+            this.velocity = new THREE.Vector3(0, 0, 0);
+            this.state = 'SOLID'; 
+            this.stateTimer = 0;
+            this.baseScale = 1.2;
+            var geo = new THREE.BoxGeometry(1, 1, 1);
+            var mat = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.9 });
+            this.mesh = new THREE.Mesh(geo, mat);
+            this.mesh.position.copy(position);
+            this.mesh.userData.parentCube = this;
+            scene.add(this.mesh);
+            this.particles = this._createParticleSystem(color);
+            this.particles.visible = false;
+            scene.add(this.particles);
+        }
+
+        InteractiveCube.prototype._createParticleSystem = function(color) {
+            var count = 3500;
+            var geo = new THREE.BufferGeometry();
+            var pos = new Float32Array(count * 3);
+            var target = new Float32Array(count * 3);
+            var sizes = new Float32Array(count);
+            var randoms = new Float32Array(count);
+
+            for (var i = 0; i < count; i++) {
+                var x = (Math.random() - 0.5);
+                var y = (Math.random() - 0.5);
+                var z = (Math.random() - 0.5);
+                var i3 = i * 3;
+                pos[i3] = x; pos[i3 + 1] = y; pos[i3 + 2] = z;
+                target[i3] = x; target[i3 + 1] = y; target[i3 + 2] = z;
+                sizes[i] = Math.random();
+                randoms[i] = Math.random();
+            }
+
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            geo.setAttribute('aTarget', new THREE.BufferAttribute(target, 3));
+            geo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            geo.setAttribute('randomOffset', new THREE.BufferAttribute(randoms, 1));
+
+            var mat = new THREE.ShaderMaterial({
+                uniforms: { uTime: { value: 0 }, uColor: { value: color }, uScale: { value: 1.0 } },
+                vertexShader: `
+                    attribute float size; attribute float randomOffset; attribute vec3 aTarget;
+                    uniform float uTime; uniform float uScale; varying float vAlpha;
+                    void main() {
+                        vec3 p = position * uScale;
+                        vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
+                        float flicker = sin(uTime * 10.0 + randomOffset * 10.0) * 0.5 + 0.5;
+                        gl_PointSize = (size * 15.0 + 5.0) * flicker * (10.0 / -mvPosition.z);
+                        gl_Position = projectionMatrix * mvPosition;
+                        vAlpha = flicker;
+                    }
+                `,
+                fragmentShader: `
+                    uniform vec3 uColor; varying float vAlpha;
+                    void main() {
+                        float d = distance(gl_PointCoord, vec2(0.5));
+                        if (d > 0.5) discard;
+                        gl_FragColor = vec4(uColor + 0.2, 0.8 * vAlpha);
+                    }
+                `,
+                transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+            });
+
+            var points = new THREE.Points(geo, mat);
+            points.frustumCulled = false;
+            return points;
+        };
+
+        InteractiveCube.prototype.triggerDissolve = function() {
+            if (this.state !== 'SOLID') return;
+            this.state = 'DISSOLVE';
+            this.stateTimer = 0;
+            this.mesh.visible = false;
+            this.particles.visible = true;
+            this.particles.position.copy(this.mesh.position);
+            this.particles.rotation.copy(this.mesh.rotation);
+            this.velocity.set(0, 0, 0);
+        };
+
+        InteractiveCube.prototype.setSize = function(scale) {
+            this.baseScale = scale;
+            this.mesh.scale.set(scale, scale, scale);
+            this.particles.material.uniforms.uScale.value = scale;
+        };
+
+        InteractiveCube.prototype._resetParticles = function(positions, targets) {
+            for (var i = 0; i < positions.length; i++) { positions[i] = targets[i]; }
+        };
+
+        InteractiveCube.prototype.update = function(dt, time) {
+            if (this.state === 'SOLID') {
+                this.mesh.position.add(this.velocity);
+                this.velocity.multiplyScalar(0.95);
+                if (this.velocity.length() < 0.001) {
+                    this.mesh.position.y += Math.sin(time + this.id) * 0.005;
+                    this.mesh.rotation.x += 0.005;
+                    this.mesh.rotation.y += 0.005;
+                } else {
+                    this.mesh.rotation.x += this.velocity.y;
+                    this.mesh.rotation.y += this.velocity.x;
+                }
+                var dist = camera.position.z - this.mesh.position.z;
+                var vFOV = THREE.MathUtils.degToRad(camera.fov);
+                var height = 2 * Math.tan(vFOV / 2) * dist;
+                var width = height * camera.aspect;
+                var boundX = width / 2 - this.baseScale;
+                var boundY = height / 2 - this.baseScale;
+                if (this.mesh.position.x > boundX) { this.mesh.position.x = boundX; this.velocity.x *= -0.6; }
+                if (this.mesh.position.x < -boundX) { this.mesh.position.x = -boundX; this.velocity.x *= -0.6; }
+                if (this.mesh.position.y > boundY) { this.mesh.position.y = boundY; this.velocity.y *= -0.6; }
+                if (this.mesh.position.y < -boundY) { this.mesh.position.y = -boundY; this.velocity.y *= -0.6; }
+            } else {
+                this.stateTimer += dt * 1000;
+                this.particles.material.uniforms.uTime.value = time;
+                var positions = this.particles.geometry.attributes.position.array;
+                var targets = this.particles.geometry.attributes.aTarget.array;
+                var randoms = this.particles.geometry.attributes.randomOffset.array;
+                var count = positions.length / 3;
+
+                if (this.state === 'DISSOLVE' && this.stateTimer > 1500) { this.state = 'SWIRL'; this.stateTimer = 0; }
+                if (this.state === 'SWIRL' && this.stateTimer > 3000) { this.state = 'REASSEMBLE'; this.stateTimer = 0; }
+                if (this.state === 'REASSEMBLE' && this.stateTimer > 2000) { this.state = 'SOLID'; this.mesh.visible = true; this.particles.visible = false; this._resetParticles(positions, targets); }
+
+                for (var i = 0; i < count; i++) {
+                    var i3 = i * 3;
+                    var ix = positions[i3]; var iy = positions[i3 + 1]; var iz = positions[i3 + 2];
+                    if (this.state === 'DISSOLVE') {
+                        var speed = 0.05;
+                        ix += ix * speed * (Math.random() + 0.1); iy += iy * speed * (Math.random() + 0.1) + 0.01; iz += iz * speed * (Math.random() + 0.1);
+                    } else if (this.state === 'SWIRL') {
+                        var angle = time * 0.8 + randoms[i] * 6.2831;
+                        ix += Math.cos(angle) * 0.04; iy += Math.sin(angle) * 0.04 + 0.015; iz += Math.sin(angle * 1.3) * 0.04;
+                    } else if (this.state === 'REASSEMBLE') {
+                        ix += (targets[i3] - ix) * 0.08; iy += (targets[i3 + 1] - iy) * 0.08; iz += (targets[i3 + 2] - iz) * 0.08;
+                    }
+                    positions[i3] = ix; positions[i3 + 1] = iy; positions[i3 + 2] = iz;
+                }
+                this.particles.geometry.attributes.position.needsUpdate = true;
+            }
+        };
+
+        interactiveCubes.push(new InteractiveCube(scene, UIUC_ORANGE, new THREE.Vector3(4, 2, 6), 1));
+        interactiveCubes.push(new InteractiveCube(scene, UIUC_BLUE,   new THREE.Vector3(-4, -1, 5), 2));
+
+        var draggedCube = null;
+        var dragPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+        var dragOffset = new THREE.Vector3();
+        var isDragging = false;
+        var mouseDownTime = 0;
+        var lastMousePos = new THREE.Vector3();
+
+        var slider = document.getElementById('cubeSize');
+        if (slider) {
+            slider.addEventListener('input', function(e) {
+                var s = parseFloat(e.target.value);
+                interactiveCubes.forEach(function(c) { c.setSize(s); });
+            });
+        }
+
+        function updateRayFromEvent(e) {
+            var rect = renderer.domElement.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width;
+            var y = (e.clientY - rect.top) / rect.height;
+            mouse.x = x * 2 - 1; mouse.y = -(y * 2 - 1);
+            raycaster.setFromCamera(mouse, camera);
+        }
+
+        window.addEventListener('mousedown', function(e) {
+            updateRayFromEvent(e);
+            var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+            var intersects = raycaster.intersectObjects(solidMeshes);
+            if (intersects.length > 0) {
+                draggedCube = intersects[0].object.userData.parentCube;
+                draggedCube.velocity.set(0, 0, 0);
+                dragPlane.constant = -draggedCube.mesh.position.z;
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+                lastMousePos.copy(planeIntersect);
+                mouseDownTime = performance.now();
+                isDragging = false;
+                document.body.style.cursor = 'grabbing';
+            }
+        });
+        window.addEventListener('mousemove', function(e) {
+            updateRayFromEvent(e);
+            if (draggedCube) {
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+                draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+                var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+                draggedCube.velocity.copy(delta);
+                lastMousePos.copy(planeIntersect);
+            } else {
+                var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+                var intersects = raycaster.intersectObjects(solidMeshes);
+                document.body.style.cursor = intersects.length > 0 ? 'grab' : 'default';
+            }
+        });
+        window.addEventListener('mouseup', function() {
+            if (draggedCube) {
+                if (!isDragging) { draggedCube.triggerDissolve(); }
+                draggedCube = null;
+                document.body.style.cursor = 'default';
+            }
+        });
+        
+        window.addEventListener('touchstart', function(e) {
+            if(e.touches.length > 1) return;
+            e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+            updateRayFromEvent(e);
+            var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+            var intersects = raycaster.intersectObjects(solidMeshes);
+            if (intersects.length > 0) {
+                draggedCube = intersects[0].object.userData.parentCube;
+                draggedCube.velocity.set(0, 0, 0);
+                dragPlane.constant = -draggedCube.mesh.position.z;
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+                lastMousePos.copy(planeIntersect);
+                mouseDownTime = performance.now();
+                isDragging = false;
+            }
+        }, {passive: false});
+        
+        window.addEventListener('touchmove', function(e) {
+             if(draggedCube) {
+                e.preventDefault();
+                e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+                updateRayFromEvent(e);
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+                draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+                var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+                draggedCube.velocity.copy(delta);
+                lastMousePos.copy(planeIntersect);
+             }
+        }, {passive: false});
+        
+        window.addEventListener('touchend', function() {
+            if (draggedCube) {
+                if (!isDragging) { draggedCube.triggerDissolve(); }
+                draggedCube = null;
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        function animate() {
+            requestAnimationFrame(animate);
+            var dt = clock.getDelta();
+            var t = clock.getElapsedTime();
+            interactiveCubes.forEach(function(c) { c.update(dt, t); });
+            renderer.render(scene, camera);
+        }
+        animate();
+    })();
+    </script>
+</body>
+</html>

@@ -1,36 +1,65 @@
----
-layout: project
-title: ec-vlm
----
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!DOCTYPE html>
-<html>
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models" />
+    <title>[TMLR'25] EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models">
-  <meta name="keywords" content="part segmentation, part co-segmentation">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[TMLR'25] EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
 
-<body>
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
 <!-- {% include navbar.html %} -->
   <section class="hero">
     <div class="hero-body">
@@ -38,16 +67,15 @@ title: ec-vlm
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title"><span class="model-name">EC-VLM</span>: Emergent Corpus Pre-training Benefits Vision Language Models</h1>
-            <h1 class="title is-3 publication-venue vt-maroon">TMLR 2025</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://makanju0la.github.io/">Makanjuola Ogunleye<sup><span class="vt-maroon">1</span></sup></a>,
+                <a href="/team/phd-makanjuola-ogunleye" >Makanjuola Ogunleye<sup class="vt-maroon">1</sup></a>,
               </span>
               <span class="author-block">
-                <a href="https://chasedvickery.github.io/">Chase Vickery<sup><span class="vt-maroon">1</span></sup></a>,
+                <a href="/team/alumni-chase-vickery" >Chase Vickery<sup class="vt-maroon">1</sup></a>,
               </span>
               <span class="author-block">
-                <a href="https://isminoula.github.io/">Ismini Lourentzou<sup><span class="illini-orange">2</span></sup></a>
+                <a href="/team/pi-ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">2</sup></a>
               </span>
             </div>
 
@@ -55,10 +83,14 @@ title: ec-vlm
               <span class="author-block">
                 <a href="https://plan-lab.github.io/">PLAN Lab</a>
                 (<span class="author-affiliations">
-                  <sup><span class="vt-maroon">1</span></sup><span class="vt-maroon">Virginia Tech</span>,
-                  <sup><span class="illini-orange">2</span></sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                  <sup class="vt-maroon">1</sup><span class="vt-maroon">Virginia Tech</span>,
+                  <sup class="illini-orange">2</sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
                 </span>)
               </span>
+            </div>
+
+            <div class="has-text-centered" style="margin: 5px 0;">
+              <h1 class="title is-3 publication-venue illini-orange">TMLR 2025</h1>
             </div>
 
             <div class="column has-text-centered">
@@ -114,10 +146,7 @@ title: ec-vlm
           We release <span class="model-name">LLaVA-1.5-EC</span>, a fully EC-trained variant of <span class="model-name">LLaVA</span>, 
           which sets new state-of-the-art results on several benchmarks. 
         </div>
-        <img src="./static/images/overview_paper.png" 
-          class="interpolation-image"
-          alt="Interpolate start reference image." 
-          style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+        <img src="./static/images/overview_paper.png" class="interpolation-image" alt="Interpolate start reference image." style="width: 80%; height: auto; display: block; margin: 0 auto;">
         <div class="content has-text-justified">
           <span style="font-weight: bold;">Overview of our EC Pretraining Framework.</span> A speaker-listener pair engages in a referential game, 
           where the speaker generates an Emergent Communication (EC) message to describe a target image, and 
@@ -174,7 +203,7 @@ title: ec-vlm
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
+          <iframe loading="lazy" src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -185,13 +214,13 @@ title: ec-vlm
   <div class="columns is-centered has-text-centered">
     <div class="container">
       <h2 class="title is-3">Poster</h2>
-      <iframe  src="static/images/ecvlm-poster.pdf" width="100%" height="550"></iframe>
+      <iframe loading="lazy" src="about:blank" data-pdf-src="static/images/ecvlm-poster.pdf" width="100%" height="550"></iframe>
       </div>
     </div>
   </div>
-  </section> 
+  </section>
 
-  <section class="section" style="background-color:#dadada81">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
@@ -213,8 +242,8 @@ title: ec-vlm
                 insights into the structure and transferability of emergent language for vision-language
                 pretraining and outline future research opportunities at the intersection of EC, multimodal repre-
                 sentation learning, and human-machine communication.</li>
-              </ol>
-          </div>
+              
+          </ul></div>
         </div>
       </div>
     </div>
@@ -227,7 +256,7 @@ title: ec-vlm
           <h2 class="title is-3">Quantitative Results on the Visual Entailment Task </h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/snlive result.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <img loading="lazy" decoding="async" src="./static/images/snlive%20result.png" class="interpolation-image" alt="Calico results." width="85%">
               <p class="has-text-justified">
                 <span style="font-weight: bold;">Visual Entailment (VE) Accuracy.</span> EC 
                 pretraining substantially improves VE accuracy compared to the baseline across all training sizes, and 
@@ -238,7 +267,7 @@ title: ec-vlm
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
   <section class="section">
@@ -248,7 +277,7 @@ title: ec-vlm
           <h2 class="title is-3">Instruction Following LVLM Tasks</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/instruc-following.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <img loading="lazy" decoding="async" src="./static/images/instruc-following.png" class="interpolation-image" alt="Calico results." width="85%">
               <p class="has-text-justified">
                 We compare LLaVA-1.5-EC, which is trained exclusively on EC tokens, against a range of state-of-the-art 
                 LVLMs across five benchmarks: VQAv2, GQA, VizWiz, SciQA-IMG, and TextVQA. Despite using only 558K images
@@ -269,7 +298,7 @@ title: ec-vlm
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
   <section class="section">
@@ -279,7 +308,7 @@ title: ec-vlm
           <h2 class="title is-3">Results on MMBench</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/mmbench.png" class="interpolation-image" alt="Calico results." width="85%" />
+              <img loading="lazy" decoding="async" src="./static/images/mmbench.png" class="interpolation-image" alt="Calico results." width="85%">
               <p class="has-text-justified">
                 <span style="font-weight: bold;">Comparison of LLaVA-1.5-EC with SoTA Instruction-Following Models on the MM-
                   Bench Benchmark.</span>  LLaVA-1.5-EC, pretrained using Emergent Communication 
@@ -291,7 +320,7 @@ title: ec-vlm
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
   <section class="section">
@@ -307,7 +336,7 @@ title: ec-vlm
   
           <!-- Image 1 -->
           <figure class="qual-example" style="margin-bottom: 40px;">
-            <img src="static/images/brocolli-qual1.png" alt="Image 1" style="width: 100%; height: auto; border-radius: 8px;" />
+            <img loading="lazy" decoding="async" src="static/images/brocolli-qual1.png" alt="Image 1" style="border-radius: 8px;">
             <figcaption class="caption has-text-justified" style="margin-top: 20px;">
               <strong>EC Sequences Exhibiting Semantic Clustering.</strong> (a) The repeated 
               occurrence of token 2430 is consistently associated with images containing broccoli. (b) Token 222 
@@ -320,7 +349,7 @@ title: ec-vlm
   
           <!-- Image 2 -->
           <figure class="qual-example" style="margin-bottom: 40px;">
-            <img src="static/images/zebra-qual.png" alt="Image 2" style="width: 100%; height: auto; border-radius: 8px;" />
+            <img loading="lazy" decoding="async" src="static/images/zebra-qual.png" alt="Image 2" style="border-radius: 8px;">
             <figcaption class="caption has-text-justified" style="margin-top: 20px;">
               <strong>EC Sequences Reveal Visual Grounding, Compositionality, and Latent Structure.</strong> (a) Token 3293 
               consistently appears in zebra-related images, demonstrating strong visual grounding. (b) A variation in the third 
@@ -336,7 +365,7 @@ title: ec-vlm
   
           <!-- Image 3 -->
           <figure class="qual-example">
-            <img src="static/images/vehicle-qual.png" alt="Image 3" style="width: 100%; height: auto; border-radius: 8px;" />
+            <img loading="lazy" decoding="async" src="static/images/vehicle-qual.png" alt="Image 3" style="border-radius: 8px;">
             <figcaption class="caption has-text-justified" style="margin-top: 20px;">
               <strong>EC Sequences Exhibit Semantic Specificity and Structural Roles.</strong> (a) Token 309 is associated with vehicles, and 
               its position appears to modulate meaning, <i>e.g.</i> at position 2, it tends to refer to motorbikes. (b) The same token 
@@ -372,7 +401,7 @@ title: ec-vlm
         <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -382,8 +411,7 @@ title: ec-vlm
             <p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                href="https://arxiv.org/pdf/2304.08485">LLaVA</a> for open-sourcing their models
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a> for open-sourcing their models
               and code.
             </p>
           </div>
@@ -391,6 +419,6 @@ title: ec-vlm
       </div>
     </div>
   </footer>
-</body>
-
+    </main>
+  </body>
 </html>

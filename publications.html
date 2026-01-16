@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | PLAN Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/page-publications-content.js" defer></script>
+</head>
+<body class="page-publications">
+
+    <nav class="glass-nav">
+        <a href="index.html#hero" class="nav-logo">
+            <img src="assets/images/logo.svg" alt="PLAN Lab Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="publications.html" class="nav-item" aria-label="Publications">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Publications</span>
+            </a>
+            <a href="index.html#team" class="nav-item" aria-label="Team">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="game.html" class="nav-item" aria-label="PLAN Cubes Game">
+                <i class="fa-solid fa-cube"></i>
+                <span>PLAN Cubes</span>
+            </a>
+            <a href="index.html#partners" class="nav-item" aria-label="Partner with Us">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Partner with Us</span>
+            </a>
+            <a href="index.html#contact" class="nav-item" aria-label="Join Us">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Join Us</span>
+            </a>
+        </div>
+    </nav>
+
+
+
+    <div id="canvas-container"></div>
+    <div id="cube-layer"></div>
+
+    
+
+    <div class="controls-ui">
+        <label for="cubeSize">Cube Size</label>
+        <input type="range" id="cubeSize" min="0.5" max="2.5" step="0.1" value="1.2">
+    </div>
+    
+
+    <header class="page-header">
+        <h1>Publications</h1>
+    </header>
+
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search publications...">
+        <div class="search-icon">🔍</div>
+    </div>
+
+    <div class="container">
+        
+        <div id="noResults" class="no-results">
+            No publications found matching your search.
+        </div>
+
+        <div class="pub-list" id="pubList">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // --- 1. THREE.JS LIQUID RIBBON BACKGROUND (MATCHING INDEX.HTML) ---
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.set(0, 0, 15); 
+            
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+            container.appendChild(renderer.domElement);
+            
+            const geometry = new THREE.PlaneGeometry(35, 12, 200, 64);
+            const uniforms = {
+                uTime: { value: 0 },
+                uScrollOffset: { value: 0 },
+                uColorBlue: { value: new THREE.Color('#2d7dd2') },
+                uColorOrange: { value: new THREE.Color('#FF5F05') },
+                uColorDark: { value: new THREE.Color('#13294B') }
+            };
+            
+            const vertexShader = `
+                uniform float uTime; uniform float uScrollOffset;
+                varying vec2 vUv; varying float vElevation; varying float vFlow; 
+                void main() {
+                    vUv = uv; vec3 pos = position;
+                    float t = uTime * 0.3 + uScrollOffset * 0.0005;
+                    float mainWave = sin(pos.x * 0.3 + t) * 2.0;
+                    float ripple = cos(pos.x * 1.5 + t * 1.5) * 0.2;
+                    float twist = sin(pos.x * 0.5 + t) * pos.y * 0.5;
+                    pos.z = mainWave + ripple + twist;
+                    vElevation = pos.z; vFlow = sin(pos.x * 0.3 + t); 
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `;
+            const fragmentShader = `
+                uniform vec3 uColorBlue; uniform vec3 uColorOrange; uniform vec3 uColorDark;
+                varying float vElevation; varying float vFlow; 
+                void main() {
+                    float colorMix = vFlow * 0.5 + 0.5; 
+                    vec3 color = mix(uColorBlue, uColorOrange, colorMix);
+                    float depth = smoothstep(-2.0, 3.0, vElevation);
+                    color = mix(uColorDark, color, depth);
+                    color += (colorMix * 0.15); 
+                    gl_FragColor = vec4(color, 1.0);
+                }
+            `;
+            
+            const materialMain = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide });
+            const meshMain = new THREE.Mesh(geometry, materialMain);
+            meshMain.rotation.x = -0.3; scene.add(meshMain);
+            
+            const materialWire = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide, wireframe: true, transparent: true, opacity: 0.15 });
+            const meshWire = new THREE.Mesh(geometry, materialWire);
+            meshWire.position.z = -1.0; meshWire.scale.set(1.1, 1.1, 1); scene.add(meshWire);
+            
+            const clock = new THREE.Clock();
+            const animate = () => {
+                const t = clock.getElapsedTime();
+                uniforms.uTime.value = t;
+                uniforms.uScrollOffset.value = window.scrollY;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            };
+            animate();
+            
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+	        };
+	        if (window.THREE) {
+	            try { initThreeJS(); } catch (e) { console.error(e); }
+	        } else {
+	            console.warn('[PLAN] THREE.js not available; skipping background.');
+	        }
+
+	    </script>
+
+    <script>
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+          start: "top -100",
+          end: 99999,
+          toggleClass: { className: "scrolled-nav", targets: ".glass-nav" }
+        });
+      }
+    </script>
+
+    <script>
+    (function() {
+        if (!window.THREE) return;
+        var cubeLayer = document.getElementById('cube-layer');
+        if (!cubeLayer) return;
+
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 18);
+
+        var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.domElement.style.pointerEvents = "auto";
+        cubeLayer.appendChild(renderer.domElement);
+
+        var clock = new THREE.Clock();
+        var interactiveCubes = [];
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
+        var UIUC_BLUE = new THREE.Color('#13294B');
+        var UIUC_ORANGE = new THREE.Color('#FF5F05');
+
+        function InteractiveCube(scene, color, position, id) {
+            this.scene = scene;
+            this.id = id;
+            this.startPos = position.clone();
+            this.velocity = new THREE.Vector3(0, 0, 0);
+            this.state = 'SOLID'; 
+            this.stateTimer = 0;
+            this.baseScale = 1.2;
+            var geo = new THREE.BoxGeometry(1, 1, 1);
+            var mat = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.9 });
+            this.mesh = new THREE.Mesh(geo, mat);
+            this.mesh.position.copy(position);
+            this.mesh.userData.parentCube = this;
+            scene.add(this.mesh);
+            this.particles = this._createParticleSystem(color);
+            this.particles.visible = false;
+            scene.add(this.particles);
+        }
+
+        InteractiveCube.prototype._createParticleSystem = function(color) {
+            var count = 3500;
+            var geo = new THREE.BufferGeometry();
+            var pos = new Float32Array(count * 3);
+            var target = new Float32Array(count * 3);
+            var sizes = new Float32Array(count);
+            var randoms = new Float32Array(count);
+
+            for (var i = 0; i < count; i++) {
+                var x = (Math.random() - 0.5);
+                var y = (Math.random() - 0.5);
+                var z = (Math.random() - 0.5);
+                var i3 = i * 3;
+                pos[i3] = x; pos[i3 + 1] = y; pos[i3 + 2] = z;
+                target[i3] = x; target[i3 + 1] = y; target[i3 + 2] = z;
+                sizes[i] = Math.random();
+                randoms[i] = Math.random();
+            }
+
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            geo.setAttribute('aTarget', new THREE.BufferAttribute(target, 3));
+            geo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            geo.setAttribute('randomOffset', new THREE.BufferAttribute(randoms, 1));
+
+            var mat = new THREE.ShaderMaterial({
+                uniforms: { uTime: { value: 0 }, uColor: { value: color }, uScale: { value: 1.0 } },
+                vertexShader: `
+                    attribute float size; attribute float randomOffset; attribute vec3 aTarget;
+                    uniform float uTime; uniform float uScale; varying float vAlpha;
+                    void main() {
+                        vec3 p = position * uScale;
+                        vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
+                        float flicker = sin(uTime * 10.0 + randomOffset * 10.0) * 0.5 + 0.5;
+                        gl_PointSize = (size * 15.0 + 5.0) * flicker * (10.0 / -mvPosition.z);
+                        gl_Position = projectionMatrix * mvPosition;
+                        vAlpha = flicker;
+                    }
+                `,
+                fragmentShader: `
+                    uniform vec3 uColor; varying float vAlpha;
+                    void main() {
+                        float d = distance(gl_PointCoord, vec2(0.5));
+                        if (d > 0.5) discard;
+                        gl_FragColor = vec4(uColor + 0.2, 0.8 * vAlpha);
+                    }
+                `,
+                transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+            });
+
+            var points = new THREE.Points(geo, mat);
+            points.frustumCulled = false;
+            return points;
+        };
+
+        InteractiveCube.prototype.triggerDissolve = function() {
+            if (this.state !== 'SOLID') return;
+            this.state = 'DISSOLVE';
+            this.stateTimer = 0;
+            this.mesh.visible = false;
+            this.particles.visible = true;
+            this.particles.position.copy(this.mesh.position);
+            this.particles.rotation.copy(this.mesh.rotation);
+            this.velocity.set(0, 0, 0);
+        };
+
+        InteractiveCube.prototype.setSize = function(scale) {
+            this.baseScale = scale;
+            this.mesh.scale.set(scale, scale, scale);
+            this.particles.material.uniforms.uScale.value = scale;
+        };
+
+        InteractiveCube.prototype._resetParticles = function(positions, targets) {
+            for (var i = 0; i < positions.length; i++) { positions[i] = targets[i]; }
+        };
+
+        InteractiveCube.prototype.update = function(dt, time) {
+            if (this.state === 'SOLID') {
+                this.mesh.position.add(this.velocity);
+                this.velocity.multiplyScalar(0.95);
+                if (this.velocity.length() < 0.001) {
+                    this.mesh.position.y += Math.sin(time + this.id) * 0.005;
+                    this.mesh.rotation.x += 0.005;
+                    this.mesh.rotation.y += 0.005;
+                } else {
+                    this.mesh.rotation.x += this.velocity.y;
+                    this.mesh.rotation.y += this.velocity.x;
+                }
+                var dist = camera.position.z - this.mesh.position.z;
+                var vFOV = THREE.MathUtils.degToRad(camera.fov);
+                var height = 2 * Math.tan(vFOV / 2) * dist;
+                var width = height * camera.aspect;
+                var boundX = width / 2 - this.baseScale;
+                var boundY = height / 2 - this.baseScale;
+                if (this.mesh.position.x > boundX) { this.mesh.position.x = boundX; this.velocity.x *= -0.6; }
+                if (this.mesh.position.x < -boundX) { this.mesh.position.x = -boundX; this.velocity.x *= -0.6; }
+                if (this.mesh.position.y > boundY) { this.mesh.position.y = boundY; this.velocity.y *= -0.6; }
+                if (this.mesh.position.y < -boundY) { this.mesh.position.y = -boundY; this.velocity.y *= -0.6; }
+            } else {
+                this.stateTimer += dt * 1000;
+                this.particles.material.uniforms.uTime.value = time;
+                var positions = this.particles.geometry.attributes.position.array;
+                var targets = this.particles.geometry.attributes.aTarget.array;
+                var randoms = this.particles.geometry.attributes.randomOffset.array;
+                var count = positions.length / 3;
+
+                if (this.state === 'DISSOLVE' && this.stateTimer > 1500) { this.state = 'SWIRL'; this.stateTimer = 0; }
+                if (this.state === 'SWIRL' && this.stateTimer > 3000) { this.state = 'REASSEMBLE'; this.stateTimer = 0; }
+                if (this.state === 'REASSEMBLE' && this.stateTimer > 2000) { this.state = 'SOLID'; this.mesh.visible = true; this.particles.visible = false; this._resetParticles(positions, targets); }
+
+                for (var i = 0; i < count; i++) {
+                    var i3 = i * 3;
+                    var ix = positions[i3]; var iy = positions[i3 + 1]; var iz = positions[i3 + 2];
+                    if (this.state === 'DISSOLVE') {
+                        var speed = 0.05;
+                        ix += ix * speed * (Math.random() + 0.1); iy += iy * speed * (Math.random() + 0.1) + 0.01; iz += iz * speed * (Math.random() + 0.1);
+                    } else if (this.state === 'SWIRL') {
+                        var angle = time * 0.8 + randoms[i] * 6.2831;
+                        ix += Math.cos(angle) * 0.04; iy += Math.sin(angle) * 0.04 + 0.015; iz += Math.sin(angle * 1.3) * 0.04;
+                    } else if (this.state === 'REASSEMBLE') {
+                        ix += (targets[i3] - ix) * 0.08; iy += (targets[i3 + 1] - iy) * 0.08; iz += (targets[i3 + 2] - iz) * 0.08;
+                    }
+                    positions[i3] = ix; positions[i3 + 1] = iy; positions[i3 + 2] = iz;
+                }
+                this.particles.geometry.attributes.position.needsUpdate = true;
+            }
+        };
+
+        interactiveCubes.push(new InteractiveCube(scene, UIUC_ORANGE, new THREE.Vector3(4, 2, 6), 1));
+        interactiveCubes.push(new InteractiveCube(scene, UIUC_BLUE,   new THREE.Vector3(-4, -1, 5), 2));
+
+        var draggedCube = null;
+        var dragPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+        var dragOffset = new THREE.Vector3();
+        var isDragging = false;
+        var mouseDownTime = 0;
+        var lastMousePos = new THREE.Vector3();
+
+        var slider = document.getElementById('cubeSize');
+        if (slider) {
+            slider.addEventListener('input', function(e) {
+                var s = parseFloat(e.target.value);
+                interactiveCubes.forEach(function(c) { c.setSize(s); });
+            });
+        }
+
+        function updateRayFromEvent(e) {
+            var rect = renderer.domElement.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width;
+            var y = (e.clientY - rect.top) / rect.height;
+            mouse.x = x * 2 - 1; mouse.y = -(y * 2 - 1);
+            raycaster.setFromCamera(mouse, camera);
+        }
+
+        window.addEventListener('mousedown', function(e) {
+            updateRayFromEvent(e);
+            var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+            var intersects = raycaster.intersectObjects(solidMeshes);
+            if (intersects.length > 0) {
+                draggedCube = intersects[0].object.userData.parentCube;
+                draggedCube.velocity.set(0, 0, 0);
+                dragPlane.constant = -draggedCube.mesh.position.z;
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+                lastMousePos.copy(planeIntersect);
+                mouseDownTime = performance.now();
+                isDragging = false;
+                document.body.style.cursor = 'grabbing';
+            }
+        });
+        window.addEventListener('mousemove', function(e) {
+            updateRayFromEvent(e);
+            if (draggedCube) {
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+                draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+                var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+                draggedCube.velocity.copy(delta);
+                lastMousePos.copy(planeIntersect);
+            } else {
+                var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+                var intersects = raycaster.intersectObjects(solidMeshes);
+                document.body.style.cursor = intersects.length > 0 ? 'grab' : 'default';
+            }
+        });
+        window.addEventListener('mouseup', function() {
+            if (draggedCube) {
+                if (!isDragging) { draggedCube.triggerDissolve(); }
+                draggedCube = null;
+                document.body.style.cursor = 'default';
+            }
+        });
+        
+        window.addEventListener('touchstart', function(e) {
+            if(e.touches.length > 1) return;
+            e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+            updateRayFromEvent(e);
+            var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+            var intersects = raycaster.intersectObjects(solidMeshes);
+            if (intersects.length > 0) {
+                draggedCube = intersects[0].object.userData.parentCube;
+                draggedCube.velocity.set(0, 0, 0);
+                dragPlane.constant = -draggedCube.mesh.position.z;
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+                lastMousePos.copy(planeIntersect);
+                mouseDownTime = performance.now();
+                isDragging = false;
+            }
+        }, {passive: false});
+        
+        window.addEventListener('touchmove', function(e) {
+             if(draggedCube) {
+                e.preventDefault();
+                e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+                updateRayFromEvent(e);
+                var planeIntersect = new THREE.Vector3();
+                raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+                if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+                draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+                var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+                draggedCube.velocity.copy(delta);
+                lastMousePos.copy(planeIntersect);
+             }
+        }, {passive: false});
+        
+        window.addEventListener('touchend', function() {
+            if (draggedCube) {
+                if (!isDragging) { draggedCube.triggerDissolve(); }
+                draggedCube = null;
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        function animate() {
+            requestAnimationFrame(animate);
+            var dt = clock.getDelta();
+            var t = clock.getElapsedTime();
+            interactiveCubes.forEach(function(c) { c.update(dt, t); });
+            renderer.render(scene, camera);
+        }
+        animate();
+    })();
+    </script>
+
+
+    <footer>
+        <div class="footer-logo">PLAN</div>
+        <div class="footer-socials">
+            <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+            <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+        </div>
+        <div class="footer-copy">© 2026 PLAN-Lab</div>
+    </footer>
+</body>
+</html>
