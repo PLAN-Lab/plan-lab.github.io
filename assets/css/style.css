@@ -1078,6 +1078,17 @@ body {
         }
         .pub-authors a.pub-author-lab:hover { color: white; }
 
+        .footer-copy a {
+            color: white;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: white;
+        }
+
         /* BUTTONS */
         .pub-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 
