@@ -97,6 +97,24 @@
     return Array.from(seeds);
   }
 
+  function formatDisplayName(member) {
+    const name = String(member && member.name ? member.name : '').trim();
+    const aliases = Array.isArray(member && member.aliases) ? member.aliases.filter(Boolean) : [];
+    if (!name) return 'Team Member';
+    if (member && member.id === 'phd-tianjiao(joey)-yu' && aliases.length) {
+      const alias = String(aliases[0] || '').trim();
+      if (!alias) return name;
+      const tokens = name.split(/\s+/);
+      if (tokens.length >= 2) {
+        const first = tokens[0];
+        const last = tokens[tokens.length - 1];
+        return `${first} (${alias}) ${last}`;
+      }
+    }
+    const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
+    return name + aliasLabel;
+  }
+
   function memberPublications(publications, member) {
     const seeds = memberSearchSeeds(member);
     if (!seeds.length) return [];
@@ -127,8 +145,7 @@
     const aliases = Array.isArray(member.aliases) ? member.aliases.filter(Boolean) : [];
 
     if (nameEl) {
-      const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
-      nameEl.textContent = (member.name || 'Team Member') + aliasLabel;
+      nameEl.textContent = formatDisplayName(member);
     }
     if (roleEl) roleEl.textContent = (member.title && member.title[0]) || member.role || '';
     if (avatarEl && member.avatar) {

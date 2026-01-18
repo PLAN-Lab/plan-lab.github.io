@@ -72,6 +72,24 @@
     return card;
   }
 
+  function formatDisplayName(member) {
+    const name = String(member && member.name ? member.name : '').trim();
+    const aliases = Array.isArray(member && member.aliases) ? member.aliases.filter(Boolean) : [];
+    if (!name) return 'Unnamed';
+    if (member && member.id === 'phd-tianjiao(joey)-yu' && aliases.length) {
+      const alias = String(aliases[0] || '').trim();
+      if (!alias) return name;
+      const tokens = name.split(/\s+/);
+      if (tokens.length >= 2) {
+        const first = tokens[0];
+        const last = tokens[tokens.length - 1];
+        return `${first} (${alias}) ${last}`;
+      }
+    }
+    const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
+    return name + aliasLabel;
+  }
+
   function buildTeamCard(member) {
     const a = document.createElement('a');
     a.className = 'team-card' + (member.group === 'alumni' ? ' is-alumni' : '');
@@ -85,9 +103,7 @@
     img.decoding = 'async';
 
     const h3 = document.createElement('h3');
-    const aliases = Array.isArray(member.aliases) ? member.aliases.filter(Boolean) : [];
-    const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
-    h3.textContent = (member.name || 'Unnamed') + aliasLabel;
+    h3.textContent = formatDisplayName(member);
 
     const p1 = document.createElement('p');
     if (member.group === 'alumni') {
