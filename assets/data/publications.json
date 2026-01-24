@@ -35,6 +35,34 @@
       "venueAbbr": "arXiv"
     },
     {
+      "id": "2026-Susladkar-pyratok-language-aligned",
+      "title": "PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation",
+      "projectName": "PyraTok",
+      "authors": [
+        "Onkar Susladkar",
+        "Tushar Prakash",
+        "Adheesh Juvekar",
+        "Kiet A. Nguyen",
+        "Dong-Hwan Jang",
+        "Inderjit S Dhillon",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-01-22",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/pyratok.png",
+      "doi": "10.48550/arXiv.2601.16210",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2601.16210v1",
+        "code": "",
+        "video": "",
+        "data": ""
+  },
+  "venueAbbr": "arXiv"
+  },
+  {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
       "title": "SAUCE: Truncated Sparse Document Signature Bit-Vectors for Fast Web-Scale Corpus Expansion",
       "projectName": "SAUCE",
