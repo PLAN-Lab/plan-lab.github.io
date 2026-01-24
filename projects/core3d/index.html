@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence" />
+    <title>Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+      .gif-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gif-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .model-name {
+        font-weight: 800;
+        background: linear-gradient(
+          90deg,
+          rgb(0,128,128) 0%,
+          rgb(136,74,178) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .best-highlight {
+        background-color: #C497FF;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #000;                /* bold black text */
+        font-weight: 600;
+      }
+
+      .second-highlight {
+        background-color: #E6DEFF;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #000; 
+        font-weight: 600;
+      }
+    </style>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered"><div class="column has-text-centered">
+        <h1 class="title is-1 publication-title">
+          <span class="model-name">CoRe3D</span>:
+          Collaborative Reasoning as a Foundation for 3D Intelligence
+        </h1>
+
+              <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                    <a href="/team/phd-tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/masters-xinzhuo-li" class="illini-blue" >Xinzhuo Li</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/phd-yifan-shen" class="illini-blue" >Yifan Shen</a>,
+                </span>
+                <span class="author-block">
+                  <a href="" class="illini-blue" >Yuanzhe Liu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/pi-ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">PLAN Lab</span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2512.12768" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2512.12768" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span>
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          
+          We introduce 
+          <span class="model-name">CoRe3D</span>, 
+          a collaborative reasoning framework that unifies two complementary reasoning levels: 
+          a  <strong style="color:rgb(136,74,178);">Semantic CoT</strong> for textual planning and a novel octant-based 
+          <strong style="color:rgb(0,128,128);">Geometric CoT</strong> that serves as a structure-aware yet ontology-free prior, enabling 
+          interpretable progressive construction without category-specific part definitions.
+          
+
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          
+          Our co-reasoning framework is the first one that can  <strong style="color:rgb(136,74,178);">reason challenging text prompts that require inferring the correct
+          object or interpreting implicit descriptive cues</strong> (e.g.,A colossal copper figure holding a torch, symbolizing freedom and hope. --> the Statue of Liberty). 
+
+
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          
+          To the best of our knowledge, we are the first to use Co-GRPO to jointly optimize 
+          semantic and geometric reasoning in 3D. This approach elicits plans without direct 
+          supervision and assigns credit using dense 3D-specific rewards (e.g., symmetry, 
+          physical coherence) for improved alignment, structure, and robustness.
+          
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          
+          We further demonstrate that 
+          <span class="model-name">CoRe3D</span> 
+          naturally extends beyond generation to reciprocal 3D understanding tasks such as 
+          3D-to-text captioning, highlighting its potential as a scalable foundation for 
+          general 3D intelligence.
+        </div>
+        
+        <div style="text-align: center; padding: 0 0 20px 0;">
+          <img loading="lazy" decoding="async" src="./static/core3d_videos/teaser.gif" style="width: 80%;" class="interpolation-image-container" alt="method overview.">
+          <p class="has-text-justified">
+            We unifies Semantic CoT and octant-based Geometric
+            CoT through collaborative reasoning. By coupling language-grounded reasoning with shape constructions,
+            CoRe3D enables bidirectional capability in both 3D understanding and generation, allowing the model to
+            interpret objects and construct them within a unified framework.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+               Recent advances in large multimodal models suggest that explicit reasoning mechanisms play a critical
+                role in improving model reliability, interpretability, and cross-modal alignment. While such reasoning-centric
+                approaches have been proven effective in language and vision tasks, their extension to 3D remains underdeveloped.
+                CoRe3D introduces a unified 3D understanding and generation reasoning framework that jointly operates over
+                semantic and spatial abstractions, enabling high-level intent inferred from language to directly guide low-level 3D
+                content formation. Central to this design is a spatially grounded reasoning representation that decomposes 3D
+                latent space into localized regions, allowing the model to reason over geometry in a compositional and procedural
+                manner. By tightly coupling semantic chain-of-thought inference with structured spatial reasoning, CoRe3D
+                produces 3D outputs that exhibit strong local consistency and faithful alignment with linguistic descriptions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name">CoRe3D</span> Architecture</h2>
+          <div class="content has-text-justified">
+          <p style="margin: 0 0 0.75rem 0; text-align: justify;">
+            <span style="color:#008080; font-weight: 700;">Semantic-Level Representation.</span>
+            A core challenge in 3D generation is translating open-ended language into structured reasoning
+            signals that preserve compositional semantics and physical constraints. Directly mapping prompts
+            into latent 3D tokens is under-specified, as language descriptions typically omit precise geometric,
+            relational, and material cues, resulting in generated shapes that capture coarse appearance but fail
+            to recover consistent structure or texture details. To address this gap, we introduce a
+            <em>semantic CoT</em> reasoning stage that expands each textual prompt into an explicit structural
+            plan before geometry generation.
+            Given an input description and an optional reasoning instruction, the unified 3D-LLM first produces
+            a detailed natural language description of the object category, spatial layout, materials, and
+            appearance details. This description serves as an interpretable, text-based scaffold that anchors
+            the subsequent geometric reasoning process.
+          </p>
+          
+
+          <p style="margin: 0 0 0.75rem 0; text-align: justify;">
+            <span style="color:#884AB2; font-weight: 700;">Geometric-Level Representation.</span>
+            We represent each 3D object using a 64<sup>3</sup> voxel grid, which provides a balanced trade-off
+            between spatial fidelity and computational efficiency. To obtain a compact token representation, a
+            3D VQ-VAE encoder maps the voxel grid to a 16<sup>3</sup> latent grid, preserving local geometry and
+            appearance features. The latent grid is serialized into 4096 latent vectors, each corresponding to
+            a spatial location. To further reduce sequence length, we group every 2×2×2 neighborhood of latent
+            voxels (eight adjacent cells) by concatenating their channels into a single vector. This operation
+            transforms the 4096 latent vectors (with 8-D channels) into 512 tokens with 64-D channels, where
+            each token represents a local <em>octant block</em> within the 3D volume.
+          </p>
+          <img loading="lazy" decoding="async" src="./static/images/main_method.png" class="interpolation-image" style="width: 80%;" alt="Part²GS physical constraints visualization.">
+          <p>
+            The core innovation of our framework lies in the explicit collaboration between semantic and geometric reasoning.
+              While each level can operate independently, its joint optimization leads to
+               stronger, mutually reinforcing behavior. We unify them through 3D Co-GRPO,
+                a reinforcement learning framework that refines both reasoning levels using
+                 multi-critic 3D-aware rewards, aligning linguistic intent with spatial construction.
+                  This results in objects that are semantically faithful, visually compelling, and physically coherent.
+          </p>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Rendered GLBs:</h2>
+          <div class="content has-text-justified">
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+              <!-- === Viewer 1 Block === -->
+      
+                <model-viewer id="viewer1" src="./static/core3d_glbs/SP_5_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+        
+                <model-viewer id="viewer2" src="./static/core3d_glbs/SP_7_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+             
+                <model-viewer id="viewer3" src="./static/core3d_glbs/SP_6_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+          
+                <model-viewer id="viewer4" src="./static/core3d_glbs/SP_10_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+                <model-viewer id="viewer5" src="./static/core3d_glbs/SP_11_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+                <model-viewer id="viewer6" src="./static/core3d_glbs/typical_building_building_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+                <model-viewer id="viewer7" src="./static/core3d_glbs/typical_vehicle_excavator_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+                <model-viewer id="viewer8" src="./static/core3d_glbs/typical_vehicle_pirate_ship_3D-CoR1.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 220px; height: 300px;">
+                </model-viewer>
+              
+            </div>
+              <br>
+              <br>
+
+            
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <h2 class="title is-3">Quantitative Results</h2>
+              <img loading="lazy" decoding="async" src="./static/images/quant_r1.png"  alt="quant results." width="80%" height="20em">
+              <p class="has-text-justified">
+                    <strong>Evaluation of general conversational and reasoning abilities on standard language benchmarks.</strong>
+                     We compare <span class="model-name">CoRe3D</span> against top-tier general
+                    vision-language models (VLMs) and 3D-specific language models. Our model demonstrates SoTA or 
+                    competitive language understanding and reasoning performance. <span class="best-highlight">Best</span> and
+                    <span class="second-highlight">second-best</span> are highlighted.
+                </p>
+              <img loading="lazy" decoding="async" src="./static/images/quant_r2.png"  alt="quant results." width="80%" height="20em">
+              <p class="has-text-justified">
+                    <strong>3D object captioning results on the Objaverse benchmark.</strong>
+                    We evaluate the model’s 3D caption capability. 
+                    <span class="model-name">CoRe3D</span> achieves state-of-the-art 
+                    performance by a significant margin across all n-gram and semantic 
+                    similarity metrics, demonstrating that our reasoning-driven generative 
+                    training directly enhances 3D understanding. <span class="best-highlight">Best</span> and
+                    <span class="second-highlight">second-best</span> are highlighted.
+                </p>
+              <img loading="lazy" decoding="async" src="./static/images/quant_r3.png"  alt="quant results." width="80%" height="20em">
+                  <p class="has-text-justified">
+                    <strong>Quantitative comparison of 3D generation quality for 
+                    Text-to-3D and Image-to-3D tasks.</strong>
+                    We evaluate <span class="model-name">CoRe3D</span> against 
+                    state-of-the-art generative models. Results show competitive 
+                    performance on all metrics for both tasks. <span class="best-highlight">Best</span> and
+                    <span class="second-highlight">second-best</span> are highlighted.
+                  </p>
+            </div>
+
+          </div>
+    </div>
+    </div>
+  
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Qualitative Results</h2>
+
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <img loading="lazy"
+            src="./static/core3d_videos/challenge_prompt1.gif"
+            style="height: 350px; width: 800px;"
+            class="interpolation-image-container">
+            <img loading="lazy"
+            src="./static/core3d_videos/challenge_prompt2.gif"
+            style="height: 350px; width: 800px;"
+            class="interpolation-image-container">
+            <img loading="lazy"
+            src="./static/core3d_videos/challenge_prompt3.gif"
+            style="height: 350px; width: 800px;"
+            class="interpolation-image-container">
+            <p class="has-text-justified">
+              <strong> Qualitative results of <span class="model-name">CoRe3D</span> on challenging prompts</strong> that require inferring the correct
+              object or interpreting implicit descriptive cues. Our co-reasoning framework is the first one that can reason such challenging text prompts.          
+            </p>
+            </div>
+
+            <br>
+            <br>
+
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img loading="lazy" decoding="async" src="./static/images/qual_r1.png" class="interpolation-image" alt="ece results." width="95%">
+              <p class="has-text-justified">
+                <strong>Image-to-3D qualitative comparison.</strong> Given a single input image, <span class="model-name">CoRe3D</span> produces 3D shapes
+                with higher geometric fidelity, cleaner topology, and stronger semantic alignment compared to baselines.          
+              </p>
+              </div>
+
+              <br>
+              <br>
+
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img loading="lazy" decoding="async" src="./static/images/qual_r2.png" class="interpolation-image" alt="ece results." width="95%">
+              <p class="has-text-justified">
+              <strong>Text-to-3D qualitative comparison.</strong> <span class="model-name">CoRe3D</span> generates 3D objects that more faithfully follow the
+                textual prompt.
+              </p>
+              </div>
+
+              <br>
+              <br>
+
+              <div style="text-align: center; padding: 0 0 20px 0;">
+              <img loading="lazy" decoding="async" src="./static/images/part_edit.gif" class="interpolation-image" alt="ece results." width="95%">
+              <p class="has-text-justified">
+              <strong>Qualitative results on 3D part editing.</strong>
+              The collaborative reasoning in our framework
+              enhances instruction comprehension, yielding
+              edits that align more faithfully with the input text
+              and produce 3D shapes that accurately reflect the
+              specified modifications.
+              </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section></div>
+    
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{yu2025core3d,
+          title={CoRe3D: Collaborative Reasoning as a Foundation for 3D Intelligence},
+          author={Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Liu, Yuanzhe and Lourentzou, Ismini},
+          journal={arXiv preprint arXiv:2512.12768},
+          year={2025}
+        }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    </main>
+  </body>
+</html>
