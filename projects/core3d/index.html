@@ -194,23 +194,17 @@
           We introduce 
           <span class="model-name">CoRe3D</span>, 
           a collaborative reasoning framework that unifies two complementary reasoning levels: 
-          a  <strong style="color:rgb(136,74,178);">Semantic CoT</strong> for textual planning and a novel octant-based 
-          <strong style="color:rgb(0,128,128);">Geometric CoT</strong> that serves as a structure-aware yet ontology-free prior, enabling 
-          interpretable progressive construction without category-specific part definitions.
-          
-
-          <i class="fa fa-star" style="color:#ff8400;"></i>
-          
-          Our co-reasoning framework is the first one that can  <strong style="color:rgb(136,74,178);">reason challenging text prompts that require inferring the correct
-          object or interpreting implicit descriptive cues</strong> (e.g.,A colossal copper figure holding a torch, symbolizing freedom and hope. --> the Statue of Liberty). 
+          a  <strong style="color:rgb(136,74,178);">Semantic CoT</strong> for high-level planning and a novel octant-based 
+          <strong style="color:rgb(0,128,128);">Geometric CoT</strong> that realizes the plan through a spatially grounded reasoning trajectory over 3D octant tokens.
 
 
           <i class="fa fa-star" style="color:#ff8400;"></i>
           
-          To the best of our knowledge, we are the first to use Co-GRPO to jointly optimize 
-          semantic and geometric reasoning in 3D. This approach elicits plans without direct 
-          supervision and assigns credit using dense 3D-specific rewards (e.g., symmetry, 
-          physical coherence) for improved alignment, structure, and robustness.
+          Our co-reasoning framework can  <strong style="color:rgb(136,74,178);">reason over challenging text prompts that require inferring the correct
+          object or interpreting implicit descriptive cues</strong> (e.g., A colossal copper figure holding a torch, symbolizing freedom and hope. --> the Statue of Liberty). 
+
+
+          <i class="fa fa-star" style="color:#ff8400;"></i> We propose 3D Co-GRPO, a multi-critic optimization that aligns semantic plans with geometric construction using dense 3D-aware rewards for improved alignment, structure, and robustness.
           
           <i class="fa fa-star" style="color:#ff8400;"></i>
           
@@ -224,8 +218,7 @@
         <div style="text-align: center; padding: 0 0 20px 0;">
           <img loading="lazy" decoding="async" src="./static/core3d_videos/teaser.gif" style="width: 80%;" class="interpolation-image-container" alt="method overview.">
           <p class="has-text-justified">
-            We unifies Semantic CoT and octant-based Geometric
-            CoT through collaborative reasoning. By coupling language-grounded reasoning with shape constructions,
+            By coupling language-grounded reasoning with shape constructions,
             CoRe3D enables bidirectional capability in both 3D understanding and generation, allowing the model to
             interpret objects and construct them within a unified framework.
           </p>
@@ -235,9 +228,8 @@
   </section>
 
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Abstract</h2>
@@ -256,9 +248,8 @@
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
     </div>
-  </section>
+  </section> -->
 
 
   <section class="section">
