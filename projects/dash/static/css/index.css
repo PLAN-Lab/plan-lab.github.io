@@ -37,12 +37,13 @@ body {
 }
 
 .cincinnati-red {
-  color: #C6011F;
+  color: #C6011F!important;;
 }
 
 .sandia-blue {
   color: #00ADEF;
 }
+
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
