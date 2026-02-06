@@ -1,76 +1,94 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale.">
-  <meta name="keywords" content="mTSBench">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLM0VKTX0T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-MLM0VKTX0T');
-  </script>
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale." />
+    <title><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span>: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</title>
 
 
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    };
-  </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+<script>
+      MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
 
-<body>
-  <section class="hero">
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+<section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</h1>
+            <h1 class="title is-1 publication-title"><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span>: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</h1>
             <div class="is-size-5 publication-authors">
               
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/xnz">Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/constantinbrif">Constantin Brif<sup class="sandia-blue">2</sup></a>,
+              </span>
                 <span class="author-block">
-                  <a href="https://www.linkedin.com/in/xnz">Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+                  <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">1</sup></a>,
                 </span>
-                <span class="author-block">
-                  <a href="https://sites.google.com/site/constantinbrif">Constantin Brif<sup class="sandia-blue">2</sup></a>,
-                </span>
-                  <span class="author-block">
-                    <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">1</sup></a>,
-                  </span>
-              </div>
+            </div>
 
-            <div class="is-size-5 publication-authors">
-              <!--<span class="author-block">PLAN Lab</span>,-->
-              <span class="author-block illini-orange"><sup>1</sup>University of Illinois Urbana-Champaign</span>,
-              <span class="author-block sandia-blue"><sup>2</sup>Sandia National Laboratories</span>,
+          <div class="is-size-5 publication-authors">
+            <!--<span class="author-block">PLAN Lab</span>,-->
+            <span class="author-block illini-orange"><sup>1</sup>University of Illinois Urbana-Champaign</span>,
+            <span class="author-block sandia-blue"><sup>2</sup>Sandia National Laboratories</span>,
               
               
             </div>
@@ -115,7 +133,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span> We introduce <strong>mTSBench</strong>, the largest benchmark for multivariate 
+          <span style="font-weight: bold;">TL;DR:</span> We introduce <strong><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></strong>, the largest benchmark for multivariate 
           time series anomaly detection and model selection, evaluating 24 detectors and unsupervised selectors across 344 labeled time 
           series from diverse domains. Our results show that no single detector performs consistently well across datasets and that current 
           unsupervised model selection methods fall far short of oracle performance under a unified evaluation suite. These findings 
@@ -125,7 +143,8 @@
         <img src="./static/images/mTSBench.png" class="interpolation-image"
           alt="Interpolate start reference image." />
         <div class="content has-text-justified">
-          <p> <b>mTSBench</b> is the largest and most diverse benchmark for multivariate time series anomaly detection and model selection, spanning 19 
+          <p> <b><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></b> is the largest and 
+            most diverse benchmark for multivariate time series anomaly detection and model selection, spanning 19 
             multivariate time series datasets across various application domains and establishing a platform for robust anomaly 
             detection and adaptive model selection in real-world multivariate contexts. \datasetnc{}'s comprehensive evaluation 
             suite and diverse collection of state-of-the-art anomaly detectors, including statistical, deep learning, and LLM-based 
@@ -147,7 +166,7 @@
               Anomaly detection in multivariate time series is essential across domains such as healthcare, cybersecurity, 
               and industrial monitoring, yet remains fundamentally challenging due to high-dimensional dependencies, 
               the presence of cross-correlations between time-dependent variables, and the scarcity of labeled anomalies.
-              We introduce <strong>mTSBench</strong>, the largest benchmark to date for multivariate time series anomaly detection and model 
+              We introduce <strong><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></strong>, the largest benchmark to date for multivariate time series anomaly detection and model 
               selection, consisting of 344 labeled time series across 19 datasets from a wide range of application domains. 
               We comprehensively evaluate 24 anomaly detectors, including the only two publicly available large language 
               model-based methods for multivariate time series. Consistent with prior findings, we observe that no single 
@@ -162,7 +181,7 @@
     </div>
   </section>
 
-  <section class="section" style="background-color:#dadada81">
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Contributions. -->
       <div class="columns is-centered has-text-centered">
@@ -170,9 +189,9 @@
           <h2 class="title is-3">💡 Contributions</h2>
           <div class="content has-text-justified">
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We introduce <b>mTSBench</b>, 
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We introduce <b><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></b>, 
                 the largest and most comprehensive MTS-AD and model selection benchmark to date, featuring 344 labeled 
-                multivariate time series from 19 datasets across 12 application domains.mTSBench systematically 
+                multivariate time series from 19 datasets across 12 application domains. mTSBench systematically 
                 evaluates 24 anomaly detection methods, including the only LLM-based methods for MTS-AD, reflecting 
                 their performance in multivariate settings with real-world temporal dependencies and cross-signal interactions.
               </li>
@@ -191,7 +210,8 @@
                 unsupervised selection strategies and underscore the need for more adaptive model selection mechanisms.
               </li>
               </ol>
-          </div>
+              
+          </ul></div>
         </div>
       </div>
       <!--/ Contributions. -->
@@ -203,11 +223,11 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span style="font-weight: bold;"> mTSBench:</span>Detectors</h2>
+          <h2 class="title is-3"><span style="font-weight: bold;"></span>Detectors in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></h2>
           <div class="content has-text-justified">
             <img src="./static/images/detector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
             <p>
-              Anomaly Detection Methods in mTSBench encompassing a diverse range of techniques, including foundation models, 
+              <b>Anomaly Detection Methods in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></b> encompassing a diverse range of techniques, including foundation models, 
               distance-based, forecasting-based, and reconstruction-based approaches, ensuring a comprehensive representation 
               of different methodological paradigms.
             </p>
@@ -262,7 +282,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span style="font-weight: bold;"> mTSBench:</span>Selectors</h2>
+          <h2 class="title is-3"><span style="font-weight: bold;"> </span>Selectors in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></h2>
           <div class="content has-text-justified">
             <img src="./static/images/selector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
             <p>
@@ -316,6 +336,7 @@
   </section>
 
 
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
@@ -332,10 +353,10 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/">
+        <a class="icon-link" href="https://arxiv.org/pdf/2506.21550">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/PLAN-Lab/DaSH" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -345,18 +366,15 @@
             <p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
               <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
-              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a
-                href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
+              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
             </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
-</body>
-
+    </main>
+  </body>
 </html>
