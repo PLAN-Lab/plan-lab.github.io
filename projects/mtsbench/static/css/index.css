@@ -35,14 +35,15 @@ body {
 .amazon-blue{
   color: #146EB4;
 }
+.sandia-blue {
+  color: #00ADEF;
+}
+
 
 .cincinnati-red {
   color: #C6011F;
 }
 
-.sandia-blue {
-  color: #00ADEF;
-}
 
 .teaser .hero-body {
   padding-top: 0;
