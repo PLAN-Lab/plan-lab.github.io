@@ -488,6 +488,16 @@
   font-weight: bold !important;
 }
 
+.page-project .sandia-blue {
+  color: #00ADEF !important;
+  font-weight: bold !important;
+}
+
+.page-project .cincinnati-red {
+  color: #C6011F !important;
+  font-weight: bold !important;
+}
+
 /* Remove overly-light legacy section backgrounds if left inline */
 .page-project .section[style*="background-color"] > .container {
   background: rgba(5, 14, 34, 0.6);
