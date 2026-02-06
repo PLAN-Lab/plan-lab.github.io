@@ -1,59 +1,73 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/greenelab/lab-website-template)
+# PLAN Lab Website
 
-<h1 align="center">Lab Website Template</h1>
-<p align="center">
-<img height="200" src="https://raw.githubusercontent.com/greenelab/lab-website-template/main/favicons/share-thumbnail.jpg?raw=true" alt="Lab Website Template">
-</p>
-An easy-to-use, flexible website template for labs, including automatic citations, GitHub tag imports, pre-built components, and more.
-Spend less time reinventing the wheel and more time running your lab.
+This folder is a standalone static site. Team members and publications are rendered from JSON in `assets/data/`.
 
-#### 🔔 Still in pre-release/preview. We need testers! 🔔
+## Update content
 
-Please help us out!
-How easy is the template to use?
-How flexible is it?
-How's our documentation?
+### Adding a publication
+- Edit `assets/data/publications.json` and add images under `assets/images/publications/`.
+```
+    {
+      "id": "2025-LastName-paper-title-2-3-words",
+      "title": "Title",
+      "projectName": "Project Abbreviation",
+      "authors": [
+        "Firstname Lastname",
+        "Firstname Lastname", # important to use this format for lab members to link to their profile
+      ],
+      "year": YYYY,
+      "date": "YYYY-MM-DD",
+      "venue": "venue",
+      "type": "paper",
+      "cover": "assets/images/publications/file_name",
+      "doi": "", # this or paper link is mandatory
+      "links": {
+        "website": "/projects/Abbreviation/",
+        "paper": "https://paper-url", # link to paper pdf
+        "code": "https://github.com/PLAN-Lab/project-name", 
+        "video": "",
+        "data": "",
+      },
+      "cardCover": "assets/images/cards/filename" # only for papers on home page
+      "venueAbbr": "" # venue Abbreviation such as CVPR, NeurIPS, or arXiv, etc.
+    }
+```
+- Make sure to remove the comments from above block after the edits, comments are not supported in json.
+- Add publication cover image under `assets/images/publications/` (ideally use a 4:3 aspect ratio)
+- For papers on home page, add card cover image under `assets/images/cards/`
+- Send a pull request
 
-## Features
+### Adding a member
+- Edit `assets/data/team.json` 
+```
+    {
+      "id": "phd-firstname-lastname",
+      "group": "phd/masters/undergrad/alumni/",
+      "name": "Firstname Lastename", # don't add aliases here, add them in the aliases field
+      "aliases": [
+        "alias1"
+      ]
+      "role": "PhD Student", # PhD Student/Masters Student/Undergraduate/Alumni
+      "title": [
+        "PhD Student" # PhD Student/Masters Student/Undergraduate/Former Masters Student/Former PhD Student/Former Undergraduate
+      ],
+      "currently": "", # current position, if alumni
+      "avatar": "assets/images/team/firstname-lastname.jpg",
+      "email": "id@illinois.edu",
+      "github": "https://github.com/username",
+      "website": "https://website-url",
+      "linkedin": "https://www.linkedin.com/in/username/",
+      "googleScholar": "https://scholar.google.com/citations?user=xxxx",
+      "twitter": "https://twitter.com/username",
+      "bio": "" # Take a look at other bios with same role/title for reference,
+    },
+```
+- Add profile picture under `assets/images/team/` as `firstname-lastname.jpg`
+- Send a pull request
 
-- **Automatically generated citations** (using [Manubot](https://manubot.org)) from **just an identifier** (DOI, PubMed ID, and many more)
-- Automatically pull in and display tags from GitHub repositories
-- Works and looks good on all major desktop and mobile browsers
-- A suite of pre-built components:
-  - formatted tables and code blocks
-  - social media links with icons
-  - figures with captions
-  - image galleries
-  - multi-size cards with image and text
-  - citations
-  - ...and many more!
-- A **home page**, where you can highlight the most important things that make your lab special
-- A **research page**, with a sorted, searchable list of all your published works
-- A **tools page**, where you can show off your software, datasets, or other useful things
-- A **team** page, compiled automatically from individual members
-- Individual **team member pages** with bios, assignable roles, and social media links
-- A **blog page**, with a sorted, grouped, tagged list of all your posts
+## Projects
 
-## Gallery
+To create a new project page:
 
-[🖼️ See who else is using the template and what it can do!](https://github.com/greenelab/lab-website-template/wiki/Gallery)
-
-## Documentation
-
-[▶️ Get Started](https://github.com/greenelab/lab-website-template/wiki/Get-Started)
-
-[🗚 Basic Formatting](https://github.com/greenelab/lab-website-template/wiki/Basic-Formatting)
-
-[📝 Basic Editing](https://github.com/greenelab/lab-website-template/wiki/Basic-Editing)
-
-[🤖 Citations](https://github.com/greenelab/lab-website-template/wiki/Citations)
-
-[⚙️ Advanced Editing](https://github.com/greenelab/lab-website-template/wiki/Advanced-Editing)
-
-[🧱 Components](https://github.com/greenelab/lab-website-template/wiki/Components)
-
-[🧠 Background Knowledge](https://github.com/greenelab/lab-website-template/wiki/Background-Knowledge)
-
-[💡 Tips](https://github.com/greenelab/lab-website-template/wiki/Tips)
-
-[❓ Support](https://github.com/greenelab/lab-website-template/wiki/Support)
+- Copy `simple-site/projects/template/` to `simple-site/projects/<slug>/`
+- Edit `simple-site/projects/<slug>/index.html`

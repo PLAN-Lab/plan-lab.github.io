@@ -1,0 +1,793 @@
+{
+  "publications": [
+    {
+      "id": "2025-Liu-palm-progress-aware",
+      "title": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
+      "projectName": "PALM",
+      "authors": [
+        "Yuanzhe Liu", 
+        "Jingyuan Zhu", 
+        "Yuchen Mo", 
+        "Gen Li", 
+        "Xu Cao", 
+        "Jin Jin", 
+        "Yifan Shen",
+        "Zhengyuan Li", 
+        "Tianjiao Yu", 
+        "Wenzhen Yuan", 
+        "Fangqiang Ding", 
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-01-11",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/palm.png",
+      "doi": "10.48550/arXiv.2601.07060",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2601.07060v1",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/cards/palmteaser.png",
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Susladkar-pyratok-language-aligned",
+      "title": "PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation",
+      "projectName": "PyraTok",
+      "authors": [
+        "Onkar Susladkar",
+        "Tushar Prakash",
+        "Adheesh Juvekar",
+        "Kiet A. Nguyen",
+        "Dong-Hwan Jang",
+        "Inderjit S Dhillon",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-01-22",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/pyratok.gif",
+      "doi": "10.48550/arXiv.2601.16210",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2601.16210v1",
+        "code": "",
+        "video": "",
+        "data": ""
+  },
+  "venueAbbr": "arXiv"
+  },
+  {
+      "id": "2021-Wahed-sauce-truncated-sparse-documen",
+      "title": "SAUCE: Truncated Sparse Document Signature Bit-Vectors for Fast Web-Scale Corpus Expansion",
+      "projectName": "SAUCE",
+      "authors": [
+        "Muntasir Wahed",
+        "Daniel Gruhl",
+        "Alfredo Alba",
+        "Anna Lisa Gentile",
+        "Petar Ristoski",
+        "Chad DeLuca",
+        "Steve Welch",
+        "Ismini Lourentzou"
+      ],
+      "year": 2021,
+      "date": "2021-10-26",
+      "venue": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management",
+      "type": "paper",
+      "cover": "assets/images/publications/sauce.png",
+      "doi": "10.1145/3459637.3481950",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1145/3459637.3481950",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "ACM CIKM"
+    },
+    {
+      "id": "2022-Karwande-chexrelnet-an-anatomy-aware-mo",
+      "title": "CheXRelNet: An Anatomy-Aware Model for Tracking Longitudinal Relationships Between Chest X-Rays",
+      "projectName": "CheXRelNet",
+      "authors": [
+        "Gaurang Karwande",
+        "Amarachi B. Mbakwe",
+        "Joy T. Wu",
+        "Leo A. Celi",
+        "Mehdi Moradi",
+        "Ismini Lourentzou"
+      ],
+      "year": 2022,
+      "date": "2022-01-01",
+      "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+      "type": "paper",
+      "cover": "assets/images/publications/chexrelnet.png",
+      "doi": "10.1007/978-3-031-16431-6_55",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1007/978-3-031-16431-6_55",
+        "code": "https://github.com/PLAN-Lab/ChexRelNet",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2022-Shojaee-task-driven-privacy-preserving",
+      "title": "Task-Driven Privacy-Preserving Data-Sharing Framework for the Industrial Internet",
+      "projectName": "PriED",
+      "authors": [
+        "Parshin Shojaee",
+        "Yingyan Zeng",
+        "Muntasir Wahed",
+        "Avi Seth",
+        "Ran Jin",
+        "Ismini Lourentzou"
+      ],
+      "year": 2022,
+      "date": "2022-12-17",
+      "venue": "2022 IEEE International Conference on Big Data (Big Data)",
+      "type": "paper",
+      "cover": "assets/images/publications/pried.png",
+      "doi": "10.1109/BigData55660.2022.10020861",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1109/BigData55660.2022.10020861",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2022-Tabassum-hard-negative-sampling-strateg",
+      "title": "Hard Negative Sampling Strategies for Contrastive Representation Learning",
+      "projectName": "UnReMix",
+      "authors": [
+        "Afrina Tabassum",
+        "Muntasir Wahed",
+        "Hoda Eldardiry",
+        "Ismini Lourentzou"
+      ],
+      "year": 2022,
+      "date": "2022-06-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/unremix.png",
+      "doi": "10.48550/arXiv.2206.01197",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2206.01197",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2022-Wahed-adversarial-contrastive-learni",
+      "title": "Adversarial Contrastive Learning by Permuting Cluster Assignments",
+      "projectName": "SwARo",
+      "authors": [
+        "Muntasir Wahed",
+        "Afrina Tabassum",
+        "Ismini Lourentzou"
+      ],
+      "year": 2022,
+      "date": "2022-04-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/swaro.png",
+      "doi": "10.48550/arXiv.2204.10314",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2204.10314",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2023-Mbakwe-hierarchical-vision-transforme",
+      "title": "Hierarchical Vision Transformers for Disease Progression Detection in Chest X-Ray Images",
+      "projectName": "CheXRelFormer",
+      "authors": [
+        "Amarachi B. Mbakwe",
+        "Lyuyang Wang",
+        "Mehdi Moradi",
+        "Ismini Lourentzou"
+      ],
+      "year": 2023,
+      "date": "2023-01-01",
+      "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+      "type": "paper",
+      "cover": "assets/images/publications/chexrelformer.png",
+      "doi": "10.1007/978-3-031-43904-9_66",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1007/978-3-031-43904-9_66",
+        "code": "https://github.com/PLAN-Lab/CheXRelFormer",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2023-Soleimani-Babakamali-on-the-effectiveness-of-dimens",
+      "title": "On the Effectiveness of Dimensionality Reduction for Unsupervised Structural Health Monitoring Anomaly Detection",
+      "projectName": "SHM",
+      "authors": [
+        "Mohammad Hesam Soleimani-Babakamali",
+        "Roksana Soleimani-Babakamali",
+        "Rodrigo Sarlo",
+        "Mohammed F. Farghally",
+        "Ismini Lourentzou"
+      ],
+      "year": 2023,
+      "date": "2023-03-01",
+      "venue": "Mechanical Systems and Signal Processing",
+      "type": "paper",
+      "cover": "assets/images/publications/shm.png",
+      "doi": "10.1016/j.ymssp.2022.109910",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1016/j.ymssp.2022.109910",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2023-Wahed-marble-hierarchical-multi-arme",
+      "title": "MArBLE: Hierarchical Multi-Armed Bandits for Human-in-the-Loop Set Expansion",
+      "projectName": "MArBLE",
+      "authors": [
+        "Muntasir Wahed",
+        "Daniel Gruhl",
+        "Ismini Lourentzou"
+      ],
+      "year": 2023,
+      "date": "2024-01-04",
+      "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
+      "type": "paper",
+      "cover": "assets/images/publications/marble.png",
+      "doi": "10.1145/3583780.3615485",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1145/3583780.3615485",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "ACM CIKM"
+    },
+    {
+      "id": "2024-Dogan-narrative-characteristics-in-r",
+      "title": "Narrative Characteristics in Refugee Discourse: An Analysis of American Public Opinion on the Afghan Refugee Crisis After the Taliban Takeover",
+      "projectName": "discourse",
+      "authors": [
+        "Hulya Dogan",
+        "Kiet A. Nguyen",
+        "Ismini Lourentzou"
+      ],
+      "year": 2024,
+      "date": "2024-04-17",
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "type": "paper",
+      "cover": "assets/images/publications/discourse.png",
+      "doi": "10.1145/3653703",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1145/3653703",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "CSCW"
+    },
+    {
+      "id": "2024-Holla-commonsense-for-zero-shot-natu",
+      "title": "Commonsense for Zero-Shot Natural Language Video Localization",
+      "projectName": "CORONET",
+      "authors": [
+        "Meghana Holla",
+        "Ismini Lourentzou"
+      ],
+      "year": 2024,
+      "date": "2024-03-24",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "type": "paper",
+      "cover": "assets/images/publications/coronet.png",
+      "doi": "10.1609/aaai.v38i3.27989",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1609/aaai.v38i3.27989",
+        "code": "",
+        "video": "https://underline.io/lecture/92446-commonsense-for-zero-shot-natural-language-video-localization",
+        "data": ""
+      }
+    },
+    {
+      "id": "2024-Tabassum-uamix-mae-efficient-tuning-of-",
+      "title": "uaMix-MAE: Efficient Tuning of Pretrained Audio Transformers with Unsupervised Audio Mixtures",
+      "projectName": "uaMixMAE",
+      "authors": [
+        "Afrina Tabassum",
+        "Dung Tran",
+        "Trung Dang",
+        "Ismini Lourentzou",
+        "Kazuhito Koishida"
+      ],
+      "year": 2024,
+      "date": "2024-04-14",
+      "venue": "ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "type": "paper",
+      "cover": "assets/images/publications/uamixmae.png",
+      "doi": "10.1109/ICASSP48485.2024.10446342",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1109/ICASSP48485.2024.10446342",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2024-Wahed-fine-grained-alignment-for-cro",
+      "title": "Fine-Grained Alignment for Cross-Modal Recipe Retrieval",
+      "projectName": "FARM",
+      "authors": [
+        "Muntasir Wahed",
+        "Xiaona Zhou",
+        "Tianjiao Yu",
+        "Ismini Lourentzou"
+      ],
+      "year": 2024,
+      "date": "2024-01-04",
+      "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "type": "paper",
+      "cover": "assets/images/publications/farm.png",
+      "doi": "10.1109/wacv57701.2024.00549",
+      "links": {
+        "website": "",
+        "paper": "https://openaccess.thecvf.com/content/WACV2024/papers/Wahed_Fine-Grained_Alignment_for_Cross-Modal_Recipe_Retrieval_WACV_2024_paper.pdf",
+        "code": "https://github.com/PLAN-Lab/FARM",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2024-Wahed-prima-multi-image-vision-langu",
+      "title": "PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation",
+      "projectName": "PRIMA",
+      "authors": [
+        "Muntasir Wahed",
+        "Kiet A. Nguyen",
+        "Adheesh Juvekar",
+        "Xinzhuo Li",
+        "Xiaona Zhou",
+        "Vedant Shah",
+        "Tianjiao Yu",
+        "Pinar Yanardag",
+        "Ismini Lourentzou"
+      ],
+      "year": 2024,
+      "date": "2024-12-31",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/prima.png",
+      "doi": "10.48550/arXiv.2412.15209",
+      "links": {
+        "website": "/projects/prima/",
+        "paper": "https://arxiv.org/pdf/2412.15209",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2024-Zhu-semi-supervised-code-translati",
+      "title": "Semi-Supervised Code Translation Overcoming the Scarcity of Parallel Code Data",
+      "projectName": "MIRACLE",
+      "authors": [
+        "Ming Zhu",
+        "Mohimenul Karim",
+        "Ismini Lourentzou",
+        "Daphne Yao"
+      ],
+      "year": 2024,
+      "date": "2024-10-27",
+      "venue": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
+      "type": "paper",
+      "cover": "assets/images/publications/miracle.png",
+      "doi": "10.1145/3691620.3695524",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.1145/3691620.3695524",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "ASE"
+    },
+    {
+      "id": "2025-Li-hallusegbench-counterfactual-v",
+      "title": "Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination",
+      "projectName": "HalluSegBench",
+      "authors": [
+        "Xinzhuo Li",
+        "Adheesh Juvekar",
+        "Jiaxun Zhang",
+        "Xingyou Liu",
+        "Muntasir Wahed",
+        "Kiet A. Nguyen",
+        "Yifan Shen",
+        "Tianjiao Yu",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-12-11",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/hallusegbench.png",
+      "doi": "10.48550/arXiv.2506.21546",
+      "links": {
+        "website": "/projects/hallusegbench/",
+        "paper": "https://arxiv.org/pdf/2506.21546.pdf",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/cards/hallu_teaser.png"
+    },
+    {
+      "id": "2025-Liu-purpcode-reasoning-for-safer-c",
+      "title": "PurpCode: Reasoning for Safer Code Generation",
+      "projectName": "PurpCode",
+      "authors": [
+        "Jiawei Liu",
+        "Nirav Diwan",
+        "Zhe Wang",
+        "Haoyu Zhai",
+        "Xiaona Zhou",
+        "Kiet A. Nguyen",
+        "Tianjiao Yu",
+        "Muntasir Wahed",
+        "Yinlin Deng",
+        "Hadjer Benkraouda",
+        "Yuxiang Wei",
+        "Lingming Zhang",
+        "Ismini Lourentzou",
+        "Gang Wang"
+      ],
+      "year": 2025,
+      "date": "2025-12-07",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "assets/images/publications/purpcode.png",
+      "doi": "10.48550/arXiv.2507.19060",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2507.19060",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2025-Nguyen-calico-part-focused-semantic-c",
+      "title": "CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models",
+      "projectName": "CALICO",
+      "authors": [
+        "Kiet A. Nguyen",
+        "Adheesh Juvekar",
+        "Tianjiao Yu",
+        "Muntasir Wahed",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-06-12",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "type": "paper",
+      "cover": "assets/images/publications/calico.png",
+      "doi": "10.48550/arXiv.2412.19331",
+      "links": {
+        "website": "/projects/calico/",
+        "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/cards/calico.png"
+    },
+    {
+      "id": "2025-Shen-fine-grained-preference-optimi",
+      "title": "Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs",
+      "projectName": "SpatialReasonerR1",
+      "authors": [
+        "Yifan Shen",
+        "Yuanzhe Liu",
+        "Jingyuan Zhu",
+        "Xu Cao",
+        "Xiaofeng Zhang",
+        "Yixiao He",
+        "Wenming Ye",
+        "James Matthew Rehg",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-12-07",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "assets/images/publications/spatialreasonerr1.png",
+      "doi": "10.48550/arXiv.2506.21656",
+      "links": {
+        "website": "/projects/spatialreasoner/",
+        "paper": "https://arxiv.org/pdf/2506.21656.pdf",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/cards/sreasoner.png"
+    },
+    {
+      "id": "2025-Shen-latte-flow-layerwise-timestep-",
+      "title": "LaTtE-Flow: Layerwise Timestep-Expert Flow-Based Transformer",
+      "projectName": "LaTtE-Flow",
+      "authors": [
+        "Ying Shen",
+        "Zhiyang Xu",
+        "Jiuhai Chen",
+        "Shizhe Diao",
+        "Jiaxin Zhang",
+        "Yuguang Yao",
+        "Joy Rimchala",
+        "Ismini Lourentzou",
+        "Lifu Huang"
+      ],
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/latte-flow.png",
+      "doi": "10.48550/arXiv.2506.06952",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2506.06952",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2025-Shen-learning-by-asking-for-embodie",
+      "title": "Learning by Asking for Embodied Visual Navigation and Task Completion",
+      "projectName": "ELBA",
+      "authors": [
+        "Ying Shen",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-01-04",
+      "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "type": "paper",
+      "cover": "assets/images/publications/elba.gif",
+      "doi": "10.48550/arXiv.2302.04865",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2302.04865",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2025-Wahed-mocha-are-code-language-models",
+      "title": "MOCHA: Are Code Language Models Robust Against Multi-Turn Malicious Coding Prompts?",
+      "projectName": "MOCHA",
+      "authors": [
+        "Muntasir Wahed",
+        "Xiaona Zhou",
+        "Kiet A. Nguyen",
+        "Tianjiao Yu",
+        "Nirav Diwan",
+        "Gang Wang",
+        "Dilek Hakkani-Tür",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-11-04",
+      "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings",
+      "type": "paper",
+      "cover": "assets/images/publications/mocha.png",
+      "doi": "10.48550/arXiv.2507.19598",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2507.19598",
+        "code": "https://github.com/purpcode-uiuc/mocha",
+        "video": "",
+        "data": "https://huggingface.co/purpcode"
+      },
+      "cardCover": "assets/images/cards/mocha.png"
+    },
+    {
+      "id": "2025-Yu-part2gs-part-aware-modeling-of",
+      "title": "Part²GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting",
+      "projectName": "Part2GS",
+      "authors": [
+        "Tianjiao Yu",
+        "Vedant Shah",
+        "Muntasir Wahed",
+        "Ying Shen",
+        "Kiet A. Nguyen",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/part2gs.gif",
+      "doi": "10.48550/arXiv.2506.17212",
+      "links": {
+        "website": "/projects/part2gs/",
+        "paper": "https://arxiv.org/pdf/2506.17212v1",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2025-Yu-uncertainty-in-action-confiden",
+      "title": "Uncertainty in Action: Confidence Elicitation in Embodied Agents",
+      "projectName": "ECE",
+      "authors": [
+        "Tianjiao Yu",
+        "Vedant Shah",
+        "Muntasir Wahed",
+        "Kiet A. Nguyen",
+        "Adheesh Juvekar",
+        "Tal August",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-03-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/ece.png",
+      "doi": "10.48550/arXiv.2503.10628",
+      "links": {
+        "website": "/projects/ece/",
+        "paper": "https://arxiv.org/pdf/2503.10628",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2025-Zhou-mtsbench-benchmarking-multivar",
+      "title": "mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale",
+      "projectName": "mTSBench",
+      "authors": [
+        "Xiaona Zhou",
+        "Constantin Brif",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/mtsbench.png",
+      "doi": "10.48550/arXiv.2506.21550",
+      "links": {
+        "website": "",
+        "paper": "https://doi.org/10.48550/arXiv.2506.21550",
+        "code": "https://github.com/PLAN-Lab/mTSBench",
+        "video": "",
+        "data": "https://huggingface.co/datasets/PLAN-Lab/mTSBench"
+      }
+    },
+    {
+      "id": "2025-Ogunleye-ec-vlm-emergent-corpus-pre",
+      "title": "Emergent Corpus Pre-training Benefits Vision Language Models",
+      "projectName": "EC-VLM",
+      "authors": [
+        "Makanjuola Ogunleye",
+        "Chase Vickery",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-01-01",
+      "venue": "Transactions on Machine Learning Research",
+      "type": "paper",
+      "cover": "assets/images/publications/ec-vlm.png",
+      "doi": "https://openreview.net/pdf?id=bivKGSaXkD",
+      "links": {
+        "website": "/projects/ec-vlm/",
+        "paper": "https://openreview.net/pdf?id=bivKGSaXkD",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "TMLR"
+    },
+    {
+      "id": "2025-Tabassum-mmplanner-zero-shot-mult",
+      "title": "MMPlanner: Zero-Shot Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning",
+      "projectName": "MMPlanner",
+      "authors": [
+        "Afrina Tabassum",
+        "Bin Guo",
+        "Xiyao Ma",
+        "Hoda Eldardiry",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-11-04",
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP",
+      "type": "paper",
+      "cover": "assets/images/publications/mmplanner.png",
+      "doi": "10.18653/v1/2025.findings-emnlp.1011",
+      "links": {
+        "website": "/projects/mmplanner/",
+        "paper": "https://aclanthology.org/2025.findings-emnlp.1011.pdf",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "EMNLP Findings"
+    },
+    {
+      "id": "2025-Yu-core3d-collaborative-reasoning-as",
+      "title": "CoRe3D: Collaborative Reasoning as a Foundation for 3D Intelligence",
+      "projectName": "CoRe3D",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Yuanzhe Liu",
+        "Ismini Lourentzou"
+      ],
+      "year": 2025,
+      "date": "2025-12-14",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/core3d.png",
+      "cardCover": "assets/images/cards/core3d.png",
+      "doi": "10.48550/arXiv.2512.12768",
+      "links": {
+        "website": "/projects/core3d/",
+        "paper": "https://doi.org/10.48550/arXiv.2512.12768",
+        "code": "",
+        "video": "",
+        "data": ""
+      }
+    },
+    {
+      "id": "2026-Zhou-hierarchical-dataset-selection-for",
+      "title": "Hierarchical Dataset Selection for High-Quality Data Sharing",
+      "projectName": "DaSH",
+      "authors": [
+        "Xiaona Zhou",
+        "Yingyan Zeng",
+        "Ran Jin",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "AAAI Conference on Artificial Intelligence (Oral)",
+      "type": "paper",
+      "cover": "assets/images/publications/dash.png",
+      "doi": "10.48550/arXiv.2512.10952",
+      "links": {
+        "website": "/projects/dash/",
+        "paper": "https://doi.org/10.48550/arXiv.2512.10952",
+        "code": "https://github.com/PLAN-Lab/DaSH",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "AAAI 2026 (ORAL)"
+    }
+  ]
+}

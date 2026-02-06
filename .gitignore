@@ -1,8 +1,5 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-debug.log
+package.json
+server.mjs
+
 __pycache__/
 .DS_STORE

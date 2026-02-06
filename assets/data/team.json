@@ -1,0 +1,539 @@
+{
+  "members": [
+    {
+      "id": "alumni-afrina-tabassum",
+      "group": "alumni",
+      "name": "Afrina Tabassum",
+      "role": "Alumni",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "Applied Scientist at Amazon",
+      "avatar": "assets/images/team/afrina-tabassum.jpg",
+      "email": "afrina@vt.edu",
+      "github": "https://github.com/AfrinaVT",
+      "website": "https://sites.google.com/vt.edu/afrinatabassum/home",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=JZsyjdMAAAAJ",
+      "twitter": "",
+      "bio": "Afrina Tabassum graduated with a Ph.D. in Computer Science from Virginia Tech in Summer 2025. Her research interests include multimodal contrastive learning, hard negative sampling, and multimodal procedural planning. Her dissertation focused on improving multimodal representation learning and planning under limited supervision.",
+      "profileUrl": "member.html?id=alumni-afrina-tabassum"
+    },
+    {
+      "id": "alumni-amarachi-mbakwe",
+      "group": "alumni",
+      "name": "Amarachi Blessing Madu",
+      "role": "Alumni",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/amarachi-mbakwe.jpeg",
+      "email": "bmamarachi@vt.edu",
+      "github": "https://github.com/AmarachiBlessingMbakwe",
+      "website": "https://sites.google.com/vt.edu/amarachiblessingmbakwe/home",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=GDt7O1AAAAAJ",
+      "twitter": "",
+      "bio": "Amarachi Blessing Madu graduated with a Ph.D. in Computer Science from Virginia Tech in Summer 2025. Her research interests lie at the intersection of multimodal machine learning and healthcare AI, with a particular focus on medical imaging. Her dissertation investigated disease progression monitoring and longitudinal radiology report generation.",
+      "profileUrl": "member.html?id=alumni-amarachi-mbakwe"
+    },
+    {
+      "id": "alumni-amun-kharel",
+      "group": "alumni",
+      "name": "Amun Kharel",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "PhD at Virginia Tech",
+      "avatar": "assets/images/team/amun-kharel.jpg",
+      "email": "akharel@vt.edu",
+      "github": "https://github.com/amunkharel",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/in/amun-kharel-b1848419b/",
+      "googleScholar": "https://scholar.google.com/citations?user=A1tL2cAAAAAJ",
+      "twitter": "",
+      "bio": "Amun Kharel earned an M.S. in Computer Science from Virginia Tech in Spring 2024. His research interests include applied computer vision, representation learning, and robust perception. His master's work focused on building reliable vision systems for real-world settings.",
+      "profileUrl": "member.html?id=alumni-amun-kharel"
+    },
+    {
+      "id": "alumni-avi-seth",
+      "group": "alumni",
+      "name": "Avi Seth",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "AI Software Engineer at Ingram Technologies, NY",
+      "avatar": "assets/images/team/avi-seth.jpg",
+      "email": "aviseth@vt.edu",
+      "github": "https://github.com/aviseth",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/in/aviseth",
+      "googleScholar": "https://scholar.google.com/citations?user=7vtdRCQAAAAJ",
+      "twitter": "",
+      "bio": "Avi Seth earned an M.S. in Computer Science from Virginia Tech in Spring 2023. His research interests include industrial data sharing, information retrieval, and data management. His thesis focused on building retrieval systems for manufacturing process data.",
+      "profileUrl": "member.html?id=alumni-avi-seth"
+    },
+    {
+      "id": "alumni-chase-vickery",
+      "group": "alumni",
+      "name": "Chase Vickery",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/chase-vickery.jpg",
+      "email": "cdvickery@vt.edu",
+      "github": "https://github.com/ChaseDVickery",
+      "website": "https://chasedvickery.github.io/",
+      "linkedin": "",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Chase Vickery earned an M.S. in Computer Science from Virginia Tech in Summer 2024. His research interests include multimodal reinforcement learning, embodied agents, and interactive learning. His thesis focused on learning robust decision-making policies from multimodal signals.",
+      "profileUrl": "member.html?id=alumni-chase-vickery"
+    },
+    {
+      "id": "alumni-gaurang-karwande",
+      "group": "alumni",
+      "name": "Gaurang Ajit Karwande",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "Founding AI Engineer at Healthtech",
+      "avatar": "assets/images/team/gaurang-karwande.jpg",
+      "email": "gaurangajitk@vt.edu",
+      "github": "https://github.com/Gaurangkarwande",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=CGz6TwUAAAAJ",
+      "twitter": "",
+      "bio": "Gaurang Ajit Karwande earned an M.S. in Computer Engineering from the ECE Department at Virginia Tech in Spring 2023. His research interests include computer vision, geometric deep learning, and healthcare AI. His thesis focused on causal inference and structure learning with graph neural networks for disease progression modeling.",
+      "profileUrl": "member.html?id=alumni-gaurang-karwande"
+    },
+    {
+      "id": "alumni-hesam-solemani",
+      "group": "alumni",
+      "name": "Mohammad Hesam Soleimani-Babakamali",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "Postdoctoral Research Associate at UCLA",
+      "avatar": "assets/images/team/hesam-solemani.png",
+      "email": "Soleimanibabakamali@gmail.com",
+      "github": "https://github.com/Hesam-92-19",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=R0qw1zAAAAAJ",
+      "twitter": "",
+      "bio": "Mohammad Hesam Soleimani-Babakamali earned an M.S. in Computer Science in Spring 2022 and a PhD in Civil Engineering in Fall 2022, both at Virginia Tech. His research interests include structural health monitoring, unsupervised learning, and anomaly detection. His thesis focused on AI-based unsupervised methods for structural health monitoring.",
+      "profileUrl": "member.html?id=alumni-hesam-solemani"
+    },
+    {
+      "id": "alumni-hulya-dogan",
+      "group": "alumni",
+      "name": "Hulya Dogan",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "Instructor at Virginia Tech Engineering Education",
+      "avatar": "assets/images/team/hulya-dogan.jpg",
+      "email": "hulyad@vt.edu",
+      "github": "https://github.com/hdogan1",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=e-bL3F4AAAAJ",
+      "twitter": "",
+      "bio": "Hulya Dogan graduated earned an M.S. in Computer Science from Virginia Tech in Spring 2023. Her research interests include social media analytics, natural language processing, and computational social science. Her thesis focused on narrative analysis of public opinion in online discourse.",
+      "profileUrl": "member.html?id=alumni-hulya-dogan"
+    },
+    {
+      "id": "alumni-meghana-holla",
+      "group": "alumni",
+      "name": "Meghana Holla",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "Machine Learning Engineer at Bloomberg AI",
+      "avatar": "assets/images/team/meghana-holla.jpg",
+      "email": "mmeghana@vt.edu",
+      "github": "https://github.com/meghana-holla",
+      "website": "https://meghana-holla.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=kl_pNCwAAAAJ",
+      "twitter": "",
+      "bio": "Meghana Holla earned an M.S. in Computer Science from Virginia Tech in Spring 2023. Her research interests include video-language learning, multimodal representation learning, and commonsense reasoning. Her thesis focused on integrating commonsense knowledge into video-language localization.",
+      "profileUrl": "member.html?id=alumni-meghana-holla"
+    },
+    {
+      "id": "alumni-ming-zhu",
+      "group": "alumni",
+      "name": "Ming Zhu",
+      "role": "Alumni",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "Research Scientist at Salesforce AI Research",
+      "avatar": "assets/images/team/ming-zhu.JPG",
+      "email": "mingzhu@vt.edu",
+      "github": "https://github.com/mingzhu0527",
+      "website": "https://people.cs.vt.edu/mingzhu/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=vT0SsR4AAAAJ",
+      "twitter": "",
+      "bio": "Ming Zhu graduated with a Ph.D. in Computer Science from Virginia Tech in Summer 2023. Her research interests include natural language processing, healthcare AI, and software engineering. Her thesis focused on long-sequence learning, domain knowledge integration, and learning under limited supervision for domain-specific NLP.",
+      "profileUrl": "member.html?id=alumni-ming-zhu"
+    },
+    {
+      "id": "alumni-riya-dani",
+      "group": "alumni",
+      "name": "Riya Dani",
+      "role": "Alumni",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "Solutions Architect at Amazon Web Services (AWS)",
+      "avatar": "assets/images/team/riya-dani.jpeg",
+      "email": "riya.dani@gmail.com",
+      "github": "",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Riya Dani graduated from the BS/MS Accelerated Computer Science program at Virginia Tech in Spring 2022. Her interests include cloud systems, scalable architectures, and applied machine learning. Her thesis focused on designing practical generative AI systems for real-world deployment.",
+      "profileUrl": "member.html?id=alumni-riya-dani"
+    },
+    {
+      "id": "masters-xinzhuo-li",
+      "group": "masters",
+      "name": "Xinzhuo Li",
+      "role": "Masters Student",
+      "title": [
+        "Masters Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/xinzhuo-li.jpg",
+      "email": "xinzhuo4@illinois.edu",
+      "github": "https://github.com/senli1073",
+      "website": "https://xinzhuo20.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=a1nxSRYAAAAJ",
+      "twitter": "",
+      "bio": "Xinzhuo Li is an M.S. student in Electrical and Computer Engineering at the University of Illinois Urbana-Champaign. His research interests include multimodal machine learning, large vision-language models, and trustworthy machine learning. Xinzhuo earned dual bachelor's degrees in Electrical and Computer Engineering from the University of Illinois Urbana-Champaign and Zhejiang University.",
+      "profileUrl": "member.html?id=masters-xinzhuo-li"
+    },
+    {
+      "id": "phd-adheesh-juvekar",
+      "group": "phd",
+      "name": "Adheesh Juvekar",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/adheesh-juvekar.jpg",
+      "email": "adheesh2@illinois.edu",
+      "github": "https://github.com/juvekaradheesh",
+      "website": "https://juvekaradheesh.github.io",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=dVDyCTIAAAAJ",
+      "twitter": "",
+      "bio": "Adheesh Juvekar is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). His research interests include generative AI (diffusion, VLMs, LLMs) and multimodal machine learning. He has gained applied research experience in NLP and computer vision through internships at Deloitte and Amazon. Outside research, his interests include all kinds of indoor and outdoor sports, and spirituality.",
+      "profileUrl": "member.html?id=phd-adheesh-juvekar"
+    },
+    {
+      "id": "phd-dong-hwan-jang",
+      "group": "phd",
+      "name": "Dong-Hwan Jang",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/dong-hwan-jang.png",
+      "email": "djang12@illinois.edu",
+      "github": "https://github.com/DongHwanJang",
+      "website": "https://donghwanjang.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=5MLvB1YAAAAJ",
+      "twitter": "",
+      "bio": "Dong-Hwan Jang is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2025 - present). His research focuses on 3D vision and machine learning, specifically Gaussian Splatting, uncertainty modeling, and methods for robust and adaptive learning.",
+      "profileUrl": "member.html?id=phd-dong-hwan-jang"
+    },
+    {
+      "id": "phd-eman-abdelrahman",
+      "group": "phd",
+      "name": "Eman Abdelrahman",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/eman-abdelrahman.jpg",
+      "email": "emanh@vt.edu",
+      "github": "https://github.com/Eman-Abdelrahman",
+      "website": "https://eman-abdelrahman.github.io",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=lVVyCBUAAAAJ",
+      "twitter": "",
+      "bio": "Eman Abdelrahman is a Computer Science Ph.D. student at Virginia Tech. Her research interests include multimodal machine learning and its application to embodied AI and autonomous agents.",
+      "profileUrl": "member.html?id=phd-eman-abdelrahman"
+    },
+    {
+      "id": "phd-jerry-xiong",
+      "group": "phd",
+      "name": "Jerry Xiong",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/jerry-xiong.jpg",
+      "email": "jerryx5@illinois.edu",
+      "github": "https://github.com/jxiong21029",
+      "website": "https://jerryxio.ng",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=KESlwf4AAAAJ",
+      "twitter": "",
+      "bio": "Jerry Xiong is a Computer Science Ph.D. student (Fall 2025 - present) and a recipient of a 2025 Amazon AI PhD Fellowship at the University of Illinois Urbana-Champaign. His research interests include reinforcement learning, embodied AI, and diffusion policies. Previously, Jerry completed his undergraduate and master's degrees at the Georgia Institute of Technology.",
+      "profileUrl": "member.html?id=phd-jerry-xiong"
+    },
+    {
+      "id": "phd-kiet-nguyen",
+      "group": "phd",
+      "name": "Kiet A. Nguyen",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/kiet-nguyen.jpg",
+      "email": "kietan2@illinois.edu",
+      "github": "https://github.com/kanguyen-vn",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=ECznem4AAAAJ",
+      "twitter": "",
+      "bio": "Kiet A. Nguyen is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). His research interests include vision-language models, visual grounding (e.g., pixel-level segmentation, cross-image reasoning), and virtual try-on. He has industry research experience as an Applied Scientist Intern at Amazon Science, working on diffusion-based virtual try-on. Outside research, he enjoys baking, reading, and attempting to make various types of art (musical, visual, and/or literary).",
+      "profileUrl": "member.html?id=phd-kiet-nguyen"
+    },
+    {
+      "id": "phd-makanjuola-ogunleye",
+      "group": "phd",
+      "name": "Makanjuola Ogunleye",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/makanjuola-ogunleye.png",
+      "email": "ogunleyemakanjuola@gmail.com",
+      "github": "https://github.com/makanju0la",
+      "website": "https://makanju0la.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=5HHDgpsAAAAJ",
+      "twitter": "",
+      "bio": "Makanjuola Ogunleye is a Computer Science Ph.D. student at Virginia Tech. His research focuses on vision-language learning, embodied AI, and emergent communication. Makanjuola has gained internship experience at Intuit Inc., Northwestern Mutual, and KPMG.",
+      "profileUrl": "member.html?id=phd-makanjuola-ogunleye"
+    },
+    {
+      "id": "phd-muntasir-wahed",
+      "group": "phd",
+      "name": "Muntasir Wahed",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/muntasir-wahed.jpg",
+      "email": "mwahed2@illinois.edu",
+      "github": "https://github.com/immuntasir",
+      "website": "https://mwahed.com/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=ItE5a5cAAAAJ",
+      "twitter": "",
+      "bio": "Muntasir Wahed is a Computer Science Ph.D. candidate at the University of Illinois Urbana-Champaign (Fall 2024 - graduating Spring 2026). His research interests include trustworthy multimodal machine learning, adversarial robustness, and pixel-grounded reasoning. Muntasir has gained industry experience through internships at IBM Research and Google DeepMind, resulting in multiple patents and publications. Muntasir co-led the winning team for the Amazon Nova AI Challenge and the finalist team in the Amazon Alexa Prize TaskBot Challenge 2.",
+      "profileUrl": "member.html?id=phd-muntasir-wahed"
+    },
+    {
+      "id": "phd-onkar-susladkar",
+      "group": "phd",
+      "name": "Onkar Susladkar",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/onkar-susladkar.jpg",
+      "email": "onkarsus13@gmail.com",
+      "github": "https://github.com/Onkarsus13",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=pxBOqNkAAAAJ",
+      "twitter": "",
+      "bio": "Onkar Susladkar is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2025 - present). His research interests include multimodal AI, unified generative models, and video and image generation. He has extensive experience in speech and signal processing, including text-to-speech and speech enhancement, with work published in venues such as ICLR, ICCV, EMNLP, WACV, etc.",
+      "profileUrl": "member.html?id=phd-onkar-susladkar"
+    },
+    {
+      "id": "phd-tianjiao(joey)-yu",
+      "group": "phd",
+      "name": "Tianjiao Yu",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/tianjiao(joey)-yu.jpg",
+      "email": "ty41@illinois.edu",
+      "github": "https://github.com/Tianjiao-Yu",
+      "website": "https://tianjiao-yu.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=70Y7ZrAAAAAJ",
+      "twitter": "",
+      "bio": "Tianjiao (Joey) Yu is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). His research interests include 3D computer vision, generative AI, and reasoning. Tianjiao obtained a master's degree in Computer Science at Georgetown University and a bachelor's degree in Computer Science from the University of Minnesota, Twin Cities.",
+      "profileUrl": "member.html?id=phd-tianjiao(joey)-yu",
+      "aliases": [
+        "Joey"
+      ]
+    },
+    {
+      "id": "phd-vedant-shah",
+      "group": "phd",
+      "name": "Vedant Shah",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/vedant-shah.jpg",
+      "email": "vrshah4@illinois.edu",
+      "github": "https://github.com/sVedantWork",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=szV_wkoAAAAJ",
+      "twitter": "",
+      "bio": "Vedant Shah is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). His research interests span Bayesian inference, generative modeling, and reinforcement learning. In his spare time, Vedant enjoys working out, playing badminton, swimming, and hiking.",
+      "profileUrl": "member.html?id=phd-vedant-shah"
+    },
+    {
+      "id": "phd-xiaona-zhou",
+      "group": "phd",
+      "name": "Xiaona Zhou",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/xiaona-zhou.jpg",
+      "email": "xiaonaz2@illinois.edu",
+      "github": "https://github.com/XiaonaZhou",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=TgdQrLwAAAAJ",
+      "twitter": "",
+      "bio": "Xiaona Zhou is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). Her research interests include vision-language models, foundation models for time series, and data selection. She is a year-round research intern at Sandia National Laboratories focusing on anomaly detection applications.",
+      "profileUrl": "member.html?id=phd-xiaona-zhou"
+    },
+    {
+      "id": "phd-yifan-shen",
+      "group": "phd",
+      "name": "Yifan Shen",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/yifan-shen.jpg",
+      "email": "yifan26@illinois.edu",
+      "github": "https://github.com/ShenYifanS",
+      "website": "https://shenyifans.github.io/",
+      "linkedin": "",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Yifan Shen is Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2025 - present). His research focuses on generative models, multimodal reasoning, and world models. ",
+      "profileUrl": "member.html?id=phd-yifan-shen"
+    },
+    {
+      "id": "phd-ying-shen",
+      "group": "phd",
+      "name": "Ying Shen",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/ying-shen.jpg",
+      "email": "ying22@illinois.edu",
+      "github": "https://github.com/yingShen-ys",
+      "website": "https://yingshen-ys.github.io/",
+      "linkedin": "",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Ying Shen is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). Her research interests lie in multimodal interaction to enable AI agents to interact seamlessly with users and complex environments by integrating and modeling diverse input and output modalities. Her work focuses on efficient, controllable, adaptive, and interactive multimodal generative models.",
+      "profileUrl": "member.html?id=phd-ying-shen"
+    },
+    {
+      "id": "pi-ismini-lourentzou",
+      "group": "pi",
+      "name": "Ismini Lourentzou",
+      "role": "Principal Investigator",
+      "title": [
+        "Principal Investigator"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/ismini-lourentzou.jpg",
+      "email": "lourent2@illinois.edu",
+      "github": "https://github.com/isminoula",
+      "website": "https://isminoula.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=CjxQvikAAAAJ",
+      "twitter": "",
+      "bio": "Ismini Lourentzou is an Assistant Professor in the School of Information Sciences at the University of Illinois Urbana-Champaign (UIUC), with affiliate appointments in the Siebel School of Computing and Data Science (CS) and the Electrical and Computer Engineering (ECE) Department. Her research interests are computer vision and multimodal machine learning, in particular 2D/3D generative modeling and vision-language models, centered on building AI agents that perceive, reason, and interact with the world. Lourentzou earned her Ph.D. in Computer Science from the University of Illinois Urbana-Champaign. Previously, she was an Assistant Professor of Computer Science at Virginia Tech, where she received the 2023 Virginia Tech College of Engineering Dean\u2019s Award for Excellence as an Outstanding New Assistant Professor.",
+      "profileUrl": "member.html?id=pi-ismini-lourentzou"
+    },
+    {
+      "id": "undergrad-jiaxun-zhang",
+      "group": "undergrad",
+      "name": "Jiaxun Zhang",
+      "role": "Undergraduate",
+      "title": [
+        "Undergraduate"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/jiaxun-zhang.jpg",
+      "email": "jiaxunz2@illinois.edu",
+      "github": "https://github.com/JiaxunZ",
+      "website": "",
+      "linkedin": "",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Jiaxun Zhang is an undergraduate student in Statistics & Computer Science at the University of Illinois Urbana-Champaign. Her research interests are trustworthy machine learning, multimodal AI systems, and their real-world applications. Her work focuses on advancing LLM agents as adaptable AI systems designed to handle challenging reasoning tasks in various domains.",
+      "profileUrl": "member.html?id=undergrad-jiaxun-zhang"
+    },
+    {
+      "id": "undergrad-kajal-patel",
+      "group": "undergrad",
+      "name": "Kajal Patel",
+      "role": "Undergraduate",
+      "title": [
+        "Undergraduate"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/kajal-patel.jpg",
+      "email": "kpate457@illinois.edu",
+      "github": "",
+      "website": "https://www.linkedin.com/in/kajalpatelinfo",
+      "linkedin": "https://www.linkedin.com/in/kajalpatelinfo",
+      "googleScholar": "",
+      "twitter": "",
+      "bio": "Kajal Patel is a Stamps Scholar and NCSA SPIN student researcher at the University of Illinois Urbana-Champaign, majoring in Computer Science with minors in Statistics and Psychology. Her research focus is open-world scene graph generation with large vision-language models.",
+      "profileUrl": "member.html?id=undergrad-kajal-patel"
+    }
+  ]
+}

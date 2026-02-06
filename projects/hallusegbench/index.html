@@ -1,80 +1,107 @@
----
-layout: project
-title: HalluSegBench
----
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!DOCTYPE html>
-<html>
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination" />
+    <title>Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination">
-  <meta name="keywords" content="reasoning segmentation, hallucination, counterfactual">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
 
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
 
-<body>
+    <main>
 <!-- {% include navbar.html %} -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title" style="font-size:2.4rem;"><img src="static/images/logo.png" alt="HalluSegBench logo"
-                width="80px">Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</h1>
+            <h1 class="title is-2 publication-title"><img src="static/images/logo.png" alt="HalluSegBench logo" width="80px">Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/xinzhuo-li/" class="illini-blue">Xinzhuo Li<sup class="illini-orange">*</sup></a>,</span>
+                <a href="/team/masters-xinzhuo-li" class="illini-blue" >Xinzhuo Li<sup class="illini-orange">*</sup></a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/juvekaradheesh/" class="illini-blue">Adheesh Juvekar<sup class="illini-orange">*</sup></a>,</span>
+                <a href="/team/phd-adheesh-juvekar" class="illini-blue" >Adheesh Juvekar<sup class="illini-orange">*</sup></a>,</span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/jiaxun-zhang-337848270/" class="illini-blue">Jiaxun Zhang&dagger;</sup></a>,</span>  
+                <a href="/team/undergrad-jiaxun-zhang" class="illini-blue" >Jiaxun Zhang<sup>†</sup></a>,</span>  
               <span class="author-block">
-            <a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/" class="illini-blue">Xingyou Liu&dagger;</sup></a>,</span>
+            <a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/" class="illini-blue">Xingyou Liu<sup>†</sup></a>,</span>
             <span class="author-block">
-              <a href="https://mwahed.com/" class="illini-blue">Muntasir Wahed</a>,</span>
+              <a href="/team/phd-muntasir-wahed" class="illini-blue" >Muntasir Wahed</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/kanguyen-vn/" class="illini-blue">Kiet A. Nguyen</a>,</span>   
+              <a href="/team/phd-kiet-nguyen" class="illini-blue" >Kiet A. Nguyen</a>,</span>   
             <span class="author-block">
-              <a href="https://shenyifans.github.io/" class="illini-blue">Yifan Shen</a>,</span> 
+              <a href="/team/phd-yifan-shen" class="illini-blue" >Yifan Shen</a>,</span> 
             <span class="author-block">
-                <a href="https://tianjiao-yu.github.io/" class="illini-blue">Tianjiao Yu</a>,</span>           
+                <a href="/team/phd-tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,</span>           
             <span class="author-block">
-              <a href="https://isminoula.github.io/" class="illini-blue">Ismini Lourentzou</a>
+              <a href="/team/pi-ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
             </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>,
+              <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>
               <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
             </div>
 
              <div class="is-size-5 publication-authors">
-              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>, &dagger;</span> Equal Contribution</span>
+              <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span> † Equal Contribution
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/pdf/2506.21546.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -124,36 +151,35 @@ title: HalluSegBench
             <p>
               Segmentation Vision-Language Models (VLMs) have significantly advanced grounded visual understanding, yet they remain prone to pixel-grounding hallucinations, producing masks for incorrect objects or for objects that are entirely absent. 
               Existing evaluations rely almost entirely on text- or label-based perturbations, which check only whether the predicted mask matches the queried label. Such evaluations overlook the spatial footprint and severity of hallucination and therefore fail to reveal vision-driven hallucinations, which are more challenging and more prevalent.
-              To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span>, where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart. 
-              To support this task, we curate <span class="model-name-gradient">HalluSegBench</span>, the first large-scale benchmark to diagnose referring and reasoning expression segmentation hallucinations using controlled visual counterfactuals, alongside new evaluation metrics that measure hallucination severity and disentangle vision- and language-driven failure modes.
-              We further introduce <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).
+              To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span> where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart. 
+              To support this task, we curate <span class="model-name-gradient">HalluSegBench</span> the first large-scale benchmark to diagnose referring and reasoning expression segmentation hallucinations using controlled visual counterfactuals, alongside new evaluation metrics that measure hallucination severity and disentangle vision- and language-driven failure modes.
+              We further introduce <span class="model-name-gradient">RobustSeg</span> a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).
             </p>
           </div>
-          <img src="./static/images/teaser_new.jpg" class="interpolation-image"
-          alt="Interpolate start reference image." width="85%" />
+          <img loading="lazy" decoding="async" src="./static/images/teaser_new.jpg" class="interpolation-image" alt="Interpolate start reference image." width="85%">
         </div>
       </div>
   </div>
   </section>
 
-  <section class="section" style="background-color:#dadada81">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">✅ Contributions</h2>
           <div class="content has-text-justified">
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Task</b>. To assess segmentation fidelity, we introduce the novel task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span>, which assesses whether segmentation models correctly adapt to counterfactual visual changes.
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Task</b>. To assess segmentation fidelity, we introduce the novel task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span> which assesses whether segmentation models correctly adapt to counterfactual visual changes.
                 Our experiments show that vision-driven hallucinations are far more severe than label-driven ones, highlighting critical gaps in current grounding capabilities.</li>
               <br>
               <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. 
-                We curate <span class="model-name-gradient">HalluSegBench</span>, the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.
+                We curate <span class="model-name-gradient">HalluSegBench</span> the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.
               </li>
               <br>
               <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Model</b>. 
-                We present <span class="model-name-gradient">RobustSeg</span>, a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. <span class="model-name-gradient">RobustSeg</span> learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity.</li>
-              </ol>
-          </div>
+                We present <span class="model-name-gradient">RobustSeg</span> a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. <span class="model-name-gradient">RobustSeg</span> learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity.</li>
+              
+          </ul></div>
         </div>
       </div>
     </div>
@@ -166,9 +192,9 @@ title: HalluSegBench
           <h2 class="title is-3">Quantitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/quat_new.jpg" class="interpolation-image" alt="HalluSegBench results." width="85%" />
+              <img loading="lazy" decoding="async" src="./static/images/quat_new.jpg" class="interpolation-image" alt="HalluSegBench results." width="85%">
               <p class="has-text-justified">
-                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>&Delta;IoU Referral</code>, <code>&Delta;IoU Reasoning</code>), 
+                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>ΔIoU Referral</code>, <code>ΔIoU Reasoning</code>), 
                 factual and counterfactual Confusion Mask Score ( <code>CMS</code>).              
               </p>
             </div>
@@ -176,7 +202,7 @@ title: HalluSegBench
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
 
@@ -192,7 +218,7 @@ title: HalluSegBench
           </p>
           <!-- <div class="qual-example">
             <div class="image-container">
-              <img src="static/images/example1.png" alt="Image 1" style="height: 600px; width: auto;">
+              <img loading="lazy" decoding="async" src="static/images/example1.png" alt="Image 1" style="height: 600px; width: auto;">
             </div>
             <p class="caption has-text-centered">
               Here, <i>c</i> = “the middle elephant” and <i>c′</i> = “a rhinoceros”.
@@ -200,18 +226,18 @@ title: HalluSegBench
           </div> -->
           <!-- <div class="qual-example"> -->
             <div>
-              <img src="static/images/example1_new.jpg" alt="Image 2" style="height: 800px; width: auto;">
+              <img loading="lazy" decoding="async" src="static/images/example1_new.jpg" alt="Image 2" style="height: 800px; width: auto;">
             </div>
             <p class="caption has-text-centered">
               Here, <i>c</i> = “giant refrigerator” and <i>c′</i> = “microwave oven”.
             </p>
           <!-- </div> -->
           <!-- <div class="qual-example"> -->
-            </br> 
-            </br>
-            </br>
+             
+            
+            
            <div>
-              <img src="static/images/example2_new.jpg" alt="Image 3" style="height: 800px; width: auto;">
+              <img loading="lazy" decoding="async" src="static/images/example2_new.jpg" alt="Image 3" style="height: 800px; width: auto;">
             </div>
             <p class="caption has-text-centered">
               Here, <i>c</i> = “Where in the picture would be suitable for storing wine?” and <i>c′</i> = “Where in the picture would be suitablefor resting one's feet?”.
@@ -221,8 +247,8 @@ title: HalluSegBench
         </div>
       </div>
     </div>
-    </div>
-    </div>
+    
+    
   </section>
 
 
@@ -242,10 +268,10 @@ title: HalluSegBench
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href=".">
+        <a class="icon-link" href="https://arxiv.org/pdf/2506.21546.pdf">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -256,7 +282,7 @@ title: HalluSegBench
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge 
-              <a  href="https://arxiv.org/pdf/2308.00692">LISA</a>,
+              <a href="https://arxiv.org/pdf/2308.00692">LISA</a>,
               <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
               <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>, 
               <a href="https://arxiv.org/pdf/2503.06520">Seg-Zero</a>,
@@ -269,6 +295,6 @@ title: HalluSegBench
       </div>
     </div>
   </footer>
-</body>
-
+    </main>
+  </body>
 </html>

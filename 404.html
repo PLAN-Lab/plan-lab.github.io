@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAN Lab | 404</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <style>
+    body.page-404 {
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .page-404 .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 1.5rem 80px;
+    }
+
+    .page-404 .card {
+      width: min(920px, 100%);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      backdrop-filter: blur(14px);
+      text-align: left;
+    }
+
+    .page-404 .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-404 .badge::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue));
+    }
+
+    .page-404 h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .page-404 h1 span {
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-404 p {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      max-width: 680px;
+    }
+
+    .page-404 .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .page-404 .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: var(--text-md);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .page-404 .btn-primary {
+      background: var(--accent-orange);
+      color: white;
+      box-shadow: 0 10px 24px rgba(255, 95, 5, 0.35);
+    }
+
+    .page-404 .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .page-404 .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 720px) {
+      .page-404 .card {
+        padding: 2.5rem 2rem;
+      }
+      .page-404 p {
+        font-size: var(--text-lg);
+      }
+    }
+  </style></head>
+<body class="page-plan page-404">
+  <div id="canvas-container"></div>
+  <div id="cube-layer"></div>
+  <div class="wrap">
+    <div class="card">
+      <div class="badge">Page Not Found</div>
+      <h1><span>404</span> — This route is off the map.</h1>
+      <p>
+        The page you’re looking for doesn’t exist or has moved. Head back home,
+        or jump to publications to explore our latest work.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html">Back to Home</a>
+        <a class="btn btn-secondary" href="publications.html">View Publications</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const initThreeJS = () => {
+      const container = document.getElementById('canvas-container');
+      if (!container) return;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 15);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+      const geometry = new THREE.PlaneGeometry(35, 12, 200, 64);
+      const uniforms = {
+        uTime: { value: 0 }, uScrollOffset: { value: 0 },
+        uColorBlue: { value: new THREE.Color('#2d7dd2') },
+        uColorOrange: { value: new THREE.Color('#FF5F05') },
+        uColorDark: { value: new THREE.Color('#13294B') }
+      };
+      const vertexShader = `
+        uniform float uTime; uniform float uScrollOffset; varying vec2 vUv; varying float vElevation; varying float vFlow;
+        void main() {
+          vUv = uv;
+          vec3 pos = position;
+          float t = uTime * 0.3 + uScrollOffset * 0.0005;
+          float mainWave = sin(pos.x * 0.3 + t) * 2.0;
+          float ripple = cos(pos.x * 1.5 + t * 1.5) * 0.2;
+          float twist = sin(pos.x * 0.5 + t) * pos.y * 0.5;
+          pos.z = mainWave + ripple + twist;
+          vElevation = pos.z;
+          vFlow = sin(pos.x * 0.3 + t);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+      `;
+      const fragmentShader = `
+        uniform vec3 uColorBlue; uniform vec3 uColorOrange; uniform vec3 uColorDark; varying float vElevation; varying float vFlow;
+        void main() {
+          float colorMix = vFlow * 0.5 + 0.5;
+          vec3 color = mix(uColorBlue, uColorOrange, colorMix);
+          float depth = smoothstep(-2.0, 3.0, vElevation);
+          color = mix(uColorDark, color, depth);
+          color += (colorMix * 0.15);
+          gl_FragColor = vec4(color, 1.0);
+        }
+      `;
+      const materialMain = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide });
+      const meshMain = new THREE.Mesh(geometry, materialMain);
+      meshMain.rotation.x = -0.3;
+      scene.add(meshMain);
+      const materialWire = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide, wireframe: true, transparent: true, opacity: 0.15 });
+      const meshWire = new THREE.Mesh(geometry, materialWire);
+      meshWire.position.z = -1.0;
+      meshWire.scale.set(1.1, 1.1, 1);
+      scene.add(meshWire);
+      const clock = new THREE.Clock();
+      const animate = () => {
+        const t = clock.getElapsedTime();
+        uniforms.uTime.value = t;
+        uniforms.uScrollOffset.value = window.scrollY;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      };
+      animate();
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    };
+    if (window.THREE) {
+      try { initThreeJS(); } catch (e) { console.error(e); }
+    } else {
+      console.warn('[PLAN] THREE.js not available; skipping background.');
+    }
+  </script>
+  <script>
+    (function() {
+      if (!window.THREE) return;
+      var cubeLayer = document.getElementById('cube-layer');
+      if (!cubeLayer) return;
+
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 18);
+
+      var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.domElement.style.pointerEvents = "auto";
+      cubeLayer.appendChild(renderer.domElement);
+
+      var clock = new THREE.Clock();
+      var interactiveCubes = [];
+      var raycaster = new THREE.Raycaster();
+      var mouse = new THREE.Vector2();
+      var UIUC_BLUE = new THREE.Color('#13294B');
+      var UIUC_ORANGE = new THREE.Color('#FF5F05');
+
+      function InteractiveCube(scene, color, position, id) {
+        this.scene = scene;
+        this.id = id;
+        this.startPos = position.clone();
+        this.velocity = new THREE.Vector3(0, 0, 0);
+        this.state = 'SOLID';
+        this.stateTimer = 0;
+        this.baseScale = 1.2;
+        var geo = new THREE.BoxGeometry(1, 1, 1);
+        var mat = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.9 });
+        this.mesh = new THREE.Mesh(geo, mat);
+        this.mesh.position.copy(position);
+        this.mesh.userData.parentCube = this;
+        scene.add(this.mesh);
+        this.particles = this._createParticleSystem(color);
+        this.particles.visible = false;
+        scene.add(this.particles);
+      }
+
+      InteractiveCube.prototype._createParticleSystem = function(color) {
+        var count = 3500;
+        var geo = new THREE.BufferGeometry();
+        var pos = new Float32Array(count * 3);
+        var target = new Float32Array(count * 3);
+        var sizes = new Float32Array(count);
+        var randoms = new Float32Array(count);
+
+        for (var i = 0; i < count; i++) {
+          var x = (Math.random() - 0.5);
+          var y = (Math.random() - 0.5);
+          var z = (Math.random() - 0.5);
+          var i3 = i * 3;
+          pos[i3] = x; pos[i3 + 1] = y; pos[i3 + 2] = z;
+          target[i3] = x; target[i3 + 1] = y; target[i3 + 2] = z;
+          sizes[i] = Math.random();
+          randoms[i] = Math.random();
+        }
+
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        geo.setAttribute('aTarget', new THREE.BufferAttribute(target, 3));
+        geo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+        geo.setAttribute('randomOffset', new THREE.BufferAttribute(randoms, 1));
+
+        var mat = new THREE.ShaderMaterial({
+          uniforms: { uTime: { value: 0 }, uColor: { value: color }, uScale: { value: 1.0 } },
+          vertexShader: `
+            attribute float size; attribute float randomOffset; attribute vec3 aTarget;
+            uniform float uTime; uniform float uScale; varying float vAlpha;
+            void main() {
+              vec3 p = position * uScale;
+              vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
+              float flicker = sin(uTime * 10.0 + randomOffset * 10.0) * 0.5 + 0.5;
+              gl_PointSize = (size * 15.0 + 5.0) * flicker * (10.0 / -mvPosition.z);
+              gl_Position = projectionMatrix * mvPosition;
+              vAlpha = flicker;
+            }
+          `,
+          fragmentShader: `
+            uniform vec3 uColor; varying float vAlpha;
+            void main() {
+              float d = distance(gl_PointCoord, vec2(0.5));
+              if (d > 0.5) discard;
+              gl_FragColor = vec4(uColor + 0.2, 0.8 * vAlpha);
+            }
+          `,
+          transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+        });
+
+        var points = new THREE.Points(geo, mat);
+        points.frustumCulled = false;
+        return points;
+      };
+
+      InteractiveCube.prototype.triggerDissolve = function() {
+        if (this.state !== 'SOLID') return;
+        this.state = 'DISSOLVE';
+        this.stateTimer = 0;
+        this.mesh.visible = false;
+        this.particles.visible = true;
+        this.particles.position.copy(this.mesh.position);
+        this.particles.rotation.copy(this.mesh.rotation);
+        this.velocity.set(0, 0, 0);
+      };
+
+      InteractiveCube.prototype.setSize = function(scale) {
+        this.baseScale = scale;
+        this.mesh.scale.set(scale, scale, scale);
+        this.particles.material.uniforms.uScale.value = scale;
+      };
+
+      InteractiveCube.prototype._resetParticles = function(positions, targets) {
+        for (var i = 0; i < positions.length; i++) { positions[i] = targets[i]; }
+      };
+
+      InteractiveCube.prototype.update = function(dt, time) {
+        if (this.state === 'SOLID') {
+          this.mesh.position.add(this.velocity);
+          this.velocity.multiplyScalar(0.95);
+          if (this.velocity.length() < 0.001) {
+            this.mesh.position.y += Math.sin(time + this.id) * 0.005;
+            this.mesh.rotation.x += 0.005;
+            this.mesh.rotation.y += 0.005;
+          } else {
+            this.mesh.rotation.x += this.velocity.y;
+            this.mesh.rotation.y += this.velocity.x;
+          }
+          var dist = camera.position.z - this.mesh.position.z;
+          var vFOV = THREE.MathUtils.degToRad(camera.fov);
+          var height = 2 * Math.tan(vFOV / 2) * dist;
+          var width = height * camera.aspect;
+          var boundX = width / 2 - this.baseScale;
+          var boundY = height / 2 - this.baseScale;
+          if (this.mesh.position.x > boundX) { this.mesh.position.x = boundX; this.velocity.x *= -0.6; }
+          if (this.mesh.position.x < -boundX) { this.mesh.position.x = -boundX; this.velocity.x *= -0.6; }
+          if (this.mesh.position.y > boundY) { this.mesh.position.y = boundY; this.velocity.y *= -0.6; }
+          if (this.mesh.position.y < -boundY) { this.mesh.position.y = -boundY; this.velocity.y *= -0.6; }
+        } else {
+          this.stateTimer += dt * 1000;
+          this.particles.material.uniforms.uTime.value = time;
+          var positions = this.particles.geometry.attributes.position.array;
+          var targets = this.particles.geometry.attributes.aTarget.array;
+          var randoms = this.particles.geometry.attributes.randomOffset.array;
+          var count = positions.length / 3;
+
+          if (this.state === 'DISSOLVE' && this.stateTimer > 1500) { this.state = 'SWIRL'; this.stateTimer = 0; }
+          if (this.state === 'SWIRL' && this.stateTimer > 3000) { this.state = 'REASSEMBLE'; this.stateTimer = 0; }
+          if (this.state === 'REASSEMBLE' && this.stateTimer > 2000) { this.state = 'SOLID'; this.mesh.visible = true; this.particles.visible = false; this._resetParticles(positions, targets); }
+
+          for (var i = 0; i < count; i++) {
+            var i3 = i * 3;
+            var ix = positions[i3]; var iy = positions[i3 + 1]; var iz = positions[i3 + 2];
+            if (this.state === 'DISSOLVE') {
+              var speed = 0.05;
+              ix += ix * speed * (Math.random() + 0.1); iy += iy * speed * (Math.random() + 0.1) + 0.01; iz += iz * speed * (Math.random() + 0.1);
+            } else if (this.state === 'SWIRL') {
+              var angle = time * 0.8 + randoms[i] * 6.2831;
+              ix += Math.cos(angle) * 0.04; iy += Math.sin(angle) * 0.04 + 0.015; iz += Math.sin(angle * 1.3) * 0.04;
+            } else if (this.state === 'REASSEMBLE') {
+              ix += (targets[i3] - ix) * 0.08; iy += (targets[i3 + 1] - iy) * 0.08; iz += (targets[i3 + 2] - iz) * 0.08;
+            }
+            positions[i3] = ix; positions[i3 + 1] = iy; positions[i3 + 2] = iz;
+          }
+          this.particles.geometry.attributes.position.needsUpdate = true;
+        }
+      };
+
+      interactiveCubes.push(new InteractiveCube(scene, UIUC_ORANGE, new THREE.Vector3(4, 2, 6), 1));
+      interactiveCubes.push(new InteractiveCube(scene, UIUC_BLUE,   new THREE.Vector3(-4, -1, 5), 2));
+
+      var draggedCube = null;
+      var dragPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+      var dragOffset = new THREE.Vector3();
+      var isDragging = false;
+      var mouseDownTime = 0;
+      var lastMousePos = new THREE.Vector3();
+
+      function updateRayFromEvent(e) {
+        var rect = renderer.domElement.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width;
+        var y = (e.clientY - rect.top) / rect.height;
+        mouse.x = x * 2 - 1; mouse.y = -(y * 2 - 1);
+        raycaster.setFromCamera(mouse, camera);
+      }
+
+      window.addEventListener('mousedown', function(e) {
+        updateRayFromEvent(e);
+        var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+        var intersects = raycaster.intersectObjects(solidMeshes);
+        if (intersects.length > 0) {
+          draggedCube = intersects[0].object.userData.parentCube;
+          draggedCube.velocity.set(0, 0, 0);
+          dragPlane.constant = -draggedCube.mesh.position.z;
+          var planeIntersect = new THREE.Vector3();
+          raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+          dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+          lastMousePos.copy(planeIntersect);
+          mouseDownTime = performance.now();
+          isDragging = false;
+          document.body.style.cursor = 'grabbing';
+        }
+      });
+      window.addEventListener('mousemove', function(e) {
+        updateRayFromEvent(e);
+        if (draggedCube) {
+          var planeIntersect = new THREE.Vector3();
+          raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+          if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+          draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+          var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+          draggedCube.velocity.copy(delta);
+          lastMousePos.copy(planeIntersect);
+        } else {
+          var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+          var intersects = raycaster.intersectObjects(solidMeshes);
+          document.body.style.cursor = intersects.length > 0 ? 'grab' : 'default';
+        }
+      });
+      window.addEventListener('mouseup', function() {
+        if (draggedCube) {
+          if (!isDragging) { draggedCube.triggerDissolve(); }
+          draggedCube = null;
+          document.body.style.cursor = 'default';
+        }
+      });
+
+      window.addEventListener('touchstart', function(e) {
+        if (e.touches.length > 1) return;
+        e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+        updateRayFromEvent(e);
+        var solidMeshes = interactiveCubes.filter(function(c) { return c.state === 'SOLID'; }).map(function(c) { return c.mesh; });
+        var intersects = raycaster.intersectObjects(solidMeshes);
+        if (intersects.length > 0) {
+          draggedCube = intersects[0].object.userData.parentCube;
+          draggedCube.velocity.set(0, 0, 0);
+          dragPlane.constant = -draggedCube.mesh.position.z;
+          var planeIntersect = new THREE.Vector3();
+          raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+          dragOffset.subVectors(draggedCube.mesh.position, planeIntersect);
+          lastMousePos.copy(planeIntersect);
+          mouseDownTime = performance.now();
+          isDragging = false;
+        }
+      }, { passive: false });
+
+      window.addEventListener('touchmove', function(e) {
+        if (draggedCube) {
+          e.preventDefault();
+          e.clientX = e.touches[0].clientX; e.clientY = e.touches[0].clientY;
+          updateRayFromEvent(e);
+          var planeIntersect = new THREE.Vector3();
+          raycaster.ray.intersectPlane(dragPlane, planeIntersect);
+          if (!isDragging && (performance.now() - mouseDownTime > 150)) { isDragging = true; }
+          draggedCube.mesh.position.copy(planeIntersect).add(dragOffset);
+          var delta = new THREE.Vector3().subVectors(planeIntersect, lastMousePos);
+          draggedCube.velocity.copy(delta);
+          lastMousePos.copy(planeIntersect);
+        }
+      }, { passive: false });
+
+      window.addEventListener('touchend', function() {
+        if (draggedCube) {
+          if (!isDragging) { draggedCube.triggerDissolve(); }
+          draggedCube = null;
+        }
+      });
+
+      function animate() {
+        var dt = clock.getDelta();
+        var time = clock.getElapsedTime();
+        interactiveCubes.forEach(function(c) { c.update(dt, time); });
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    })();
+  </script>
+</body>
+</html>

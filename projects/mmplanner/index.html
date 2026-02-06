@@ -1,43 +1,66 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning.">
-  <meta name="keywords" content="MMPlanner">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</title>
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning." />
+    <title>MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLM0VKTX0T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-MLM0VKTX0T');
-  </script>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
 
-<body>
-  <section class="hero">
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+<section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -46,27 +69,25 @@
             <div class="is-size-5 publication-authors">
               
                 <span class="author-block">
-                  <a href="https://www.linkedin.com/in/afrina-tabassum-a1a3a1102/">Afrina Tabassum<sup class="vt-maroon">1</sup></a>,
+                  <a href="/team/alumni-afrina-tabassum" >Afrina Tabassum<sup class="vt-maroon">1</sup></a>,
                 </span>
                 <span class="author-block">
-                  <a href="">Bin Guo<sup
-                      class="amazon-blue">2</sup></a>,
+                  <a href="">Bin Guo<sup class="amazon-blue">2</sup></a>,
                   <span class="author-block">
-                    <a href="">Xiyao Ma<sup
-                        class="amazon-blue">2</sup></a>,</span>
+                    <a href="">Xiyao Ma<sup class="amazon-blue">2</sup></a>,</span>
                   <span class="author-block">
                     <a href="https://people.cs.vt.edu/hdardiry/">Hoda Eldardiry<sup class="vt-maroon">1</sup></a>,
                   </span>
                   <span class="author-block">
-                    <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">3</sup></a>,
+                    <a href="/team/pi-ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">3</sup></a>,
                   </span>
-              </div>
+              </span></div>
 
             <div class="is-size-5 publication-authors">
-              <!--<span class="author-block">PLAN Lab</span>,-->
-              <span class="author-block vt-maroon"><sup>1</sup>Virginia Tech</span>
-              <span class="author-block amazon-blue"><sup>2</sup>Amazon</span>,
-              <span class="author-block illini-orange"><sup>3</sup>University of Illinois Urbana-Champaign</span>,
+              <!--<span class="author-block">PLAN Lab</span>-->
+              <span class="author-block vt-maroon"><sup class="vt-maroon">1</sup>Virginia Tech</span>
+              <span class="author-block amazon-blue"><sup>2</sup>Amazon</span>
+              <span class="author-block illini-orange"><sup class="illini-orange">3</sup>University of Illinois Urbana-Champaign</span>
               
             </div>
             
@@ -74,7 +95,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://aclanthology.org/2025.findings-emnlp.1011.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -115,8 +136,7 @@
             <strong>MMPlanner</strong> employs a novel Chain-of-Thought (<strong>CoT</strong>) prompting with <u><strong>O</strong></u>bject <u><strong>S</strong></u>tate <u><strong>R</strong></u>easoning 
               (<strong>OSR-CoT</strong>) to reason about object state changes across sequential steps.
           </div>
-        <img src="./static/images/mmplanner_teaser.png" class="interpolation-image"
-          alt="Interpolate start reference image." />
+        <img src="./static/images/mmplanner_teaser.png" class="interpolation-image" alt="Interpolate start reference image.">
         <div class="content has-text-justified">
           <p>To scale multimodal procedural planning evaluation and automatically assess the generated multimodal plans, we introduce customized multimodal LLM scorers and propose a comprehensive evaluation covering: 
 (1) <u><strong>T</strong></u>extual-<strong>Plan</strong> <strong>Score</strong> (<strong>T-PlanScore</strong>), a metric that evaluates the planning accuracy and temporal coherence of the generated textual plan;
@@ -152,7 +172,7 @@
     </div>
   </section>
 
-  <section class="section" style="background-color:#dadada81">
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Contributions. -->
       <div class="columns is-centered has-text-centered">
@@ -173,8 +193,8 @@
                 <b><i>T-PlanScore</i></b> and <b><i>CA-Score</i></b>, and an evaluation task, <b><i>VS-Ordering</i></b>, to collectively assess the planning accuracy, 
                 cross-modal alignment, temporal coherence, and visual informativeness of the generated plans.
               </li>
-              </ol>
-          </div>
+              
+          </ul></div>
         </div>
       </div>
       <!--/ Contributions. -->
@@ -188,7 +208,7 @@
         <div class="column">
           <h2 class="title is-3"><span style="font-weight: bold;"> MMPlanner</span> Overview</h2>
           <div class="content has-text-justified">
-            <img src="./static/images/mmplanner_overview.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <img loading="lazy" decoding="async" src="./static/images/mmplanner_overview.png" class="interpolation-image" alt="PRIMA Model Architecture.">
             <p>
               <b><i>MMPlanner</i></b> consists of three stages: (1) a <b>Textual Plan Generator</b> that produces a sequence of textual steps from the goal, 
               (2) an <b>Image Description Generator</b> that creates image descriptions from the textual steps, incorporating both explicit 
@@ -207,20 +227,20 @@
           <h2 class="title is-3">📊 Quantitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/mmplanner_textual_evaluation.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <img loading="lazy" decoding="async" src="./static/images/mmplanner_textual_evaluation.png" class="interpolation-image" alt="PRIMA results." width="95%">
               <p class="has-text-justified">
                 <b>Textual Evaluation on <span style="font-variant: small-caps;">RecipePlan</span> and <span style="font-variant: small-caps;">WikiPlan</span>.
                 </b>MMPlanner consistently achieves higher scores, maintaining textual planning accuracy, 
                 while improving cross-modal alignment between visual and textual steps.
               </p>
 
-              <img src="./static/images/mmplanner_crossmodal_evaluation.png" class="interpolation-image" alt="PRIMA results." width="65%" />
+              <img loading="lazy" decoding="async" src="./static/images/mmplanner_crossmodal_evaluation.png" class="interpolation-image" alt="PRIMA results." width="65%">
               <p class="has-text-justified">
                 <b> Step-level cross-modal evaluation.</b> MMPlanner achieves substantial improvements across metrics, 
                 indicating better visual-textual alignment compared to other baselines.
               </p>
 
-              <img src="./static/images/mmplanner_vs_ordering.png" class="interpolation-image" alt="PRIMA results." width="65%" />
+              <img loading="lazy" decoding="async" src="./static/images/mmplanner_vs_ordering.png" class="interpolation-image" alt="PRIMA results." width="65%">
               <p class="has-text-justified">
                 <b>Visual sequence ordering (VS-Ordering) performance comparison over baselines.</b> 
                 MMPlanner consistently outperforms baselines, demonstrating its ability to generate coherent and informative visual steps.
@@ -232,7 +252,7 @@
         </div>
       </div>
     </div>
-    </div>
+    
   </section>
 
   <section class="section">
@@ -242,8 +262,7 @@
           <h2 class="title is-3">🔎 Qualitative Examples</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img src="./static/images/mmplanner_qualitative.png" class="interpolation-image"
-                alt="Qualitative Examples." width="100%" />
+              <img loading="lazy" decoding="async" src="./static/images/mmplanner_qualitative.png" class="interpolation-image" alt="Qualitative Examples.">
             </div>
           </div>
           <div class="content has-text-justified">
@@ -253,7 +272,7 @@
             Implicit state changes refer to changes that are not explicitly present in the textual steps but need to be present in the visual steps. 
             <b>(Left)</b> TIP fails to incorporate explicit and implicit object state changes into the visual steps 
             (<span style="color: red; font-weight: bold;">red texts and bboxes</span>). <b>(Right)</b> Conversely, MMPlanner incorporates both explicit 
-            (<span style="color: blue; font-weight: bold;">blue texts and bboxes</span>)  and implicit 
+            (<span style="color: #4343ff; font-weight: bold;">blue texts and bboxes</span>)  and implicit 
             (<span style="color: green; font-weight: bold;">green texts and bboxes</span>) state changes of the associated objects into the visual steps. 
             Implicit state changes present/not present in the visual step are mentioned in the <span style="color: orange; font-weight: bold;">orange text</span>.
           </div>
@@ -279,10 +298,10 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/">
+        <a class="icon-link" href="https://aclanthology.org/2025.findings-emnlp.1011.pdf">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -292,18 +311,15 @@
             <p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
               <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
-              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a
-                href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
+              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
             </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
-</body>
-
+    </main>
+  </body>
 </html>
