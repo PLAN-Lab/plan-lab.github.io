@@ -258,13 +258,21 @@
                 evaluation metrics: VUS-PR, VUS-ROC, AUC-PR, AUC-ROC, and AUC-P<sub>T</sub>R<sub>T</sub>. Methods are ordered by their 
                 average VUS-PR score. Boxes indicate interquartile ranges, with the solid line denoting the median and the dashed line 
                 denoting the mean.
+
+                There is clear performance stratification among anomaly detectors across the five evaluation metrics. 
+                PCA, OmniAnomaly, and OFA achieve higher median scores, particularly on VUS-PR, VUS-ROC, and AUC-ROC, 
+                while methods such as KNN, Transformer, LOF, and HBOS consistently occupy the lower end of the performance 
+                spectrum, with poor AUC-PR and AUC-PTRT indicating difficulty handling highly imbalanced and threshold-sensitive 
+                anomaly detection settings.
                   
               </p>
 
               <img src="./static/images/detector_runtime.png" class="interpolation-image" alt="PRIMA results." width="95%" />
               <p class="has-text-justified">
-                Average runtime of anomaly detection methods evaluated on mTSBench. Each bar reports the mean runtime of a 
-                detector aggregated over all 344 multivariate time series in the benchmark.
+                The top panel reports the average runtime of each anomaly detection method evaluated on 344 multivariate 
+                time series in <em>mTSBench</em>. Among the 24 methods, IForest is the most efficient, followed by ALLM4TS 
+                and MCD, while AnomalyTransformer has the highest computational cost and OFA is the second most expensive. 
+                The bottom panel presents a heatmap showing the mean runtime of all detectors across the 19 datasets.
               </p>
 
 
@@ -317,13 +325,19 @@
               </span>
               indicate the best and second-best methods for each metric, respectively.
               <span style="color: #1f77b4; font-weight: bold;">Δ (%)</span>
-              denotes the relative difference between the mean performance of the best method and the near-optimal baseline.            
+              denotes the relative difference between the mean performance of the best method and the near-optimal baseline. 
+              Orthus and FMMS consistently outperform MetaOD, with Orthus leading on AUC-ROC and R-based-F1 and FMMS performing 
+              better on Recall and Event-based-F1, yet both remain substantially below the Near-optimal baseline, while PCA 
+              surpasses all three selectors on 9 of the 13 metrics despite still lagging behind oracle references.           
             <img src="./static/images/selector_ranks.png" class="interpolation-image" alt="PRIMA results." width="95%" />
             <p class="has-text-justified">
               <p class="has-text-justified">
                 <strong>Ranking Comparison of Model Selection Methods.</strong>
                 (Left) Precision@3, Recall@3, and NDCG@3 for each method.
                 (Right) Recall@k as a function of k.
+                In the Top-3 setting (left), Orthus achieves the highest scores across all ranking metrics, followed by 
+                FMMS and then MetaOD, while the Recall@k curves (right) show that Orthus and FMMS alternate 
+                in ranking quality across different values of k, with MetaOD consistently performing worse.
               </p>
                 
             </p>
