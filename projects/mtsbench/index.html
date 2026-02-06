@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale.">
+  <meta name="keywords" content="mTSBench">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLM0VKTX0T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MLM0VKTX0T');
+  </script>
+
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale</h1>
+            <div class="is-size-5 publication-authors">
+              
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/xnz">Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://sites.google.com/site/constantinbrif">Constantin Brif<sup class="sandia-blue">2</sup></a>,
+                </span>
+                  <span class="author-block">
+                    <a href="https://isminoula.github.io/">Ismini Lourentzou<sup class="illini-orange">1</sup></a>,
+                  </span>
+              </div>
+
+            <div class="is-size-5 publication-authors">
+              <!--<span class="author-block">PLAN Lab</span>,-->
+              <span class="author-block illini-orange"><sup>1</sup>University of Illinois Urbana-Champaign</span>,
+              <span class="author-block sandia-blue"><sup>2</sup>Sandia National Laboratories</span>,
+              
+              
+            </div>
+            
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2506.21550" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2506.21550" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/PLAN-Lab/mTSBench" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span> We introduce <strong>mTSBench</strong>, the largest benchmark for multivariate 
+          time series anomaly detection and model selection, evaluating 24 detectors and unsupervised selectors across 344 labeled time 
+          series from diverse domains. Our results show that no single detector performs consistently well across datasets and that current 
+          unsupervised model selection methods fall far short of oracle performance under a unified evaluation suite. These findings 
+          highlight substantial challenges in multivariate model selection and motivate the development of more adaptive and data-aware 
+          selection strategies. 
+          </div>
+        <img src="./static/images/mTSBench.png" class="interpolation-image"
+          alt="Interpolate start reference image." />
+        <div class="content has-text-justified">
+          <p> <b>mTSBench</b> is the largest and most diverse benchmark for multivariate time series anomaly detection and model selection, spanning 19 
+            multivariate time series datasets across various application domains and establishing a platform for robust anomaly 
+            detection and adaptive model selection in real-world multivariate contexts. \datasetnc{}'s comprehensive evaluation 
+            suite and diverse collection of state-of-the-art anomaly detectors, including statistical, deep learning, and LLM-based 
+            approaches, facilitates standardized comparison of model selection strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📝 Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Anomaly detection in multivariate time series is essential across domains such as healthcare, cybersecurity, 
+              and industrial monitoring, yet remains fundamentally challenging due to high-dimensional dependencies, 
+              the presence of cross-correlations between time-dependent variables, and the scarcity of labeled anomalies.
+              We introduce <strong>mTSBench</strong>, the largest benchmark to date for multivariate time series anomaly detection and model 
+              selection, consisting of 344 labeled time series across 19 datasets from a wide range of application domains. 
+              We comprehensively evaluate 24 anomaly detectors, including the only two publicly available large language 
+              model-based methods for multivariate time series. Consistent with prior findings, we observe that no single 
+              detector dominates across datasets, motivating the need for effective model selection. We benchmark three 
+              recent model selection methods and find that even the strongest of them remains far from optimal. Our results 
+              highlight the outstanding need for robust, generalizable selection strategies.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#dadada81">
+    <div class="container is-max-desktop">
+      <!-- Contributions. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">💡 Contributions</h2>
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We introduce <b>mTSBench</b>, 
+                the largest and most comprehensive MTS-AD and model selection benchmark to date, featuring 344 labeled 
+                multivariate time series from 19 datasets across 12 application domains.mTSBench systematically 
+                evaluates 24 anomaly detection methods, including the only LLM-based methods for MTS-AD, reflecting 
+                their performance in multivariate settings with real-world temporal dependencies and cross-signal interactions.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>Our empirical analysis reveals 
+                that, among the evaluated methods, no single anomaly detection method performs consistently well across datasets 
+                in mTSBench, underscoring the need for adaptive selection strategies. To this end, mTSBench is the first to 
+                integrate unsupervised model selection methods and benchmark their effectiveness across diverse time series 
+                contexts and under consistent settings.
+              </li>
+              <br>
+              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>To drive reproducible comparisons,
+                mTSBench introduces a unified evaluation suite with point-based and ranking-based metrics for anomaly detection 
+                and model selection. Using this standardized setup, we observe substantial gaps between the evaluated unsupervised 
+                model selection methods and both optimal and trivial baselines. These results highlight limitations of current 
+                unsupervised selection strategies and underscore the need for more adaptive model selection mechanisms.
+              </li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      <!--/ Contributions. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"> mTSBench:</span>Detectors</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/detector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              Anomaly Detection Methods in mTSBench encompassing a diverse range of techniques, including foundation models, 
+              distance-based, forecasting-based, and reconstruction-based approaches, ensuring a comprehensive representation 
+              of different methodological paradigms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📊 Detectors Performance</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/heatmap.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                Average AUC-ROC Performance of 24 Anomaly Detection Methods (x-axis) Evaluated Across 19 mTSBench Datasets (y-axis). 
+                The substantial performance variability across datasets highlights the need for robust model selection strategies.
+                mTSBench benchmarks the capabilityof model selection techniques to systematically identify the optimal anomaly 
+                detection method among 24 state-of-the-art detectors evaluated on a comprehensive collection of 344 multivariate 
+                time series.
+
+              </p>
+
+              <img src="./static/images/boxplot.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                Boxplots summarize the performance of anomaly detection methods across all mTSBench datasets using five 
+                evaluation metrics: VUS-PR, VUS-ROC, AUC-PR, AUC-ROC, and AUC-P<sub>T</sub>R<sub>T</sub>. Methods are ordered by their 
+                average VUS-PR score. Boxes indicate interquartile ranges, with the solid line denoting the median and the dashed line 
+                denoting the mean.
+                  
+              </p>
+
+              <img src="./static/images/detector_runtime.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+              <p class="has-text-justified">
+                Average runtime of anomaly detection methods evaluated on mTSBench. Each bar reports the mean runtime of a 
+                detector aggregated over all 344 multivariate time series in the benchmark.
+              </p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"> mTSBench:</span>Selectors</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/selector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              Comparison between model selection methods supported by mTSBench and those available in existing anomaly detection
+               benchmarks for multivariate time series. Methods span foundation models, deep learning, classical machine learning, 
+               and other approaches such as statistical and data mining techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">📊 Selectors Performance</h2>
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              <img src="./static/images/selector_perf.png" class="interpolation-image"
+                alt="Qualitative Examples." width="100%" />
+            </div>
+          </div>
+          <div class="content has-text-justified">
+              <strong>Model Selection Performance Comparison.</strong>
+              Entries report mean &plusmn; standard deviation over 344 time series in mTSBench for the top-1 detector selected by each method.
+              <span style="background-color: rgba(215, 38, 56, 0.6); padding: 0 4px; font-weight: bold;">
+                Best
+              </span>
+              and
+              <span style="background-color: rgba(120, 81, 169, 0.6); padding: 0 4px;">
+                Second-best
+              </span>
+              indicate the best and second-best methods for each metric, respectively.
+              <span style="color: #1f77b4; font-weight: bold;">Δ (%)</span>
+              denotes the relative difference between the mean performance of the best method and the near-optimal baseline.            
+            <img src="./static/images/selector_ranks.png" class="interpolation-image" alt="PRIMA results." width="95%" />
+            <p class="has-text-justified">
+              <p class="has-text-justified">
+                <strong>Ranking Comparison of Model Selection Methods.</strong>
+                (Left) Precision@3, Recall@3, and NDCG@3 for each method.
+                (Right) Recall@k as a function of k.
+              </p>
+                
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{zhou2026mTSBench,
+  title={mTSBench: Benchmarking Multivariate Time Series Anomaly Detection and Model Selection at Scale},
+  author={Zhou, Xiaona and Brif, Constantin and Lourentzou, Ismini},
+  journal={TMLR},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
+                href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+              <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
+              <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a
+                href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
