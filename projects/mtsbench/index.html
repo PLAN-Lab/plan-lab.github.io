@@ -215,7 +215,24 @@
       <!--/ Contributions. -->
     </div>
   </section>
-
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"></span> <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span> versus Exsiting Benchmarks</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/selector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              Compared to existing anomaly detection benchmarks for multivariate time series, mTSBench includes a larger 
+              number of time series, detectors, and evaluation metrics. It is also the first benchmark to integrate model 
+              selection methods together with dedicated evaluation metrics, enabling systematic analysis of selector 
+              robustness and adaptability—an important aspect of MTS-AD that has remained largely underexplored.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -228,6 +245,25 @@
               <b>Anomaly Detection Methods in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></b> encompassing a diverse range of techniques, including foundation models, 
               distance-based, forecasting-based, and reconstruction-based approaches, ensuring a comprehensive representation 
               of different methodological paradigms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span style="font-weight: bold;"></span>Datasets in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/datasets.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            <p>
+              <b><span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></b> 
+              contains 344 multivariate time series from 19 datasets, covering
+              a range of domains, anomaly types, and time series characteristics to ensure a diverse and representative
+              benchmark
             </p>
           </div>
         </div>
@@ -290,12 +326,23 @@
         <div class="column">
           <h2 class="title is-3"><span style="font-weight: bold;"> </span>Selectors in <span style="color:#7851A9;">mTS</span><span style="color:#D72638;">Bench</span></h2>
           <div class="content has-text-justified">
-            <img src="./static/images/selector_table.png" class="interpolation-image" alt="PRIMA Model Architecture." />
+            mTSBench contains three unsupervised model selection methods for MTS-AD, described below.
             <p>
-              Comparison between model selection methods supported by mTSBench and those available in existing anomaly detection
-               benchmarks for multivariate time series. Methods span foundation models, deep learning, classical machine learning, 
-               and other approaches such as statistical and data mining techniques.
+              <strong>MetaOD</strong>
+              estimates how well different anomaly detectors will perform on a new dataset by learning from their past performance on known datasets. It summarizes each dataset using meta-features and maps both datasets and detectors into a shared latent space, allowing it to recommend the detector with the highest estimated performance.
             </p>
+            
+            <p>
+              <strong>FMMS</strong>
+              predicts detector performance by modeling interactions between dataset meta-features and historical performance scores. It uses these feature interactions to estimate how each detector is expected to perform on a new dataset and selects the detector with the highest predicted score.
+            </p>
+            
+            <p>
+              <strong>Orthus</strong>
+              characterizes time series using a collection of univariate meta-features and distinguishes whether a new dataset is similar to or different from previously seen data. Based on this distinction, it applies regression models learned from historical performance to estimate detector performance and select the most suitable detector.
+            </p>
+            
+
           </div>
         </div>
       </div>
