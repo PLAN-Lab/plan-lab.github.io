@@ -676,13 +676,13 @@
       ],
       "year": 2025,
       "date": "2025-06-01",
-      "venue": "arXiv",
+      "venue": "Transactions on Machine Learning Research (TMLR)",
       "type": "paper",
       "cover": "assets/images/publications/mtsbench.png",
       "doi": "10.48550/arXiv.2506.21550",
       "links": {
-        "website": "",
-        "paper": "https://doi.org/10.48550/arXiv.2506.21550",
+        "website": "https://plan-lab.github.io/projects/mtsbench/",
+        "paper": "https://openreview.net/forum?id=8LfB8HD1WU",
         "code": "https://github.com/PLAN-Lab/mTSBench",
         "video": "",
         "data": "https://huggingface.co/datasets/PLAN-Lab/mTSBench"
