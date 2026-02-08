@@ -674,9 +674,9 @@
         "Constantin Brif",
         "Ismini Lourentzou"
       ],
-      "year": 2025,
-      "date": "2025-06-01",
-      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "year": 2026,
+      "date": "2026-2-07",
+      "venue": "Transactions on Machine Learning Research",
       "type": "paper",
       "cover": "assets/images/publications/mtsbench.png",
       "doi": "10.48550/arXiv.2506.21550",
@@ -686,7 +686,8 @@
         "code": "https://github.com/PLAN-Lab/mTSBench",
         "video": "",
         "data": "https://huggingface.co/datasets/PLAN-Lab/mTSBench"
-      }
+      },
+      "venueAbbr": "TMLR"
     },
     {
       "id": "2025-Ogunleye-ec-vlm-emergent-corpus-pre",
