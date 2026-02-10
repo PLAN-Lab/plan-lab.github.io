@@ -502,5 +502,26 @@
       });
     })();
   </script>
+  <script>
+    (function () {
+      const normalizedPath = window.location.pathname.replace(/^\/+|\/+$/g, '');
+      if (
+        !normalizedPath ||
+        window.location.pathname.startsWith('/projects/') ||
+        normalizedPath.includes('.') ||
+        normalizedPath === '404'
+      ) {
+        return;
+      }
+      const candidate = `/projects/${normalizedPath}`;
+      fetch(`${candidate}/index.html`, { method: 'HEAD', cache: 'no-store' })
+        .then((response) => {
+          if (response.ok) {
+            window.location.replace(candidate);
+          }
+        })
+        .catch(() => {});
+    })();
+  </script>
 </body>
 </html>
