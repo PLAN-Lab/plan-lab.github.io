@@ -122,7 +122,9 @@
                                 <img src="static/images/unidflow_logo.svg" alt="UniDFlow logo" width="80px">
                                 <h1 class="publication-title">Best of Both Worlds: Multimodal Reasoning and Generation
                                     via
-                                    Unified Discrete Flow Matching</h1>
+                                    <br>
+                                    Unified Discrete Flow Matching
+                                </h1>
                             </div>
 
                             <div class="publication-authors">
@@ -147,7 +149,7 @@
 
                             <div class="is-size-5 publication-authors" style="justify-content: space-between;">
                                 <span><span class="author-block"><a href="https://plan-lab.github.io/"><sup
-                                                class="illini-orange">♦</sup>PLAN Lab</a></span> at
+                                                class="illini-orange">♦</sup>PLAN Lab,</a></span>
                                     <span class="author-block illini-orange">University of Illinois
                                         Urbana-Champaign</span></span>
                                 <span class="author-block"><sup style="color:green;">♣</sup>Independent
@@ -179,8 +181,10 @@
                                 </span>
                                 <span class="link-block">
                                     <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-solid fa-vr-cardboard"></i></span>
-                                        <span>Demo (coming soon)</span>
+                                        <span class="icon">
+                                            🤗
+                                        </span>
+                                        <span>Model (coming soon)</span>
                                     </a>
                                 </span>
                             </div>
@@ -212,7 +216,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>We propose UniDFlow, a unified discrete flow-matching framework for multimodal understanding,
-                            generation, and editing. It decouples understanding and generation via task-specific
+                            generation, and editing. UniDFlow decouples understanding and generation via task-specific
                             low-rank
                             adapters, avoiding objective interference and representation entanglement, while a novel
                             reference-based multimodal preference alignment optimizes relative outcomes under identical
@@ -231,47 +235,41 @@
                     <h2 class="title is-3">Method</h2>
                     <div class="content has-text-justified">
                         <p>
-                            We implemented a rigorous three-stage training pipeline designed to bridge the gap between
-                            high-level reasoning and high-fidelity generation. By utilizing parameter-efficient
-                            adapters, we successfully repurposed a frozen vision-language backbone into a unified
-                            multimodal generator.
+                            UniDFlow is trained with a three-stage pipeline designed to bridge the gap between
+                            high-level reasoning and high-fidelity generation.
                         </p>
                         <img loading="lazy" decoding="async" src="./static/images/arch_stage_1_2.jpg"
                             class="interpolation-image unidflow-stage12-image" alt="UniDFlow Stage I and II.">
                         <h3 class="unidflow-stage-header illini-orange">Stage I: Text Alignment (Reasoning Foundation)
                         </h3>
                         <p>
-                            In our first stage, we focused exclusively on multimodal understanding to establish a strong
+                            The first stage focuses exclusively on multimodal understanding to establish a strong
                             reasoning foundation.
                         </p>
                         <ul class="unidflow-stage-list">
-                            <li><strong>Objective:</strong> We aligned our frozen vision-language backbone to follow
+                            <li><strong>Objective:</strong> We align a frozen vision-language backbone to follow
                                 visual instructions using a discrete flow-matching objective.</li>
-                            <li><strong>Mechanism:</strong> We introduced and trained specialized LoRA<sub>text</sub>
+                            <li><strong>Mechanism:</strong> We introduce and train specialized LoRA<sub>text</sub>
                                 adapters while keeping the base model parameters frozen.</li>
-                            <li><strong>Stabilization:</strong> To prevent "semantic drift" and ensure our model
-                                retained its original linguistic intelligence, we regularized the training with a KL
-                                divergence loss. This anchored our new diffusion-based reasoning to the model's
-                                original knowledge.</li>
-                            <li><strong>Data:</strong> We utilized the MMInstruct dataset, training on approximately 1.0
-                                million diverse image-prompt-answer examples.</li>
+                            <li><strong>Stabilization:</strong> To prevent semantic drift and ensure our model
+                                retained its original linguistic intelligence, we regularize the training with a KL
+                                divergence loss.</li>
                         </ul>
 
                         <h3 class="unidflow-stage-header illini-orange">Stage II: Vision Alignment (Generative
                             Capability)</h3>
                         <p>
-                            Once the reasoning foundation was set, we moved to Stage II to endow our model with the
+                            Stage II endows the model with the
                             ability to synthesize images.
                         </p>
                         <ul class="unidflow-stage-list">
-                            <li><strong>Objective:</strong> We adapted the model for conditional generation within a
-                                discrete visual token space.</li>
-                            <li><strong>Isolation:</strong> To avoid "objective interference," we kept our Stage I
-                                reasoning adapters frozen and introduced a separate set of LoRA<sub>image</sub>
-                                adapters.</li>
-                            <li><strong>Efficient synthesis:</strong> By operating in a discrete latent space, we
-                                enabled high-fidelity image synthesis that seamlessly integrates with the backbone's
+                            <li><strong>Objective:</strong> We adapt the model for conditional generation within a
+                                discrete visual token space. By operating in a discrete latent space, we
+                                enable high-fidelity image synthesis that seamlessly integrates with the backbone's
                                 token-based architecture.</li>
+                            <li><strong>Isolation:</strong> To avoid objective interference, we keep Stage I
+                                reasoning adapters frozen and introduce a separate set of LoRA<sub>image</sub>
+                                adapters.</li>
                         </ul>
                         <div class="unidflow-stage12-clear"></div>
                         <img loading="lazy" decoding="async" src="./static/images/arch_stage_3.jpg"
@@ -279,21 +277,21 @@
                         <h3 class="unidflow-stage-header illini-orange">Stage III: Multimodal Preference Alignment
                             (Refined Editing)</h3>
                         <p>
-                            The final stage is where we unified these capabilities to master instruction-based image
+                            Stage III improves reasoning-based capabilities to enable instruction-based image
                             editing and complex reasoning tasks.
                         </p>
                         <ul class="unidflow-stage-list">
-                            <li><strong>Dynamic routing (MORA):</strong> We recognized that understanding and generation
-                                require different specializations; therefore, we implemented a Mixture-of-LoRA (MORA)
-                                router. This lightweight router dynamically composes our task-specific adapters at
+                            <li><strong>Dynamic routing (MoRA):</strong> Since understanding and generation
+                                require different specializations, we propose a lightweight Mixture-of-LoRA (MoRA)
+                                router, which dynamically composes our task-specific adapters at
                                 every step of the diffusion process.</li>
-                            <li><strong>mRef-DPO alignment:</strong> We introduced a novel Reference-Based Multimodal
-                                Preference Alignment. By training on 3.5 million curated preference pairs, we taught
+                            <li><strong>mRef-DPO alignment:</strong> We introduce a novel multimodal Reference-based
+                                Direct Preference Optimization (mRef-DPO) method to teach
                                 the model to distinguish between faithful edits and subtle errors by comparing outcomes
                                 against a frozen reference policy and a visual reference image.</li>
-                            <li><strong>Structured reasoning:</strong> We incorporated reflection traces into this
+                            <li><strong>Structured reasoning:</strong> We incorporate reflection traces into this
                                 stage, requiring the model to "think through" the editing process before generating
-                                pixels, which significantly improved its ability to handle geometric, physical, and
+                                pixels, which significantly improves its ability to handle geometric, physical, and
                                 temporal transformations.</li>
                         </ul>
                     </div>
@@ -309,33 +307,20 @@
                         <img loading="lazy" decoding="async" src="./static/images/quant_understanding.png"
                             class="interpolation-image" alt="Understanding quantitative results.">
 
-                        Table 1 reports UniDFlow’s performance on a broad suite of multimodal understanding benchmarks
-                        (MME-VLM), covering both perception- and reasoning-oriented evaluations, including MME (with
-                        perceptual and reasoning splits), MMBench, MMMU, MM-Vet, MathVista, and MMVP. For UniDFlow (4B),
-                        we observe strong results across all benchmarks (e.g., MME-P 1803, MME-S 2555, MMBench 91.2,
-                        MMMU 74.3, MM-Vet 82.7, MathVista 85.9, and MMVP 80.2), demonstrating competitive performance on
-                        both general multimodal question answering and more reasoning-intensive visual tasks. We further
-                        show that UniDFlow consistently outperforms comparable unified baselines—for example, achieving
-                        gains over BAGEL of +6.9% on MME-P and +7.0% on MME-S—indicating improved perceptual and
-                        reasoning consistency. In comparison with other unified diffusion or multimodal systems, these
-                        results highlight that UniDFlow maintains strong performance on standard multimodal
-                        understanding benchmarks rather than trading understanding capability for generative strength.
+                        Table 1 reports UniDFlow’s performance on a broad suite of multimodal understanding benchmarks,
+                        covering both perception- and reasoning-oriented evaluations. For UniDFlow (4B),
+                        we observe strong results across all benchmarks, demonstrating competitive performance on
+                        both general multimodal QA and more reasoning-intensive visual tasks. We further
+                        show that UniDFlow consistently outperforms comparable unified baselines. For example, UniDFlow
+                        achieves
+                        gains over BAGEL of +6.9% on MME-P and +7.0% on MME-S, indicating improved perceptual and
+                        reasoning consistency.
 
                         <img loading="lazy" decoding="async" src="./static/images/quant_generation.png"
                             class="interpolation-image" alt="Generation quantitative results.">
 
-                        Table 2 evaluates our model on text-to-image generation benchmarks that emphasize prompt
-                        grounding and compositional correctness, primarily GenEval (object counting, attribute binding,
-                        and spatial reasoning) and DPGBench (global prompt understanding, attribute binding, and
-                        relational reasoning). UniDFlow (4B) achieves a GenEval score of 0.95 and a DPGBench score of
-                        91.19, outperforming same-scale unified competitors such as EMMA (4B) (0.93 / 85.63) as well as
-                        other baselines reported in the table. We interpret these results as evidence of stronger
-                        compositional binding and finer-grained alignment between prompts and generated content. In
-                        particular, we attribute the higher GenEval performance to improved attribute–object
-                        associations under compositional constraints, and the DPGBench gains to stronger global
-                        understanding along with better attribute and relational grounding during generation. We also
-                        note that UniDFlow remains competitive even relative to larger, generation-focused systems
-                        discussed alongside these benchmarks.
+                        Table 2 shows evaluation on text-to-image generation benchmarks, where UniDFlow (4B) outperforms
+                        same-scale unified competitors and even larger generative models.
                     </div>
                 </div>
             </div>
@@ -344,7 +329,7 @@
         <section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results</h2>
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Image Editing</span></h2>
                     <div class="content unidflow-qualitative">
                         <img loading="lazy" decoding="async" src="./static/images/qual_editing.jpg"
                             class="interpolation-image" alt="Editing qualitative results.">
@@ -354,28 +339,53 @@
                             Qualitative comparison of compositional text-to-image generation and editing. Prompts
                             require precise grounding of attributes and spatial relations (red text). UniDFlow
                             consistently adheres to these constraints while maintaining realistic structure and visual
-                            fidelity, outperforming prior unified baselines in fine-grained prompt alignment, even in
-                            more complex scenarios.
+                            fidelity, outperforming prior unified baselines.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Text-to-Image
+                            Generation</span></h2>
+                    <div class="content unidflow-qualitative">
                         <img loading="lazy" decoding="async" src="./static/images/qual_generation_examples.jpg"
                             class="interpolation-image" alt="Generation qualitative results.">
                         <p class="unidflow-qual-caption">Image generation with UniDFlow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Reasoning-Based Image
+                            Editing</span></h2>
+                    <div class="content unidflow-qualitative">
                         <img loading="lazy" decoding="async" src="./static/images/qual_understanding.jpg"
                             class="interpolation-image" alt="Understanding qualitative results.">
                         <p class="unidflow-qual-caption">
                             Reasoning-driven image editing, highlighting temporal, geometric, and physical
                             transformations handled by UniDFlow.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Image Understanding</span>
+                    </h2>
+                    <div class="content unidflow-qualitative">
                         <img loading="lazy" decoding="async" src="./static/images/qual_understanding2.jpg"
                             class="interpolation-image" alt="Understanding qualitative results 2.">
                         <p class="unidflow-qual-caption">Image-to-text generated results with UniDFlow.</p>
-
-                        <img loading="lazy" decoding="async" src="./static/images/qual_understanding3.jpg"
-                            class="interpolation-image" alt="Understanding qualitative results 3.">
-                        <p class="unidflow-qual-caption">Additional complex reasoning tasks with UniDFlow.</p>
                     </div>
                 </div>
             </div>
