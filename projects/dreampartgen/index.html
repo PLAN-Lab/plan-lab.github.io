@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const SPEED = 2;
+    const DELAY = 1200;
+    const videos = Array.from(document.querySelectorAll('.delay-loop'));
+
+    if (!videos.length) return;
+
+    let restarting = false;
+
+    function playAllFromStart() {
+      restarting = false;
+
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+        video.playbackRate = SPEED;
+      });
+
+      videos.forEach(video => {
+        video.play().catch(() => {});
+      });
+    }
+
+    videos.forEach(video => {
+      video.playbackRate = SPEED;
+
+      video.addEventListener('ended', () => {
+        if (restarting) return;
+        restarting = true;
+
+        setTimeout(() => {
+          playAllFromStart();
+        }, DELAY);
+      });
+    });
+
+    playAllFromStart();
+  });
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NK0GM1GM0Q');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence" />
+    <title>Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+      .gif-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gif-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .model-name {
+        font-weight: 800;
+        background: linear-gradient(
+          90deg,
+          rgb(27, 161, 226) 0%,
+          rgb(136,74,178) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .dataset-name {
+        font-weight: 800;
+        background: linear-gradient(
+          90deg,
+          rgb(136,74,178) 0%,
+          rgb(27, 161, 226) 100%
+          
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .best-highlight {
+        background-color: #C497FF;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #000;                /* bold black text */
+        font-weight: 600;
+      }
+
+      .second-highlight {
+        background-color: #E6DEFF;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #000; 
+        font-weight: 600;
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px; /* pair 和 pair 之间留空 */
+        margin-top: 20px;
+      }
+
+      .video-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0; /* 两个对应视频之间没有空隙 */
+      }
+
+      .video-pair video {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+        background: #000;
+        margin: 0;
+      }
+          </style>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered"><div class="column has-text-centered">
+        <h1 class="title is-1 publication-title">
+          <span class="model-name">DreamPartGen</span>:
+          Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising
+        </h1>
+
+              <div class="is-size-5 publication-authors">
+              <div>
+                <span class="author-block">
+                    <a href="/team/phd-tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/masters-xinzhuo-li" class="illini-blue" >Xinzhuo Li</a>,
+                </span>
+                <span class="author-block">
+                    <a href="." class="illini-blue" >Muntasir Wahed</a>,
+                </span>
+                <span class="author-block">
+                    <a href="." class="illini-blue" >Jerry Xiong</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/phd-yifan-shen" class="illini-blue" >Yifan Shen</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/phd-ying-shen" class="illini-blue" >Ying Shen</a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/pi-ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">PLAN Lab</span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="xxxxxxx" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="xxxxxx" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span> -->
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-vr-cardboard"></i>
+                    </span>
+                    <span>Demo (coming soon)</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified">
+          <span style="font-weight: bold;">TL;DR:</span>
+
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          We introduce <span class="model-name">DreamPartGen</span>, a language-grounded collaborative diffusion framework that unifies geometric, visual, and relational reasoning for coherent and interpretable part-level text-to-3D synthesis.
+
+          <i class="fa fa-star" style="color:#ff8400;"></i> 
+          We introduce <strong style="color:rgb(27, 161, 226);">DPLs</strong> and <strong style="color:rgb(136,74,178);">RSLs</strong> as complementary representations that jointly encode part geometry, appearance, and inter-part relations and are refined together via synchronized co-denoising.
+
+          
+          
+
+          <i class="fa fa-star" style="color:#ff8400;"></i> 
+          We curate  <span class="dataset-name">PartRel3D</span>, a large-scale relational dataset with 300K canonicalized
+        functional and spatial triplets for explicit language-based supervision of inter-part
+        relations across 175 object categories.
+
+          <i class="fa fa-star" style="color:#ff8400;"></i>
+          We achieve state-of-the-art performance across benchmarks with significant gains 
+          in fidelity, language alignment, and controllable part-aware generation.
+
+        
+
+            <div class="video-grid">
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/astronaut.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/astronaut_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/sheep.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/sheep_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/space_jet.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/space_jet_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/speaker.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/speaker_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/unicorn.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/unicorn_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/cannon.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/cannon_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/hydrant.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/hydrant_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/rifle.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/rifle_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/prize_cup.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/prize_cup_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/panda_girl.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/panda_girl_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/butterfly.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/butterfly_r.mp4"></video>
+              </div>
+
+              <div class="video-pair">
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/car.mp4"></video>
+                <video class="delay-loop" autoplay muted  playsinline src="./static/dreampart_videos/car_r.mp4"></video>
+              </div>
+            </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+               Recent advances in large multimodal models suggest that explicit reasoning mechanisms play a critical
+                role in improving model reliability, interpretability, and cross-modal alignment. While such reasoning-centric
+                approaches have been proven effective in language and vision tasks, their extension to 3D remains underdeveloped.
+                CoRe3D introduces a unified 3D understanding and generation reasoning framework that jointly operates over
+                semantic and spatial abstractions, enabling high-level intent inferred from language to directly guide low-level 3D
+                content formation. Central to this design is a spatially grounded reasoning representation that decomposes 3D
+                latent space into localized regions, allowing the model to reason over geometry in a compositional and procedural
+                manner. By tightly coupling semantic chain-of-thought inference with structured spatial reasoning, CoRe3D
+                produces 3D outputs that exhibit strong local consistency and faithful alignment with linguistic descriptions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3"><span class="model-name">DreamPartGen</span> Architecture</h2>
+          <div class="content has-text-justified">
+
+          </p>
+          <img loading="lazy" decoding="async" src="./static/images/sempartgen_main_v4_1.png" class="interpolation-image" style="width: 85%;" alt="Part²GS physical constraints visualization.">
+          <p>
+          <p style="margin: 0 0 0.75rem 0; text-align: justify;">
+             Our key novelty is to introduce persistent, language-derived relational semantic latents that remain active
+               throughout the denoising process, rather than using text only as a one-shot condition, and to synchronize them with part-level geometric latents. To this end,
+                we formulate part-based 3D generation as a semantically grounded collaborative diffusion process between two complementary latent representations:
+                  <strong style="color:rgb(27, 161, 226);"> Duplex Part Latents (DPLs)</strong>, which encode geometry and appearance of individual parts in
+                   a modular and disentangled manner, and <strong style="color:rgb(136,74,178);"> Relational Semantic Latents (RSLs)</strong>, a compact set
+                    of text-derived latent tokens that provide both local refinements and global planning signals. During denoising, DPLs and RSLs are synchronized through intra-part
+                     and inter-part attention, enabling consistent part-level geometry-appearance alignment and language-guided part assembly.
+          </p>
+        
+
+
+           <h2 class="title is-3 has-text-centered"><span class="dataset-name">PartRel3D</span> Dataset</h2>
+          <div class="content has-text-justified">
+
+          </p>
+          <img loading="lazy" decoding="async" src="./static/images/sempartgen_dataset_1.png" class="interpolation-image" style="width: 85%;" alt="Part²GS physical constraints visualization.">
+          <p>
+
+
+
+          <p style="margin: 0 0 0.75rem 0; text-align: justify;">
+            we introduce  <span class="dataset-name">PartRel3D</span>, a large-scale, relationally 
+            annotated part dataset that links part geometry, appearance, and language through explicit 
+            functional and spatial relationships. Each object is augmented with canonicalized triplets
+             that encode both functional dependencies (e.g., support, attach, hinge) and spatial
+              arrangements (e.g., above, touching, aligned-with), providing large-scale supervision
+               of assembly-level semantics in 3D.
+          </p>
+        
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Rendered GLBs:</h2>
+          <div class="content has-text-justified">
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+              <!-- === Viewer 1 Block === -->
+      
+                <model-viewer id="viewer1" src="./static/dreampart_glbs/astronaut_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+        
+                <model-viewer id="viewer2" src="./static/dreampart_glbs/sheep_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+             
+                <model-viewer id="viewer3" src="./static/dreampart_glbs/space_jet_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+          
+                <model-viewer id="viewer4" src="./static/dreampart_glbs/speaker_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer5" src="./static/dreampart_glbs/unicorn_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer6" src="./static/dreampart_glbs/cannon_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer7" src="./static/dreampart_glbs/hydrant_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer8" src="./static/dreampart_glbs/rifle_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer9" src="./static/dreampart_glbs/prize_cup_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer10" src="./static/dreampart_glbs/panda_girl_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer11" src="./static/dreampart_glbs/butterfly_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+                <model-viewer id="viewer12" src="./static/dreampart_glbs/car_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                </model-viewer>
+              
+            </div>
+              <br>
+              <br>
+
+            
+          <div style="text-align: center; padding: 0 0 20px 0;">
+            <h2 class="title is-3">Results</h2>
+
+            <img loading="lazy" decoding="async" src="./static/images/quant1_object_gen.png" alt="quant results." width="80%" height="20em">
+            <p class="has-text-centered" style="margin: 0 auto 24px auto; max-width: 900px;">
+              <strong>Quantitative evaluation on 3D object generation.</strong>
+              <span class="best-highlight">Best</span> and
+              <span class="second-highlight">second-best</span> are highlighted.
+            </p>
+
+            <img loading="lazy" decoding="async" src="./static/images/quant2_text_shape_alignment.png" alt="quant results." width="80%" height="20em">
+            <p class="has-text-centered" style="margin: 0 auto 24px auto; max-width: 900px;">
+              <strong>Text-shape alignment comparison.</strong>
+              <span class="best-highlight">Best</span> and
+              <span class="second-highlight">second-best</span> are highlighted.
+            </p>
+
+            <img loading="lazy" decoding="async" src="./static/images/qual1.png" alt="quant results." width="80%" height="20em">
+            <p class="has-text-centered" style="margin: 0 auto; max-width: 900px;">
+              <strong>Qualitative comparison on part-level 3D generation.</strong>
+              Across diverse object categories, <span class="model-name">DreamPartGen</span> yields the most faithful decompositions, preserving clear part boundaries, correct topology, and consistent spatial alignment.
+            </p>
+          </div>
+
+          </div>
+    </div>
+    </div>
+  
+
+
+    </div>
+    
+  </section>
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{xxxxxxxxx
+        }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    </main>
+  </body>
+</html>
