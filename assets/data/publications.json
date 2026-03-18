@@ -19,7 +19,7 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-01-11",
+      "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/palm.png",
@@ -32,7 +32,6 @@
         "data": ""
       },
       "cardCover": "assets/images/cards/palmteaser.png",
-      "venueAbbr": "arXiv"
     },
     {
       "id": "2026-Susladkar-pyratok-language-aligned",
@@ -48,7 +47,7 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-01-22",
+      "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/pyratok.gif",
@@ -59,8 +58,6 @@
         "code": "",
         "video": "",
         "data": ""
-  },
-  "venueAbbr": "arXiv"
   },
   {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
@@ -427,8 +424,8 @@
         "Tianjiao Yu",
         "Ismini Lourentzou"
       ],
-      "year": 2025,
-      "date": "2025-12-11",
+      "year": 2026,
+      "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/hallusegbench.png",
@@ -440,7 +437,8 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/hallu_teaser.png"
+      "cardCover": "assets/images/cards/hallu_teaser.png",
+      "venueAbbr": "CVPR 2026 (Findings)"
     },
     {
       "id": "2025-Liu-purpcode-reasoning-for-safer-c",
