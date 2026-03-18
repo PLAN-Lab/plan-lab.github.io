@@ -1001,7 +1001,8 @@
   /* ============ THREE.JS BACKGROUND ============ */
   (function initBackground() {
     const container = document.getElementById('canvas-container');
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'high-performance'});
+	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
@@ -1493,7 +1494,7 @@
   function createDissolveEffect(cube) {
     const centerX = cube.x + cube.size / 2;
     const centerY = cube.y + cube.size / 2;
-    const numParticles = 16;
+    const numParticles = 8;
     const color = cube.el.dataset.color || '#ffffff';
 
     for (let i = 0; i < numParticles; i++) {
