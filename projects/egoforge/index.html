@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-48J3PYKGQ6');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="EgoForge: Goal-Directed Egocentric World Simulator" />
+    <title>EgoForge: Goal-Directed Egocentric World Simulator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <style>
+        .page-project .interpolation-image {
+            width: 90%;
+        }
+
+        .page-project .egoforge-qual-caption {
+            text-align: center;
+            margin: 0.75rem 0 0.25rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .page-project .content.egoforge-qualitative {
+            text-align: center;
+        }
+
+        .page-project .content.egoforge-qualitative img.interpolation-image {
+            margin-top: 12px;
+        }
+
+        .page-project .egoforge-feature-list {
+            padding-inline-start: 1.25rem;
+            margin: 0.5rem 0 1rem;
+            text-align: left;
+        }
+
+        .page-project .egoforge-feature-list li {
+            margin: 0.4rem 0;
+        }
+
+        .page-project .egoforge-section-header {
+            text-align: center;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .page-project table.results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1.25rem 0;
+        }
+
+        .page-project table.results-table th {
+            background: rgba(19, 41, 75, 0.08);
+            padding: 0.5rem 0.6rem;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+            white-space: nowrap;
+        }
+
+        .page-project table.results-table td {
+            padding: 0.45rem 0.6rem;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .page-project table.results-table tr.highlight-row td {
+            font-weight: 700;
+            background: rgba(19, 41, 75, 0.05);
+        }
+
+        .page-project .equal-contribution {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        .page-project .fig-caption {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #555;
+            font-style: italic;
+            margin-top: 0.6rem;
+            margin-bottom: 0.2rem;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 900px) {
+            .page-project table.results-table {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+        <a href="../../index.html#hero" class="nav-logo">
+            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+        </a>
+        <div class="nav-menu">
+            <a href="../../publications.html" class="nav-item" aria-label="Publications">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Publications</span>
+            </a>
+            <a href="../../index.html#team" class="nav-item" aria-label="Team">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+                <i class="fa-solid fa-cube"></i>
+                <span>PLAN Cubes</span>
+            </a>
+            <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Partner with Us</span>
+            </a>
+            <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Join Us</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ============ HERO / TITLE ============ -->
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="publication-title">EgoForge: Goal-Directed Egocentric World Simulator</h1>
+
+                            <div class="publication-authors">
+                                <span class="author-block">Yifan Shen<sup class="illini-orange">1,⋆</sup>,</span>
+                                <span class="author-block">Jiateng Liu<sup class="illini-orange">1,⋆</sup>,</span>
+                                <span class="author-block">Xinzhuo Li<sup class="illini-orange">1,⋆</sup>,</span>
+                                <span class="author-block">Yuanzhe Liu<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Bingxuan Li<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Houze Yang<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Wenqi Jia<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Yijiang Li<sup style="color:#888;">2</sup>,</span>
+                                <span class="author-block">Tianjiao Yu<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">James Matthew Rehg<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Xu Cao<sup class="illini-orange">1,†</sup>,</span>
+                                <span class="author-block">Ismini Lourentzou<sup class="illini-orange">1,†</sup></span>
+                            </div>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a href="https://plan-lab.github.io/"><sup class="illini-orange">1</sup></a>
+                                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                                </span>
+                                &nbsp;&nbsp;
+                                <span class="author-block"><sup style="color:#888;">2</sup>University of California San Diego</span>
+                            </div>
+
+                            <div class="equal-contribution">
+                                ⋆ Equal Contribution &nbsp;&nbsp; † Equal Corresponding Authors
+                            </div>
+
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-solid fa-link"></i></span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
+                                        <span>Code (coming soon)</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FIGURE 1 — TEASER (智能眼镜实验 rollout) ============ -->
+        <section class="hero teaser">
+            <div class="container is-max-desktop">
+                <div class="hero-body">
+                    <img src="./static/images/teaser.jpg" class="interpolation-image"
+                        alt="Figure 1: Egocentric video rollouts produced by EgoForge in real-world smart-glasses experiments." />
+                    <p class="fig-caption">
+                        <strong>Figure 1:</strong> Egocentric video rollouts produced by EgoForge in real-world
+                        smart-glasses experiments. Given a single smart-glasses egocentric image, a high-level goal
+                        instruction, and an auxiliary exocentric view, EgoForge generates egocentric rollouts that
+                        follow user intent and preserve scene structure, without requiring dense supervision such as
+                        camera trajectories, pose, video, or synchronized multi-view capture streams.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABSTRACT ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Generative world models have shown promise for simulating dynamic environments, yet
+                            egocentric video remains challenging due to rapid viewpoint changes, frequent hand–object
+                            interactions, and goal-directed procedures whose evolution depends on latent human intent.
+                            Existing approaches either focus on hand-centric instructional synthesis with limited scene
+                            evolution, perform static view translation without modeling action dynamics, or rely on
+                            dense supervision such as camera trajectories, long video prefixes, or synchronized
+                            multi-camera capture.
+                        </p>
+                        <p>
+                            In this work, we introduce <strong>EgoForge</strong>, an egocentric goal-directed world
+                            simulator that generates coherent, first-person video rollouts from minimal static inputs:
+                            a single egocentric image, a high-level instruction, and an optional auxiliary exocentric
+                            view. To improve intent alignment and temporal consistency, we propose
+                            <strong>VideoDiffusionNFT</strong>, a trajectory-level reward-guided refinement that
+                            optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity
+                            during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains
+                            in semantic alignment, geometric stability, and motion fidelity over strong baselines,
+                            and robust performance in real-world smart-glasses experiments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ METHOD ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Method</h2>
+                    <div class="content has-text-justified">
+
+                        <!-- Figure 2: 模型整体架构图 -->
+                        <img loading="lazy" decoding="async" src="./static/images/method.jpg"
+                            class="interpolation-image"
+                            alt="Figure 2: EgoForge Overview." />
+                        <p class="fig-caption">
+                            <strong>Figure 2:</strong> <strong>EgoForge Overview.</strong> Given a single egocentric
+                            observation, a high-level (instruction) intent, and an auxiliary exo-view reference,
+                            EgoForge fuses encoded visual features with noisy video latents at each DiT block to guide
+                            generation. Geometry alignment weakly supervises intermediate features using angular and
+                            scale consistency to encourage spatially stable rollouts. The resulting rollout videos are
+                            further refined via a novel VideoDiffusionNFT alignment policy that optimizes goal
+                            completion, scene consistency, temporal causality, and perceptual fidelity.
+                        </p>
+
+                        <h3 class="egoforge-section-header illini-orange">Diffusion-Based Egocentric Generator</h3>
+                        <p>
+                            EgoForge models egocentric video generation in the latent space of a pretrained video
+                            autoencoder, conditioned on context
+                            <strong>𝒞 = {ego&nbsp;image, instruction&nbsp;y, exo&nbsp;reference}</strong>
+                            through adaptive normalization and cross-attention. Unlike prior work, EgoForge does
+                            <em>not</em> require camera trajectories, pose signals, or synchronized multi-view streams
+                            at inference time.
+                        </p>
+
+                        <h3 class="egoforge-section-header illini-orange">Geometry Weak Supervision</h3>
+                        <p>
+                            To inject 3D reasoning into the diffusion backbone, EgoForge aligns intermediate DiT
+                            representations with geometry features from a pretrained VGGT encoder via two losses:
+                        </p>
+                        <ul class="egoforge-feature-list">
+                            <li><strong>Angular Alignment (ℒ<sub>ang</sub>):</strong> Cosine similarity loss that
+                                encourages diffusion features to match the <em>direction</em> of VGGT geometry
+                                features at each spatial–temporal token.</li>
+                            <li><strong>Scale Alignment (ℒ<sub>sca</sub>):</strong> MSE loss between projected
+                                diffusion features and VGGT features to prevent scale collapse.</li>
+                        </ul>
+
+                        <h3 class="egoforge-section-header illini-orange">VideoDiffusionNFT Alignment</h3>
+
+                        
+
+                        <p>
+                            VideoDiffusionNFT extends DiffusionNFT to the video domain and performs
+                            negative-aware finetuning with four fine-grained reward functions evaluated on
+                            entire video trajectories:
+                        </p>
+                        <ul class="egoforge-feature-list">
+                            <li><strong>Goal Completion (ℛ<sub>goal</sub>):</strong> Evaluates whether the trajectory
+                                successfully achieves the task outcome, measured by similarity of the final state to
+                                the target reference.</li>
+                            <li><strong>Scene Consistency (ℛ<sub>env</sub>):</strong> Measures consistency with the
+                                initial scene, penalizing drift, misplaced objects, or transitions into unrelated
+                                environments.</li>
+                            <li><strong>Temporal Causality (ℛ<sub>temp</sub>):</strong> Assesses whether motion
+                                evolves in a physically plausible, coherent, and causal manner without temporal
+                                artifacts.</li>
+                            <li><strong>Perceptual Fidelity (ℛ<sub>per</sub>):</strong> Captures overall visual
+                                clarity, stability, and absence of distortions or artifacts (PSNR + FVD +
+                                LPIPS).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ QUANTITATIVE RESULTS ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Quantitative Results</h2>
+                    <div class="content has-text-justified">
+
+                        <p>
+                            <strong>Table 3:</strong> Quantitative comparisons on the X-Ego benchmark.
+                            EgoForge outperforms all baselines across semantic, perceptual, and temporal metrics.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>DINO-Score↑</th>
+                                        <th>CLIP-Score↑</th>
+                                        <th>SSIM↑</th>
+                                        <th>LPIPS↓</th>
+                                        <th>FVD↓</th>
+                                        <th>Flow MSE↓</th>
+                                        <th>PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>EgoDreamer</td><td>42.35</td><td>25.40</td><td>0.58</td><td>0.35</td><td>580.45</td><td>8.15</td><td>15.20</td></tr>
+                                    <tr><td>Handi</td><td>31.12</td><td>18.25</td><td>0.42</td><td>0.52</td><td>912.30</td><td>14.50</td><td>12.85</td></tr>
+                                    <tr><td>Cosmos</td><td>49.42</td><td>29.77</td><td>0.70</td><td>0.26</td><td>448.12</td><td>6.40</td><td>18.73</td></tr>
+                                    <tr><td>HunyuanVideo</td><td>53.54</td><td>29.43</td><td>0.71</td><td>0.26</td><td>384.31</td><td>6.10</td><td>18.88</td></tr>
+                                    <tr><td>WAN2.2</td><td>53.99</td><td>35.69</td><td>0.72</td><td>0.23</td><td>322.17</td><td>5.78</td><td>20.44</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>EgoForge (Ours)</strong></td>
+                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td>
+                                        <td><strong>0.79</strong></td><td><strong>0.15</strong></td>
+                                        <td><strong>182.25</strong></td><td><strong>2.83</strong></td>
+                                        <td><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>
+                            <strong>Table 2:</strong> Quantitative comparisons with enhanced baseline variants
+                            (+EV: exo-view image; +TT: text-only domain adaptation;
+                            +CI: our conditioning inputs with Geometry Weak Supervision).
+                            EgoForge still achieves best results across all seven metrics.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>DINO-Score↑</th>
+                                        <th>CLIP-Score↑</th>
+                                        <th>SSIM↑</th>
+                                        <th>LPIPS↓</th>
+                                        <th>FVD↓</th>
+                                        <th>Flow MSE↓</th>
+                                        <th>PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Cosmos+EV</td><td>48.60</td><td>29.60</td><td>0.67</td><td>0.28</td><td>485.75</td><td>6.82</td><td>18.30</td></tr>
+                                    <tr><td>Cosmos+TT</td><td>50.80</td><td>30.40</td><td>0.71</td><td>0.25</td><td>433.90</td><td>6.31</td><td>18.88</td></tr>
+                                    <tr><td>HunyuanVideo+EV</td><td>52.80</td><td>29.20</td><td>0.70</td><td>0.27</td><td>405.87</td><td>6.30</td><td>18.61</td></tr>
+                                    <tr><td>HunyuanVideo+TT</td><td>54.10</td><td>29.86</td><td>0.72</td><td>0.24</td><td>365.80</td><td>5.95</td><td>19.10</td></tr>
+                                    <tr><td>WAN2.2+EV</td><td>52.91</td><td>35.11</td><td>0.71</td><td>0.27</td><td>352.41</td><td>6.25</td><td>20.05</td></tr>
+                                    <tr><td>WAN2.2+TT</td><td>54.80</td><td>36.20</td><td>0.73</td><td>0.25</td><td>310.57</td><td>5.60</td><td>20.64</td></tr>
+                                    <tr><td>WAN2.2+CI</td><td>58.92</td><td>38.05</td><td>0.76</td><td>0.18</td><td>218.72</td><td>3.92</td><td>22.87</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>EgoForge (Ours)</strong></td>
+                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td>
+                                        <td><strong>0.79</strong></td><td><strong>0.15</strong></td>
+                                        <td><strong>182.25</strong></td><td><strong>2.83</strong></td>
+                                        <td><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>
+                            <strong>Table 4:</strong> User study (1–5 scale, 20 annotators, 25 video groups).
+                            EgoForge achieves substantial gains in Alignment (4.75) and Fidelity (4.71).
+                            * best model variants from Table 2.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Quality↑</th>
+                                        <th>Fidelity↑</th>
+                                        <th>Smooth Motion↑</th>
+                                        <th>Smooth Env.↑</th>
+                                        <th>Alignment↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Cosmos*</td><td>3.29</td><td>2.54</td><td>3.07</td><td>2.47</td><td>2.19</td></tr>
+                                    <tr><td>Hunyuan*</td><td>3.46</td><td>2.86</td><td>3.72</td><td>3.16</td><td>3.08</td></tr>
+                                    <tr><td>WAN2.2*</td><td>3.22</td><td>3.48</td><td>3.82</td><td>4.07</td><td>3.15</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>EgoForge (Ours)</strong></td>
+                                        <td><strong>4.58</strong></td><td><strong>4.71</strong></td>
+                                        <td><strong>4.25</strong></td><td><strong>4.48</strong></td>
+                                        <td><strong>4.75</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>
+                            <strong>Table 5:</strong> Ablation on EgoForge modules (FT = Denoising Fine-Tuning,
+                            GWS = Geometry Weak Supervision). Each component consistently improves performance,
+                            with the full model achieving best results.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>FT</th><th>GWS</th><th>VideoDiffusionNFT</th>
+                                        <th>DINO↑</th><th>CLIP↑</th><th>SSIM↑</th>
+                                        <th>LPIPS↓</th><th>FVD↓</th><th>Flow MSE↓</th><th>PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>✓</td><td>✗</td><td>✗</td><td>56.81</td><td>37.10</td><td>0.74</td><td>0.21</td><td>260.89</td><td>4.82</td><td>21.92</td></tr>
+                                    <tr><td>✓</td><td>✓</td><td>✗</td><td>58.92</td><td>38.05</td><td>0.76</td><td>0.18</td><td>218.72</td><td>3.92</td><td>22.87</td></tr>
+                                    <tr class="highlight-row">
+                                        <td>✓</td><td>✓</td><td>✓</td>
+                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td><td><strong>0.79</strong></td>
+                                        <td><strong>0.15</strong></td><td><strong>182.25</strong></td><td><strong>2.83</strong></td><td><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FIGURE 3 — 定性对比 (咖啡倒水 & 篮球) ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Comparison with Baselines</span></h2>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/qual_expample.jpg"
+                            class="interpolation-image"
+                            alt="Figure 3: Qualitative Comparison between EgoForge and baselines." />
+                        <p class="egoforge-qual-caption">
+                            <strong>Figure 3:</strong> Qualitative comparison between EgoForge and baselines.
+                            EgoForge accurately reconstructs multi-step, causally ordered actions, preserving
+                            hand–object geometry, temporal consistency, and goal alignment. In the first example
+                            (coffee pouring), Cosmos erroneously generates a third hand, Hunyuan depicts a
+                            disconnected arm, and Wan2.2 fails to complete the task. In the second example
+                            (basketball), Cosmos generates multiple balls, while Hunyuan and Wan2.2 generate
+                            an incorrect person. EgoForge accurately completes both tasks.
+                        </p>
+
+                        <!-- Figure 4 — 洗手 & 踢球 -->
+                        <img loading="lazy" decoding="async" src="./static/images/quali2.jpg"
+                            class="interpolation-image"
+                            alt="Figure 4: Qualitative Comparison between EgoForge and baselines (hand-washing and soccer)." />
+                        <p class="egoforge-qual-caption">
+                            <strong>Figure 4:</strong> Qualitative comparison: hand-washing task (top) and soccer
+                            task (bottom). In the hand-washing task, baselines struggle with object consistency
+                            (Cosmos hallucinates the soap source; Wan2.2 bypasses the on-table soap), while
+                            EgoForge successfully executes the action using existing objects. In the soccer task,
+                            baselines exhibit ghosting (Cosmos) or fail to follow precise instructions (Hunyuan,
+                            Wan2.2). EgoForge accurately traps with the left leg and shoots with the right.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- ============ FIGURE 6 — With / Without Exo-View ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">With vs. Without Exocentric Input</span></h2>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/vis.drawio.jpg"
+                            class="interpolation-image"
+                            alt="Figure 6: EgoForge with vs. without exocentric input." />
+                        <p class="egoforge-qual-caption">
+                            <strong>Figure 5:</strong> Qualitative comparison of EgoForge with vs. without
+                            exocentric input. Rows 1 &amp; 3 ("Without Exo-View") use text prompt alone; Rows 2
+                            &amp; 4 ("With Exo-View") additionally provide an auxiliary exocentric image. The
+                            kitchen scene (Row 2) correctly incorporates the potted plants on the windowsill from
+                            the reference image; the basketball court scene (Row 4) adopts the red and green
+                            rubberized surface. EgoForge can be successfully steered toward simulations that
+                            inherit key semantic and stylistic properties from the reference exo-view.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FIGURE 5 & 7 — 密集帧序列 ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Long-Duration Sequences</span></h2>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/long_seq.jpg"
+                            class="interpolation-image"
+                            alt="Figure 5: Qualitative egocentric video rollouts." />
+                        <p class="egoforge-qual-caption">
+                            <!-- <strong>Figure 5:</strong> Qualitative egocentric video rollouts. EgoForge generates
+                            temporally coherent first-person video trajectories that follow the intended activity
+                            (hand-washing, soccer juggling, opening a refrigerator, indoor bouldering) while
+                            preserving scene structure and realistic hand–object interactions across diverse
+                            environments. Dense frame sequences are provided to visualize video results. -->
+                        </p>
+                        <img loading="lazy" decoding="async" src="./static/images/long_seq1.jpg"
+                            class="interpolation-image"
+                            alt="Figure 7: Dense visualization of long-duration sequences." />
+                        <p class="egoforge-qual-caption">
+                            <strong>Figure 6:</strong> Dense visualization of long-duration sequences. We present
+                            26 frames from each of 8 videos generated by EgoForge — cracking an egg, folding a
+                            blanket, tearing adhesive tape, rock climbing, placing a package, shooting a basketball,
+                            chopping onions, and installing a drawer handle — to highlight seamless transitions
+                            and stable dynamics in complex egocentric tasks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============ REAL-WORLD SMART GLASSES ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Real-World Smart-Glasses Experiments</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            We deploy EgoForge in a real-world environment using <strong>DigiLens ARGO
+                            smartglasses</strong> — the first deployment of an egocentric world model on OOD
+                            wearable data. For each task, a single egocentric frame is captured directly from
+                            the smartglasses and paired with an auxiliary exo-view reference image and a
+                            text-action goal. The resulting simulated videos show that EgoForge reliably transfers
+                            exocentric cues and follows high-level semantic intent despite significant real-world
+                            variability. Selected tasks:
+                        </p>
+                        <ul class="egoforge-feature-list">
+                            <li>"Pour into the cup… put the can back"</li>
+                            <li>"Jump to the pool… arms forward"</li>
+                            <li>"Take a marker… draw a circle"</li>
+                            <li>"Take a bottle of water… on the box"</li>
+                        </ul>
+                        <p>
+                            The ARGO smartglasses feature a 48MP camera with OIS/EIS, a five-microphone
+                            beamforming array, and run on the Qualcomm Snapdragon XR2 Platform. Results in
+                            Figure 1 demonstrate coherent, controllable rollouts under challenging real-world
+                            conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BIBTEX ============ -->
+        <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+                <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+                <pre><code>@article{shen2025egoforge,
+  title={EgoForge: Goal-Directed Egocentric World Simulator},
+  author={Shen, Yifan and Liu, Jiateng and Li, Xinzhuo and Liu, Yuanzhe and Li, Bingxuan and Yang, Houze and Jia, Wenqi and Li, Yijiang and Yu, Tianjiao and Rehg, James Matthew and Cao, Xu and Lourentzou, Ismini},
+  journal={arXiv preprint},
+  year={2025}
+}</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
