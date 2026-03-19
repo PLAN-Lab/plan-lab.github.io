@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding" />
+    <title>[CVPR'26] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+<!-- {% include navbar.html %} -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"><span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>: 
+              Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="/team/phd-makanjuola-ogunleye">Makanjuola Ogunleye<sup>*</sup><sup class="vt-maroon">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/phd-eman-abdelrahman">Eman Abdelrahman<sup>*</sup><sup class="vt-maroon">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/pi-ismini-lourentzou">Ismini Lourentzou<sup class="illini-orange">2</sup></a>
+                </span>
+              </div>
+              
+              <div class="equal-note has-text-centered">
+                <sup>*</sup> Equal contribution.
+              </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://plan-lab.github.io/">PLAN Lab</a>
+                <span class="author-affiliations">
+                  <sup class="vt-maroon">1</sup><span class="vt-maroon">Virginia Tech</span>,
+                  <sup class="illini-orange">2</sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                </span>
+              </span>
+            </div>
+
+            <div class="has-text-centered" style="margin: 5px 0;">
+              <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://www.overleaf.com/project/6900e204e64b94bbcc5bbc5c" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://www.overleaf.com/project/6900e204e64b94bbcc5bbc5c" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="." class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="content has-text-justified" style="margin-bottom: 25px;">
+          <span style="font-weight: bold;">TL;DR:</span> We present We present
+          <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>, a training-free 
+          inference-time framework that mitigates hallucinations in 3D embodied vision-language models through 
+          visual contrastive decoding. Our method constructs structured 3D scene graphs and introduces semantic 
+          and geometric distortions to generate contrasting contexts, enabling the model to suppress predictions 
+          that are not grounded in the true environment. Evaluated on challenging benchmarks like 3D-POPE and HEAL, 
+          <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> consistently reduces hallucination rates while improving precision, 
+          accuracy, and overall reliability—without requiring any model retraining.
+        </div>
+        
+        <div style="margin: 30px 0;">
+          <img src="./static/images/overview-3.png" 
+               class="interpolation-image" 
+               alt="Interpolate start reference image." 
+               style="width: 80%; height: auto; display: block; margin: 0 auto;">
+        </div>
+        
+        <div class="content has-text-justified" style="margin-top: 15px;">
+          <span style="font-weight: bold;">Overview of our Method.</span>
+          Given 3D environment observations, <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> constructs a
+          structured 3D scene graph (<i>G</i>) that encodes object categories, centroids, and extents.
+          It then applies controlled semantic and geometric perturbations to produce a distorted version
+          of the environment (<i>Ĝ</i>). Given a textual query (<i>x</i>), the MLLM agent processes both
+          contexts in parallel. <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> then contrastively fuses the
+          resulting logits to identify and suppress hallucination-prone tokens. This training-free
+          procedure enforces 3D-grounded reasoning at inference time.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Large Language Models are increasingly integrated as the cognitive core of 3D embodied 
+              agents to enable complex environmental reasoning. However, these agents tend to inherit the critical 
+              flaw of hallucination, often failing to ground their responses to their 3D view. 
+              While Visual Contrastive Decoding (VCD) is a powerful training-free method for 
+              mitigating hallucinations in 2D image-based models, it has not been adapted to the complex 3D 
+              embodied environment.
+            </p>
+          
+            <p>
+              In this work, we bridge this gap by introducing <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>, 
+              the first VCD framework designed for 3D embodied agents. Our method operates at 
+              inference time by generating a <i>negative</i> 3D context—not by blurring images, but by applying 
+              semantic and geometric distortions directly to a structured 3D scene graph, such as 
+              swapping object categories or perturbing positional coordinates. Evaluations on standard 
+              benchmarks show that our approach consistently outperforms existing models. For example, on the random 
+              split of 3D-POPE, <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+              reduces the Yes-rate from 99.9% to 75.1% while improving precision from 50.0% to 62.2%. These results demonstrate that our training-free 
+              approach effectively curbs hallucination, yielding more reliable and grounded 3D agents.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    / Paper video.
+  -->
+
+  <!-- <div class="columns is-centered has-text-centered">
+    <div class="container">
+      <h2 class="title is-3">Poster</h2>
+      <iframe loading="lazy" src="about:blank" data-pdf-src="static/images/ecvlm-poster.pdf" width="100%" height="550"></iframe>
+      </div>
+    </div> -->
+  </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Contributions</h2>
+  
+          <div class="content has-text-justified">
+            <ul class="fa-ul">
+  
+              <li style="margin-bottom: 18px;">
+                <span class="fa-li">
+                  <i class="fa-solid fa-circle-check" style="color:#4cc9f0;"></i>
+                </span>
+                <b>
+                  <span style="color:#1f4ed8;">3D-</span><span style="color:#22d3ee;">VCD</span> as a New Inference Framework.
+                </b>
+                We introduce 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>, 
+                the first inference-time Visual Contrastive Decoding framework for 3D embodied agents, extending 
+                contrastive reasoning to structured 3D representations.
+              </li>
+  
+              <li style="margin-bottom: 18px;">
+                <span class="fa-li">
+                  <i class="fa-solid fa-circle-check" style="color:#4cc9f0;"></i>
+                </span>
+                <b>Semantic and Geometric Distortion Operators.</b>
+                We propose novel distortion operators that manipulate object semantics and spatial geometry 
+                to construct informative contradictory 3D contexts, enabling effective contrastive grounding.
+              </li>
+  
+              <li>
+                <span class="fa-li">
+                  <i class="fa-solid fa-circle-check" style="color:#4cc9f0;"></i>
+                </span>
+                <b>Strong Generalization Without Retraining.</b>
+                We demonstrate the generality of 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                across embodied hallucination benchmarks, achieving consistent reductions in hallucination 
+                and improved 3D grounding—without any model retraining.
+              </li>
+  
+            </ul>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Quantitative Results on 3D-POPE</h2>
+  
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+              
+              <img loading="lazy" decoding="async" 
+                   src="./static/images/3d-pope-result1.png" 
+                   class="interpolation-image" 
+                   alt="3D-POPE results" 
+                   width="85%">
+  
+              <p class="has-text-justified" style="margin-top: 15px;">
+                <span style="font-weight: bold;">
+                  Results on the 3D-POPE Benchmark.
+                </span>
+                Our 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                model achieves the highest precision, accuracy, and F1-score across all evaluation categories 
+                (Random, Popular, and Adversarial), outperforming prior 3D language models such as 
+                <span class="model-name">3D-LLM</span>, <span class="model-name">3D-VisTA</span>, and 
+                <span class="model-name">LEO</span>. 
+  
+                Notably, it significantly reduces Yes-rate (e.g., <b>99.81% → 75.15%</b> in the Random set) 
+                while consistently improving precision and accuracy. These results demonstrate that 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                effectively mitigates over-affirmation bias and hallucination, yielding more balanced and 
+                reliable predictions in 3D reasoning.
+              </p>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results on the HEAL Probing Set</h2>
+    
+          <div class="content has-text-justified">
+            <div style="text-align: center; padding: 0 0 20px 0;">
+    
+              <img loading="lazy" decoding="async" 
+                   src="./static/images/heal-result1.png" 
+                   class="interpolation-image" 
+                   alt="HEAL results" 
+                   width="85%">
+    
+              <div class="content has-text-justified" style="margin-top: 15px;">
+    
+                <p>
+                  <span style="font-weight: bold;">
+                    Robustness to Adversarial Scene–Task Mismatch (HEAL Benchmark).
+                  </span>
+                  We evaluate 
+                  <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                  on the HEAL benchmark, which introduces challenging probes designed to induce hallucinations 
+                  through scene–task inconsistencies. Our method operates at inference time by contrasting 
+                  adversarial prompts (e.g., Distractor Injection) with their corresponding clean contexts, 
+                  explicitly testing whether the model can recover grounded reasoning under misleading cues.
+                </p>
+    
+                <!-- Callout Box -->
+                <div style="
+                background:#e6f6fb;
+                color:#1f2937;
+                padding:12px 14px;
+                border-radius:8px;
+                margin:12px 0;
+                border-left:4px solid #22d3ee;
+                text-align:center;
+              ">
+                <b>Key Result:</b><br>
+                Under the <i>Distractor Injection</i> setting, 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+                <span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                achieves a <b>3.3× reduction</b> in state hallucination 
+                (<i>CHAIR–C<sub>S</sub></i>).
+              </div>
+    
+                <p>
+                  Across all probe types, 
+                  <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                  consistently reduces both object and state hallucination rates. Under 
+                  <i>Distractor Injection</i>, state hallucination (<i>CHAIR–C<sub>S</sub></i>) for 
+                  <span class="model-name">Qwen-14B-Instruct</span> drops from <b>16.5%</b> to <b>5.0%</b>, 
+                  demonstrating strong resilience to irrelevant textual distractions. We also observe 
+                  consistent improvements in object hallucination (<i>CHAIR–C<sub>O</sub></i>) across models, 
+                  alongside gains in semantic consistency under <i>Synonym Substitution</i>, where our method 
+                  achieves the lowest object hallucination rate (<b>1.0%</b>) among all evaluated approaches.
+                </p>
+    
+                <p>
+                  Most notably, under <i>Scene–Task Contradiction</i>, where base models hallucinate objects 
+                  to satisfy impossible goals (up to <b>53.9%</b> hallucination rate), 
+                  <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
+                  dramatically suppresses this behavior (<b>1.5%</b>). These results highlight that our 
+                  contrastive decoding strategy enforces strong 3D grounding, enabling agents to resist 
+                  distractors and maintain faithful reasoning about the physical environment without any 
+                  model retraining.
+                </p>
+    
+              </div>
+    
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+  
+          <h2 class="title is-3">Ablation Study</h2>
+  
+          <div class="content has-text-justified">
+  
+            <p>
+              <span style="font-weight: bold;">
+                Effect of Scene Graph Distortion Types.
+              </span>
+              We conduct a systematic ablation study to analyze how different types of scene graph 
+              distortions impact the performance of 
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span>. 
+              By perturbing semantic, geometric, and structural attributes independently, we isolate 
+              the contribution of each information cue in guiding grounded reasoning.
+            </p>
+  
+            <div style="text-align: center; margin: 20px 0;">
+              <img loading="lazy" decoding="async" 
+                   src="./static/images/ablation2.png" 
+                   class="interpolation-image" 
+                   alt="Ablation results" 
+                   width="85%">
+            </div>
+            <div style="
+              background:#e6f6fb;
+              color:#1f2937;
+              padding:12px 14px;
+              border-radius:8px;
+              margin:12px 0;
+              border-left:4px solid #22d3ee;
+              text-align:center;
+            ">
+              <b>Key Insight:</b><br>
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span> 
+              consistently improves F1 from <b>0.63 → 0.74–0.77</b> across all distortion types.
+            </div>
+  
+            <p>
+              <b>Semantic Corruptions.</b> We perturb object categories through synonym substitution 
+              (low/high intensity) and by removing descriptive modifiers. These experiments probe 
+              robustness to lexical ambiguity and reduced contextual specificity.
+            </p>
+            <div style="
+              background:#f8fafc;
+              color:#1f2937;
+              padding:8px 12px;
+              border-radius:6px;
+              margin:6px 0 14px 0;
+              border-left:3px solid #22d3ee;
+              font-size:0.95em;
+            ">
+              <b>Variants:</b> Low/High-SemSub (synonym substitution), SemDropMod (modifier removal)
+            </div>
+            
+            <p>
+              <b>Geometric Corruptions.</b> We introduce Gaussian noise to object centroids and extents 
+              (low/high levels), simulating sensor noise and imperfect 3D reconstruction.
+            </p>
+            <div style="
+              background:#f8fafc;
+              color:#1f2937;
+              padding:8px 12px;
+              border-radius:6px;
+              margin:6px 0 14px 0;
+              border-left:3px solid #22d3ee;
+              font-size:0.95em;
+            ">
+              <b>Variants:</b> Low-Geom (mild spatial jitter), High-Geom (large spatial displacement)
+            </div>
+            
+            <p>
+              <b>Structural Corruptions.</b> We modify scene structure via object sparsification, 
+              relation flipping, and distractor injection to test reliance on relational and contextual cues.
+            </p>
+            <div style="
+              background:#f8fafc;
+              color:#1f2937;
+              padding:8px 12px;
+              border-radius:6px;
+              margin:6px 0 14px 0;
+              border-left:3px solid #22d3ee;
+              font-size:0.95em;
+            ">
+              <b>Variants:</b> Struct-RelFlip (relation inversion), Struct-Dist (distractor injection), Struct-Sparse (object removal)
+            </div>
+            
+            <p>
+              We also evaluate <b>Mixed Corruptions</b>, combining semantic and geometric perturbations 
+              to mimic realistic embodied sensing noise.
+            </p>
+            <div style="
+              background:#f8fafc;
+              color:#1f2937;
+              padding:8px 12px;
+              border-radius:6px;
+              margin:6px 0 14px 0;
+              border-left:3px solid #22d3ee;
+              font-size:0.95em;
+            ">
+              <b>Variants:</b> Semantic + Geometric (combined noise, realistic sensing errors)
+            </div>
+  
+            <p>
+              Across all settings, 
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span> 
+              consistently outperforms the baseline, demonstrating strong robustness to corrupted 3D inputs. 
+              These results indicate that contrastive decoding effectively leverages discrepancies between 
+              clean and perturbed scene representations, reinforcing grounded reasoning and suppressing 
+              hallucinations regardless of the distortion type.
+            </p>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+  
+          <h2 class="title is-3">Ablation Study</h2>
+  
+          <div class="content has-text-justified">
+  
+            <p>
+              <span style="font-weight: bold;">
+                Effect of Scene Graph Distortion Types.
+              </span>
+              We conduct a systematic study to analyze how different scene graph perturbations affect the performance of 
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span>. 
+              By independently corrupting semantic, geometric, and structural attributes, we isolate how each type of 
+              information contributes to grounded reasoning.
+            </p>
+  
+            <div style="text-align: center; margin: 24px 0;">
+              <img loading="lazy" decoding="async" 
+                   src="./static/images/ablation2.png" 
+                   class="interpolation-image" 
+                   alt="Ablation results" 
+                   width="85%">
+            </div>
+  
+            <!-- Key Insight -->
+            <div style="
+              background:#e6f6fb;
+              color:#1f2937;
+              padding:14px 16px;
+              border-radius:10px;
+              margin:18px 0 24px 0;
+              border-left:4px solid #22d3ee;
+              text-align:center;
+            ">
+              <b>Key Insight:</b><br>
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span> 
+              consistently improves F1 from <b>0.63 → 0.74–0.77</b> across all distortion types.
+            </div>
+  
+            <!-- Semantic -->
+            <p>
+              <b>Semantic Corruptions.</b> We perturb object categories through synonym substitution and 
+              modifier removal to test robustness to lexical ambiguity and reduced contextual specificity.
+            </p>
+            <div style="margin:8px 0 18px 0;">
+              <span style="display:inline-block; background:#eef6ff; color:#1e3a8a; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Low-SemSub</span>
+              <span style="display:inline-block; background:#eef6ff; color:#1e3a8a; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">High-SemSub</span>
+              <span style="display:inline-block; background:#ecfeff; color:#155e75; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">SemDropMod</span>
+            </div>
+  
+            <!-- Geometric -->
+            <p>
+              <b>Geometric Corruptions.</b> We introduce Gaussian noise to object centroids and extents 
+              to simulate sensor noise and imperfect 3D reconstruction.
+            </p>
+            <div style="margin:8px 0 18px 0;">
+              <span style="display:inline-block; background:#f0fdf4; color:#166534; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Low-Geom</span>
+              <span style="display:inline-block; background:#f0fdf4; color:#166534; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">High-Geom</span>
+            </div>
+  
+            <!-- Structural -->
+            <p>
+              <b>Structural Corruptions.</b> We modify scene structure through object sparsification, 
+              relation flipping, and distractor injection to test reliance on relational and contextual cues.
+            </p>
+            <div style="margin:8px 0 18px 0;">
+              <span style="display:inline-block; background:#fff7ed; color:#9a3412; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Struct-RelFlip</span>
+              <span style="display:inline-block; background:#fff7ed; color:#9a3412; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Struct-Dist</span>
+              <span style="display:inline-block; background:#fff7ed; color:#9a3412; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Struct-Sparse</span>
+            </div>
+  
+            <!-- Mixed -->
+            <p>
+              <b>Mixed Corruptions.</b> We combine semantic and geometric perturbations to mimic realistic 
+              embodied sensing noise where category uncertainty and spatial variance co-occur.
+            </p>
+            <div style="margin:8px 0 18px 0;">
+              <span style="display:inline-block; background:#f5f3ff; color:#5b21b6; padding:6px 10px; border-radius:999px; margin:4px 6px 0 0; font-size:0.9em;">Semantic + Geometric</span>
+            </div>
+  
+            <p>
+              Across all settings, 
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span>
+              <span style="color:#22d3ee; font-weight:600;">VCD</span> 
+              consistently outperforms the baseline, demonstrating strong robustness to corrupted 3D inputs. 
+              These results indicate that contrastive decoding effectively leverages discrepancies between 
+              clean and perturbed scene representations, reinforcing grounded reasoning and suppressing hallucinations.
+            </p>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Qualitative Results</h2>
+  
+          <div class="content has-text-justified" style="padding-bottom: 30px;">
+            <p>
+              We present qualitative examples showing how
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              improves factual grounding across both 3D-POPE and HEAL. Across these examples, the baseline model
+              exhibits multiple failure modes, including missing objects that are present, hallucinating objects that
+              do not exist, and generating spurious ungrounded content. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              produces answers and symbolic predictions that remain more faithful to the scene graph and the physical
+              environment.
+            </p>
+  
+            <p>
+              Taken together, these examples highlight the dual advantage of
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>:
+              it reduces false positives by suppressing hallucinated objects and attributes, while also improving recall
+              by attending to grounded, semantically coherent evidence. This leads to more reliable 3D reasoning in
+              both embodied question answering and action-oriented grounding settings.
+            </p>
+          </div>
+  
+          <figure class="qual-example" style="margin-bottom: 40px;">
+            <img loading="lazy" decoding="async" src="static/images/qual1.png" alt="Qualitative example on scene0424_00" style="border-radius: 8px;">
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>Qualitative comparison on <code>scene0424_00</code>.</strong>
+              The baseline incorrectly predicts the absence of a dining table, missing the true table object in the
+              scene. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              correctly grounds and identifies the dining table by aligning contrastive decoding with the scene graph.
+            </figcaption>
+          </figure>
+  
+          <figure class="qual-example" style="margin-bottom: 40px;">
+            <img loading="lazy" decoding="async" src="static/images/qual2.png" alt="Qualitative example on scene0479_00" style="border-radius: 8px;">
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>Qualitative comparison on <code>scene0479_00</code>.</strong>
+              The baseline hallucinates a desk object and incorrectly predicts its presence, referring instead to a
+              counter in the scene. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              correctly determines that no desk exists by suppressing spurious category matches through contrastive
+              decoding aligned with the object-centric scene graph.
+            </figcaption>
+          </figure>
+  
+          <figure class="qual-example" style="margin-bottom: 40px;">
+            <img loading="lazy" decoding="async" src="static/images/qual3.png" alt="Qualitative example on scene0535_00" style="border-radius: 8px;">
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>Reducing spurious object predictions on 3D-POPE.</strong>
+              In <code>scene0535_00</code>, the baseline 3D-LLM initially produces the correct answer
+              (<i>No</i>) but then hallucinates additional content, generating spurious narrative text with
+              hallucinated object tags such as <code>&lt;p&gt;living room&lt;/p&gt;[&lt;obj_0&gt;]</code>.
+              In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              returns a clean and faithful response, consistently stating that the room contains no fireplaces.
+              The right panel shows the instance-level segmentation of the scene for reference.
+            </figcaption>
+          </figure>
+  
+          <figure class="qual-example">
+            <img loading="lazy" decoding="async" src="static/images/qual4.png" alt="Qualitative HEAL example" style="border-radius: 8px;">
+            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
+              <strong>Qualitative comparison on the HEAL benchmark.</strong>
+              For the task <code>brushing_lint_off_clothing</code>, the baseline Qwen-14B-Instruct model hallucinates a
+              nonexistent <code>microwave.n.01_1</code> in its symbolic goal prediction. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              produces clean symbolic goals with no hallucinated objects, correctly grounding all sweaters on the bed
+              and removing dust-related states as required by the instruction. The right panel shows the first-person
+              view of the agent interacting with the sweaters in the scene.
+            </figcaption>
+          </figure>
+  
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+  
+          <h2 class="title is-3">Qualitative Results</h2>
+  
+          <div class="content has-text-justified" style="padding-bottom: 26px;">
+            <p>
+              We present qualitative examples showing how
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              improves factual grounding across both 3D-POPE and HEAL. Across these examples, the baseline model
+              exhibits multiple failure modes, including missing objects that are present, hallucinating objects that
+              do not exist, and generating spurious ungrounded content. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              produces answers and symbolic predictions that remain more faithful to the scene graph and the physical
+              environment.
+            </p>
+  
+            <p>
+              Taken together, these examples highlight the dual advantage of
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>:
+              it reduces false positives by suppressing hallucinated objects and attributes, while also improving recall
+              by attending to grounded, semantically coherent evidence. This leads to more reliable 3D reasoning in
+              both embodied question answering and action-oriented grounding settings.
+            </p>
+          </div>
+  
+          <!-- Example 1 -->
+          <div style="
+            background:#f8fafc;
+            border:1px solid #e5e7eb;
+            border-radius:12px;
+            padding:18px;
+            margin-bottom:28px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.05);
+          ">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="static/images/qual1.png"
+              alt="Qualitative example on scene0424_00"
+              style="display:block; width:100%; border-radius:8px;"
+            >
+  
+            <div style="margin-top:14px; text-align:left;">
+              <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
+                Scene0424_00
+              </div>
+              <div style="color:#334155; line-height:1.65;">
+                The baseline incorrectly predicts the absence of a dining table, missing the true table object in the scene.
+                In contrast,
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+                correctly grounds and identifies the dining table by aligning contrastive decoding with the scene graph.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Example 2 -->
+          <div style="
+            background:#f8fafc;
+            border:1px solid #e5e7eb;
+            border-radius:12px;
+            padding:18px;
+            margin-bottom:28px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.05);
+          ">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="static/images/qual2.png"
+              alt="Qualitative example on scene0479_00"
+              style="display:block; width:100%; border-radius:8px;"
+            >
+  
+            <div style="margin-top:14px; text-align:left;">
+              <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
+                Scene0479_00
+              </div>
+              <div style="color:#334155; line-height:1.65;">
+                The baseline hallucinates a desk object and incorrectly predicts its presence, referring instead to a counter
+                in the scene. In contrast,
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+                correctly determines that no desk exists by suppressing spurious category matches through contrastive
+                decoding aligned with the object-centric scene graph.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Example 3 -->
+          <div style="
+            background:#f8fafc;
+            border:1px solid #e5e7eb;
+            border-radius:12px;
+            padding:18px;
+            margin-bottom:28px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.05);
+          ">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="static/images/qual3.png"
+              alt="Qualitative example on scene0535_00"
+              style="display:block; width:100%; border-radius:8px;"
+            >
+  
+            <div style="margin-top:14px; text-align:left;">
+              <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
+                3D-POPE Example: Scene0535_00
+              </div>
+              <div style="color:#334155; line-height:1.65;">
+                The baseline 3D-LLM initially produces the correct answer (<i>No</i>) but then hallucinates additional
+                content, generating spurious narrative text and hallucinated object tags. In contrast,
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+                returns a clean and faithful response, consistently stating that the room contains no fireplaces. The right
+                panel shows the instance-level segmentation of the scene for reference.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Example 4 -->
+          <div style="
+            background:#f8fafc;
+            border:1px solid #e5e7eb;
+            border-radius:12px;
+            padding:18px;
+            margin-bottom:28px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.05);
+          ">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="static/images/qual4.png"
+              alt="Qualitative HEAL benchmark example"
+              style="display:block; width:100%; border-radius:8px;"
+            >
+  
+            <div style="margin-top:14px; text-align:left;">
+              <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
+                HEAL Example: <code>brushing_lint_off_clothing</code>
+              </div>
+              <div style="color:#334155; line-height:1.65;">
+                The baseline Qwen-14B-Instruct model hallucinates a nonexistent
+                <code>microwave.n.01_1</code> in its symbolic goal prediction. In contrast,
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+                produces clean symbolic goals with no hallucinated objects, correctly grounding all sweaters on the bed and
+                removing dust-related states as required by the instruction. The right panel shows the first-person view of
+                the agent interacting with the sweaters in the scene.
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{ogunleye20263dvcd,
+  title={3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding},
+  author={Ogunleye, Makanjuola A. and Abdelrahman, Eman and Lourentzou, Ismini},
+  journal={Proceedings for the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/abs/2406.05132">3D-GRAND</a>, and <a href="https://arxiv.org/abs/2506.15065">HEAL</a> for open-sourcing their models, data, and code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    </main>
+  </body>
+</html>
