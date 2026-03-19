@@ -19,8 +19,8 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-01-11",
-      "venue": "arXiv",
+      "date": "2026-06-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/palm.png",
       "doi": "10.48550/arXiv.2601.07060",
@@ -31,8 +31,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/palmteaser.png",
-      "venueAbbr": "arXiv"
+      "cardCover": "assets/images/cards/palmteaser.png"
     },
     {
       "id": "2026-Susladkar-pyratok-language-aligned",
@@ -48,8 +47,8 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-01-22",
-      "venue": "arXiv",
+      "date": "2026-06-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/pyratok.gif",
       "doi": "10.48550/arXiv.2601.16210",
@@ -59,8 +58,7 @@
         "code": "",
         "video": "",
         "data": ""
-  },
-  "venueAbbr": "arXiv"
+  }
   },
   {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
@@ -427,9 +425,9 @@
         "Tianjiao Yu",
         "Ismini Lourentzou"
       ],
-      "year": 2025,
-      "date": "2025-12-11",
-      "venue": "arXiv",
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/hallusegbench.png",
       "doi": "10.48550/arXiv.2506.21546",
@@ -440,7 +438,8 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/hallu_teaser.png"
+      "cardCover": "assets/images/cards/hallu_teaser.png",
+      "venueAbbr": "CVPR 2026 (Findings)"
     },
     {
       "id": "2025-Liu-purpcode-reasoning-for-safer-c",
@@ -624,9 +623,9 @@
         "Kiet A. Nguyen",
         "Ismini Lourentzou"
       ],
-      "year": 2025,
-      "date": "2025-06-01",
-      "venue": "arXiv",
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/part2gs.gif",
       "doi": "10.48550/arXiv.2506.17212",
