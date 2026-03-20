@@ -210,7 +210,7 @@
                 <div class="hero-body">
                     <img src="./static/images/teaser.jpg" class="interpolation-image"
                         alt="Figure 1: Egocentric video rollouts produced by EgoForge in real-world smart-glasses experiments." />
-                    <p class="fig-caption">
+                    <p class="has-text-justified">
                         <strong>Figure 1:</strong> Egocentric video rollouts produced by EgoForge in real-world
                         smart-glasses experiments. Given a single smart-glasses egocentric image, a high-level goal
                         instruction, and an auxiliary exocentric view, EgoForge generates egocentric rollouts that
@@ -263,7 +263,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/method.jpg"
                             class="interpolation-image"
                             alt="Figure 2: EgoForge Overview." />
-                        <p class="fig-caption">
+                        <p class="has-text-justified">
                             <strong>Figure 2:</strong> <strong>EgoForge Overview.</strong> Given a single egocentric
                             observation, a high-level (instruction) intent, and an auxiliary exo-view reference,
                             EgoForge fuses encoded visual features with noisy video latents at each DiT block to guide
@@ -365,7 +365,8 @@
                                 </tbody>
                             </table>
                         </div>
-
+                    </br>
+    
                         <p>
                             <strong>Table 2:</strong> Quantitative comparisons with enhanced baseline variants
                             (+EV: exo-view image; +TT: text-only domain adaptation;
@@ -404,6 +405,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        </br> 
 
                         <p>
                             <strong>Table 4:</strong> User study (1–5 scale, 20 annotators, 25 video groups).
@@ -435,6 +437,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        </br>
 
                         <p>
                             <strong>Table 5:</strong> Ablation on EgoForge modules (FT = Denoising Fine-Tuning,
@@ -475,7 +478,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/qual_expample.jpg"
                             class="interpolation-image"
                             alt="Figure 3: Qualitative Comparison between EgoForge and baselines." />
-                        <p class="egoforge-qual-caption">
+                        <p class="has-text-justified">
                             <strong>Figure 3:</strong> Qualitative comparison between EgoForge and baselines.
                             EgoForge accurately reconstructs multi-step, causally ordered actions, preserving
                             hand–object geometry, temporal consistency, and goal alignment. In the first example
@@ -489,7 +492,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/quali2.jpg"
                             class="interpolation-image"
                             alt="Figure 4: Qualitative Comparison between EgoForge and baselines (hand-washing and soccer)." />
-                        <p class="egoforge-qual-caption">
+                        <p class="has-text-justified">
                             <strong>Figure 4:</strong> Qualitative comparison: hand-washing task (top) and soccer
                             task (bottom). In the hand-washing task, baselines struggle with object consistency
                             (Cosmos hallucinates the soap source; Wan2.2 bypasses the on-table soap), while
@@ -512,7 +515,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/vis.drawio.jpg"
                             class="interpolation-image"
                             alt="Figure 6: EgoForge with vs. without exocentric input." />
-                        <p class="egoforge-qual-caption">
+                        <p class="has-text-justified">
                             <strong>Figure 5:</strong> Qualitative comparison of EgoForge with vs. without
                             exocentric input. Rows 1 &amp; 3 ("Without Exo-View") use text prompt alone; Rows 2
                             &amp; 4 ("With Exo-View") additionally provide an auxiliary exocentric image. The
@@ -535,7 +538,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/long_seq.jpg"
                             class="interpolation-image"
                             alt="Figure 5: Qualitative egocentric video rollouts." />
-                        <p class="egoforge-qual-caption">
+                        <p class="has-text-justified">
                             <!-- <strong>Figure 5:</strong> Qualitative egocentric video rollouts. EgoForge generates
                             temporally coherent first-person video trajectories that follow the intended activity
                             (hand-washing, soccer juggling, opening a refrigerator, indoor bouldering) while
@@ -545,7 +548,7 @@
                         <img loading="lazy" decoding="async" src="./static/images/long_seq1.jpg"
                             class="interpolation-image"
                             alt="Figure 7: Dense visualization of long-duration sequences." />
-                        <p class="egoforge-qual-caption">
+                        <p class="has-text-justified">
                             <strong>Figure 6:</strong> Dense visualization of long-duration sequences. We present
                             26 frames from each of 8 videos generated by EgoForge — cracking an egg, folding a
                             blanket, tearing adhesive tape, rock climbing, placing a package, shooting a basketball,
@@ -559,7 +562,7 @@
 
 
         <!-- ============ REAL-WORLD SMART GLASSES ============ -->
-        <section class="section">
+        <!--  <section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <h2 class="title is-3">Real-World Smart-Glasses Experiments</h2>
@@ -588,7 +591,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- ============ BIBTEX ============ -->
         <section class="section" id="BibTeX">
