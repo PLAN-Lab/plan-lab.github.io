@@ -53,14 +53,16 @@
       "cover": "assets/images/publications/pyratok.gif",
       "doi": "10.48550/arXiv.2601.16210",
       "links": {
-        "website": "",
-        "paper": "https://arxiv.org/pdf/2601.16210v1",
+        "website": "/projects/pyratok/",
+        "paper": "https://arxiv.org/pdf/2601.16210v2",
         "code": "",
         "video": "",
         "data": ""
-  }
-  },
-  {
+      },
+      "cardCover": "assets/images/cards/pyratok.png",
+      "venueAbbr": "CVPR 2026"
+    },
+    {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
       "title": "SAUCE: Truncated Sparse Document Signature Bit-Vectors for Fast Web-Scale Corpus Expansion",
       "projectName": "SAUCE",

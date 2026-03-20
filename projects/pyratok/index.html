@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PyraTok project page for PLAN Lab." />
+    <title>PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <style>
+      .media-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #070b18, #0f172a);
+        min-height: 220px;
+      }
+      .media-card img,
+      .media-card video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        object-fit: cover;
+      }
+      .media-skeleton {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+      }
+      .media-card[data-loaded="true"] .media-skeleton {
+        opacity: 0;
+      }
+      .media-skeleton::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+        animation: shimmer 1.5s infinite;
+      }
+      @keyframes shimmer {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Onkar Susladkar,</span>
+              <span class="author-block">Tushar Prakash,</span>
+              <span class="author-block">Adheesh Juvekar,</span>
+              <span class="author-block">Kiet A. Nguyen,</span>
+              <span class="author-block">Dong-Hwan Jang,</span>
+              <span class="author-block">Inderjit S Dhillon,</span>
+              <span class="author-block">Ismini Lourentzou</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+            </div>
+
+             <div class="has-text-centered" style="margin: 5px 0;">
+              <h1 class="title is-3 publication-venue">CVPR 2026</h1>
+            </div>
+
+             <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2601.16210v2" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          Discrete video VAEs underpin modern text-to-video generation and video understanding systems, yet existing tokenizers typically learn visual codebooks at a single scale with limited vocabularies and shallow language supervision, leading to poor cross-modal alignment and zero-shot transfer. We introduce PyraTok, a language-aligned pyramidal tokenizer that learns semantically structured discrete latents across multiple spatiotemporal resolutions.
+        </p>
+        <p>
+          PyraTok builds on a pretrained video VAE and a novel Language aligned Pyramidal Quantization (LaPQ) module that discretizes encoder features at several depths using a shared large binary codebook, yielding compact yet expressive video token sequences. To tightly couple visual tokens with language, PyraTok jointly optimizes multi-scale text-guided quantization and a global autoregressive objective over the token hierarchy.
+        </p>
+        <p>
+          Across ten benchmarks, PyraTok delivers state-of-the-art video reconstruction, consistently improves text-to-video quality, and sets new zero-shot performance on video segmentation, temporal action localization, and video understanding, scaling robustly to up to 4K/8K resolutions.
+        </p>
+        <div style="margin-top:1.5rem; text-align:center;">
+          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+            <img loading="lazy" decoding="async" src="./static/images/teaser.png" class="interpolation-image" alt="PyraTok teaser figure" loading="lazy">
+            <div class="media-skeleton">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">✅ Contributions</h2>
+      <div class="content has-text-justified">
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Multi-scale semantically aligned VAE.</b> We introduce PyraTok, a multi-scale semantically aligned Video VAE that couples spatiotemporal quantization with dual semantic alignment, enabling coarse-to-fine understanding and efficient video generation.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>LaPQ quantization.</b> PyraTok leverages LaPQ, a novel language-aligned pyramidal quantization framework, designed to hierarchically encode multi-scale video representations through lateral encoder connections at each stage. Our design enables efficient use of a large ∼48K token vocabulary, with up to 95% codebook utilization.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Dual semantic alignment.</b> We propose a dual semantic alignment strategy that injects text-conditioned priors at every LaPQ level (local alignment) and refines them with an autoregressive objective over the sequence of quantized tokens (global alignment). This jointly enforces token-level grounding and sequence-level coherence, preventing semantic drift across scales and time.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Hierarchical semantic codebook loss.</b> We further introduce a hierarchical semantic codebook loss that ties a shared binary codebook to text embeddings and preserves semantic consistency across pyramid levels through stage-wise KL regularization.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Quantitative Results</h2>
+      <div class="content has-text-justified">
+        <div style="text-align: center; padding: 0 0 20px 0;">
+          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+            <img loading="lazy" decoding="async" src="./static/images/quantitative-results.png" class="interpolation-image" alt="PyraTok quantitative results table">
+            <div class="media-skeleton">Loading...</div>
+          </div>
+          <p class="has-text-justified">
+            Comparison across ten benchmarks shows PyraTok’s multi-scale quantization and dual alignment jointly raise reconstruction fidelity, video segmentation, and zero-shot action localization metrics while maintaining strong codebook utilization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Qualitative Results</h2>
+      <div class="content has-text-justified">
+        PyraTok outputs high-resolution reconstructions while remaining text-aware, which is essential for grounded video understanding and generation tasks.
+      </div>
+      <div style="text-align: center; margin-bottom: 30px;">
+        <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+          <img loading="lazy" decoding="async" src="./static/images/qualitative-main.png" alt="Main qualitative visualization">
+          <div class="media-skeleton">Loading...</div>
+        </div>
+        <p class="caption has-text-centered">
+          The main visualization contrasts coarse-to-fine latent decoding and shows how PyraTok preserves temporal dynamics across pyramid levels.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 class="title is-4">High-resolution reconstructions</h3>
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; justify-items:center;">
+            <div style="width:100%; max-width:420px; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/recon/recon-1080p-1.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+            </div>
+            <div style="width:100%; max-width:420px; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/recon/recon-1080p-3.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+            </div>
+          </div>
+          <p class="caption has-text-centered">1080p reconstruction</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; justify-items:center;">
+            <div style="width:100%; max-width:420px; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/recon/recon-4k-1.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+            </div>
+            <div style="width:100%; max-width:420px; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/recon/recon-4k-4.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+            </div>
+          </div>
+          <p class="caption has-text-centered">4K reconstruction</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 2rem; text-align:center;">
+        <h3 class="title is-4">Zero-shot segmentation</h3>
+        <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+          <img loading="lazy" decoding="async" src="./static/images/qualitative-segmentation.png" alt="Segmentation examples">
+          <div class="media-skeleton">Loading...</div>
+        </div>
+        <p class="caption has-text-centered">
+          PyraTok’s language-aligned hierarchy yields sharper zero-shot segmentation masks compared to single-scale tokenizers.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 class="title is-4">Text-to-video alignment</h3>
+        <div style="text-align:center; margin:0 auto 1rem;">
+          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+            <img loading="lazy" decoding="async" src="./static/images/qualitative-text2video.png" alt="Text-to-video samples">
+            <div class="media-skeleton">Loading...</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem;">
+          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
+            <div class="media-card" data-loaded="false">
+              <video controls loop muted playsinline>
+                <source src="./static/videos/t2v/t2v-magvit.mp4" type="video/mp4">
+              </video>
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption">MagvitV2 + PyraTok</p>
+          </div>
+          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
+            <div class="media-card" data-loaded="false">
+              <video controls loop muted playsinline>
+                <source src="./static/videos/t2v/t2v-motionaura.mp4" type="video/mp4">
+              </video>
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption">MotionAura + PyraTok</p>
+          </div>
+          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
+            <div class="media-card" data-loaded="false">
+              <video controls loop muted playsinline>
+                <source src="./static/videos/t2v/t2v-omnigen.mp4" type="video/mp4">
+              </video>
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption">OmniGenV2 + PyraTok</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@article{susladkar2026pyratok,
+  title={PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation},
+  author={Susladkar, Onkar and Prakash, Tushar and Juvekar, Adheesh and Nguyen, Kiet A. and Jang, Dong-Hwan and Dhillon, Inderjit S. and Lourentzou, Ismini},
+  journal={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026},
+  doi={10.48550/arXiv.2601.16210},
+  url={https://arxiv.org/pdf/2601.16210v2}
+}</code></pre>
+    </div>
+  </section>
+    </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const markLoaded = (media) => {
+        const card = media.closest('.media-card');
+        if (card) {
+          card.setAttribute('data-loaded', 'true');
+        }
+      };
+      document.querySelectorAll('.media-card img').forEach((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          markLoaded(img);
+        } else {
+          img.addEventListener('load', () => markLoaded(img), { once: true });
+        }
+      });
+      document.querySelectorAll('.media-card video').forEach((video) => {
+        if (video.readyState >= 2) {
+          markLoaded(video);
+        } else {
+          video.addEventListener('loadeddata', () => markLoaded(video), { once: true });
+        }
+      });
+    });
+  </script>
+  </body>
+</html>
