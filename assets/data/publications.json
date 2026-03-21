@@ -55,9 +55,9 @@
       "links": {
         "website": "/projects/pyratok/",
         "paper": "https://arxiv.org/pdf/2601.16210v2",
-        "code": "",
+        "code": "https://github.com/PLAN-Lab/CVPR25-PyraTok",
         "video": "",
-        "data": ""
+        "data": "https://huggingface.co/onkarsus13/PyraTok"
       },
       "cardCover": "assets/images/cards/pyratok.png",
       "venueAbbr": "CVPR 2026"
