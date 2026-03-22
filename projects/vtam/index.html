@@ -42,6 +42,21 @@
       align-items: start;
     }
 
+    .page-project .vtam-pred-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .page-project .vtam-pred-grid .interpolation-image {
+      align-self: center;
+      width: 85%;
+      display: block;
+      margin: 0 auto;
+    }
+
     .page-project .vtam-caption {
       text-align: center;
       margin-top: 0.45rem;
@@ -81,6 +96,22 @@
 
     .page-project .vtam-video-grid.vtam-video-grid-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .page-project .vtam-video-grid.vtam-video-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page-project .vtam-two-split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 0.5rem;
+      align-items: start;
+    }
+
+    .page-project .vtam-two-split .title {
+      margin-bottom: 0.35rem;
     }
 
     .page-project .vtam-video-card {
@@ -157,6 +188,11 @@
 
       .page-project .vtam-video-grid,
       .page-project .vtam-video-grid.vtam-video-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .page-project .vtam-video-grid.vtam-video-grid-2,
+      .page-project .vtam-two-split {
         grid-template-columns: 1fr;
       }
     }
@@ -271,16 +307,23 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Video-Action Models (VAMs) have recently emerged as a promising framework for embodied intelligence,
-            learning implicit world dynamics from raw video streams to produce temporally consistent action predictions.
+            Video-Action Models (VAMs) have emerged as a promising framework for embodied intelligence, learning
+            implicit world dynamics from raw video streams to produce temporally consistent action predictions.
             Although such models demonstrate strong performance on long-horizon tasks through visual reasoning, they
-            remain fundamentally limited in contact-rich scenarios where critical interaction states are only partially
-            observable from vision alone. We introduce the Video-Tactile Action Model (VTAM), a multimodal world
-            modeling framework that incorporates tactile perception as a complementary grounding signal. VTAM augments
-            a pretrained video transformer with tactile streams via lightweight modality transfer finetuning and
-            introduces a virtual-force regularization term that mitigates modality collapse during action learning.
-            Across chip pick-and-place, peeling, and wiping tasks, VTAM achieves robust performance (up to 90% average
-            success), substantially improving over vision-only and naive tactile-injection baselines.
+            remain limited in contact-rich scenarios where critical interaction states are only partially observable
+            from vision alone. In particular, fine-grained force modulation and contact transitions are not reliably
+            encoded in visual tokens, leading to unstable or imprecise behaviors. To bridge this gap, we introduce the
+            Video-Tactile Action Model (VTAM), a multimodal world modeling framework that incorporates tactile
+            perception as a complementary grounding signal. VTAM augments a pretrained video transformer with tactile
+            streams via a lightweight modality transfer finetuning, enabling efficient cross-modal representation
+            learning without tactile-language paired data or independent tactile pretraining. To stabilize multimodal
+            fusion, we introduce a tactile regularization loss that enforces balanced cross-modal attention, preventing
+            visual latent dominance in the action model. VTAM demonstrates superior performance in contact-rich
+            manipulation, maintaining a robust success rate of 90% on average. In challenging scenarios such as potato
+            chip pick-and-place requiring high-fidelity force awareness, VTAM outperforms the <em>pi<sub>0.5</sub></em>
+            baseline by 80%. Our findings demonstrate that integrating tactile feedback is essential for correcting
+            visual estimation errors in world action models, providing a scalable approach to physically grounded
+            embodied foundation models.
           </p>
         </div>
       </div>
@@ -359,16 +402,18 @@
               </tr>
             </tbody>
           </table>
-
+          <br>
+<!-- 
           <img src="./static/images/qual_compare.png" class="interpolation-image"
             alt="Qualitative comparison with baselines" />
           <p class="vtam-caption">
             Qualitative comparison: VTAM maintains contact-aware control where baseline policies fail under visual
             ambiguity.
-          </p>
+          </p> -->
 
           <h3 class="title is-5">Prediction Visualization</h3>
-          <div class="vtam-grid-3">
+          <br>
+          <div class="vtam-grid-3 vtam-pred-grid">
             <img src="./static/images/pred_camera_1.png" class="interpolation-image" alt="Camera 1 prediction" />
             <img src="./static/images/pred_camera_2.png" class="interpolation-image" alt="Camera 2 prediction" />
             <img src="./static/images/pred_tactile.png" class="interpolation-image" alt="Tactile prediction" />
@@ -376,12 +421,6 @@
           <p class="vtam-caption">
             Backbone predictions remain temporally consistent across RGB and tactile streams.
           </p>
-
-          <h3 class="title is-5">Additional Qualitative Results for Cucumber Peeling Task</h3>
-          <div class="vtam-grid-2">
-            <img src="./static/images/peeling_results.jpg" class="interpolation-image" alt="Peeling qualitative result 1" />
-            <img src="./static/images/peeling_results2.jpg" class="interpolation-image" alt="Peeling qualitative result 2" />
-          </div>
 
           <h3 class="title is-4" id="video-comparisons" style="margin-top:1.25rem;">Video Comparisons</h3>
           <p>
@@ -414,34 +453,6 @@
               <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
               <div class="vtam-video-wrap">
                 <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9df048f246187987f238f2fb34ab45d1/iframe?muted=true&poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9df048f246187987f238f2fb34ab45d1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <h4 class="title is-6">Chip Behavior Diversity</h4>
-          <div class="vtam-video-grid">
-            <div class="vtam-video-card">
-              <div class="vtam-video-title vtam-ours">VTAM (Ours) - Failure Case</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/84ca952d630a75db452d2c69fc53c940/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F84ca952d630a75db452d2c69fc53c940%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title vtam-ours">VTAM (Ours) - Retrial Recovery</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/947e7d646127a1ff19594cd2a4b527b2/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F947e7d646127a1ff19594cd2a4b527b2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) - Success Case</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f90f86f458ff3555be42bb1c984eb31a/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff90f86f458ff3555be42bb1c984eb31a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile - Success Case</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/fd23275503a3c6a6876226a4f4a8b66b/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ffd23275503a3c6a6876226a4f4a8b66b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
               </div>
             </div>
           </div>
@@ -489,9 +500,47 @@
               </div>
             </div>
             <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
+              <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) / pi<sub>0.5</sub> + Tactile</div>
               <div class="vtam-video-wrap">
                 <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/96980153395c1e125221030c3dccd26c/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F96980153395c1e125221030c3dccd26c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="vtam-two-split">
+            <div>
+              <h4 class="title is-6">Model Behavior Diversity</h4>
+              <div class="vtam-video-grid vtam-video-grid-2">
+                <div class="vtam-video-card">
+                  <div class="vtam-video-title vtam-ours">VTAM (Ours) - Failure Case</div>
+                  <div class="vtam-video-wrap">
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/84ca952d630a75db452d2c69fc53c940/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F84ca952d630a75db452d2c69fc53c940%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                  </div>
+                </div>
+                <div class="vtam-video-card">
+                  <div class="vtam-video-title vtam-ours">VTAM (Ours) - Retrial Recovery</div>
+                  <div class="vtam-video-wrap">
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/947e7d646127a1ff19594cd2a4b527b2/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F947e7d646127a1ff19594cd2a4b527b2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="title is-6">Success Cases for Baseline Models</h4>
+              <div class="vtam-video-grid vtam-video-grid-2">
+                <div class="vtam-video-card">
+                  <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) - Success Case</div>
+                  <div class="vtam-video-wrap">
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f90f86f458ff3555be42bb1c984eb31a/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff90f86f458ff3555be42bb1c984eb31a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                  </div>
+                </div>
+                <div class="vtam-video-card">
+                  <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile - Success Case</div>
+                  <div class="vtam-video-wrap">
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/fd23275503a3c6a6876226a4f4a8b66b/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ffd23275503a3c6a6876226a4f4a8b66b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
