@@ -403,26 +403,7 @@
             </tbody>
           </table>
           <br>
-<!-- 
-          <img src="./static/images/qual_compare.png" class="interpolation-image"
-            alt="Qualitative comparison with baselines" />
-          <p class="vtam-caption">
-            Qualitative comparison: VTAM maintains contact-aware control where baseline policies fail under visual
-            ambiguity.
-          </p> -->
-
-          <h3 class="title is-5">Prediction Visualization</h3>
-          <br>
-          <div class="vtam-grid-3 vtam-pred-grid">
-            <img src="./static/images/pred_camera_1.png" class="interpolation-image" alt="Camera 1 prediction" />
-            <img src="./static/images/pred_camera_2.png" class="interpolation-image" alt="Camera 2 prediction" />
-            <img src="./static/images/pred_tactile.png" class="interpolation-image" alt="Tactile prediction" />
-          </div>
-          <p class="vtam-caption">
-            Backbone predictions remain temporally consistent across RGB and tactile streams.
-          </p>
-
-          <h3 class="title is-4" id="video-comparisons" style="margin-top:1.25rem;">Video Comparisons</h3>
+          <h3 class="title is-4" id="video-comparisons">Video Comparisons</h3>
           <br>
 
           <h4 class="title is-5"><span class="vtam-ours">Chip Pick-and-Place</span></h4>
@@ -492,7 +473,7 @@
             <div class="vtam-video-card">
               <div class="vtam-video-title">Genie Envisioner</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/8cf697d0e2d9cbf2629e6e80f3f51eb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F8cf697d0e2d9cbf2629e6e80f3f51eb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f1203b66bb3ae9b536d58a650b0d3801/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff1203b66bb3ae9b536d58a650b0d3801%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
@@ -540,6 +521,19 @@
               </div>
             </div>
           </div>
+          <br>
+          <h3 class="title is-5">Prediction Visualization</h3>
+          <br>
+          <div class="vtam-grid-3 vtam-pred-grid">
+            <img src="./static/images/pred_camera_1.png" class="interpolation-image" alt="Camera 1 prediction" />
+            <img src="./static/images/pred_camera_2.png" class="interpolation-image" alt="Camera 2 prediction" />
+            <img src="./static/images/pred_tactile.png" class="interpolation-image" alt="Tactile prediction" />
+            <p class="vtam-caption">
+              <strong>Prediction visualization of the backbone video model.</strong> From top to bottom: Camera-1 view,
+  Camera-2 view, Tactile stream prediction. Ground-truth (top rows) and VTAM predictions (bottom rows).
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
