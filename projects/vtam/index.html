@@ -177,6 +177,18 @@
       font-weight: 700;
     }
 
+    .page-project .publication-authors.notes {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #888888;
+    }
+
+    .page-project .publication-authors .author-block.name {
+      color: #7eb8f0;
+      font-weight: 900;
+      font-size: 1.07rem;
+    }
+
     @media (max-width: 900px) {
       .page-project .vtam-grid-2 {
         grid-template-columns: 1fr;
@@ -241,12 +253,32 @@
               </h1>
 
               <div class="publication-authors">
-                <span class="author-block">First Author,</span>
-                <span class="author-block">Second Author</span>
+                <span class="author-block name">Haoran Yuan<sup>1,*,&#8225;</sup>,</span>
+                <span class="author-block name">Weigang Yi<sup>1,*</sup>,</span>
+                <span class="author-block name">Zhenyu Zhang<sup>2,*</sup>,</span>
+                <span class="author-block name">Wendi Chen<sup>3,*</sup></span>
+              </div>
+              <div class="publication-authors">
+                <span class="author-block name">Yuchen Mo<sup>1</sup>,</span>
+                <span class="author-block name">Jiashi Yin<sup>1</sup>,</span>
+                <span class="author-block name">Xinzhuo Li<sup>1</sup>,</span>
+                <span class="author-block name">Xiangyu Zeng<sup>1</sup></span>
+              </div>
+              <div class="publication-authors">
+                <span class="author-block name">Katherine Driggs-Campbell<sup>1</sup>,</span>
+                <span class="author-block name">Ismini Lourentzou<sup>1,&dagger;</sup></span>
               </div>
 
               <div class="is-size-5 publication-authors" style="justify-content: center;">
-                <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
+                <span class="author-block"><sup>2</sup>Stanford University</span>
+                <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>
+              </div>
+
+              <div class="publication-authors notes" style="justify-content: center;">
+                <span class="author-block"><sup>&#8225;</sup>Project lead</span>
+                <span class="author-block"><sup>*</sup>Equal contribution</span>
+                <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
               </div>
 
               <div class="publication-links">
