@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-48J3PYKGQ6');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics" />
+  <title>Phantom: Physics-Infused Video Generation | PLAN Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/projects.css" />
+  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg" />
+
+  <style>
+    /* ── Video comparison grid ── */
+    .video-compare-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .video-compare-prompt {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--accent-orange, #f97316);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 0.93em;
+      color: rgba(226, 232, 240, 0.9);
+      line-height: 1.5;
+    }
+
+    .video-compare-prompt strong {
+      color: var(--accent-orange, #f97316);
+      font-weight: 700;
+    }
+
+    .video-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .video-grid.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .video-grid.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .video-grid.cols-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .video-item video,
+    .video-item .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.5);
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-item .video-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 0.8em;
+      text-align: center;
+    }
+
+    .video-label {
+      font-size: 0.82em;
+      font-weight: 600;
+      color: rgba(226, 232, 240, 0.75);
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
+
+    .video-label.ours {
+      color: #a78bfa;
+    }
+
+    .video-label.badge {
+      display: inline-block;
+      background: rgba(167, 139, 250, 0.18);
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      border-radius: 999px;
+      padding: 2px 10px;
+    }
+
+    .compare-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 2rem 0;
+    }
+
+    /* ── Category tabs ── */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(2, 10, 25, 0.7);
+      color: rgba(226, 232, 240, 0.8);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 0.88em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 150ms ease;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: rgba(167, 139, 250, 0.2);
+      border-color: rgba(167, 139, 250, 0.7);
+      color: #a78bfa;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* ── Quant table ── */
+    .quant-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      color: rgba(226, 232, 240, 0.9);
+    }
+
+    .quant-table thead tr {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .quant-table th {
+      padding: 10px 12px;
+      font-weight: 700;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .quant-table th:first-child {
+      text-align: left;
+    }
+
+    .quant-table td {
+      padding: 9px 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .quant-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .quant-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quant-table tr.ours-row td {
+      color: #a78bfa;
+      font-weight: 700;
+    }
+
+    .quant-table td .best {
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    /* affiliation helpers */
+    .illini-orange {
+      color: var(--accent-orange, #f97316) !important;
+      font-weight: bold !important;
+    }
+
+    .equal-note {
+      font-size: 0.82em;
+      color: rgba(226, 232, 240, 0.6);
+      margin: 4px 0 8px;
+    }
+
+    .author-affiliations {
+      font-size: 0.88em;
+      color: rgba(226, 232, 240, 0.7);
+    }
+
+    sup.aff {
+      font-weight: 700;
+      font-size: 0.72em;
+    }
+
+    @media (max-width: 700px) {
+
+      .video-grid.cols-4,
+      .video-grid.cols-5 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .video-grid.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .video-grid.cols-2,
+      .video-grid.cols-3,
+      .video-grid.cols-4,
+      .video-grid.cols-5 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-project">
+  <div class="project-bg"></div>
+  <div class="project-grid"></div>
+
+  <nav class="glass-nav">
+    <a href="../../index.html#hero" class="nav-logo">
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+    </a>
+    <div class="nav-menu">
+      <a href="../../publications.html" class="nav-item" aria-label="Publications">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Publications</span>
+      </a>
+      <a href="../../index.html#team" class="nav-item" aria-label="Team">
+        <i class="fa-solid fa-users"></i>
+        <span>Team</span>
+      </a>
+      <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+        <i class="fa-solid fa-cube"></i>
+        <span>PLAN Cubes</span>
+      </a>
+      <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <span>Partner with Us</span>
+      </a>
+      <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Join Us</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+
+              <h1 class="title is-2 publication-title">
+                <span style="color:#a78bfa; font-weight:700;">Phantom</span>:
+                Physics-Infused Video Generation via Joint Modeling
+                of Visual and Latent Physical Dynamics
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="/team/phd-ying-shen">Ying Shen<sup class="aff illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/phd-jerry-xiong">Jerry Xiong<sup class="aff illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/phd-tianjiao(joey)-yu">Tianjiao Yu<sup class="aff illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/pi-ismini-lourentzou">Ismini Lourentzou<sup class="aff illini-orange">1</sup></a>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://plan-lab.github.io/">PLAN Lab</a>
+                  <span class="author-affiliations">
+                    &nbsp;&mdash;&nbsp;
+                    <sup class="aff illini-orange">1</sup>
+                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="has-text-centered" style="margin: 5px 0;">
+                <h1 class="title is-3 publication-venue" style="color:#f97316;">
+                  CVPR 2026
+                </h1>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv (coming soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Teaser ── -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+
+          <div class="content has-text-justified" style="margin-bottom: 20px;">
+            <span style="font-weight: bold;">TL;DR:</span>
+            <strong style="color:#a78bfa;">Phantom</strong> a <strong>Ph</strong>ysics-Infused Video
+            Gener<strong>a</strong>tio<strong>n</strong> model that
+            join<strong>t</strong>ly m<strong>o</strong>dels visual content and latent physical
+            dyna<strong>m</strong>ics. Conditioned on observed video frames and inferred physical states, Phantom
+            jointly predicts
+            latent physical dynamics and generates future video frames — without requiring explicit specification of
+            complex physical properties.
+
+          </div>
+
+          <img src="static/images/overview_h.jpg" alt="Phantom architecture overview"
+            style="width:75%; border-radius:12px; margin-bottom:16px; display:block; margin-left:auto; margin-right:auto;" />
+
+          <div class="content has-text-justified">
+            <span style="font-weight: bold;">Overview.</span>
+            <strong style="color:#a78bfa;">Phantom</strong> consists of two parallel latent flow-matching branches:
+            the <strong style="color:#e2e8f0;">video branch</strong> and
+            <strong style="color:#5eead4;">physics branch</strong>.
+            These branches jointly model future visual and physical dynamics —
+            the <strong style="color:#e2e8f0;">video branch</strong> predicts future visual trajectories,
+            while the <strong style="color:#5eead4;">physics branch</strong> predicts the evolution of latent
+            physical
+            states.
+            <strong style="color:#a78bfa;">Dual cross-attention layers</strong> tightly couple these branches,
+            allowing physics cues to guide visual generation and visual evidence to refine physics reasoning.
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Abstract ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Recent advances in generative video modeling, driven by large-scale datasets and increasingly powerful
+                architectures,
+                have produced striking visual realism. However, growing evidence suggests that scaling data and model
+                size alone does not
+                endow these systems with an understanding of the underlying physical laws that
+                govern real-world dynamics.
+              </p>
+              <p>
+                In this work, we investigate whether integrating the inference of latent
+                physical properties directly into the video generation process can equip models
+                with the ability to produce physically plausible videos. To this end, we propose
+                <strong style="color:#a78bfa;">Phantom</strong>, a
+                <span style="text-decoration:underline;">Ph</span>ysics-Infused Video
+                Gener<span style="text-decoration:underline;">a</span>tio<span
+                  style="text-decoration:underline;">n</span>
+                model that join<span style="text-decoration:underline;">t</span>ly
+                m<span style="text-decoration:underline;">o</span>dels the visual content and
+                latent physical dyna<span style="text-decoration:underline;">m</span>ics.
+                <strong style="color:#a78bfa;">Phantom</strong> leverages a physics-aware
+                video representation that serves as an abstract yet informative embedding of
+                the underlying physics, facilitating the joint prediction of physical dynamics
+                alongside video content without requiring an explicit specification of a complex
+                set of physical dynamics and properties. By integrating the inference of
+                physical-aware video representation directly into the video generation process,
+                <strong style="color:#a78bfa;">Phantom</strong> produces video sequences that
+                are both visually realistic and physically consistent.
+              </p>
+              <p>
+                Quantitative and qualitative results on both standard video generation and
+                physics-aware benchmarks demonstrate that
+                <strong style="color:#a78bfa;">Phantom</strong> not only outperforms existing
+                methods in terms of adherence to physical dynamics but also delivers competitive
+                perceptual fidelity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Method ── -->
+    <!-- <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Method</h2>
+
+            <img src="static/images/overview_h.jpg" alt="Phantom architecture overview"
+              style="width:75%; border-radius:12px; margin-bottom:16px;" />
+
+            <div class="content has-text-justified">
+              <span style="font-weight: bold;">Overview.</span>
+              <strong style="color:#a78bfa;">Phantom</strong> consists of two parallel latent flow-matching branches:
+              the <strong style="color:#e2e8f0;">video branch</strong> and
+              <strong style="color:#5eead4;">physics branch</strong>.
+              These branches jointly model future visual and physical dynamics —
+              the <strong style="color:#e2e8f0;">video branch</strong> (white) predicts future visual trajectories,
+              while the <strong style="color:#5eead4;">physics branch</strong> (teal) predicts the evolution of latent
+              physical
+              states.
+              <strong style="color:#a78bfa;">Dual cross-attention layers</strong> tightly couple these branches,
+              allowing physics cues to guide visual generation and visual evidence to refine physics reasoning.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ── Video Comparisons ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Video Comparisons</h2>
+            <div class="content has-text-justified" style="margin-bottom: 20px;">
+              <p>
+                We compare <strong style="color:#a78bfa;">Phantom</strong> against
+                state-of-the-art video generation models in two settings: text-to-video (T2V)
+                and text-/image-to-video (TI2V). We also demonstrate force-conditioned
+                generation where Phantom responds to explicit physical control signals.
+                Red boxes mark conditioning frames in the TI2V and force-conditioned settings.
+              </p>
+            </div>
+
+            <!-- Category tabs -->
+            <div class="tab-bar" role="tablist">
+              <button class="tab-btn active" data-tab="t2v" role="tab">
+                <i class="fa-solid fa-film" style="margin-right:5px;"></i>Text-to-Video
+              </button>
+              <button class="tab-btn" data-tab="ti2v" role="tab">
+                <i class="fa-solid fa-image" style="margin-right:5px;"></i>Text-/Image-to-Video
+              </button>
+              <button class="tab-btn" data-tab="force" role="tab">
+                <i class="fa-solid fa-arrow-pointer" style="margin-right:5px;"></i>Force-Conditioned
+              </button>
+            </div>
+
+            <!-- ── TAB: Text-to-Video ── -->
+            <!-- Baselines: Wan2.1-T2V, CogVideoX-5B, WISA, VideoREPA, Wan2.2-TI2V, Phantom -->
+            <div class="tab-panel active" id="tab-t2v">
+
+              <div class="video-grid" style="grid-template-columns:repeat(6,1fr); margin-bottom:6px;">
+                <div class="video-label">Wan2.1-T2V</div>
+                <div class="video-label">CogVideoX-5B</div>
+                <div class="video-label">WISA</div>
+                <div class="video-label">VideoREPA</div>
+                <div class="video-label">Wan2.2-TI2V</div>
+                <div class="video-label ours badge">Phantom (Ours)</div>
+              </div>
+
+              <!-- Row 1: ball -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A colorful rubber ball is dropped from a height, showing the bounce of the ball as it makes contact
+                  with the hard floor.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(6,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.1/ball.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/cogvideox/ball.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wisa/ball.mp4" autoplay
+                      muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/videorepa/ball.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/ball.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/phantoms_ours/ball.mp4"
+                      autoplay muted loop playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 2: balloon -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A balloon changes from large to small.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(6,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.1/ballon.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/cogvideox/ballon.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wisa/ballon.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/videorepa/ballon.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/balloon.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-to-Video/phantoms_ours/balloon.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 3: coffee -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A coffee pot pours a morning cup of joe.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(6,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.1/coffee.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/cogvideox/coffee.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wisa/coffee.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/videorepa/coffee.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/coffee.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-to-Video/phantoms_ours/coffee.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Rows 4-7: Wan2.2 vs Phantom only -->
+              <div style="font-size:0.82em; color:rgba(255,255,255,0.4); margin-bottom:10px; text-align:left;">
+                Wan2.2-TI2V vs. Phantom (Ours)
+              </div>
+              <div class="video-grid" style="grid-template-columns:repeat(2,1fr); margin-bottom:6px;">
+                <div class="video-label">Wan2.2-TI2V</div>
+                <div class="video-label ours badge">Phantom (Ours)</div>
+              </div>
+
+              <!-- Row 4: cookie -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A round cookie falls from a table and shatters into crumbs on the hard floor below.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/cookie.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-to-Video/phantoms_ours/cookie.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 5: gear -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A set of interlocking metal gears turns in synchrony, each gear meshing precisely with the next.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/gear.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/phantoms_ours/gear.mp4"
+                      autoplay muted loop playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 6: ketchup -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A bottle of ketchup is tilted; the ketchup resists flow at first, then suddenly pours out in a thick
+                  burst.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/ketchup.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-to-Video/phantoms_ours/ketchup.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 7: water -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  Water pours from a faucet into a glass, splashing and bubbling as it fills to the brim.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/water.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-to-Video/phantoms_ours/water.mp4"
+                      autoplay muted loop playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+            </div><!-- /tab-t2v -->
+
+            <!-- ── TAB: Text-/Image-to-Video ── -->
+            <!-- Baselines: CogVideoX1.5-I2V, Wan2.2-TI2V, Phantom -->
+            <!-- First frame of each video is the conditioning image (red-bordered) -->
+            <div class="tab-panel" id="tab-ti2v">
+
+              <div class="video-grid" style="grid-template-columns:repeat(3,1fr); margin-bottom:6px;">
+                <div class="video-label">CogVideoX1.5-I2V</div>
+                <div class="video-label">Wan2.2-TI2V</div>
+                <div class="video-label ours badge">Phantom (Ours)</div>
+              </div>
+
+              <!-- Row 1: bubble -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  The video captures a serene beach scene at sunset, where a group of people are engaged in creating
+                  large, colorful soap bubbles.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(3,1fr);">
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/cogvideox-i2v/bubble.mp4" autoplay muted loop
+                      playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-Image-to-Video/wan2.2/bubble.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/bubble.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 2: blue -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A thick, viscous blue liquid pours into a bowl, forming folds, splashes, and slow flowing waves.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(3,1fr);">
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/cogvideox-i2v/blue.mp4" autoplay muted loop
+                      playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-Image-to-Video/wan2.2/blue.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/blue.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 3: burger -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A juicy burger is pressed down; the bun compresses, sauce oozes from the sides, and the layers shift
+                  under the weight.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(3,1fr);">
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/cogvideox-i2v/burger.mp4" autoplay muted loop
+                      playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-Image-to-Video/wan2.2/burger.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/burger.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 4: juice -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  Fresh juice is poured from a pitcher into a glass; the liquid swirls and foam forms at the surface.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(3,1fr);">
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/cogvideox-i2v/juice.mp4" autoplay muted loop
+                      playsinline></video></div>
+                  <div class="video-item"><video src="static/images/supplementary/Text-Image-to-Video/wan2.2/juice.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/juice.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Rows 5-6: Wan2.2 vs Phantom only -->
+              <div style="font-size:0.82em; color:rgba(255,255,255,0.4); margin-bottom:10px; text-align:left;">
+                Additional examples &mdash; Wan2.2-TI2V vs. Phantom (Ours)
+              </div>
+              <div class="video-grid" style="grid-template-columns:repeat(2,1fr); margin-bottom:6px;">
+                <div class="video-label">Wan2.2-TI2V</div>
+                <div class="video-label ours badge">Phantom (Ours)</div>
+              </div>
+
+              <!-- Row 5: building -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  A tall building stands as a demolition ball swings into its facade; the wall crumbles and debris
+                  cascades to the ground.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/wan2.2/building.mp4" autoplay muted loop
+                      playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/building.mp4" autoplay muted
+                      loop playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+              <hr class="compare-divider" />
+
+              <!-- Row 6: foam -->
+              <div class="video-compare-section">
+                <div class="video-compare-prompt">
+                  <strong>Prompt:</strong>
+                  Foam dispensed from a can expands rapidly into a fluffy white mound, its surface bubbling and
+                  settling.
+                </div>
+                <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <div class="video-item"><video src="static/images/supplementary/Text-Image-to-Video/wan2.2/foam.mp4"
+                      autoplay muted loop playsinline></video></div>
+                  <div class="video-item"><video
+                      src="static/images/supplementary/Text-Image-to-Video/phantoms_ours/foam.mp4" autoplay muted loop
+                      playsinline style="border-color:rgba(167,139,250,0.5);"></video></div>
+                </div>
+              </div>
+
+            </div><!-- /tab-ti2v -->
+
+            <!-- ── TAB: Force-Conditioned ── -->
+            <div class="tab-panel" id="tab-force">
+
+              <div class="content has-text-justified" style="margin-bottom:14px; font-size:0.92em;">
+                <p>
+                  Phantom can be further fine-tuned on the
+                  <a href="https://force-prompting.github.io" target="_blank">Force-Prompting</a>
+                  dataset. Given a static image and a force tensor, Phantom synthesizes physically plausible motion
+                  driven by the applied force.
+                </p>
+              </div>
+
+              <div class="video-grid" style="grid-template-columns:repeat(3,1fr); gap:14px;">
+
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/car_left.mp4" autoplay muted loop
+                    playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Car &mdash; pushed left</div>
+                </div>
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/car_up.mp4" autoplay muted loop
+                    playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Car &mdash; pushed up</div>
+                </div>
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/flower_right.mp4" autoplay muted
+                    loop playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Flower &mdash; pushed right</div>
+                </div>
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/ornament_left.mp4" autoplay muted
+                    loop playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Ornament &mdash; pushed left</div>
+                </div>
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/rose_up.mp4" autoplay muted loop
+                    playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Rose &mdash; pushed up</div>
+                </div>
+                <div class="video-item" style="align-items:flex-start;">
+                  <video src="static/images/supplementary/Force-prompting%20Results/trail.mp4" autoplay muted loop
+                    playsinline style="border-color:rgba(167,139,250,0.4);"></video>
+                  <div class="video-label" style="text-align:left; padding:4px 2px;">Trail motion</div>
+                </div>
+              </div>
+
+            </div><!-- /tab-force -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Quantitative Results ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Quantitative Results</h2>
+
+            <!-- VideoPhy & VideoPhy-2 -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1rem;">VideoPhy &amp; VideoPhy-2</h3>
+            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+              <p>
+                SA (Semantic Adherence) measures video&ndash;text alignment.
+                PC (Physical Commonsense) measures adherence to real-world physics.
+                We report the results using the original prompt input.
+                Green percentages show improvement over the base model Wan2.2-TI2V.
+              </p>
+            </div>
+            <div style="overflow-x:auto; margin-bottom:24px;">
+              <table class="quant-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2" style="vertical-align:bottom;">Method</th>
+                    <th colspan="2">VideoPhy</th>
+                    <th colspan="2">VideoPhy-2</th>
+                  </tr>
+                  <tr>
+                    <th>SA &uarr;</th>
+                    <th>PC &uarr;</th>
+                    <th>SA &uarr;</th>
+                    <th>PC &uarr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">
+                      General-Purpose</td>
+                  </tr>
+                  <tr>
+                    <td>VideoCrafter2</td>
+                    <td>50.3</td>
+                    <td>29.7</td>
+                    <td>25.89</td>
+                    <td>55.67</td>
+                  </tr>
+                  <tr>
+                    <td>LaVIE</td>
+                    <td>48.7</td>
+                    <td>31.5</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                  </tr>
+                  <tr>
+                    <td>Cosmos-Diffusion-7B</td>
+                    <td>57.0</td>
+                    <td>18.0</td>
+                    <td>26.32</td>
+                    <td>54.19</td>
+                  </tr>
+                  <tr>
+                    <td>CogVideoX-5B</td>
+                    <td><span class="best">63.1</span></td>
+                    <td>31.4</td>
+                    <td><span class="best">28.86</span></td>
+                    <td>68.42</td>
+                  </tr>
+                  <tr>
+                    <td>Wan2.2-TI2V-5B</td>
+                    <td>41.5</td>
+                    <td>25.2</td>
+                    <td>24.53</td>
+                    <td>69.20</td>
+                  </tr>
+                  <tr>
+                    <td colspan="5"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">
+                      Physics-Focused</td>
+                  </tr>
+                  <tr>
+                    <td>PhyT2V (Round 4)</td>
+                    <td>61</td>
+                    <td>37</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                  </tr>
+                  <tr>
+                    <td>WISA</td>
+                    <td>62</td>
+                    <td>33</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                  </tr>
+                  <tr>
+                    <td>VideoREPA</td>
+                    <td>51.9</td>
+                    <td>22.4</td>
+                    <td>21.02</td>
+                    <td><span class="best">72.54</span></td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>Phantom (Ours)</td>
+                    <td>47.5 <span style="color:#4ade80;font-size:0.8em;">&uarr;14.5%</span></td>
+                    <td><span class="best">37.9</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;50.4%</span>
+                    </td>
+                    <td>27.75 <span style="color:#4ade80;font-size:0.8em;">&uarr;13.1%</span></td>
+                    <td>71.74 <span style="color:#4ade80;font-size:0.8em;">&uarr;2.6%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Physics-IQ -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1rem;">Physics-IQ</h3>
+            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+              <p>
+                Physics-IQ tests physical extrapolation from real-world motion sequences under
+                single-frame and multi-frame conditioning.
+              </p>
+            </div>
+            <div style="overflow-x:auto; margin-bottom:24px;">
+              <table class="quant-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Spatial IoU &uarr;</th>
+                    <th>Spatiotem. IoU &uarr;</th>
+                    <th>Weighted IoU &uarr;</th>
+                    <th>MSE &darr;</th>
+                    <th>Physics-IQ &uarr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">Single Frame
+                      &mdash; General-Purpose</td>
+                  </tr>
+                  <tr>
+                    <td>VideoPoet</td>
+                    <td>0.141</td>
+                    <td>0.126</td>
+                    <td>0.087</td>
+                    <td>0.012</td>
+                    <td>20.30</td>
+                  </tr>
+                  <tr>
+                    <td>Lumiere</td>
+                    <td>0.113</td>
+                    <td><span class="best">0.173</span></td>
+                    <td>0.061</td>
+                    <td>0.016</td>
+                    <td>19.00</td>
+                  </tr>
+                  <tr>
+                    <td>Runway Gen 3</td>
+                    <td>0.201</td>
+                    <td>0.115</td>
+                    <td>0.116</td>
+                    <td>0.015</td>
+                    <td>22.80</td>
+                  </tr>
+                  <tr>
+                    <td>CogVideoX1.5-I2V</td>
+                    <td>0.198</td>
+                    <td>0.189</td>
+                    <td>0.127</td>
+                    <td>0.015</td>
+                    <td>27.90</td>
+                  </tr>
+                  <tr>
+                    <td>Wan2.2-TI2V-5B</td>
+                    <td>0.164</td>
+                    <td>0.132</td>
+                    <td>0.102</td>
+                    <td>0.010</td>
+                    <td>22.10</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">Single Frame
+                      &mdash; Physics-Focused</td>
+                  </tr>
+                  <tr>
+                    <td>RDPO</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>25.21</td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>Phantom (Ours)</td>
+                    <td><span class="best">0.245</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;49.4%</span>
+                    </td>
+                    <td>0.146 <span style="color:#4ade80;font-size:0.8em;">&uarr;10.6%</span></td>
+                    <td><span class="best">0.140</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;37.3%</span>
+                    </td>
+                    <td><span class="best">0.009</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;11.1%</span>
+                    </td>
+                    <td><span class="best">29.59</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;33.9%</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">Multi-Frame
+                      &mdash; General-Purpose</td>
+                  </tr>
+                  <tr>
+                    <td>VideoPoet</td>
+                    <td>0.204</td>
+                    <td>0.164</td>
+                    <td>0.137</td>
+                    <td>0.010</td>
+                    <td><span class="best">29.50</span></td>
+                  </tr>
+                  <tr>
+                    <td>Lumiere</td>
+                    <td>0.170</td>
+                    <td>0.155</td>
+                    <td>0.093</td>
+                    <td>0.013</td>
+                    <td>23.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"
+                      style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">Multi-Frame
+                      &mdash; Physics-Focused</td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>Phantom (Ours)</td>
+                    <td><span class="best">0.235</span></td>
+                    <td>0.133</td>
+                    <td><span class="best">0.132</span></td>
+                    <td>0.011</td>
+                    <td>27.53</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- VBench-2 -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1rem;">VBench-2</h3>
+            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+              <p>
+                VBench-2.0 evaluates five core dimensions, Human Fidelity, Controllability, Creativity, Physics, and
+                Commonsense, across 18 fine-grained metrics, providing a comprehensive assessment of overall video
+                quality.
+              </p>
+            </div>
+            <div style="overflow-x:auto; margin-bottom:12px;">
+              <table class="quant-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Total &uarr;</th>
+                    <th>Creativity &uarr;</th>
+                    <th>Commonsense &uarr;</th>
+                    <th>Controllability &uarr;</th>
+                    <th>Human Fidelity &uarr;</th>
+                    <th>Physics &uarr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Wan2.2-TI2V-5B</td>
+                    <td>51.57</td>
+                    <td><span class="best">52.50</span></td>
+                    <td>60.57</td>
+                    <td>18.50</td>
+                    <td>86.10</td>
+                    <td>40.19</td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>Phantom (Ours)</td>
+                    <td><span class="best">51.84</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;0.5%</span>
+                    </td>
+                    <td>45.51</td>
+                    <td><span class="best">61.43</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;1.4%</span>
+                    </td>
+                    <td><span class="best">20.23</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;9.4%</span>
+                    </td>
+                    <td><span class="best">88.39</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;2.7%</span>
+                    </td>
+                    <td><span class="best">43.61</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;6.0%</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BibTeX ── -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title" style="display:flex; justify-content:left;">BibTeX</h2>
+        <pre><code>@inproceedings{shen2026phantom,
+          title     = {Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics},
+          author    = {Shen, Ying and Xiong, Jerry and Yu, Tianjiao and Lourentzou, Ismini},
+          booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+          year      = {2026}
+        }</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <a class="icon-link" href="#">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/PLAN-Lab">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This site is built upon the template from
+                <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+                made available under the
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                  Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        // Only affect tabs within the same tab-bar / sibling tab-panels
+        const bar = btn.closest('.tab-bar');
+        bar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        // Find the adjacent tab panels (siblings of the bar's parent)
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
