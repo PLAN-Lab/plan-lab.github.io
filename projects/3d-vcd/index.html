@@ -606,79 +606,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Qualitative Results</h2>
-  
-          <div class="content has-text-justified" style="padding-bottom: 30px;">
-            <p>
-              We present qualitative examples showing how
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              improves factual grounding across both 3D-POPE and HEAL. Across these examples, the baseline model
-              exhibits multiple failure modes, including missing objects that are present, hallucinating objects that
-              do not exist, and generating spurious ungrounded content. In contrast,
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              predictions remain more faithful to the observed information in the physical environment.
-            </p>
-          </div>
-  
-          <figure class="qual-example" style="margin-bottom: 40px;">
-            <img loading="lazy" decoding="async" src="static/images/qual1.png" alt="Qualitative example on scene0424_00" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>Qualitative comparison on <code>scene0424_00</code>.</strong>
-              The baseline incorrectly predicts the absence of a dining table, missing the true table object in the
-              scene. In contrast,
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              correctly grounds and identifies the dining table by aligning contrastive decoding with the scene graph.
-            </figcaption>
-          </figure>
-  
-          <figure class="qual-example" style="margin-bottom: 40px;">
-            <img loading="lazy" decoding="async" src="static/images/qual2.png" alt="Qualitative example on scene0479_00" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>Qualitative comparison on <code>scene0479_00</code>.</strong>
-              The baseline hallucinates a desk object and incorrectly predicts its presence, referring instead to a
-              counter in the scene. In contrast,
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              correctly determines that no desk exists by suppressing spurious category matches through contrastive
-              decoding aligned with the object-centric scene graph.
-            </figcaption>
-          </figure>
-  
-          <figure class="qual-example" style="margin-bottom: 40px;">
-            <img loading="lazy" decoding="async" src="static/images/qual3.png" alt="Qualitative example on scene0535_00" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>Reducing spurious object predictions on 3D-POPE.</strong>
-              In <code>scene0535_00</code>, the baseline 3D-LLM initially produces the correct answer
-              (<i>No</i>) but then hallucinates additional content, generating spurious narrative text with
-              hallucinated object tags such as <code>&lt;p&gt;living room&lt;/p&gt;[&lt;obj_0&gt;]</code>.
-              In contrast,
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              returns a clean and faithful response, consistently stating that the room contains no fireplaces.
-              The right panel shows the instance-level segmentation of the scene for reference.
-            </figcaption>
-          </figure>
-  
-          <figure class="qual-example">
-            <img loading="lazy" decoding="async" src="static/images/qual4.png" alt="Qualitative HEAL example" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>Qualitative comparison on the HEAL benchmark.</strong>
-              For the task <code>brushing_lint_off_clothing</code>, the baseline Qwen-14B-Instruct model hallucinates a
-              nonexistent <code>microwave.n.01_1</code> in its symbolic goal prediction. In contrast,
-              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              produces clean symbolic goals with no hallucinated objects, correctly grounding all sweaters on the bed
-              and removing dust-related states as required by the instruction. The right panel shows the first-person
-              view of the agent interacting with the sweaters in the scene.
-            </figcaption>
-          </figure>
-  
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -692,10 +619,10 @@
               We present qualitative examples showing how
               <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
               improves factual grounding across both 3D-POPE and HEAL. Across these examples, the baseline model
-              exhibits multiple failure modes, including missing objects that are present, hallucinating objects that
+              exhibits several failure modes, including missing objects that are present, hallucinating objects that
               do not exist, and generating spurious ungrounded content. In contrast,
               <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-              produces answers and symbolic predictions that remain more faithful to the scene graph and the physical
+               predictions remain more faithful to the scene graph and the underlying physical
               environment.
             </p>
   
