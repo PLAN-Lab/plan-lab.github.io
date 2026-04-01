@@ -155,7 +155,7 @@
         </div>
         
         <div style="margin: 30px 0;">
-          <img src="./static/images/overview-3.png" 
+          <img src="./static/images/3D-VCD-Method.png" 
                class="interpolation-image" 
                alt="Interpolate start reference image." 
                style="width: 80%; height: auto; display: block; margin: 0 auto;">
@@ -164,9 +164,9 @@
         <div class="content has-text-justified" style="margin-top: 15px;">
           <span style="font-weight: bold;">Overview of our Method.</span>
           Given 3D environment observations, <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> constructs a
-          structured 3D scene graph (<i>G</i>) that encodes object categories, centroids, and extents.
+          structured 3D scene graph (<i>𝒢</i>) that encodes object categories, centroids, and extents.
           It then applies controlled semantic and geometric perturbations to produce a distorted version
-          of the environment (<i>Ĝ</i>). Given a textual query (<i>x</i>), the MLLM agent processes both
+          of the environment (<i>𝒢</i><sup>^</sup>). Given a textual query (<i>x</i>), the MLLM agent processes both
           contexts in parallel. <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> then contrastively fuses the
           resulting logits to identify and suppress hallucination-prone tokens. This training-free
           procedure enforces 3D-grounded reasoning at inference time.
@@ -746,14 +746,14 @@
             <img
               loading="lazy"
               decoding="async"
-              src="static/images/qual1.png"
+              src="static/images/diningtable_new-2.png"
               alt="Qualitative example on scene0424_00"
               style="display:block; width:100%; border-radius:8px;"
             >
   
             <div style="margin-top:14px; text-align:left;">
               <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
-                Scene0424_00
+                Qualitative comparison on 3D-POPE: Scene0424_00
               </div>
               <div style="color:#334155; line-height:1.65;">
                 The baseline incorrectly predicts the absence of a dining table, missing the true table object in the scene.
@@ -763,38 +763,40 @@
               </div>
             </div>
           </div>
-  
-          <!-- Example 2 -->
+
+          <!-- Example 2 HEAL -->
           <div style="
-            background:#f8fafc;
-            border:1px solid #e5e7eb;
-            border-radius:12px;
-            padding:18px;
-            margin-bottom:28px;
-            box-shadow:0 2px 8px rgba(0,0,0,0.05);
-          ">
-            <img
-              loading="lazy"
-              decoding="async"
-              src="static/images/qual2.png"
-              alt="Qualitative example on scene0479_00"
-              style="display:block; width:100%; border-radius:8px;"
-            >
-  
-            <div style="margin-top:14px; text-align:left;">
-              <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
-                Scene0479_00
-              </div>
-              <div style="color:#334155; line-height:1.65;">
-                The baseline hallucinates a desk object and incorrectly predicts its presence, referring instead to a counter
-                in the scene. In contrast,
-                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-                correctly determines that no desk exists by suppressing spurious category matches through contrastive
-                decoding aligned with the object-centric scene graph.
-              </div>
+          background:#f8fafc;
+          border:1px solid #e5e7eb;
+          border-radius:12px;
+          padding:18px;
+          margin-bottom:28px;
+          box-shadow:0 2px 8px rgba(0,0,0,0.05);
+        ">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="static/images/HEAL.png"
+            alt="Qualitative HEAL benchmark example"
+            style="display:block; width:100%; border-radius:8px;"
+          >
+
+          <div style="margin-top:14px; text-align:left;">
+            <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
+              HEAL Example: <code>brushing_lint_off_clothing</code>
+            </div>
+            <div style="color:#334155; line-height:1.65;">
+              The baseline Qwen-14B-Instruct model hallucinates a nonexistent
+              <code>microwave.n.01_1</code> in its symbolic goal prediction. In contrast,
+              <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
+              produces clean symbolic goals with no hallucinated objects, correctly grounding all sweaters on the bed and
+              removing dust-related states as required by the instruction. The right panel shows the first-person view of
+              the agent interacting with the sweaters in the scene.
             </div>
           </div>
-  
+        </div>
+
+
           <!-- Example 3 -->
           <div style="
             background:#f8fafc;
@@ -807,27 +809,27 @@
             <img
               loading="lazy"
               decoding="async"
-              src="static/images/qual3.png"
+              src="static/images/bed-bground.png"
               alt="Qualitative example on scene0535_00"
               style="display:block; width:100%; border-radius:8px;"
             >
   
             <div style="margin-top:14px; text-align:left;">
               <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
-                3D-POPE Example: Scene0535_00
+                Qualitative comparison on 3D-POPE: Scene0608_00
               </div>
               <div style="color:#334155; line-height:1.65;">
-                The baseline 3D-LLM initially produces the correct answer (<i>No</i>) but then hallucinates additional
-                content, generating spurious narrative text and hallucinated object tags. In contrast,
-                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-                returns a clean and faithful response, consistently stating that the room contains no fireplaces. The right
-                panel shows the instance-level segmentation of the scene for reference.
+                The baseline 3D-LLM hallucinates the presence of a bed. In contrast, 
+                <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> correctly answers <i>No</i> by contrasting logits under perturbed 
+                3D scene graphs, effectively suppressing hallucinated object activations. 
+                The right panel shows the object-level scene segmentation for reference.
+            
               </div>
             </div>
           </div>
-  
-          <!-- Example 4 -->
-          <div style="
+
+            <!-- Example 4 -->
+            <div style="
             background:#f8fafc;
             border:1px solid #e5e7eb;
             border-radius:12px;
@@ -838,26 +840,24 @@
             <img
               loading="lazy"
               decoding="async"
-              src="static/images/qual4.png"
-              alt="Qualitative HEAL benchmark example"
+              src="static/images/desknew-3.png"
+              alt="Qualitative example on scene0479_00"
               style="display:block; width:100%; border-radius:8px;"
             >
   
             <div style="margin-top:14px; text-align:left;">
               <div style="color:#0f172a; font-weight:700; margin-bottom:6px;">
-                HEAL Example: <code>brushing_lint_off_clothing</code>
+                Qualitative comparison on 3D-POPE: Scene0479_00
               </div>
               <div style="color:#334155; line-height:1.65;">
-                The baseline Qwen-14B-Instruct model hallucinates a nonexistent
-                <code>microwave.n.01_1</code> in its symbolic goal prediction. In contrast,
+                The baseline hallucinates a desk object and incorrectly predicts its presence, referring instead to a counter
+                in the scene. In contrast,
                 <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>
-                produces clean symbolic goals with no hallucinated objects, correctly grounding all sweaters on the bed and
-                removing dust-related states as required by the instruction. The right panel shows the first-person view of
-                the agent interacting with the sweaters in the scene.
+                correctly determines that no desk exists by suppressing spurious category matches through contrastive
+                decoding aligned with the object-centric scene graph.
               </div>
             </div>
           </div>
-  
         </div>
       </div>
     </div>
