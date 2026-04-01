@@ -151,17 +151,17 @@
           and geometric distortions to generate contrasting contexts, enabling the model to suppress predictions 
           that are not grounded in the observed environment. Across challenging benchmarks such as 3D-POPE and HEAL, 
           <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> reduces hallucination rates while improving precision, 
-          accuracy, and overall reliability, without requiring any model retraining.
+          accuracy, and overall reliability, without any model retraining.
         </div>
         
         <div style="margin: 30px 0;">
           <img src="./static/images/3D-VCD-Method.png" 
                class="interpolation-image" 
                alt="Interpolate start reference image." 
-               style="width: 80%; height: auto; display: block; margin: 0 auto;">
+               style="width: 100%; height: auto; display: block; margin: 0 auto;">
         </div>
         
-        <div class="content has-text-justified" style="margin-top: 15px;">
+        <div class="content has-text-justified" style="margin-top: -30px;">
           <span style="font-weight: bold;">Overview of our Method.</span>
           Given 3D environment observations, <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> constructs a
           structured 3D scene graph (<i>𝒢</i>) that encodes object categories, centroids, and extents.
@@ -183,24 +183,16 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Large Language Models are increasingly integrated as the cognitive core of 3D embodied 
-              agents to enable complex environmental reasoning. However, these agents tend to inherit the critical 
-              flaw of hallucination, often failing to ground their responses to their 3D view. 
-              While Visual Contrastive Decoding (VCD) is a powerful training-free method for 
-              mitigating hallucinations in 2D image-based models, it has not been adapted to the complex 3D 
-              embodied environment.
-            </p>
-          
-            <p>
-              In this work, we bridge this gap by introducing <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>, 
-              the first VCD framework designed for 3D embodied agents. Our method operates at 
-              inference time by generating a <i>negative</i> 3D context—not by blurring images, but by applying 
-              semantic and geometric distortions directly to a structured 3D scene graph, such as 
-              swapping object categories or perturbing positional coordinates. Evaluations on standard 
-              benchmarks show that our approach consistently outperforms existing models. For example, on the random 
-              split of 3D-POPE, <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
-              reduces the Yes-rate from 99.9% to 75.1% while improving precision from 50.0% to 62.2%. These results demonstrate that our training-free 
-              approach effectively curbs hallucination, yielding more reliable and grounded 3D agents.
+              Large multimodal models are increasingly used as the reasoning core of embodied agents operating in 3D environments, 
+              yet they remain prone to hallucinations that can produce unsafe and ungrounded decisions. Existing inference-time hallucination mitigation 
+              methods largely target 2D vision-language settings and do not transfer to embodied 3D reasoning, where failures arise from object presence, 
+              spatial layout, and geometric grounding rather than pixel-level inconsistencies. We introduce \modelname{}, the first inference-time visual 
+              contrastive decoding framework for hallucination mitigation in 3D embodied agents. 3D-VCD constructs a distorted 3D scene graph by applying 
+              semantic and geometric perturbations to object-centric representations, such as category substitutions and coordinate or extent corruption. 
+              By contrasting predictions under the original and distorted 3D contexts, our method suppresses tokens that are insensitive to grounded 
+              scene evidence and are therefore likely driven by language priors. We evaluate \modelnamenc{} on the 3D-POPE and HEAL benchmarks and show 
+              that it consistently improves grounded reasoning without any retraining, establishing inference-time contrastive decoding over structured 3D 
+              representations as an effective and practical route to more reliable embodied intelligence.
             </p>
           </div>
         </div>
@@ -246,8 +238,7 @@
                 </b>
                 We introduce 
                 <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>, 
-                the first inference-time Visual Contrastive Decoding framework for 3D embodied agents, extending 
-                contrastive reasoning to structured 3D representations.
+                the first \emph{training-free}, inference-time contrastive decoding framework for hallucination mitigation in 3D embodied agents.
               </li>
   
               <li style="margin-bottom: 18px;">
@@ -255,8 +246,8 @@
                   <i class="fa-solid fa-circle-check" style="color:#4cc9f0;"></i>
                 </span>
                 <b>Semantic and Geometric Distortion Operators.</b>
-                We propose novel distortion operators that manipulate object semantics and spatial geometry 
-                to construct informative contradictory 3D contexts, enabling effective contrastive grounding.
+                We propose a simple and effective 3D counterfactual grounding mechanism that constructs distorted scene graphs 
+                through semantic and geometric perturbations, and uses dual-context logit fusion to suppress predictions unsupported by the underlying 3D evidence.
               </li>
   
               <li>
@@ -264,10 +255,9 @@
                   <i class="fa-solid fa-circle-check" style="color:#4cc9f0;"></i>
                 </span>
                 <b>Strong Generalization Without Retraining.</b>
-                We demonstrate the generality of 
+                We demonstrate 
                 <span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span> 
-                across embodied hallucination benchmarks, achieving consistent reductions in hallucination 
-                and improved 3D grounding—without any model retraining.
+               improves grounded reasoning across embodied hallucination benchmarks, reducing over-affirmation on 3D-POPE and lowering hallucination on HEAL with minimal computational overhead.
               </li>
   
             </ul>
