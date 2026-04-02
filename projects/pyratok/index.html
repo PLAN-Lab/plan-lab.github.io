@@ -30,8 +30,8 @@
         position: relative;
         border-radius: 16px;
         overflow: hidden;
-        background: linear-gradient(135deg, #070b18, #0f172a);
-        min-height: 220px;
+        background: transparent;
+        min-height: auto;
       }
       .media-card img,
       .media-card video {
@@ -120,18 +120,20 @@
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Onkar Susladkar,</span>
-              <span class="author-block">Tushar Prakash,</span>
-              <span class="author-block">Adheesh Juvekar,</span>
-              <span class="author-block">Kiet A. Nguyen,</span>
-              <span class="author-block">Dong-Hwan Jang,</span>
-              <span class="author-block">Inderjit S Dhillon,</span>
-              <span class="author-block">Ismini Lourentzou</span>
+              <span class="author-block">Onkar Susladkar<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Tushar Prakash<sup style="color:#f6a34f;">♣</sup>,</span>
+              <span class="author-block">Adheesh Juvekar<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Kiet A. Nguyen<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Dong-Hwan Jang<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Inderjit S Dhillon<sup style="color:cyan;">★</sup><sup style="color:yellow;">♠</sup>,</span>
+              <span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
             </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
+            <div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
+              <span class="author-block"><sup class="illini-orange">♦</sup><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
               <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+              <span class="author-block"><sup style="color:#f6a34f;">♣</sup>Sony Research India</span>
+              <span class="author-block"><sup style="color:cyan;">★</sup>University of Texas at Austin</span>
+              <span class="author-block"><sup style="color:yellow;">♠</sup>Google</span>
             </div>
 
              <div class="has-text-centered" style="margin: 5px 0;">
@@ -141,19 +143,11 @@
              <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2601.16210v2" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
+                  <a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -248,55 +242,57 @@
           <img loading="lazy" decoding="async" src="./static/images/qualitative-main.png" alt="Main qualitative visualization">
           <div class="media-skeleton">Loading...</div>
         </div>
-        <p class="caption has-text-centered">
-          The main visualization contrasts coarse-to-fine latent decoding and shows how PyraTok preserves temporal dynamics across pyramid levels.
-        </p>
       </div>
 
-      <div style="margin-bottom: 2rem;">
+            <div style="margin-bottom: 2rem;">
         <h3 class="title is-4">High-resolution reconstructions</h3>
         <div style="display:flex; flex-direction:column; gap:1.5rem;">
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; justify-items:center;">
-            <div style="width:100%; max-width:420px; text-align:center;">
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
               <div class="media-card" data-loaded="false">
                 <video controls loop muted playsinline>
                   <source src="./static/videos/recon/recon-1080p-1.mp4" type="video/mp4">
                 </video>
                 <div class="media-skeleton">Loading...</div>
               </div>
+              <p class="caption has-text-centered" style="margin-top:0.5rem;">1080p reconstruction</p>
             </div>
-            <div style="width:100%; max-width:420px; text-align:center;">
+          </div>
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
               <div class="media-card" data-loaded="false">
                 <video controls loop muted playsinline>
                   <source src="./static/videos/recon/recon-1080p-3.mp4" type="video/mp4">
                 </video>
                 <div class="media-skeleton">Loading...</div>
               </div>
+              <p class="caption has-text-centered" style="margin-top:0.5rem;">1080p reconstruction</p>
             </div>
           </div>
-          <p class="caption has-text-centered">1080p reconstruction</p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; justify-items:center;">
-            <div style="width:100%; max-width:420px; text-align:center;">
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
               <div class="media-card" data-loaded="false">
                 <video controls loop muted playsinline>
                   <source src="./static/videos/recon/recon-4k-1.mp4" type="video/mp4">
                 </video>
                 <div class="media-skeleton">Loading...</div>
               </div>
+              <p class="caption has-text-centered" style="margin-top:0.5rem;">4K reconstruction</p>
             </div>
-            <div style="width:100%; max-width:420px; text-align:center;">
+          </div>
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
               <div class="media-card" data-loaded="false">
                 <video controls loop muted playsinline>
                   <source src="./static/videos/recon/recon-4k-4.mp4" type="video/mp4">
                 </video>
                 <div class="media-skeleton">Loading...</div>
               </div>
+              <p class="caption has-text-centered" style="margin-top:0.5rem;">4K reconstruction</p>
             </div>
           </div>
-          <p class="caption has-text-centered">4K reconstruction</p>
         </div>
       </div>
-
       <div style="margin-bottom: 2rem; text-align:center;">
         <h3 class="title is-4">Zero-shot segmentation</h3>
         <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
@@ -308,47 +304,50 @@
         </p>
       </div>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 class="title is-4">Text-to-video alignment</h3>
+            <div style="margin-bottom: 2rem;">
+        <h3 class="title is-4">Text-to-video generation</h3>
         <div style="text-align:center; margin:0 auto 1rem;">
           <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
             <img loading="lazy" decoding="async" src="./static/images/qualitative-text2video.png" alt="Text-to-video samples">
             <div class="media-skeleton">Loading...</div>
           </div>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem;">
-          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
-            <div class="media-card" data-loaded="false">
-              <video controls loop muted playsinline>
-                <source src="./static/videos/t2v/t2v-magvit.mp4" type="video/mp4">
-              </video>
-              <div class="media-skeleton">Loading...</div>
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/t2v/t2v-magvit.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+              <p class="caption">MagvitV2 + PyraTok</p>
             </div>
-            <p class="caption">MagvitV2 + PyraTok</p>
           </div>
-          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
-            <div class="media-card" data-loaded="false">
-              <video controls loop muted playsinline>
-                <source src="./static/videos/t2v/t2v-motionaura.mp4" type="video/mp4">
-              </video>
-              <div class="media-skeleton">Loading...</div>
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/t2v/t2v-motionaura.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+              <p class="caption">MotionAura + PyraTok</p>
             </div>
-            <p class="caption">MotionAura + PyraTok</p>
           </div>
-          <div style="flex:1 1 320px; max-width:400px; text-align:center;">
-            <div class="media-card" data-loaded="false">
-              <video controls loop muted playsinline>
-                <source src="./static/videos/t2v/t2v-omnigen.mp4" type="video/mp4">
-              </video>
-              <div class="media-skeleton">Loading...</div>
+          <div style="width:100%;">
+            <div style="width:85%; margin:0 auto; text-align:center;">
+              <div class="media-card" data-loaded="false">
+                <video controls loop muted playsinline>
+                  <source src="./static/videos/t2v/t2v-omnigen.mp4" type="video/mp4">
+                </video>
+                <div class="media-skeleton">Loading...</div>
+              </div>
+              <p class="caption">OmniGenV2 + PyraTok</p>
             </div>
-            <p class="caption">OmniGenV2 + PyraTok</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
