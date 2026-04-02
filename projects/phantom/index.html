@@ -880,8 +880,13 @@
               <p>
                 SA (Semantic Adherence) measures video&ndash;text alignment.
                 PC (Physical Commonsense) measures adherence to real-world physics.
-                We report the results using the original prompt input.
+              </p>
+              <p>
+                &dagger; denotes results reported from VideoREPA with the original prompt.
+                * denotes evaluation with detailed prompts.
                 Green percentages show improvement over the base model Wan2.2-TI2V.
+                Best results in <strong>bold</strong>, second-best <span
+                  style="text-decoration:underline;">underlined</span>.
               </p>
             </div>
             <div style="overflow-x:auto; margin-bottom:24px;">
@@ -928,7 +933,7 @@
                   </tr>
                   <tr>
                     <td>CogVideoX-5B</td>
-                    <td><span class="best">63.1</span></td>
+                    <td>63.1</td>
                     <td>31.4</td>
                     <td><span class="best">28.86</span></td>
                     <td>68.42</td>
@@ -941,19 +946,26 @@
                     <td>69.20</td>
                   </tr>
                   <tr>
+                    <td>Wan2.2-TI2V-5B*</td>
+                    <td>64.7</td>
+                    <td>28.6</td>
+                    <td>24.53</td>
+                    <td>69.20</td>
+                  </tr>
+                  <tr>
                     <td colspan="5"
                       style="text-align:left;font-size:0.8em;color:rgba(255,255,255,0.4);padding:6px 12px;">
                       Physics-Focused</td>
                   </tr>
                   <tr>
-                    <td>PhyT2V (Round 4)</td>
+                    <td>PhyT2V (Round 4)&dagger;</td>
                     <td>61</td>
                     <td>37</td>
                     <td>&mdash;</td>
                     <td>&mdash;</td>
                   </tr>
                   <tr>
-                    <td>WISA</td>
+                    <td>WISA&dagger;</td>
                     <td>62</td>
                     <td>33</td>
                     <td>&mdash;</td>
@@ -966,13 +978,32 @@
                     <td>21.02</td>
                     <td><span class="best">72.54</span></td>
                   </tr>
+                  <tr>
+                    <td>VideoREPA*&dagger;</td>
+                    <td><span class="best">72.1</span></td>
+                    <td><span class="best">40.1</span></td>
+                    <td>21.02</td>
+                    <td><span class="best">72.54</span></td>
+                  </tr>
                   <tr class="ours-row">
                     <td>Phantom (Ours)</td>
                     <td>47.5 <span style="color:#4ade80;font-size:0.8em;">&uarr;14.5%</span></td>
-                    <td><span class="best">37.9</span> <span style="color:#4ade80;font-size:0.8em;">&uarr;50.4%</span>
-                    </td>
-                    <td>27.75 <span style="color:#4ade80;font-size:0.8em;">&uarr;13.1%</span></td>
-                    <td>71.74 <span style="color:#4ade80;font-size:0.8em;">&uarr;2.6%</span></td>
+                    <td>37.9 <span style="color:#4ade80;font-size:0.8em;">&uarr;50.4%</span></td>
+                    <td><span style="text-decoration:underline;">27.75</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;13.1%</span></td>
+                    <td><span style="text-decoration:underline;">71.74</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;2.6%</span></td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>Phantom* (Ours)</td>
+                    <td><span style="text-decoration:underline;">70.3</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;8.7%</span></td>
+                    <td><span style="text-decoration:underline;">39.4</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;37.8%</span></td>
+                    <td><span style="text-decoration:underline;">27.75</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;13.1%</span></td>
+                    <td><span style="text-decoration:underline;">71.74</span> <span
+                        style="color:#4ade80;font-size:0.8em;">&uarr;2.6%</span></td>
                   </tr>
                 </tbody>
               </table>
