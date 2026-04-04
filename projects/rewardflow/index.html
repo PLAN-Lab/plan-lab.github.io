@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="RewardFlow project page for PLAN Lab." />
+    <title>RewardFlow: Generate Images by Optimizing What You Reward</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <style>
+      .media-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #070b18, #0f172a);
+        min-height: 220px;
+      }
+      .media-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .media-skeleton {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+      }
+      .media-card[data-loaded="true"] .media-skeleton {
+        opacity: 0;
+      }
+      .media-skeleton::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+        animation: shimmer 1.5s infinite;
+      }
+      @keyframes shimmer {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(120%); }
+      }
+      .clear-link-group .link-block {
+        margin-top: 0.25rem;
+      }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  </head>
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+  <a href="../../index.html#hero" class="nav-logo">
+    <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+  </a>
+  <div class="nav-menu">
+    <a href="../../publications.html" class="nav-item" aria-label="Publications">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Publications</span>
+    </a>
+    <a href="../../index.html#team" class="nav-item" aria-label="Team">
+      <i class="fa-solid fa-users"></i>
+      <span>Team</span>
+    </a>
+    <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+      <i class="fa-solid fa-cube"></i>
+      <span>PLAN Cubes</span>
+    </a>
+    <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <i class="fa-solid fa-circle-nodes"></i>
+      <span>Partner with Us</span>
+    </a>
+    <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Join Us</span>
+    </a>
+  </div>
+</nav>
+
+    <main>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">RewardFlow: Generate Images by Optimizing What You Reward</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Onkar Kishor Susladkar<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Dong-Hwan Jang<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Tushar Prakash<sup style="color:#f6a34f;">♣</sup>,</span>
+              <span class="author-block">Adheesh Sunil Juvekar<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Vedant Shah<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Ayush Barik<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Nabeel Bashir<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Muntasir Wahed<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Ritish Shrirao<sup class="illini-orange">♦</sup>,</span>
+              <span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
+              <span class="author-block"><sup class="illini-orange">♦</sup><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
+              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+              <span class="author-block"><sup style="color:#f6a34f;">♣</sup>Sony Research India</span>
+            </div>
+             <div class="has-text-centered" style="margin: 5px 0;">
+              <h1 class="title is-3 publication-venue">CVPR 2026</h1>
+            </div>
+             <div class="column has-text-centered">
+              <div class="publication-links clear-link-group" style="justify-content:center; display:flex; flex-wrap:wrap; gap:0.35rem;">
+                <span class="link-block">
+                  <a href="../../Language_Guided_editing_CVPR_26.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/onkarsus13/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
+                    <span class="icon">
+                      <span class="huggingface-icon">🤗</span>
+                    </span>
+                    <span>Weights</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow fuses complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference into a single guidance signal.
+        </p>
+        <p>
+          To provide fine-grained instruction-level supervision, RewardFlow adds a differentiable VQA-based reward and a SAM2 text-guided object reward, enabling localized edits and preventing semantic leakage outside the target mask. A prompt-aware adaptive policy extracts semantic primitives from the instruction, infers intent, and dynamically modulates reward weights and step sizes throughout sampling.
+        </p>
+        <p>
+          We further tether sampling to the originating latent via a clean-latent KL regularizer, which anchors the drift produced by the fused reward gradient. Across editing and compositional generation benchmarks, RewardFlow obtains state-of-the-art zero-shot fidelity and alignment without any fine-tuning.
+        </p>
+        <div style="margin-top:1.5rem; text-align:center;">
+          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
+            <img loading="lazy" decoding="async" src="./static/images/abstract_diagram.png" alt="RewardFlow abstract diagram">
+            <div class="media-skeleton">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">✅ Contributions</h2>
+      <div class="content has-text-justified">
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>RewardFlow.</b> We introduce a multi-reward-guided Langevin framework that combines semantic, perceptual, regional, object-level, and human-preference signals to enable controllable, inversion-free editing and generation.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Prompt-aware adaptive policy.</b> Our lightweight policy parses semantic primitives from the instruction, infers edit intent, and dynamically adjusts reward weights and step sizes to balance coarse-to-fine optimization.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Fine-grained rewards.</b> We design a differentiable VQA reward for attribute-level correctness and a SAM-guided localization reward that penalizes edits leaking outside the region of interest.</li>
+          <br>
+          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Theoretical grounding.</b> We prove the update corresponds to a valid discretization of a Langevin SDE targeting a prompt-tilted density, giving a sound foundation for stable convergence during reward-guided sampling.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Quantitative Results</h2>
+      <div style="display:grid; gap:1.5rem; justify-items:center;">
+        <div style="width:85%;">
+          <div class="media-card" data-loaded="false">
+            <img loading="lazy" decoding="async" src="./static/images/results.png" alt="RewardFlow results" style="height:100%;">
+            <div class="media-skeleton">Loading...</div>
+          </div>
+          <p class="caption has-text-centered" style="margin-top:0.5rem;">RewardFlow achieves high edit fidelity and compositional alignment across editing benchmarks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Qualitative Results</h2>
+      <div class="content has-text-justified">
+        RewardFlow keeps subject identity and layout while enabling localized style/text edits, delivering clean, compositional results without inversion.
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+        <div style="width:100%;">
+          <div style="width:80%; margin:0 auto;">
+            <div class="media-card" data-loaded="false">
+              <img loading="lazy" decoding="async" src="./static/images/Generation_from_our_model.png" alt="RewardFlow generation showcase">
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption has-text-centered" style="margin-top:0.5rem;">Generation samples guided by multi-reward Langevin dynamics.</p>
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="width:80%; margin:0 auto;">
+            <div class="media-card" data-loaded="false">
+              <img loading="lazy" decoding="async" src="./static/images/More Visual results for editing.png" alt="More RewardFlow editing">
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption has-text-centered" style="margin-top:0.5rem;">Additional localized edits.</p>
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="width:80%; margin:0 auto;">
+            <div class="media-card" data-loaded="false">
+              <img loading="lazy" decoding="async" src="./static/images/image_generation_comparisom.png" alt="Image generation comparison">
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption has-text-centered" style="margin-top:0.5rem;">Compositional generation vs. baselines.</p>
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="width:80%; margin:0 auto;">
+            <div class="media-card" data-loaded="false">
+              <img loading="lazy" decoding="async" src="./static/images/comparison_results.png" alt="Comparison results" style="height:100%;">
+              <div class="media-skeleton">Loading...</div>
+            </div>
+            <p class="caption has-text-centered" style="margin-top:0.5rem;">Comparison against prior reward-guided techniques highlights improved localization and reduced semantic drift.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <pre><code>@inproceedings{rewardflow2026,
+  title={RewardFlow: Generate Images by Optimizing What You Reward},
+  author={Susladkar, Onkar Kishor and Jang, Dong-Hwan and Prakash, Tushar and Juvekar, Adheesh Sunil and Shah, Vedant and Barik, Ayush and Bashir, Nabeel and Wahed, Muntasir and Shrirao, Ritish and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026},
+  url={https://plan-lab.github.io/Language_Guided_editing_CVPR_26.pdf}
+}</code></pre>
+    </div>
+  </section>
+    </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const markLoaded = (media) => {
+        const card = media.closest('.media-card');
+        if (card) {
+          card.setAttribute('data-loaded', 'true');
+        }
+      };
+      document.querySelectorAll('.media-card img').forEach((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          markLoaded(img);
+        } else {
+          img.addEventListener('load', () => markLoaded(img), { once: true });
+        }
+      });
+    });
+  </script>
+  </body>
+</html>

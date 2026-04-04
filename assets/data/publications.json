@@ -63,6 +63,38 @@
       "venueAbbr": "CVPR 2026"
     },
     {
+      "id": "2026-Susladkar-rewardflow",
+      "title": "RewardFlow: Generate Images by Optimizing What You Reward",
+      "projectName": "RewardFlow",
+      "authors": [
+        "Onkar Susladkar",
+        "Dong-Hwan Jang",
+        "Tushar Prakash",
+        "Adheesh Juvekar",
+        "Vedant Shah",
+        "Ayush Barik",
+        "Nabeel Bashir",
+        "Muntasir Wahed",
+        "Ritish Shrirao",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-04-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "type": "paper",
+      "cover": "assets/images/publications/rewardflow.png",
+      "doi": "",
+      "links": {
+        "website": "/projects/rewardflow/",
+        "paper": "",
+        "code": "",
+        "video": "",
+        "data": "https://huggingface.co/onkarsus13/RewardFlow"
+      },
+      "cardCover": "assets/images/cards/rewardflow.png",
+      "venueAbbr": "CVPR 2026"
+    },
+    {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
       "title": "SAUCE: Truncated Sparse Document Signature Bit-Vectors for Fast Web-Scale Corpus Expansion",
       "projectName": "SAUCE",
