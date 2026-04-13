@@ -26,12 +26,38 @@
       "doi": "10.48550/arXiv.2601.07060",
       "links": {
         "website": "",
-        "paper": "https://arxiv.org/pdf/2601.07060v1",
+        "paper": "https://arxiv.org/pdf/2601.07060",
         "code": "",
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/palmteaser.png"
+      "cardCover": "assets/images/cards/palmteaser.png",
+      "venueAbbr": "CVPR 2026"
+    },
+    {
+      "id": "2026-Shen-phantom-latent-physics-video",
+      "title": "Phantom: Learning Latent Physical Dynamics for Video Generation",
+      "projectName": "Phantom",
+      "authors": [
+        "Ying Shen",
+        "Tianjiao Yu", 
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "type": "paper",
+      "cover": "assets/images/publications/phantom.mp4",      
+      "doi": "",
+      "links": {
+        "website": "/projects/phantom/",
+        "paper": "https://arxiv.org/pdf/2604.08503",
+        "code": "",
+        "video": "",
+        "data": ""
+        },
+        "cardCover": "assets/images/publications/phantom.mp4",
+        "venueAbbr": "CVPR 2026"
     },
     {
       "id": "2026-Susladkar-pyratok-language-aligned",
@@ -54,7 +80,7 @@
       "doi": "10.48550/arXiv.2601.16210",
       "links": {
         "website": "/projects/pyratok/",
-        "paper": "https://arxiv.org/pdf/2601.16210v2",
+        "paper": "https://arxiv.org/pdf/2601.16210",
         "code": "https://github.com/PLAN-Lab/CVPR25-PyraTok",
         "video": "",
         "data": "https://huggingface.co/onkarsus13/PyraTok"
@@ -86,7 +112,7 @@
       "doi": "",
       "links": {
         "website": "/projects/rewardflow/",
-        "paper": "",
+        "paper": "https://arxiv.org/pdf/2604.08536",
         "code": "",
         "video": "",
         "data": "https://huggingface.co/onkarsus13/RewardFlow"
