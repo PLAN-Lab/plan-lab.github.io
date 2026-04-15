@@ -15,6 +15,9 @@ This folder is a standalone static site. Team members and publications are rende
         "Firstname Lastname",
         "Firstname Lastname", # important to use this format for lab members to link to their profile
       ],
+      "jointFirstAuthors": [
+        "Firstname Lastname" # optional; members listed here are prioritized like first authors on profile pages
+      ],
       "year": YYYY,
       "date": "YYYY-MM-DD",
       "venue": "venue",

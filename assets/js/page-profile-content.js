@@ -35,6 +35,36 @@
     return String(a.title || '').localeCompare(String(b.title || ''));
   }
 
+  function memberMatchesNameList(names, member) {
+    const values = Array.isArray(names) ? names : [];
+    if (!values.length) return false;
+    return values.some((name) => memberSearchSeeds(member).some((seed) => authorMatchesMember(name, seed)));
+  }
+
+  function isPriorityFirstAuthorByMember(pub, member) {
+    const authors = Array.isArray(pub && pub.authors) ? pub.authors : [];
+    if (!authors.length) return false;
+
+    const firstAuthor = authors[0];
+    if (memberMatchesNameList([firstAuthor], member)) return true;
+
+    const jointFirstAuthors = Array.isArray(pub && pub.jointFirstAuthors)
+      ? pub.jointFirstAuthors
+      : Array.isArray(pub && pub.coFirstAuthors)
+        ? pub.coFirstAuthors
+        : [];
+    return memberMatchesNameList(jointFirstAuthors, member);
+  }
+
+  function byMemberPriority(member) {
+    return function sortMemberPublications(a, b) {
+      const aFirstAuthored = isPriorityFirstAuthorByMember(a, member);
+      const bFirstAuthored = isPriorityFirstAuthorByMember(b, member);
+      if (aFirstAuthored !== bFirstAuthored) return aFirstAuthored ? -1 : 1;
+      return byDateDesc(a, b);
+    };
+  }
+
   function setLink(el, href) {
     const clean = String(href || '').trim();
     if (!clean) {
@@ -137,6 +167,7 @@
     const papersSection = document.getElementById('papers');
     const showPapersBtn =
       document.getElementById('profile-show-papers') || document.querySelector('.btn-papers');
+    const papersShowAllLink = document.getElementById('papers-show-all');
 
     const nameEl = document.getElementById('profile-name');
     const roleEl = document.getElementById('profile-role');
@@ -168,8 +199,8 @@
     if (githubLink) setLink(githubLink, member.github);
     if (scholarLink) setLink(scholarLink, member.googleScholar);
 
-    const publications = (await window.PLANContent.getPublications()).slice().sort(byDateDesc);
-    const mine = memberPublications(publications, member);
+    const publications = await window.PLANContent.getPublications();
+    const mine = memberPublications(publications, member).sort(byMemberPriority(member));
 
     const author = String(member.name || '').trim();
     const memberId = String(member.id || '').trim();
@@ -206,7 +237,16 @@
     }
 
     if (papersSection) papersSection.style.display = '';
-    mine.slice(0, 2).forEach((pub) => {
+    if (papersShowAllLink) {
+      if (mine.length > 5) {
+        papersShowAllLink.href = publicationsSearchUrl;
+        papersShowAllLink.textContent = 'Show all papers';
+        papersShowAllLink.style.display = '';
+      } else {
+        papersShowAllLink.style.display = 'none';
+      }
+    }
+    mine.slice(0, 5).forEach((pub) => {
       const item = document.createElement('div');
       item.className = 'paper-item';
 

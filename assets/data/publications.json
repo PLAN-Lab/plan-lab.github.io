@@ -121,6 +121,99 @@
       "venueAbbr": "CVPR 2026"
     },
     {
+      "id": "2026-Ogunleye-3d-vcd-hallucination-mitigation",
+      "title": "3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding",
+      "projectName": "3D-VCD",
+      "authors": [
+        "Makanjuola Ogunleye",
+        "Eman Abdelrahman",
+        "Ismini Lourentzou"
+      ],
+      "jointFirstAuthors": [
+        "Makanjuola Ogunleye",
+        "Eman Abdelrahman"
+      ],
+      "year": 2026,
+      "date": "2026-04-09",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "type": "paper",
+      "cover": "projects/3d-vcd/static/images/3D-VCD-Method.png",
+      "doi": "10.48550/arXiv.2604.08645",
+      "links": {
+        "website": "/projects/3d-vcd/",
+        "paper": "https://arxiv.org/pdf/2604.08645",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "CVPR 2026"
+    },
+    {
+      "id": "2026-Yuan-vtam-video-tactile-action-models",
+      "title": "VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs",
+      "projectName": "VTAM",
+      "authors": [
+        "Haoran Yuan",
+        "Weigang Yi",
+        "Zhenyu Zhang",
+        "Wendi Chen",
+        "Yuchen Mo",
+        "Jiashi Yin",
+        "Xinzhuo Li",
+        "Xiangyu Zeng",
+        "Chuan Wen",
+        "Cewu Lu",
+        "Katherine Driggs-Campbell",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-03-24",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "projects/vtam/static/images/teaser.png",
+      "doi": "10.48550/arXiv.2603.23481",
+      "links": {
+        "website": "/projects/vtam/",
+        "paper": "https://arxiv.org/pdf/2603.23481",
+        "code": "https://github.com/haorany7/VTAM",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Susladkar-best-of-both-worlds-unidflow",
+      "title": "Best of Both Worlds: Multimodal Reasoning and Generation via Unified Discrete Flow Matching",
+      "projectName": "UniDFlow",
+      "authors": [
+        "Onkar Susladkar",
+        "Tushar Prakash",
+        "Gayatri Deshmukh",
+        "Kiet A. Nguyen",
+        "Jiaxun Zhang",
+        "Adheesh Juvekar",
+        "Tianshu Bao",
+        "Lin Chai",
+        "Sparsh Mittal",
+        "Inderjit S Dhillon",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-02-12",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "projects/unidflow/static/images/teaser.jpg",
+      "doi": "10.48550/arXiv.2602.12221",
+      "links": {
+        "website": "/projects/unidflow/",
+        "paper": "https://arxiv.org/pdf/2602.12221",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
       "title": "SAUCE: Truncated Sparse Document Signature Bit-Vectors for Fast Web-Scale Corpus Expansion",
       "projectName": "SAUCE",
@@ -431,6 +524,10 @@
         "Pinar Yanardag",
         "Ismini Lourentzou"
       ],
+      "jointFirstAuthors": [
+        "Muntasir Wahed",
+        "Kiet A. Nguyen"
+      ],
       "year": 2024,
       "date": "2024-12-31",
       "venue": "arXiv",
@@ -484,6 +581,10 @@
         "Yifan Shen",
         "Tianjiao Yu",
         "Ismini Lourentzou"
+      ],
+      "jointFirstAuthors": [
+        "Xinzhuo Li",
+        "Adheesh Juvekar"
       ],
       "year": 2026,
       "date": "2026-06-01",
