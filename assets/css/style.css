@@ -147,7 +147,7 @@ body {
         
         .glass-nav.scrolled-nav .nav-item {
             font-size: var(--text-sm);
-            padding: 6px 12px;
+            /* padding: 6px 12px; */
             color: rgba(255,255,255,0.8); 
         }
 
