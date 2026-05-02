@@ -200,7 +200,7 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-02-12",
+      "date": "2026-06-02",
       "venue": "arXiv",
       "type": "paper",
       "cover": "projects/unidflow/static/images/teaser.jpg",
@@ -212,7 +212,37 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "ICML 2026"
+    },
+    {
+      "id": "2026-Shen-latte-flow",
+      "title": "LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer",
+      "projectName": "LaTtE-Flow",
+      "authors": [
+        "Ying Shen<sup>*</sup>",
+        "Zhiyang Xu<sup>*</sup>",
+        "Jiuhai Chen",
+        "Shizhe Diao",
+        "Jiaxin Zhang",
+        "Yuguang Yao",
+        "Joy Rimchala",
+        "Ismini Lourentzou<sup>†</sup>",
+        "Lifu Huang<sup>†</sup>"
+      ],
+      "year": 2026,
+      "date": "2025-06-08",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/latte.png",
+      "doi": "10.48550/arXiv.2506.06952",
+      "links": {
+        "website": "/projects/latte-flow/",
+        "paper": "https://arxiv.org/pdf/2506.06952",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "ICML 2026"
     },
     {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
@@ -588,7 +618,7 @@
         "Adheesh Juvekar"
       ],
       "year": 2026,
-      "date": "2026-06-01",
+      "date": "2026-05-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
       "cover": "assets/images/publications/hallusegbench.png",
