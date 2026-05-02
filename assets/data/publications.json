@@ -219,15 +219,15 @@
       "title": "LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer",
       "projectName": "LaTtE-Flow",
       "authors": [
-        "Ying Shen<sup>*</sup>",
-        "Zhiyang Xu<sup>*</sup>",
+        "Ying Shen*",
+        "Zhiyang Xu*",
         "Jiuhai Chen",
         "Shizhe Diao",
         "Jiaxin Zhang",
         "Yuguang Yao",
         "Joy Rimchala",
-        "Ismini Lourentzou<sup>†</sup>",
-        "Lifu Huang<sup>†</sup>"
+        "Ismini Lourentzou^",
+        "Lifu Huang^"
       ],
       "year": 2026,
       "date": "2026-06-02",
