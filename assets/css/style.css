@@ -195,7 +195,7 @@ body {
         /* --- CONTROLS UI --- */
         .controls-ui {
             position: fixed; 
-            bottom: 20px; 
+            top: 20px; 
             left: 20px; 
             z-index: 1000;
             background: rgba(11, 26, 51, 0.8); backdrop-filter: blur(10px);
