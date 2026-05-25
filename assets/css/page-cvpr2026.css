@@ -58,6 +58,7 @@
       width: min(1500px, calc(100% - 40px));
       margin: 0 auto;
       padding: 10px 0 0;
+      display: block;
     }
 
     /* HERO */
