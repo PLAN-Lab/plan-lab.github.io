@@ -147,7 +147,7 @@
 
 <main>
     <section id="hero" class="plan-hero">
-      <svg class="hero-premium-svg" viewBox="0 0 1400 560" preserveAspectRatio="none" aria-hidden="true">
+      <svg class="hero-premium-svg" viewBox="0 0 1400 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <linearGradient id="premiumLineBlue" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="rgba(220,240,255,0.64)" />
@@ -404,7 +404,9 @@
         html += `<button class="paper-cube-card ${active ? 'active' : ''}" data-paper="${esc(p.id)}" type="button" aria-label="Show schedule details for ${esc(p.short)}"><div class="cube-wrap">${cubeSvg(p.id, active ? 'orange' : 'blue')}<span class="sr-only">${esc(p.short)}</span></div><div><div class="paper-short">${esc(p.short)}</div><div class="paper-area">${esc(p.area)}</div><div class="paper-time">${esc(p.time)}</div></div></button>`;
       });
       el.innerHTML = html;
-      el.querySelectorAll('[data-paper]').forEach(btn => btn.addEventListener('click', () => setActive(btn.dataset.paper)));
+      el.querySelectorAll('[data-paper]').forEach(btn => btn.addEventListener('click', () => {
+        setActive(btn.dataset.paper, { scrollToDetail: isMobileLayout() });
+      }));
     }
 
     function renderDetail() {
@@ -475,14 +477,33 @@
     function renderSchedule() {
       const body = document.getElementById('scheduleBody');
       body.innerHTML = papers.map(p => `<tr><td><button class="poster-pill" data-paperlink="${esc(p.id)}">${esc(p.posterId)}</button></td><td><a class="paper-title-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">${esc(p.title)}</a><div class="paper-number">Paper #${esc(p.paperNumber)}</div></td><td>${esc(p.session)}</td><td>${esc(p.day)}<br><span style="color:var(--plan-orange);font-weight:900;">${esc(p.time)}</span></td><td><div class="link-cluster"><a class="table-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">Project</a><a class="table-link" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer">Paper</a><button class="bib-button ${copiedId === p.id ? 'copied' : ''}" data-copy="${esc(p.id)}">${copiedId === p.id ? 'Copied' : 'BibTeX'}</button></div></td></tr>`).join('');
-      body.querySelectorAll('[data-paperlink]').forEach(btn => btn.addEventListener('click', () => { setActive(btn.dataset.paperlink); document.getElementById('timeline').scrollIntoView({behavior:'smooth'}); }));
+      body.querySelectorAll('[data-paperlink]').forEach(btn => btn.addEventListener('click', () => {
+        setActive(btn.dataset.paperlink, { scrollToDetail: true });
+      }));
       body.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => copyBibtex(btn.dataset.copy)));
     }
 
-    function setActive(id) {
+    function isMobileLayout() {
+      return window.matchMedia('(max-width: 900px)').matches;
+    }
+
+    function scrollToDetailPanel() {
+      const detail = document.getElementById('detailPanel');
+      if (!detail) return;
+      const nav = document.querySelector('.glass-nav');
+      const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+      const offset = navHeight + 18;
+      const top = detail.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+
+    function setActive(id, options = {}) {
       activeId = id;
       renderTimeline();
       renderDetail();
+      if (options.scrollToDetail) {
+        requestAnimationFrame(scrollToDetailPanel);
+      }
     }
     function setActiveByOffset(offset) {
       const idx = papers.findIndex(p => p.id === activeId);
@@ -518,8 +539,6 @@
   </script>
 
   <script>
-    // Match the existing PLAN Lab navbar behavior from assets/css/style.css.
-    // That stylesheet uses .glass-nav.scrolled-nav for the small/faded scroll state.
     (function () {
       function syncPLANNavScroll() {
         const nav = document.querySelector('.glass-nav');
