@@ -724,35 +724,6 @@
       "cardCover": "assets/images/cards/sreasoner.png"
     },
     {
-      "id": "2025-Shen-latte-flow-layerwise-timestep-",
-      "title": "LaTtE-Flow: Layerwise Timestep-Expert Flow-Based Transformer",
-      "projectName": "LaTtE-Flow",
-      "authors": [
-        "Ying Shen",
-        "Zhiyang Xu",
-        "Jiuhai Chen",
-        "Shizhe Diao",
-        "Jiaxin Zhang",
-        "Yuguang Yao",
-        "Joy Rimchala",
-        "Ismini Lourentzou",
-        "Lifu Huang"
-      ],
-      "year": 2025,
-      "date": "2025-06-01",
-      "venue": "arXiv",
-      "type": "paper",
-      "cover": "assets/images/publications/latte-flow.png",
-      "doi": "10.48550/arXiv.2506.06952",
-      "links": {
-        "website": "",
-        "paper": "https://doi.org/10.48550/arXiv.2506.06952",
-        "code": "",
-        "video": "",
-        "data": ""
-      }
-    },
-    {
       "id": "2025-Shen-learning-by-asking-for-embodie",
       "title": "Learning by Asking for Embodied Visual Navigation and Task Completion",
       "projectName": "ELBA",
