@@ -12,7 +12,9 @@ DTEND:20260606T194500Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: RewardFlow Poster
 LOCATION:ExHall F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:RewardFlow: Generate Images by Optimizing What You Reward\\n\\nPLAN Lab @ CVPR 2026\\nPoster 543 · Paper #35607\\n\\nProject page:\nhttps://plan-lab.github.io/projects/rewardflow
+DESCRIPTION:RewardFlow: Generate Images by Optimizing What You Reward\n\nPL
+ AN Lab @ CVPR 2026\nPoster 543 · Paper #35607\n\nProject page:\nhttps://p
+ lan-lab.github.io/projects/rewardflow
 URL:https://plan-lab.github.io/projects/rewardflow
 END:VEVENT
 END:VCALENDAR

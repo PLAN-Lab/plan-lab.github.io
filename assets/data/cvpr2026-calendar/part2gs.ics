@@ -12,7 +12,9 @@ DTEND:20260606T194500Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: Part²GS Poster
 LOCATION:ExHall F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting\\n\\nPLAN Lab @ CVPR 2026\\nPoster 435 · Paper #42453\\n\\nProject page:\nhttps://plan-lab.github.io/projects/part2gs
+DESCRIPTION:Part-aware Modeling of Articulated Objects using 3D Gaussian Sp
+ latting\n\nPLAN Lab @ CVPR 2026\nPoster 435 · Paper #42453\n\nProject pag
+ e:\nhttps://plan-lab.github.io/projects/part2gs
 URL:https://plan-lab.github.io/projects/part2gs
 END:VEVENT
 END:VCALENDAR

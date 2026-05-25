@@ -12,7 +12,10 @@ DTEND:20260606T000000Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: PHANTOM Poster
 LOCATION:ExHall A & F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics\\n\\nPLAN Lab @ CVPR 2026\\nPoster 372 · Paper #38312\\n\\nProject page:\nhttps://plan-lab.github.io/projects/phantom
+DESCRIPTION:PHANTOM: Physics-Infused Video Generation via Joint Modeling of
+  Visual and Latent Physical Dynamics\n\nPLAN Lab @ CVPR 2026\nPoster 372 
+ · Paper #38312\n\nProject page:\nhttps://plan-lab.github.io/projects/phan
+ tom
 URL:https://plan-lab.github.io/projects/phantom
 END:VEVENT
 END:VCALENDAR

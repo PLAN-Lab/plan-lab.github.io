@@ -12,7 +12,10 @@ DTEND:20260606T000000Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: PHANTOM Poster
 LOCATION:ExHall A & F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics\\n\\nPLAN Lab @ CVPR 2026\\nPoster 372 · Paper #38312\\n\\nProject page:\nhttps://plan-lab.github.io/projects/phantom
+DESCRIPTION:PHANTOM: Physics-Infused Video Generation via Joint Modeling of
+  Visual and Latent Physical Dynamics\n\nPLAN Lab @ CVPR 2026\nPoster 372 
+ · Paper #38312\n\nProject page:\nhttps://plan-lab.github.io/projects/phan
+ tom
 URL:https://plan-lab.github.io/projects/phantom
 END:VEVENT
 BEGIN:VEVENT
@@ -23,7 +26,9 @@ DTEND:20260606T194500Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: Part²GS Poster
 LOCATION:ExHall F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting\\n\\nPLAN Lab @ CVPR 2026\\nPoster 435 · Paper #42453\\n\\nProject page:\nhttps://plan-lab.github.io/projects/part2gs
+DESCRIPTION:Part-aware Modeling of Articulated Objects using 3D Gaussian Sp
+ latting\n\nPLAN Lab @ CVPR 2026\nPoster 435 · Paper #42453\n\nProject pag
+ e:\nhttps://plan-lab.github.io/projects/part2gs
 URL:https://plan-lab.github.io/projects/part2gs
 END:VEVENT
 BEGIN:VEVENT
@@ -34,7 +39,9 @@ DTEND:20260606T194500Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: RewardFlow Poster
 LOCATION:ExHall F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:RewardFlow: Generate Images by Optimizing What You Reward\\n\\nPLAN Lab @ CVPR 2026\\nPoster 543 · Paper #35607\\n\\nProject page:\nhttps://plan-lab.github.io/projects/rewardflow
+DESCRIPTION:RewardFlow: Generate Images by Optimizing What You Reward\n\nPL
+ AN Lab @ CVPR 2026\nPoster 543 · Paper #35607\n\nProject page:\nhttps://p
+ lan-lab.github.io/projects/rewardflow
 URL:https://plan-lab.github.io/projects/rewardflow
 END:VEVENT
 BEGIN:VEVENT
@@ -45,7 +52,9 @@ DTEND:20260607T004500Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: PALM Poster
 LOCATION:ExHall A & F\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation\\n\\nPLAN Lab @ CVPR 2026\\nPoster 622 · Paper #39690\\n\\nProject page:\nhttps://plan-lab.github.io/projects/palm
+DESCRIPTION:PALM: Progress-Aware Policy Learning via Affordance Reasoning f
+ or Long-Horizon Robotic Manipulation\n\nPLAN Lab @ CVPR 2026\nPoster 622 
+ · Paper #39690\n\nProject page:\nhttps://plan-lab.github.io/projects/palm
 URL:https://plan-lab.github.io/projects/palm
 END:VEVENT
 BEGIN:VEVENT
@@ -56,7 +65,10 @@ DTEND:20260607T150000Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: HalluSegBench Poster
 LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination\\n\\nPLAN Lab @ CVPR 2026\\nPoster 81 · Paper #40439\\n\\nProject page:\nhttps://plan-lab.github.io/projects/hallusegbench
+DESCRIPTION:Counterfactual Segmentation Reasoning: Diagnosing and Mitigatin
+ g Pixel-Grounding Hallucination\n\nPLAN Lab @ CVPR 2026\nPoster 81 · Pape
+ r #40439\n\nProject page:\nhttps://plan-lab.github.io/projects/hallusegben
+ ch
 URL:https://plan-lab.github.io/projects/hallusegbench
 END:VEVENT
 BEGIN:VEVENT
@@ -67,7 +79,9 @@ DTEND:20260607T233000Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: PyraTok Poster
 LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation\\n\\nPLAN Lab @ CVPR 2026\\nPoster 161 · Paper #36207\\n\\nProject page:\nhttps://plan-lab.github.io/projects/pyratok
+DESCRIPTION:PyraTok: Language-Aligned Pyramidal Tokenizer for Video Underst
+ anding and Generation\n\nPLAN Lab @ CVPR 2026\nPoster 161 · Paper #36207\
+ n\nProject page:\nhttps://plan-lab.github.io/projects/pyratok
 URL:https://plan-lab.github.io/projects/pyratok
 END:VEVENT
 BEGIN:VEVENT
@@ -78,7 +92,9 @@ DTEND:20260607T233000Z
 STATUS:CONFIRMED
 SUMMARY:PLAN Lab @ CVPR 2026: 3D-VCD Poster
 LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
-DESCRIPTION:3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding\\n\\nPLAN Lab @ CVPR 2026\\nPoster 373 · Paper #38346\\n\\nProject page:\nhttps://plan-lab.github.io/projects/3d-vcd
+DESCRIPTION:3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents thro
+ ugh Visual Contrastive Decoding\n\nPLAN Lab @ CVPR 2026\nPoster 373 · Pap
+ er #38346\n\nProject page:\nhttps://plan-lab.github.io/projects/3d-vcd
 URL:https://plan-lab.github.io/projects/3d-vcd
 END:VEVENT
 END:VCALENDAR
