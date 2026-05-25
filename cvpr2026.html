@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAN@CVPR’26 | PLAN Lab</title>
-    <meta name="description" content="PLAN Lab at CVPR 2026: seven papers on physical AI, world modeling, embodied action, reliable generation, 3D/video reasoning, and hallucination-resistant multimodal systems.">
+    <meta name="description" content="PLAN Lab at CVPR 2026: seven papers on physical world modeling, embodied action, and reliable grounding.">
 
     <link rel="canonical" href="https://plan-lab.github.io/cvpr2026.html">
     <meta name="robots" content="index,follow">
@@ -21,14 +21,14 @@
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PLAN Lab">
-    <meta property="og:title" content="PLAN@CVPR’26 | Physical AI for modeling, acting, and grounding">
-    <meta property="og:description" content="Explore PLAN Lab’s seven CVPR 2026 papers, posters, videos, project pages, and BibTeX citations.">
+    <meta property="og:title" content="PLAN@CVPR’26 | Physical AI for modeling, reasoning, and interacting with the real world.">
+    <meta property="og:description" content="Explore PLAN Lab’s CVPR 2026 papers.">
     <meta property="og:url" content="https://plan-lab.github.io/cvpr2026.html">
     <meta property="og:image" content="https://plan-lab.github.io/assets/images/cvpr2026-og.png">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PLAN@CVPR’26 | Physical AI for modeling, acting, and grounding">
-    <meta name="twitter:description" content="Seven PLAN Lab CVPR 2026 papers with project pages, posters, videos, and BibTeX.">
+    <meta name="twitter:title" content="PLAN@CVPR’26 | Physical AI for modeling, reasoning, and interacting with the real world.">
+    <meta name="twitter:description" content="PLAN Lab CVPR 2026 papers with project pages, posters, videos, BibTeX, and calendar entries.">
     <meta name="twitter:image" content="https://plan-lab.github.io/assets/images/cvpr2026-og.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -252,9 +252,7 @@
           <div class="schedule-head-right">
             <div class="schedule-count">June 5–7</div>
             <div class="schedule-downloads" aria-label="Schedule downloads">
-			  <a href="assets/data/planlab_cvpr2026_schedule.ics" type="text/calendar">
-                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
-              </a>
+              <button type="button" class="schedule-calendar-toggle calendar-trigger" data-calendar-id="all" data-calendar-context="schedule" aria-expanded="false"><i class="fa-regular fa-calendar-plus"></i> Add All to Calendar</button>
               <a href="cvpr2026/plan_cvpr2026_schedule.pdf" download>
                 <i class="fa-regular fa-file-pdf"></i> Schedule PDF
               </a>
@@ -282,43 +280,43 @@
 
   <script>
     const papers = [
-      { id:"phantom", short:"PHANTOM", area:"Physics-aware video generation", description:"PHANTOM extends latent video diffusion with explicit latent physical dynamics, producing videos that better preserve motion, interaction, and physical plausibility over time.", day:"Friday, June 5", dateKey:"Fri Jun 5", session:"ExHall A & F", time:"16:00 – 18:00", posterId:"372", paperNumber:"38312", title:"PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics", authors:"Ying Shen, Jerry Xiong, Tianjiao Yu, Ismini Lourentzou", projectUrl:"projects/phantom/", paperUrl:"https://arxiv.org/abs/2604.08503", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39897.png?t=1778998871.5339897", videoUrl: "https://www.youtube.com/watch?v=JmBKPFDVuS0", bibtex:`@inproceedings{shen2026phantom,
+      { id:"phantom", short:"PHANTOM", area:"Physics-aware video generation", description:"PHANTOM extends latent video diffusion with explicit latent physical dynamics, producing videos that better preserve motion, interaction, and physical plausibility over time.", day:"Friday, June 5", dateKey:"Fri Jun 5", session:"ExHall A & F", time:"16:00 – 18:00", posterId:"372", paperNumber:"38312", title:"PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics", authors:"Ying Shen, Jerry Xiong, Tianjiao Yu, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/phantom", paperUrl:"https://arxiv.org/abs/2604.08503", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39897.png?t=1778998871.5339897", videoUrl: "https://www.youtube.com/watch?v=JmBKPFDVuS0", bibtex:`@inproceedings{shen2026phantom,
   title={PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics},
   author={Shen, Ying and Xiong, Jerry and Yu, Tianjiao and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"part2gs", short:"Part²GS", area:"Part-aware articulated 3D modeling", description:"Part²GS represents articulated objects with part-aware 3D Gaussian Splatting, enabling more structured modeling of object parts, motion, and geometry.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"435", paperNumber:"42453", title:"Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting", authors:"Tianjiao Yu, Vedant Shah, Muntasir Wahed, Ying Shen, Kiet A. Nguyen, Ismini Lourentzou", projectUrl:"projects/part2gs/", paperUrl:"https://arxiv.org/abs/2506.17212", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39339.png?t=1779513352.9109356", videoUrl:"https://www.youtube.com/watch?v=IVFTkKJjHiQ", bibtex:`@inproceedings{yu2025part,
+      { id:"part2gs", short:"Part²GS", area:"Part-aware articulated 3D modeling", description:"Part²GS represents articulated objects with part-aware 3D Gaussian Splatting, enabling more structured modeling of object parts, motion, and geometry.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"435", paperNumber:"42453", title:"Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting", authors:"Tianjiao Yu, Vedant Shah, Muntasir Wahed, Ying Shen, Kiet A. Nguyen, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/part2gs", paperUrl:"https://arxiv.org/abs/2506.17212", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39339.png?t=1779513352.9109356", videoUrl:"https://www.youtube.com/watch?v=IVFTkKJjHiQ", bibtex:`@inproceedings{yu2025part,
   title={Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting},
   author={Yu, Tianjiao and Shah, Vedant and Wahed, Muntasir and Shen, Ying and Nguyen, Kiet A. and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"rewardflow", short:"RewardFlow", area:"Controllable inversion-free image editing and generation", description:"RewardFlow turns user-defined reward signals into a controllable generation mechanism, allowing visual outputs to be steered toward the properties people actually care about.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"543", paperNumber:"35607", title:"RewardFlow: Generate Images by Optimizing What You Reward", authors:"Onkar Susladkar, Dong-Hwan Jang, Tushar Prakash, Adheesh Juvekar, Vedant Shah, Ayush Barik, Nabeel Bashir, Muntasir Wahed, Ritesh Shirrao, Ismini Lourentzou", projectUrl:"projects/rewardflow/", paperUrl:"https://arxiv.org/abs/2604.08536", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/37655.png?t=1779667667.3786716", videoUrl:"https://www.youtube.com/watch?v=ZqXbBrk5k58", bibtex:`@inproceedings{susladkar2026rewardflow,
+      { id:"rewardflow", short:"RewardFlow", area:"Controllable inversion-free image editing and generation", description:"RewardFlow turns user-defined reward signals into a controllable generation mechanism, allowing visual outputs to be steered toward the properties people actually care about.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"543", paperNumber:"35607", title:"RewardFlow: Generate Images by Optimizing What You Reward", authors:"Onkar Susladkar, Dong-Hwan Jang, Tushar Prakash, Adheesh Juvekar, Vedant Shah, Ayush Barik, Nabeel Bashir, Muntasir Wahed, Ritesh Shirrao, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/rewardflow", paperUrl:"https://arxiv.org/abs/2604.08536", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/37655.png?t=1779667667.3786716", videoUrl:"https://www.youtube.com/watch?v=ZqXbBrk5k58", bibtex:`@inproceedings{susladkar2026rewardflow,
   title={RewardFlow: Generate Images by Optimizing What You Reward},
   author={Susladkar, Onkar and Jang, Dong-Hwan and Prakash, Tushar and Juvekar, Adheesh and Shah, Vedant and Barik, Ayush and Bashir, Nabeel and Wahed, Muntasir and Shirrao, Ritesh and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"palm", short:"PALM", area:"Progress and affordance reasoning for robotic manipulation", description:"PALM studies long-horizon robotic manipulation through progress-aware policy learning, using affordance reasoning to help agents choose actions that remain aligned with task progress.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall A & F", time:"16:45 – 18:45", posterId:"622", paperNumber:"39690", title:"PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation", authors:"Yuanze Liu, Jingyuan Zhu, Yuchen Mo, Gen Li, Xu Cao, Jin Jin, Yifan Shen, Zhengyuan Li, Tianjiao Yu, Wenzhen Yuan, Fangqiang Ding, Ismini Lourentzou", projectUrl:"projects/palm/", paperUrl:"https://arxiv.org/abs/2601.07060", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38810.png?t=1779487695.8519769", videoUrl:"https://www.youtube.com/watch?v=0K4wl7nW7no", bibtex:`@inproceedings{liu2026palm,
+      { id:"palm", short:"PALM", area:"Progress and affordance reasoning for robotic manipulation", description:"PALM studies long-horizon robotic manipulation through progress-aware policy learning, using affordance reasoning to help agents choose actions that remain aligned with task progress.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall A & F", time:"16:45 – 18:45", posterId:"622", paperNumber:"39690", title:"PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation", authors:"Yuanze Liu, Jingyuan Zhu, Yuchen Mo, Gen Li, Xu Cao, Jin Jin, Yifan Shen, Zhengyuan Li, Tianjiao Yu, Wenzhen Yuan, Fangqiang Ding, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/palm", paperUrl:"https://arxiv.org/abs/2601.07060", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38810.png?t=1779487695.8519769", videoUrl:"https://www.youtube.com/watch?v=0K4wl7nW7no", bibtex:`@inproceedings{liu2026palm,
   title={PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation},
   author={Liu, Yuanze and Zhu, Jingyuan and Mo, Yuchen and Li, Gen and Cao, Xu and Jin, Jin and Shen, Yifan and Li, Zhengyuan and Yu, Tianjiao and Yuan, Wenzhen and Ding, Fangqiang and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"counterfactual-segmentation-reasoning", short:"HalluSegBench", area:"Grounding diagnostics and hallucination mitigation", description:"Counterfactual Segmentation Reasoning diagnoses when segmentation models rely on language priors instead of visual evidence, and provides a benchmark for evaluating pixel-grounded hallucination.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"7:30 – 9:00 AM", posterId:"81", paperNumber:"40439", title:"Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination", authors:"Xinzhuo Li, Adheesh Juvekar, Jiaxun Zhang, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Yifan Shen, Tianjiao Yu, Ismini Lourentzou", projectUrl:"projects/hallusegbench", paperUrl:"https://arxiv.org/abs/2506.21546", posterPdfUrl:"projects/hallusegbench/static/images/halluseg_poster.png", videoUrl:"", bibtex:`@inproceedings{li2025counterfactual,
+      { id:"counterfactual-segmentation-reasoning", short:"HalluSegBench", area:"Grounding diagnostics and hallucination mitigation", description:"Counterfactual Segmentation Reasoning diagnoses when segmentation models rely on language priors instead of visual evidence, and provides a benchmark for evaluating pixel-grounded hallucination.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"7:30 – 9:00 AM", posterId:"81", paperNumber:"40439", title:"Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination", authors:"Xinzhuo Li, Adheesh Juvekar, Jiaxun Zhang, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Yifan Shen, Tianjiao Yu, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/hallusegbench", paperUrl:"https://arxiv.org/abs/2506.21546", posterPdfUrl:"projects/hallusegbench/static/images/halluseg_poster.png", videoUrl:"", bibtex:`@inproceedings{li2025counterfactual,
   title={Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination},
   author={Li, Xinzhuo and Juvekar, Adheesh and Zhang, Jiaxun and Liu, Xingyou and Wahed, Muntasir and Nguyen, Kiet A. and Shen, Yifan and Yu, Tianjiao and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (Findings Track)},
   year={2026}
 }` },
-      { id:"pyratok", short:"PyraTok", area:"Language-aligned video representations", description:"PyraTok learns a language-aligned pyramidal video tokenizer that supports both video understanding and generation through compact, semantically meaningful visual representations.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"161", paperNumber:"36207", title:"PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation", authors:"Onkar Susladkar, Tushar Prakash, Adheesh Juvekar, Kiet A. Nguyen, Dong-Hwan Jang, Inderjit S Dhillon, Ismini Lourentzou", projectUrl:"projects/pyratok/", paperUrl:"https://arxiv.org/abs/2601.16210", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39433.png?t=1779666456.4355679", videoUrl:"https://www.youtube.com/watch?v=fDNslWX_N4s", bibtex:`@inproceedings{susladkar2026pyratok,
+      { id:"pyratok", short:"PyraTok", area:"Language-aligned video representations", description:"PyraTok learns a language-aligned pyramidal video tokenizer that supports both video understanding and generation through compact, semantically meaningful visual representations.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"161", paperNumber:"36207", title:"PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation", authors:"Onkar Susladkar, Tushar Prakash, Adheesh Juvekar, Kiet A. Nguyen, Dong-Hwan Jang, Inderjit S Dhillon, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/pyratok", paperUrl:"https://arxiv.org/abs/2601.16210", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39433.png?t=1779666456.4355679", videoUrl:"https://www.youtube.com/watch?v=fDNslWX_N4s", bibtex:`@inproceedings{susladkar2026pyratok,
   title={PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation},
   author={Susladkar, Onkar and Prakash, Tushar and Juvekar, Adheesh and Nguyen, Kiet A. and Jang, Dong-Hwan and Dhillon, Inderjit S. and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"3d-vcd", short:"3D-VCD", area:"Reliable embodied 3D agents", description:"3D-VCD reduces hallucinations in embodied 3D-LLM agents by contrasting visual evidence during decoding, improving reliability when agents reason about 3D scenes.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"373", paperNumber:"38346", title:"3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding", authors:"Makanjuola Adekunmi Ogunleye, Eman Abdelrahman, Ismini Lourentzou", projectUrl:"projects/3d-vcd/", paperUrl:"https://arxiv.org/abs/2604.08645", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38452.png?t=1779655196.4874609", videoUrl:"https://www.youtube.com/watch?v=7MGVtPqnmqY", bibtex:`@inproceedings{ogunleye20263d,
+      { id:"3d-vcd", short:"3D-VCD", area:"Reliable embodied 3D agents", description:"3D-VCD reduces hallucinations in embodied 3D-LLM agents by contrasting visual evidence during decoding, improving reliability when agents reason about 3D scenes.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"373", paperNumber:"38346", title:"3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding", authors:"Makanjuola Adekunmi Ogunleye, Eman Abdelrahman, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/3d-vcd", paperUrl:"https://arxiv.org/abs/2604.08645", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38452.png?t=1779655196.4874609", videoUrl:"https://www.youtube.com/watch?v=7MGVtPqnmqY", bibtex:`@inproceedings{ogunleye20263d,
   title={3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding},
   author={Ogunleye, Makanjuola Adekunmi and Abdelrahman, Eman and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
@@ -425,6 +423,102 @@
       }));
     }
 
+
+    const CONFERENCE_TIMEZONE = 'America/Denver';
+    const CONFERENCE_UTC_OFFSET_MINUTES = -6 * 60;
+    const CONFERENCE_DATES = {
+      'Friday, June 5': '2026-06-05',
+      'Saturday, June 6': '2026-06-06',
+      'Sunday, June 7': '2026-06-07'
+    };
+
+    function pad2(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function parsePosterTimeToken(token, fallbackMeridiem = '') {
+      const cleaned = String(token).trim().replace(/\s+/g, '').toUpperCase();
+      const meridiemMatch = cleaned.match(/(AM|PM)$/);
+      const meridiem = meridiemMatch ? meridiemMatch[1] : fallbackMeridiem;
+      const raw = cleaned.replace(/(AM|PM)$/,'');
+      const [hourRaw, minuteRaw = '00'] = raw.split(':');
+      let hour = Number(hourRaw);
+      const minute = Number(minuteRaw);
+      if (meridiem === 'PM' && hour < 12) hour += 12;
+      if (meridiem === 'AM' && hour === 12) hour = 0;
+      return { hour, minute };
+    }
+
+    function getPaperDate(p) {
+      return CONFERENCE_DATES[p.day] || '2026-06-05';
+    }
+
+    function getPaperDateTimes(p) {
+      const parts = String(p.time).split(/[–-]/).map(x => x.trim());
+      const endMeridiem = (parts[1] || '').toUpperCase().match(/(AM|PM)/)?.[1] || '';
+      const start = parsePosterTimeToken(parts[0], endMeridiem);
+      const end = parsePosterTimeToken(parts[1] || parts[0], endMeridiem);
+      const [year, month, day] = getPaperDate(p).split('-').map(Number);
+      const startUtc = new Date(Date.UTC(year, month - 1, day, start.hour, start.minute) - CONFERENCE_UTC_OFFSET_MINUTES * 60000);
+      const endUtc = new Date(Date.UTC(year, month - 1, day, end.hour, end.minute) - CONFERENCE_UTC_OFFSET_MINUTES * 60000);
+      return { startUtc, endUtc };
+    }
+
+    function toCalendarStamp(date) {
+      return date.toISOString().replace(/[-:]/g, '').replace(/\.000Z$/, 'Z');
+    }
+
+    function toOutlookIso(date) {
+      return date.toISOString().replace('.000Z', 'Z');
+    }
+
+    const SITE_BASE_URL = 'https://plan-lab.github.io/';
+
+    function absoluteUrl(url) {
+      const cleaned = String(url || '').trim();
+      if (!cleaned) return SITE_BASE_URL.replace(/\/$/, '');
+      if (/^https?:\/\//i.test(cleaned)) return cleaned.replace(/\/$/, '');
+      try {
+        return new URL(cleaned.replace(/^\/+/, ''), SITE_BASE_URL).href.replace(/\/$/, '');
+      }
+      catch (e) {
+        return `${SITE_BASE_URL}${cleaned.replace(/^\/+/, '')}`.replace(/\/$/, '');
+      }
+    }
+
+    function calendarIcsPath(p) {
+      return `assets/data/cvpr2026-calendar/${encodeURIComponent(p.id)}.ics`;
+    }
+
+    function getCalendarLinks(p) {
+      const { startUtc, endUtc } = getPaperDateTimes(p);
+      const startStamp = toCalendarStamp(startUtc);
+      const endStamp = toCalendarStamp(endUtc);
+      const title = `PLAN Lab @ CVPR 2026: ${p.short} Poster`;
+      const location = `${p.session}, Colorado Convention Center, Denver, CO`;
+      const projectLink = absoluteUrl(p.projectUrl);
+      const details = `${p.title}\n\nPLAN Lab @ CVPR 2026\nPoster ${p.posterId} · Paper #${p.paperNumber}\n\nProject page:\n${projectLink}`;
+      const enc = encodeURIComponent;
+      const outlookParams = `path=${enc('/calendar/action/compose')}&rru=addevent&subject=${enc(title)}&startdt=${enc(toOutlookIso(startUtc))}&enddt=${enc(toOutlookIso(endUtc))}&allday=false&body=${enc(details)}&location=${enc(location)}`;
+      return {
+        google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${enc(title)}&dates=${startStamp}/${endStamp}&ctz=${enc(CONFERENCE_TIMEZONE)}&details=${enc(details)}&location=${enc(location)}`,
+        outlook: `https://outlook.office.com/calendar/0/deeplink/compose?${outlookParams}`,
+        ics: calendarIcsPath(p)
+      };
+    }
+
+    function calendarMenuHtml(p, context = 'detail') {
+      const summaryClass = context === 'table'
+        ? 'table-link calendar-summary calendar-summary-orange calendar-trigger schedule-action-icon schedule-action-calendar'
+        : 'action-link calendar-summary calendar-trigger';
+
+      if (context === 'table') {
+        return `<button type="button" class="${summaryClass}" data-calendar-id="${esc(p.id)}" data-calendar-context="${esc(context)}" aria-expanded="false" title="Add ${esc(p.short)} to calendar" aria-label="Add ${esc(p.short)} to calendar"><i class="fa-regular fa-calendar-plus" aria-hidden="true"></i><span class="sr-only">Calendar</span></button>`;
+      }
+
+      return `<button type="button" class="${summaryClass}" data-calendar-id="${esc(p.id)}" data-calendar-context="${esc(context)}" aria-expanded="false"><i class="fa-regular fa-calendar-plus"></i> Calendar</button>`;
+    }
+
     function renderDetail() {
       const p = papers.find(x => x.id === activeId) || papers[0];
       document.getElementById('detailPanel').innerHTML = `<div class="detail-inner">
@@ -444,6 +538,7 @@
           <a class="action-link" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer"><i class="fa-solid fa-book-open"></i> Paper</a>
           <a class="action-link" href="${esc(p.posterPdfUrl)}" target="_blank" rel="noreferrer"><i class="fa-regular fa-file-lines"></i> Poster</a>
           <a class="action-link" href="${esc(p.videoUrl)}" target="_blank" rel="noreferrer"><i class="fa-regular fa-circle-play"></i> Video</a>
+          ${calendarMenuHtml(p, 'detail')}
           <button class="copy-btn" data-copy-detail="${esc(p.id)}"><i class="fa-regular fa-copy"></i> ${copiedId === p.id ? 'Copied' : 'BibTeX'}</button>
         </div>
 
@@ -492,11 +587,10 @@
 
     function renderSchedule() {
       const body = document.getElementById('scheduleBody');
-      body.innerHTML = papers.map(p => `<tr><td><button class="poster-pill" data-paperlink="${esc(p.id)}">${esc(p.posterId)}</button></td><td><a class="paper-title-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">${esc(p.title)}</a><div class="paper-number">Paper #${esc(p.paperNumber)}</div></td><td>${esc(p.session)}</td><td>${esc(p.day)}<br><span style="color:var(--plan-orange);font-weight:900;">${esc(p.time)}</span></td><td><div class="link-cluster"><a class="table-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">Project</a><a class="table-link" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer">Paper</a><button class="bib-button ${copiedId === p.id ? 'copied' : ''}" data-copy="${esc(p.id)}">${copiedId === p.id ? 'Copied' : 'BibTeX'}</button></div></td></tr>`).join('');
+      body.innerHTML = papers.map(p => `<tr><td><button class="poster-pill" data-paperlink="${esc(p.id)}">${esc(p.posterId)}</button></td><td><a class="paper-title-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">${esc(p.title)}</a><div class="paper-number">Paper #${esc(p.paperNumber)}</div></td><td>${esc(p.session)}</td><td>${esc(p.day)}<br><span style="color:var(--plan-orange);font-weight:900;">${esc(p.time)}</span></td><td><div class="link-cluster schedule-icon-cluster"><a class="table-link schedule-action-icon" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer" title="Open ${esc(p.short)} project page" aria-label="Open ${esc(p.short)} project page"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Project</span></a><a class="table-link schedule-action-icon" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer" title="Open ${esc(p.short)} paper" aria-label="Open ${esc(p.short)} paper"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span class="sr-only">Paper</span></a>${calendarMenuHtml(p, 'table')}</div></td></tr>`).join('');
       body.querySelectorAll('[data-paperlink]').forEach(btn => btn.addEventListener('click', () => {
         setActive(btn.dataset.paperlink, { scrollToDetail: true });
       }));
-      body.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => copyBibtex(btn.dataset.copy)));
     }
 
     function isMobileLayout() {
@@ -539,6 +633,157 @@
       renderSchedule();
       window.setTimeout(() => { copiedId = null; renderDetail(); renderSchedule(); }, 1800);
     }
+
+    let activeCalendarTrigger = null;
+
+    function getFullScheduleLinks() {
+      const fullIcs = absoluteUrl('https://plan-lab.github.io/assets/data/planlab_cvpr2026_schedule.ics');
+      const fullIcsWebcal = fullIcs.replace(/^https?:\/\//i, 'webcal://');
+      const enc = encodeURIComponent;
+      return {
+        google: `https://www.google.com/calendar/render?cid=${enc(fullIcsWebcal)}`,
+        outlook: `https://outlook.office.com/calendar/addcalendar?url=${enc(fullIcs)}&name=${enc('PLAN Lab CVPR 2026 Posters')}`,
+        apple: fullIcsWebcal,
+        ics: 'assets/data/planlab_cvpr2026_schedule.ics'
+      };
+    }
+
+    function getCalendarOptions(calendarId) {
+      if (calendarId === 'all') {
+        const links = getFullScheduleLinks();
+        return [
+          { label: 'Google Calendar', href: links.google, external: true },
+          { label: 'Outlook 365', href: links.outlook, external: true },
+          { label: 'Apple / iCal', href: links.apple },
+          { label: 'Download .ics', href: links.ics, download: true }
+        ];
+      }
+
+      const p = papers.find(x => x.id === calendarId);
+      if (!p) return [];
+      const links = getCalendarLinks(p);
+      return [
+        { label: 'Google Calendar', href: links.google, external: true },
+        { label: 'Outlook 365', href: links.outlook, external: true },
+        { label: 'Apple / iCal', href: links.ics },
+        { label: 'Download .ics', href: links.ics, download: true }
+      ];
+    }
+
+    function ensureCalendarPopup() {
+      let popup = document.getElementById('calendarPopup');
+      if (!popup) {
+        popup = document.createElement('div');
+        popup.id = 'calendarPopup';
+        popup.className = 'calendar-popup';
+        popup.hidden = true;
+        document.body.appendChild(popup);
+      }
+      return popup;
+    }
+
+    function closeCalendarPopup() {
+      const popup = document.getElementById('calendarPopup');
+      if (popup) {
+        popup.hidden = true;
+        popup.innerHTML = '';
+      }
+      if (activeCalendarTrigger) {
+        activeCalendarTrigger.setAttribute('aria-expanded', 'false');
+      }
+      activeCalendarTrigger = null;
+    }
+
+    function positionCalendarPopup() {
+      const popup = document.getElementById('calendarPopup');
+      if (!popup || popup.hidden || !activeCalendarTrigger) return;
+
+      const gap = 8;
+      const margin = 12;
+      const triggerRect = activeCalendarTrigger.getBoundingClientRect();
+      const viewportWidth = document.documentElement.clientWidth;
+      const viewportHeight = document.documentElement.clientHeight;
+
+      popup.style.left = '0px';
+      popup.style.top = '0px';
+      popup.style.visibility = 'hidden';
+      const popupRect = popup.getBoundingClientRect();
+      const popupWidth = popupRect.width || 190;
+      const popupHeight = popupRect.height || 180;
+
+      let left = triggerRect.right - popupWidth;
+      if (left < margin) left = triggerRect.left;
+      if (left + popupWidth > viewportWidth - margin) left = viewportWidth - popupWidth - margin;
+      left = Math.max(margin, left);
+
+      let top = triggerRect.bottom + gap;
+      if (top + popupHeight > viewportHeight - margin) {
+        top = triggerRect.top - popupHeight - gap;
+      }
+      top = Math.max(margin, top);
+
+      popup.style.left = `${Math.round(left)}px`;
+      popup.style.top = `${Math.round(top)}px`;
+      popup.style.visibility = 'visible';
+    }
+
+    function openCalendarPopup(trigger) {
+      const popup = ensureCalendarPopup();
+      const options = getCalendarOptions(trigger.dataset.calendarId);
+      if (!options.length) return;
+
+      if (activeCalendarTrigger && activeCalendarTrigger !== trigger) {
+        activeCalendarTrigger.setAttribute('aria-expanded', 'false');
+      }
+      activeCalendarTrigger = trigger;
+      activeCalendarTrigger.setAttribute('aria-expanded', 'true');
+
+      popup.innerHTML = options.map(opt => {
+        const target = opt.external ? ' target="_blank" rel="noopener"' : '';
+        const download = opt.download ? ' download' : '';
+        const type = /^https?:/i.test(opt.href) || /^webcal:/i.test(opt.href) ? '' : (opt.href.endsWith('.ics') ? ' type="text/calendar"' : '');
+        return `<a href="${esc(opt.href)}"${target}${type}${download}>${esc(opt.label)}</a>`;
+      }).join('');
+      popup.hidden = false;
+      requestAnimationFrame(positionCalendarPopup);
+    }
+
+    function toggleCalendarPopup(trigger) {
+      const popup = ensureCalendarPopup();
+      if (activeCalendarTrigger === trigger && !popup.hidden) {
+        closeCalendarPopup();
+        return;
+      }
+      openCalendarPopup(trigger);
+    }
+
+    document.addEventListener('click', e => {
+      const trigger = e.target.closest && e.target.closest('.calendar-trigger');
+      if (trigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleCalendarPopup(trigger);
+        return;
+      }
+
+      const popupLink = e.target.closest && e.target.closest('#calendarPopup a');
+      if (popupLink) {
+        window.setTimeout(closeCalendarPopup, 120);
+        return;
+      }
+
+      if (!(e.target.closest && e.target.closest('#calendarPopup'))) {
+        closeCalendarPopup();
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeCalendarPopup();
+    });
+
+    window.addEventListener('resize', positionCalendarPopup, { passive: true });
+    window.addEventListener('scroll', positionCalendarPopup, { passive: true });
+
 
     document.getElementById('searchInput').addEventListener('input', renderTimeline);
     document.getElementById('dayFilter').addEventListener('change', renderTimeline);
