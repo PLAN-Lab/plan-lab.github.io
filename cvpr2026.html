@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN@CVPR’26 | PLAN Lab</title>
+    <meta name="description" content="PLAN Lab at CVPR 2026: seven papers on physical AI, world modeling, embodied action, reliable generation, 3D/video reasoning, and hallucination-resistant multimodal systems.">
+
+    <link rel="canonical" href="https://plan-lab.github.io/cvpr2026.html">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="PLAN Lab, University of Illinois Urbana-Champaign">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PLAN Lab">
+    <meta property="og:title" content="PLAN@CVPR’26 | Physical AI for modeling, acting, and grounding">
+    <meta property="og:description" content="Explore PLAN Lab’s seven CVPR 2026 papers, posters, videos, project pages, and BibTeX citations.">
+    <meta property="og:url" content="https://plan-lab.github.io/cvpr2026.html">
+    <meta property="og:image" content="https://plan-lab.github.io/assets/images/cvpr2026-og.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PLAN@CVPR’26 | Physical AI for modeling, acting, and grounding">
+    <meta name="twitter:description" content="Seven PLAN Lab CVPR 2026 papers with project pages, posters, videos, and BibTeX.">
+    <meta name="twitter:image" content="https://plan-lab.github.io/assets/images/cvpr2026-og.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/page-cvpr2026.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <script src="assets/js/content.js" defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "PLAN Lab at CVPR 2026",
+  "description": "Seven PLAN Lab CVPR 2026 papers on physical AI, embodied action, reliable generation, 3D/video modeling, and hallucination-resistant multimodal systems.",
+  "url": "https://plan-lab.github.io/cvpr2026.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PLAN Lab"
+  },
+  "hasPart": [
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "RewardFlow: Generate Images by Optimizing What You Reward",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "CVPR 2026"
+      },
+    }
+  ]
+}
+    </script>
+</head>
+<body class="page-cvpr">
+
+    <nav class="glass-nav">
+        <a href="index.html#hero" class="nav-logo">
+            <img src="assets/images/logo.svg" alt="PLAN Lab Logo">
+        </a>
+        <div class="nav-menu">
+            <a href="publications.html" class="nav-item" aria-label="Publications">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Publications</span>
+            </a>
+            <a href="index.html#team" class="nav-item" aria-label="Team">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="game.html" class="nav-item" aria-label="PLAN Cubes Game">
+                <i class="fa-solid fa-cube"></i>
+                <span>PLAN Cubes</span>
+            </a>
+            <a href="index.html#partners" class="nav-item" aria-label="Partner with Us">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Partner with Us</span>
+            </a>
+            <a href="index.html#contact" class="nav-item" aria-label="Join Us">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Join Us</span>
+            </a>
+        </div>
+    </nav>
+
+<main>
+    <section id="hero" class="plan-hero">
+      <svg class="hero-premium-svg" viewBox="0 0 1400 560" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="premiumLineBlue" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(220,240,255,0.64)" />
+            <stop offset="100%" stop-color="rgba(220,240,255,0.08)" />
+          </linearGradient>
+          <linearGradient id="premiumLineOrange" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(255,145,70,0.70)" />
+            <stop offset="100%" stop-color="rgba(255,145,70,0.08)" />
+          </linearGradient>
+          <filter id="premiumGlow" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+          <filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4.8" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+        <g class="hero-orbit-a" filter="url(#lineGlow)">
+          <path d="M-120,430 C150,230 398,498 655,332 C880,186 1048,245 1530,92" fill="none" stroke="url(#premiumLineBlue)" stroke-width="6" stroke-linecap="round" />
+          <path class="hero-flow-line" d="M-120,430 C150,230 398,498 655,332 C880,186 1048,245 1530,92" fill="none" stroke="rgba(255,255,255,0.68)" stroke-width="2.8" stroke-linecap="round" />
+        </g>
+        <g class="hero-orbit-b" filter="url(#lineGlow)">
+          <path d="M-130,250 C160,470 445,142 730,292 C968,418 1125,360 1520,448" fill="none" stroke="url(#premiumLineOrange)" stroke-width="6.2" stroke-linecap="round" />
+          <path class="hero-flow-line" d="M-130,250 C160,470 445,142 730,292 C968,418 1125,360 1520,448" fill="none" stroke="rgba(255,95,5,0.70)" stroke-width="2.9" stroke-linecap="round" />
+        </g>
+        <g class="hero-ghost-cube">
+          <polygon points="1015,112 1125,172 1015,234 905,172" fill="rgba(255,255,255,0.025)" stroke="rgba(210,235,255,0.34)" stroke-width="1.9" />
+          <polygon points="905,172 1015,234 1015,356 905,292" fill="rgba(147,197,253,0.025)" stroke="rgba(210,235,255,0.22)" stroke-width="1.9" />
+          <polygon points="1125,172 1015,234 1015,356 1125,292" fill="rgba(255,95,5,0.025)" stroke="rgba(210,235,255,0.22)" stroke-width="1.9" />
+        </g>
+        <g class="hero-ghost-cube-2">
+          <polygon points="1210,292 1290,336 1210,382 1130,336" fill="rgba(255,95,5,0.03)" stroke="rgba(255,150,86,0.32)" stroke-width="1.7" />
+          <polygon points="1130,336 1210,382 1210,468 1130,420" fill="rgba(255,95,5,0.02)" stroke="rgba(255,150,86,0.22)" stroke-width="1.7" />
+          <polygon points="1290,336 1210,382 1210,468 1290,420" fill="rgba(255,255,255,0.018)" stroke="rgba(255,150,86,0.22)" stroke-width="1.7" />
+        </g>
+        <circle cx="1110" cy="140" r="132" fill="rgba(255,95,5,0.18)" />
+        <circle cx="1215" cy="400" r="150" fill="rgba(255,255,255,0.065)" />
+        <circle class="hero-node" cx="980" cy="188" r="5.5" fill="rgba(255,255,255,0.88)" filter="url(#premiumGlow)" />
+        <circle class="hero-node" cx="1098" cy="288" r="5" fill="rgba(255,95,5,0.98)" filter="url(#premiumGlow)" />
+      </svg>
+      <div class="hero-aurora hero-aurora-1"></div>
+      <div class="hero-aurora hero-aurora-2"></div>
+      <div class="hero-aurora hero-aurora-3"></div>
+      <div class="hero-atlas-cube" id="hero-main-cube"></div>
+      <div class="hero-small-cube hero-small-cube-a" id="hero-small-cube-a"></div>
+      <div class="hero-small-cube hero-small-cube-b" id="hero-small-cube-b"></div>
+
+      <div class="hero-content">
+        <div>
+          <div class="hero-badge">✦ PLAN@CVPR’26 · 7 papers</div>
+          <h1 class="hero-title">Physical AI for modeling, reasoning, and interacting with the real world.</h1>
+          <p class="hero-copy">PLAN@CVPR’26 brings together seven papers on physical world modeling, embodied action, and reliable grounding. Explore our work from physics-aware video and articulated 3D representations to long-horizon robotic manipulation and hallucination mitigation for 3D-LLM embodied agents.</p>
+        </div>
+        <aside class="hero-atlas-card">
+          <div class="atlas-inner">
+            <div class="atlas-eyebrow">PLAN Lab Paper Atlas</div>
+            <div class="atlas-title">Explore our CVPR 2026 papers</div>
+            <div class="atlas-route">
+              <div class="hero-route-line"></div>
+              <div class="atlas-day"><span class="hero-route-dot"></span><div class="atlas-row"><div class="atlas-day-name">Fri Jun 5</div><div class="atlas-count">1 paper</div></div><div class="atlas-items">PHANTOM</div></div>
+              <div class="atlas-day"><span class="hero-route-dot"></span><div class="atlas-row"><div class="atlas-day-name">Sat Jun 6</div><div class="atlas-count">3 papers</div></div><div class="atlas-items">Part²GS · RewardFlow · PALM</div></div>
+              <div class="atlas-day"><span class="hero-route-dot"></span><div class="atlas-row"><div class="atlas-day-name">Sun Jun 7</div><div class="atlas-count">3 papers</div></div><div class="atlas-items">PyraTok · 3D-VCD · HalluSegBench</div></div>
+            </div>
+             <div class="atlas-actions">
+		<a class="primary" href="#timeline">Poster Map</a>
+		<a class="secondary" href="#schedule">Quick Schedule</a>
+		<a class="partner" href="#partner">Partner with PLAN</a>
+	     </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-shell" id="timeline">
+      <div class="section-header">
+        <div><div class="section-eyebrow">Interactive poster finder</div><h2 class="section-title">Select a paper to view links, poster details, and video.</h2></div>
+        <div class="controls">
+          <label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search title, author, poster..." /></label>
+          <select id="dayFilter"><option>All</option><option>Friday, June 5</option><option>Saturday, June 6</option><option>Sunday, June 7</option></select>
+        </div>
+      </div>
+      <div class="poster-grid">
+        <aside class="timeline-shell">
+          <div class="timeline-scroll">
+            <div class="timeline-rail"></div>
+            <div class="timeline-list" id="timelineList"></div>
+          </div>
+          <p class="timeline-tip">Tip: click, ↑/↓, or ←/→ to move through the timeline.</p>
+        </aside>
+        <aside class="detail-panel" id="detailPanel"></aside>
+      </div>
+    </section>
+
+    <section class="page-shell" id="schedule">
+      <div class="schedule-panel">
+        <div class="schedule-head"><div><div class="eyebrow">Quick schedule</div><h2>PLAN Lab CVPR’26 posters and findings</h2></div><div>7 papers · June 5–7</div></div>
+        <div class="table-wrap"><table><thead><tr><th>Poster ID</th><th>Paper</th><th>Location</th><th>Time</th><th>Links</th></tr></thead><tbody id="scheduleBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="page-shell" id="partner">
+      <div class="partner-card">
+        <div class="partner-grid">
+          <div>
+            <div class="partner-badge">◇ Partner with PLAN Lab</div>
+            <h2>Building Physical AI with research and industry partners.</h2>
+            <p>We collaborate on multimodal reasoning, world models, 3D and video reasoning and generation, unified generative models, robotics, reliable embodied agents, and AI for human-centered physical systems. Get in touch to explore partnerships and collaboration opportunities.</p>
+            <div class="partner-actions"><a class="orange" href="mailto:lourent2@illinois.edu?subject=PLAN@CVPR%20PhysicalAI%20Collaboration">Contact PLAN Lab</a><a class="outline" href="index.html">View lab website</a></div>
+          </div>
+          <div class="partner-tags"><div>Physical world modeling</div><div>Embodied agents and robotics</div><div>Reliable multimodal systems</div><div>3D, video, and physical reasoning</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const papers = [
+      { id:"phantom", short:"PHANTOM", area:"Physics-aware video generation", description:"PHANTOM extends latent video diffusion with explicit latent physical dynamics, producing videos that better preserve motion, interaction, and physical plausibility over time.", day:"Friday, June 5", dateKey:"Fri Jun 5", session:"ExHall A & F", time:"16:00 – 18:00", posterId:"372", paperNumber:"38312", title:"PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics", authors:"Ying Shen, Jerry Xiong, Tianjiao Yu, Ismini Lourentzou", projectUrl:"projects/phantom/", paperUrl:"https://arxiv.org/abs/2604.08503", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39897.png?t=1778998871.5339897", videoUrl: "https://www.youtube.com/watch?v=JmBKPFDVuS0", bibtex:`@inproceedings{shen2026phantom,
+  title={PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics},
+  author={Shen, Ying and Xiong, Jerry and Yu, Tianjiao and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` },
+      { id:"part2gs", short:"Part²GS", area:"Part-aware articulated 3D modeling", description:"Part²GS represents articulated objects with part-aware 3D Gaussian Splatting, enabling more structured modeling of object parts, motion, and geometry.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"435", paperNumber:"42453", title:"Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting", authors:"Tianjiao Yu, Vedant Shah, Muntasir Wahed, Ying Shen, Kiet A. Nguyen, Ismini Lourentzou", projectUrl:"projects/part2gs/", paperUrl:"https://arxiv.org/abs/2506.17212", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39339.png?t=1779513352.9109356", videoUrl:"https://www.youtube.com/watch?v=IVFTkKJjHiQ", bibtex:`@inproceedings{yu2025part,
+  title={Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting},
+  author={Yu, Tianjiao and Shah, Vedant and Wahed, Muntasir and Shen, Ying and Nguyen, Kiet A. and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` },
+      { id:"rewardflow", short:"RewardFlow", area:"Controllable inversion-free image editing and generation", description:"RewardFlow turns user-defined reward signals into a controllable generation mechanism, allowing visual outputs to be steered toward the properties people actually care about.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall F", time:"11:45 – 13:45", posterId:"543", paperNumber:"35607", title:"RewardFlow: Generate Images by Optimizing What You Reward", authors:"Onkar Susladkar, Dong-Hwan Jang, Tushar Prakash, Adheesh Juvekar, Vedant Shah, Ayush Barik, Nabeel Bashir, Muntasir Wahed, Ritesh Shirrao, Ismini Lourentzou", projectUrl:"projects/rewardflow/", paperUrl:"https://arxiv.org/abs/2604.08536", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/37655.png?t=1779667667.3786716", videoUrl:"https://www.youtube.com/watch?v=ZqXbBrk5k58", bibtex:`@inproceedings{susladkar2026rewardflow,
+  title={RewardFlow: Generate Images by Optimizing What You Reward},
+  author={Susladkar, Onkar and Jang, Dong-Hwan and Prakash, Tushar and Juvekar, Adheesh and Shah, Vedant and Barik, Ayush and Bashir, Nabeel and Wahed, Muntasir and Shirrao, Ritesh and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` },
+      { id:"palm", short:"PALM", area:"Progress and affordance reasoning for robotic manipulation", description:"PALM studies long-horizon robotic manipulation through progress-aware policy learning, using affordance reasoning to help agents choose actions that remain aligned with task progress.", day:"Saturday, June 6", dateKey:"Sat Jun 6", session:"ExHall A & F", time:"16:45 – 18:45", posterId:"622", paperNumber:"39690", title:"PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation", authors:"Yuanze Liu, Jingyuan Zhu, Yuchen Mo, Gen Li, Xu Cao, Jin Jin, Yifan Shen, Zhengyuan Li, Tianjiao Yu, Wenzhen Yuan, Fangqiang Ding, Ismini Lourentzou", projectUrl:"projects/palm/", paperUrl:"https://arxiv.org/abs/2601.07060", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38810.png?t=1779487695.8519769", videoUrl:"https://www.youtube.com/watch?v=0K4wl7nW7no", bibtex:`@inproceedings{liu2026palm,
+  title={PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation},
+  author={Liu, Yuanze and Zhu, Jingyuan and Mo, Yuchen and Li, Gen and Cao, Xu and Jin, Jin and Shen, Yifan and Li, Zhengyuan and Yu, Tianjiao and Yuan, Wenzhen and Ding, Fangqiang and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` },
+      { id:"counterfactual-segmentation-reasoning", short:"HalluSegBench", area:"Grounding diagnostics and hallucination mitigation", description:"Counterfactual Segmentation Reasoning diagnoses when segmentation models rely on language priors instead of visual evidence, and provides a benchmark for evaluating pixel-grounded hallucination.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"7:30 – 9:00 AM", posterId:"81", paperNumber:"40439", title:"Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination", authors:"Xinzhuo Li, Adheesh Juvekar, Jiaxun Zhang, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Yifan Shen, Tianjiao Yu, Ismini Lourentzou", projectUrl:"projects/hallusegbench", paperUrl:"https://arxiv.org/abs/2506.21546", posterPdfUrl:"projects/hallusegbench/static/images/halluseg_poster.png?t=1779002150.932184", videoUrl:"", bibtex:`@inproceedings{li2025counterfactual,
+  title={Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination},
+  author={Li, Xinzhuo and Juvekar, Adheesh and Zhang, Jiaxun and Liu, Xingyou and Wahed, Muntasir and Nguyen, Kiet A. and Shen, Yifan and Yu, Tianjiao and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (Findings Track)},
+  year={2026}
+}` },
+      { id:"pyratok", short:"PyraTok", area:"Language-aligned video representations", description:"PyraTok learns a language-aligned pyramidal video tokenizer that supports both video understanding and generation through compact, semantically meaningful visual representations.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"161", paperNumber:"36207", title:"PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation", authors:"Onkar Susladkar, Tushar Prakash, Adheesh Juvekar, Kiet A. Nguyen, Dong-Hwan Jang, Inderjit S Dhillon, Ismini Lourentzou", projectUrl:"projects/pyratok/", paperUrl:"https://arxiv.org/abs/2601.16210", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39433.png?t=1779666456.4355679", videoUrl:"https://www.youtube.com/watch?v=fDNslWX_N4s", bibtex:`@inproceedings{susladkar2026pyratok,
+  title={PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation},
+  author={Susladkar, Onkar and Prakash, Tushar and Juvekar, Adheesh and Nguyen, Kiet A. and Jang, Dong-Hwan and Dhillon, Inderjit S. and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` },
+      { id:"3d-vcd", short:"3D-VCD", area:"Reliable embodied 3D agents", description:"3D-VCD reduces hallucinations in embodied 3D-LLM agents by contrasting visual evidence during decoding, improving reliability when agents reason about 3D scenes.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A", time:"15:30 – 17:30", posterId:"373", paperNumber:"38346", title:"3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding", authors:"Makanjuola Adekunmi Ogunleye, Eman Abdelrahman, Ismini Lourentzou", projectUrl:"projects/3d-vcd/", paperUrl:"https://arxiv.org/abs/2604.08645", posterPdfUrl:"https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/38452.png?t=1779655196.4874609", videoUrl:"https://www.youtube.com/watch?v=7MGVtPqnmqY", bibtex:`@inproceedings{ogunleye20263d,
+  title={3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding},
+  author={Ogunleye, Makanjuola Adekunmi and Abdelrahman, Eman and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
+}` }
+    ];
+
+    let activeId = papers[0].id;
+    let copiedId = null;
+
+    function esc(str) {
+      return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    }
+
+
+    function getYouTubeId(url) {
+      if (!url) return null;
+      const patterns = [
+        /youtube\.com\/watch\?v=([^&]+)/,
+        /youtu\.be\/([^?&]+)/,
+        /youtube\.com\/embed\/([^?&]+)/,
+        /youtube\.com\/shorts\/([^?&]+)/,
+      ];
+      for (const pattern of patterns) {
+        const match = String(url).match(pattern);
+        if (match && match[1]) return match[1];
+      }
+      return null;
+    }
+
+    function getYouTubeEmbedUrl(url) {
+      const id = getYouTubeId(url);
+      if (!id) return null;
+      const origin = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+        ? window.location.origin
+        : 'https://plan-lab.github.io';
+      return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&playsinline=1&origin=${encodeURIComponent(origin)}`;
+    }
+
+    function getVideoEmbedHtml(p) {
+      const youtubeId = getYouTubeId(p.videoUrl);
+      const youtubeEmbedUrl = getYouTubeEmbedUrl(p.videoUrl);
+
+      if (youtubeId && youtubeEmbedUrl) {
+        if (window.location.protocol === 'file:') {
+          return `<a class="youtube-fallback" href="${esc(p.videoUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${esc(p.short)} presentation video on YouTube">
+            <img src="https://img.youtube.com/vi/${esc(youtubeId)}/hqdefault.jpg" alt="${esc(p.short)} presentation video thumbnail">
+            <span class="youtube-play"><i class="fa-solid fa-play"></i></span>
+            <span class="youtube-fallback-text">Open video on YouTube</span>
+          </a>`;
+        }
+
+        return `<iframe
+          src="${esc(youtubeEmbedUrl)}"
+          title="${esc(p.short)} presentation video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>`;
+      }
+
+      return `<video controls preload="metadata"><source src="${esc(p.videoUrl)}" type="video/mp4">Your browser does not support embedded video.</video>`;
+    }
+
+    function cubeSvg(id, variant = 'blue') {
+      const c = variant === 'orange'
+        ? { topA:'#ff8a18', topB:'#ff5f05', leftA:'#cc4700', leftB:'#ff6d00', rightA:'#f05a00', rightB:'#b93b00', stroke:'#ffb06a' }
+        : { topA:'#5f80a8', topB:'#355d88', leftA:'#1c3154', leftB:'#355d88', rightA:'#2b4d73', rightB:'#14294b', stroke:'#88a6c8' };
+      return `<svg class="cube-svg" viewBox="0 0 96 96" aria-hidden="true"><defs><linearGradient id="cubeTop-${id}-${variant}" x1="18" y1="8" x2="78" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="${c.topA}"/><stop offset="1" stop-color="${c.topB}"/></linearGradient><linearGradient id="cubeLeft-${id}-${variant}" x1="15" y1="28" x2="50" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="${c.leftA}"/><stop offset="1" stop-color="${c.leftB}"/></linearGradient><linearGradient id="cubeRight-${id}-${variant}" x1="82" y1="28" x2="48" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="${c.rightA}"/><stop offset="1" stop-color="${c.rightB}"/></linearGradient><filter id="cubeShadow-${id}-${variant}" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="7" flood-color="#13294B" flood-opacity="0.24"/></filter></defs><ellipse cx="48" cy="82" rx="29" ry="8" fill="#13294B" opacity="0.13"/><g filter="url(#cubeShadow-${id}-${variant})"><polygon points="48,8 82,27 48,46 14,27" fill="url(#cubeTop-${id}-${variant})"/><polygon points="14,27 48,46 48,83 14,63" fill="url(#cubeLeft-${id}-${variant})"/><polygon points="82,27 48,46 48,83 82,63" fill="url(#cubeRight-${id}-${variant})"/><path d="M48 8 L82 27 L48 46 L14 27 Z" fill="none" stroke="${c.stroke}" stroke-opacity="0.55" stroke-width="1.3"/><path d="M14 27 L48 46 L82 27 M48 46 L48 83" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"/><path d="M25 28 L48 16 L72 29" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" stroke-linecap="round"/></g></svg>`;
+    }
+
+    document.getElementById('hero-main-cube').innerHTML = cubeSvg('hero-atlas-cube', 'orange');
+    document.getElementById('hero-small-cube-a').innerHTML = cubeSvg('hero-small-cube-a', 'blue');
+    document.getElementById('hero-small-cube-b').innerHTML = cubeSvg('hero-small-cube-b', 'orange');
+
+    function filteredPapers() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const day = document.getElementById('dayFilter').value;
+      return papers.filter(p => {
+        const matchesDay = day === 'All' || p.day === day;
+        const searchable = `${p.short} ${p.title} ${p.authors} ${p.area} ${p.posterId}`.toLowerCase();
+        return matchesDay && (!q || searchable.includes(q));
+      });
+    }
+
+    function renderTimeline() {
+      const items = filteredPapers();
+      const el = document.getElementById('timelineList');
+      if (!items.length) {
+        el.innerHTML = `<div style="display:grid;height:260px;place-items:center;text-align:center;"><div><div style="font-weight:1000;color:#13294B;font-size:1.1rem;">No matching papers</div><p style="color:#64748b;font-size:.9rem;">Try another author, title keyword, poster number, or day.</p></div></div>`;
+        return;
+      }
+      let html = '';
+      items.forEach((p, i) => {
+        if (i === 0 || items[i - 1].day !== p.day) {
+          html += `<div class="day-separator"><span class="day-dot"></span><span class="day-label">${esc(p.day)}</span></div>`;
+        }
+        const active = p.id === activeId;
+        html += `<button class="paper-cube-card ${active ? 'active' : ''}" data-paper="${esc(p.id)}" type="button" aria-label="Show schedule details for ${esc(p.short)}"><div class="cube-wrap">${cubeSvg(p.id, active ? 'orange' : 'blue')}<span class="sr-only">${esc(p.short)}</span></div><div><div class="paper-short">${esc(p.short)}</div><div class="paper-area">${esc(p.area)}</div><div class="paper-time">${esc(p.time)}</div></div></button>`;
+      });
+      el.innerHTML = html;
+      el.querySelectorAll('[data-paper]').forEach(btn => btn.addEventListener('click', () => setActive(btn.dataset.paper)));
+    }
+
+    function renderDetail() {
+      const p = papers.find(x => x.id === activeId) || papers[0];
+      document.getElementById('detailPanel').innerHTML = `<div class="detail-inner">
+        <a href="${esc(p.projectUrl)}" class="paper-title-link" target="_blank" rel="noreferrer">${esc(p.title)} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <div class="paper-detail-area">${esc(p.area)}</div>
+        <p class="paper-description">${esc(p.description)}</p>
+
+        <div class="info-grid">
+          <div class="info-tile"><div class="info-label"><i class="fa-regular fa-calendar"></i> Day</div><div class="info-value">${esc(p.day)}</div></div>
+          <div class="info-tile"><div class="info-label"><i class="fa-regular fa-clock"></i> Time</div><div class="info-value">${esc(p.time)}</div></div>
+          <div class="info-tile"><div class="info-label"><i class="fa-solid fa-location-dot"></i> Location</div><div class="info-value">${esc(p.session)}</div></div>
+          <div class="info-tile highlight"><div class="info-label"><i class="fa-solid fa-star"></i> Poster</div><div class="info-value">${esc(p.posterId)}</div></div>
+        </div>
+
+        <div class="action-row">
+          <a class="action-link primary" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Project</a>
+          <a class="action-link" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer"><i class="fa-solid fa-book-open"></i> Paper</a>
+          <a class="action-link" href="${esc(p.posterPdfUrl)}" target="_blank" rel="noreferrer"><i class="fa-regular fa-file-lines"></i> Poster</a>
+          <a class="action-link" href="${esc(p.videoUrl)}" target="_blank" rel="noreferrer"><i class="fa-regular fa-circle-play"></i> Video</a>
+          <button class="copy-btn" data-copy-detail="${esc(p.id)}"><i class="fa-regular fa-copy"></i> ${copiedId === p.id ? 'Copied' : 'BibTeX'}</button>
+        </div>
+
+        <div class="authors-box">
+          <div class="box-label"><i class="fa-solid fa-users"></i> Authors</div>
+          <p class="authors-text">${esc(p.authors)}</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-card">
+            <div class="media-head">
+              <div class="media-head-left">
+                <div class="media-icon"><i class="fa-regular fa-circle-play"></i></div>
+                <div><div class="media-kicker">Video</div><div class="media-title">Presentation video</div></div>
+              </div>
+              <a class="media-open" href="${esc(p.videoUrl)}" target="_blank" rel="noreferrer">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="video-box">${getVideoEmbedHtml(p)}</div>
+          </div>
+          <div class="media-card">
+            <div class="media-head">
+              <div class="media-head-left">
+                <div class="media-icon"><i class="fa-regular fa-file-lines"></i></div>
+                <div><div class="media-kicker">Poster PDF</div><div class="media-title">Poster preview</div></div>
+              </div>
+              <a class="media-open" href="${esc(p.posterPdfUrl)}" target="_blank" rel="noreferrer">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="pdf-box"><iframe src="${esc(p.posterPdfUrl)}" title="${esc(p.short)} poster PDF"></iframe></div>
+          </div>
+        </div>
+
+        <div class="bibtex-box">
+          <div class="box-label"><i class="fa-solid fa-quote-left"></i> Cite this paper</div>
+          <div class="bibtex-pre-wrap"><pre class="bibtex-pre">${esc(p.bibtex)}</pre></div>
+        </div>
+
+        <div class="pager-row">
+          <button class="pager-btn" type="button" data-prev><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="pager-btn" type="button" data-next>Next <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>`;
+      document.querySelector('[data-copy-detail]').addEventListener('click', () => copyBibtex(p.id));
+      document.querySelector('[data-prev]').addEventListener('click', () => setActiveByOffset(-1));
+      document.querySelector('[data-next]').addEventListener('click', () => setActiveByOffset(1));
+    }
+
+    function renderSchedule() {
+      const body = document.getElementById('scheduleBody');
+      body.innerHTML = papers.map(p => `<tr><td><button class="poster-pill" data-paperlink="${esc(p.id)}">${esc(p.posterId)}</button></td><td><a class="paper-title-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">${esc(p.title)}</a><div class="paper-number">Paper #${esc(p.paperNumber)}</div></td><td>${esc(p.session)}</td><td>${esc(p.day)}<br><span style="color:var(--plan-orange);font-weight:900;">${esc(p.time)}</span></td><td><div class="link-cluster"><a class="table-link" href="${esc(p.projectUrl)}" target="_blank" rel="noreferrer">Project</a><a class="table-link" href="${esc(p.paperUrl)}" target="_blank" rel="noreferrer">Paper</a><button class="bib-button ${copiedId === p.id ? 'copied' : ''}" data-copy="${esc(p.id)}">${copiedId === p.id ? 'Copied' : 'BibTeX'}</button></div></td></tr>`).join('');
+      body.querySelectorAll('[data-paperlink]').forEach(btn => btn.addEventListener('click', () => { setActive(btn.dataset.paperlink); document.getElementById('timeline').scrollIntoView({behavior:'smooth'}); }));
+      body.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => copyBibtex(btn.dataset.copy)));
+    }
+
+    function setActive(id) {
+      activeId = id;
+      renderTimeline();
+      renderDetail();
+    }
+    function setActiveByOffset(offset) {
+      const idx = papers.findIndex(p => p.id === activeId);
+      const next = (idx + offset + papers.length) % papers.length;
+      setActive(papers[next].id);
+    }
+    async function copyBibtex(id) {
+      const p = papers.find(x => x.id === id);
+      if (!p) return;
+      try { await navigator.clipboard.writeText(p.bibtex); }
+      catch (e) {
+        const ta = document.createElement('textarea');
+        ta.value = p.bibtex; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      }
+      copiedId = id;
+      renderDetail();
+      renderSchedule();
+      window.setTimeout(() => { copiedId = null; renderDetail(); renderSchedule(); }, 1800);
+    }
+
+    document.getElementById('searchInput').addEventListener('input', renderTimeline);
+    document.getElementById('dayFilter').addEventListener('change', renderTimeline);
+    window.addEventListener('keydown', e => {
+      const tag = (e.target && e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') setActiveByOffset(1);
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') setActiveByOffset(-1);
+    });
+
+    renderTimeline();
+    renderDetail();
+    renderSchedule();
+  </script>
+
+  <script>
+    // Match the existing PLAN Lab navbar behavior from assets/css/style.css.
+    // That stylesheet uses .glass-nav.scrolled-nav for the small/faded scroll state.
+    (function () {
+      function syncPLANNavScroll() {
+        const nav = document.querySelector('.glass-nav');
+        if (!nav) return;
+        nav.classList.toggle('scrolled-nav', window.scrollY > 20);
+      }
+
+      document.addEventListener('DOMContentLoaded', syncPLANNavScroll);
+      window.addEventListener('load', syncPLANNavScroll);
+      window.addEventListener('scroll', syncPLANNavScroll, { passive: true });
+      window.addEventListener('resize', syncPLANNavScroll);
+      syncPLANNavScroll();
+    })();
+  </script>
+</body>
+</html>
