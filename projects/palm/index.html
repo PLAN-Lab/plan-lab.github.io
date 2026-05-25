@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-48J3PYKGQ6');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation." />
+  <title>PALM | PLAN Lab</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PLAN Lab" />
+  <meta property="og:title" content="PALM | Progress-Aware Policy Learning via Affordance Reasoning" />
+  <meta property="og:description" content="PALM couples structured affordance reasoning with subtask progress estimation for reliable long-horizon robotic manipulation." />
+  <meta property="og:image" content="https://plan-lab.github.io/projects/palm/static/images/teaser.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/projects.css" />
+  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg" />
+
+  <style>
+    .page-project .palm-accent { color: #ff9f43; font-weight: 800; }
+    .page-project .palm-blue { color: #7eb8f0; font-weight: 800; }
+    .page-project .palm-green { color: #95e06c; font-weight: 800; }
+    .page-project .publication-title { max-width: 1100px; margin-left: auto; margin-right: auto; }
+    .page-project .publication-authors.notes { font-size: 0.85rem; font-weight: 400; color: #888; }
+    .page-project .publication-authors .author-block.name { color: #7eb8f0; font-weight: 900; font-size: 1.05rem; }
+    .page-project .palm-tldr {
+      text-align: center;
+      max-width: 1050px;
+      margin: 0.85rem auto 0;
+      font-size: 1.22rem !important;
+      line-height: 1.6;
+      font-weight: 750;
+    }
+    .page-project .palm-figure {
+      display: block;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0.8rem auto 0;
+      border-radius: 16px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .page-project .palm-figure.tight { max-width: 980px; }
+    .page-project .palm-caption {
+      text-align: center;
+      margin-top: 0.55rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      color: #b5b5b5;
+    }
+    .page-project .palm-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 1rem 0 1.15rem;
+    }
+    .page-project .palm-card {
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .page-project .palm-card h3 {
+      margin: 0 0 0.45rem;
+      color: #ff9f43;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .page-project .palm-card p { margin: 0; color: #d0d0d0; line-height: 1.55; font-size: 0.95rem; }
+    .page-project .palm-result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 1rem 0 1.15rem;
+    }
+    .page-project .palm-result-card {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,159,67,0.14), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,159,67,0.22);
+      border-radius: 16px;
+      padding: 18px 14px;
+    }
+    .page-project .palm-result-value { color: #ff9f43; font-size: 2rem; font-weight: 900; line-height: 1; }
+    .page-project .palm-result-label { color: #d8d8d8; margin-top: 0.45rem; font-size: 0.95rem; line-height: 1.35; font-weight: 650; }
+    .page-project .palm-video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .page-project .palm-video-card {
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 10px;
+    }
+    .page-project .palm-video-title {
+      text-align: center;
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #f0f0f0;
+    }
+    .page-project .palm-video-wrap {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    .page-project .palm-video-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+    }
+    .page-project .palm-bibtex pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: rgba(0, 0, 0, 0.24);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    @media (max-width: 900px) {
+      .page-project .palm-card-grid,
+      .page-project .palm-result-grid,
+      .page-project .palm-video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="page-project">
+  <div class="project-bg"></div>
+  <div class="project-grid"></div>
+
+  <nav class="glass-nav">
+    <a href="../../index.html#hero" class="nav-logo">
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+    </a>
+    <div class="nav-menu">
+      <a href="../../publications.html" class="nav-item" aria-label="Publications">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Publications</span>
+      </a>
+      <a href="../../index.html#team" class="nav-item" aria-label="Team">
+        <i class="fa-solid fa-users"></i>
+        <span>Team</span>
+      </a>
+      <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+        <i class="fa-solid fa-cube"></i>
+        <span>PLAN Cubes</span>
+      </a>
+      <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <span>Partner with Us</span>
+      </a>
+      <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Join Us</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="publication-title">PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation</h1>
+
+              <div class="publication-authors">
+                <span class="author-block name">Yuanzhe Liu<sup>1,2</sup>,</span>
+                <span class="author-block name">Jingyuan Zhu<sup>1</sup>,</span>
+                <span class="author-block name">Yuchen Mo<sup>2</sup>,</span>
+                <span class="author-block name">Gen Li<sup>3</sup>,</span>
+                <span class="author-block name">Xu Cao<sup>2</sup>,</span>
+                <span class="author-block name">Jin Jin<sup>4</sup></span>
+              </div>
+              <div class="publication-authors">
+                <span class="author-block name">Yifan Shen<sup>2</sup>,</span>
+                <span class="author-block name">Zhengyuan Li<sup>2</sup>,</span>
+                <span class="author-block name">Tianjiao Yu<sup>2</sup>,</span>
+                <span class="author-block name">Wenzhen Yuan<sup>2</sup>,</span>
+                <span class="author-block name">Fangqiang Ding<sup>5</sup>,</span>
+                <span class="author-block name">Ismini Lourentzou<sup>2</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors" style="justify-content: center;">
+                <span class="author-block"><sup>1</sup>University of Pennsylvania</span>
+                <span class="author-block"><sup>2</sup>University of Illinois Urbana-Champaign</span>
+                <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
+              </div>
+              <div class="is-size-5 publication-authors" style="justify-content: center;">
+                <span class="author-block"><sup>4</sup>University of Oxford</span>
+                <span class="author-block"><sup>5</sup>Massachusetts Institute of Technology</span>
+              </div>
+
+              <div class="is-size-5 publication-authors" style="justify-content: center;">
+                <span class="author-block">CVPR 2026</span>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2601.07060" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2601.07060" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-solid fa-link"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#method" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <span>Method</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#results" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-regular fa-images"></i></span>
+                    <span>Results</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#videos" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-solid fa-video"></i></span>
+                    <span>Videos</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#BibTeX" class="button is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-obp"></i></span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="content palm-tldr">
+            <strong><span class="palm-accent">PALM</span> couples structured affordance reasoning with <span class="palm-blue">continuous subtask progress estimation</span>, enabling vision-language-action policies to remain temporally coherent across <span class="palm-green">long-horizon robotic manipulation</span>.</strong>
+          </div>
+          <img src="./static/images/teaser.png" class="palm-figure" alt="PALM teaser showing progress-aware affordance reasoning for long-horizon manipulation" />
+          <p class="palm-caption">PALM uses future affordance cues and progress prediction to guide long-horizon action generation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent vision-language-action models show strong promise for robotic manipulation, but they remain brittle in long-horizon, multi-step tasks. PALM addresses this limitation by structuring policy learning around interaction-centric affordance reasoning and subtask progress cues. It predicts structured future affordances that capture object relevance, contact geometry, spatial placements, and motion dynamics, then conditions a progress-aware diffusion policy on these affordance representations. The resulting policy jointly predicts actions and continuous within-subtask progress values, helping the robot decide when to continue, transition, or terminate a subtask. Across simulation and real-world experiments, PALM improves long-horizon manipulation performance, reaching a 91.8% success rate on LIBERO-LONG, improving average length on CALVIN ABCD by 12.5%, and achieving a 2× improvement over real-world baselines across three generalization settings.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            PALM introduces two complementary query sets on top of a multimodal VLA backbone: <strong>affordance queries</strong> that anticipate task-relevant future interaction cues, and <strong>action-progress queries</strong> that generate actions while estimating subtask completion. The affordance representation is factorized into global, local, spatial, and dynamic components, encouraging the policy to reason about what object matters, where to interact, where to place or move, and how the next interaction should unfold.
+          </p>
+
+          <div class="palm-card-grid">
+            <div class="palm-card">
+              <h3>Structured affordance foresight</h3>
+              <p>Predicts future interaction cues for object relevance, contact geometry, spatial placement, and motion dynamics.</p>
+            </div>
+            <div class="palm-card">
+              <h3>Progress-aware control</h3>
+              <p>Jointly predicts action and continuous progress to stabilize subtask transitions and reduce repeated or skipped actions.</p>
+            </div>
+            <div class="palm-card">
+              <h3>Long-horizon robustness</h3>
+              <p>Maintains coherent behavior under object relocation, unseen lighting, and visual distractors in real-world rollouts.</p>
+            </div>
+          </div>
+
+          <img src="./static/images/method_architecture.png" class="palm-figure" alt="PALM architecture overview" />
+          <p class="palm-caption">PALM architecture: multimodal encoding, structured affordance queries, and action-progress diffusion decoding.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Results and Analysis</h2>
+        <div class="content has-text-justified">
+          <p>
+            PALM is evaluated across simulation benchmarks and real-world long-horizon generalization settings. The real-world setup uses a UFACTORY xArm6 with Gripper G2 and dual RealSense D455 cameras. The long-horizon task requires a robot to complete a six-step instruction sequence while remaining robust to relocation, lighting shifts, and distractor objects.
+          </p>
+
+          <div class="palm-result-grid">
+            <div class="palm-result-card">
+              <div class="palm-result-value">91.8%</div>
+              <div class="palm-result-label">success rate on LIBERO-LONG</div>
+            </div>
+            <div class="palm-result-card">
+              <div class="palm-result-value">+12.5%</div>
+              <div class="palm-result-label">average-length gain on CALVIN ABCD</div>
+            </div>
+            <div class="palm-result-card">
+              <div class="palm-result-value">2×</div>
+              <div class="palm-result-label">real-world improvement over baselines</div>
+            </div>
+          </div>
+
+          <img src="./static/images/real_world_setup.png" class="palm-figure" alt="PALM real-world experiment setup" />
+          <p class="palm-caption">Real-world robot setup and six-step long-horizon task guided by one high-level instruction.</p>
+
+          <img src="./static/images/robustness_settings.png" class="palm-figure" alt="PALM robustness under relocation, unseen lighting, and visual distractions" />
+          <p class="palm-caption">Robustness settings: random relocation, unseen lighting disturbances, and multi-object visual distractions.</p>
+
+          <img src="./static/images/real_world_results.png" class="palm-figure tight" alt="PALM real-world results" />
+          <p class="palm-caption">PALM achieves longer-horizon completion across real-world generalization settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Qualitative Videos</h2>
+        <div class="content has-text-justified">
+          <p>
+            The videos below show PALM rollouts across the original task and robustness settings. Each clip illustrates how progress-aware affordance reasoning supports temporally coherent execution across multi-step manipulation.
+          </p>
+
+          <div class="palm-video-grid">
+            <div class="palm-video-card">
+              <div class="palm-video-title palm-accent">Original</div>
+              <div class="palm-video-wrap">
+                <video controls playsinline preload="metadata" src="./static/videos/original.mp4"></video>
+              </div>
+            </div>
+            <div class="palm-video-card">
+              <div class="palm-video-title palm-accent">Unseen Lighting</div>
+              <div class="palm-video-wrap">
+                <video controls playsinline preload="metadata" src="./static/videos/unseen-lighting.mp4"></video>
+              </div>
+            </div>
+            <div class="palm-video-card">
+              <div class="palm-video-title palm-accent">Visual Distraction</div>
+              <div class="palm-video-wrap">
+                <video controls playsinline preload="metadata" src="./static/videos/visual-distraction.mp4"></video>
+              </div>
+            </div>
+            <div class="palm-video-card">
+              <div class="palm-video-title palm-accent">Random Relocation</div>
+              <div class="palm-video-wrap">
+                <video controls playsinline preload="metadata" src="./static/videos/random-relocation.mp4"></video>
+              </div>
+            </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content palm-bibtex">
+        <h2 class="title" style="justify-content: left; display:flex;">BibTeX</h2>
+        <pre><code>@article{liu2026palm,
+  title={PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation},
+  author={Liu, Yuanzhe and Zhu, Jingyuan and Mo, Yuchen and Li, Gen and Cao, Xu and Jin, Jin and Shen, Yifan and Li, Zhengyuan and Yu, Tianjiao and Yuan, Wenzhen and Ding, Fangqiang and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:2601.07060},
+  eprint={2601.07060},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
