@@ -445,7 +445,7 @@
 
     .action-row {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 8px;
       margin-top: 12px;
     }
@@ -522,7 +522,7 @@
     .schedule-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; background: var(--plan-blue); color: #fff; }
     .schedule-head .eyebrow { color: #fed7aa; text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.72rem; font-weight: 1000; }
     .schedule-head h2 { margin: 0.25rem 0 0; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.035em; }
-    .table-wrap { overflow-x: auto; }
+    .table-wrap { overflow-x: auto; overflow-y: visible; }
     table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
     thead { background: #f8fafc; color: #64748b; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.72rem; }
     th, td { padding: 1rem 1.25rem; vertical-align: top; }
@@ -534,7 +534,50 @@
     .paper-title-link { color: var(--plan-blue); font-weight: 1000; text-decoration: none; }
     .paper-title-link:hover { color: var(--plan-orange); }
     .paper-number { margin-top: 0.35rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.7rem; font-weight: 850; }
-    .link-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .link-cluster { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; }
+
+    .calendar-menu { position: relative; display: inline-flex; }
+    .calendar-menu summary { list-style: none; }
+    .calendar-menu summary::-webkit-details-marker { display: none; }
+    .calendar-summary { user-select: none; }
+    .calendar-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 60;
+      min-width: 190px;
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.45rem;
+      border: 1px solid #dbe3ef;
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 18px 42px rgba(15,23,42,0.16);
+    }
+    .calendar-menu:not([open]) .calendar-dropdown { display: none; }
+    .calendar-dropdown a {
+      display: flex;
+      align-items: center;
+      min-height: 34px;
+      border-radius: 0.8rem;
+      padding: 0.55rem 0.7rem;
+      color: var(--plan-blue);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .calendar-dropdown a:hover { background: rgba(255,95,5,0.08); color: var(--plan-orange); }
+    .calendar-menu-table { flex-direction: row; align-items: center; }
+    .calendar-menu-table[open] { z-index: 120; }
+    .calendar-menu-table .calendar-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      margin-top: 0;
+      min-width: 180px;
+    }
+
     .table-link { background: rgba(19,41,75,0.08); color: var(--plan-blue); }
     .table-link:hover { background: var(--plan-blue); color: #fff; }
     .bib-button { background: rgba(255,95,5,0.10); color: var(--plan-orange); }
@@ -669,7 +712,7 @@
 }
 .schedule-count {
   color: rgba(219, 234, 254, 0.95);
-  font-size: 0.92rem;
+  font-size: 1.4rem;
   font-weight: 900;
   white-space: nowrap;
 }
@@ -778,3 +821,180 @@ body.page-cvpr section#partner.page-shell {
   padding-bottom: 80px !important;
 }
 
+
+/* Calendar button alignment fix: keep the detail-row Calendar control visually identical to the other action buttons. */
+.action-row > .calendar-menu {
+  width: 100%;
+  min-width: 0;
+  display: block;
+}
+.action-row > .calendar-menu > .calendar-summary {
+  width: 100%;
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.action-row > .calendar-menu[open] {
+  z-index: 140;
+}
+.action-row > .calendar-menu .calendar-dropdown {
+  right: 0;
+  left: auto;
+}
+
+
+/* Calendar v4: clean provider menus and orange per-poster schedule calendar button. */
+.calendar-summary-orange {
+  background: var(--plan-orange) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 20px rgba(255,95,5,0.14);
+}
+.calendar-summary-orange:hover {
+  background: #e55200 !important;
+  color: #fff !important;
+}
+
+.schedule-downloads .calendar-menu-all {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.schedule-downloads .schedule-calendar-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 0.52rem 0.78rem;
+  border: 1px solid rgba(255,95,5,0.95);
+  background: var(--plan-orange);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 1000;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(255,95,5,0.20);
+  transition: transform 180ms ease, background 180ms ease;
+  user-select: none;
+}
+.schedule-downloads .schedule-calendar-toggle:hover {
+  transform: translateY(-1px);
+  background: #e55200;
+}
+.schedule-downloads .calendar-menu-all[open] {
+  z-index: 220;
+}
+.schedule-downloads .calendar-menu-all .calendar-dropdown {
+  right: 0;
+  left: auto;
+  top: calc(100% + 8px);
+  min-width: 190px;
+}
+.schedule-downloads .calendar-menu-all .calendar-dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  min-height: 34px;
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 0.55rem 0.7rem;
+  background: transparent;
+  box-shadow: none;
+  color: var(--plan-blue);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 950;
+  white-space: nowrap;
+  transform: none;
+}
+.schedule-downloads .calendar-menu-all .calendar-dropdown a:hover {
+  background: rgba(255,95,5,0.08);
+  color: var(--plan-orange);
+  transform: none;
+}
+
+
+/* Calendar v5: floating dropdowns so schedule menus are never clipped by low table rows. */
+.calendar-menu.is-positioned .calendar-dropdown {
+  position: fixed !important;
+  top: var(--calendar-dropdown-top) !important;
+  left: var(--calendar-dropdown-left) !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: 9999 !important;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+}
+
+.calendar-menu.is-positioned {
+  z-index: 9999 !important;
+}
+
+
+/* Calendar v6: button-triggered body popup. This avoids clipped table menus and keeps links clickable. */
+.calendar-trigger {
+  cursor: pointer;
+  font: inherit;
+}
+.action-row > .calendar-trigger {
+  width: 100%;
+  min-width: 0;
+}
+.schedule-downloads button.schedule-calendar-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 0.52rem 0.78rem;
+  border: 1px solid rgba(255,95,5,0.95);
+  background: var(--plan-orange);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 1000;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(255,95,5,0.20);
+  transition: transform 180ms ease, background 180ms ease;
+  user-select: none;
+}
+.schedule-downloads button.schedule-calendar-toggle:hover,
+.schedule-downloads button.schedule-calendar-toggle[aria-expanded="true"] {
+  transform: translateY(-1px);
+  background: #e55200;
+}
+.calendar-popup {
+  position: fixed;
+  z-index: 100000;
+  min-width: 190px;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.45rem;
+  border: 1px solid #dbe3ef;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(15,23,42,0.18);
+}
+.calendar-popup[hidden] {
+  display: none !important;
+}
+.calendar-popup a {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  border-radius: 0.8rem;
+  padding: 0.56rem 0.75rem;
+  color: var(--plan-blue);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 950;
+  white-space: nowrap;
+}
+.calendar-popup a:hover {
+  background: rgba(255,95,5,0.08);
+  color: var(--plan-orange);
+}
