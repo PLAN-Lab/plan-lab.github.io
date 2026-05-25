@@ -1,4 +1,4 @@
-/* CVPR 2026 page-specific CSS. Do not style .glass-nav here; site-wide nav comes from assets/css/style.css. */
+/* CVPR 2026 page-specific CSS. */
 :root {
       --plan-blue: #13294B;
       --plan-orange: #FF5F05;
@@ -673,13 +673,7 @@ body.page-cvpr section#partner.page-shell {
   display: block !important;
   padding-top: 0 !important;
 }
-/* =========================================================
-   CVPR 2026 mobile-only cleanup.
-   Keep this in page-cvpr2026.css so it does not affect the
-   rest of the PLAN Lab website.
-   ========================================================= */
 
-/* Undo broad global section rules from style.css on this page only. */
 body.page-cvpr .plan-hero,
 body.page-cvpr .page-shell {
   display: block;
