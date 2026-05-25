@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//CVPR 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ CVPR 2026: HalluSegBench
+BEGIN:VEVENT
+UID:counterfactual-segmentation-reasoning-cvpr2026@plan-lab.github.io
+DTSTAMP:20260525T000000Z
+DTSTART:20260607T133000Z
+DTEND:20260607T150000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ CVPR 2026: HalluSegBench Poster
+LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
+DESCRIPTION:Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination\\n\\nPLAN Lab @ CVPR 2026\\nPoster 81 · Paper #40439\\n\\nProject page:\nhttps://plan-lab.github.io/projects/hallusegbench
+URL:https://plan-lab.github.io/projects/hallusegbench
+END:VEVENT
+END:VCALENDAR

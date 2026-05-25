@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//CVPR 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ CVPR 2026: PyraTok
+BEGIN:VEVENT
+UID:pyratok-cvpr2026@plan-lab.github.io
+DTSTAMP:20260525T000000Z
+DTSTART:20260607T213000Z
+DTEND:20260607T233000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ CVPR 2026: PyraTok Poster
+LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
+DESCRIPTION:PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation\\n\\nPLAN Lab @ CVPR 2026\\nPoster 161 · Paper #36207\\n\\nProject page:\nhttps://plan-lab.github.io/projects/pyratok
+URL:https://plan-lab.github.io/projects/pyratok
+END:VEVENT
+END:VCALENDAR

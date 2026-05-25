@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//CVPR 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ CVPR 2026: 3D-VCD
+BEGIN:VEVENT
+UID:3d-vcd-cvpr2026@plan-lab.github.io
+DTSTAMP:20260525T000000Z
+DTSTART:20260607T213000Z
+DTEND:20260607T233000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ CVPR 2026: 3D-VCD Poster
+LOCATION:ExHall A\, Colorado Convention Center\, Denver\, CO
+DESCRIPTION:3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding\\n\\nPLAN Lab @ CVPR 2026\\nPoster 373 · Paper #38346\\n\\nProject page:\nhttps://plan-lab.github.io/projects/3d-vcd
+URL:https://plan-lab.github.io/projects/3d-vcd
+END:VEVENT
+END:VCALENDAR

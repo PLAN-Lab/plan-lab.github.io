@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//CVPR 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ CVPR 2026: PALM
+BEGIN:VEVENT
+UID:palm-cvpr2026@plan-lab.github.io
+DTSTAMP:20260525T000000Z
+DTSTART:20260606T224500Z
+DTEND:20260607T004500Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ CVPR 2026: PALM Poster
+LOCATION:ExHall A & F\, Colorado Convention Center\, Denver\, CO
+DESCRIPTION:PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation\\n\\nPLAN Lab @ CVPR 2026\\nPoster 622 · Paper #39690\\n\\nProject page:\nhttps://plan-lab.github.io/projects/palm
+URL:https://plan-lab.github.io/projects/palm
+END:VEVENT
+END:VCALENDAR
