@@ -673,3 +673,320 @@ body.page-cvpr section#partner.page-shell {
   display: block !important;
   padding-top: 0 !important;
 }
+/* =========================================================
+   CVPR 2026 mobile-only cleanup.
+   Keep this in page-cvpr2026.css so it does not affect the
+   rest of the PLAN Lab website.
+   ========================================================= */
+
+/* Undo broad global section rules from style.css on this page only. */
+body.page-cvpr .plan-hero,
+body.page-cvpr .page-shell {
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+}
+
+body.page-cvpr .plan-hero {
+  padding: 0;
+}
+
+body.page-cvpr .section-header {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Keep the CVPR page nav at the top. style.css moves it to the bottom globally. */
+  body.page-cvpr .glass-nav,
+  body.page-cvpr .glass-nav.scrolled-nav {
+    top: 12px;
+    bottom: auto;
+    left: 50%;
+    width: calc(100% - 24px);
+    max-width: 520px;
+    padding: 10px 12px;
+    gap: 8px;
+    justify-content: space-between;
+    opacity: 1;
+    background: rgba(11, 26, 51, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.34);
+  }
+
+  body.page-cvpr .nav-logo img,
+  body.page-cvpr .glass-nav.scrolled-nav .nav-logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  body.page-cvpr .nav-item {
+    padding: 9px;
+    font-size: 1.05rem;
+  }
+
+  body.page-cvpr .nav-item span {
+    display: none;
+  }
+
+  /* Overall page spacing */
+  body.page-cvpr .page-shell {
+    width: calc(100% - 24px);
+    padding-top: 18px;
+  }
+
+  body.page-cvpr .plan-hero {
+    margin: 0 auto 22px;
+    min-height: auto;
+    border-radius: 0 0 26px 26px;
+  }
+
+  body.page-cvpr .hero-content {
+    width: calc(100% - 24px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 94px 0 28px;
+  }
+
+  body.page-cvpr .hero-title {
+    margin-top: 16px;
+    font-size: clamp(2.4rem, 11vw, 3.35rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  body.page-cvpr .hero-copy {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    font-weight: 650;
+  }
+
+  body.page-cvpr .hero-badge {
+    max-width: 100%;
+    padding: 0.58rem 0.9rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  body.page-cvpr .hero-premium-svg,
+  body.page-cvpr .hero-atlas-cube,
+  body.page-cvpr .hero-small-cube {
+    opacity: 0.22;
+  }
+
+  body.page-cvpr .hero-atlas-card {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.35rem;
+  }
+
+  body.page-cvpr .atlas-title {
+    font-size: 1.3rem;
+  }
+
+  body.page-cvpr .atlas-route {
+    padding-left: 1.45rem;
+    gap: 0.58rem;
+  }
+
+  body.page-cvpr .hero-route-line {
+    left: 0.86rem;
+  }
+
+  body.page-cvpr .hero-route-dot {
+    left: -1.55rem;
+  }
+
+  body.page-cvpr .atlas-day {
+    padding: 0.75rem 0.8rem;
+  }
+
+  body.page-cvpr .atlas-count {
+    font-size: 0.62rem;
+    padding: 0.28rem 0.5rem;
+  }
+
+  body.page-cvpr .atlas-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  body.page-cvpr .atlas-actions a {
+    text-align: center;
+    padding: 0.72rem 0.85rem;
+  }
+
+  /* Poster finder */
+  body.page-cvpr .section-header {
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  body.page-cvpr .section-title {
+    font-size: clamp(1.6rem, 7vw, 2.05rem);
+    line-height: 1.08;
+  }
+
+  body.page-cvpr .controls,
+  body.page-cvpr .controls input,
+  body.page-cvpr .controls select {
+    width: 100%;
+  }
+
+  body.page-cvpr .poster-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  body.page-cvpr .timeline-shell,
+  body.page-cvpr .detail-panel,
+  body.page-cvpr .schedule-panel,
+  body.page-cvpr .partner-card {
+    border-radius: 1.25rem;
+  }
+
+  body.page-cvpr .timeline-shell {
+    position: relative;
+    top: auto;
+    padding: 0.75rem;
+  }
+
+  body.page-cvpr .timeline-scroll {
+    max-height: none;
+    overflow: visible;
+    border-radius: 1rem;
+    padding: 0.9rem 0.75rem;
+  }
+
+  body.page-cvpr .timeline-rail {
+    left: 40px;
+  }
+
+  body.page-cvpr .paper-cube-card {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 0.75rem;
+    border-radius: 1rem;
+    padding: 0.6rem;
+  }
+
+  body.page-cvpr .cube-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  body.page-cvpr .cube-svg {
+    width: 54px;
+    height: 54px;
+  }
+
+  body.page-cvpr .timeline-tip {
+    display: none;
+  }
+
+  /* Detail card */
+  body.page-cvpr .detail-panel {
+    padding: 1rem;
+  }
+
+  body.page-cvpr .detail-panel::before,
+  body.page-cvpr .detail-panel::after {
+    opacity: 0.45;
+  }
+
+  body.page-cvpr .detail-panel .paper-title-link {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    line-height: 1.1;
+  }
+
+  body.page-cvpr .paper-description {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  body.page-cvpr .info-grid,
+  body.page-cvpr .media-grid,
+  body.page-cvpr .action-grid,
+  body.page-cvpr .action-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-cvpr .pdf-box {
+    height: 230px;
+  }
+
+  body.page-cvpr .pager-row,
+  body.page-cvpr .partner-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body.page-cvpr .pager-btn,
+  body.page-cvpr .partner-actions a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Schedule: preserve table but make the scroll behavior intentional. */
+  body.page-cvpr .schedule-head {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  body.page-cvpr .schedule-head h2 {
+    font-size: 1.25rem;
+  }
+
+  body.page-cvpr .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.page-cvpr .table-wrap table {
+    min-width: 760px;
+  }
+
+  body.page-cvpr th,
+  body.page-cvpr td {
+    padding: 0.78rem;
+  }
+
+  /* Partner block */
+  body.page-cvpr section#partner.page-shell {
+    padding-top: 18px !important;
+    padding-bottom: 92px !important;
+  }
+
+  body.page-cvpr .partner-card {
+    padding: 1rem;
+  }
+
+  body.page-cvpr .partner-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  body.page-cvpr .partner-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+  }
+
+  body.page-cvpr .partner-card h2 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    line-height: 1.08;
+  }
+
+  body.page-cvpr .partner-card p {
+    font-size: 0.95rem;
+    line-height: 1.58;
+  }
+
+  body.page-cvpr .partner-tags div {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+}
