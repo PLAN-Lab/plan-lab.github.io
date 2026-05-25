@@ -659,375 +659,122 @@
   font-size: 0.82rem;
   font-weight: 900;
 }
-body.page-cvpr section#schedule.page-shell {
-  min-height: auto !important;
-  height: auto !important;
-  display: block !important;
-  padding-bottom: 28px !important;
+
+.schedule-head-right {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.schedule-count {
+  color: rgba(219, 234, 254, 0.95);
+  font-size: 0.92rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.schedule-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: flex-end;
+}
+.schedule-downloads a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 0.52rem 0.78rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 1000;
+  transition: transform 180ms ease, background 180ms ease;
+}
+.schedule-downloads a:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.18);
+}
+.schedule-downloads a:first-child {
+  background: var(--plan-orange);
+  border-color: rgba(255,95,5,0.95);
+  box-shadow: 0 12px 24px rgba(255,95,5,0.20);
+}
+.schedule-downloads a:first-child:hover {
+  background: #e55200;
 }
 
-body.page-cvpr section#partner.page-shell {
-  min-height: auto !important;
-  height: auto !important;
-  display: block !important;
-  padding-top: 0 !important;
+.mobile-quick-actions {
+  display: none;
 }
 
-
-body.page-cvpr section.page-shell,
-body.page-cvpr .plan-hero {
-  display: block;
-  align-items: initial;
-  justify-content: initial;
+@media (max-width: 760px) {
+  .mobile-quick-actions {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 22px;
+    background: rgba(19, 41, 75, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.22);
+  }
+  .mobile-quick-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 1000;
+  }
+  .mobile-quick-actions a:first-child {
+    background: var(--plan-orange);
+    color: #fff;
+  }
+  .mobile-quick-actions a:last-child {
+    background: #fff;
+    color: var(--plan-blue);
+  }
+  body.page-cvpr {
+    padding-bottom: 86px;
+  }
+  .schedule-head {
+    align-items: stretch;
+  }
+  .schedule-head-right {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .schedule-downloads {
+    justify-content: flex-start;
+  }
 }
 
 body.page-cvpr section.page-shell {
-  min-height: auto;
-  height: auto;
+  min-height: auto !important;
+  height: auto !important;
+  display: block !important;
+  justify-content: initial !important;
+  align-items: initial !important;
+}
+body.page-cvpr section#schedule.page-shell {
+  padding-bottom: 28px !important;
+}
+body.page-cvpr section#partner.page-shell {
+  padding-top: 0 !important;
+  padding-bottom: 80px !important;
 }
 
-body.page-cvpr #timeline,
-body.page-cvpr #schedule,
-body.page-cvpr #partner,
-body.page-cvpr #detailPanel {
-  scroll-margin-top: 92px;
-}
-
-@media (max-width: 900px) {
-  body.page-cvpr .page-shell {
-    width: min(100% - 28px, 1500px);
-    padding-top: 18px;
-  }
-
-  body.page-cvpr .section-header {
-    width: 100%;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  body.page-cvpr .section-title {
-    font-size: clamp(1.6rem, 7vw, 2.1rem);
-    line-height: 1.08;
-  }
-
-  body.page-cvpr .controls,
-  body.page-cvpr .controls input,
-  body.page-cvpr .controls select {
-    width: 100%;
-  }
-
-  body.page-cvpr .poster-grid,
-  body.page-cvpr .partner-grid,
-  body.page-cvpr .media-grid,
-  body.page-cvpr .action-grid,
-  body.page-cvpr .action-row,
-  body.page-cvpr .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.page-cvpr .poster-grid {
-    gap: 16px;
-  }
-
-  body.page-cvpr .timeline-shell {
-    position: relative;
-    top: auto;
-    height: auto;
-    border-radius: 1.35rem;
-    padding: 0.75rem;
-  }
-
-  body.page-cvpr .timeline-scroll {
-    max-height: none;
-    overflow: visible;
-    border-radius: 1rem;
-    padding: 0.9rem 0.75rem;
-  }
-
-  body.page-cvpr .timeline-rail {
-    left: 39px;
-  }
-
-  body.page-cvpr .paper-cube-card {
-    grid-template-columns: 56px minmax(0, 1fr);
-    gap: 0.75rem;
-    border-radius: 1rem;
-    padding: 0.62rem;
-  }
-
-  body.page-cvpr .cube-wrap {
-    width: 52px;
-    height: 52px;
-  }
-
-  body.page-cvpr .cube-svg {
-    width: 54px;
-    height: 54px;
-  }
-
-  body.page-cvpr .timeline-tip {
-    display: none;
-  }
-
-  body.page-cvpr .detail-panel,
-  body.page-cvpr .schedule-panel,
-  body.page-cvpr .partner-card {
-    border-radius: 1.25rem;
-  }
-
-  body.page-cvpr .detail-panel {
-    padding: 1rem;
-  }
-
-  body.page-cvpr .detail-panel::before,
-  body.page-cvpr .detail-panel::after {
-    opacity: 0.35;
-  }
-
-  body.page-cvpr .detail-panel .paper-title-link {
-    font-size: clamp(1.35rem, 6vw, 1.75rem);
-    line-height: 1.1;
-  }
-
-  body.page-cvpr .paper-description {
-    font-size: 0.92rem;
-    line-height: 1.55;
-  }
-
-  body.page-cvpr .pdf-box {
-    height: 230px;
-  }
-
-  body.page-cvpr .pager-row,
-  body.page-cvpr .partner-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  body.page-cvpr .pager-btn,
-  body.page-cvpr .partner-actions a {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-  /* HERO: remove stretched decorative geometry on mobile. */
-  body.page-cvpr .plan-hero {
-    min-height: auto;
-    margin: 0 auto 22px;
-    padding: 0;
-    border-radius: 0 0 26px 26px;
-  }
-
-  body.page-cvpr .hero-content {
-    width: calc(100% - 24px);
-    min-height: auto;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 96px 0 30px;
-  }
-
-  body.page-cvpr .hero-premium-svg,
-  body.page-cvpr .hero-atlas-cube,
-  body.page-cvpr .hero-small-cube {
-    display: none;
-  }
-
-  body.page-cvpr .hero-aurora {
-    animation: none;
-    opacity: 0.55;
-    filter: blur(46px);
-  }
-
-  body.page-cvpr .plan-hero::before {
-    animation: none;
-    opacity: 0.78;
-    filter: blur(62px);
-  }
-
-  body.page-cvpr .hero-title {
-    margin-top: 16px;
-    font-size: clamp(2.35rem, 11vw, 3.25rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-  }
-
-  body.page-cvpr .hero-copy {
-    margin-top: 18px;
-    font-size: 0.98rem;
-    line-height: 1.55;
-    font-weight: 650;
-  }
-
-  body.page-cvpr .hero-badge {
-    max-width: 100%;
-    padding: 0.58rem 0.9rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-  }
-
-  body.page-cvpr .hero-atlas-card {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 1.35rem;
-  }
-
-  body.page-cvpr .atlas-title {
-    font-size: 1.3rem;
-  }
-
-  body.page-cvpr .atlas-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-  }
-
-  body.page-cvpr .atlas-actions a {
-    text-align: center;
-    padding: 0.72rem 0.85rem;
-  }
-
-  /* QUICK SCHEDULE: use cards instead of a crushed horizontal table. */
-  body.page-cvpr section#schedule.page-shell {
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  body.page-cvpr .schedule-panel {
-    overflow: hidden;
-  }
-
-  body.page-cvpr .schedule-head {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.4rem;
-    padding: 1rem;
-  }
-
-  body.page-cvpr .schedule-head h2 {
-    font-size: 1.2rem;
-    line-height: 1.15;
-  }
-
-  body.page-cvpr #schedule .table-wrap {
-    overflow: visible;
-    padding: 0.85rem;
-    background: rgba(248, 250, 252, 0.82);
-  }
-
-  body.page-cvpr #schedule table,
-  body.page-cvpr #schedule thead,
-  body.page-cvpr #schedule tbody,
-  body.page-cvpr #schedule tr,
-  body.page-cvpr #schedule th,
-  body.page-cvpr #schedule td {
-    width: 100%;
-  }
-
-  body.page-cvpr #schedule table {
-    display: block;
-    min-width: 0;
-    border-collapse: separate;
-    font-size: 0.9rem;
-  }
-
-  body.page-cvpr #schedule thead {
-    display: none;
-  }
-
-  body.page-cvpr #schedule tbody {
-    display: grid;
-    gap: 0.85rem;
-  }
-
-  body.page-cvpr #schedule tr {
-    display: block;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    background: #fff;
-    padding: 0.8rem;
-    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.055);
-  }
-
-  body.page-cvpr #schedule td {
-    display: grid;
-    grid-template-columns: 5.7rem minmax(0, 1fr);
-    gap: 0.75rem;
-    align-items: start;
-    border: 0;
-    padding: 0.55rem 0;
-    line-height: 1.35;
-  }
-
-  body.page-cvpr #schedule td + td {
-    border-top: 1px solid #eef2f7;
-  }
-
-  body.page-cvpr #schedule td::before {
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.68rem;
-    line-height: 1.2;
-    font-weight: 1000;
-  }
-
-  body.page-cvpr #schedule td:nth-child(1)::before { content: "Poster"; }
-  body.page-cvpr #schedule td:nth-child(2)::before { content: "Paper"; }
-  body.page-cvpr #schedule td:nth-child(3)::before { content: "Location"; }
-  body.page-cvpr #schedule td:nth-child(4)::before { content: "Time"; }
-  body.page-cvpr #schedule td:nth-child(5)::before { content: "Links"; }
-
-  body.page-cvpr #schedule .paper-title-link {
-    line-height: 1.24;
-  }
-
-  body.page-cvpr #schedule .link-cluster {
-    gap: 0.45rem;
-  }
-
-  body.page-cvpr #schedule .poster-pill,
-  body.page-cvpr #schedule .table-link,
-  body.page-cvpr #schedule .bib-button {
-    min-height: 32px;
-    justify-content: center;
-  }
-
-  /* Partner block: avoid bottom-nav overlap on phones. */
-  body.page-cvpr section#partner.page-shell {
-    padding-top: 18px;
-    padding-bottom: 92px;
-  }
-
-  body.page-cvpr .partner-card {
-    padding: 1rem;
-  }
-
-  body.page-cvpr .partner-grid {
-    gap: 1rem;
-  }
-
-  body.page-cvpr .partner-badge {
-    font-size: 0.62rem;
-    letter-spacing: 0.13em;
-  }
-
-  body.page-cvpr .partner-card h2 {
-    font-size: clamp(1.55rem, 7vw, 2rem);
-    line-height: 1.08;
-  }
-
-  body.page-cvpr .partner-card p {
-    font-size: 0.95rem;
-    line-height: 1.58;
-  }
-
-  body.page-cvpr .partner-tags div {
-    max-width: none;
-    font-size: 0.9rem;
-  }
-}
