@@ -1,4 +1,3 @@
-/* CVPR 2026 page-specific CSS. */
 :root {
       --plan-blue: #13294B;
       --plan-orange: #FF5F05;
@@ -674,153 +673,42 @@ body.page-cvpr section#partner.page-shell {
   padding-top: 0 !important;
 }
 
-body.page-cvpr .plan-hero,
-body.page-cvpr .page-shell {
+
+body.page-cvpr section.page-shell,
+body.page-cvpr .plan-hero {
   display: block;
   align-items: initial;
   justify-content: initial;
 }
 
-body.page-cvpr .plan-hero {
-  padding: 0;
+body.page-cvpr section.page-shell {
+  min-height: auto;
+  height: auto;
 }
 
-body.page-cvpr .section-header {
-  width: 100%;
+body.page-cvpr #timeline,
+body.page-cvpr #schedule,
+body.page-cvpr #partner,
+body.page-cvpr #detailPanel {
+  scroll-margin-top: 92px;
 }
 
-@media (max-width: 768px) {
-  /* Keep the CVPR page nav at the top. style.css moves it to the bottom globally. */
-  body.page-cvpr .glass-nav,
-  body.page-cvpr .glass-nav.scrolled-nav {
-    top: 12px;
-    bottom: auto;
-    left: 50%;
-    width: calc(100% - 24px);
-    max-width: 520px;
-    padding: 10px 12px;
-    gap: 8px;
-    justify-content: space-between;
-    opacity: 1;
-    background: rgba(11, 26, 51, 0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 12px 34px rgba(0,0,0,0.34);
-  }
-
-  body.page-cvpr .nav-logo img,
-  body.page-cvpr .glass-nav.scrolled-nav .nav-logo img {
-    width: 30px;
-    height: 30px;
-  }
-
-  body.page-cvpr .nav-item {
-    padding: 9px;
-    font-size: 1.05rem;
-  }
-
-  body.page-cvpr .nav-item span {
-    display: none;
-  }
-
-  /* Overall page spacing */
+@media (max-width: 900px) {
   body.page-cvpr .page-shell {
-    width: calc(100% - 24px);
+    width: min(100% - 28px, 1500px);
     padding-top: 18px;
   }
 
-  body.page-cvpr .plan-hero {
-    margin: 0 auto 22px;
-    min-height: auto;
-    border-radius: 0 0 26px 26px;
-  }
-
-  body.page-cvpr .hero-content {
-    width: calc(100% - 24px);
-    min-height: auto;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 94px 0 28px;
-  }
-
-  body.page-cvpr .hero-title {
-    margin-top: 16px;
-    font-size: clamp(2.4rem, 11vw, 3.35rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-  }
-
-  body.page-cvpr .hero-copy {
-    margin-top: 18px;
-    font-size: 0.98rem;
-    line-height: 1.55;
-    font-weight: 650;
-  }
-
-  body.page-cvpr .hero-badge {
-    max-width: 100%;
-    padding: 0.58rem 0.9rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-  }
-
-  body.page-cvpr .hero-premium-svg,
-  body.page-cvpr .hero-atlas-cube,
-  body.page-cvpr .hero-small-cube {
-    opacity: 0.22;
-  }
-
-  body.page-cvpr .hero-atlas-card {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 1.35rem;
-  }
-
-  body.page-cvpr .atlas-title {
-    font-size: 1.3rem;
-  }
-
-  body.page-cvpr .atlas-route {
-    padding-left: 1.45rem;
-    gap: 0.58rem;
-  }
-
-  body.page-cvpr .hero-route-line {
-    left: 0.86rem;
-  }
-
-  body.page-cvpr .hero-route-dot {
-    left: -1.55rem;
-  }
-
-  body.page-cvpr .atlas-day {
-    padding: 0.75rem 0.8rem;
-  }
-
-  body.page-cvpr .atlas-count {
-    font-size: 0.62rem;
-    padding: 0.28rem 0.5rem;
-  }
-
-  body.page-cvpr .atlas-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-  }
-
-  body.page-cvpr .atlas-actions a {
-    text-align: center;
-    padding: 0.72rem 0.85rem;
-  }
-
-  /* Poster finder */
   body.page-cvpr .section-header {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
     gap: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   body.page-cvpr .section-title {
-    font-size: clamp(1.6rem, 7vw, 2.05rem);
+    font-size: clamp(1.6rem, 7vw, 2.1rem);
     line-height: 1.08;
   }
 
@@ -830,21 +718,24 @@ body.page-cvpr .section-header {
     width: 100%;
   }
 
-  body.page-cvpr .poster-grid {
+  body.page-cvpr .poster-grid,
+  body.page-cvpr .partner-grid,
+  body.page-cvpr .media-grid,
+  body.page-cvpr .action-grid,
+  body.page-cvpr .action-row,
+  body.page-cvpr .info-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
   }
 
-  body.page-cvpr .timeline-shell,
-  body.page-cvpr .detail-panel,
-  body.page-cvpr .schedule-panel,
-  body.page-cvpr .partner-card {
-    border-radius: 1.25rem;
+  body.page-cvpr .poster-grid {
+    gap: 16px;
   }
 
   body.page-cvpr .timeline-shell {
     position: relative;
     top: auto;
+    height: auto;
+    border-radius: 1.35rem;
     padding: 0.75rem;
   }
 
@@ -856,14 +747,14 @@ body.page-cvpr .section-header {
   }
 
   body.page-cvpr .timeline-rail {
-    left: 40px;
+    left: 39px;
   }
 
   body.page-cvpr .paper-cube-card {
     grid-template-columns: 56px minmax(0, 1fr);
     gap: 0.75rem;
     border-radius: 1rem;
-    padding: 0.6rem;
+    padding: 0.62rem;
   }
 
   body.page-cvpr .cube-wrap {
@@ -880,14 +771,19 @@ body.page-cvpr .section-header {
     display: none;
   }
 
-  /* Detail card */
+  body.page-cvpr .detail-panel,
+  body.page-cvpr .schedule-panel,
+  body.page-cvpr .partner-card {
+    border-radius: 1.25rem;
+  }
+
   body.page-cvpr .detail-panel {
     padding: 1rem;
   }
 
   body.page-cvpr .detail-panel::before,
   body.page-cvpr .detail-panel::after {
-    opacity: 0.45;
+    opacity: 0.35;
   }
 
   body.page-cvpr .detail-panel .paper-title-link {
@@ -898,13 +794,6 @@ body.page-cvpr .section-header {
   body.page-cvpr .paper-description {
     font-size: 0.92rem;
     line-height: 1.55;
-  }
-
-  body.page-cvpr .info-grid,
-  body.page-cvpr .media-grid,
-  body.page-cvpr .action-grid,
-  body.page-cvpr .action-row {
-    grid-template-columns: 1fr;
   }
 
   body.page-cvpr .pdf-box {
@@ -923,36 +812,195 @@ body.page-cvpr .section-header {
     justify-content: center;
     text-align: center;
   }
+}
 
-  /* Schedule: preserve table but make the scroll behavior intentional. */
+@media (max-width: 768px) {
+  /* HERO: remove stretched decorative geometry on mobile. */
+  body.page-cvpr .plan-hero {
+    min-height: auto;
+    margin: 0 auto 22px;
+    padding: 0;
+    border-radius: 0 0 26px 26px;
+  }
+
+  body.page-cvpr .hero-content {
+    width: calc(100% - 24px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 96px 0 30px;
+  }
+
+  body.page-cvpr .hero-premium-svg,
+  body.page-cvpr .hero-atlas-cube,
+  body.page-cvpr .hero-small-cube {
+    display: none;
+  }
+
+  body.page-cvpr .hero-aurora {
+    animation: none;
+    opacity: 0.55;
+    filter: blur(46px);
+  }
+
+  body.page-cvpr .plan-hero::before {
+    animation: none;
+    opacity: 0.78;
+    filter: blur(62px);
+  }
+
+  body.page-cvpr .hero-title {
+    margin-top: 16px;
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  body.page-cvpr .hero-copy {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    font-weight: 650;
+  }
+
+  body.page-cvpr .hero-badge {
+    max-width: 100%;
+    padding: 0.58rem 0.9rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  body.page-cvpr .hero-atlas-card {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.35rem;
+  }
+
+  body.page-cvpr .atlas-title {
+    font-size: 1.3rem;
+  }
+
+  body.page-cvpr .atlas-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  body.page-cvpr .atlas-actions a {
+    text-align: center;
+    padding: 0.72rem 0.85rem;
+  }
+
+  /* QUICK SCHEDULE: use cards instead of a crushed horizontal table. */
+  body.page-cvpr section#schedule.page-shell {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  body.page-cvpr .schedule-panel {
+    overflow: hidden;
+  }
+
   body.page-cvpr .schedule-head {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.4rem;
     padding: 1rem;
   }
 
   body.page-cvpr .schedule-head h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.15;
   }
 
-  body.page-cvpr .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  body.page-cvpr #schedule .table-wrap {
+    overflow: visible;
+    padding: 0.85rem;
+    background: rgba(248, 250, 252, 0.82);
   }
 
-  body.page-cvpr .table-wrap table {
-    min-width: 760px;
+  body.page-cvpr #schedule table,
+  body.page-cvpr #schedule thead,
+  body.page-cvpr #schedule tbody,
+  body.page-cvpr #schedule tr,
+  body.page-cvpr #schedule th,
+  body.page-cvpr #schedule td {
+    width: 100%;
   }
 
-  body.page-cvpr th,
-  body.page-cvpr td {
-    padding: 0.78rem;
+  body.page-cvpr #schedule table {
+    display: block;
+    min-width: 0;
+    border-collapse: separate;
+    font-size: 0.9rem;
   }
 
-  /* Partner block */
+  body.page-cvpr #schedule thead {
+    display: none;
+  }
+
+  body.page-cvpr #schedule tbody {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  body.page-cvpr #schedule tr {
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+    padding: 0.8rem;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.055);
+  }
+
+  body.page-cvpr #schedule td {
+    display: grid;
+    grid-template-columns: 5.7rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    border: 0;
+    padding: 0.55rem 0;
+    line-height: 1.35;
+  }
+
+  body.page-cvpr #schedule td + td {
+    border-top: 1px solid #eef2f7;
+  }
+
+  body.page-cvpr #schedule td::before {
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    font-weight: 1000;
+  }
+
+  body.page-cvpr #schedule td:nth-child(1)::before { content: "Poster"; }
+  body.page-cvpr #schedule td:nth-child(2)::before { content: "Paper"; }
+  body.page-cvpr #schedule td:nth-child(3)::before { content: "Location"; }
+  body.page-cvpr #schedule td:nth-child(4)::before { content: "Time"; }
+  body.page-cvpr #schedule td:nth-child(5)::before { content: "Links"; }
+
+  body.page-cvpr #schedule .paper-title-link {
+    line-height: 1.24;
+  }
+
+  body.page-cvpr #schedule .link-cluster {
+    gap: 0.45rem;
+  }
+
+  body.page-cvpr #schedule .poster-pill,
+  body.page-cvpr #schedule .table-link,
+  body.page-cvpr #schedule .bib-button {
+    min-height: 32px;
+    justify-content: center;
+  }
+
+  /* Partner block: avoid bottom-nav overlap on phones. */
   body.page-cvpr section#partner.page-shell {
-    padding-top: 18px !important;
-    padding-bottom: 92px !important;
+    padding-top: 18px;
+    padding-bottom: 92px;
   }
 
   body.page-cvpr .partner-card {
@@ -960,7 +1008,6 @@ body.page-cvpr .section-header {
   }
 
   body.page-cvpr .partner-grid {
-    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
