@@ -27,6 +27,422 @@
 
     <script src="assets/js/content.js" defer></script>
     <script src="assets/js/index.js" defer></script>
+
+   <style>
+        /* Compact floating PLAN@CVPR'26 sign on the homepage hero */
+        .cvpr-float-sign {
+            position: absolute;
+            top: clamp(92px, 10vh, 128px);
+            right: clamp(18px, 4vw, 72px);
+            z-index: 1000;
+            width: min(292px, calc(100vw - 36px));
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
+            pointer-events: auto;
+        }
+
+        .cvpr-float-sign::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 70% 20%, rgba(157, 98, 255, 0.82), transparent 42%),
+                radial-gradient(circle at 18% 82%, rgba(0, 211, 255, 0.34), transparent 48%);
+            filter: blur(18px);
+            opacity: 0.82;
+            transform: rotate(1.2deg);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cvpr-float-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            padding: 15px 16px 14px;
+            background:
+                radial-gradient(circle at 92% -18%, rgba(255, 255, 255, 0.50), transparent 30%),
+                radial-gradient(circle at 0% 100%, rgba(19, 41, 75, 0.60), transparent 45%),
+                linear-gradient(135deg, rgba(104, 67, 255, 0.98), rgba(168, 85, 247, 0.94) 48%, rgba(19, 41, 75, 0.82));
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.10) inset,
+                0 16px 46px rgba(139, 92, 246, 0.42),
+                0 20px 58px rgba(0, 0, 0, 0.30);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transform: rotate(1.2deg);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .cvpr-float-sign:hover::before,
+        .cvpr-float-sign:focus-visible::before {
+            opacity: 1;
+            filter: blur(22px);
+        }
+
+        .cvpr-float-sign:hover .cvpr-float-card,
+        .cvpr-float-sign:focus-visible .cvpr-float-card {
+            transform: translateY(-3px) rotate(0deg);
+            border-color: rgba(255, 255, 255, 0.58);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+                0 18px 58px rgba(168, 85, 247, 0.58),
+                0 25px 72px rgba(0, 0, 0, 0.34);
+        }
+
+        .cvpr-float-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.20;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .cvpr-float-card::after {
+            content: "";
+            position: absolute;
+            top: -45%;
+            left: -35%;
+            width: 48%;
+            height: 190%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.38), transparent);
+            transform: rotate(25deg);
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .cvpr-float-sign::before {
+                animation: cvprGlowPulse 2.8s ease-in-out infinite;
+            }
+
+            .cvpr-float-card::after {
+                animation: cvprSheen 4.6s ease-in-out infinite;
+            }
+        }
+
+        @keyframes cvprGlowPulse {
+            0%, 100% { opacity: 0.58; transform: rotate(1.2deg) scale(0.98); }
+            50% { opacity: 0.98; transform: rotate(1.2deg) scale(1.04); }
+        }
+
+        @keyframes cvprSheen {
+            0%, 52% { transform: translateX(0) rotate(25deg); opacity: 0; }
+            62% { opacity: 0.65; }
+            82%, 100% { transform: translateX(430%) rotate(25deg); opacity: 0; }
+        }
+
+        .cvpr-float-topline {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .cvpr-float-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .cvpr-float-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            padding: 6px 9px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #24113f;
+            background: linear-gradient(135deg, #ffffff, #eadcff);
+            box-shadow: 0 8px 22px rgba(84, 43, 180, 0.28);
+        }
+
+        .cvpr-float-title {
+            position: relative;
+            margin: 0;
+            font-size: 1.14rem;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .cvpr-float-ticker {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            height: 18px;
+            margin-top: 8px;
+            padding: 0 7px;
+            border-radius: 999px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.90);
+        }
+
+        .cvpr-ticker-label {
+            flex: 0 0 auto;
+            font-size: 0.60rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.66);
+        }
+
+        .cvpr-paper-cycle {
+            position: relative;
+            flex: 1 1 auto;
+            height: 18px;
+            min-width: 0;
+            font-size: 0.75rem;
+            font-weight: 900;
+            line-height: 18px;
+            white-space: nowrap;
+        }
+
+        .cvpr-paper-cycle span {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: translateY(9px);
+            animation: cvprPaperTicker 14s infinite;
+        }
+
+        .cvpr-paper-cycle span:nth-child(1) { animation-delay: 0s; }
+        .cvpr-paper-cycle span:nth-child(2) { animation-delay: 2s; }
+        .cvpr-paper-cycle span:nth-child(3) { animation-delay: 4s; }
+        .cvpr-paper-cycle span:nth-child(4) { animation-delay: 6s; }
+        .cvpr-paper-cycle span:nth-child(5) { animation-delay: 8s; }
+        .cvpr-paper-cycle span:nth-child(6) { animation-delay: 10s; }
+        .cvpr-paper-cycle span:nth-child(7) { animation-delay: 12s; }
+
+        @keyframes cvprPaperTicker {
+            0%, 10% { opacity: 0; transform: translateY(9px); }
+            13%, 24% { opacity: 1; transform: translateY(0); }
+            28%, 100% { opacity: 0; transform: translateY(-9px); }
+        }
+
+        .cvpr-float-meta {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 10px;
+            font-size: 0.79rem;
+            line-height: 1.25;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .cvpr-float-cta {
+            flex: 0 0 auto;
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .cvpr-float-hover-panel {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: min(430px, calc(100vw - 36px));
+            padding: 11px;
+            border-radius: 18px;
+            background:
+                radial-gradient(circle at 88% 0%, rgba(168, 85, 247, 0.20), transparent 32%),
+                linear-gradient(135deg, rgba(19, 34, 91, 0.96), rgba(31, 26, 62, 0.94));
+            border: 1px solid rgba(255,255,255,0.24);
+            box-shadow: 0 18px 56px rgba(0,0,0,0.34), 0 0 34px rgba(168,85,247,0.22);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-6px) scale(0.985);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+        }
+
+        .cvpr-float-sign:hover .cvpr-float-hover-panel,
+        .cvpr-float-sign:focus-visible .cvpr-float-hover-panel {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0) scale(1);
+        }
+
+        .cvpr-hover-copy {
+            margin: 0 0 8px;
+            color: rgba(255,255,255,0.88);
+            font-size: 0.72rem;
+            line-height: 1.28;
+            font-weight: 700;
+        }
+
+        .cvpr-hover-schedule {
+            display: grid;
+            gap: 5px;
+        }
+
+        .cvpr-hover-row {
+            display: grid;
+            grid-template-columns: 94px 1fr auto;
+            gap: 8px;
+            align-items: center;
+            min-height: 24px;
+            padding: 5px 7px;
+            border-radius: 11px;
+            background: rgba(255,255,255,0.075);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .cvpr-hover-paper {
+            color: #fff;
+            font-size: 0.67rem;
+            font-weight: 900;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .cvpr-hover-time {
+            color: rgba(255,255,255,0.78);
+            font-size: 0.64rem;
+            line-height: 1.12;
+            white-space: nowrap;
+        }
+
+        .cvpr-hover-loc {
+            color: #271442;
+            font-size: 0.62rem;
+            font-weight: 900;
+            padding: 4px 6px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ffffff, #eadcff);
+            white-space: nowrap;
+        }
+
+        .cvpr-hover-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 8px;
+            color: rgba(255,255,255,0.62);
+            font-size: 0.60rem;
+            line-height: 1.2;
+        }
+
+        .cvpr-hover-open {
+            color: #fff;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1100px) {
+            .cvpr-float-sign {
+                top: 96px;
+                right: 18px;
+                width: 262px;
+            }
+
+            .cvpr-float-title {
+                font-size: 1.02rem;
+            }
+
+            .cvpr-float-meta {
+                font-size: 0.73rem;
+            }
+
+            .cvpr-float-hover-panel {
+                width: min(386px, calc(100vw - 36px));
+            }
+
+            .cvpr-hover-row {
+                grid-template-columns: 86px 1fr auto;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .cvpr-float-sign {
+                position: absolute;
+                top: 92px;
+                right: 12px;
+                left: auto;
+                width: 218px;
+            }
+
+            .cvpr-float-card {
+                padding: 12px 13px;
+                border-radius: 18px;
+                transform: none;
+            }
+
+            .cvpr-float-kicker {
+                font-size: 0.63rem;
+            }
+
+            .cvpr-float-count {
+                padding: 5px 7px;
+                font-size: 0.63rem;
+            }
+
+            .cvpr-float-title {
+                font-size: 0.90rem;
+            }
+
+            .cvpr-float-ticker {
+                height: 17px;
+                margin-top: 6px;
+            }
+
+            .cvpr-ticker-label {
+                display: none;
+            }
+
+            .cvpr-paper-cycle {
+                height: 17px;
+                font-size: 0.64rem;
+                line-height: 17px;
+            }
+
+            .cvpr-float-meta {
+                margin-top: 8px;
+                font-size: 0.66rem;
+            }
+
+            .cvpr-float-hover-panel {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cvpr-float-sign {
+                top: 84px;
+                right: 10px;
+                width: 190px;
+            }
+
+            .cvpr-float-meta span:first-child {
+                display: inline;
+            }
+        }
+    </style>
+
     </head>
 <body class="page-plan">
 
@@ -76,9 +492,74 @@
         </h1>
         <p> The Perception and LANguage (PLAN) Lab develops multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. 
 			Our research spans vision-language models, 2D/3D generative models, and reasoning-centered methods for grounding AI in visual, physical, and interactive environments.</p>
+        <a class="cvpr-float-sign" href="cvpr2026.html" aria-label="Explore PLAN Lab at CVPR 2026: 7 papers, poster schedule, project links, and presentation times">
+            <div class="cvpr-float-card">
+                <div class="cvpr-float-topline">
+                    <span class="cvpr-float-kicker"><i class="fa-solid fa-location-dot"></i> CVPR'26</span>
+                    <span class="cvpr-float-count">7 papers</span>
+                </div>
+                <h2 class="cvpr-float-title">PLAN Lab in Denver</h2>
+                <div class="cvpr-float-ticker" aria-label="Cycling through PLAN Lab CVPR 2026 paper names">
+                    <span class="cvpr-ticker-label"></span>
+                    <span class="cvpr-paper-cycle">
+                        <span>PHANTOM</span>
+                        <span>Part²GS</span>
+                        <span>RewardFlow</span>
+                        <span>PALM</span>
+                        <span>PyraTok</span>
+                        <span>3D-VCD</span>
+                        <span>HalluSegBench (Findings)</span>
+                    </span>
+                </div>
+                <div class="cvpr-float-meta">
+                    <span>Explore our papers</span>
+                    <span class="cvpr-float-cta">Click for full page →</span>
+                </div>
+            </div>
+            <div class="cvpr-float-hover-panel" aria-hidden="true">
+                <div class="cvpr-hover-schedule" aria-label="Compact PLAN Lab CVPR 2026 poster schedule">
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PHANTOM</span><span class="cvpr-hover-time">Fri Jun 5 · 16:00–18:00</span><span class="cvpr-hover-loc">ExHall A · #372</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">Part²GS</span><span class="cvpr-hover-time">Sat Jun 6 · 11:45–13:45</span><span class="cvpr-hover-loc">ExHall F · #435</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">RewardFlow</span><span class="cvpr-hover-time">Sat Jun 6 · 11:45–13:45</span><span class="cvpr-hover-loc">ExHall F · #543</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PALM</span><span class="cvpr-hover-time">Sat Jun 6 · 16:45–18:45</span><span class="cvpr-hover-loc">ExHall A · #622</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">HalluSegBench</span><span class="cvpr-hover-time">Sun Jun 7 · 07:30–09:00</span><span class="cvpr-hover-loc">ExHall A · #81</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PyraTok</span><span class="cvpr-hover-time">Sun Jun 7 · 15:30–17:30</span><span class="cvpr-hover-loc">ExHall A · #161</span></div>
+                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">3D-VCD</span><span class="cvpr-hover-time">Sun Jun 7 · 15:30–17:30</span><span class="cvpr-hover-loc">ExHall A · #373</span></div>
+                </div>
+                <div class="cvpr-hover-footer">
+                    <span>Denver local time</span>
+                    <span class="cvpr-hover-open">Open full page →</span>
+                </div>
+            </div>
+        </a>
+
         <div class="scroll-hint">
             <span class="hint-text">Scroll to Explore</span>
             <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="cards-wrap">
+            <div class="track-cards">
+                
+	                <div class="intro-text-block">
+	                    <h2>Explore<br>Our<br>Latest<br>Research</h2>
+	                </div>
+
+                <div class="view-all-wrapper" onclick="window.location.href='publications.html'">
+                    <div class="view-all-inner">
+                        <div class="view-all-content">
+                            <h3>View All</h3>
+                            <p>Publications</p>
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
