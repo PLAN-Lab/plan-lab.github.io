@@ -299,7 +299,7 @@
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }` },
-      { id:"counterfactual-segmentation-reasoning", short:"HalluSegBench", area:"Grounding diagnostics and hallucination mitigation", description:"Counterfactual Segmentation Reasoning diagnoses when segmentation models rely on language priors instead of visual evidence, and provides a benchmark and new metrics for evaluating pixel-grounded hallucination.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A - Findings", time:"7:30 – 9:00 AM", posterId:"81", paperNumber:"40439", title:"Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination", authors:"Xinzhuo Li, Adheesh Juvekar, Jiaxun Zhang, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Yifan Shen, Tianjiao Yu, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/hallusegbench", paperUrl:"https://arxiv.org/abs/2506.21546", posterPdfUrl:"projects/hallusegbench/static/images/halluseg_poster.png", videoUrl:"", bibtex:`@inproceedings{li2025counterfactual,
+      { id:"hallusegbench", aliases:["counterfactual-segmentation-reasoning"], short:"HalluSegBench", area:"Grounding diagnostics and hallucination mitigation", description:"Counterfactual Segmentation Reasoning diagnoses when segmentation models rely on language priors instead of visual evidence, and provides a benchmark and new metrics for evaluating pixel-grounded hallucination.", day:"Sunday, June 7", dateKey:"Sun Jun 7", session:"ExHall A - Findings", time:"7:30 – 9:00 AM", posterId:"81", paperNumber:"40439", title:"Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination", authors:"Xinzhuo Li, Adheesh Juvekar, Jiaxun Zhang, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Yifan Shen, Tianjiao Yu, Ismini Lourentzou", projectUrl:"https://plan-lab.github.io/projects/hallusegbench", paperUrl:"https://arxiv.org/abs/2506.21546", posterPdfUrl:"projects/hallusegbench/static/images/halluseg_poster.png", videoUrl:"", bibtex:`@inproceedings{li2025counterfactual,
   title={Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination},
   author={Li, Xinzhuo and Juvekar, Adheesh and Zhang, Jiaxun and Liu, Xingyou and Wahed, Muntasir and Nguyen, Kiet A. and Shen, Yifan and Yu, Tianjiao and Lourentzou, Ismini},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (Findings Track)},
@@ -321,6 +321,24 @@
 
     let activeId = papers[0].id;
     let copiedId = null;
+
+    function getPaperIdFromHash() {
+      const raw = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim().toLowerCase();
+      if (!raw) return null;
+      const paper = papers.find(p =>
+        p.id.toLowerCase() === raw ||
+        (Array.isArray(p.aliases) && p.aliases.some(alias => String(alias).toLowerCase() === raw))
+      );
+      return paper ? paper.id : null;
+    }
+
+    function updatePaperHash(id) {
+      if (!id) return;
+      const nextHash = `#${encodeURIComponent(id)}`;
+      if (window.location.hash !== nextHash) {
+        history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
+      }
+    }
 
     function esc(str) {
       return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
@@ -605,9 +623,17 @@
     }
 
     function setActive(id, options = {}) {
-      activeId = id;
+      const paper = papers.find(p => p.id === id);
+      if (!paper) return;
+
+      activeId = paper.id;
       renderTimeline();
       renderDetail();
+
+      if (options.updateHash !== false) {
+        updatePaperHash(paper.id);
+      }
+
       if (options.scrollToDetail) {
         requestAnimationFrame(scrollToDetailPanel);
       }
@@ -791,9 +817,25 @@
       if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') setActiveByOffset(-1);
     });
 
+    const initialPaperId = getPaperIdFromHash();
+    if (initialPaperId) {
+      activeId = initialPaperId;
+    }
+
     renderTimeline();
     renderDetail();
     renderSchedule();
+
+    if (initialPaperId) {
+      requestAnimationFrame(scrollToDetailPanel);
+    }
+
+    window.addEventListener('hashchange', () => {
+      const paperId = getPaperIdFromHash();
+      if (paperId && paperId !== activeId) {
+        setActive(paperId, { updateHash: false, scrollToDetail: true });
+      }
+    });
   </script>
 
   <script>
