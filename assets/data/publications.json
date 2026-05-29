@@ -951,6 +951,32 @@
         "data": ""
       },
       "venueAbbr": "AAAI 2026 (ORAL)"
+    },
+        {
+      "id": "2026-zhou-tiny-but-trusted-efficient-vision-language-reasoning-for-time-series",
+      "title": "Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection",
+      "projectName": "VisAnom",
+      "authors": [
+        "Xiaona Zhou",
+        "Muntasir Wahed",
+        "Tianjiao Yu",
+        "Constantin Brif",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-05-28",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "projects/VisAnom/static/images/VisAnomReasoner_teaser.png",
+      "doi": "10.48550/arXiv.2605.30344",
+      "links": {
+        "website": "/projects/VisAnom/",
+        "paper": "https://arxiv.org/pdf/2605.30344",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
     }
   ]
 }
