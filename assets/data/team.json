@@ -498,14 +498,14 @@
       "profileUrl": "member.html?id=pi-ismini-lourentzou"
     },
     {
-      "id": "undergrad-jiaxun-zhang",
-      "group": "undergrad",
+      "id": "alumni-jiaxun-zhang",
+      "group": "alumni",
       "name": "Jiaxun Zhang",
-      "role": "Undergraduate",
+      "role": "Alumni",
       "title": [
         "Undergraduate"
       ],
-      "currently": "",
+      "currently": "CS PhD UCSD",
       "avatar": "assets/images/team/jiaxun-zhang.jpg",
       "email": "jiaxunz2@illinois.edu",
       "github": "https://github.com/JiaxunZ",
@@ -517,14 +517,14 @@
       "profileUrl": "member.html?id=undergrad-jiaxun-zhang"
     },
     {
-      "id": "undergrad-kajal-patel",
-      "group": "undergrad",
+      "id": "alumni-kajal-patel",
+      "group": "alumni",
       "name": "Kajal Patel",
-      "role": "Undergraduate",
+      "role": "Alumni",
       "title": [
         "Undergraduate"
       ],
-      "currently": "",
+      "currently": "CS PhD UW–Madison",
       "avatar": "assets/images/team/kajal-patel.jpg",
       "email": "kpate457@illinois.edu",
       "github": "",
