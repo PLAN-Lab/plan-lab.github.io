@@ -1472,14 +1472,11 @@ body.page-cvpr section#partner.page-shell {
 
 
 
-/* Section rhythm fixes for attendee block */
 #schedule.page-shell {
   padding-bottom: clamp(24px, 3.2vw, 44px) !important;
 }
 
 #attendees.page-shell {
-  padding-top: clamp(18px, 2.8vw, 38px) !important;
-  padding-bottom: clamp(24px, 3.2vw, 44px) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
