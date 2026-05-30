@@ -210,12 +210,12 @@
       "profileUrl": "member.html?id=alumni-riya-dani"
     },
     {
-      "id": "masters-xinzhuo-li",
+      "id": "phd-xinzhuo-li",
       "group": "masters",
       "name": "Xinzhuo Li",
-      "role": "Masters Student",
+      "role": "PhD Student",
       "title": [
-        "Masters Student"
+        "PhD Student"
       ],
       "currently": "",
       "avatar": "assets/images/team/xinzhuo-li.jpg",
@@ -225,8 +225,8 @@
       "linkedin": "",
       "googleScholar": "https://scholar.google.com/citations?user=a1nxSRYAAAAJ",
       "twitter": "",
-      "bio": "Xinzhuo Li is an M.S. student in Electrical and Computer Engineering at the University of Illinois Urbana-Champaign. His research interests include multimodal machine learning, large vision-language models, and trustworthy machine learning. Xinzhuo earned dual bachelor's degrees in Electrical and Computer Engineering from the University of Illinois Urbana-Champaign and Zhejiang University.",
-      "profileUrl": "member.html?id=masters-xinzhuo-li"
+      "bio": "Xinzhuo Li is a PhD student in Electrical and Computer Engineering at the University of Illinois Urbana-Champaign. His research interests include multimodal machine learning, large vision-language models, and trustworthy machine learning. Xinzhuo earned dual bachelor's degrees in Electrical and Computer Engineering from the University of Illinois Urbana-Champaign and Zhejiang University.",
+      "profileUrl": "member.html?id=phd-xinzhuo-li"
     },
     {
       "id": "phd-adheesh-juvekar",
@@ -324,10 +324,10 @@
       "profileUrl": "member.html?id=phd-kiet-nguyen"
     },
     {
-      "id": "phd-makanjuola-ogunleye",
-      "group": "phd",
+      "id": "alumni-makanjuola-ogunleye",
+      "group": "alumni",
       "name": "Makanjuola Ogunleye",
-      "role": "PhD Student",
+      "role": "Alumni",
       "title": [
         "PhD Student"
       ],
@@ -339,18 +339,18 @@
       "linkedin": "",
       "googleScholar": "https://scholar.google.com/citations?user=5HHDgpsAAAAJ",
       "twitter": "",
-      "bio": "Makanjuola Ogunleye is a Computer Science Ph.D. student at Virginia Tech. His research focuses on vision-language learning, embodied AI, and emergent communication. Makanjuola has gained internship experience at Intuit Inc., Northwestern Mutual, and KPMG.",
-      "profileUrl": "member.html?id=phd-makanjuola-ogunleye"
+      "bio": "Makanjuola Ogunleye graduated with a Ph.D. in Computer Science from Virginia Tech in Spring 2026. His research focuses on vision-language learning, emergent communication, and multi-agent collaboration. Makanjuola has rich internship experience at Intuit Inc., Northwestern Mutual, and KPMG.",
+      "profileUrl": "member.html?id=alumni-makanjuola-ogunleye"
     },
     {
-      "id": "phd-muntasir-wahed",
+      "id": "alumni-muntasir-wahed",
       "group": "phd",
       "name": "Muntasir Wahed",
-      "role": "PhD Student",
+      "role": "Alumni",
       "title": [
         "PhD Student"
       ],
-      "currently": "",
+      "currently": "Research Scientist at Google DeepMind",
       "avatar": "assets/images/team/muntasir-wahed.jpg",
       "email": "mwahed2@illinois.edu",
       "github": "https://github.com/immuntasir",
@@ -358,8 +358,8 @@
       "linkedin": "",
       "googleScholar": "https://scholar.google.com/citations?user=ItE5a5cAAAAJ",
       "twitter": "",
-      "bio": "Muntasir Wahed is a Computer Science Ph.D. candidate at the University of Illinois Urbana-Champaign (Fall 2024 - graduating Spring 2026). His research interests include trustworthy multimodal machine learning, adversarial robustness, and pixel-grounded reasoning. Muntasir has gained industry experience through internships at IBM Research and Google DeepMind, resulting in multiple patents and publications. Muntasir co-led the winning team for the Amazon Nova AI Challenge and the finalist team in the Amazon Alexa Prize TaskBot Challenge 2.",
-      "profileUrl": "member.html?id=phd-muntasir-wahed"
+      "bio": "Muntasir Wahed graduated with a Ph.D. in Computer Science from Virginia Tech in Spring 2026. His research interests include trustworthy multimodal machine learning, adversarial robustness, and pixel-grounded reasoning. Muntasir has gained industry experience through internships at IBM Research and Google DeepMind, resulting in multiple patents and publications. He co-led the winning team for the Amazon Nova AI Challenge and the finalist team in the Amazon Alexa Prize TaskBot Challenge 2.",
+      "profileUrl": "member.html?id=alumni-muntasir-wahed"
     },
     {
       "id": "phd-onkar-susladkar",
@@ -514,7 +514,7 @@
       "googleScholar": "",
       "twitter": "",
       "bio": "Jiaxun Zhang is an undergraduate student in Statistics & Computer Science at the University of Illinois Urbana-Champaign. Her research interests are trustworthy machine learning, multimodal AI systems, and their real-world applications. Her work focuses on advancing LLM agents as adaptable AI systems designed to handle challenging reasoning tasks in various domains.",
-      "profileUrl": "member.html?id=undergrad-jiaxun-zhang"
+      "profileUrl": "member.html?id=alumni-jiaxun-zhang"
     },
     {
       "id": "alumni-kajal-patel",
@@ -533,7 +533,7 @@
       "googleScholar": "",
       "twitter": "",
       "bio": "Kajal Patel is a Stamps Scholar and NCSA SPIN student researcher at the University of Illinois Urbana-Champaign, majoring in Computer Science with minors in Statistics and Psychology. Her research focus is open-world scene graph generation with large vision-language models.",
-      "profileUrl": "member.html?id=undergrad-kajal-patel"
+      "profileUrl": "member.html?id=alumni-kajal-patel"
     }
   ]
 }
