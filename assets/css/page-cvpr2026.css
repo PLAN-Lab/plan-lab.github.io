@@ -545,19 +545,23 @@
       background: rgba(255,95,5,0.08);
       pointer-events: none;
     }
-
     .talks-head {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-      gap: 50rem;
-      align-items: end;
+      display: block;
       margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .talks-head .section-eyebrow,
+    .talks-head .section-title {
+      text-align: left;
+      margin-left: 0;
     }
 
     .talks-head p {
-      margin: 0;
+      max-width: 760px;
+      margin: 0.75rem 0 0;
       color: #64748b;
       font-size: 0.98rem;
       line-height: 1.65;
@@ -568,7 +572,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
       align-items: stretch;
     }
@@ -655,7 +659,7 @@
       position: relative;
       z-index: 1;
       margin-top: 0.65rem;
-      color: var(--plan-orange);
+      color: #475569;
       font-size: 0.86rem;
       line-height: 1.45;
       font-weight: 850;
@@ -842,7 +846,7 @@
     @media (max-width: 900px) {
       .hero-content { width: min(100% - 32px, 1500px); }
       .section-header { align-items: stretch; flex-direction: column; }
-      .talks-head { grid-template-columns: 1fr; align-items: start; }
+      .talks-head { display: block; }
       .talks-grid { grid-template-columns: 1fr; }
       .controls input { width: 100%; }
       .controls { flex-direction: column; }
@@ -1425,6 +1429,37 @@ body.page-cvpr section#partner.page-shell {
   color: #c44700;
 }
 
+
+.attendee-joining-badge {
+  position: absolute;
+  top: 12px;
+  right: 35px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 95, 5, 0.15), rgba(255, 255, 255, 0.96));
+  border: 1px solid rgba(255, 95, 5, 0.30);
+  color: #c44700;
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(255, 95, 5, 0.16);
+}
+
+.attendee-joining-badge i {
+  color: var(--plan-orange);
+  font-size: 0.72rem;
+  filter: drop-shadow(0 2px 4px rgba(255, 95, 5, 0.25));
+}
+
+.attendee-card.has-joining-badge {
+  /*! padding-top: 38px; */
+}
+
 .attendees-footnote {
   position: relative;
   z-index: 1;
@@ -1443,8 +1478,8 @@ body.page-cvpr section#partner.page-shell {
 }
 
 #attendees.page-shell {
-  /*! padding-top: clamp(18px, 2.8vw, 38px) !important; */
-  /*! padding-bottom: clamp(24px, 3.2vw, 44px) !important; */
+  padding-top: clamp(18px, 2.8vw, 38px) !important;
+  padding-bottom: clamp(24px, 3.2vw, 44px) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -1492,6 +1527,18 @@ body.page-cvpr section#partner.page-shell {
     grid-template-columns: 72px minmax(0, 1fr);
     min-height: 112px;
   }
+
+  .attendee-joining-badge {
+    top: 10px;
+    right: 12px;
+    padding: 5px 8px;
+    font-size: 0.62rem;
+  }
+
+  .attendee-card.has-joining-badge {
+    padding-top: 36px;
+  }
+
   .attendee-avatar {
     width: 72px;
     height: 72px;
