@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-48J3PYKGQ6');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CogniRoute: Learning to Route Social Evidence in Omni-Modal Models" />
+    <title>CogniRoute: Learning to Route Social Evidence in Omni-Modal Models</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <style>
+        .page-project .interpolation-image {
+            width: 90%;
+        }
+
+        .page-project .cogniroute-qual-caption {
+            text-align: center;
+            margin: 0.75rem 0 0.25rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .page-project .content.cogniroute-qualitative {
+            text-align: center;
+        }
+
+        .page-project .content.cogniroute-qualitative img.interpolation-image {
+            margin-top: 12px;
+        }
+
+        .page-project .cogniroute-feature-list {
+            padding-inline-start: 1.25rem;
+            margin: 0.5rem 0 1rem;
+            text-align: left;
+        }
+
+        .page-project .cogniroute-feature-list li {
+            margin: 0.4rem 0;
+        }
+
+        .page-project .cogniroute-section-header {
+            text-align: center;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .page-project table.results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1.25rem 0;
+        }
+
+        .page-project table.results-table th {
+            background: rgba(19, 41, 75, 0.08);
+            padding: 0.5rem 0.6rem;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+            white-space: nowrap;
+        }
+
+        .page-project table.results-table td {
+            padding: 0.45rem 0.6rem;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .page-project table.results-table tr.highlight-row td {
+            font-weight: 700;
+            background: rgba(19, 41, 75, 0.05);
+        }
+
+        .page-project .equal-contribution {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        .page-project .fig-caption {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #555;
+            font-style: italic;
+            margin-top: 0.6rem;
+            margin-bottom: 0.2rem;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 900px) {
+            .page-project table.results-table {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+        <a href="../../index.html#hero" class="nav-logo">
+            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+        </a>
+        <div class="nav-menu">
+            <a href="../../publications.html" class="nav-item" aria-label="Publications">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Publications</span>
+            </a>
+            <a href="../../index.html#team" class="nav-item" aria-label="Team">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+                <i class="fa-solid fa-cube"></i>
+                <span>PLAN Cubes</span>
+            </a>
+            <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <span>Partner with Us</span>
+            </a>
+            <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Join Us</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ============ HERO / TITLE ============ -->
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="publication-title">CogniRoute: Learning to Route Social Evidence in Omni-Modal Models</h1>
+
+                            <div class="publication-authors">
+                                <span class="author-block">Yifan Shen<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Jiateng Liu<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Xinzhuo Li<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Yuanzhe Liu<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Bingxuan Li<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Houze Yang<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Wenqi Jia<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Yijiang Li<sup style="color:#FFCD00;">2</sup>,</span>
+                                <span class="author-block">Tianjiao Yu<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">James Matthew Rehg<sup class="illini-orange">1</sup>,</span>
+                                <span class="author-block">Xu Cao<sup class="illini-orange">1,†</sup>,</span>
+                                <span class="author-block">Ismini Lourentzou<sup class="illini-orange">1,†</sup></span>
+                            </div>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a href="https://plan-lab.github.io/"><sup class="illini-orange">1</sup></a>
+                                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
+                                </span>
+                                &nbsp;&nbsp;
+                                <span class="author-block" style="color:#FFCD00";><sup>2</sup>University of California San Diego</span>
+                            </div>
+
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-solid fa-link"></i></span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="button is-rounded is-dark">
+                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
+                                        <span>Code (coming soon)</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FIGURE 1 — TEASER (VR smart-glasses real-world demo) ============ -->
+        <section class="hero teaser">
+            <div class="container is-max-desktop">
+                <div class="hero-body">
+                    <img src="./static/images/teaser.jpg" class="interpolation-image"
+                        alt="Figure 1: CogniRoute teaser — schema-guided routing for social omni reasoning." />
+                    <p class="has-text-justified">
+                        <strong>Figure 1:</strong> CogniRoute routes social evidence across video, audio, and text in a
+                        Mixture-of-Experts omni model. Given a social video question, the model selects experts conditioned
+                        on the underlying evidence structure — modality relation, reasoning demand, and temporal scope —
+                        producing answers that are grounded in the appropriate visual cue, vocal cue, and time region.
+                        Beyond the OmniSocialBench benchmark, CogniRoute is deployed on VR smart glasses for real-time
+                        social interaction, inferring intent from gestures, speech, and subtle hesitations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABSTRACT ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Omni-modal models can ingest video, audio, and text, but unified access to multiple modalities
+                            does not guarantee that a model uses the right evidence. This gap is especially pronounced in
+                            social video question answering, where the answer may hinge on a gesture, vocal tone, temporal
+                            cue, or mismatch between what is said and what is visually expressed.
+                        </p>
+                        <p>
+                            We introduce <strong>CogniRoute</strong>, a schema-guided Mixture-of-Experts framework for
+                            social omni reasoning. CogniRoute uses a training-only cognitive schema that factorizes each
+                            example by cross-modal relation, reasoning demand, and temporal scope, and aligns global
+                            routing signatures with this structure during supervised fine-tuning. We further introduce
+                            <strong>Route-Aware MoE Reinforcement Learning</strong>, which jointly optimizes token
+                            generation and expert allocation using rewards for answer correctness, modality-consistent
+                            reasoning, and cognitive temporal grounding. To support training and evaluation, we construct
+                            <strong>OmniSocialBench</strong>, a diagnostic social video QA resource with 118K structured
+                            training examples, grounded reasoning traces, schema labels, temporal evidence spans, and a
+                            manually verified evaluation split. CogniRoute achieves <strong>59.38%</strong> average
+                            accuracy on OmniSocialBench, improving over the strongest proprietary baseline by
+                            <strong>15.33</strong> points and the strongest open-source omni baseline by
+                            <strong>26.77</strong> points, with the largest gains on questions requiring audio-visual
+                            coordination, conflict resolution, and temporally grounded social inference.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ METHOD ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Method</h2>
+                    <div class="content has-text-justified">
+
+                        <!-- Figure 2: CogniRoute architecture overview -->
+                        <img loading="lazy" decoding="async" src="./static/images/method.jpg"
+                            class="interpolation-image"
+                            alt="Figure 2: CogniRoute Overview." />
+                        <p class="has-text-justified">
+                            <strong>Figure 2:</strong> <strong>CogniRoute Overview.</strong> Given a video, audio, and
+                            question, the omni MoE backbone produces modality-pooled, layer-wise routing distributions
+                            that are aggregated into a global routing signature. In Stage I, Schema-Aligned Predictive
+                            Routing (SAPR) aligns this signature with a training-only cognitive schema describing
+                            evidence source, reasoning demand, and temporal scope. In Stage II, Route-Aware MoE
+                            Reinforcement Learning (RMRL) jointly updates token generation and expert routing using
+                            rollout-level rewards for answer correctness, modality-consistent reasoning, and cognitive
+                            temporal grounding.
+                        </p>
+
+                        <h3 class="cogniroute-section-header illini-orange">Schema-Aligned Predictive Routing (SAPR)</h3>
+                        <p>
+                            SAPR introduces an auxiliary supervised objective that encourages global routing patterns to
+                            encode the evidence structure of each sample. For each MoE layer, dense pre-top-k router
+                            distributions are pooled by modality (video, audio, question) to obtain stable, per-layer
+                            routing statistics. A learnable per-layer projection maps these statistics into a shared
+                            <strong>global routing signature g</strong>. Each training example carries a training-only
+                            schema tag set <strong>𝒞</strong> drawn from three axes:
+                        </p>
+                        <ul class="cogniroute-feature-list">
+                            <li><strong>Evidence Source:</strong> Visual, Audio, Joint, or Conflict.</li>
+                            <li><strong>Reasoning Demand:</strong> Direct Perception, Temporal, Causal, Mental State,
+                                Social Norm, or Sarcasm.</li>
+                            <li><strong>Temporal Scope:</strong> Momentary, Local Window, Long Range, or Multi Segment.</li>
+                        </ul>
+                        <p>
+                            The schema tags are converted into a target embedding via a learnable tag embedding matrix.
+                            A lightweight prediction head projects the routing signature into the schema embedding space,
+                            and the SAPR loss <strong>ℒ<sub>SAPR</sub></strong> is a cosine alignment between predicted
+                            and target embeddings. The supervised objective combines generation loss, MoE load balancing,
+                            and SAPR alignment.
+                        </p>
+
+                        <h3 class="cogniroute-section-header illini-orange">Route-Aware MoE Reinforcement Learning (RMRL)</h3>
+                        <p>
+                            RMRL assigns rollout-level reward to entire generations and propagates feedback to both token
+                            generation and expert routing. For each input, the policy generates a group of rollouts, and
+                            each rollout receives a composite reward
+                            <strong>ℛ = λ<sub>ans</sub>ℛ<sub>ans</sub> + λ<sub>mcr</sub>ℛ<sub>mcr</sub> +
+                            λ<sub>ctg</sub>ℛ<sub>ctg</sub></strong> that supplies <em>outcome</em>-, <em>process</em>-,
+                            and <em>evidence</em>-level feedback. The three components are complementary: each isolates
+                            one failure mode that answer accuracy alone cannot diagnose.
+                        </p>
+                        <img loading="lazy" decoding="async" src="./static/images/reward_design.jpg"
+                            class="interpolation-image"
+                            alt="Figure 4: Visualization of the reward design (ℛans, ℛctg, ℛmcr)." />
+                        <p class="has-text-justified">
+                            <strong>Figure 4:</strong> Visualization of the reward design. The overall reward consists
+                            of three complementary components: the answer reward <strong>ℛ<sub>ans</sub></strong>
+                            encourages correct final answers; the Cognitive Temporal Grounding reward
+                            <strong>ℛ<sub>ctg</sub></strong> guides the model to attend to the annotated temporal
+                            evidence span; and the Modality-Consistent Reasoning reward
+                            <strong>ℛ<sub>mcr</sub></strong> promotes reasoning grounded in the required visual and/or
+                            audio evidence.
+                        </p>
+
+                        <h4 class="cogniroute-section-header illini-orange">Answer Correctness (ℛ<sub>ans</sub>)</h4>
+                        <p>
+                            A <strong>deterministic, judge-free</strong> binary reward. After extracting the final
+                            answer from the model output, we normalize it (lowercase, strip punctuation/articles,
+                            collapse whitespace) and compare against the ground-truth answer or any provided alias.
+                            A correct answer scores <strong>1</strong>, otherwise <strong>0</strong>. ℛ<sub>ans</sub>
+                            anchors the policy to the task objective and gates ℛ<sub>mcr</sub> to avoid rewarding
+                            fluent but incorrect rationales.
+                        </p>
+
+                        <h4 class="cogniroute-section-header illini-orange">Modality-Consistent Reasoning (ℛ<sub>mcr</sub>)</h4>
+                        <p>
+                            A <strong>frozen LLM-as-judge</strong> reward (Gemini 3.1 Pro) that scores how well the
+                            generated <code>&lt;Reasoning&gt;…&lt;/Reasoning&gt;</code> span grounds the answer in the
+                            required modality, using annotations from the Structured Evidence Extraction pipeline. The
+                            judge follows a five-level rubric <strong>{0, 0.25, 0.5, 0.75, 1.0}</strong>:
+                        </p>
+                        <ul class="cogniroute-feature-list">
+                            <li><strong>1.00</strong> — reasoning explicitly uses the required modality with concrete
+                                observations and clearly links them to the answer; for dual-modality cases, also
+                                correctly characterizes the cross-modal relation (supportive vs. conflicting).</li>
+                            <li><strong>0.75</strong> — largely modality-consistent but incomplete, weakly connected
+                                to the answer, or only partially captures the cross-modal relation.</li>
+                            <li><strong>0.50</strong> — partially satisfies the requirement (e.g., relies on only one
+                                of two required modalities, or names the correct modality without concrete evidence).</li>
+                            <li><strong>0.25</strong> — weak, vague, or ambiguous modality cues; mixes correct and
+                                incorrect evidence sources.</li>
+                            <li><strong>0.00</strong> — fails to ground the answer in the required modality, relies on
+                                the wrong evidence source, or contains no valid reasoning span.</li>
+                        </ul>
+                        <p>
+                            Crucially, the judge is instructed to reward <em>concrete</em> modality-specific
+                            observations (e.g., "the speaker sounds hesitant", "the person smiles while stepping
+                            back") rather than superficial keyword matches such as "based on the video" or "from the
+                            audio". The judge is frozen and uses the same prompt across all experiments, ensuring
+                            stable optimization signals.
+                        </p>
+
+                        <h4 class="cogniroute-section-header illini-orange">Cognitive Temporal Grounding (ℛ<sub>ctg</sub>)</h4>
+                        <p>
+                            A <strong>process-level</strong> reward that uses the model's own causal attention as a
+                            differentiable proxy for temporally grounded reasoning. Native attention from a short
+                            reasoning suffix to audio-visual input tokens is averaged over deep layers and heads, then
+                            pooled by temporal index into a focus distribution <strong>α(τ)</strong> over the physical
+                            timeline. Annotated evidence spans are converted into a smooth target
+                            <strong>P<sub>gt</sub>(τ)</strong> via a Gaussian proximity kernel, and the reward is
+                            <strong>ℛ<sub>ctg</sub> = exp(−γ&nbsp;D<sub>KL</sub>(P<sub>gt</sub>&nbsp;∥&nbsp;α̃))</strong>.
+                            High reward is obtained only when the final reasoning state places attention mass near the
+                            annotated evidence span, providing feedback in cases where ℛ<sub>ans</sub> alone cannot
+                            distinguish genuine cue use from shortcut prediction.
+                        </p>
+
+                        <h4 class="cogniroute-section-header illini-orange">Joint Token-and-Gate Optimization</h4>
+                        <p>
+                            Rollout rewards are converted into group-relative advantages. The <strong>token branch</strong>
+                            uses a clipped GRPO surrogate over generated tokens, while a parallel <strong>gate
+                            branch</strong> scores selected top-k expert sets via the dense pre-top-k router likelihood,
+                            enabling rollout-level reward to update expert allocation. Both branches share the same
+                            advantage, KL regularization is applied to a frozen reference model for both language and
+                            router, and standard load balancing is preserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ OMNISOCIALBENCH DATASET ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">OmniSocialBench: <span class="illini-orange">Diagnostic Social Omni Reasoning</span></h2>
+                    <div class="content has-text-justified">
+                        <img loading="lazy" decoding="async" src="./static/images/dataset.jpg"
+                            class="interpolation-image"
+                            alt="Figure 3: OmniSocialBench Dataset and Annotation Pipeline." />
+                        <p class="has-text-justified">
+                            <strong>Figure 3:</strong> <strong>OmniSocialBench Dataset and Annotation Pipeline.</strong>
+                            OmniSocialBench augments video QA examples with structured audio-visual evidence, schema
+                            labels, grounded reasoning traces, and temporal evidence spans. The pipeline first extracts
+                            observable social cues — participants, scene context, gaze, expression, body pose, gesture,
+                            object interaction, speech content, speaker changes, laughter, silence, and tone-relevant
+                            acoustic events — then assigns cross-modal relations, reasoning demands, and temporal-scope
+                            annotations, and finally generates evidence-grounded rationales.
+                        </p>
+                        <p>
+                            OmniSocialBench contains a <strong>118K-example structured training split</strong> sourced
+                            from social and egocentric video corpora (e.g., SocialIQ, SocialMM, LLaVA-Video, NeXT-QA,
+                            VideoChatGPT, MTM, Charades), and a <strong>manually verified evaluation split</strong>
+                            covering four social inference dimensions:
+                        </p>
+                        <ul class="cogniroute-feature-list">
+                            <li><strong>Mental State Inference:</strong> reasoning about emotions, beliefs, and intent.</li>
+                            <li><strong>Pragmatic Meaning Inference:</strong> implicature, indirect speech, sarcasm.</li>
+                            <li><strong>Action Goal Inference:</strong> the underlying purpose of an observed action.</li>
+                            <li><strong>Social Norm Inference:</strong> conventions, expected behavior, social rules.</li>
+                        </ul>
+                        <p>
+                            Every evaluation example is manually verified for answer validity, evidence consistency,
+                            schema correctness, reasoning support, temporal grounding, and social-dimension assignment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ QUANTITATIVE RESULTS ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Quantitative Results</h2>
+                    <div class="content has-text-justified">
+
+                        <p>
+                            <strong>Table 1:</strong> Social understanding results on OmniSocialBench across four social
+                            inference categories. CogniRoute achieves the best result in every category, surpassing
+                            Gemini 3.1 Pro by 15.33 points on average.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Social Norm↑</th>
+                                        <th>Action Goal↑</th>
+                                        <th>Mental State↑</th>
+                                        <th>Pragmatic Meaning↑</th>
+                                        <th>Avg↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>GPT 5.4</td><td>14.37</td><td>20.13</td><td>18.96</td><td>18.57</td><td>18.12</td></tr>
+                                    <tr><td>Qwen 3.6 Plus</td><td>15.00</td><td>26.17</td><td>14.69</td><td>19.29</td><td>18.50</td></tr>
+                                    <tr><td>GLM 5V Turbo</td><td>14.37</td><td>18.12</td><td>13.27</td><td>17.50</td><td>15.88</td></tr>
+                                    <tr><td>Baichuan-Omni-1.5</td><td>14.37</td><td>12.75</td><td>12.80</td><td>12.86</td><td>13.12</td></tr>
+                                    <tr><td>OmniVinci</td><td>18.75</td><td>20.81</td><td>26.07</td><td>21.07</td><td>21.88</td></tr>
+                                    <tr><td>Qwen3 Omni</td><td>26.11</td><td>33.02</td><td>38.97</td><td>31.44</td><td>32.61</td></tr>
+                                    <tr><td>MiMo V2 Omni</td><td>30.63</td><td>32.89</td><td>31.28</td><td>30.36</td><td>31.13</td></tr>
+                                    <tr><td>Qwen 3.5 Omni</td><td>31.25</td><td>30.87</td><td>36.02</td><td>28.57</td><td>31.50</td></tr>
+                                    <tr><td>Gemini 3.1 Flash</td><td>27.50</td><td>47.65</td><td>43.33</td><td>41.79</td><td>40.43</td></tr>
+                                    <tr><td>Gemini 3.1 Pro</td><td>33.33</td><td>36.84</td><td>60.00</td><td>43.90</td><td>44.05</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>CogniRoute (Ours)</strong></td>
+                                        <td><strong>58.13</strong></td><td><strong>66.44</strong></td>
+                                        <td><strong>60.18</strong></td><td><strong>55.71</strong></td>
+                                        <td><strong>59.38</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </br>
+
+                        <p>
+                            <strong>Table 2:</strong> Audio-visual benchmark comparison between Qwen3-Omni-30B and
+                            CogniRoute across 10 public benchmarks spanning audio-visual, audio-only, and video-only
+                            understanding. CogniRoute improves on most audio-visual and video-only tasks, indicating that
+                            schema-guided routing strengthens cross-modal selection and integration.
+                        </p>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>AV-SpeakerBench↑</th>
+                                        <th>OmniBench↑</th>
+                                        <th>MMVU↑</th>
+                                        <th>WorldSense↑</th>
+                                        <th>Daily-Omni↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Qwen3 Omni 30B</td><td>54.1</td><td>55.5</td><td>59.8</td><td><strong>54.0</strong></td><td>73.6</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>CogniRoute (Ours)</strong></td>
+                                        <td><strong>56.2</strong></td><td><strong>56.7</strong></td>
+                                        <td><strong>60.7</strong></td><td>53.8</td>
+                                        <td><strong>74.3</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>AV-Odyssey↑</th>
+                                        <th>MVBench↑</th>
+                                        <th>MMAU↑</th>
+                                        <th>OmniVideoBench↑</th>
+                                        <th>Video-MME-v2↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Qwen3 Omni 30B</td><td>34.7</td><td>69.5</td><td><strong>75.4</strong></td><td>38.4</td><td>36.5</td></tr>
+                                    <tr class="highlight-row">
+                                        <td><strong>CogniRoute (Ours)</strong></td>
+                                        <td><strong>36.8</strong></td><td><strong>70.2</strong></td>
+                                        <td>73.2</td><td><strong>38.9</strong></td>
+                                        <td><strong>36.8</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </br>
+
+                        <p>
+                            <strong>Figure 5:</strong> Core component ablations. Average accuracy across SAPR design
+                            choices and RMRL token/gate optimization. SAPR improves the SFT baseline from 40.13 to 50.13;
+                            corrupted-schema variants yield only marginal gains, confirming that the benefit comes from
+                            aligning routing with the correct evidence structure. Starting from the SAPR-trained
+                            checkpoint, the full token-and-gate RMRL objective lifts accuracy to 59.38, with explicit
+                            expert allocation contributing beyond token-level RL alone.
+                        </p>
+                        <img loading="lazy" decoding="async" src="./static/images/ablation.jpg"
+                            class="interpolation-image"
+                            alt="Figure 5: Core component ablations bar chart." />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ QUALITATIVE: APPENDIX E CASE STUDY ============ -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Analysis: <span class="illini-orange">Discourse-Grounded Reference Resolution</span></h2>
+                    <div class="content cogniroute-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/case_study.jpg"
+                            class="interpolation-image"
+                            alt="Figure 6: Qualitative comparison between Gemini 3.1 Pro and CogniRoute on a discourse-grounded reference resolution case." />
+                        <p class="has-text-justified">
+                            <strong>Figure 6:</strong> Qualitative comparison between <strong>Gemini 3.1 Pro</strong>
+                            and <strong>CogniRoute</strong> on a manually verified case from OmniSocialBench. The clip
+                            shows several players discussing game information, with the last speaker addressing another
+                            player. Given the question
+                            <em>"Who is the last speaker referring to?"</em> with five candidate referents
+                            (Player1–Player5):
+                        </p>
+                        <ul class="cogniroute-feature-list">
+                            <li><strong>Gemini 3.1 Pro (Player2 — incorrect):</strong> identifies a locally plausible
+                                cue and treats the final utterance <em>"Did you see two of something on the same
+                                team?"</em> as a follow-up to Player2's earlier statement. It maps the question to a
+                                short-range, single-utterance reference, missing the discourse context.</li>
+                            <li><strong>CogniRoute (Player4 — correct):</strong> links the final question to
+                                <em>Player4's</em> prior explanation that he would not reveal what he saw, and combines
+                                this with the speaker's gaze and body orientation toward Player4 during the final turn.
+                                The cross-modal, discourse-level grounding identifies Player4 as the addressee.</li>
+                        </ul>
+                        <p class="has-text-justified">
+                            This case exemplifies the general pattern observed across Appendix E: Gemini 3.1 Pro often
+                            identifies a locally plausible cue but maps it to the wrong evidence structure, while
+                            CogniRoute's schema-aligned routing — trained over <em>evidence source</em>,
+                            <em>reasoning demand</em>, and <em>temporal scope</em> — favors discourse-level reference
+                            tracking, multi-party turn-taking, and long-range affect continuity over single-utterance
+                            shortcuts. The qualitative outcome complements the quantitative gains in Table 1 by showing
+                            <em>how</em> CogniRoute improves evidence selection, cross-modal grounding, and temporal
+                            reasoning in social video question answering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BIBTEX ============ -->
+        <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+                <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+                <pre><code>@article{shen2025cogniroute,
+  title={CogniRoute: Learning to Route Social Evidence in Omni-Modal Models},
+  author={Shen, Yifan and Liu, Jiateng and Li, Xinzhuo and Liu, Yuanzhe and Li, Bingxuan and Yang, Houze and Jia, Wenqi and Li, Yijiang and Yu, Tianjiao and Rehg, James Matthew and Cao, Xu and Lourentzou, Ismini},
+  journal={arXiv preprint},
+  year={2025}
+}</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
