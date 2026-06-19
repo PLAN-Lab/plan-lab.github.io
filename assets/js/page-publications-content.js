@@ -323,7 +323,7 @@
       members.forEach((m) => {
         const name = String(m.name || '').trim();
         if (!name) return;
-        const profileUrl = m.profileUrl || '';
+        const profileUrl = window.PLANContent.memberProfileUrl(m);
         labMemberByName.set(normalizeName(name), { name, profileUrl, aliases: m.aliases || [] });
 
         const aliases = Array.isArray(m.aliases) ? m.aliases : [];

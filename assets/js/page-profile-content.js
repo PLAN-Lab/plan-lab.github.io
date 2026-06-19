@@ -116,33 +116,7 @@
         }
       });
 
-    const id = String(member && member.id ? member.id : '').trim();
-    if (id) {
-      const parts = id.split('-').filter(Boolean);
-      if (parts.length > 1) {
-        seeds.add(parts.slice(1).join(' '));
-      }
-    }
-
     return Array.from(seeds);
-  }
-
-  function formatDisplayName(member) {
-    const name = String(member && member.name ? member.name : '').trim();
-    const aliases = Array.isArray(member && member.aliases) ? member.aliases.filter(Boolean) : [];
-    if (!name) return 'Team Member';
-    if (member && member.id === 'phd-tianjiao(joey)-yu' && aliases.length) {
-      const alias = String(aliases[0] || '').trim();
-      if (!alias) return name;
-      const tokens = name.split(/\s+/);
-      if (tokens.length >= 2) {
-        const first = tokens[0];
-        const last = tokens[tokens.length - 1];
-        return `${first} (${alias}) ${last}`;
-      }
-    }
-    const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
-    return name + aliasLabel;
   }
 
   function memberPublications(publications, member) {
@@ -161,8 +135,14 @@
     const id = params.get('id');
 
     const members = await window.PLANContent.getTeam();
-    const member = members.find((m) => m.id === id) || members[0];
+    const member = window.PLANContent.findMember(members, id) || (!id ? members[0] : null);
     if (!member) return;
+
+    if (id && id !== member.id && window.history && window.history.replaceState) {
+      params.set('id', member.id);
+      const canonicalUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+      window.history.replaceState(null, '', canonicalUrl);
+    }
 
     const papersSection = document.getElementById('papers');
     const showPapersBtn =
@@ -176,7 +156,7 @@
     const aliases = Array.isArray(member.aliases) ? member.aliases.filter(Boolean) : [];
 
     if (nameEl) {
-      nameEl.textContent = formatDisplayName(member);
+      nameEl.textContent = window.PLANContent.formatMemberName(member);
     }
     if (roleEl) roleEl.textContent = (member.title && member.title[0]) || member.role || '';
     if (avatarEl && member.avatar) {
@@ -203,12 +183,7 @@
     const mine = memberPublications(publications, member).sort(byMemberPriority(member));
 
     const author = String(member.name || '').trim();
-    const memberId = String(member.id || '').trim();
-    let alias = '';
-    if (memberId) {
-      const parts = memberId.split('-').filter(Boolean);
-      if (parts.length > 1) alias = parts.slice(1).join(' ');
-    }
+    const alias = aliases.map((value) => String(value || '').trim()).find(Boolean) || '';
 
     const publicationsParams = new URLSearchParams();
     if (author) publicationsParams.set('author', author);

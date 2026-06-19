@@ -1,5 +1,6 @@
 (function () {
   const cache = new Map();
+  const LEGACY_MEMBER_STATUS_PREFIX = /^(?:alumn(?:i|us|a)|phd(?:-student)?|masters?(?:-student)?|undergrads?(?:-student)?|undergraduate(?:-student)?|postdocs?|pi)-/i;
 
   function formatVenue(venue, year, venueAbbr) {
     const rawAbbr = String(venueAbbr || '').trim();
@@ -72,6 +73,49 @@
     return 'https://doi.org/' + trimmed;
   }
 
+  function stripLegacyMemberStatusPrefix(id) {
+    return String(id || '')
+      .trim()
+      .replace(LEGACY_MEMBER_STATUS_PREFIX, '');
+  }
+
+  function memberProfileUrl(memberOrId) {
+    const id = typeof memberOrId === 'object' && memberOrId
+      ? memberOrId.id
+      : memberOrId;
+    const memberId = String(id || '').trim();
+    return memberId ? `member.html?id=${encodeURIComponent(memberId)}` : 'member.html';
+  }
+
+  function findMember(members, id) {
+    const list = Array.isArray(members) ? members : [];
+    const requestedId = String(id || '').trim();
+    if (!requestedId) return null;
+
+    const exact = list.find((member) => String(member.id || '').trim() === requestedId);
+    if (exact) return exact;
+
+    const normalizedId = stripLegacyMemberStatusPrefix(requestedId);
+    return list.find((member) => {
+      const memberId = String(member.id || '').trim();
+      const legacyIds = Array.isArray(member.legacyIds) ? member.legacyIds : [];
+      return memberId === normalizedId || legacyIds.includes(requestedId);
+    }) || null;
+  }
+
+  function formatMemberName(member, fallback) {
+    const name = String(member && member.name ? member.name : '').trim();
+    if (!name) return fallback || 'Team Member';
+
+    const displayName = String(member && member.displayName ? member.displayName : '').trim();
+    if (displayName) return displayName;
+
+    const aliases = Array.isArray(member && member.aliases)
+      ? member.aliases.map((alias) => String(alias || '').trim()).filter(Boolean)
+      : [];
+    return aliases.length ? `${name} (${aliases.join(', ')})` : name;
+  }
+
   async function loadJson(path) {
     if (cache.has(path)) return cache.get(path);
 
@@ -100,6 +144,9 @@
     resolveUrl,
     doiToUrl,
     formatVenue,
+    memberProfileUrl,
+    findMember,
+    formatMemberName,
     getTeam,
     getPublications,
   };

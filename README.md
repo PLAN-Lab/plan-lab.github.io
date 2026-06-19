@@ -44,9 +44,10 @@ This folder is a standalone static site. Team members and publications are rende
 - Edit `assets/data/team.json` 
 ```
     {
-      "id": "phd-firstname-lastname",
-      "group": "phd/masters/undergrad/alumni/",
+      "id": "firstname-lastname", # permanent URL slug; never include member status
+      "group": "pi/phd/masters/undergrad/alumni",
       "name": "Firstname Lastename", # don't add aliases here, add them in the aliases field
+      "displayName": "Firstname (Alias) Lastname", # optional custom display formatting
       "aliases": [
         "alias1"
       ]
@@ -66,6 +67,8 @@ This folder is a standalone static site. Team members and publications are rende
     },
 ```
 - Add profile picture under `assets/images/team/` as `firstname-lastname.jpg`
+- Link project-page authors with `/team/firstname-lastname`; `assets/js/project-pages.js` resolves it to the member profile.
+- To change a member's status, update `group`, `role`, `title`, and `currently` as needed. Do not change `id` or project links.
 - Send a pull request
 
 ## Projects
