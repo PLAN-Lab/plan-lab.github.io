@@ -1,1 +1,874 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-48J3PYKGQ6');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="LaTtE-Flow: an efficient unified multimodal model that adds flow-matching image generation to a pretrained VLM, achieving competitive quality with around 6x faster inference via Layerwise Timestep Experts." />
+  <title>LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer | PLAN Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/projects.css" />
+  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="icon" type="image/png" href="static/images/favicon.png" />
+
+  <style>
+    /* ── LaTtE-Flow coffee accent palette (sits beside the lab orange) ── */
+    .page-project {
+      --latte-cream: #ead7b7;
+      --latte-caramel: #d8a766;
+      --latte-golden: #e9b53a;
+      --latte-mocha: #c79a6e;
+    }
+
+    .latte-name {
+      font-weight: 800;
+    }
+
+    .latte-name .a-la {
+      color: var(--latte-caramel);
+    }
+
+    .latte-name .a-flow {
+      color: var(--latte-golden);
+    }
+
+    .page-project .publication-title .title-cup {
+      height: 1em !important;
+      width: auto !important;
+      vertical-align: -0.06em;
+      margin-right: 0.16em;
+      border-radius: 0;
+    }
+
+    .accent-golden {
+      color: var(--latte-golden);
+    }
+
+    .accent-caramel {
+      color: var(--latte-caramel);
+    }
+
+    /* ── Key-stat strip ── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 6px 0 4px;
+    }
+
+    .stat-card {
+      background: rgba(233, 181, 58, 0.07);
+      border: 1px solid rgba(233, 181, 58, 0.28);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--latte-golden);
+      line-height: 1.1;
+    }
+
+    .stat-card .lbl {
+      font-size: 1rem;
+      color: rgba(226, 232, 240, 0.75);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Two innovation cards ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 3px solid var(--latte-golden);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 20px;
+    }
+
+    .feature-card h4 {
+      color: var(--latte-caramel);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin: 0 0 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.92rem;
+      color: rgba(226, 232, 240, 0.85);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── Figure block ── */
+    .fig-block {
+      margin: 8px 0 4px;
+    }
+
+    .fig-block img {
+      width: 100%;
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      display: block;
+    }
+
+    .fig-caption {
+      font-size: 0.88rem;
+      color: rgba(226, 232, 240, 0.7);
+      margin-top: 10px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .fig-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* ── Quant table (same look as other project pages) ── */
+    .quant-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      color: rgba(226, 232, 240, 0.9);
+    }
+
+    .quant-table thead tr {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .quant-table th {
+      padding: 10px 12px;
+      font-weight: 700;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.82em;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .quant-table th:first-child {
+      text-align: left;
+    }
+
+    .quant-table td {
+      padding: 9px 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .quant-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .quant-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quant-table tr.ours-row td {
+      color: var(--latte-golden);
+      font-weight: 700;
+    }
+
+    .quant-table tr.base-row td {
+      color: rgba(226, 232, 240, 0.75);
+    }
+
+    .quant-table td .best {
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .group-head td {
+      text-align: left !important;
+      font-size: 0.78em;
+      color: rgba(255, 255, 255, 0.4) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 10px 12px 4px !important;
+    }
+
+    .speedup {
+      color: #4ade80;
+      font-size: 0.8em;
+      font-weight: 700;
+    }
+
+    /* affiliation helpers */
+    .illini-orange {
+      color: var(--accent-orange, #FF5F05) !important;
+      font-weight: bold !important;
+    }
+
+    .author-affiliations {
+      font-size: 0.82em;
+      color: rgba(226, 232, 240, 0.7);
+      line-height: 1.7;
+    }
+
+    .author-affiliations .ext {
+      color: rgba(226, 232, 240, 0.8);
+    }
+
+    sup.aff {
+      font-weight: 700;
+      font-size: 0.72em;
+    }
+
+    .equal-note {
+      font-size: 0.82em;
+      color: rgba(226, 232, 240, 0.6);
+      margin: 6px 0 2px;
+    }
+
+    @media (max-width: 760px) {
+
+      .stat-strip,
+      .feature-grid,
+      .fig-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-project">
+  <div class="project-bg"></div>
+  <div class="project-grid"></div>
+
+  <nav class="glass-nav">
+    <a href="../../index.html#hero" class="nav-logo">
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+    </a>
+    <div class="nav-menu">
+      <a href="../../publications.html" class="nav-item" aria-label="Publications">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Publications</span>
+      </a>
+      <a href="../../index.html#team" class="nav-item" aria-label="Team">
+        <i class="fa-solid fa-users"></i>
+        <span>Team</span>
+      </a>
+      <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+        <i class="fa-solid fa-cube"></i>
+        <span>PLAN Cubes</span>
+      </a>
+      <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+        <i class="fa-solid fa-circle-nodes"></i>
+        <span>Partner with Us</span>
+      </a>
+      <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Join Us</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+
+              <h1 class="title is-2 publication-title">
+                <img src="static/images/latte_icon.png" alt="" class="title-cup" />
+                <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>:
+                Layerwise Timestep-Expert Flow-based Transformer
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="/team/ying-shen">Ying Shen<sup class="aff">1*</sup></a>,
+                </span>
+                <span class="author-block">
+                  Zhiyang Xu<sup class="aff">2*</sup>,
+                </span>
+                <span class="author-block">
+                  Jiuhai Chen<sup class="aff">3</sup>,
+                </span>
+                <span class="author-block">
+                  Shizhe Diao<sup class="aff">4</sup>,
+                </span>
+                <span class="author-block">
+                  Jiaxin Zhang<sup class="aff">5</sup>,
+                </span>
+                <span class="author-block">
+                  Yuguang Yao<sup class="aff">6</sup>,
+                </span>
+                <span class="author-block">
+                  Joy Rimchala<sup class="aff">6</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="/team/ismini-lourentzou">Ismini Lourentzou<sup class="aff">1&dagger;</sup></a>,
+                </span>
+                <span class="author-block">
+                  Lifu Huang<sup class="aff">7&dagger;</sup>
+                </span>
+              </div>
+
+              <div class="equal-note">
+                <sup>*</sup>Equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup>Equal supervision
+              </div>
+
+              <div class="publication-authors">
+                <span class="author-affiliations">
+                  <sup class="aff">1</sup><span>University of Illinois
+                    Urbana-Champaign</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">2</sup><span class="ext">Virginia Tech</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">3</sup><span class="ext">University of Maryland</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">4</sup><span class="ext">NVIDIA</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">5</sup><span class="ext">Salesforce AI Research</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">6</sup><span class="ext">Intuit AI Research</span> &nbsp;&middot;&nbsp;
+                  <sup class="aff">7</sup><span class="ext">UC Davis</span>
+                </span>
+              </div>
+
+              <div class="has-text-centered" style="margin: 8px 0;">
+                <h1 class="title is-3 publication-venue" style="color:#FF5F05;">
+                  ICML 2026
+                </h1>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2506.06952" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2506.06952" target="_blank" class="button is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Teaser ── -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+
+          <div class="content has-text-justified" style="margin-bottom: 18px;">
+            <span style="font-weight: bold;">TL;DR:</span>
+            <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> adds
+            flow-matching image generation on top of a frozen, pretrained vision-language model. It splits the
+            transformer layers into <strong class="accent-caramel">timestep-specialized expert groups</strong>, so
+            only a small slice of the network runs at each sampling step. The result keeps strong understanding,
+            matches recent unified models on generation quality, and runs about
+            <strong class="accent-golden">6&times; faster</strong> at inference.
+          </div>
+
+          <div class="fig-block">
+            <img src="static/images/diffusion_process_fig.png"
+              alt="Standard diffusion / flow-matching runs every layer at every timestep; LaTtE-Flow activates only a subset of layers per step." />
+            <div class="fig-caption">
+              <strong>The core idea.</strong> Standard diffusion / flow-matching models (left) run the full network at
+              every sampling step, with cost that scales as <em>O(L &times; T)</em>. <span class="latte-name"><span
+                  class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> (right) assigns each group of
+              layers to a specific range of timesteps and activates only that group at each step, cutting per-step
+              compute.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Abstract ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Unified multimodal models that handle both image understanding and generation in a single framework
+                are a promising path toward general-purpose agents. But existing unified models usually need heavy
+                pretraining and generate images slowly, which makes them hard to deploy in real-time or
+                resource-constrained settings.
+              </p>
+              <p>
+                We introduce <strong>Layerwise Timestep-Expert Flow-based Transformer</strong> (<span
+                  class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>), an
+                architecture that makes diffusion/flow-based transformers more efficient inside the unified setting.
+                <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> builds
+                on a powerful pretrained vision-language model (VLM) to inherit strong understanding, and extends it
+                with a new <strong class="accent-caramel">Layerwise Timestep Experts</strong> design for image
+                generation. It spreads the flow-matching process across groups of transformer layers, where each group
+                handles a distinct subset of timesteps. Because only a small set of layers runs at each step, sampling
+                becomes much cheaper. To push performance further, we add a <strong
+                  class="accent-caramel">Timestep-Conditioned Residual Attention</strong> mechanism that lets later
+                layers reuse attention computed earlier.
+              </p>
+              <p>
+                In experiments, <span class="latte-name"><span class="a-la">LaTtE</span>-<span
+                    class="a-flow">Flow</span></span> keeps strong multimodal understanding while reaching competitive
+                image generation quality with around <strong class="accent-golden">6&times; faster</strong> inference
+                than recent unified multimodal models.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Method ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Method</h2>
+
+            <div class="content has-text-justified" style="margin-bottom: 6px;">
+              <p>
+                <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> keeps
+                the pretrained VLM frozen, so it does not lose any understanding ability, and adds a trainable
+                generation pathway alongside it. Two ideas make that pathway both fast and accurate.
+              </p>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-card">
+                <h4>1. Layerwise Timestep Experts</h4>
+                <p>
+                  We split the <em>L</em> transformer layers into <em>K</em> non-overlapping groups. Each group is
+                  trained to denoise one timestep interval of the flow-matching process. At inference, only the group
+                  for the current timestep runs &mdash; about <em>L/K</em> layers per step instead of all <em>L</em>.
+                </p>
+              </div>
+              <div class="feature-card">
+                <h4>2. Timestep-Conditioned Residual Attention</h4>
+                <p>
+                  A lightweight, head-wise gate lets each layer reuse the image self-attention map from the previous
+                  layer, with the amount of reuse controlled by the current timestep. The model refines attention
+                  gradually across layers, which speeds up convergence during training and improves quality
+                  with <strong class="accent-caramel">no extra inference cost</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="fig-block" style="margin-top: 28px;">
+              <img src="static/images/diff_vlm_arch_single.png"
+                alt="LaTtE-Flow architecture: a frozen VLM path (purple) and a trainable generation path (blue) with LaTtE-Flow Attention, a timestep-conditioned residual-attention gate, and shared multimodal context." />
+              <div class="fig-caption">
+                <strong>Architecture.</strong> The frozen VLM layers (<span style="color:#b794f6;">purple</span>) keep
+                understanding intact. A trainable replica plus flow-matching components (<span
+                  style="color:#63b3ed;">blue</span>) handle generation. The <span class="latte-name"><span
+                    class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> Attention module lets noisy image
+                latents attend to the multimodal context, and a timestep-conditioned gate controls how much attention
+                is reused from the previous layer.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Results ── -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Results</h2>
+
+            <!-- Headline stats -->
+            <div class="stat-strip">
+              <div class="stat-card">
+                <div class="num">~6&times;</div>
+                <div class="lbl">faster inference vs. recent unified models</div>
+              </div>
+              <div class="stat-card">
+                <div class="num">500M</div>
+                <div class="lbl">activated params per generation step</div>
+              </div>
+              <div class="stat-card">
+                <div class="num">5.79</div>
+                <div class="lbl">FID on ImageNet-50K (256&times;256)</div>
+              </div>
+              <div class="stat-card">
+                <div class="num">7.08</div>
+                <div class="lbl">TFLOPs / forward pass (vs. 28.3 for the baseline)</div>
+              </div>
+            </div>
+
+            <div class="content has-text-justified" style="margin: 18px 0 6px;">
+              <p>
+                <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> is
+                built on Qwen2-VL-2B-Instruct (28 layers) with a DC-AE image encoder, split into <em>K</em>&nbsp;=&nbsp;4
+                expert groups of <em>M</em>&nbsp;=&nbsp;7 layers, and trained on 1.2M ImageNet images at 256&times;256.
+              </p>
+            </div>
+
+            <!-- Generation table -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Image Generation &mdash; ImageNet-50K</h3>
+            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+              <p>
+                <strong>#Params</strong> is the number of parameters active per sampling step. <strong>Rel.
+                  Time</strong> is inference time relative to <span class="latte-name"><span class="a-la">LaTtE</span>-<span
+                    class="a-flow">Flow</span></span>.
+              </p>
+            </div>
+            <div style="overflow-x:auto; margin-bottom:24px;">
+              <table class="quant-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>FID &darr;</th>
+                    <th>IS &uarr;</th>
+                    <th>Pre &uarr;</th>
+                    <th>Rec &uarr;</th>
+                    <th>#Params</th>
+                    <th>#Step</th>
+                    <th>Time (s/img)</th>
+                    <th>Rel. Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="group-head">
+                    <td colspan="9">Diffusion models</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>ADM</td>
+                    <td>10.94</td>
+                    <td>101.0</td>
+                    <td>0.69</td>
+                    <td>0.63</td>
+                    <td>554M</td>
+                    <td>250</td>
+                    <td>9.677</td>
+                    <td>168&times;</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>DiT-XL/2</td>
+                    <td><span>2.27</span></td>
+                    <td><span>278.2</span></td>
+                    <td><span>0.83</span></td>
+                    <td>0.57</td>
+                    <td>675M</td>
+                    <td>250</td>
+                    <td>2.592</td>
+                    <td>45&times;</td>
+                  </tr>
+                  <tr class="group-head">
+                    <td colspan="9">Masked models</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>MaskGIT</td>
+                    <td>6.18</td>
+                    <td>182.1</td>
+                    <td>0.80</td>
+                    <td>0.51</td>
+                    <td>227M</td>
+                    <td>8</td>
+                    <td>0.029</td>
+                    <td>0.5&times;</td>
+                  </tr>
+                  <tr class="group-head">
+                    <td colspan="9">Autoregressive models</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>ViT-VQGAN</td>
+                    <td>4.17</td>
+                    <td>175.1</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>1.7B</td>
+                    <td>1024</td>
+                    <td>1.382</td>
+                    <td>24&times;</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>RQTransformer</td>
+                    <td>7.55</td>
+                    <td>134.0</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>3.8B</td>
+                    <td>68</td>
+                    <td>1.210</td>
+                    <td>21&times;</td>
+                  </tr>
+                  <tr class="group-head">
+                    <td colspan="9">Unified models</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Show-o</td>
+                    <td>31.26</td>
+                    <td>98.7</td>
+                    <td>0.55</td>
+                    <td>0.69</td>
+                    <td>1.3B</td>
+                    <td>50</td>
+                    <td>2.493</td>
+                    <td>48&times;</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Janus Pro</td>
+                    <td>23.68</td>
+                    <td>105.2</td>
+                    <td>0.58</td>
+                    <td>0.49</td>
+                    <td>1.5B</td>
+                    <td>576</td>
+                    <td>0.311</td>
+                    <td>6&times;</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Vanilla (Ours, baseline)</td>
+                    <td>6.33</td>
+                    <td>192.4</td>
+                    <td>0.80</td>
+                    <td>0.67</td>
+                    <td>2.0B</td>
+                    <td>40</td>
+                    <td>0.158</td>
+                    <td>3&times;</td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>LaTtE-Flow (Ours)</td>
+                    <td>5.79</td>
+                    <td>213.1</td>
+                    <td>0.78</td>
+                    <td>0.69</td>
+                    <td>500M</td>
+                    <td>40</td>
+                    <td>0.052</td>
+                    <td>1&times;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Understanding table -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Multimodal Understanding</h3>
+            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+              <p>
+               <span class="latte-name"><span class="a-la">LaTtE</span>-<span
+                    class="a-flow">Flow</span></span>  LaTtE-Flow preserves Qwen2-VL-2B’s
+strong understanding performance while adding generation capabilities.
+              </p>
+            </div>
+            <div style="overflow-x:auto; margin-bottom:24px;">
+              <table class="quant-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>MMBench</th>
+                    <th>SEED</th>
+                    <th>POPE</th>
+                    <th>MM-Vet</th>
+                    <th>MME-P</th>
+                    <th>MMMU</th>
+                    <th>RWQA</th>
+                    <th>TextVQA</th>
+                    <th>#Params</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="base-row">
+                    <td>Chameleon</td>
+                    <td>32.7</td>
+                    <td>&mdash;</td>
+                    <td>59.8</td>
+                    <td>9.7</td>
+                    <td>604.5</td>
+                    <td>38.8</td>
+                    <td>39.2</td>
+                    <td>0.0</td>
+                    <td>34B</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>EMU3</td>
+                    <td>58.5</td>
+                    <td>68.2</td>
+                    <td>85.2</td>
+                    <td>37.2</td>
+                    <td>1243.8</td>
+                    <td>31.6</td>
+                    <td>57.4</td>
+                    <td>64.7</td>
+                    <td>8B</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Janus</td>
+                    <td>69.4</td>
+                    <td>63.7</td>
+                    <td>87.0</td>
+                    <td>34.3</td>
+                    <td>1338.0</td>
+                    <td>30.5</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>1.5B</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Janus Pro</td>
+                    <td><span class="best">75.5</span></td>
+                    <td>68.3</td>
+                    <td>86.2</td>
+                    <td>39.8</td>
+                    <td>1444.0</td>
+                    <td>36.3</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>1.5B</td>
+                  </tr>
+                  <tr class="base-row">
+                    <td>Qwen2-VL-2B (backbone)</td>
+                    <td>74.9</td>
+                    <td><span class="best">72.4</span></td>
+                    <td><span class="best">87.3</span></td>
+                    <td><span class="best">51.5</span></td>
+                    <td><span class="best">1501.4</span></td>
+                    <td>41.1</td>
+                    <td><span class="best">60.7</span></td>
+                    <td><span class="best">79.7</span></td>
+                    <td>2B</td>
+                  </tr>
+                  <tr class="ours-row">
+                    <td>LaTtE-Flow (Ours)</td>
+                    <td>74.9</td>
+                    <td>72.4</td>
+                    <td>87.3</td>
+                    <td>51.5</td>
+                    <td>1501.4</td>
+                    <td>41.1</td>
+                    <td>60.7</td>
+                    <td>79.7</td>
+                    <td>2B</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Ablations -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Ablations</h3>
+
+            <div class="fig-row" style="margin-top: 10px;">
+              <div class="fig-block">
+                <img src="static/images/performance_vs_training_steps.png"
+                  alt="FID over training steps: LaTtE-Flow converges faster than the Vanilla baseline." />
+                <div class="fig-caption">
+                  <strong>Faster convergence.</strong> Layerwise timestep experts reach a lower FID in fewer training
+                  steps than the Vanilla baseline.
+                </div>
+              </div>
+              <div class="fig-block">
+                <img src="static/images/group_size.png"
+                  alt="Effect of expert group size on FID and inference speed." />
+                <div class="fig-caption">
+                  <strong>Group size trade-off.</strong> Larger groups improve FID but run slower. <em>M</em>&nbsp;=&nbsp;7
+                  gives the best balance and is used in the main results.
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Qualitative -->
+            <h3 class="title is-5" style="text-align:left; margin-top:1.6rem;">Qualitative Samples</h3>
+            <div class="fig-block" style="margin-top: 10px;">
+              <img src="static/images/qualitative_fig.png"
+                alt="256x256 image samples generated by LaTtE-Flow trained on ImageNet." />
+              <div class="fig-caption">
+                256&times;256 samples generated by <span class="latte-name"><span class="a-la">LaTtE</span>-<span
+                    class="a-flow">Flow</span></span> trained on ImageNet.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BibTeX ── -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title" style="display:flex; justify-content:left;">BibTeX</h2>
+        <pre><code>@inproceedings{shen2026latteflow,
+  title     = {LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer},
+  author    = {Shen, Ying and Xu, Zhiyang and Chen, Jiuhai and Diao, Shizhe and
+               Zhang, Jiaxin and Yao, Yuguang and Rimchala, Joy and
+               Lourentzou, Ismini and Huang, Lifu},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <a class="icon-link" href="https://arxiv.org/abs/2506.06952" target="_blank">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/PLAN-Lab">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This site is built upon the template from
+                <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+                made available under the
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                  Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+
+</html>
