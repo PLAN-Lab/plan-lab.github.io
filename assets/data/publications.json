@@ -1,6 +1,65 @@
 {
   "publications": [
     {
+      "id": "2026-Shah-graphvid-interactive-graph-controllable",
+      "title": "GraphVid: Interactive Graph-Controllable Video Generation",
+      "projectName": "GraphVid",
+      "authors": [
+        "Vedant Shah",
+        "Onkar Susladkar",
+        "Tushar Prakash",
+        "Kiet A. Nguyen",
+        "Tianjiao Yu",
+        "Adheesh Juvekar",
+        "Muntasir Wahed",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "European Conference on Computer Vision",
+      "type": "paper",
+      "cover": "assets/images/publications/graphvid.png",
+      "doi": "",
+      "links": {
+        "website": "/projects/graphvid/",
+        "paper": "",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/publications/graphvid.png",
+      "venueAbbr": "ECCV 2026"
+    },
+    {
+      "id": "2026-Yu-dreampartgen-semantically-grounded-part",
+      "title": "DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising",
+      "projectName": "DreamPartGen",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Muntasir Wahed",
+        "Jerry Xiong",
+        "Yifan Shen",
+        "Ying Shen",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "European Conference on Computer Vision",
+      "type": "paper",
+      "cover": "assets/images/publications/dreampartgen.png",
+      "doi": "10.48550/arXiv.2603.19216",
+      "links": {
+        "website": "/projects/dreampartgen/",
+        "paper": "https://arxiv.org/pdf/2603.19216",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/publications/dreampartgen.png",
+      "venueAbbr": "ECCV 2026"
+    },
+    {
       "id": "2025-Liu-palm-progress-aware",
       "title": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
       "projectName": "PALM",
