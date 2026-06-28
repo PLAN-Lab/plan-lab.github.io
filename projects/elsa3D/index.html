@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NK0GM1GM0Q');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation. A unified 3D model that grounds language in scale-specific geometry through sparse Anchor Tokens and elastic routing." />
+
+    <title>ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation" />
+    <meta property="og:description" content="A unified 3D understanding-and-generation model. Sparse Anchor Tokens bind language to scale-specific geometry, and an elastic router roughly halves FLOPs and latency." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plan-lab.github.io/elsa3D/" />
+    <meta property="og:image" content="https://plan-lab.github.io/elsa3D/static/images/method_overview.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <style>
+      /* ELSA3D wordmark: orange -> red gradient (matches the paper) */
+      .model-name {
+        font-weight: 800;
+        background: linear-gradient(90deg, #FF5F05 0%, #FF0000 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Concept accent colors (one per router head / representation) */
+      .c-anchor { color: #FF7A45; font-weight: 700; }  /* semantic anchoring */
+      .c-geo    { color: #25C2C2; font-weight: 700; }  /* octree geometry / scales */
+      .c-route  { color: #BB8BF0; font-weight: 700; }  /* elastic routing */
+
+      .tldr-list { list-style: none; margin: 0.4rem 0 0; padding: 0; text-align: left; }
+      .tldr-list li { margin: 0 0 0.7rem 0; padding-left: 1.9rem; position: relative; line-height: 1.6; }
+      .tldr-list li i { position: absolute; left: 0; top: 0.25rem; color: #FF5F05; }
+
+      .fig-caption { max-width: 920px; margin: 4px auto 0; }
+
+      /* Result tables on the dark project theme */
+      .elsa-table-wrap { overflow-x: auto; margin: 0 auto 6px; -webkit-overflow-scrolling: touch; }
+      .elsa-table { border-collapse: collapse; width: 100%; font-size: 0.9rem;
+                    color: #e7edf6; background: rgba(6, 14, 30, 0.55); }
+      .elsa-table th, .elsa-table td { padding: 7px 10px; text-align: center;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08); white-space: nowrap; }
+      .elsa-table th { color: #ffd9c2; font-weight: 700; letter-spacing: 0.01em;
+                    border-bottom: 1px solid rgba(255, 95, 5, 0.5); }
+      .elsa-table td:first-child, .elsa-table th:first-child { text-align: left; }
+      .elsa-table tr.group td { background: rgba(255, 255, 255, 0.05); color: #9fb3d1;
+                    font-style: italic; font-weight: 600; text-align: left; }
+      .elsa-table tr.ours td { background: transparent; }
+      .elsa-table tr.ours td:first-child { font-weight: 800; box-shadow: inset 3px 0 0 0 #FF5F05; }
+      .elsa-table tr.ref td { background: rgba(255, 255, 255, 0.04); color: #c2cfe4; }
+      .elsa-table tr td.best   { background: transparent; color: #FF7A2E; font-weight: 800; }
+      .elsa-table tr td.second { background: transparent; color: #FFB37A; font-weight: 700; }
+      .elsa-table .unit { font-weight: 500; color: #ffcaa8; }
+
+      .tbl-note { font-size: 0.9rem; color: rgba(226, 232, 240, 0.85);
+                  margin: 2px auto 30px; max-width: 940px; }
+      .chip-best   { color: #FF7A2E; font-weight: 800; }
+      .chip-second { color: #FFB37A; font-weight: 700; }
+
+      .section-sub { color: #ffd9c2; font-weight: 700; font-size: 1.05rem;
+                     margin: 1.4rem 0 0.4rem; text-align: left; }
+    </style>
+  </head>
+
+  <body class="page-project">
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+      <a href="../../index.html#hero" class="nav-logo">
+        <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+      </a>
+      <div class="nav-menu">
+        <a href="../../publications.html" class="nav-item" aria-label="Publications">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Publications</span>
+        </a>
+        <a href="../../index.html#team" class="nav-item" aria-label="Team">
+          <i class="fa-solid fa-users"></i>
+          <span>Team</span>
+        </a>
+        <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+          <i class="fa-solid fa-cube"></i>
+          <span>PLAN Cubes</span>
+        </a>
+        <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <span>Partner with Us</span>
+        </a>
+        <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Join Us</span>
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered"><div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span class="model-name">ELSA3D</span>:
+                Elastic Semantic Anchoring for Unified 3D Understanding and Generation
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <div>
+                  <span class="author-block">
+                    <a href="/team/tianjiao(joey)-yu" class="illini-blue">Tianjiao Yu</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="/team/xinzhuo-li" class="illini-blue">Xinzhuo Li</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="/team/yifan-shen" class="illini-blue">Yifan Shen</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="/team/onkar-susladkar" class="illini-blue">Onkar Susladkar</a>,
+                  </span>
+                  <span class="author-block">
+                    <span class="illini-blue">Yuanzhe Liu</span>,
+                  </span>
+                  <span class="author-block">
+                    <a href="/team/xiaona-zhou" class="illini-blue">Xiaona Zhou</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="/team/ismini-lourentzou" class="illini-blue">Ismini Lourentzou</a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">PLAN Lab</span>
+                <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Paper PDF. TODO: replace href with the arXiv PDF once posted -->
+                  <span class="link-block">
+                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- arXiv. TODO: replace href with the arXiv abstract page once posted -->
+                  <span class="link-block">
+                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Code -->
+                  <span class="link-block">
+                    <a href="https://github.com/PLAN-Lab" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code (coming soon)</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TL;DR + TEASER ===================== -->
+      <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <div class="content">
+              <p><strong>TL;DR:</strong> <span class="model-name">ELSA3D</span> is a unified 3D foundation
+                model that generates 3D assets and reasons about them in language within a single backbone.
+                Rather than concatenating text and 3D tokens into a flat sequence and leaving cross-modal
+                correspondence to self-attention, it makes text&ndash;3D interaction explicit through
+                <strong>elastic semantic anchoring</strong>, structuring language and geometric reasoning
+                jointly along matched abstraction scales.</p>
+
+              <ul class="tldr-list">
+                <li><i class="fa fa-star"></i>
+                  <strong>Elastic semantic anchoring.</strong> Language and geometric reasoning are structured
+                  jointly along matched abstraction scales, rather than collapsing coarse structural cues and
+                  fine geometric detail into a single undifferentiated representation.</li>
+                <li><i class="fa fa-star"></i>
+                  <span class="c-anchor">Anchor Tokens</span> are a sparse, dynamic cross-modal interface: each
+                  anchor selects a semantic token, routes it to the most relevant 3D scale, retrieves
+                  scale-specific geometric evidence, and writes the fused language&ndash;geometry signal back
+                  into the unified sequence &mdash; keeping interaction sparse yet precise.</li>
+                <li><i class="fa fa-star"></i>
+                  An <span class="c-route">elastic router</span> jointly controls block execution, MLP width,
+                  anchor selection, and geometric-scale assignment under a single routing scheme, concentrating
+                  cross-modal capacity where semantic&ndash;geometric alignment is most needed.</li>
+                <li><i class="fa fa-star"></i>
+                  State-of-the-art performance across image-to-3D generation, text-to-3D generation, and 3D
+                  captioning, outperforming the strongest unified baseline on every reported metric while
+                  roughly <strong>halving FLOPs and inference latency</strong> relative to a non-elastic variant
+                  of the same model.</li>
+              </ul>
+            </div>
+
+            <div style="text-align: center; padding: 12px 0 8px 0;">
+              <img loading="lazy" decoding="async" src="./static/images/method_overview.png"
+                   class="interpolation-image" style="width: 94%;" alt="ELSA3D overview: router, transformer block, and anchor building.">
+              <p class="has-text-justified fig-caption">
+                <span class="model-name">ELSA3D</span> is built around <em>elastic semantic anchoring</em>, where
+                routing jointly controls computation and semantic&ndash;geometric grounding. The per-block
+                router has three heads: a <span class="c-route">Gating Head</span> (skip or run the block), a
+                <span class="c-route">Width Head</span> (MLP width), and an
+                <span class="c-anchor">Anchor Routing Head</span> (which text tokens become anchors, and at
+                which geometric scale). Selected text tokens are routed to their preferred scale, cross-attend
+                to the 3D tokens at that scale, and are fused into the anchor set.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== METHOD ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <h2 class="title is-3">Method</h2>
+
+              <div class="content has-text-justified">
+                <p>
+                  Unified 3D foundation models aspire to generate 3D assets and reason about them in language
+                  within a single backbone, where one model can reconstruct an object from an image, generate
+                  one from text, describe its structure, and support downstream reasoning over geometry. Yet
+                  their text&ndash;3D interaction remains largely implicit: existing methods concatenate text
+                  and 3D tokens into a flat sequence and rely on self-attention to discover cross-modal
+                  correspondences, collapsing coarse structural cues and fine geometric detail into a single
+                  undifferentiated representation. What is missing is not merely a stronger hierarchical 3D
+                  representation, but a unified design that structures language and geometric reasoning jointly.
+                  <span class="model-name">ELSA3D</span> addresses this with
+                  <strong>elastic semantic anchoring</strong>, enabling structured interaction between semantic
+                  cues and geometric content.
+                </p>
+
+                <h3 class="section-sub"><span class="c-geo">Scale-aware octree tokenization</span></h3>
+                <p>
+                  Each 3D object is represented as a multiscale octree constructed from a canonicalized
+                  128&sup3; voxel grid, recursively subdivided to a maximum depth. The first three octree levels
+                  are fully populated to provide a stable global scaffold; beyond this coarse scaffold the octree
+                  is sparse, with nodes added only where they intersect surface geometry. Each node carries a
+                  <em>structural bit</em> indicating whether it is subdivided and a <em>content token</em>
+                  encoding its local geometry, quantized against a <em>scale-specific codebook</em> so that each
+                  vocabulary specializes in geometric primitives at its resolution. Every content token is
+                  further augmented with a learned positional embedding and a fixed, non-trainable
+                  <strong>scale tag</strong>, making geometric resolution recoverable from a token's embedding
+                  and available to the transformer. Within each depth, nodes are serialized in Morton (Z-order)
+                  to preserve spatial locality in the token sequence.
+                </p>
+                <img loading="lazy" decoding="async" src="./static/images/octree_tokenizer.png"
+                     class="interpolation-image" style="width: 94%;" alt="Scale-aware octree VQ-VAE tokenization.">
+                <p class="fig-caption">
+                  <strong>Scale-aware octree tokenization.</strong>
+                  <span class="model-name">ELSA3D</span>'s octree VQ-VAE encodes a voxelized 3D shape into
+                  multiscale structural bits and scale-specific content codes, then decodes them to reconstruct
+                  the shape. Nodes are organized by octree depth and serialized with Morton/Z-order to preserve
+                  spatial locality within each scale.
+                </p>
+
+                <h3 class="section-sub"><span class="c-anchor">Anchor Tokens</span></h3>
+                <p>
+                  Dense interaction between all semantic tokens and all 3D tokens is computationally wasteful
+                  and semantically noisy, since many words provide only global or contextual constraints while
+                  only a subset requires precise geometric grounding.
+                  Anchor Tokens form a sparse semantic&ndash;geometric interface
+                  that creates cross-modal interaction only where it is useful. At each block, every selected
+                  semantic token is used as a query to cross-attend over the 3D tokens at its routed scale, and
+                  the retrieved scale-specific evidence is fused with the semantic state to form a transient,
+                  block-local anchor. 
+                </p>
+
+                <h3 class="section-sub"><span class="c-route">Dynamic routing and elastic reasoning</span></h3>
+                <p>
+                  Because input difficulty varies across examples and only a subset of semantic tokens requires
+                  precise geometric grounding, a lightweight per-block router makes
+                  reasoning <strong>elastic in both computation and grounding</strong>. From a mean-pooled block
+                  context it decides whether to execute the block and how much MLP width to allocate, discretized
+                  into four levels. At the token level, it predicts for each semantic token an anchor gate
+                  &mdash; whether the token instantiates an anchor &mdash; and a soft distribution over geometric
+                  scales. By first selecting a scale and then attending within it, each token performs a
+                  coarse-to-fine search for its most relevant geometric correspondence. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== QUALITATIVE RESULTS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <h2 class="title is-3">Qualitative Results</h2>
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_image_to_3d.png"
+                     class="interpolation-image" style="width: 97%;" alt="Image-to-3D qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Image-to-3D generation.</strong> From a single input image,
+                  <span class="model-name">ELSA3D</span> more faithfully preserves both the global shape and the
+                  local appearance cues of the input than strong generative and unified baselines.
+                </p>
+              </div>
+
+              <br>
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_text_to_3d.png"
+                     class="interpolation-image" style="width: 97%;" alt="Text-to-3D qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Text-to-3D generation.</strong> <span class="model-name">ELSA3D</span> more
+                  faithfully follows category-level intent and fine-grained prompt constraints, including object
+                  parts, support structures, materials, and surface appearance.
+                </p>
+              </div>
+
+              <br>
+
+
+              <br>
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_captioning.png"
+                     class="interpolation-image" style="width: 74%;" alt="3D captioning qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>3D object captioning.</strong> Given a 3D shape,
+                  <span class="model-name">ELSA3D</span> produces richer, better-grounded descriptions, capturing
+                  both <span class="c-route">structure</span> and <span class="c-anchor">appearance</span> detail
+                  that terser baselines omit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== QUANTITATIVE RESULTS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Quantitative Results</h2>           
+            <!-- Text-to-3D -->
+            <h3 class="section-sub">Text-to-3D generation</h3>
+            <div class="elsa-table-wrap">
+              <table class="elsa-table">
+                <thead>
+                  <tr><th>Method</th><th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th><th>Q-Align&uarr;</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="group"><td colspan="5">Text-/image-conditioned generators</td></tr>
+                  <tr><td>Shap-E</td><td>24.94</td><td>53.24</td><td>1.13</td><td>1.45</td></tr>
+                  <tr><td>LN3Diff</td><td>18.79</td><td>68.09</td><td>2.24</td><td>2.14</td></tr>
+                  <tr><td>XCube</td><td>26.37</td><td>31.82</td><td>0.42</td><td>1.68</td></tr>
+                  <tr><td>SAR3D</td><td>23.21</td><td>22.43</td><td>0.23</td><td>2.91</td></tr>
+                  <tr><td>3DTopia-XL</td><td>25.89</td><td>43.46</td><td>1.18</td><td>1.47</td></tr>
+                  <tr><td>GaussianAnything</td><td>24.76</td><td>28.94</td><td>0.51</td><td>2.27</td></tr>
+                  <tr><td>Trellis</td><td>29.43</td><td>21.61</td><td class="second">0.11</td><td>3.42</td></tr>
+                  <tr class="group"><td colspan="5">Unified 3D models</td></tr>
+                  <tr><td>ShapeLLM-Omni</td><td>27.98</td><td>24.40</td><td>0.15</td><td>3.21</td></tr>
+                  <tr><td>CoRe3D</td><td class="second">37.66</td><td class="second">20.55</td><td class="second">0.11</td><td class="second">3.68</td></tr>
+                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">3.82</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 3D captioning -->
+            <h3 class="section-sub">3D object captioning</h3>
+            <div class="elsa-table-wrap">
+              <table class="elsa-table">
+                <thead>
+                  <tr><th>Model</th><th>BLEU-1&uarr;</th><th>ROUGE-L&uarr;</th><th>METEOR&uarr;</th><th>Sentence-BERT&uarr;</th><th>SimCSE&uarr;</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="group"><td colspan="6">General vision-language models</td></tr>
+                  <tr><td>LLaVA-13B</td><td>4.01</td><td>8.18</td><td>13.18</td><td>46.97</td><td>48.86</td></tr>
+                  <tr><td>Qwen2.5-VL-7B</td><td>4.05</td><td>7.85</td><td>14.23</td><td>48.90</td><td>50.86</td></tr>
+                  <tr class="group"><td colspan="6">3D-specialized understanding models</td></tr>
+                  <tr><td>3D-LLM</td><td>15.11</td><td>17.84</td><td>19.22</td><td>42.36</td><td>43.58</td></tr>
+                  <tr><td>LEO</td><td>16.98</td><td>20.12</td><td>20.91</td><td>48.01</td><td>47.25</td></tr>
+                  <tr><td>PointLLM-13B</td><td>3.18</td><td>7.54</td><td>12.24</td><td>47.89</td><td>49.01</td></tr>
+                  <tr class="group"><td colspan="6">Unified 3D understanding and generation models</td></tr>
+                  <tr><td>ShapeLLM-Omni</td><td>18.92</td><td>21.46</td><td>22.12</td><td>49.43</td><td>50.72</td></tr>
+                  <tr><td>CoRe3D</td><td class="second">24.02</td><td class="second">26.45</td><td class="second">24.98</td><td class="second">51.17</td><td class="second">52.79</td></tr>
+                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">26.22</td><td class="best">28.15</td><td class="best">25.78</td><td class="best">54.73</td><td class="best">54.11</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+      <!-- ===================== ABLATIONS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Ablations</h2>
+
+            <!-- Anchor tokens -->
+            <h3 class="section-sub">Anchor design</h3>
+            <div class="elsa-table-wrap">
+              <table class="elsa-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Variant</th>
+                    <th colspan="3">Text-to-3D</th>
+                    <th colspan="3">Image-to-3D</th>
+                    <th colspan="2">Captioning</th>
+                    <th colspan="2">Cost</th>
+                  </tr>
+                  <tr>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
+                    <th>FLOPs&nbsp;<span class="unit">(G)</span>&darr;</th><th>Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>No Anchors</td><td>36.72</td><td>21.84</td><td>0.17</td><td>85.94</td><td>14.78</td><td>0.12</td><td>23.42</td><td>50.87</td><td class="best">568</td><td class="best">15.4</td></tr>
+                  <tr><td>Direct Cross-Attn</td><td>38.32</td><td class="second">17.91</td><td>0.12</td><td>88.41</td><td class="second">10.72</td><td>0.08</td><td>24.96</td><td>53.34</td><td>1081</td><td>29.8</td></tr>
+                  <tr><td>Dense Anchors</td><td class="second">38.57</td><td>18.34</td><td class="second">0.11</td><td class="second">88.63</td><td>11.16</td><td class="second">0.07</td><td class="second">25.21</td><td class="second">53.62</td><td>865</td><td>23.6</td></tr>
+                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="second">632</td><td class="second">17.2</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <!-- Scale routing -->
+            <h3 class="section-sub">Scale-aware routing</h3>
+            <div class="elsa-table-wrap">
+              <table class="elsa-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Variant</th>
+                    <th colspan="3">Text-to-3D</th>
+                    <th colspan="3">Image-to-3D</th>
+                    <th colspan="2">Captioning</th>
+                    <th rowspan="2">Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                  </tr>
+                  <tr>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>All-Scale Attn.</td><td class="second">38.72</td><td class="second">17.21</td><td class="second">0.11</td><td class="second">88.71</td><td class="second">10.18</td><td class="second">0.07</td><td class="second">25.36</td><td class="second">53.76</td><td>22.4</td></tr>
+                  <tr><td>Coarse-Only</td><td>37.84</td><td>19.76</td><td>0.14</td><td>86.92</td><td>13.40</td><td>0.10</td><td>24.46</td><td>52.41</td><td class="best">16.5</td></tr>
+                  <tr><td>Fine-Only</td><td>38.09</td><td>18.88</td><td>0.13</td><td>87.63</td><td>12.46</td><td>0.09</td><td>24.73</td><td>52.86</td><td>18.6</td></tr>
+                  <tr><td>Random Scale</td><td>35.31</td><td>21.24</td><td>0.19</td><td>81.05</td><td>14.82</td><td>0.14</td><td>22.02</td><td>49.21</td><td>17.6</td></tr>
+                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="second">17.2</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              Random scale assignment performs worst, so scale diversity alone is insufficient. Constraining
+              every cue to a single resolution (coarse-only or fine-only) underperforms, since category-level
+              cues favor coarse geometry while part and appearance cues require finer scales. Attending to all
+              scales is competitive but slower (22.4s), whereas learned routing attains the
+              <span class="chip-best">best</span> quality at near coarse-only latency.
+            </p>
+
+            <!-- Elastic compute -->
+            <h3 class="section-sub">Elastic computation &mdash; adapt depth <em>and</em> width</h3>
+            <div class="elsa-table-wrap">
+              <table class="elsa-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Variant</th>
+                    <th colspan="3">Text-to-3D</th>
+                    <th colspan="3">Image-to-3D</th>
+                    <th colspan="2">Captioning</th>
+                    <th colspan="2">Compute</th>
+                  </tr>
+                  <tr>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
+                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
+                    <th>FLOPs&nbsp;<span class="unit">(G)</span>&darr;</th><th>Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="ref"><td>Full-Compute <em>(reference)</em></td><td>39.18</td><td>16.22</td><td>0.09</td><td>89.34</td><td>8.92</td><td>0.06</td><td>25.89</td><td>54.28</td><td>1284</td><td>34.6</td></tr>
+                  <tr><td>Depth-Only Elastic</td><td class="second">38.52</td><td class="second">17.61</td><td class="second">0.12</td><td class="second">88.46</td><td class="second">10.42</td><td class="second">0.08</td><td class="second">25.23</td><td class="second">53.64</td><td class="second">811</td><td class="second">24.1</td></tr>
+                  <tr><td>Width-Only Elastic</td><td>38.21</td><td>18.04</td><td class="second">0.12</td><td>88.12</td><td>10.91</td><td class="second">0.08</td><td>25.05</td><td>53.37</td><td>985</td><td>27.0</td></tr>
+                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="best">632</td><td class="best">17.2</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              The full-compute model &mdash; every block executed at full width &mdash; is a quality upper
+              bound but costs 1284 GFLOPs and 34.6s. <span class="model-name">ELSA3D</span> retains
+              near-full-compute quality at <strong>632 GFLOPs and 17.2s, roughly a 2&times; reduction</strong>.
+              Adapting depth or width alone is weaker than adapting both, indicating that efficient unified 3D
+              modeling benefits from jointly choosing <em>which</em> blocks execute and <em>how much</em>
+              capacity each uses.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== BIBTEX ===================== -->
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title" style="justify-content: left; display: flex;">BibTeX</h2>
+          <!-- TODO: update with the arXiv id / venue once available -->
+          <pre><code>@article{yu2026elsa3d,
+  title   = {ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation},
+  author  = {Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Susladkar, Onkar
+             and Liu, Yuanzhe and Zhou, Xiaona and Lourentzou, Ismini},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</code></pre>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <a class="icon-link" href="#" aria-label="Paper PDF">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+            <a class="icon-link" href="https://github.com/PLAN-Lab" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  This site is built upon the work of
+                  <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+                  made available under the
+                  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
