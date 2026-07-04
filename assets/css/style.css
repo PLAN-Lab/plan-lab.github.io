@@ -687,7 +687,7 @@ body {
 
         .sponsors-panel {
             margin-top: 30px;
-            background: var(--glass-bg);
+            background: rgba(5, 14, 34, 0.11);
             border: 1px solid var(--glass-border);
             border-radius: 30px;
             padding: 3rem 2rem;
