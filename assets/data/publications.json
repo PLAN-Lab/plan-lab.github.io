@@ -116,7 +116,7 @@
         "video": "",
         "data": ""
         },
-        "cardCover": "assets/images/publications/phantom.gif",
+        "cardCover": "assets/images/cards/phantom.png",
         "venueAbbr": "CVPR 2026"
     },
     {
@@ -271,6 +271,7 @@
         "video": "",
         "data": ""
       },
+      "cardCover": "assets/images/cards/unidflow.png",
       "venueAbbr": "ICML 2026"
     },
     {
