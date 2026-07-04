@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Pre-Check · PLAN Lab</title>
+<meta name="description" content="PLAN Lab paper pre-check: upload a draft PDF (and optionally the LaTeX source) and get the lab writing-guideline report.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#13294B; --bg2:#0c1c34;
+    --orange:#FF5F05; --blue:#1C75BC; --teal:#2ed1c5;
+    --text:#fff; --dim:rgb(221,227,235); --faint:rgba(221,227,235,.6);
+    --glass:rgba(5,14,34,.5); --line:rgba(255,255,255,.12); --line2:rgba(255,255,255,.08);
+    --err:#ff6b5e; --warn:#f5b74a; --info:#5fb0e6; --good:#39d39f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--text);line-height:1.5;
+    background:radial-gradient(1200px 700px at 80% -10%,rgba(28,117,188,.28),transparent 60%),
+               radial-gradient(900px 600px at 0% 100%,rgba(46,209,197,.12),transparent 55%),
+               linear-gradient(160deg,var(--bg),var(--bg2));
+    background-attachment:fixed;min-height:100vh}
+  a{color:inherit}
+  .nav{display:flex;align-items:center;gap:14px;padding:18px 26px;
+       backdrop-filter:blur(12px);background:rgba(5,14,34,.35);border-bottom:1px solid var(--line2);
+       position:sticky;top:0;z-index:10}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:.3px}
+  .cube{width:30px;height:30px}
+  .brand .sub{font-weight:500;font-size:12px;color:var(--faint);letter-spacing:.4px;margin-top:1px}
+  .nav .spacer{margin-left:auto}
+  .nav a.link{font-size:13.5px;font-weight:500;color:var(--dim);text-decoration:none;
+              padding:8px 13px;border-radius:9px;border:1px solid transparent}
+  .nav a.link:hover{border-color:var(--line);color:#fff}
+
+  .wrap{max-width:840px;margin:0 auto;padding:34px 20px 70px}
+  h1{font-size:26px;font-weight:800;letter-spacing:-.01em}
+  .lead{color:var(--dim);margin-top:8px;font-size:15px}
+  .lead b{color:#fff;font-weight:700}
+
+  .card{background:var(--glass);border:1px solid var(--line);border-radius:16px;
+        padding:22px;margin-top:22px;backdrop-filter:blur(12px)}
+
+  label.fld{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+            color:var(--faint);margin-bottom:8px}
+  input[type=text]{width:100%;font-family:inherit;font-size:15px;color:#fff;
+    background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:10px;padding:12px 13px}
+  input[type=text]::placeholder{color:var(--faint)}
+  input[type=text]:focus{outline:2px solid var(--blue);outline-offset:1px}
+
+  .drops{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  @media(max-width:640px){.drops{grid-template-columns:1fr}}
+  .drop{border:2px dashed rgba(255,255,255,.22);border-radius:14px;
+        padding:24px 16px;text-align:center;cursor:pointer;transition:.15s;background:rgba(255,255,255,.03)}
+  .drop:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .drop.over{border-color:var(--orange);background:rgba(255,95,5,.08)}
+  .drop.has{border-style:solid;border-color:rgba(46,209,197,.55)}
+  .drop .big{font-size:14.5px;font-weight:700}
+  .drop .req{color:var(--orange);font-weight:800}
+  .drop .opt{color:var(--faint);font-weight:600}
+  .drop .sub{font-size:12px;color:var(--faint);margin-top:6px}
+  .drop .file{margin-top:10px;font-size:13px;color:var(--teal);font-weight:700;word-break:break-all}
+  input[type=file]{display:none}
+
+  .optrow{display:flex;align-items:flex-start;gap:10px;margin-top:16px;font-size:14px;color:var(--dim)}
+  .optrow input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);flex-shrink:0;margin-top:1px}
+  .optrow label{flex:1}
+  .hint{font-size:12px;color:var(--faint)}
+
+  .runbtn{margin-top:20px;width:100%;font:inherit;font-size:15.5px;font-weight:800;color:#fff;cursor:pointer;
+          background:linear-gradient(135deg,var(--orange),#ff8a3d);border:none;border-radius:12px;padding:14px}
+  .runbtn:disabled{opacity:.45;cursor:not-allowed}
+  .privacy{margin-top:14px;font-size:12.5px;color:var(--faint);text-align:center}
+  .privacy b{color:var(--dim)}
+
+  .status{margin-top:16px;font-size:14px;color:var(--teal);font-weight:600;display:none}
+  .errbox{display:none;margin-top:16px;background:rgba(255,107,94,.1);border:1px solid rgba(255,107,94,.4);
+          border-radius:12px;padding:14px 16px;color:#ffd9d4;font-size:14px}
+
+  /* results */
+  #results{display:none}
+  .verdict{border-radius:16px;padding:22px 24px;display:flex;align-items:center;gap:18px;
+           border:1px solid var(--line);margin-top:26px}
+  .verdict.good{background:linear-gradient(100deg,rgba(57,211,159,.22),rgba(57,211,159,.06));border-color:rgba(57,211,159,.4)}
+  .verdict.needs-fixes{background:linear-gradient(100deg,rgba(245,183,74,.22),rgba(245,183,74,.06));border-color:rgba(245,183,74,.4)}
+  .verdict.not-ready{background:linear-gradient(100deg,rgba(255,107,94,.22),rgba(255,107,94,.06));border-color:rgba(255,107,94,.4)}
+  .vdot{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+        font-size:24px;font-weight:800;flex:0 0 auto}
+  .good .vdot{background:rgba(57,211,159,.25);color:var(--good)}
+  .needs-fixes .vdot{background:rgba(245,183,74,.25);color:var(--warn)}
+  .not-ready .vdot{background:rgba(255,107,94,.25);color:var(--err)}
+  .verdict h2{font-size:21px;font-weight:800}
+  .verdict p{font-size:14px;color:var(--dim);margin-top:2px}
+
+  .meta{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:16px 0 6px}
+  .chip{font-size:12.5px;padding:5px 11px;border-radius:20px;border:1px solid var(--line);
+        background:rgba(255,255,255,.04);color:var(--dim);font-weight:600}
+  .chip .n{font-weight:800}
+  .chip.e{color:var(--err);border-color:rgba(255,107,94,.4)}
+  .chip.w{color:var(--warn);border-color:rgba(245,183,74,.4)}
+  .chip.i{color:var(--info);border-color:rgba(95,176,230,.4)}
+        border:1px solid var(--line);padding:8px 14px;border-radius:9px}
+
+  .modenote{font-size:13px;color:var(--dim);background:rgba(255,255,255,.04);border:1px solid var(--line2);
+            border-left:3px solid var(--orange);border-radius:10px;padding:11px 14px;margin:14px 0 22px}
+
+  details.fgrp{background:var(--glass);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;
+               backdrop-filter:blur(10px);overflow:hidden}
+  details.fgrp>summary{cursor:pointer;list-style:none;padding:13px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  details.fgrp>summary::-webkit-details-marker{display:none}
+  .fname{font-weight:800;font-size:14px}
+  .fpath{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--faint)}
+  .orphan{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--warn);
+          background:rgba(245,183,74,.12);border:1px solid rgba(245,183,74,.4);border-radius:5px;padding:2px 6px}
+  .fcounts{margin-left:auto;font-size:12px;color:var(--faint);font-weight:700;white-space:nowrap}
+  .fcounts .e{color:var(--err)} .fcounts .w{color:var(--warn)} .fcounts .i{color:var(--info)}
+
+  .item{border-top:1px solid var(--line2);padding:12px 16px}
+  .row1{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .badge{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-radius:5px;padding:2px 8px}
+  .badge.ERROR{background:rgba(255,107,94,.18);color:var(--err);border:1px solid rgba(255,107,94,.45)}
+  .badge.WARN{background:rgba(245,183,74,.15);color:var(--warn);border:1px solid rgba(245,183,74,.45)}
+  .badge.INFO{background:rgba(95,176,230,.14);color:var(--info);border:1px solid rgba(95,176,230,.45)}
+  .rule{font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;
+        background:rgba(255,255,255,.1);color:var(--teal)}
+  .loc{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--faint)}
+  .msg{font-size:14px;margin-top:7px;color:#fff}
+  .fix{font-size:12.5px;color:var(--faint);margin-top:4px}
+  .snip{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--dim);background:rgba(0,0,0,.25);
+        border:1px solid var(--line2);border-radius:7px;padding:8px 10px;margin-top:9px;white-space:pre-wrap;word-break:break-word}
+
+  .clean{background:var(--glass);border:1px solid rgba(57,211,159,.35);border-radius:12px;padding:24px;color:var(--dim);margin-top:14px}
+  .clean .big{font-size:16px;color:var(--good);font-weight:800;margin-bottom:6px}
+
+  .manual{background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:22px;backdrop-filter:blur(10px)}
+  .manual h3{font-size:15px;font-weight:800;margin-bottom:4px}
+  .manual .d{font-size:12.5px;color:var(--faint);margin-bottom:10px}
+  .manual label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--line2);font-size:13.5px;color:var(--dim);cursor:pointer}
+  .manual label:first-of-type{border-top:none}
+  .manual input[type=checkbox]{width:16px;height:16px;margin-top:2px;accent-color:var(--teal);flex:0 0 auto}
+  .manual .tag{font-family:ui-monospace,Menlo,monospace;font-size:11px;background:rgba(255,255,255,.1);border-radius:4px;padding:1px 6px;color:var(--teal);white-space:nowrap}
+
+  .again{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;font-family:inherit;
+         background:linear-gradient(135deg,var(--orange),#ff8a3d);padding:11px 20px;border-radius:11px;border:none}
+  footer{max-width:840px;margin:0 auto;padding:0 20px 40px;color:var(--faint);font-size:12px}
+.rulegrp{margin:8px 10px;border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden;background:rgba(255,255,255,.02)}.rulegrp>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:9px 12px;font-size:14px}.rulegrp>summary::-webkit-details-marker{display:none}.rulegrp>summary::before{content:"\25b8";color:#7a8;transition:transform .1s}.rulegrp[open]>summary::before{content:"\25be"}.rulegrp .rlabel{font-weight:600;color:#e8ecf1}.rulegrp .rname{font-family:ui-monospace,monospace;font-size:12px;color:#8a93a3}.rulegrp .rcount{margin-left:auto;background:rgba(255,255,255,.08);border-radius:10px;padding:1px 9px;font-size:12px;color:#c3c9d2}.rulegrp .item{margin:0;border-top:1px solid rgba(255,255,255,.06);border-radius:0;background:transparent}</style>
+</head>
+<body>
+  <div class="nav">
+    <a class="brand" href="https://plan-lab.github.io/" aria-label="PLAN Lab home">
+      <svg class="cube" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#FF5F05"/></linearGradient></defs>
+        <polygon points="50,6 92,30 50,54 8,30" fill="url(#g)"/>
+        <polygon points="8,30 50,54 50,96 8,72" fill="#1C75BC"/>
+        <polygon points="92,30 50,54 50,96 92,72" fill="#13294B" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+      </svg>
+      <span>PLAN Lab<div class="sub">Paper Pre-Check</div></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="https://plan-lab.github.io/" target="_blank" rel="noopener">plan-lab.github.io ↗</a>
+  </div>
+
+  <div class="wrap">
+    <div id="formview">
+      <h1>Check a draft against the lab guidelines</h1>
+      <p class="lead">Upload the <b>PDF</b> of your draft (required). Add the <b>LaTeX source</b> (.zip or the .tex/.bib files) for the full check. Get a verdict and every issue with its fix and location.</p>
+
+      <div class="card">
+        <div class="drops">
+          <div class="drop" id="pdfdrop" tabindex="0" role="button" aria-label="Upload the paper PDF (required)">
+            <div class="big">Paper PDF <span class="req">required</span></div>
+            <div class="sub">Drop the compiled .pdf here, or click to pick</div>
+            <div class="file" id="pdfname"></div>
+            <input type="file" id="pdffile" accept=".pdf,application/pdf">
+          </div>
+          <div class="drop" id="srcdrop" tabindex="0" role="button" aria-label="Upload the LaTeX source (optional)">
+            <div class="big">LaTeX source <span class="opt">optional</span></div>
+            <div class="sub">.zip of the project, or select the .tex/.bib files</div>
+            <div class="file" id="srcname"></div>
+            <input type="file" id="srcfile" accept=".zip,.tex,.bib,.aux,.txt,application/zip" multiple>
+          </div>
+        </div>
+
+        <div class="optrow">
+          <input type="checkbox" id="camera">
+          <label for="camera">Camera-ready checks (requires the LaTeX source .zip; abstract must carry the PLAN Lab project link and logo)</label>
+        </div>
+
+        <div class="optrow">
+          <input type="checkbox" id="blind">
+          <label for="blind">Double-blind review submission (checks for author names and affiliations on page 1, PDF metadata, acknowledgments, page-1 emails/links, and in source \author, \thanks, ORCID)</label>
+        </div>
+
+        <div class="optrow">
+          <input type="checkbox" id="verifyrefs">
+          <label for="verifyrefs">Verify references online (titles only, against Semantic Scholar, DBLP, Crossref, and arXiv; about one per second, every entry; long bibliographies take a few minutes)</label>
+        </div>
+        <div class="optrow hint">An entry is flagged only when all four indexes miss it, and arXiv preprints with a published version get a conversion warning.</div>
+
+        <button class="runbtn" id="run" disabled>Run the pre-check</button>
+        <div class="status" id="status" role="status"></div>
+        <div class="errbox" id="errbox"></div>
+      </div>
+    </div>
+
+    <div id="results">
+      <div class="verdict" id="verdict">
+        <div class="vdot" id="vdot">!</div>
+        <div><h2 id="vtitle"></h2><p id="vnote"></p></div>
+      </div>
+      <div class="meta">
+        <span class="chip e"><span class="n" id="nerr">0</span> errors</span>
+        <span class="chip w"><span class="n" id="nwarn">0</span> warnings</span>
+        <span class="chip i"><span class="n" id="ninfo">0</span> notes</span>
+      </div>
+      <div class="modenote" id="modenote"></div>
+      <div id="issuelist"></div>
+
+      <button class="again" id="again">Check another paper</button>
+    </div>
+
+  <footer>PLAN Lab · University of Illinois Urbana-Champaign. This tool catches the mechanizable guideline violations only; citation correctness, narrative quality, figures, and anonymization still need a human pass.</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+          onerror="cdnFail('pdf.js')"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+          onerror="cdnFail('JSZip')"></script>
+  <script src="plancheck.js"></script>
+  <script src="pdf_extract.js"></script>
+  <script>
+  "use strict";
+  var cdnErrors = [];
+  function cdnFail(name) { cdnErrors.push(name); }
+
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var pdfFile = null;          // File
+  var srcFiles = [];           // File[]
+
+  function showErr(msg) { var e = $("errbox"); e.textContent = msg; e.style.display = "block"; }
+  function clearErr() { $("errbox").style.display = "none"; }
+  function setStatus(msg) { var s = $("status"); s.textContent = msg; s.style.display = msg ? "block" : "none"; }
+
+  function wireDrop(dropId, inputId, nameId, onFiles) {
+    var drop = $(dropId), input = $(inputId);
+    drop.addEventListener("click", function () { input.click(); });
+    drop.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); }
+    });
+    ["dragover", "dragenter"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("over"); });
+    });
+    ["dragleave", "drop"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("over"); });
+    });
+    drop.addEventListener("drop", function (e) {
+      if (e.dataTransfer && e.dataTransfer.files.length) onFiles(Array.from(e.dataTransfer.files));
+    });
+    input.addEventListener("change", function () {
+      if (input.files.length) onFiles(Array.from(input.files));
+      input.value = "";
+    });
+  }
+
+  function updateRun() {
+    $("run").disabled = !pdfFile;
+  }
+
+  wireDrop("pdfdrop", "pdffile", "pdfname", function (files) {
+    var f = files.find(function (x) { return /\.pdf$/i.test(x.name); });
+    if (!f) { showErr("That is not a .pdf. The paper PDF goes in the left box."); return; }
+    clearErr();
+    pdfFile = f;
+    $("pdfname").textContent = f.name + " (" + Math.round(f.size / 1024) + " KB)";
+    $("pdfdrop").classList.add("has");
+    updateRun();
+  });
+
+  wireDrop("srcdrop", "srcfile", "srcname", function (files) {
+    var ok = files.filter(function (x) { return /\.(zip|tex|bib|aux|txt)$/i.test(x.name); });
+    if (!ok.length) { showErr("Source upload accepts a .zip or .tex/.bib/.aux files."); return; }
+    clearErr();
+    srcFiles = ok;
+    $("srcname").textContent = ok.length === 1
+      ? ok[0].name + " (" + Math.round(ok[0].size / 1024) + " KB)"
+      : ok.length + " files (" + ok.map(function (f) { return f.name; }).join(", ").slice(0, 90) + "\u2026)";
+    $("srcdrop").classList.add("has");
+  });
+
+  function readAsText(file) {
+    return new Promise(function (res, rej) {
+      var r = new FileReader();
+      r.onload = function () { res(r.result); };
+      r.onerror = function () { rej(new Error("Could not read " + file.name)); };
+      r.readAsText(file);
+    });
+  }
+  function readAsBuffer(file) {
+    return new Promise(function (res, rej) {
+      var r = new FileReader();
+      r.onload = function () { res(r.result); };
+      r.onerror = function () { rej(new Error("Could not read " + file.name)); };
+      r.readAsArrayBuffer(file);
+    });
+  }
+
+  async function buildSourceMap() {
+    var map = {};
+    for (var i = 0; i < srcFiles.length; i++) {
+      var f = srcFiles[i];
+      if (/\.zip$/i.test(f.name)) {
+        if (!window.JSZip) throw new Error("JSZip failed to load from the CDN, so the .zip cannot be opened here. Select the .tex/.bib files directly instead.");
+        var buf = await readAsBuffer(f);
+        var zip = await JSZip.loadAsync(buf);
+        var names = Object.keys(zip.files);
+        for (var j = 0; j < names.length; j++) {
+          var entry = zip.files[names[j]];
+          if (entry.dir) continue;
+          if (!/\.(tex|bib|aux|txt)$/i.test(entry.name)) continue;
+          if (/(^|\/)__MACOSX\//.test(entry.name) || /(^|\/)\./.test(entry.name)) continue;
+          map[entry.name] = await entry.async("string");
+        }
+      } else {
+        map[f.name] = await readAsText(f);
+      }
+    }
+    return map;
+  }
+
+  var PDF_ONLY_RULES = { "pdf-extract": 1, "abstract-gain": 1, "abstract-cite": 1, "abstract-missing": 1, "structure": 1, "refs-count": 1 };
+
+  async function run() {
+    if (!pdfFile) return;
+    clearErr();
+    if ($("camera").checked) {
+      var hasZip = srcFiles.some(function (f) { return /\.zip$/i.test(f.name); });
+      if (!hasZip) {
+        showErr("Camera-ready checks need the LaTeX source as a .zip (the project-link, " +
+          "logo, macro, and unused-file rules run on the source). Add the source .zip, or " +
+          "uncheck camera-ready to run the PDF-only checks.");
+        return;
+      }
+    }
+    $("run").disabled = true;
+
+    try {
+      if (!window.pdfjsLib) {
+        throw new Error("pdf.js failed to load" + (cdnErrors.length ? " (" + cdnErrors.join(", ") + " blocked)" : "") +
+          ". Check the network and reload; the PDF cannot be read without it.");
+      }
+
+      setStatus("Reading the PDF\u2026");
+      var buf = await readAsBuffer(pdfFile);
+      var pdf;
+      try {
+        pdf = await pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise;
+      } catch (e) {
+        throw new Error("Could not open the PDF (" + (e && e.message ? e.message : e) + "). Is it password-protected or corrupted?");
+      }
+      var text = await PlanPdfExtract.extractPdfText(pdf);
+      var pdfRes = PlanCheck.checkPdfText(text, pdfFile.name);
+
+      // Line geometry for trailing-text (always) and page-1 text for anonymization.
+      var pages = [];
+      try { pages = await PlanPdfExtract.extractPdfLines(pdf); } catch (e) { pages = []; }
+      var extraItems = PlanCheck.checkTrailingText(pages, pdfFile.name);
+      var imgBoxes = [];
+      try { imgBoxes = await PlanPdfExtract.extractImageBoxes(pdf, pdfjsLib.OPS); } catch (e) { imgBoxes = []; }
+      extraItems = extraItems
+        .concat(PlanCheck.checkFigureSpacing(pages, imgBoxes, pdfFile.name))
+        .concat(PlanCheck.checkPdfQuality(text, pdfFile.name));
+      var doubleBlind = $("blind").checked;
+      if (doubleBlind) {
+        var meta = null;
+        try { meta = (await pdf.getMetadata()).info; } catch (e) { meta = null; }
+        var page1 = pages.length ? pages[0].lines.map(function (l) { return l.text; }).join("\n") : text.slice(0, 1500);
+        extraItems = extraItems
+          .concat(PlanCheck.anonMeta(meta, pdfFile.name))
+          .concat(PlanCheck.anonText(text, page1, pdfFile.name));
+      }
+
+      var srcRes = null;
+      if (srcFiles.length) {
+        setStatus("Reading the LaTeX source\u2026");
+        var fileMap = await buildSourceMap();
+        var hasTexBib = Object.keys(fileMap).some(function (p) { return /\.(tex|bib)$/i.test(p); });
+        if (!hasTexBib) throw new Error("No .tex or .bib files found in the source upload.");
+        setStatus("Running the guideline checks\u2026");
+        srcRes = PlanCheck.runSource(fileMap, { cameraReady: $("camera").checked });
+        if (srcRes.error) throw new Error(srcRes.error);
+
+        // Loose-file uploads lose folder structure (a browser strips paths), so
+        // \input{sec/intro} may not resolve and files would be mis-flagged as
+        // unused. In that case drop the unused-file flags and say why. Zips keep
+        // the structure, so this never triggers for a .zip upload.
+        var usedZip = srcFiles.some(function (f) { return /\.zip$/i.test(f.name); });
+        if (!usedZip) {
+          var mapKeys = {};
+          Object.keys(fileMap).forEach(function (p) { mapKeys[PlanCheck._normPath(p)] = 1; });
+          var unresolved = Object.keys(srcRes.order).some(function (p) { return !mapKeys[p]; });
+          if (unresolved && srcRes.items.some(function (it) { return it.rule === "unused-file"; })) {
+            srcRes.items = srcRes.items.filter(function (it) { return it.rule !== "unused-file"; });
+            srcRes.items.push({
+              file: "(upload)", line: 0, severity: "INFO", rule: "skip-structure",
+              message: "Loose files were uploaded, so folder structure was lost and the " +
+                "unused-file check was skipped. Upload the project as a .zip to run it.",
+              snippet: "",
+            });
+            var s2 = {};
+            srcRes.items.forEach(function (it) { s2[it.severity] = (s2[it.severity] || 0) + 1; });
+            srcRes.summary = s2;
+          }
+        }
+      }
+
+      if ($("verifyrefs") && $("verifyrefs").checked) {
+        var refEntries = PlanCheck.parseReferences(text);
+        if (refEntries.length) {
+          var refTotal = refEntries.length;
+          setStatus("Verifying references online (0/" + refTotal + ")\u2026");
+          var refItems = await PlanCheck.verifyReferences(refEntries, window.fetch.bind(window), {
+            onProgress: function (i, n) { setStatus("Verifying references online (" + i + "/" + n + ")\u2026"); }
+          });
+          extraItems = extraItems.concat(refItems);
+        }
+      }
+
+      var items, order, modeNote, mode;
+      if (srcRes) {
+        var pdfItems = pdfRes.items.filter(function (it) { return PDF_ONLY_RULES[it.rule]; });
+        items = srcRes.items.concat(pdfItems).concat(extraItems);
+        if (doubleBlind) items = items.concat(PlanCheck.anonSource(fileMap));
+        order = srcRes.order;
+        mode = "source + pdf";
+        modeNote = "Full check on the LaTeX source (with line numbers) \u2014 every guideline rule ran. " +
+          "The PDF added the section-structure, abstract (gain / citation / equation), reference-count, and trailing-line checks; " +
+          "its prose rules are covered by the source rules above." +
+          (doubleBlind ? " Double-blind checks ran on the PDF metadata and page 1, and on the source author block." : "");
+      } else {
+        items = pdfRes.items.concat(extraItems);
+        order = {};
+        mode = "pdf";
+        modeNote = "Reduced check on PDF text and layout (prose, structure, trailing lines" +
+          (doubleBlind ? ", author-info leaks" : "") + "). Source-only rules (\\cref, @misc, \\bibitem, " +
+          "commented-out text, vector-vs-raster figures, macros, unused files) were not checked. Upload the source .zip for those.";
+      }
+
+      items = PlanCheck.locateItems(items, pages, pdfFile.name);
+
+      var summary = {};
+      items.forEach(function (it) { summary[it.severity] = (summary[it.severity] || 0) + 1; });
+
+      renderResults(items, summary, order, modeNote, mode);
+    } catch (e) {
+      showErr(e && e.message ? e.message : String(e));
+    } finally {
+      setStatus("");
+      $("run").disabled = !pdfFile;
+    }
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function renderResults(items, summary, order, modeNote, mode) {
+    var v = PlanCheck.verdict(summary);
+    var vd = $("verdict");
+    vd.className = "verdict " + v[0];
+    $("vdot").textContent = v[0] === "good" ? "\u2713" : v[0] === "needs-fixes" ? "\u2013" : "!";
+    $("vtitle").textContent = v[1];
+    $("vnote").textContent = v[3];
+
+    $("nerr").textContent = summary.ERROR || 0;
+    $("nwarn").textContent = summary.WARN || 0;
+    $("ninfo").textContent = summary.INFO || 0;
+    $("modenote").textContent = modeNote;
+
+    var SRK = { ERROR: 0, WARN: 1, INFO: 2 };
+    var hasOrder = Object.keys(order).length > 0;
+    function frank(f) {
+      if (hasOrder && (f in order)) return order[f];
+      return /\.pdf$/i.test(String(f)) ? 2000000 : 1000000;
+    }
+    function posCmp(a, b) {
+      var fa = frank(a.file), fb = frank(b.file);
+      if (fa !== fb) return fa - fb;
+      if (a.file !== b.file) return a.file < b.file ? -1 : 1;
+      if ((a.line || 0) !== (b.line || 0)) return (a.line || 0) - (b.line || 0);
+      var pa = a.page || 9999, pb = b.page || 9999;
+      if (pa !== pb) return pa - pb;
+      return (b.y || 0) - (a.y || 0);
+    }
+    function locOf(it) {
+      if (it.line) return String(it.file).split("/").pop() + " : L" + it.line;
+      if (it.page) return "p." + it.page + (it.lineNo ? " \u00b7 L" + it.lineNo : "");
+      return "\u2014";
+    }
+    var groups = { ERROR: [], WARN: [], INFO: [] };
+    items.forEach(function (it) {
+      if (it.rule === "skip") return;
+      (groups[it.severity] || groups.INFO).push(it);
+    });
+    var META = {
+      ERROR: ["Errors", "Fix these before the draft goes anywhere."],
+      WARN: ["Warnings", "Very likely issues; give each a look."],
+      INFO: ["Notes", "Style nudges."],
+    };
+    var list = $("issuelist");
+    list.innerHTML = "";
+    var total = groups.ERROR.length + groups.WARN.length + groups.INFO.length;
+    if (!total) {
+      list.innerHTML = '<div class="clean"><div class="big">No mechanical issues found \u2713</div>' +
+        "Whether each citation supports its claim, and figure design, still need a human read.</div>";
+    }
+["ERROR", "WARN", "INFO"].forEach(function (sev) {
+      var gitems = groups[sev];
+      if (!gitems.length) return;
+      gitems.sort(posCmp);
+      // group by rule; ERRORs by priority, WARN/INFO by first appearance
+      var byRule = {}, firstSeen = {};
+      gitems.forEach(function (it, ix) {
+        (byRule[it.rule] = byRule[it.rule] || []).push(it);
+        if (!(it.rule in firstSeen)) firstSeen[it.rule] = ix;
+      });
+      var ruleKeys = Object.keys(byRule).sort(function (a, b) {
+        if (sev === "ERROR") {
+          var ra = PlanCheck.ruleRank(a), rb = PlanCheck.ruleRank(b);
+          if (ra !== rb) return ra - rb;
+        }
+        return firstSeen[a] - firstSeen[b];
+      });
+      function rowHtml(it) {
+        var fix = PlanCheck.FIX_GUIDANCE[it.rule] || "";
+        var link = it.link ? ' <a href="' + esc(it.link) + '" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">Google Scholar \u2197</a>' : "";
+        return '<div class="item"><div class="row1">' +
+          '<span class="badge ' + it.severity + '">' + it.severity + "</span>" +
+          '<span class="loc">' + esc(locOf(it)) + "</span></div>" +
+          '<div class="msg">' + esc(it.message) + link + "</div>" +
+          (fix ? '<div class="fix">\u21b3 ' + esc(fix) + "</div>" : "") +
+          (it.snippet ? '<div class="snip">' + esc(it.snippet) + "</div>" : "") +
+          "</div>";
+      }
+      var sub = ruleKeys.map(function (rk) {
+        var g = byRule[rk];
+        var det2 = '<details class="rulegrp">' +
+          '<summary><span class="rlabel">' + esc(PlanCheck.ruleLabel(rk)) + "</span>" +
+          '<span class="rname">' + esc(rk) + "</span>" +
+          '<span class="rcount">' + g.length + "</span></summary>" +
+          g.map(rowHtml).join("") + "</details>";
+        return det2;
+      }).join("");
+      var det = document.createElement("details");
+      det.className = "fgrp";
+      if (sev !== "INFO") det.open = true;
+      det.innerHTML = "<summary>" +
+        '<span class="fname">' + META[sev][0] + " (" + gitems.length + ")</span>" +
+        '<span class="fpath">' + META[sev][1] + "</span>" +
+        '<span class="fcounts"></span>' +
+        "</summary>" + sub;
+      list.appendChild(det);
+    });
+
+
+
+    $("formview").style.display = "none";
+    $("results").style.display = "block";
+    window.scrollTo({ top: 0 });
+  }
+
+  $("run").addEventListener("click", run);
+  $("again").addEventListener("click", function () {
+    $("results").style.display = "none";
+    $("formview").style.display = "block";
+    pdfFile = null; srcFiles = [];
+    $("pdfname").textContent = ""; $("srcname").textContent = "";
+    $("pdfdrop").classList.remove("has"); $("srcdrop").classList.remove("has");
+    updateRun();
+  });
+  </script>
+</body>
+</html>
