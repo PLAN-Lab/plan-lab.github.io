@@ -77,3 +77,17 @@ To create a new project page:
 
 - Copy `simple-site/projects/template/` to `simple-site/projects/<slug>/`
 - Edit `simple-site/projects/<slug>/index.html`
+
+## Images
+
+Use WebP for all images (`cwebp` or Pillow). Card covers up to 1600px wide,
+publication thumbnails up to 960px, team avatars up to 640px. Animated GIFs
+should be converted to animated WebP. Anything over ~300 KB on a card or
+thumbnail is too big.
+
+## Short links (plan-lab.github.io/<project>)
+
+Short links redirect through `404.html`. A slug map at the top of that file
+redirects known projects before the page paints. When adding a project,
+add its folder name to the `SLUGS` map in `404.html` (or leave it: unknown
+slugs are probed automatically with a short delay before redirecting).
