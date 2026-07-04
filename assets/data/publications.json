@@ -90,7 +90,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/palmteaser.png",
+      "cardCover": "assets/images/cards/palmteaser.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -689,7 +689,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/hallu_teaser.png",
+      "cardCover": "assets/images/cards/hallu_teaser.webp",
       "venueAbbr": "CVPR 2026 (Findings)"
     },
     {
@@ -750,7 +750,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/calico.png"
+      "cardCover": "assets/images/cards/calico.webp"
     },
     {
       "id": "2025-Shen-fine-grained-preference-optimi",
@@ -780,7 +780,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/sreasoner.png"
+      "cardCover": "assets/images/cards/sreasoner.webp"
     },
     {
       "id": "2025-Shen-learning-by-asking-for-embodie",
