@@ -863,29 +863,7 @@
 
             const cards = gsap.utils.toArray('.vid-card');
             cards.forEach((card) => {
-                const img = card.querySelector('.vid-card-img');
                 const caption = card.querySelector('.vid-card-caption');
-
-                if (img) {
-                    // Transform-based parallax: composited on the GPU and
-                    // renders identically across browsers, unlike animating
-                    // background-position.
-                    gsap.fromTo(img,
-                        { xPercent: -6, scale: 1.15 },
-                        {
-                            xPercent: 6,
-                            scale: 1.15,
-                            ease: "none",
-                            scrollTrigger: {
-                                trigger: card,
-                                containerAnimation: scrollTween,
-                                start: "left right",
-                                end: "right left",
-                                scrub: true
-                            }
-                        }
-                    );
-                }
 
                 if (caption) {
                     gsap.fromTo(
