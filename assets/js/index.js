@@ -40,20 +40,23 @@
 
     const inner = document.createElement('div');
     inner.className = 'vid-card-inner';
-    const img = document.createElement('div');
-    img.className = 'vid-card-img';
     const cardCover = pub.cardCover || pub.cover;
     if (cardCover) {
-      img.style.backgroundImage = `url(${cardCover})`;
-      const probe = new Image();
-      probe.decoding = 'async';
-      probe.onload = () => {
-        const isPortrait = probe.naturalHeight > probe.naturalWidth;
-        img.classList.add(isPortrait ? 'is-portrait' : 'is-landscape');
+      const img = document.createElement('img');
+      img.className = 'vid-card-img';
+      img.alt = cardTitle(pub);
+      img.decoding = 'async';
+      const tagOrientation = () => {
+        if (!img.naturalWidth || !img.naturalHeight) return;
+        img.classList.add(
+          img.naturalHeight > img.naturalWidth ? 'is-portrait' : 'is-landscape'
+        );
       };
-      probe.src = cardCover;
+      img.addEventListener('load', tagOrientation);
+      img.src = cardCover;
+      if (img.complete) tagOrientation();
+      inner.appendChild(img);
     }
-    inner.appendChild(img);
     card.appendChild(inner);
 
     const caption = document.createElement('div');
@@ -124,12 +127,10 @@
 	    const pubs = (await window.PLANContent.getPublications()).slice().sort(byDateDesc);
 	    const pubById = new Map(pubs.map((p) => [p.id, p]));
 	    const featuredIds = [
-	      '2025-Shen-fine-grained-preference-optimi', // SpatialReasoner
-	      '2025-Nguyen-calico-part-focused-semantic-c', // CALICO
-		  '2025-Liu-palm-progress-aware', //PALM
-          '2025-Li-hallusegbench-counterfactual-v', // HalluSeg
-	      '2025-Yu-core3d-collaborative-reasoning-as', // CoRe3D
-	      //'2025-Wahed-mocha-are-code-language-models', // MOCHA
+	      '2026-Shen-phantom-latent-physics-video', // PHANTOM
+	      '2025-Liu-palm-progress-aware', // PALM
+	      '2026-Susladkar-best-of-both-worlds-unidflow', // UniDFlow
+	      '2026-Yu-dreampartgen-semantically-grounded-part', // DreamPartGen
 	    ];
 
 	    const featured = featuredIds.map((id) => pubById.get(id)).filter(Boolean);
@@ -195,6 +196,52 @@
     }
   }
 
+  // Anchor navigation. The team grid and the horizontal card track render
+  // lazily and grow the page when they load. A plain jump to #partners or
+  // #contact lands first, then the sections above it inflate, and the
+  // viewport ends up on #team instead. So: load everything that changes
+  // layout above the target, let it settle, then scroll.
+  async function ensureLayoutSections() {
+    await loadSection('publications');
+    await loadSection('team');
+  }
+
+  function afterLayout() {
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+  }
+
+  async function scrollToHash(hash, smooth) {
+    const id = String(hash || '').replace(/^#/, '').trim();
+    if (!id) return false;
+    const el = document.getElementById(id);
+    if (!el) return false;
+    await ensureLayoutSections();
+    await afterLayout();
+    if (window.ScrollTrigger) {
+      try { ScrollTrigger.refresh(); } catch (e) { /* not registered yet */ }
+    }
+    el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    return true;
+  }
+
+  function setupAnchorNavigation() {
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      const m = href.match(/^(?:index\.html)?#([A-Za-z0-9_-]+)$/);
+      if (!m) return;
+      if (!document.getElementById(m[1])) return;
+      e.preventDefault();
+      if (window.location.hash !== '#' + m[1]) {
+        history.pushState(null, '', '#' + m[1]);
+      }
+      scrollToHash(m[1], true);
+    });
+  }
+
   function hashToSectionId(hash) {
     const raw = String(hash || '').replace(/^#/, '').trim();
     if (!raw) return '';
@@ -226,16 +273,19 @@
 
   async function init() {
     try {
-      const prioritized = hashToSectionId(window.location.hash);
-      if (prioritized) {
-        await loadSection(prioritized);
-      }
-
+      setupAnchorNavigation();
       setupSectionObserver();
 
+      if (window.location.hash) {
+        await scrollToHash(window.location.hash, false);
+        // Correct once more after images and fonts finish loading.
+        window.addEventListener('load', () => {
+          scrollToHash(window.location.hash, false);
+        }, { once: true });
+      }
+
       window.addEventListener('hashchange', () => {
-        const next = hashToSectionId(window.location.hash);
-        if (next) loadSection(next);
+        scrollToHash(window.location.hash, false);
       });
     } catch (e) {
       console.error(e);

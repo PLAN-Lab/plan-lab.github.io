@@ -119,7 +119,7 @@
   async function loadJson(path) {
     if (cache.has(path)) return cache.get(path);
 
-    const promise = fetch(path, { cache: 'no-store' }).then(async (res) => {
+    const promise = fetch(path).then(async (res) => {
       if (!res.ok) {
         throw new Error(`Failed to load ${path}: ${res.status}`);
       }
