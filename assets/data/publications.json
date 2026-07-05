@@ -64,17 +64,17 @@
       "title": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
       "projectName": "PALM",
       "authors": [
-        "Yuanzhe Liu", 
-        "Jingyuan Zhu", 
-        "Yuchen Mo", 
-        "Gen Li", 
-        "Xu Cao", 
-        "Jin Jin", 
+        "Yuanzhe Liu",
+        "Jingyuan Zhu",
+        "Yuchen Mo",
+        "Gen Li",
+        "Xu Cao",
+        "Jin Jin",
         "Yifan Shen",
-        "Zhengyuan Li", 
-        "Tianjiao Yu", 
-        "Wenzhen Yuan", 
-        "Fangqiang Ding", 
+        "Zhengyuan Li",
+        "Tianjiao Yu",
+        "Wenzhen Yuan",
+        "Fangqiang Ding",
         "Ismini Lourentzou"
       ],
       "year": 2026,
@@ -95,19 +95,19 @@
     },
     {
       "id": "2026-Shen-phantom-latent-physics-video",
-      "title": "Phantom: Learning Latent Physical Dynamics for Video Generation",
+      "title": "Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics",
       "projectName": "Phantom",
       "authors": [
         "Ying Shen",
         "Jerry Xiong",
-        "Tianjiao Yu", 
+        "Tianjiao Yu",
         "Ismini Lourentzou"
       ],
       "year": 2026,
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/phantom.gif",      
+      "cover": "assets/images/publications/phantom.gif",
       "doi": "",
       "links": {
         "website": "/projects/phantom/",
@@ -115,9 +115,9 @@
         "code": "",
         "video": "",
         "data": ""
-        },
-        "cardCover": "assets/images/cards/phantom.png",
-        "venueAbbr": "CVPR 2026"
+      },
+      "cardCover": "assets/images/cards/phantom.png",
+      "venueAbbr": "CVPR 2026"
     },
     {
       "id": "2026-Susladkar-pyratok-language-aligned",
@@ -1012,7 +1012,7 @@
       },
       "venueAbbr": "AAAI 2026 (ORAL)"
     },
-        {
+    {
       "id": "2026-zhou-tiny-but-trusted-efficient-vision-language-reasoning-for-time-series",
       "title": "Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection",
       "projectName": "VisAnom",
@@ -1035,6 +1035,107 @@
         "code": "",
         "video": "",
         "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Shen-egoforge-goal-directed-egocentric-world-simulator",
+      "title": "EgoForge: Goal-Directed Egocentric World Simulator",
+      "projectName": "EgoForge",
+      "authors": [
+        "Yifan Shen",
+        "Jiateng Liu",
+        "Xinzhuo Li",
+        "Yuanzhe Liu",
+        "Bingxuan Li",
+        "Houze Yang",
+        "Wenqi Jia",
+        "Yijiang Li",
+        "Tianjiao Yu",
+        "James Matthew Rehg",
+        "Xu Cao",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-03-20",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/egoforge.png",
+      "doi": "10.48550/arXiv.2603.20169",
+      "links": {
+        "website": "/projects/egoforge/",
+        "paper": "https://arxiv.org/pdf/2603.20169",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Shen-cogniroute-learning-to-route-social-evidence",
+      "title": "CogniRoute: Learning to Route Social Evidence in Omni-Modal Models",
+      "projectName": "CogniRoute",
+      "authors": [
+        "Yifan Shen",
+        "Pei Tian",
+        "Xinzhuo Li",
+        "Bowen Fang",
+        "Shujun Xia",
+        "Bingxuan Li",
+        "Ana Jojic",
+        "Wenming Ye",
+        "Xu Cao",
+        "James Matthew Rehg",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-06-30",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/cogniroute.png",
+      "doi": "10.48550/arXiv.2606.20970",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2606.20970",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Li-toward-cognitive-supersensing-multimodal-llm",
+      "title": "Toward Cognitive Supersensing in Multimodal Large Language Model",
+      "projectName": "Cognitive Supersensing",
+      "authors": [
+        "Boyi Li",
+        "Yifan Shen",
+        "Yuanzhe Liu",
+        "Yifan Xu",
+        "Jiateng Liu",
+        "Xinzhuo Li",
+        "Zhengyuan Li",
+        "Jingyuan Zhu",
+        "Yunhan Zhong",
+        "Fangzhou Lan",
+        "Jianguo Cao",
+        "James Matthew Rehg",
+        "Heng Ji",
+        "Ismini Lourentzou",
+        "Xu Cao"
+      ],
+      "year": 2026,
+      "date": "2026-02-02",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/cognitive-supersensing.png",
+      "doi": "10.48550/arXiv.2602.01541",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2602.01541",
+        "code": "https://github.com/PediaMedAI/Cognition-MLLM",
+        "video": "",
+        "data": "https://huggingface.co/datasets/PediaMedAI/CogSense-Bench"
       },
       "venueAbbr": "arXiv"
     }
