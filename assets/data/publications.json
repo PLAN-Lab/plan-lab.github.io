@@ -18,7 +18,7 @@
       "date": "2026-09-01",
       "venue": "European Conference on Computer Vision",
       "type": "paper",
-      "cover": "assets/images/publications/graphvid.png",
+      "cover": "assets/images/publications/graphvid.webp",
       "doi": "",
       "links": {
         "website": "/projects/graphvid/",
@@ -27,7 +27,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/publications/graphvid.png",
+      "cardCover": "assets/images/publications/graphvid.webp",
       "venueAbbr": "ECCV 2026"
     },
     {
@@ -47,7 +47,7 @@
       "date": "2026-09-01",
       "venue": "European Conference on Computer Vision",
       "type": "paper",
-      "cover": "assets/images/publications/dreampartgen.png",
+      "cover": "assets/images/publications/dreampartgen.webp",
       "doi": "10.48550/arXiv.2603.19216",
       "links": {
         "website": "/projects/dreampartgen/",
@@ -56,7 +56,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/publications/dreampartgen.png",
+      "cardCover": "assets/images/publications/dreampartgen.webp",
       "venueAbbr": "ECCV 2026"
     },
     {
@@ -81,7 +81,7 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/palm.png",
+      "cover": "assets/images/publications/palm.webp",
       "doi": "10.48550/arXiv.2601.07060",
       "links": {
         "website": "/projects/palm/",
@@ -107,7 +107,7 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/phantom.gif",
+      "cover": "assets/images/publications/phantom.webp",
       "doi": "",
       "links": {
         "website": "/projects/phantom/",
@@ -116,7 +116,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/phantom.png",
+      "cardCover": "assets/images/cards/phantom.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -136,7 +136,7 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/pyratok.gif",
+      "cover": "assets/images/publications/pyratok.webp",
       "doi": "10.48550/arXiv.2601.16210",
       "links": {
         "website": "/projects/pyratok/",
@@ -145,7 +145,7 @@
         "video": "",
         "data": "https://huggingface.co/onkarsus13/PyraTok"
       },
-      "cardCover": "assets/images/cards/pyratok.png",
+      "cardCover": "assets/images/cards/pyratok.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -168,7 +168,7 @@
       "date": "2026-04-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/rewardflow.png",
+      "cover": "assets/images/publications/rewardflow.webp",
       "doi": "",
       "links": {
         "website": "/projects/rewardflow/",
@@ -177,7 +177,7 @@
         "video": "",
         "data": "https://huggingface.co/onkarsus13/RewardFlow"
       },
-      "cardCover": "assets/images/cards/rewardflow.png",
+      "cardCover": "assets/images/cards/rewardflow.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -197,7 +197,7 @@
       "date": "2026-04-09",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "projects/3d-vcd/static/images/3D-VCD-Method.png",
+      "cover": "assets/images/publications/3d-vcd_method.webp",
       "doi": "10.48550/arXiv.2604.08645",
       "links": {
         "website": "/projects/3d-vcd/",
@@ -230,7 +230,7 @@
       "date": "2026-03-24",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "projects/vtam/static/images/teaser.png",
+      "cover": "assets/images/publications/vtam_teaser.webp",
       "doi": "10.48550/arXiv.2603.23481",
       "links": {
         "website": "/projects/vtam/",
@@ -262,7 +262,7 @@
       "date": "2026-06-03",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "projects/unidflow/static/images/teaser.jpg",
+      "cover": "assets/images/publications/unidflow_teaser.webp",
       "doi": "10.48550/arXiv.2602.12221",
       "links": {
         "website": "/projects/unidflow/",
@@ -271,7 +271,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/unidflow.png",
+      "cardCover": "assets/images/cards/unidflow.webp",
       "venueAbbr": "ICML 2026"
     },
     {
@@ -293,7 +293,7 @@
       "date": "2026-06-02",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/latte.png",
+      "cover": "assets/images/publications/latte.webp",
       "doi": "10.48550/arXiv.2506.06952",
       "links": {
         "website": "/projects/latte-flow/",
@@ -322,7 +322,7 @@
       "date": "2021-10-26",
       "venue": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management",
       "type": "paper",
-      "cover": "assets/images/publications/sauce.png",
+      "cover": "assets/images/publications/sauce.webp",
       "doi": "10.1145/3459637.3481950",
       "links": {
         "website": "",
@@ -349,7 +349,7 @@
       "date": "2022-01-01",
       "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
       "type": "paper",
-      "cover": "assets/images/publications/chexrelnet.png",
+      "cover": "assets/images/publications/chexrelnet.webp",
       "doi": "10.1007/978-3-031-16431-6_55",
       "links": {
         "website": "",
@@ -375,7 +375,7 @@
       "date": "2022-12-17",
       "venue": "2022 IEEE International Conference on Big Data (Big Data)",
       "type": "paper",
-      "cover": "assets/images/publications/pried.png",
+      "cover": "assets/images/publications/pried.webp",
       "doi": "10.1109/BigData55660.2022.10020861",
       "links": {
         "website": "",
@@ -399,7 +399,7 @@
       "date": "2022-06-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/unremix.png",
+      "cover": "assets/images/publications/unremix.webp",
       "doi": "10.48550/arXiv.2206.01197",
       "links": {
         "website": "",
@@ -422,7 +422,7 @@
       "date": "2022-04-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/swaro.png",
+      "cover": "assets/images/publications/swaro.webp",
       "doi": "10.48550/arXiv.2204.10314",
       "links": {
         "website": "",
@@ -446,7 +446,7 @@
       "date": "2023-01-01",
       "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
       "type": "paper",
-      "cover": "assets/images/publications/chexrelformer.png",
+      "cover": "assets/images/publications/chexrelformer.webp",
       "doi": "10.1007/978-3-031-43904-9_66",
       "links": {
         "website": "",
@@ -471,7 +471,7 @@
       "date": "2023-03-01",
       "venue": "Mechanical Systems and Signal Processing",
       "type": "paper",
-      "cover": "assets/images/publications/shm.png",
+      "cover": "assets/images/publications/shm.webp",
       "doi": "10.1016/j.ymssp.2022.109910",
       "links": {
         "website": "",
@@ -494,7 +494,7 @@
       "date": "2024-01-04",
       "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
       "type": "paper",
-      "cover": "assets/images/publications/marble.png",
+      "cover": "assets/images/publications/marble.webp",
       "doi": "10.1145/3583780.3615485",
       "links": {
         "website": "",
@@ -518,7 +518,7 @@
       "date": "2024-04-17",
       "venue": "Proceedings of the ACM on Human-Computer Interaction",
       "type": "paper",
-      "cover": "assets/images/publications/discourse.png",
+      "cover": "assets/images/publications/discourse.webp",
       "doi": "10.1145/3653703",
       "links": {
         "website": "",
@@ -541,7 +541,7 @@
       "date": "2024-03-24",
       "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
       "type": "paper",
-      "cover": "assets/images/publications/coronet.png",
+      "cover": "assets/images/publications/coronet.webp",
       "doi": "10.1609/aaai.v38i3.27989",
       "links": {
         "website": "",
@@ -566,7 +566,7 @@
       "date": "2024-04-14",
       "venue": "ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
       "type": "paper",
-      "cover": "assets/images/publications/uamixmae.png",
+      "cover": "assets/images/publications/uamixmae.webp",
       "doi": "10.1109/ICASSP48485.2024.10446342",
       "links": {
         "website": "",
@@ -590,7 +590,7 @@
       "date": "2024-01-04",
       "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
       "type": "paper",
-      "cover": "assets/images/publications/farm.png",
+      "cover": "assets/images/publications/farm.webp",
       "doi": "10.1109/wacv57701.2024.00549",
       "links": {
         "website": "",
@@ -623,7 +623,7 @@
       "date": "2024-12-31",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/prima.png",
+      "cover": "assets/images/publications/prima.webp",
       "doi": "10.48550/arXiv.2412.15209",
       "links": {
         "website": "/projects/prima/",
@@ -647,7 +647,7 @@
       "date": "2024-10-27",
       "venue": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
       "type": "paper",
-      "cover": "assets/images/publications/miracle.png",
+      "cover": "assets/images/publications/miracle.webp",
       "doi": "10.1145/3691620.3695524",
       "links": {
         "website": "",
@@ -681,7 +681,7 @@
       "date": "2026-05-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/hallusegbench.png",
+      "cover": "assets/images/publications/hallusegbench.webp",
       "doi": "10.48550/arXiv.2506.21546",
       "links": {
         "website": "/projects/hallusegbench/",
@@ -717,7 +717,7 @@
       "date": "2025-12-07",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "assets/images/publications/purpcode.png",
+      "cover": "assets/images/publications/purpcode.webp",
       "doi": "10.48550/arXiv.2507.19060",
       "links": {
         "website": "",
@@ -742,7 +742,7 @@
       "date": "2025-06-12",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/calico.png",
+      "cover": "assets/images/publications/calico.webp",
       "doi": "10.48550/arXiv.2412.19331",
       "links": {
         "website": "/projects/calico/",
@@ -772,7 +772,7 @@
       "date": "2025-12-07",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "assets/images/publications/spatialreasonerr1.png",
+      "cover": "assets/images/publications/spatialreasonerr1.webp",
       "doi": "10.48550/arXiv.2506.21656",
       "links": {
         "website": "/projects/spatialreasoner/",
@@ -795,7 +795,7 @@
       "date": "2025-01-04",
       "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
       "type": "paper",
-      "cover": "assets/images/publications/elba.gif",
+      "cover": "assets/images/publications/elba.webp",
       "doi": "10.48550/arXiv.2302.04865",
       "links": {
         "website": "",
@@ -823,7 +823,7 @@
       "date": "2025-11-04",
       "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings",
       "type": "paper",
-      "cover": "assets/images/publications/mocha.png",
+      "cover": "assets/images/publications/mocha.webp",
       "doi": "10.48550/arXiv.2507.19598",
       "links": {
         "website": "",
@@ -832,7 +832,7 @@
         "video": "",
         "data": "https://huggingface.co/purpcode"
       },
-      "cardCover": "assets/images/cards/mocha.png"
+      "cardCover": "assets/images/cards/mocha.webp"
     },
     {
       "id": "2025-Yu-part2gs-part-aware-modeling-of",
@@ -850,7 +850,7 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/part2gs.gif",
+      "cover": "assets/images/publications/part2gs.webp",
       "doi": "10.48550/arXiv.2506.17212",
       "links": {
         "website": "/projects/part2gs/",
@@ -877,7 +877,7 @@
       "date": "2025-03-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/ece.png",
+      "cover": "assets/images/publications/ece.webp",
       "doi": "10.48550/arXiv.2503.10628",
       "links": {
         "website": "/projects/ece/",
@@ -900,7 +900,7 @@
       "date": "2026-2-07",
       "venue": "Transactions on Machine Learning Research",
       "type": "paper",
-      "cover": "assets/images/publications/mtsbench.png",
+      "cover": "assets/images/publications/mtsbench.webp",
       "doi": "10.48550/arXiv.2506.21550",
       "links": {
         "website": "https://plan-lab.github.io/projects/mtsbench/",
@@ -924,7 +924,7 @@
       "date": "2025-01-01",
       "venue": "Transactions on Machine Learning Research",
       "type": "paper",
-      "cover": "assets/images/publications/ec-vlm.png",
+      "cover": "assets/images/publications/ec-vlm.webp",
       "doi": "https://openreview.net/pdf?id=bivKGSaXkD",
       "links": {
         "website": "/projects/ec-vlm/",
@@ -950,7 +950,7 @@
       "date": "2025-11-04",
       "venue": "Findings of the Association for Computational Linguistics: EMNLP",
       "type": "paper",
-      "cover": "assets/images/publications/mmplanner.png",
+      "cover": "assets/images/publications/mmplanner.webp",
       "doi": "10.18653/v1/2025.findings-emnlp.1011",
       "links": {
         "website": "/projects/mmplanner/",
@@ -976,8 +976,8 @@
       "date": "2025-12-14",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/core3d.png",
-      "cardCover": "assets/images/cards/core3d.png",
+      "cover": "assets/images/publications/core3d.webp",
+      "cardCover": "assets/images/cards/core3d.webp",
       "doi": "10.48550/arXiv.2512.12768",
       "links": {
         "website": "/projects/core3d/",
@@ -1001,7 +1001,7 @@
       "date": "2026-01-01",
       "venue": "AAAI Conference on Artificial Intelligence (Oral)",
       "type": "paper",
-      "cover": "assets/images/publications/dash.png",
+      "cover": "assets/images/publications/dash.webp",
       "doi": "10.48550/arXiv.2512.10952",
       "links": {
         "website": "/projects/dash/",
@@ -1027,7 +1027,7 @@
       "date": "2026-05-28",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "projects/VisAnom/static/images/VisAnomReasoner_teaser.png",
+      "cover": "assets/images/publications/visanom_teaser.webp",
       "doi": "10.48550/arXiv.2605.30344",
       "links": {
         "website": "/projects/VisAnom/",
@@ -1060,7 +1060,7 @@
       "date": "2026-03-20",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/egoforge.png",
+      "cover": "assets/images/publications/egoforge.webp",
       "doi": "10.48550/arXiv.2603.20169",
       "links": {
         "website": "/projects/egoforge/",
@@ -1092,7 +1092,7 @@
       "date": "2026-06-30",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/cogniroute.png",
+      "cover": "assets/images/publications/cogniroute.webp",
       "doi": "10.48550/arXiv.2606.20970",
       "links": {
         "website": "/projects/cogniroute/",
@@ -1128,7 +1128,7 @@
       "date": "2026-02-02",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/cognitive-supersensing.png",
+      "cover": "assets/images/publications/cognitive-supersensing.webp",
       "doi": "10.48550/arXiv.2602.01541",
       "links": {
         "website": "",
