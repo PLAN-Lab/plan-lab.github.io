@@ -46,6 +46,7 @@
       img.className = 'vid-card-img';
       img.alt = cardTitle(pub);
       img.decoding = 'async';
+      img.loading = 'lazy';
       const tagOrientation = () => {
         if (!img.naturalWidth || !img.naturalHeight) return;
         img.classList.add(
