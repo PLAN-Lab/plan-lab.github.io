@@ -1095,7 +1095,7 @@
       "cover": "assets/images/publications/cogniroute.png",
       "doi": "10.48550/arXiv.2606.20970",
       "links": {
-        "website": "",
+        "website": "/projects/cogniroute/",
         "paper": "https://arxiv.org/pdf/2606.20970",
         "code": "",
         "video": "",
@@ -1121,8 +1121,8 @@
         "Jianguo Cao",
         "James Matthew Rehg",
         "Heng Ji",
-        "Ismini Lourentzou",
-        "Xu Cao"
+        "Ismini Lourentzou^",
+        "Xu Cao^"
       ],
       "year": 2026,
       "date": "2026-02-02",
