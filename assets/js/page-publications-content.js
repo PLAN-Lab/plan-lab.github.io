@@ -101,21 +101,33 @@
       .trim();
   }
 
+  // Split a trailing role marker (^ * and the dagger symbols) off an author name.
+  // "Ismini Lourentzou^" still matches the team key "ismini lourentzou", and the
+  // marker is rendered as a superscript rather than printed inline as raw text.
+  function splitAuthorMarker(name) {
+    const raw = String(name || '').trim();
+    const m = raw.match(/^(.*?)\s*([*^\u2020\u2021]+)$/);
+    if (m && m[1].trim()) return { base: m[1].trim(), mark: m[2] };
+    return { base: raw, mark: '' };
+  }
+
   function buildAuthors(pub) {
     const authors = Array.isArray(pub.authors) ? pub.authors : [];
     const highlightedAuthors = new Set(['yuanzhe liu', 'xingyou liu']);
     const parts = authors.map((a) => {
-      const name = String(a || '').trim();
-      if (!name) return '';
-      const key = normalizeName(name);
+      const raw = String(a || '').trim();
+      if (!raw) return '';
+      const { base, mark } = splitAuthorMarker(raw);
+      const key = normalizeName(base);
+      const sup = mark ? `<sup class="pub-author-mark">${escapeHtml(mark)}</sup>` : '';
       const member = labMemberByName.get(key);
       if (member && member.profileUrl) {
-        return `<a class="pub-author-lab" href="${escapeHtml(member.profileUrl)}">${escapeHtml(name)}</a>`;
+        return `<a class="pub-author-lab" href="${escapeHtml(member.profileUrl)}">${escapeHtml(base)}</a>${sup}`;
       }
       if (highlightedAuthors.has(key)) {
-        return `<span class="pub-author-lab">${escapeHtml(name)}</span>`;
+        return `<span class="pub-author-lab">${escapeHtml(base)}</span>${sup}`;
       }
-      return escapeHtml(name);
+      return `${escapeHtml(base)}${sup}`;
     });
     return parts.filter(Boolean).join(', ');
   }
@@ -212,6 +224,14 @@
     authors.className = 'pub-authors';
     authors.innerHTML = buildAuthors(pub);
 
+    const noteText = String(pub.notemark || pub.note || '').trim();
+    let authorNote = null;
+    if (noteText) {
+      authorNote = document.createElement('p');
+      authorNote.className = 'pub-author-note';
+      authorNote.textContent = noteText;
+    }
+
     const links = document.createElement('div');
     links.className = 'pub-links';
 
@@ -273,6 +293,7 @@
     content.appendChild(venue);
     content.appendChild(title);
     content.appendChild(authors);
+    if (authorNote) content.appendChild(authorNote);
     if (links.childNodes.length) content.appendChild(links);
 
     card.appendChild(imgWrap);
