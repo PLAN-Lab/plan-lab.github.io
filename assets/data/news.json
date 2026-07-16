@@ -1,0 +1,172 @@
+{
+  "news": [
+    {
+      "id": "2026-icml-seoul",
+      "date": "2026-04",
+      "title": "2 papers at ICML 2026!",
+      "description": "UniDFlow and LaTtE-Flow appeared at ICML 2026 in Seoul, South Korea, July 6–11, 2026.",
+      "papers": [
+        {
+          "pubId": "2026-Susladkar-best-of-both-worlds-unidflow"
+        },
+        {
+          "pubId": "2026-Shen-latte-flow"
+        }
+      ],
+      "cardImage": "assets/images/news/logos/icml-2026.png"
+    },
+    {
+      "id": "2026-eccv-acceptances",
+      "date": "2026-06",
+      "title": "3 papers at ECCV 2026!",
+      "description": "GraphVid, DreamPartGen, and Decoding Children's Gait Behavior will appear at ECCV 2026 in Malmö, Sweden, September 8–13, 2026.",
+      "papers": [
+        {
+          "pubId": "2026-Shah-graphvid-interactive-graph-controllable"
+        },
+        {
+          "pubId": "2026-Yu-dreampartgen-semantically-grounded-part"
+        },
+        {
+          "title": "Decoding Children's Gait Behavior",
+          "authors": [
+            "Yifan Shen",
+            "Boyi Li",
+            "Meihuan Huang",
+            "Yuanzhe Liu",
+            "Xu Cao",
+            "Jinyang Jin",
+            "Zhengyuan Li",
+            "Anglin Liu",
+            "Junho Kim",
+            "Jingyuan Zhu",
+            "Lan Fangzhou",
+            "Jianguo Cao",
+            "Jintai Chen",
+            "Ismini Lourentzou",
+            "James Matthew Rehg"
+          ],
+          "venueAbbr": "ECCV 2026",
+          "year": 2026,
+          "cover": "assets/images/news/decoding-childrens-gait.webp"
+        }
+      ],
+      "cardImage": "assets/images/news/logos/eccv-2026.png"
+    },
+    {
+      "id": "2026-cvpr-denver",
+      "date": "2026-02",
+      "title": "7 papers at CVPR 2026!",
+      "description": "PLAN Lab presented seven papers at CVPR 2026 in Denver, CO, June 3–7, 2026: PHANTOM, Part²GS, RewardFlow, PALM, PyraTok, 3D-VCD, and HalluSegBench.",
+      "link": "cvpr2026.html",
+      "linkLabel": "PLAN @ CVPR 2026",
+      "papers": [
+        {
+          "pubId": "2026-Shen-phantom-latent-physics-video"
+        },
+        {
+          "pubId": "2025-Yu-part2gs-part-aware-modeling-of"
+        },
+        {
+          "pubId": "2026-Susladkar-rewardflow"
+        },
+        {
+          "pubId": "2025-Liu-palm-progress-aware"
+        },
+        {
+          "pubId": "2026-Susladkar-pyratok-language-aligned"
+        },
+        {
+          "pubId": "2026-Ogunleye-3d-vcd-hallucination-mitigation"
+        },
+        {
+          "pubId": "2025-Li-hallusegbench-counterfactual-v"
+        }
+      ],
+      "cardImage": "assets/images/news/logos/cvpr-2026.png"
+    },
+    {
+      "id": "2026-aaai-dash-oral",
+      "date": "2026-01",
+      "title": "1 Oral paper at AAAI 2026!",
+      "description": "DaSH was presented as an Oral at AAAI 2026 in Singapore, January 20–27, 2026.",
+      "papers": [
+        {
+          "pubId": "2026-Zhou-hierarchical-dataset-selection-for"
+        }
+      ],
+      "cardImage": "assets/images/news/logos/aaai-2026.png"
+    },
+    {
+      "id": "2025-neurips-san-diego",
+      "date": "2025-12",
+      "title": "2 papers at NeurIPS 2025!",
+      "description": "PurpCode and SpatialReasoner-R1 appeared at NeurIPS 2025 in San Diego, CA, December 2–7, 2025.",
+      "papers": [
+        {
+          "pubId": "2025-Liu-purpcode-reasoning-for-safer-c"
+        },
+        {
+          "pubId": "2025-Shen-fine-grained-preference-optimi"
+        }
+      ],
+      "cardImage": "assets/images/news/logos/neurips-2025.png"
+    },
+{
+  "id": "2025-amazon-nova-ai-challenge",
+  "date": "2025-07",
+  "title": "PLAN Lab wins the Amazon Nova AI Challenge!",
+  "description": "Team PurpCorn-PLAN (UIUC) was named the winning defending team in the first Amazon Nova AI Challenge on trusted AI, earning a $250,000 award.",
+  "link": "https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge",
+  "image": "https://cdn.amazon.science/dims4/default/a2cb44f/2147483647/strip/true/crop/4032x2268+0+0/resize/1748x983!/format/webp/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2F99%2F61%2Fc88f90664083abeea08c2e8da6ae%2Fnova-ai-challenge-defender-win.png",
+  "imageFit": "cover"
+},
+    {
+      "id": "2025-emnlp-findings",
+      "date": "2025-11",
+      "title": "2 papers at EMNLP 2025 Findings!",
+      "description": "MOCHA and MMPlanner appeared in Findings of EMNLP 2025 in Suzhou, China, November 4–9, 2025.",
+      "cardImage": "assets/images/news/logos/emnlp-2025.png",
+      "papers": [
+        {
+          "pubId": "2025-Wahed-mocha-are-code-language-models"
+        },
+        {
+          "pubId": "2025-Tabassum-mmplanner-zero-shot-mult"
+        }
+      ]
+    },
+{
+  "id": "2025-amazon-fellowship-jerry",
+  "date": "2025-09",
+  "title": "Jerry Xiong receives an Amazon AI PhD Fellowship!",
+  "description": "Congratulations to [Jerry Xiong](member.html?id=jerry-xiong) for receiving an Amazon AI PhD Fellowship.",
+  "image": "assets/images/team/jerry-xiong.webp",
+  "imageFit": "cover"
+},
+    {
+      "id": "2025-cvpr-calico",
+      "date": "2025-06",
+      "title": "1 paper at CVPR 2025!",
+      "description": "CALICO appeared at CVPR 2025 in Nashville, TN, June 11–15, 2025.",
+      "cardImage": "assets/images/news/logos/cvpr-2025.png",
+      "papers": [
+        {
+          "pubId": "2025-Nguyen-calico-part-focused-semantic-c"
+        }
+      ]
+    },
+    {
+      "id": "2024-aaai-coronet",
+      "date": "2024-02",
+      "title": "1 paper at AAAI 2024!",
+      "description": "CORONET appeared at AAAI 2024 in Vancouver, Canada, February 20–27, 2024.",
+      "cardImage": "assets/images/news/logos/aaai-2024.png",
+      "papers": [
+        {
+          "pubId": "2024-Holla-commonsense-for-zero-shot-natu"
+        }
+      ]
+    }
+  ]
+}
