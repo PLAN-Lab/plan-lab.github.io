@@ -150,6 +150,108 @@
     }
   }
 
+  function newsDetailUrl(item) {
+    return `news.html?id=${encodeURIComponent(item.id || '')}`;
+  }
+
+  function newsMoreHref(item) {
+    // An explicit link always wins; otherwise the item's detail page.
+    return item.link || newsDetailUrl(item);
+  }
+
+  function toPlaceholder(media, item) {
+    media.innerHTML = '';
+    media.classList.add('is-placeholder');
+    const icon = document.createElement('i');
+    icon.className = item.icon || 'fa-solid fa-bullhorn';
+    icon.setAttribute('aria-hidden', 'true');
+    media.appendChild(icon);
+  }
+
+  function buildNewsCard(item, covers) {
+    const href = newsMoreHref(item);
+    const isExternal = /^https?:\/\//i.test(href);
+
+    const a = document.createElement('a');
+    a.className = 'news-card';
+    a.href = href;
+    if (isExternal) {
+      a.target = '_blank';
+      a.rel = 'noreferrer';
+    }
+
+    const media = document.createElement('div');
+    media.className = 'news-card-media';
+    // Homepage cards prefer a conference banner/logo (cropped to fill);
+    // otherwise the first paper cover renders publication-style (contained).
+    const banner = item.cardImage || item.banner;
+    const fallback = (covers && covers.length ? covers[0] : null) || item.image;
+    const mediaSrc = banner || fallback;
+    if (item.imageFit === 'cover') media.classList.add('fit-cover');
+    if (mediaSrc) {
+      const img = document.createElement('img');
+      img.src = mediaSrc;
+      img.alt = item.title || 'PLAN Lab news';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.onerror = function () {
+        if (fallback && img.src.indexOf(fallback) === -1) {
+          img.src = fallback; // banner file missing: fall back to the paper cover
+        } else {
+          toPlaceholder(media, item);
+        }
+      };
+      media.appendChild(img);
+    } else {
+      toPlaceholder(media, item);
+    }
+    a.appendChild(media);
+
+    const body = document.createElement('div');
+    body.className = 'news-card-body';
+    const h3 = document.createElement('h3');
+    h3.textContent = item.title || 'PLAN Lab news';
+    const p = document.createElement('p');
+    p.textContent = String(item.description || '').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1');
+    body.appendChild(h3);
+    body.appendChild(p);
+    a.appendChild(body);
+
+    const foot = document.createElement('div');
+    foot.className = 'news-card-foot';
+    const time = document.createElement('span');
+    time.className = 'news-card-date';
+    time.textContent = window.PLANContent.formatNewsDate(item.date);
+    const more = document.createElement('span');
+    more.className = 'news-card-more';
+    more.innerHTML = 'More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
+    foot.appendChild(time);
+    foot.appendChild(more);
+    a.appendChild(foot);
+
+    return a;
+  }
+
+  async function renderNews() {
+    const grid = document.getElementById('news-grid');
+    if (!grid || !window.PLANContent) return;
+
+    const [items, pubs] = await Promise.all([
+      window.PLANContent.getNews(),
+      window.PLANContent.getPublications().catch(() => []),
+    ]);
+    const pubById = new Map(pubs.map((p) => [p.id, p]));
+    grid.innerHTML = '';
+    items.slice(0, 3).forEach((item) => {
+      const covers = window.PLANContent.resolveNewsCovers(item, pubById);
+      grid.appendChild(buildNewsCard(item, covers));
+    });
+
+    if (window.ScrollTrigger) {
+      try { ScrollTrigger.refresh(); } catch (e) { /* not registered yet */ }
+    }
+  }
+
   async function renderTeam() {
     if (!window.PLANContent) return;
 
@@ -176,11 +278,13 @@
 
   const sectionState = {
     publications: false,
+    news: false,
     team: false,
   };
 
   const sectionLoaders = {
     publications: renderRecentWork,
+    news: renderNews,
     team: renderTeam,
   };
 
@@ -203,6 +307,7 @@
   // viewport ends up on #team instead. So: load everything that changes
   // layout above the target, let it settle, then scroll.
   async function ensureLayoutSections() {
+    await loadSection('news');
     await loadSection('publications');
     await loadSection('team');
   }
@@ -247,6 +352,7 @@
     const raw = String(hash || '').replace(/^#/, '').trim();
     if (!raw) return '';
     if (raw === 'team' || raw.startsWith('team-')) return 'team';
+    if (raw === 'news' || raw.startsWith('news-')) return 'news';
     if (raw === 'publications' || raw.startsWith('publications-')) return 'publications';
     return sectionLoaders[raw] ? raw : '';
   }

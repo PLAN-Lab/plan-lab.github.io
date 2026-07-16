@@ -140,6 +140,59 @@
     return data.publications || [];
   }
 
+  async function getNews() {
+    const data = await loadJson('assets/data/news.json');
+    const items = Array.isArray(data.news) ? data.news.slice() : [];
+    items.sort((a, b) => newsDateValue(b) - newsDateValue(a));
+    return items;
+  }
+
+  function newsDateValue(item) {
+    const raw = String((item && item.date) || '').trim();
+    if (!raw) return 0;
+    // Accept YYYY, YYYY-MM, YYYY-MM-DD.
+    const parts = raw.split('-');
+    const y = Number(parts[0]) || 0;
+    const m = parts.length > 1 ? (Number(parts[1]) || 1) : 1;
+    const d = parts.length > 2 ? (Number(parts[2]) || 1) : 1;
+    return Date.UTC(y, m - 1, d);
+  }
+
+  function formatNewsDate(date) {
+    const raw = String(date || '').trim();
+    if (!raw) return '';
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    const parts = raw.split('-');
+    const y = parts[0];
+    if (parts.length === 1) return y;
+    const m = MONTHS[(Number(parts[1]) || 1) - 1] || '';
+    if (parts.length === 2) return `${m} ${y}`;
+    const d = Number(parts[2]) || 1;
+    return `${m} ${d}, ${y}`;
+  }
+
+  function resolveNewsCovers(item, pubById) {
+    const entries = Array.isArray(item && item.papers) ? item.papers : [];
+    const covers = [];
+    entries.forEach((entry) => {
+      if (!entry) return;
+      if (typeof entry === 'string') {
+        const pub = pubById && pubById.get(entry);
+        if (pub && pub.cover) covers.push(pub.cover);
+        return;
+      }
+      if (entry.pubId) {
+        const pub = pubById && pubById.get(entry.pubId);
+        if (pub && pub.cover) covers.push(pub.cover);
+        return;
+      }
+      if (entry.cover) covers.push(entry.cover);
+    });
+    if (!covers.length && item && item.image) covers.push(item.image);
+    return covers;
+  }
+
   window.PLANContent = {
     resolveUrl,
     doiToUrl,
@@ -149,5 +202,9 @@
     formatMemberName,
     getTeam,
     getPublications,
+    getNews,
+    newsDateValue,
+    formatNewsDate,
+    resolveNewsCovers,
   };
 })();
