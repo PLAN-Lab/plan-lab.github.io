@@ -1,33 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <!-- Replace the ID below with the project/lab analytics ID if needed. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
+<head>
+<!-- Google tag (gtag.js) -->
+<!-- Replace the ID below with the project/lab analytics ID if needed. -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="GraphVid project page for PLAN Lab." />
-    <title>GraphVid: Interactive Graph-Controllable Video Generation</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="GraphVid is an ECCV 2026 graph-conditioned image-to-video generation framework for interactive multi-object control through directed interaction graphs." name="description"/>
+<title>GraphVid: Interactive Graph-Controllable Video Generation | ECCV 2026</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+<link href="../../assets/css/style.css" rel="stylesheet">
+<link href="../../assets/css/projects.css" rel="stylesheet">
+<script defer="" src="../../assets/js/project-pages.js"></script>
+<style>
       html, body { max-width: 100%; overflow-x: hidden; }
 
       .graphvid-accent-blue { color: #13294B; font-weight: 800; }
@@ -235,350 +232,413 @@
           grid-template-columns: 1fr;
         }
       }
-    </style>
+    
+      /* Ensure readability over the inherited animated dark background. */
+      .page-project,
+      .page-project main,
+      .page-project section,
+      .page-project .content,
+      .page-project .title,
+      .page-project .subtitle,
+      .page-project p,
+      .page-project li,
+      .page-project h1,
+      .page-project h2,
+      .page-project h3,
+      .page-project h4,
+      .page-project strong,
+      .page-project .caption,
+      .page-project .small-note,
+      .page-project .publication-authors,
+      .page-project .publication-venue,
+      .page-project .graphvid-example-title,
+      .page-project .graphvid-example-caption {
+        color: #f4f7fb !important;
+      }
 
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  </head>
+      .page-project a:not(.button):not(.nav-item):not(.nav-logo) {
+        color: #9fc5ff;
+      }
 
-  <body class="page-project">
-    <div class="project-bg"></div>
-    <div class="project-grid"></div>
+      .page-project a:not(.button):not(.nav-item):not(.nav-logo):hover {
+        color: #ffffff;
+      }
 
-    <nav class="glass-nav">
-      <a href="../../index.html#hero" class="nav-logo">
-        <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
-      </a>
-      <div class="nav-menu">
-        <a href="../../publications.html" class="nav-item" aria-label="Publications">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Publications</span>
-        </a>
-        <a href="../../index.html#team" class="nav-item" aria-label="Team">
-          <i class="fa-solid fa-users"></i>
-          <span>Team</span>
-        </a>
-        <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
-          <i class="fa-solid fa-cube"></i>
-          <span>PLAN Cubes</span>
-        </a>
-        <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
-          <i class="fa-solid fa-circle-nodes"></i>
-          <span>Partner with Us</span>
-        </a>
-        <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Join Us</span>
-        </a>
-      </div>
-    </nav>
+      .page-project .small-note,
+      .page-project .caption,
+      .page-project .graphvid-example-caption {
+        color: rgba(244, 247, 251, 0.86) !important;
+      }
 
-    <main>
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <div class="columns is-centered">
-              <div class="column has-text-centered">
-                <h1 class="title is-2 publication-title">
-                  <span class="model-name"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></span>: Interactive Graph-Controllable Video Generation
+      .page-project .why-card,
+      .page-project .tldr-box,
+      .page-project .efficiency-callout,
+      .page-project .graphvid-graph-card {
+        background: rgba(8, 15, 28, 0.62) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+      }
+
+      .page-project table.metric-table {
+        color: #f4f7fb;
+        background: rgba(8, 15, 28, 0.52);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .page-project table.metric-table th,
+      .page-project table.metric-table td {
+        color: #f4f7fb;
+        border-bottom-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .page-project table.metric-table thead th {
+        border-bottom-color: rgba(255, 255, 255, 0.38);
+      }
+
+      .page-project table.metric-table tbody tr.sota-row {
+        background: rgba(87, 145, 232, 0.15);
+      }
+
+      .page-project table.metric-table tbody tr.efficient-row,
+      .page-project table.metric-table tbody tr.highlight-row {
+        background: rgba(255, 95, 5, 0.16);
+      }
+
+      .page-project pre,
+      .page-project code {
+        color: #edf3ff;
+      }
+
+      .page-project pre {
+        background: rgba(8, 15, 28, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .page-project .graphvid-accent-blue {
+        color: #8fb9ff;
+      }
+
+      .page-project .graphvid-accent-orange,
+      .page-project .illini-orange {
+        color: #ff8a47 !important;
+      }
+
+      .model-spec-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 1.25rem 0 1.5rem 0;
+      }
+
+      .model-spec-card {
+        padding: 1rem;
+        border-radius: 14px;
+        background: rgba(8, 15, 28, 0.62);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        text-align: center;
+      }
+
+      .model-spec-card .spec-value {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: #ffffff;
+        font-size: 1.25rem;
+        font-weight: 800;
+      }
+
+      .model-spec-card .spec-label {
+        color: rgba(244, 247, 251, 0.78);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .model-spec-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+</style>
+<link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+</link></link></head>
+<body class="page-project">
+<div class="project-bg"></div>
+<div class="project-grid"></div>
+<nav class="glass-nav">
+<a class="nav-logo" href="../../index.html#hero">
+<img alt="PLAN Lab Logo" src="../../assets/images/logo.svg"/>
+</a>
+<div class="nav-menu">
+<a aria-label="Publications" class="nav-item" href="../../publications.html">
+<i class="fa-solid fa-layer-group"></i>
+<span>Publications</span>
+</a>
+<a aria-label="Team" class="nav-item" href="../../index.html#team">
+<i class="fa-solid fa-users"></i>
+<span>Team</span>
+</a>
+<a aria-label="PLAN Cubes Game" class="nav-item" href="../../game.html">
+<i class="fa-solid fa-cube"></i>
+<span>PLAN Cubes</span>
+</a>
+<a aria-label="Partner with Us" class="nav-item" href="../../index.html#partners">
+<i class="fa-solid fa-circle-nodes"></i>
+<span>Partner with Us</span>
+</a>
+<a aria-label="Join Us" class="nav-item" href="../../index.html#contact">
+<i class="fa-solid fa-paper-plane"></i>
+<span>Join Us</span>
+</a>
+</div>
+</nav>
+<main>
+<!-- Hero -->
+<section class="hero">
+<div class="hero-body">
+<div class="container is-max-desktop">
+<div class="columns is-centered">
+<div class="column has-text-centered">
+<h1 class="title is-2 publication-title">
+<span class="model-name"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></span>: Interactive Graph-Controllable Video Generation
                 </h1>
-
-                <div class="is-size-5 publication-authors">
-                  <span class="author-block">Vedant Shah<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Onkar Susladkar<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Tushar Prakash<sup style="color:#f6a34f;">♣</sup>,</span>
-                  <span class="author-block">Kiet A. Nguyen<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Tianjiao Yu<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Adheesh Juvekar<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Muntasir Wahed<sup class="illini-orange">♦</sup>,</span>
-                  <span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
-                </div>
-
-                <div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
-                  <span class="author-block"><sup class="illini-orange">♦</sup><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
-                  <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-                  <span class="author-block"><sup style="color:#f6a34f;">♣</sup>Sony Research India</span>
-                </div>
-
-                <div class="has-text-centered" style="margin: 5px 0;">
-                  <h1 class="title is-3 publication-venue">ArXiv</h1>
-                </div>
-
-                <div class="column has-text-centered" style="padding-top:0;">
-                  <div class="publication-links">
-                    <span class="link-block">
-                      <a href="#" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                        <span>Paper (coming soon)</span>
-                      </a>
-                    </span>
-                    <span class="link-block">
-                      <a href="#" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon"><i class="fab fa-github"></i></span>
-                        <span>Code (coming soon)</span>
-                      </a>
-                    </span>
-                    <span class="link-block">
-                      <a href="#dataset" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon"><i class="fa-solid fa-database"></i></span>
-                        <span>Dataset (coming soon)</span>
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Teaser: placed immediately after the hero so the figure appears before long text. -->
-      <section class="section quick-teaser">
-        <div class="container is-max-desktop">
-          <div class="media-wrap-teaser">
-            <div class="media-card" data-loaded="false">
-              <img loading="eager" decoding="async" src="./static/images/gvc_teaser.png" alt="GraphVid teaser figure showing image input, graph construction, graph editing, and graph-conditioned generated video">
-              <div class="media-skeleton">Loading...</div>
-            </div>
-          </div>
-          <p class="caption has-text-justified">
-            <strong>GraphVid interactive control pipeline.</strong> Starting from an input frame, GraphVid constructs a scene graph over detected entities and their interactions. Users modify the graph by interacting with the image to specify desired relational dynamics. The edited interaction graph is then translated into conditioning tokens that guide a frozen video diffusion backbone to generate a coherent video sequence.
-          </p>
-        </div>
-      </section>
-
-      <!-- TL;DR -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">TL;DR</h2>
-          <div class="content has-text-justified tldr-box">
-            <ul>
-              <li><strong>GraphVid makes controllable image-to-video generation an interactive graph editing problem.</strong></li>
-              <li>Instead of asking users to draw dense trajectories, GraphVid lets them edit object-level interactions such as <em>push</em>, <em>pull</em>, <em>lift</em>, by simply describing the desired relational dynamics between entities in the input image.</li>
-              <li>The edited scene graph is converted into graph conditioning tokens for a frozen video diffusion transformer.</li>
-              <li>With about <strong>27K curated training clips</strong> and <strong>0.3B trainable parameters</strong>, GraphVid achieves competitive quality and inference efficiency against much larger motion-control video generation systems.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Why GraphVid? -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Why Graph-Based Video Control?</h2>
-          <div class="content has-text-justified">
-            <p>
+<div class="is-size-5 publication-authors">
+<span class="author-block">Vedant Shah<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Onkar Susladkar<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Tushar Prakash<sup style="">♣</sup>,</span>
+<span class="author-block">Kiet A. Nguyen<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Tianjiao Yu<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Adheesh Juvekar<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Muntasir Wahed<sup class="illini-orange">♦</sup>,</span>
+<span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
+</div>
+<div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
+<span class="author-block"><sup class="illini-orange">♦</sup><a class="illini-blue" href="https://plan-lab.github.io/">PLAN Lab</a></span>
+<span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
+<span class="author-block"><sup style="">♣</sup>Sony Research India</span>
+</div>
+<div class="has-text-centered" style="margin: 5px 0;">
+<h1 class="title is-3 publication-venue">ECCV 2026</h1>
+</div>
+<div class="column has-text-centered" style="padding-top:0;">
+<div class="publication-links">
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="#">
+<span class="icon"><i class="fas fa-file-pdf"></i></span>
+<span>Paper (coming soon)</span>
+</a>
+</span>
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="#">
+<span class="icon"><i class="fab fa-github"></i></span>
+<span>Code (coming soon)</span>
+</a>
+</span>
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="#dataset">
+<span class="icon"><i class="fa-solid fa-database"></i></span>
+<span>Dataset (coming soon)</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Teaser: placed immediately after the hero so the figure appears before long text. -->
+<section class="section quick-teaser">
+<div class="container is-max-desktop">
+<div class="media-wrap-teaser">
+<div class="media-card" data-loaded="false">
+<img alt="GraphVid teaser figure showing image input, graph construction, graph editing, and graph-conditioned generated video" decoding="async" loading="eager" src="./static/images/gvc_teaser.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<p class="caption has-text-justified">
+<strong>GraphVid interactive control pipeline.</strong> Starting from an input frame, GraphVid constructs a scene graph over detected entities and their interactions. Users indirectly modify the graph by interacting with our interface to specify desired relational dynamics. The edited interaction graph is then translated into conditioning tokens that guide a frozen video diffusion backbone to generate a coherent video sequence.
+</p>
+</div>
+</section>
+<!-- TL;DR -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3">TL;DR</h2>
+<div class="content has-text-justified tldr-box"><ul><li><strong>GraphVid makes controllable image-to-video generation an interactive graph editing problem.</strong></li><li>Users specify object-level relational dynamics—such as <em>push</em>, <em>pull</em>, <em>lift</em>, or <em>move relative to</em>—instead of authoring dense, "literal" trajectories for every object.</li><li>An Edge-Aware GNN converts directed interaction graphs into conditioning tokens for a frozen <strong>LTX-Video 2B</strong> diffusion transformer.</li><li>Using approximately <strong>27K curated clips</strong>, <strong>0.6B trainable parameters</strong>, and <strong>200-second inference</strong>, GraphVid delivers strong interaction control with substantially less data and trainable capacity than large motion-control systems.</li></ul></div>
+</div>
+</section>
+<!-- Why GraphVid? -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3">Why Graph-Based Video Control?</h2>
+<!-- <div class="content has-text-justified">
+<p>
               Image-to-video models must infer motion, object interactions, and physical evolution from a single static frame. This is inherently ambiguous: the same image can support many plausible futures depending on which objects should move, what relationships should change, and how entities should influence one another.
             </p>
-            <p>
+<p>
               Existing controllable video generation methods often rely on dense trajectories, optical flow, segmentation masks, sparse boxes, or other geometric motion cues. While effective for specifying displacement, these controls can be difficult to author in scenes with multiple objects. Small errors in a few control signals can lead to globally implausible motion, including inconsistent contact, sliding, object penetration, desynchronized behavior, or failure to preserve the intended interaction.
             </p>
-            <p>
+<p>
               GraphVid instead represents user intent as a <strong>directed relational interaction graph</strong>. This provides a higher-level semantic interface for single- and multi-object control while still grounding the requested dynamics in detected objects and spatial structure.
             </p>
-          </div>
+</div> -->
+<div class="why-grid">
+<div class="why-card">
+<h3>Trajectory control is low-level</h3>
+<p>Dense "literal" paths are hard to author for multi-object scenes, especially under occlusion, overlap, or contact.</p>
+</div>
+<div class="why-card">
+<h3>Users think in interactions</h3>
+<p>Many desired motions are naturally relational: one object pushes, follows, lifts, supports, or moves relative to another.</p>
+</div>
+<div class="why-card">
+<h3>Graphs preserve structure</h3>
+<p>Directed nodes and edges bind the requested dynamics to the correct entities and interactions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Abstract -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3">Abstract</h2>
+<div class="content has-text-justified"><p>Controllable video generation remains challenging because precise multi-object interactions are difficult to specify using text prompts or motion-control inputs that primarily constrain pixel displacement. Trajectory-based control requires accurate tracks for multiple objects, which scales poorly with scene complexity and becomes ambiguous under occlusion or overlap.</p><p>We introduce <strong><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></strong>, a graph-conditioned image-to-video generation framework that enables interactive control through structured directed interaction graphs. Starting from a single input frame, GraphVid constructs a scene graph over detected entities, allows users to edit object-level interactions, and translates the edited graph into conditioning tokens for a frozen video diffusion transformer.</p><p>To support this paradigm, we curate <strong>GraphVid-Bench</strong>, an interaction-centric dataset of approximately <strong>27K</strong> videos paired with structured relational annotations. Despite using substantially less training data and fewer trainable parameters than prior motion-control methods, GraphVid achieves strong controllability and video quality. Compared with Motion-I2V, it reduces FID by up to <strong>39.9%</strong> and FVD by <strong>37.6%</strong>, while improving PSNR from <strong>9.87 to 15.98</strong> and SSIM from <strong>0.38 to 0.61</strong>.</p></div>
+</div>
+</section>
+<!-- Contributions -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3">✅ Contributions</h2>
+<div class="content has-text-justified"><ul class="fa-ul"><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Interactive graph-based control. </b>GraphVid enables multi-object image-to-video control through directed interaction scene graphs constructed from a single image, replacing dense trajectory authoring with intuitive object-level interaction edits.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Edge-Aware Graph Reasoning. </b>A GINEConv-based graph module injects directed edge semantics into message passing so that node representations capture both object identity and interaction-driven dynamics.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Parameter-efficient graph-to-video adaptation. </b>A lightweight graph-to-token adapter and LoRA modules condition a frozen LTX-Video 2B backbone and frozen VAE while preserving pretrained generative priors.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>GraphVid-Bench and efficient performance. </b>We curate approximately 27K interaction-centric clips with structured graphs. GraphVid uses 0.6B trainable parameters and achieves the fastest inference among the compared methods at 200 seconds.</li></ul></div>
+</div>
+</section>
+<!-- Method -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span> Method</h2>
+<div class="content has-text-justified">
+<p>GraphVid is a controllable image-to-video framework that interfaces a structured directed interaction graph with a pretrained <strong>LTX-Video 2B</strong> diffusion transformer. Each node represents a detected entity, and each directed edge describes how one entity influences another. Unary actions such as rotate, move, or scale are represented as self-loop edges. The LTX DiT and VAE remain frozen; GraphVid trains only the Edge-Aware GNN, graph-to-video adapter, and LoRA modules.</p>
+</div>
+<div class="model-spec-grid">
+<div class="model-spec-card">
+<span class="spec-value">LTX-Video 2B</span>
+<span class="spec-label">Frozen video diffusion backbone</span>
+</div>
+<div class="model-spec-card">
+<span class="spec-value">0.6B</span>
+<span class="spec-label">Trainable parameters</span>
+</div>
+<div class="model-spec-card">
+<span class="spec-value">LoRA rank 128</span>
+<span class="spec-label">Q, K, V, and output projections</span>
+</div>
+<div class="model-spec-card">
+<span class="spec-value">30 nodes</span>
+<span class="spec-label">Maximum graph capacity (Trainable)</span>
+</div>
+<div class="model-spec-card">
+<span class="spec-value">512 → 4096</span>
+<span class="spec-label">GNN hidden size to LTX token size</span>
+</div>
+<div class="model-spec-card">
+<span class="spec-value">121 frames · 24 FPS</span>
+<span class="spec-label">Standard generation setting</span>
+</div>
+</div>
 
-          <div class="why-grid">
-            <div class="why-card">
-              <h3>Trajectory control is low-level</h3>
-              <p>Dense paths are hard to author for multi-object scenes, especially under occlusion, overlap, or contact.</p>
-            </div>
-            <div class="why-card">
-              <h3>Users think in interactions</h3>
-              <p>Many desired motions are naturally relational: one object pushes, follows, lifts, supports, or moves relative to another.</p>
-            </div>
-            <div class="why-card">
-              <h3>Graphs preserve structure</h3>
-              <p>Directed nodes and edges bind the requested dynamics to the correct entities and interactions.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Abstract -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Controllable video generation remains challenging because precise multi-object interactions are difficult to specify using text prompts or low-level motion controls. Trajectory-based interfaces often require users to draw accurate tracks for multiple objects, which becomes cumbersome as scene complexity increases and can become ambiguous under occlusion or overlap.
+<div style="text-align: center; padding: 0 0 20px 0;">
+<div class="media-wrap-wide">
+<div class="media-card" data-loaded="false">
+<img alt="GraphVid method overview" decoding="async" loading="lazy" src="./static/images/gvc_arc.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<p class="caption has-text-justified">
+<strong>GraphVid overview.</strong> Objects are detected from the input image and encoded into node embeddings. An MLLM extracts relational edges to construct an initial interaction graph. Users edit interactions through the image interface, and the resulting graph is converted into conditioning tokens that guide the frozen video diffusion transformer.
             </p>
-            <p>
-              We introduce <strong><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></strong>, a graph-conditioned image-to-video generation framework that enables interactive control through structured interaction graphs. Starting from a single input frame, GraphVid constructs a directed scene graph over detected entities, allows users to modify object-level interaction edges, and translates the edited graph into conditioning tokens for a frozen video diffusion transformer.
+</div>
+<div class="content has-text-justified"><p><strong>Node representations.</strong> Qwen3-VL detects objects and provides an 8192-dimensional visual embedding from mean and max pooling over each object crop. A 2560-dimensional text embedding of the object label and four normalized bounding-box coordinates are concatenated to form a 10,756-dimensional node feature.</p><p><strong>Edge representations.</strong> Each directed edge contains an open-vocabulary textual description of the intended interaction. Qwen3-Embedding encodes this description into a 2560-dimensional edge feature.</p><p><strong>Edge-aware graph reasoning.</strong> Node and edge features are projected to a shared 512-dimensional hidden space and processed using GINEConv layers, which inject semantic edge attributes directly into message passing.</p><p><strong>Graph-to-video conditioning.</strong> Interaction-aware node embeddings are mapped through a three-layer MLP into 4096-dimensional LTX conditioning tokens. LoRA modules of rank 128 are inserted into the transformer's attention projections, while the original DiT and VAE weights remain frozen.</p></div>
+<div style="text-align: center; padding: 0 0 20px 0;">
+<div class="media-wrap">
+<div class="media-card" data-loaded="false">
+<img alt="GraphVid edge-aware graph reasoning module" decoding="async" loading="lazy" src="./static/images/gvc_gnn.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<p class="caption has-text-justified">
+<strong>Edge-Aware Graph Reasoning.</strong> Node and edge embeddings are projected into a shared hidden space and processed by an edge-aware GCN. The resulting interaction-aware node embeddings are mapped into the hidden space of the video transformer and used as graph conditioning tokens.
             </p>
-            <p>
-              To support this control paradigm, we curate <strong>GraphVid-Bench</strong>, an interaction-centric dataset of approximately <strong>27K</strong> video clips paired with structured relational annotations. Despite using substantially fewer trainable parameters and less training data than existing motion-control methods, GraphVid achieves competitive perceptual quality, reconstruction fidelity, and inference efficiency.
-            </p>
-          </div>
-        </div>
-      </section>
+</div>
+</div>
+</section>
+<!-- Dataset -->
+<section class="section" id="dataset">
+<div class="container is-max-desktop">
+<h2 class="title is-3"><span class="graphvid-accent-blue">GraphVid</span><span class="graphvid-accent-orange">-Bench</span> Dataset</h2>
+<div class="content has-text-justified"><p>GraphVid-Bench pairs interaction-centric videos with directed scene graphs. Nodes represent scene entities, while edges encode the type, direction, and textual context of interactions that influence scene dynamics.</p><p>The dataset contains <strong>27,504 curated clips</strong> drawn from WISA-80K, Something-Something v2, and MagicData. Clips are standardized to <strong>512 × 288</strong>, <strong>81 frames</strong>, and <strong>16 FPS</strong>. Dynamic letterboxing preserves aspect ratio, and motion-energy windowing selects the most interaction-active segment.</p></div>
 
-      <!-- Contributions -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">✅ Contributions</h2>
-          <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Interactive graph-based control.</b> GraphVid turns controllable image-to-video generation into an interactive graph editing problem, replacing dense trajectory authoring with object-level interaction edits.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Structured interaction representation.</b> Nodes correspond to detected scene entities, while directed edges encode semantic dynamics such as push, pull, lift, hold, support, contact, move, and rotate.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Edge-aware graph reasoning.</b> GraphVid injects edge attributes directly into graph message passing, allowing object representations to reflect both neighboring entities and the semantics governing their interactions.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Parameter-efficient graph-to-video adaptation.</b> The video diffusion transformer and VAE remain frozen, while only the Edge-Aware GNN, graph-to-video adapter, and LoRA modules are trained.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>GraphVid-Bench.</b> We curate approximately 27K interaction-centric clips with structured graph annotations.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Method -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span> Method</h2>
-          <div class="content has-text-justified">
-            <p>
-              GraphVid is a controllable image-to-video framework that interfaces a structured interaction graph with a large pretrained video diffusion transformer. Given a conditioning image, GraphVid constructs an attributed directed graph where each node represents a detected entity and each directed edge describes how one entity influences another. Unary actions such as rotate, move, or scale are represented as self-loop edges.
-            </p>
-          </div>
-
-          <div style="text-align: center; padding: 0 0 20px 0;">
-            <div class="media-wrap-wide">
-              <div class="media-card" data-loaded="false">
-                <img loading="lazy" decoding="async" src="./static/images/gvc_arc.png" alt="GraphVid method overview">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-            <p class="caption has-text-justified">
-              <strong>GraphVid overview.</strong> Objects are detected from the input image and encoded into node embeddings. An MLLM extracts relational edges to construct an initial interaction graph. Users edit interactions through the image interface, and the resulting graph is converted into conditioning tokens that guide the frozen video diffusion transformer.
-            </p>
-          </div>
-
-          <div class="content has-text-justified">
-            <p>
-              <strong>Node representations.</strong> For each detected entity, GraphVid fuses a visual embedding from the object crop, a text embedding of the object label, and normalized bounding-box coordinates. This representation captures appearance, semantic identity, and spatial grounding.
-            </p>
-            <p>
-              <strong>Edge representations.</strong> Each directed edge is represented with an open-vocabulary textual descriptor of the intended interaction between source and target entities. These edge descriptors are embedded into dense edge features, allowing the model to distinguish different physical and semantic relationships rather than treating all graph connections as identical.
-            </p>
-            <p>
-              <strong>Edge-aware graph reasoning.</strong> Standard graph convolutional networks typically treat edges as binary connectivity. GraphVid instead uses an edge-aware graph reasoning module that injects edge attributes directly into message passing.
-            </p>
-          </div>
-
-          <div style="text-align: center; padding: 0 0 20px 0;">
-            <div class="media-wrap">
-              <div class="media-card" data-loaded="false">
-                <img loading="lazy" decoding="async" src="./static/images/gvc_gnn.png" alt="GraphVid edge-aware graph reasoning module">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-            <p class="caption has-text-justified">
-              <strong>Edge-Aware Graph Reasoning.</strong> Node and edge embeddings are projected into a shared hidden space and processed by an edge-aware GCN. The resulting interaction-aware node embeddings are mapped into the hidden space of the video transformer and used as graph conditioning tokens.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Dataset -->
-      <section class="section" id="dataset">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3"><span class="graphvid-accent-blue">GraphVid</span><span class="graphvid-accent-orange">-Bench</span> Dataset</h2>
-          <div class="content has-text-justified">
-            <p>
-              Current video generation benchmarks often rely on text prompts or low-level motion cues, which provide limited control over object-level interactions. GraphVid-Bench is designed to support structured relational control by pairing videos with directed interaction graphs. Nodes represent scene entities, while edges encode the type and direction of interaction cues that influence scene dynamics.
-            </p>
-            <p>
-              GraphVid-Bench contains approximately <strong>27K interaction-centric video clips</strong>. Each graph includes visual, semantic, and spatial node attributes, while edges capture interaction semantics and directionality.
-            </p>
-          </div>
-
-          <!-- <div class="metric-table-wrapper">
-            <table class="metric-table">
-              <thead>
-                <tr>
-                  <th>Graph Statistic</th>
-                  <th>Mean</th>
-                  <th>Median</th>
-                  <th>Std.</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Nodes / Graph</td><td>7.76</td><td>5.0</td><td>8.03</td></tr>
-                <tr><td>Edges / Graph</td><td>4.85</td><td>4.0</td><td>3.46</td></tr>
-              </tbody>
-            </table>
-          </div> -->
-
-          <div class="metric-table-wrapper">
-            <table class="metric-table">
-              <thead>
-                <tr>
-                  <th>Interaction Complexity</th>
-                  <th>Number of Clips</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>No explicit interaction</td><td>3,881</td></tr>
-                <tr><td>Single interaction</td><td>10,982</td></tr>
-                <tr><td>Multi-interaction</td><td>12,641</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="text-align: center; padding: 0 0 20px 0;">
-  <div class="media-wrap-wide">
-
-    <div
-      style="
-        display:grid;
+<div class="metric-table-wrapper">
+<table class="metric-table">
+<thead>
+<tr>
+<th>Graph Statistic</th>
+<th>Mean</th>
+<th>Median</th>
+<th>Std.</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Nodes / Graph</td><td>7.76</td><td>5.0</td><td>8.03</td></tr>
+<tr><td>Edges / Graph</td><td>4.85</td><td>4.0</td><td>3.46</td></tr>
+</tbody>
+</table>
+</div>
+<div class="metric-table-wrapper">
+<table class="metric-table">
+<thead>
+<tr>
+<th>Interaction Complexity</th>
+<th>Number of Clips</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>No explicit interaction</td><td>3,881</td></tr>
+<tr><td>Single interaction</td><td>10,982</td></tr>
+<tr><td>Multi-interaction</td><td>12,641</td></tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: center; padding: 0 0 20px 0;">
+<div class="media-wrap-wide">
+<div style="display:grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap:24px;
-        align-items:start;
-      "
-    >
-
-      <div class="media-card" data-loaded="false">
-        <img
-          loading="lazy"
-          decoding="async"
-          src="./static/images/gvc_corr.png"
-          alt="Co-occurrence statistics in GraphVid-Bench">
-        <div class="media-skeleton">Loading...</div>
-      </div>
-
-      <div class="media-card" data-loaded="false">
-        <img
-          loading="lazy"
-          decoding="async"
-          src="./static/images/gvc_data_tax.png"
-          alt="Interaction taxonomy in GraphVid-Bench">
-        <div class="media-skeleton">Loading...</div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <p class="caption has-text-justified">
-    <strong>Interaction statistics.</strong>
+        align-items:start;">
+<div class="media-card" data-loaded="false">
+<img alt="Co-occurrence statistics in GraphVid-Bench" decoding="async" loading="lazy" src="./static/images/gvc_corr.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+<div class="media-card" data-loaded="false">
+<img alt="Interaction taxonomy in GraphVid-Bench" decoding="async" loading="lazy" src="./static/images/gvc_data_tax.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+</div>
+<p class="caption has-text-justified">
+<strong>Interaction statistics.</strong>
     GraphVid-Bench covers force and manipulation, kinematics and motion,
     physical contact, and support and position relations. Co-occurrence
     statistics show that real-world dynamics often combine multiple interaction
     primitives, motivating graph-structured video control.
   </p>
 </div>
-        </div>
-      </section>
-
-      <!-- Quantitative Results -->
-      <section class="section">
-        <div class="container is-max-desktop">
-
-          <!-- Local styling for quantitative result emphasis. 
+</div>
+</section>
+<!-- Quantitative Results -->
+<section class="section">
+<div class="container is-max-desktop">
+<!-- Local styling for quantitative result emphasis. 
               Keep this inside the section since you are not using a separate CSS file. -->
-          <style>
+<style>
             .metric-table tbody tr.sota-row {
               font-weight: 700;
               background: rgba(44, 95, 172, 0.075);
@@ -645,198 +705,137 @@
               }
             }
           </style>
-
-          <h2 class="title is-3">Quantitative Results</h2>
-
-          <div class="content has-text-justified">
-            <p>
-              GraphVid is evaluated on an interaction-centric MoveBench subset against trajectory-based, physics-aware, and motion-control video generation baselines. Wan-Move represents the strongest high-capacity baseline in this comparison, while GraphVid focuses on efficient structured control: it uses only <strong>27K</strong> training clips and <strong>0.3B</strong> trainable parameters while remaining competitive on perceptual quality and reconstruction fidelity.
-            </p>
-          </div>
-
-          <div class="efficiency-callout">
-            <strong>Reading the table:</strong>
-            the blue-highlighted Wan-Move row indicates the strongest high-capacity/SOTA baseline, while the orange-highlighted GraphVid row indicates our efficient graph-conditioned model. GraphVid is not positioned as simply replacing a 14.5B-parameter system; instead, it shows that structured interaction graphs can provide strong control and competitive quality with far less trainable capacity and data.
-          </div>
-
-          <h3 class="title is-4">Interaction-Centric MoveBench</h3>
-          <div class="metric-table-wrapper">
-            <table class="metric-table">
-              <thead>
-                <tr>
-                  <th>Method</th>
-                  <th>Train Data</th>
-                  <th>Params</th>
-                  <th>Inference</th>
-                  <th>FID ↓</th>
-                  <th>FVD ↓</th>
-                  <th>PSNR ↑</th>
-                  <th>SSIM ↑</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="sota-row">
-                  <td>Wan-Move <span class="result-tag sota-tag">SOTA baseline</span></td>
-                  <td>2M</td>
-                  <td>14.5B</td>
-                  <td>1800s</td>
-                  <td>15.56</td>
-                  <td>82.17</td>
-                  <td>17.21</td>
-                  <td>0.61</td>
-                </tr>
-                <tr>
-                  <td>MotionI2V</td>
-                  <td>10M</td>
-                  <td>1.2B</td>
-                  <td>790s</td>
-                  <td>28.32</td>
-                  <td>159.32</td>
-                  <td>9.87</td>
-                  <td>0.38</td>
-                </tr>
-                <tr>
-                  <td>ToRA</td>
-                  <td>630K</td>
-                  <td>5B</td>
-                  <td>1200s</td>
-                  <td>24.45</td>
-                  <td>110.47</td>
-                  <td>11.27</td>
-                  <td>0.54</td>
-                </tr>
-                <tr>
-                  <td>MagicMotion</td>
-                  <td>23K</td>
-                  <td>1.5B</td>
-                  <td>750s</td>
-                  <td>26.57</td>
-                  <td>105.12</td>
-                  <td>12.04</td>
-                  <td>0.51</td>
-                </tr>
-                <tr>
-                  <td>WISA</td>
-                  <td>80K</td>
-                  <td>1B</td>
-                  <td>1000s</td>
-                  <td>25.98</td>
-                  <td>107.89</td>
-                  <td>15.08</td>
-                  <td>0.53</td>
-                </tr>
-                <tr class="efficient-row">
-                  <td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
-                  <td>27K</td>
-                  <td>0.3B</td>
-                  <td>520s</td>
-                  <td>18.59</td>
-                  <td>106.59</td>
-                  <td>15.79</td>
-                  <td>0.59</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="has-text-justified small-note", style="color: #f5e1e1">
-            Wan-Move achieves the strongest overall quantitative scores in this setting, but does so with a substantially larger 14.5B-parameter model, 2M training videos, and longer inference time. GraphVid achieves competitive reconstruction and perceptual metrics while using roughly <strong>48× fewer parameters</strong>, substantially less training data, and the fastest inference time among the compared methods.
-          </p>
-
-          <h3 class="title is-4">Multi-Object MoveBench Subset</h3>
-          <div class="metric-table-wrapper">
-            <table class="metric-table">
-              <thead>
-                <tr>
-                  <th>Method</th>
-                  <th>Train Data</th>
-                  <th>Params</th>
-                  <th>FID ↓</th>
-                  <th>FVD ↓</th>
-                  <th>PSNR ↑</th>
-                  <th>SSIM ↑</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="sota-row">
-                  <td>Wan-Move <span class="result-tag sota-tag">SOTA baseline</span></td>
-                  <td>2M</td>
-                  <td>14.5B</td>
-                  <td>31.29</td>
-                  <td>252</td>
-                  <td>16.69</td>
-                  <td>0.61</td>
-                </tr>
-                <tr>
-                  <td>WISA</td>
-                  <td>80K</td>
-                  <td>1B</td>
-                  <td>60.12</td>
-                  <td>341</td>
-                  <td>13.13</td>
-                  <td>0.55</td>
-                </tr>
-                <tr>
-                  <td>ToRA</td>
-                  <td>630K</td>
-                  <td>5B</td>
-                  <td>56.04</td>
-                  <td>369</td>
-                  <td>14.98</td>
-                  <td>0.52</td>
-                </tr>
-                <tr class="efficient-row">
-                  <td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
-                  <td>27K</td>
-                  <td>0.3B</td>
-                  <td>54.12</td>
-                  <td>312</td>
-                  <td>14.45</td>
-                  <td>0.55</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="has-text-justified small-note", style="color: #f5e1e1">
-            On multi-object interaction-heavy scenes, Wan-Move remains the strongest high-capacity baseline. GraphVid narrows the gap to this large-scale model and improves over other lightweight or trajectory-based baselines on key perceptual and temporal metrics, while requiring far less data and trainable model capacity.
-          </p>
-        </div>
-      </section>
-
-      <!-- Qualitative Results -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Qualitative Results</h2>
-          <div class="content has-text-justified">
-            <p>
+<h2 class="title is-3">Quantitative Results</h2>
+<div class="content has-text-justified"><p>GraphVid is evaluated on an interaction-centric MoveBench subset against trajectory-based, physics-aware, and motion-control baselines. It uses only <strong>27K training clips</strong> and <strong>0.6B trainable parameters</strong>, while achieving the fastest inference in the comparison at <strong>200 seconds</strong>. We report perceptual, reconstruction, temporal, and motion-accuracy metrics, including End-Point Error (EPE).</p></div>
+<div class="efficiency-callout"><strong>Efficiency at a glance:</strong> GraphVid uses approximately <strong>24× fewer trainable parameters</strong> than Wan-Move and nearly two orders of magnitude less training data, while outperforming all comparable-scale methods on several core quality and motion metrics.</div>
+<h3 class="title is-4">Interaction-Centric MoveBench</h3>
+<div class="metric-table-wrapper">
+<table class="metric-table">
+<thead>
+<tr>
+<th>Method</th>
+<th>Train Data</th>
+<th>Trainable Params</th>
+<th>Inference ↓</th>
+<th>FID ↓</th>
+<th>FVD ↓</th>
+<th>PSNR ↑</th>
+<th>SSIM ↑</th>
+<th>EPE ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr class="sota-row">
+<td>Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span></td>
+<td>2M</td><td>14.5B</td><td>1800s</td>
+<td><strong>15.56</strong></td><td><strong>82.17</strong></td>
+<td><strong>17.21</strong></td><td><strong>0.61</strong></td><td><strong>2.6</strong></td>
+</tr>
+<tr>
+<td>Motion-I2V</td><td>10M</td><td>1.2B</td><td>790s</td>
+<td>28.32</td><td>159.32</td><td>9.87</td><td>0.38</td><td>3.9</td>
+</tr>
+<tr>
+<td>Tora</td><td>630K</td><td>5B</td><td>1200s</td>
+<td>24.45</td><td>110.47</td><td>11.27</td><td>0.54</td><td>3.3</td>
+</tr>
+<tr>
+<td>MagicMotion</td><td>23K</td><td>1.5B</td><td>750s</td>
+<td>26.57</td><td>105.12</td><td>12.04</td><td>0.51</td><td>3.2</td>
+</tr>
+<tr>
+<td>WISA</td><td>80K</td><td>1B</td><td>1000s</td>
+<td>25.98</td><td>107.89</td><td>15.08</td><td>0.53</td><td>4.1</td>
+</tr>
+<tr>
+<td>FlashMotion</td><td>23K</td><td>13B</td><td>677s</td>
+<td>19.02</td><td>104.12</td><td>14.04</td><td>0.56</td><td>3.8</td>
+</tr>
+<tr class="efficient-row">
+<td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
+<td>27K</td><td>0.6B</td><td><strong>200s</strong></td>
+<td><strong>17.02</strong></td><td><strong>99.42</strong></td>
+<td><strong>15.98</strong></td><td><strong>0.61</strong></td><td><strong>2.9</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p ,="" class="has-text-justified small-note" style="">GraphVid is second-best overall on FID, FVD, PSNR, SSIM, and EPE while using the fewest trainable parameters and the fastest inference. Compared with WISA, it improves FID by <strong>34.5%</strong>, FVD by <strong>7.8%</strong>, PSNR by <strong>5.9%</strong>, SSIM by <strong>15.0%</strong>, and EPE by <strong>29.3%</strong>.</p>
+<h3 class="title is-4">Multi-Object MoveBench Subset</h3>
+<div class="metric-table-wrapper">
+<table class="metric-table">
+<thead>
+<tr>
+<th>Method</th>
+<th>Train Data</th>
+<th>Trainable Params</th>
+<th>FID ↓</th>
+<th>FVD ↓</th>
+<th>PSNR ↑</th>
+<th>SSIM ↑</th>
+<th>EPE ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr class="sota-row">
+<td>Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span></td>
+<td>2M</td><td>14.5B</td><td><strong>31.29</strong></td>
+<td><strong>252</strong></td><td><strong>16.69</strong></td>
+<td><strong>0.61</strong></td><td><strong>2.2</strong></td>
+</tr>
+<tr>
+<td>Tora</td><td>630K</td><td>5B</td>
+<td>56.04</td><td>369</td><td>14.98</td><td>0.52</td><td>3.5</td>
+</tr>
+<tr>
+<td>WISA</td><td>80K</td><td>1B</td>
+<td>60.12</td><td>341</td><td>13.13</td><td>0.55</td><td>3.9</td>
+</tr>
+<tr>
+<td>FlashMotion</td><td>23K</td><td>13B</td>
+<td>55.03</td><td>311</td><td>12.12</td><td>0.52</td><td>3.9</td>
+</tr>
+<tr class="efficient-row">
+<td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
+<td>27K</td><td>0.6B</td>
+<td><strong>49.45</strong></td><td><strong>291</strong></td>
+<td>14.44</td><td><strong>0.55</strong></td><td><strong>3.0</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p ,="" class="has-text-justified small-note" style="">On the harder multi-object subset, GraphVid achieves the best FID, FVD, and EPE among comparable-scale methods. It improves FID over FlashMotion by <strong>10.1%</strong> and FVD by <strong>6.4%</strong>, while using approximately <strong>21.7× fewer trainable parameters</strong>.</p>
+</div>
+</section>
+<!-- Qualitative Results -->
+<section class="section">
+<div class="container is-max-desktop">
+<h2 class="title is-3">Qualitative Results</h2>
+<div class="content has-text-justified">
+<p>
               GraphVid generates interaction-consistent videos from a single image and user-specified graph edits. Across object-object, human-object, and multi-agent scenes, the model preserves scene identity while producing temporally coherent motion that follows the requested relational dynamics.
             </p>
-          </div>
-
-          <div style="text-align: center; margin-bottom: 30px;">
-            <div class="media-wrap-wide">
-              <div class="media-card" data-loaded="false">
-                <img loading="lazy" decoding="async" src="./static/images/gvc_qual_samples.png" alt="GraphVid qualitative examples showing interaction-conditioned video generation">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-            <p class="caption has-text-justified">
-              <strong>Interaction-conditioned generation.</strong> Given an input image and interaction graph, GraphVid generates coherent videos for diverse dynamics, including animals moving relative to one another, human-object interactions, human motion, and object manipulation.
+<!-- </div>
+<div style="text-align: center; margin-bottom: 30px;">
+<div class="media-wrap-wide">
+<div class="media-card" data-loaded="false">
+<img alt="GraphVid qualitative examples showing interaction-conditioned video generation" decoding="async" loading="lazy" src="./static/images/gvc_qual_samples.png"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<p class="caption has-text-justified">
+<strong>Interaction-conditioned generation.</strong> Given an input image and interaction graph, GraphVid generates coherent videos for diverse dynamics, including animals moving relative to one another, human-object interactions, human motion, and object manipulation.
             </p>
-          </div>
-
-          <div class="content has-text-justified">
-            <p>
+</div> -->
+<div class="content has-text-justified">
+<p>
               Compared with prior controllable video generation systems, GraphVid better preserves the relationship between interacting entities. In multi-object scenarios, baseline methods often fail to separate object trajectories, introduce artifacts, generate the wrong action, or lose subject identity. GraphVid uses directed graph conditioning to bind the requested interaction to the correct entities, improving temporal consistency and structural reliability.
             </p>
-          </div>
-
-          <div style="margin-bottom: 2rem;">
-          <h3 class="title is-4">Graph-Controlled Video Generation Examples</h3>
-
-          <!-- Local styles for this examples block -->
-          <style>
+</div>
+<div style="margin-bottom: 2rem;">
+<h3 class="title is-4">Graph-Controlled Video Generation Examples</h3>
+<!-- Local styles for this examples block -->
+<style>
             .graphvid-example-grid {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
@@ -889,144 +888,102 @@
               }
             }
           </style>
-
-          <!-- Example 1 -->
-          <div class="graphvid-example-grid">
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Intended Motion</div>
-              <div class="media-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/intent_gif/12.gif"
-                  alt="Intent motion for GraphVid example 1">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Edited Interaction Graph</div>
-              <div class="media-card graphvid-graph-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/gen_graph/12.svg"
-                  alt="Edited interaction graph for GraphVid example 1">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">GraphVid Output</div>
-              <div class="media-card" data-loaded="false">
-                <video autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/gen_video/12.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Example 2 -->
-          <div class="graphvid-example-grid">
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Intended Motion</div>
-              <div class="media-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/intent_gif/6.gif"
-                  alt="Intent motion for GraphVid example 2">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Edited Interaction Graph</div>
-              <div class="media-card graphvid-graph-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/gen_graph/6.svg"
-                  alt="Edited interaction graph for GraphVid example 2">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">GraphVid Output</div>
-              <div class="media-card" data-loaded="false">
-                <video autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/gen_video/6.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Example 3 -->
-          <div class="graphvid-example-grid">
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Intended Motion</div>
-              <div class="media-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/intent_gif/4.gif"
-                  alt="Intent motion for GraphVid example 3">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">Edited Interaction Graph</div>
-              <div class="media-card graphvid-graph-card" data-loaded="false">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="./static/videos/gen_graph/4.svg"
-                  alt="Edited interaction graph for GraphVid example 3">
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-            <div class="graphvid-example-card">
-              <div class="graphvid-example-title">GraphVid Output</div>
-              <div class="media-card" data-loaded="false">
-                <video autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/gen_video/4.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-            </div>
-
-          </div>
-
-          <p class="caption has-text-justified">
+<!-- Example 1 -->
+<div class="graphvid-example-grid">
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Intended Motion</div>
+<div class="media-card" data-loaded="false">
+<img alt="Intent motion for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/intent_gif/12.gif"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Edited Interaction Graph</div>
+<div class="media-card graphvid-graph-card" data-loaded="false">
+<img alt="Edited interaction graph for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/gen_graph/12.svg"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">GraphVid Output</div>
+<div class="media-card" data-loaded="false">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="./static/videos/gen_video/12.mp4" type="video/mp4"/>
+</video>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+</div>
+<!-- Example 2 -->
+<div class="graphvid-example-grid">
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Intended Motion</div>
+<div class="media-card" data-loaded="false">
+<img alt="Intent motion for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/intent_gif/6.gif"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Edited Interaction Graph</div>
+<div class="media-card graphvid-graph-card" data-loaded="false">
+<img alt="Edited interaction graph for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/gen_graph/6.svg"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">GraphVid Output</div>
+<div class="media-card" data-loaded="false">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="./static/videos/gen_video/6.mp4" type="video/mp4"/>
+</video>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+</div>
+<!-- Example 3 -->
+<div class="graphvid-example-grid">
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Intended Motion</div>
+<div class="media-card" data-loaded="false">
+<img alt="Intent motion for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/intent_gif/4.gif"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">Edited Interaction Graph</div>
+<div class="media-card graphvid-graph-card" data-loaded="false">
+<img alt="Edited interaction graph for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/gen_graph/4.svg"/>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+<div class="graphvid-example-card">
+<div class="graphvid-example-title">GraphVid Output</div>
+<div class="media-card" data-loaded="false">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="./static/videos/gen_video/4.mp4" type="video/mp4"/>
+</video>
+<div class="media-skeleton">Loading...</div>
+</div>
+</div>
+</div>
+<p class="caption has-text-justified">
             Each example shows the user's intended motion, the corresponding edited interaction graph, and the generated GraphVid output. The side-by-side layout illustrates how GraphVid translates graph-level relational edits into coordinated video dynamics while preserving scene appearance and object identity.
           </p>
-        </div>
-      </section>
-
-      <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-          <pre><code>@article{shah2026graphvid,
+</div>
+</div></section>
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+<pre><code>@inproceedings{shah2026graphvid,
   title={GraphVid: Interactive Graph-Controllable Video Generation},
   author={Shah, Vedant and Susladkar, Onkar and Prakash, Tushar and Nguyen, Kiet A. and Yu, Tianjiao and Juvekar, Adheesh and Wahed, Muntasir and Lourentzou, Ismini},
-  journal={arXiv preprint},
+  booktitle={European Conference on Computer Vision},
   year={2026}
 }</code></pre>
-        </div>
-      </section>
-    </main>
-
-    <script>
+</div>
+</section>
+</main>
+<script>
       document.addEventListener('DOMContentLoaded', () => {
         const markLoaded = (media) => {
           const card = media.closest('.media-card');
@@ -1054,5 +1011,5 @@
         });
       });
     </script>
-  </body>
+</body>
 </html>
