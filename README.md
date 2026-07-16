@@ -1,8 +1,41 @@
 # PLAN Lab Website
 
-This folder is a standalone static site. Team members and publications are rendered from JSON in `assets/data/`.
+This folder is a standalone static site. Team members, publications, and news are rendered from JSON in `assets/data/`.
 
 ## Update content
+
+### Adding a news item
+- Edit `assets/data/news.json` and add an entry at the top of the `news` array:
+```
+    {
+      "id": "YYYY-short-slug",                # permanent anchor on news.html (news.html#news-YYYY-short-slug)
+      "date": "YYYY-MM-DD",                   # also accepts "YYYY-MM" or "YYYY"; items are sorted by this
+      "title": "2 papers at X 2026!",
+      "description": "One or two sentences shown on the card.",
+      "image": "assets/images/publications/xyz.webp", # optional; use the publication cover images
+      "banner": "assets/images/news/xyz.webp",# optional; homepage-only image (conference banner/logo art, cropped to fill)
+      "imageFit": "cover",                    # optional; images render like publications (contained, white box); cover crops photos to fill
+      "icon": "fa-solid fa-trophy",           # optional Font Awesome class, used when there is no image
+      "link": "publications.html",            # optional; used as the More target only when the item has no papers/body
+      "linkLabel": "More",                    # optional; custom label for that link
+      "body": ["Optional longer paragraph shown on the item's detail page."],
+      "papers": [                             # optional; gives the item a detail page listing these papers
+        { "pubId": "2026-LastName-paper-slug" },        # reference into publications.json (rendered from there)
+        {                                                # OR an inline paper that is NOT on the publications list
+          "title": "Full Paper Title",
+          "authors": ["Firstname Lastname"],             # lab members are auto-linked to their profiles
+          "venueAbbr": "ECCV 2026", "year": 2026,
+          "cover": "assets/images/news/xyz.webp",        # optional
+          "links": { "paper": "https://...", "code": "https://..." },
+        }
+      ]
+    }
+```
+- Remove the comments before saving; JSON does not support comments.
+- The homepage shows the 4 most recent items. `news.html` lists everything, grouped by year.
+- The More button routing: `link` always wins when set; otherwise the item's detail page (`news.html?id=<id>`).
+- On `news.html`, items whose `papers` resolve to 2+ publication covers rotate through them as a small carousel; the homepage card stays static (`banner` first, then `image`).
+- To link a news item to a filtered publications view instead, use `"link": "publications.html?q=ECCV 2026"` (the publications search supports `?q=` prefill).
 
 ### Adding a publication
 - Edit `assets/data/publications.json` and add images under `assets/images/publications/`.

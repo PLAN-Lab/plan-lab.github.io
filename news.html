@@ -12,26 +12,27 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Student Profile | PLAN Lab</title>
-    <meta name="description" content="PLAN Lab members at the University of Illinois Urbana-Champaign, led by Ismini Lourentzou. Research in multimodal machine learning, vision-language models, embodied AI, and 3D and video generative models.">
-    <link rel="canonical" href="https://plan-lab.github.io/member.html">
-    <meta property="og:type" content="profile">
+    <title>News | PLAN Lab</title>
+    <meta name="description" content="News from the PLAN Lab at the University of Illinois Urbana-Champaign: paper acceptances, awards, talks, and lab milestones.">
+    <meta name="keywords" content="multimodal machine learning, vision-language models, embodied AI, 3D generative models, video generation, world models, physical AI, computer vision, generative models, PLAN Lab, Ismini Lourentzou, UIUC">
+    <link rel="canonical" href="https://plan-lab.github.io/news.html">
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="PLAN Lab">
-    <meta property="og:title" content="PLAN Lab Member">
-    <meta property="og:description" content="PLAN Lab members at the University of Illinois Urbana-Champaign, led by Ismini Lourentzou. Research in multimodal machine learning, vision-language models, embodied AI, and 3D and video generative models.">
-    <meta property="og:url" content="https://plan-lab.github.io/member.html">
+    <meta property="og:title" content="News | PLAN Lab">
+    <meta property="og:description" content="News from the PLAN Lab at the University of Illinois Urbana-Champaign: paper acceptances, awards, talks, and lab milestones.">
+    <meta property="og:url" content="https://plan-lab.github.io/news.html">
     <meta property="og:image" content="https://plan-lab.github.io/assets/images/og-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="PLAN Lab — Perception and LANguage, University of Illinois Urbana-Champaign">
     <meta name="twitter:image" content="https://plan-lab.github.io/assets/images/og-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PLAN Lab Member">
-    <meta name="twitter:description" content="PLAN Lab members at the University of Illinois Urbana-Champaign, led by Ismini Lourentzou. Research in multimodal machine learning, vision-language models, embodied AI, and 3D and video generative models.">
+    <meta name="twitter:title" content="News | PLAN Lab">
+    <meta name="twitter:description" content="News from the PLAN Lab at the University of Illinois Urbana-Champaign: paper acceptances, awards, talks, and lab milestones.">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
+    <link rel="preload" as="fetch" href="assets/data/news.json" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -40,13 +41,12 @@
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></noscript>
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <script src="assets/js/content.js" defer></script>
-    <script src="assets/js/page-profile-content.js" defer></script>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-    </head>
-<body class="page-member">
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/page-news-content.js?v=1" defer></script>
+</head>
+<body class="page-publications page-news">
 
     <nav class="glass-nav">
         <a href="index.html#hero" class="nav-logo">
@@ -93,52 +93,29 @@
     </div>
     
 
-    <div class="profile-wrapper">
-        <article class="profile-card">
-            
-            <div class="profile-image-container">
-                <img src="https://via.placeholder.com/400" alt="Profile Photo" class="profile-img" id="profile-avatar">
-            </div>
+    <header class="page-header">
+        <h1>News</h1>
+        <p>Paper acceptances, awards, talks, and lab milestones.</p>
+    </header>
 
-            <div class="profile-info">
-                <h1 id="profile-name">Team Member</h1>
-                <div class="role-tag" id="profile-role"></div>
-
-                <div class="link-buttons">
-                    <a href="#" class="btn-icon" id="profile-email"><i class="fa-regular fa-envelope"></i> Email</a>
-                    <a href="#" class="btn-icon" id="profile-website"><i class="fa-solid fa-globe"></i> Website</a>
-                    <a href="#" class="btn-icon" id="profile-github"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="#" class="btn-icon" id="profile-scholar"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
-                </div>
-
-	                <a href="publications.html" class="btn-papers" id="profile-show-papers" style="display:none">
-	                    <i class="fa-regular fa-file-lines"></i> Show Papers
-	                </a>
-
-                <div class="bio-text" style="margin-top: 20px;" id="profile-bio"></div>
-            </div>
-        </article>
-
-	        <div id="papers" class="papers-section" style="display:none">
-	            <div class="papers-header">
-	                <h2 id="papers-title">Recent Publications</h2>
-	            </div>
-	            <div id="papers-list"></div>
-	            <a href="publications.html" class="papers-show-all" id="papers-show-all" style="display:none"></a>
-	        </div>
+    <div class="container">
+        <div id="news-list" aria-live="polite"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
+        // --- 1. THREE.JS LIQUID RIBBON BACKGROUND (MATCHING INDEX.HTML) ---
         const initThreeJS = () => {
             const container = document.getElementById('canvas-container');
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
             camera.position.set(0, 0, 15); 
+            
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
             container.appendChild(renderer.domElement);
+            
             const geometry = new THREE.PlaneGeometry(35, 12, 200, 64);
             const uniforms = {
                 uTime: { value: 0 },
@@ -147,6 +124,7 @@
                 uColorOrange: { value: new THREE.Color('#FF5F05') },
                 uColorDark: { value: new THREE.Color('#13294B') }
             };
+            
             const vertexShader = `
                 uniform float uTime; uniform float uScrollOffset;
                 varying vec2 vUv; varying float vElevation; varying float vFlow; 
@@ -173,12 +151,15 @@
                     gl_FragColor = vec4(color, 1.0);
                 }
             `;
+            
             const materialMain = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide });
             const meshMain = new THREE.Mesh(geometry, materialMain);
             meshMain.rotation.x = -0.3; scene.add(meshMain);
+            
             const materialWire = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, side: THREE.DoubleSide, wireframe: true, transparent: true, opacity: 0.15 });
             const meshWire = new THREE.Mesh(geometry, materialWire);
             meshWire.position.z = -1.0; meshWire.scale.set(1.1, 1.1, 1); scene.add(meshWire);
+            
             const clock = new THREE.Clock();
             const animate = () => {
                 const t = clock.getElapsedTime();
@@ -188,15 +169,20 @@
                 requestAnimationFrame(animate);
             };
             animate();
+            
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
-        };
-        initThreeJS();
-    </script>
+	        };
+	        if (window.THREE) {
+	            try { initThreeJS(); } catch (e) { console.error(e); }
+	        } else {
+	            console.warn('[PLAN] THREE.js not available; skipping background.');
+	        }
 
+	    </script>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
@@ -503,6 +489,7 @@
         animate();
     })();
     </script>
+
 
     
 <footer>
