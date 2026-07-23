@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<!-- Replace the ID below with the project/lab analytics ID if needed. -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-48J3PYKGQ6');
-</script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="GraphVid is an ECCV 2026 graph-conditioned image-to-video generation framework for interactive multi-object control through directed interaction graphs." name="description"/>
@@ -297,7 +297,7 @@
       }
 
       .page-project table.metric-table tbody tr.sota-row {
-        background: rgba(87, 145, 232, 0.15);
+        background: rgba(6, 224, 231, 0.15);
       }
 
       .page-project table.metric-table tbody tr.efficient-row,
@@ -427,15 +427,20 @@
 </a>
 </span>
 <span class="link-block">
-<a class="external-link button is-normal is-rounded is-dark" href="#">
+<a class="external-link button is-normal is-rounded is-dark" href="https://github.com/PLAN-Lab/GraphVid">
 <span class="icon"><i class="fab fa-github"></i></span>
-<span>Code (coming soon)</span>
+<span>Code</span>
 </a>
 </span>
 <span class="link-block">
-<a class="external-link button is-normal is-rounded is-dark" href="#dataset">
+<a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid/blob/main/GraphVid_Bench.tar.zst">
 <span class="icon"><i class="fa-solid fa-database"></i></span>
-<span>Dataset (coming soon)</span>
+<span>Dataset</span>
+</span>
+<span class="link-block">
+<a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder">
+<span class="icon"><i class="fa-solid fa-model"></i></span>
+<span>Checkpoint</span>
 </a>
 </span>
 </div>
@@ -463,7 +468,7 @@
 <section class="section">
 <div class="container is-max-desktop">
 <h2 class="title is-3">TL;DR</h2>
-<div class="content has-text-justified tldr-box"><ul><li><strong>GraphVid makes controllable image-to-video generation an interactive graph editing problem.</strong></li><li>Users specify object-level relational dynamics—such as <em>push</em>, <em>pull</em>, <em>lift</em>, or <em>move relative to</em>—instead of authoring dense, "literal" trajectories for every object.</li><li>An Edge-Aware GNN converts directed interaction graphs into conditioning tokens for a frozen <strong>LTX-Video 2B</strong> diffusion transformer.</li><li>Using approximately <strong>27K curated clips</strong>, <strong>0.6B trainable parameters</strong>, and <strong>200-second inference</strong>, GraphVid delivers strong interaction control with substantially less data and trainable capacity than large motion-control systems.</li></ul></div>
+<div class="content has-text-justified tldr-box"><ul><li><strong>GraphVid makes controllable image-to-video generation an interaction driven graph editing problem.</strong></li><li>Users specify object-level relational dynamics—such as <em>push</em>, <em>pull</em>, <em>lift</em>, or <em>move relative to</em>—instead of authoring dense, "literal" trajectories for every object.</li><li>An Edge-Aware GNN converts directed interaction graphs into conditioning tokens for a frozen <strong>LTX-Video 2B</strong> diffusion transformer.</li><li>Using approximately <strong>27K curated clips</strong>, <strong>0.6B trainable parameters</strong>, and <strong>200-second inference</strong>, GraphVid delivers strong interaction control with substantially less data and trainable capacity than large motion-control systems.</li></ul></div>
 </div>
 </section>
 <!-- Why GraphVid? -->
@@ -564,9 +569,6 @@
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
-<p class="caption has-text-justified">
-<strong>Edge-Aware Graph Reasoning.</strong> Node and edge embeddings are projected into a shared hidden space and processed by an edge-aware GCN. The resulting interaction-aware node embeddings are mapped into the hidden space of the video transformer and used as graph conditioning tokens.
-            </p>
 </div>
 </div>
 </section>
@@ -650,7 +652,7 @@
             }
 
             .metric-table tbody tr.sota-row td:first-child {
-              color: #234e8d;
+              color: #0febe0;
             }
 
             .metric-table tbody tr.efficient-row td:first-child {
@@ -670,9 +672,9 @@
             }
 
             .sota-tag {
-              color: #1e4580;
-              background: rgba(19, 41, 75, 0.13);
-              border: 1px solid rgba(19, 41, 75, 0.18);
+              color: #0febe0;
+              background: rgba(44, 95, 172, 0.075);
+              border: 1px solid rgba(255, 255, 255, 0.18);
             }
 
             .ours-tag {
