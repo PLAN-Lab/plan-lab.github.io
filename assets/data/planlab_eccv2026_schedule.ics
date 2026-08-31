@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//ECCV 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ ECCV 2026 Posters
+BEGIN:VEVENT
+UID:graphvid-eccv2026@plan-lab.github.io
+DTSTAMP:20260831T150000Z
+DTSTART:20260911T083000Z
+DTEND:20260911T103000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ ECCV 2026: GraphVid Poster
+LOCATION:ExHall\, Malmö Arena\, Malmö\, Sweden
+DESCRIPTION:GraphVid: Interactive Graph-Controllable Video Generation\n\nP
+ LAN Lab @ ECCV 2026\nPoster Session 3 · Poster #410\n\nProject page:\nh
+ ttps://plan-lab.github.io/projects/graphvid/\n\nOfficial ECCV page:\nht
+ tps://eccv.ecva.net/virtual/2026/poster/4972
+URL:https://plan-lab.github.io/projects/graphvid/
+END:VEVENT
+BEGIN:VEVENT
+UID:dreampartgen-eccv2026@plan-lab.github.io
+DTSTAMP:20260831T150000Z
+DTSTART:20260911T140000Z
+DTEND:20260911T160000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ ECCV 2026: DreamPartGen Poster
+LOCATION:ExHall\, Malmö Arena\, Malmö\, Sweden
+DESCRIPTION:DreamPartGen: Semantically Grounded Part-Level 3D Generation v
+ ia Collaborative Latent Denoising\n\nPLAN Lab @ ECCV 2026\nPoster Session
+  4 · Poster #78\n\nProject page:\n
+ https://plan-lab.github.io/projects/drea
+ mpartgen/\n\nOfficial ECCV page:\nhttps://eccv.ecva.net/virtual/2026/post
+ er/4994
+URL:https://plan-lab.github.io/projects/dreampartgen/
+END:VEVENT
+BEGIN:VEVENT
+UID:childrens-gait-eccv2026@plan-lab.github.io
+DTSTAMP:20260831T150000Z
+DTSTART:20260911T140000Z
+DTEND:20260911T160000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ ECCV 2026: Children’s Gait Poster
+LOCATION:ExHall\, Malmö Arena\, Malmö\, Sweden
+DESCRIPTION:Decoding Children’s Gait Behavior\n\n
+ PLAN Lab @ ECCV 2026\nPoster Session 4 · Poster #320\n\n
+ Project page:\nhttps://pediamedai.com/Ch
+ ildrenGait/\n\nOfficial ECCV page:\nhttps://eccv.ecva.net/virtual/2026/
+ poster/3161
+URL:https://pediamedai.com/ChildrenGait/
+END:VEVENT
+END:VCALENDAR

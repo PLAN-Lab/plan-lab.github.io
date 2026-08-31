@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//ECCV 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ ECCV 2026: GraphVid
+BEGIN:VEVENT
+UID:graphvid-eccv2026@plan-lab.github.io
+DTSTAMP:20260831T150000Z
+DTSTART:20260911T083000Z
+DTEND:20260911T103000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ ECCV 2026: GraphVid Poster
+LOCATION:ExHall\, Malmö Arena\, Malmö\, Sweden
+DESCRIPTION:GraphVid: Interactive Graph-Controllable Video Generation\n\nP
+ LAN Lab @ ECCV 2026\nPoster Session 3 · Poster #410\n\nProject page:\nh
+ ttps://plan-lab.github.io/projects/graphvid/\n\nOfficial ECCV page:\nht
+ tps://eccv.ecva.net/virtual/2026/poster/4972
+URL:https://plan-lab.github.io/projects/graphvid/
+END:VEVENT
+END:VCALENDAR

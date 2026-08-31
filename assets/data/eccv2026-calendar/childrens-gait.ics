@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//ECCV 2026 Posters//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ ECCV 2026: Children’s Gait
+BEGIN:VEVENT
+UID:childrens-gait-eccv2026@plan-lab.github.io
+DTSTAMP:20260831T150000Z
+DTSTART:20260911T140000Z
+DTEND:20260911T160000Z
+STATUS:CONFIRMED
+SUMMARY:PLAN Lab @ ECCV 2026: Children’s Gait Poster
+LOCATION:ExHall\, Malmö Arena\, Malmö\, Sweden
+DESCRIPTION:Decoding Children’s Gait Behavior\n\n
+ PLAN Lab @ ECCV 2026\nPoster Session 4 · Poster #320\n\n
+ Project page:\nhttps://pediamedai.com/Ch
+ ildrenGait/\n\nOfficial ECCV page:\nhttps://eccv.ecva.net/virtual/2026/
+ poster/3161
+URL:https://pediamedai.com/ChildrenGait/
+END:VEVENT
+END:VCALENDAR
