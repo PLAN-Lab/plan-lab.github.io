@@ -304,7 +304,7 @@
       "linkedin": "",
       "googleScholar": "https://scholar.google.com/citations?user=ECznem4AAAAJ",
       "twitter": "",
-      "bio": "Kiet A. Nguyen is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024–present). His research interests include vision-language models, visual grounding (e.g., pixel-level segmentation), and multi-image image understanding, generation, and editing. He has industry research experience as an Applied Scientist Intern at Amazon Science and a Machine Learning Research Intern at Netflix, with work spanning diffusion-based image generation and multi-image reference-guided image completion. Outside research, he enjoys baking, reading, and attempting to make various types of art (musical, visual, and/or literary)."
+      "bio": "Kiet A. Nguyen is a Computer Science Ph.D. student at the University of Illinois Urbana-Champaign (Fall 2024 - present). His research interests include vision-language models, visual grounding (e.g., pixel-level segmentation), and multi-image image understanding, generation, and editing. He has industry research experience as an Applied Scientist Intern at Amazon Science and a Machine Learning Research Intern at Netflix, with work spanning diffusion-based image generation and multi-image reference-guided image completion. Outside research, he enjoys baking, reading, and attempting to make various types of art (musical, visual, and/or literary)."
     },
     {
       "id": "makanjuola-ogunleye",
@@ -507,6 +507,24 @@
       "googleScholar": "",
       "twitter": "",
       "bio": "Kajal Patel is a Stamps Scholar and NCSA SPIN student researcher at the University of Illinois Urbana-Champaign, majoring in Computer Science with minors in Statistics and Psychology. Her research focus is open-world scene graph generation with large vision-language models."
+    },
+    {
+      "id": "xu-han",
+      "group": "phd",
+      "name": "Xu Han",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/xu-han.jpg",
+      "email": "xuh6@illinois.edu",
+      "github": "https://github.com/xhanxu",
+      "website": "https://xhanxu.github.io/",
+      "linkedin": "",
+      "googleScholar": "https://scholar.google.com/citations?user=8klkFTAAAAAJ",
+      "twitter": "",
+      "bio": "Xu Han is a PhD student in Computer Science at the University of Illinois Urbana-Champaign. His work favors structured, simple, and scalable methods, with broader interests in interactive world modeling, multimodal generation and understanding. Outside of research, he enjoys a variety of sports and outdoor activities."
     }
   ]
 }
