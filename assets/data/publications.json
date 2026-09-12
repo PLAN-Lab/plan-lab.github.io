@@ -1,6 +1,37 @@
 {
   "publications": [
     {
+      "id": "2026-Juvekar-editvid-one-editor-many-edits",
+      "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
+      "projectName": "EditVid",
+      "authors": [
+        "Adheesh Juvekar",
+        "Onkar Susladkar",
+        "Kiet A. Nguyen",
+        "Muntasir Wahed",
+        "Nabeel Bashir",
+        "Xiaona Zhou",
+        "Tianjiao Yu",
+        "Vedant Shah",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-03",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/editvid-promo-animated.webp",
+      "cardCover": "assets/images/publications/editvid-promo-animated.webp",
+      "doi": "10.48550/arXiv.2609.04190",
+      "links": {
+        "website": "/projects/editvid/",
+        "paper": "https://arxiv.org/pdf/2609.04190",
+        "code": "https://github.com/PLAN-Lab/EditVid",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
       "id": "2026-Shah-graphvid-interactive-graph-controllable",
       "title": "GraphVid: Interactive Graph-Controllable Video Generation",
       "projectName": "GraphVid",
