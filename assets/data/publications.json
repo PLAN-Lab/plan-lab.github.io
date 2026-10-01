@@ -44,10 +44,10 @@
       "date": "2026-09-20",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "",
+      "cover": "assets/images/publications/silsa.webp",
       "doi": "",
       "links": {
-        "website": "",
+        "website": "/projects/silsa/",
         "paper": "",
         "code": "",
         "video": "",
@@ -72,7 +72,7 @@
       "date": "2026-09-20",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "",
+      "cover": "assets/images/publications/elsa3d.webp",
       "doi": "10.48550/arXiv.2607.06565",
       "links": {
         "website": "/projects/elsa3D/",
@@ -94,10 +94,10 @@
     "Pinar Yanardag"
   ],
   "year": "2026",
-  "date": "09-20-2026",
+  "date": "09-19-2026",
   "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
   "type": "paper",
-  "cover": "",
+  "cover": "assets/images/publications/ravel.webp",,
   "doi": "10.48550/arXiv.2412.09614",
   "links": {
     "website": "https://ravel-diffusion.github.io/",
@@ -127,7 +127,7 @@
   "date": "2026-02-03",
   "venue": "International Conference on Learning Representations",
   "type": "paper",
-  "cover": "",
+  "cover": "assets/images/publications/fasa.webp",
   "doi": "10.48550/arXiv.2602.03152",
   "links": {
     "website": "",
@@ -165,7 +165,7 @@
   "date": "2026-09-29",
   "venue": "arXiv",
   "type": "paper",
-  "cover": "",
+  "cover": "assets/images/publications/libero-max.webp",
   "doi": "10.48550/arXiv.2609.36518",
   "links": {
     "website": "https://liberomax.github.io",
@@ -224,7 +224,7 @@
   "date": "2026-05-18",
   "venue": "arXiv",
   "type": "paper",
-  "cover": "",
+  "cover": "assets/images/publications/childagent-eval.webp",
   "doi": "10.48550/arXiv.2605.17894",
   "links": {
     "website": "",
@@ -319,7 +319,7 @@
   "date": "2026-09-01",
   "venue": "European Conference on Computer Vision",
   "type": "paper",
-  "cover": "",
+  "cover": "assets/images/publications/childgait",
   "doi": "10.1007/978-3-032-37577-3_7",
   "links": {
     "website": "https://pediamedai.com/ChildrenGait/",
