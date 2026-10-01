@@ -28,6 +28,61 @@
       },
       "venueAbbr": "arXiv"
     },
+       {
+      "id": "2026-Yu-silsa-sliding-window-slice-latents",
+      "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+      "projectName": "SILSA",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Ying Shen",
+        "Onkar Susladkar",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "",
+      "doi": "",
+      "links": {
+        "website": "",
+        "paper": "",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "NeurIPS 2026"
+    },
+    {
+      "id": "2026-Yu-elsa3d-elastic-semantic-anchoring",
+      "title": "ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation",
+      "projectName": "ELSA3D",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Onkar Susladkar",
+        "Yuanzhe Liu",
+        "Xiaona Zhou",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-07-07",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "",
+      "doi": "10.48550/arXiv.2607.06565",
+      "links": {
+        "website": "/projects/elsa3D/",
+        "paper": "https://arxiv.org/pdf/2607.06565",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "NeurIPS 2026"
+    },
     {
       "id": "2026-Juvekar-editvid-one-editor-many-edits",
       "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
@@ -1083,8 +1138,8 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-05-28",
-      "venue": "arXiv",
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
       "cover": "assets/images/publications/visanom_teaser.webp",
       "doi": "10.48550/arXiv.2605.30344",
@@ -1095,7 +1150,7 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "NeurIPS 2026"
     },
     {
       "id": "2026-Shen-egoforge-goal-directed-egocentric-world-simulator",
@@ -1184,8 +1239,8 @@
         "Xu Cao^"
       ],
       "year": 2026,
-      "date": "2026-02-02",
-      "venue": "arXiv",
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
       "cover": "assets/images/publications/cognitive-supersensing.webp",
       "doi": "10.48550/arXiv.2602.01541",
@@ -1196,7 +1251,7 @@
         "video": "",
         "data": "https://huggingface.co/datasets/PediaMedAI/CogSense-Bench"
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "NeurIPS 2026"
     }
   ]
 }
