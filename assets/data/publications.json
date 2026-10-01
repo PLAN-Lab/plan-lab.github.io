@@ -93,8 +93,8 @@
     "Ismini Lourentzou",
     "Pinar Yanardag"
   ],
-  "year": 09-20-2026,
-  "date": "2026",
+  "year": "2026",
+  "date": "09-20-2026",
   "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
   "type": "paper",
   "cover": "",
@@ -234,7 +234,7 @@
     "data": ""
   },
   "venueAbbr": "arXiv"
-}
+},
     {
       "id": "2026-Shah-graphvid-interactive-graph-controllable",
       "title": "GraphVid: Interactive Graph-Controllable Video Generation",
