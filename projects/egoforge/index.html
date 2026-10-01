@@ -238,7 +238,7 @@
                             simulator that generates coherent, first-person video rollouts from minimal static inputs:
                             a single egocentric image, a high-level instruction, and an optional auxiliary exocentric
                             view. To improve intent alignment and temporal consistency, we propose
-                            <strong>VideoDiffusionNFT</strong>, a trajectory-level reward-guided refinement that
+                            <strong>GRAFT</strong>, a trajectory-level reward-guided refinement that
                             optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity
                             during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains
                             in semantic alignment, geometric stability, and motion fidelity over strong baselines,
@@ -266,7 +266,7 @@
                             EgoForge fuses encoded visual features with noisy video latents at each DiT block to guide
                             generation. Geometry alignment weakly supervises intermediate features using angular and
                             scale consistency to encourage spatially stable rollouts. The resulting rollout videos are
-                            further refined via a novel VideoDiffusionNFT alignment policy that optimizes goal
+                            further refined via the proposed GRAFT alignment policy that optimizes goal
                             completion, scene consistency, temporal causality, and perceptual fidelity.
                         </p>
 
@@ -293,12 +293,12 @@
                                 diffusion features and VGGT features to prevent scale collapse.</li>
                         </ul>
 
-                        <h3 class="egoforge-section-header illini-orange">VideoDiffusionNFT Alignment</h3>
+                        <h3 class="egoforge-section-header illini-orange">GRAFT Alignment</h3>
 
                         
 
                         <p>
-                            VideoDiffusionNFT extends DiffusionNFT to the video domain and performs
+                            GRAFT performs
                             negative-aware finetuning with four fine-grained reward functions evaluated on
                             entire video trajectories:
                         </p>
@@ -445,7 +445,7 @@
                             <table class="results-table">
                                 <thead>
                                     <tr>
-                                        <th>FT</th><th>GWS</th><th>VideoDiffusionNFT</th>
+                                        <th>FT</th><th>GWS</th><th>GRAFT</th>
                                         <th>DINO↑</th><th>CLIP↑</th><th>SSIM↑</th>
                                         <th>LPIPS↓</th><th>FVD↓</th><th>Flow MSE↓</th><th>PSNR↑</th>
                                     </tr>
