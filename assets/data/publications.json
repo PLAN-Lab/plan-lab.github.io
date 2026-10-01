@@ -97,7 +97,7 @@
   "date": "09-19-2026",
   "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
   "type": "paper",
-  "cover": "assets/images/publications/ravel.webp",,
+  "cover": "assets/images/publications/ravel.webp",
   "doi": "10.48550/arXiv.2412.09614",
   "links": {
     "website": "https://ravel-diffusion.github.io/",
@@ -319,7 +319,7 @@
   "date": "2026-09-01",
   "venue": "European Conference on Computer Vision",
   "type": "paper",
-  "cover": "assets/images/publications/childgait",
+  "cover": "assets/images/publications/childgait.webp",
   "doi": "10.1007/978-3-032-37577-3_7",
   "links": {
     "website": "https://pediamedai.com/ChildrenGait/",
