@@ -525,6 +525,24 @@
       "googleScholar": "https://scholar.google.com/citations?user=8klkFTAAAAAJ",
       "twitter": "",
       "bio": "Xu Han is a PhD student in Computer Science at the University of Illinois Urbana-Champaign. His work favors structured, simple, and scalable methods, with broader interests in interactive world modeling, multimodal generation and understanding. Outside of research, he enjoys a variety of sports and outdoor activities."
+    },
+    {
+      "id": "yuanzhe-liu",
+      "group": "phd",
+      "name": "Yuanzhe Liu",
+      "role": "PhD Student",
+      "title": [
+        "PhD Student"
+      ],
+      "currently": "",
+      "avatar": "assets/images/team/yuanzhe-liu.webp",
+      "email": "yl241@illinois.edu",
+      "github": "https://github.com/yuanzhel0903GS",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/in/yuanzhe-liu-upenn-ds/",
+      "googleScholar": "https://scholar.google.com/citations?user=BkjxjvoAAAAJ&hl=zh-CN",
+      "twitter": "",
+      "bio": "Yuanzhe Liu is a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign. He received his M.S. in Data Science from the University of Pennsylvania and his B.S. in Mathematics from the University of Wisconsin–Madison. His research focuses on generative models and reinforcement learning for embodied robotics, aiming to enable agents to perceive, reason, and plan in the physical world. He is interested in translating these advances into practical, scalable robotic systems that address real-world challenges."
     }
   ]
 }
