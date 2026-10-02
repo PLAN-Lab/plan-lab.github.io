@@ -92,6 +92,7 @@ body {
             left: 50%;
             transform: translateX(-50%);
             width: fit-content;
+            max-width: calc(100% - 32px);
             min-width: 0;
             display: flex;
             justify-content: center; 
@@ -127,6 +128,7 @@ body {
 
         .nav-logo {
             display: flex;
+            flex: 0 0 auto;
             align-items: center;
             justify-content: center;
             text-decoration: none;
@@ -138,10 +140,12 @@ body {
 
         .glass-nav.scrolled-nav .nav-logo img { height: 32px; }
 
-        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu { display: flex; flex-wrap: nowrap; gap: 20px; }
 
         .nav-item {
             display: flex;
+            flex: 0 0 auto;
+            white-space: nowrap;
             align-items: center;
             gap: 8px;
             text-decoration: none;
@@ -336,18 +340,6 @@ body {
             #partners{ 
                 padding-top: 24px; 
                 padding-bottom: 32px;
-            }
-
-            .sponsors-panel{
-                margin-top: 20px;
-                padding: 1.5rem; 
-                border-radius: 20px;  
-                margin-bottom: 2rem;
-            }
-
-            .sponsors-panel h2{
-                font-size: var(--text-4xl);
-                margin-bottom: 1.5rem !important;
             }
 
             .partners-container{ 
@@ -718,58 +710,6 @@ body {
             font-size: var(--text-2xl);
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        .sponsors-panel {
-            margin-top: 30px;
-            background: rgba(5, 14, 34, 0.11);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 3rem 2rem;
-            backdrop-filter: blur(15px);
-            margin-bottom: 3rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-        }
-
-        .sponsors-panel h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #fff;
-            font-weight: 700;
-            font-size: var(--text-6xl);
-            letter-spacing: -0.02em;
-        }
-
-        .sponsors-text {
-            font-size: var(--text-xl);
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .logo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem 4rem;
-            margin-top: 2rem;
-        }
-
-        .logo-item {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .logo-item:hover {
-            opacity: 1;
-            transform: scale(1.1);
         }
 
         .funding-cta {
