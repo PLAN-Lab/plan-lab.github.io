@@ -13,201 +13,28 @@
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs." />
-  <title>VTAM | PLAN Lab</title>
+  <meta name="description" content="Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection." />
+  <title>Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/projects.css" />
   <script src="../../assets/js/project-pages.js" defer></script>
-  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <style>
-    .page-project .vtam-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 0.75rem;
-      align-items: start;
+    :root {
+      --illinois-darker-blue: #13294B;
+      --illinois-blue: #3C78D8;
+      --illinois-orange: #FF5F05;
     }
 
-    .page-project .vtam-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 0.75rem;
-      align-items: start;
-    }
-
-    .page-project .vtam-pred-grid {
-      grid-template-columns: 1fr;
-      gap: 18px;
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .page-project .vtam-pred-grid .interpolation-image {
-      align-self: center;
-      width: 85%;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .page-project .vtam-caption {
-      text-align: center;
-      margin-top: 0.45rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .page-project .vtam-table {
-      width: min(760px, 100%);
-      margin: 0.8rem auto;
-      border-collapse: collapse;
-    }
-
-    .page-project .vtam-table th,
-    .page-project .vtam-table td {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 8px 10px;
-      text-align: center;
-    }
-
-    .page-project .vtam-table thead th {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .page-project .vtam-table tbody tr:last-child td {
-      font-weight: 700;
-      color: #ff9f43;
-    }
-
-    .page-project .vtam-video-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .page-project .vtam-video-grid.vtam-video-grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .page-project .vtam-video-grid.vtam-video-grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .page-project .vtam-two-split {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 0.5rem;
-      align-items: start;
-    }
-
-    .page-project .vtam-two-split .title {
-      margin-bottom: 0.35rem;
-    }
-
-    .page-project .vtam-video-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 10px;
-      padding: 10px;
-    }
-
-    .page-project .vtam-video-title {
-      text-align: center;
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .page-project .vtam-video-wrap {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 8px;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.25);
-    }
-
-    .page-project .vtam-video-wrap iframe {
-      border: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
-
-    .page-project .vtam-ours {
-      color: #ff9f43;
-    }
-
-    .page-project .vtam-tldr {
-      text-align: center;
-      max-width: 980px;
-      margin: 0.85rem auto 0;
-      font-size: 1.24rem !important;
-      line-height: 1.6;
-      font-weight: 700;
-    }
-
-    .page-project .vtam-tldr strong {
-      font-weight: 800;
-    }
-
-    .page-project .vtam-k1 {
-      color: #ff9f43;
-      font-weight: 700;
-    }
-
-    .page-project .vtam-k2 {
-      color: #51c7e8;
-      font-weight: 700;
-    }
-
-    .page-project .vtam-k3 {
-      color: #95e06c;
-      font-weight: 700;
-    }
-
-    .page-project .publication-authors.notes {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: #888888;
-    }
-
-    .page-project .publication-authors .author-block.name {
-      color: #7eb8f0;
-      font-weight: 900;
-      font-size: 1.07rem;
-    }
-
-    @media (max-width: 900px) {
-      .page-project .vtam-grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .page-project .vtam-grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .page-project .vtam-video-grid,
-      .page-project .vtam-video-grid.vtam-video-grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .page-project .vtam-video-grid.vtam-video-grid-2,
-      .page-project .vtam-two-split {
-        grid-template-columns: 1fr;
-      }
-    }
+    .va-orange { color: var(--illinois-orange); }
+    .va-blue { color: var(--illinois-blue); }
+    .va-darker-blue { color: var(--illinois-darker-blue); }
   </style>
 </head>
 
@@ -232,13 +59,13 @@
         <i class="fa-solid fa-cube"></i>
         <span>PLAN Cubes</span>
       </a>
-      <a href="../../index.html#partners" class="nav-item" aria-label="Partner with Us">
+      <a href="../../index.html#partners" class="nav-item" aria-label="Partner">
         <i class="fa-solid fa-circle-nodes"></i>
-        <span>Partner with Us</span>
+        <span>Partner</span>
       </a>
-      <a href="../../index.html#contact" class="nav-item" aria-label="Join Us">
+      <a href="../../index.html#contact" class="nav-item" aria-label="Join">
         <i class="fa-solid fa-paper-plane"></i>
-        <span>Join Us</span>
+        <span>Join</span>
       </a>
     </div>
   </nav>
@@ -249,71 +76,84 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="publication-title">VTAM: Video-Tactile-Action Models for<br>Complex Physical Interaction Beyond VLAs
-              </h1>
+              <h1 class="publication-title">Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection</h1>
 
               <div class="publication-authors">
-                <span class="author-block name">Haoran Yuan<sup>1,*,&#8225;</sup>,</span>
-                <span class="author-block name">Weigang Yi<sup>1,*</sup>,</span>
-                <span class="author-block name">Zhenyu Zhang<sup>2,*</sup>,</span>
-                <span class="author-block name">Wendi Chen<sup>3,*</sup></span>
-              </div>
-              <div class="publication-authors">
-                <span class="author-block name">Yuchen Mo<sup>1</sup>,</span>
-                <span class="author-block name">Jiashi Yin<sup>1</sup>,</span>
-                <span class="author-block name">Xinzhuo Li<sup>1</sup>,</span>
-                <span class="author-block name">Xiangyu Zeng<sup>1</sup></span>
-              </div>
-              <div class="publication-authors">
-                <span class="author-block name">Chuan Wen<sup>3</sup>,</span>
-                <span class="author-block name">Cewu Lu<sup>3</sup>,</span>
-                <span class="author-block name">Katherine Driggs-Campbell<sup>1</sup>,</span>
-                <span class="author-block name">Ismini Lourentzou<sup>1,&dagger;</sup></span>
-              </div>
-
-              <div class="is-size-5 publication-authors" style="justify-content: center;">
-                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
-                <span class="author-block"><sup>2</sup>Stanford University</span>
-                <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>
+                <span class="author-block">
+                <a href="/team/xiaona-zhou" class="illini-orange">Xiaona Zhou<sup class="illini-orange">1</sup></a>,
+              </span>
+              
+                <span class="author-block">
+                    <a href="/team/muntasir-wahed" class="illini-orange" >Muntasir Wahed<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                    <a href="/team/tianjiao(joey)-yu" class="illini-orange" >Tianjiao Yu<sup class="illini-orange">1</sup></a>,
+                </span>
+                <span class="author-block">
+                <a href="https://sites.google.com/site/constantinbrif" class="sandia-blue">Constantin Brif<sup class="sandia-blue">2</sup></a>,
+              </span>
+                <span class="author-block"><a href="/team/ismini-lourentzou" class="illini-orange" >Ismini Lourentzou<sup class="illini-orange">1</sup></a>,</span>
+              
               </div>
 
-              <div class="publication-authors notes" style="justify-content: center;">
-                <span class="author-block"><sup>&#8225;</sup>Project lead</span>
-                <span class="author-block"><sup>*</sup>Equal contribution</span>
-                <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
-              </div>
+              <div class="has-text-centered" style="margin: 5px 0;">
+               <div class="is-size-5 publication-authors">
+            <!--<span class="author-block">PLAN Lab</span>,-->
+            <span class="author-block illini-orange">University of Illinois Urbana-Champaign<sup class="illini-orange">1</sup></span>
+            <span class="author-block sandia-blue">Sandia National Laboratories<sup class="sandia-blue">2</sup></span>
+            </div>
 
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="#" class="button is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2605.30344" class="button is-rounded is-dark">
                     <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                    <span>Paper (coming soon)</span>
+                    <span>Paper</span>
                   </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2603.23481" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-link"></i></span>
+                  <span class="link-block">
+                  <a href="https://arxiv.org/abs/2605.30344" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
                     <span>arXiv</span>
                   </a>
                 </span>
+                <!-- </span>
                 <span class="link-block">
-                  <a href="https://github.com/haorany7/VTAM" class="button is-rounded is-dark">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-solid fa-link"></i></span>
+                    <span>Project</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
                     <span class="icon"><i class="fa-brands fa-github"></i></span>
-                    <span>Code</span>
+                    <span>Code (coming soon)</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#results-section" class="button is-rounded is-dark">
+                  <a href="#" class="button is-rounded is-dark">
                     <span class="icon"><i class="fa-regular fa-images"></i></span>
-                    <span>Results</span>
+                    <span>Dataset (coming soon)</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-solid fa-vr-cardboard"></i></span>
+                    <span>Demo</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#video-comparisons" class="button is-rounded is-dark">
+                  <a href="#" class="button is-rounded is-dark">
                     <span class="icon"><i class="fa-solid fa-video"></i></span>
                     <span>Video</span>
                   </a>
-                </span>
+                </span> -->
+                <!-- <span class="link-block">
+                  <a href="#" class="button is-rounded is-dark">
+                    <span class="icon"><i class="fa-regular fa-file-powerpoint"></i></span>
+                    <span>Slides</span>
+                  </a>
+                </span> -->
               </div>
             </div>
           </div>
@@ -324,40 +164,77 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <div class="content vtam-tldr">
-            <strong>We propose <span class="vtam-k1"><strong><em>VTAM</em></strong></span>, a new
-            <span class="vtam-k2">video-tactile world action model</span> for <span class="vtam-k3">contact-rich
-              robotic manipulation</span>. Given multi-view visual observations, tactile signals, and robot
-            state/action context, our method predicts interaction dynamics and generates physically grounded actions for
-            complex real-world tasks.</strong>
+          <div class="content has-text-centered">
+            <strong>TL;DR:</strong> We introduce <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, the first explanation-augmented benchmark for vision-language time-series anomaly reasoning, together with <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong>, a parameter-efficient VLM fine-tuned to jointly localize anomalies and generate grounded explanations from time-series plots. Experimental results show substantial improvements over existing VLM and anomaly detection baselines, demonstrating that explanation-augmented supervision enables more accurate and interpretable time-series anomaly reasoning.
           </div>
-          <img src="./static/images/teaser.png" class="interpolation-image" alt="VTAM teaser figure" />
+
+          <!-- Replace with your teaser: put it at `projects/<your-slug>/static/images/teaser.png` -->
+          <img src="static/images/VisAnomReasoner_teaser.png" class="interpolation-image" alt="Project teaser image" />
+
+          <div class="content has-text-centered">
+            Given a time series plot (left top), <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> locates anomalies while providing details grounded in the plot (left bottom).}
+Experimental results on two benchmarks demonstrate <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> outperforms the strongest baselines by large margins across all metrics (right).
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
+          <p>Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance when applying large language or multimodal models to finding abnormal patterns in sequential data. 
+            Public anomaly detection benchmarks typically provide interval annotations but not natural-language rationales, making it difficult to fine-tune VLMs to produce grounded, interpretable decisions.
+To address this gap, we construct <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, a curated benchmark built from public time-series datasets and augmented with high-quality anomaly explanations selected from multiple large VLMs using fine-grained, task-specific rewards.
+Through fine-tuning on this benchmark, we develop <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong>, a parameter-efficient VLM for time-series anomaly detection.
+Experimental results on <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong> show that <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> achieves more accurate anomaly localization and consistently outperforms all baselines, with improvements of at least 21.23 and 23.87 percentage points in precision and F<sub>1</sub>, respectively. Additional experiments on the TSB-AD-U benchmark demonstrate strong cross-benchmark generalization, with <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> improving precision and F<sub>1</sub> by 9.57 and 13.39 percentage points, respectively.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3"><strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong></h2>
+            <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
+              <p>
+                <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong> is an explanation-augmented benchmark for vision-language time-series anomaly reasoning, constructed from four public anomaly detection datasets spanning diverse domains and anomaly types. For each time-series plot, the benchmark provides (1) anomaly interval annotations and (2) temporally grounded step-by-step explanations aligned with the labeled anomalies. To build the dataset, we segment and render time series as plots, elicit structured reasoning traces from multiple large VLMs, and select the highest-quality explanation using a reward that combines anomaly localization accuracy, visual groundedness, axis awareness, and clarity. The final benchmark contains 2,576 training and 740 held-out test time series for supervised fine-tuning and evaluation of reasoning-based anomaly detection models.
+              </p>
+              <img src="./static/images/VisAnomBench_stats.png" class="interpolation-image" alt="VisAnomBench dataset statistics table." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3"><strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong></h2>
+            <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
+              <p>
+                <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> is a parameter-efficient vision-language model for reasoning-based time-series anomaly detection from plots. Given a plotted time series and optional context, the model jointly predicts anomaly intervals and generates grounded step-by-step explanations aligned with observable visual patterns such as spikes, level shifts, and periodic deviations. Unlike prior prompt-based approaches, <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> is supervised using explanation-augmented training data from <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, where each example contains both target anomaly intervals and preferred reasoning traces. The model is implemented by supervised fine-tuning of Qwen2.5-VL-3B and Qwen2.5-VL-7B using structured outputs with dedicated tags for anomaly decisions, interval localization, and reasoning generation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
           <p>
-            Video-Action Models (VAMs) have emerged as a promising framework for embodied intelligence, learning
-            implicit world dynamics from raw video streams to produce temporally consistent action predictions.
-            Although such models demonstrate strong performance on long-horizon tasks through visual reasoning, they
-            remain limited in contact-rich scenarios where critical interaction states are only partially observable
-            from vision alone. In particular, fine-grained force modulation and contact transitions are not reliably
-            encoded in visual tokens, leading to unstable or imprecise behaviors. To bridge this gap, we introduce the
-            Video-Tactile Action Model (VTAM), a multimodal world modeling framework that incorporates tactile
-            perception as a complementary grounding signal. VTAM augments a pretrained video transformer with tactile
-            streams via a lightweight modality transfer finetuning, enabling efficient cross-modal representation
-            learning without tactile-language paired data or independent tactile pretraining. To stabilize multimodal
-            fusion, we introduce a tactile regularization loss that enforces balanced cross-modal attention, preventing
-            visual latent dominance in the action model. VTAM demonstrates superior performance in contact-rich
-            manipulation, maintaining a robust success rate of 90% on average. In challenging scenarios such as potato
-            chip pick-and-place requiring high-fidelity force awareness, VTAM outperforms the <em>pi<sub>0.5</sub></em>
-            baseline by 80%. Our findings demonstrate that integrating tactile feedback is essential for correcting
-            visual estimation errors in world action models, providing a scalable approach to physically grounded
-            embodied foundation models.
+            <b>Anomaly Detection Performance on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.</b>
+            Best performance is <b>bold</b>, and second best is <u>underlined</u>.
+            Green arrows (<span style="color:#228B22;">&uarr;</span>) indicate absolute improvement relative to the second best.
+          </p>
+          <img src="./static/images/VisAnomBench_result.png" class="interpolation-image" alt="Anomaly detection results on VisAnomBench." style="max-width: 100%; height: auto; margin: 0 auto; display: block;" />
+          <p>
+            Despite its small scale, <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> consistently outperforms general-purpose VLMs, specialized LLM/VLM anomaly detectors, time-series foundation models, and classical detectors, improving precision and F<sub>1</sub> by at least 21.23 and 23.87 percentage points on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.
           </p>
         </div>
       </div>
@@ -365,209 +242,29 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Qualitative Analysis</h2>
+        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
           <p>
-            VTAM uses a two-stage training strategy. In Stage I, the model learns joint visuo-tactile predictive
-            dynamics in latent space using multi-view diffusion over two RGB views and one GelSight stream. In Stage
-            II, the model learns control with conditional diffusion and jointly predicts action, state, and a
-            deformation-derived virtual force proxy. This force proxy preserves tactile sensitivity and stabilizes
-            multimodal optimization.
+            <!-- <b>Qualitative Examples of Anomaly Reasoning.</b> -->
+            <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> precisely localizes the anomalous interval with visually grounded, structured reasoning; whereas other methods exhibit coarser localization or produce numerous spurious intervals with less grounded explanations.
           </p>
-          <img src="./static/images/method_arch.png" class="interpolation-image"
-            alt="VTAM method architecture overview" />
-          <p class="vtam-caption">
-            VTAM architecture: shared visuo-tactile latent world modeling + action-state-force diffusion head.
-          </p>
-
-          <div class="vtam-grid-2">
-            <img src="./static/images/experiment_setup.jpg" class="interpolation-image" alt="Robot experiment setup" />
-            <img src="./static/images/data_acquisition.png" class="interpolation-image"
-              alt="Data acquisition setup for VTAM" />
-          </div>
-          <p class="vtam-caption">Real-world setup and teleoperation data collection pipeline.</p>
+          <img src="./static/images/Qualitative_VisAnomBench.png" class="interpolation-image" alt="Qualitative anomaly reasoning comparisons on VisAnomBench." style="max-width: 100%; height: auto; margin: 0 auto; display: block;" />
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3" id="results-section">Results and Analysis</h2>
-        <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
           <p>
-            VTAM is evaluated on three contact-rich real-world tasks with 80 total trials per model (20 trials per
-            task setting). It consistently outperforms strong baselines including Genie Envisioner and vision-only
-            <em>pi<sub>0.5</sub></em> variants.
+            Supervised fine-tuning substantially improves anomaly localization and temporal boundary accuracy over the base Qwen2.5-VL models. The largest gains occur in precision, indicating a major reduction in false positives, while overlap improvements reflect more accurate interval localization.
           </p>
-
-          <table class="vtam-table" aria-label="Overall VTAM performance">
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Chip</th>
-                <th>Peel</th>
-                <th>Wipe</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Genie Envisioner</td>
-                <td>0%</td>
-                <td>0%</td>
-                <td>2.5%</td>
-              </tr>
-              <tr>
-                <td>pi<sub>0.5</sub> (Vision)</td>
-                <td>10%</td>
-                <td>0%</td>
-                <td>0%</td>
-              </tr>
-              <tr>
-                <td>pi<sub>0.5</sub> + Tactile</td>
-                <td>5%</td>
-                <td>0%</td>
-                <td>0%</td>
-              </tr>
-              <tr>
-                <td>VTAM (Ours)</td>
-                <td>90%</td>
-                <td>85%</td>
-                <td>95%</td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <h3 class="title is-4" id="video-comparisons">Video Comparisons</h3>
-          <br>
-
-          <h4 class="title is-5"><span class="vtam-ours">Chip Pick-and-Place</span></h4>
-          <div class="vtam-video-grid">
-            <div class="vtam-video-card">
-              <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/504763a39872834ba8b508e7ac69a79f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F504763a39872834ba8b508e7ac69a79f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">Genie Envisioner</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/8c5e1c7d87963c7b30525ecf1e8053cf/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F8c5e1c7d87963c7b30525ecf1e8053cf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> (Vision)</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/bccda452c54626308141d5a7fd7a6e81/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fbccda452c54626308141d5a7fd7a6e81%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9df048f246187987f238f2fb34ab45d1/iframe?muted=true&poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9df048f246187987f238f2fb34ab45d1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <h4 class="title is-5"><span class="vtam-ours">Cucumber Peeling</span></h4>
-          <div class="vtam-video-grid">
-            <div class="vtam-video-card">
-              <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/a5c32edaa275609be8aeed060d527fb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fa5c32edaa275609be8aeed060d527fb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">Genie Envisioner</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f4f1d17ccc56709048fc76f0af02cd10/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff4f1d17ccc56709048fc76f0af02cd10%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> (Vision)</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/6a4b06f810b6e5b1ea6b23e3b876f698/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F6a4b06f810b6e5b1ea6b23e3b876f698%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/3ff6bbcee67ab88665e53a10071d4c9f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F3ff6bbcee67ab88665e53a10071d4c9f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <h4 class="title is-5"><span class="vtam-ours">Whiteboard Wiping</span></h4>
-          <div class="vtam-video-grid vtam-video-grid-3">
-            <div class="vtam-video-card">
-              <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9ac52cca684a3b48b51b130951bd74ba/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9ac52cca684a3b48b51b130951bd74ba%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">Genie Envisioner</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f1203b66bb3ae9b536d58a650b0d3801/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff1203b66bb3ae9b536d58a650b0d3801%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-            <div class="vtam-video-card">
-              <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) / pi<sub>0.5</sub> + Tactile</div>
-              <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/96980153395c1e125221030c3dccd26c/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F96980153395c1e125221030c3dccd26c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="vtam-two-split">
-            <div>
-              <h4 class="title is-6">Model Behavior Diversity</h4>
-              <div class="vtam-video-grid vtam-video-grid-2">
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title vtam-ours">VTAM (Ours) - Failure Case</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/84ca952d630a75db452d2c69fc53c940/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F84ca952d630a75db452d2c69fc53c940%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title vtam-ours">VTAM (Ours) - Retrial Recovery</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/947e7d646127a1ff19594cd2a4b527b2/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F947e7d646127a1ff19594cd2a4b527b2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="title is-6">Success Cases for Baseline Models</h4>
-              <div class="vtam-video-grid vtam-video-grid-2">
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) - Success Case</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f90f86f458ff3555be42bb1c984eb31a/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff90f86f458ff3555be42bb1c984eb31a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile - Success Case</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/fd23275503a3c6a6876226a4f4a8b66b/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ffd23275503a3c6a6876226a4f4a8b66b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-          <h3 class="title is-5">Prediction Visualization</h3>
-          <br>
-          <div class="vtam-grid-3 vtam-pred-grid">
-            <img src="./static/images/pred_camera_1.png" class="interpolation-image" alt="Camera 1 prediction" />
-            <img src="./static/images/pred_camera_2.png" class="interpolation-image" alt="Camera 2 prediction" />
-            <img src="./static/images/pred_tactile.png" class="interpolation-image" alt="Tactile prediction" />
-            <p class="vtam-caption">
-              <strong>Prediction visualization of the backbone video model.</strong> From top to bottom: Camera-1 view,
-  Camera-2 view, Tactile stream prediction. Ground-truth (top rows) and VTAM predictions (bottom rows).
-            </p>
-          </div>
-
+          <img src="./static/images/base_vs_sft_3b_7b.png" class="interpolation-image" alt="Ablation comparison between base and supervised fine-tuned Qwen2.5-VL models." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
+          <p>
+            Ablation studies compare the pretrained base model, interval-only fine-tuning, and reasoning-augmented fine-tuning. While interval-only supervision substantially reduces false positives, adding reasoning traces further improves both precision and recall, showing that explanation-augmented supervision contributes directly to improved anomaly localization.
+          </p>
+          <img src="./static/images/ablation_reasoning.png" class="interpolation-image" alt="Ablation study of interval-only versus reasoning-augmented fine-tuning." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
         </div>
       </div>
     </section>
@@ -575,13 +272,10 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-        <pre><code>@article{vtam2026,
-  title={VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs},
-  author={Yuan, Haoran and Yi, Weigang and Zhang, Zhenyu and Chen, Wendi and Mo, Yuchen and Yin, Jiashi and Li, Xinzhuo and Zeng, Xiangyu and Wen, Chuan and Lu, Cewu and Driggs-Campbell, Katherine and Lourentzou, Ismini},
-  journal={arXiv preprint arXiv:2603.23481},
-  eprint={2603.23481},
-  archivePrefix={arXiv},
-  primaryClass={cs.RO},
+        <pre><code>@article{zhou2026tiny,
+  title={Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection},
+  author={Zhou, Xiaona and Wahed, Muntasir and Yu, Tianjiao and Brif, Constantin and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:2605.30344},
   year={2026}
 }</code></pre>
       </div>
