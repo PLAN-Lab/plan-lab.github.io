@@ -48,7 +48,7 @@
       "doi": "",
       "links": {
         "website": "/projects/silsa/",
-        "paper": "",
+        "paper": "https://arxiv.org/abs/2610.02201",
         "code": "",
         "video": "",
         "data": ""
@@ -229,7 +229,7 @@
   "links": {
     "website": "",
     "paper": "https://arxiv.org/pdf/2605.17894",
-    "code": "",
+    "code": "https://github.com/PediaMedAI/ChildAgentEval",
     "video": "",
     "data": ""
   },
@@ -257,7 +257,7 @@
       "doi": "",
       "links": {
         "website": "/projects/graphvid/",
-        "paper": "",
+        "paper": "https://arxiv.org/abs/2607.21580",
         "code": "",
         "video": "",
         "data": ""
@@ -993,9 +993,9 @@
       "links": {
         "website": "",
         "paper": "https://doi.org/10.48550/arXiv.2507.19060",
-        "code": "",
+        "code": "https://github.com/purpcode-uiuc/purpcode",
         "video": "",
-        "data": ""
+        "data": "https://huggingface.co/purpcode"
       }
     },
     {
