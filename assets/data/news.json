@@ -1,6 +1,29 @@
 {
   "news": [
     {
+      "id": "2026-neurips-papers",
+      "date": "2026-09",
+      "title": "5 papers at NeurIPS 2026!",
+      "description": "SILSA, ELSA3D, RAVEL, VisAnom, and Cognitive Supersensing will appear at NeurIPS 2026.",
+      "papers": [
+        {
+          "pubId": "2026-Yu-silsa-sliding-window-slice-latents"
+        },
+        {
+          "pubId": "2026-Yu-elsa3d-elastic-semantic-anchoring"
+        },
+        {
+          "pubId": "2026-Venkatesh-ravel-rare-concept-generation"
+        },
+        {
+          "pubId": "2026-zhou-tiny-but-trusted-efficient-vision-language-reasoning-for-time-series"
+        },
+        {
+          "pubId": "2026-Li-toward-cognitive-supersensing-multimodal-llm"
+        }
+      ]
+    },
+    {
       "id": "2026-icml-seoul",
       "date": "2026-04",
       "title": "2 papers at ICML 2026!",
