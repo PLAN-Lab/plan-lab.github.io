@@ -356,6 +356,7 @@
       window.PLANContent.doiToUrl(paper.doi);
     const projectUrl = window.PLANContent.resolveUrl(paper.links && paper.links.website);
     const codeUrl = window.PLANContent.resolveUrl(paper.links && paper.links.code);
+    const dataUrl = window.PLANContent.resolveUrl(paper.links && paper.links.data);
     const primaryUrl = projectUrl || paperUrl;
 
     const title = document.createElement('h3');
@@ -396,6 +397,7 @@
     if (paperUrl) links.appendChild(makeLinkButton(paperUrl, 'Paper', 'btn-outline', 'fa-solid fa-file-pdf'));
     if (projectUrl) links.appendChild(makeLinkButton(projectUrl, 'Project', 'btn-primary', 'fa-solid fa-link'));
     if (codeUrl) links.appendChild(makeLinkButton(codeUrl, 'Code', 'btn-outline', 'fa-brands fa-github'));
+    if (dataUrl) links.appendChild(makeLinkButton(dataUrl, 'Data', 'btn-outline', 'fa-solid fa-database'));
     if (links.childNodes.length) content.appendChild(links);
 
     card.appendChild(content);
