@@ -40,20 +40,24 @@
 
     const inner = document.createElement('div');
     inner.className = 'vid-card-inner';
-    const img = document.createElement('div');
-    img.className = 'vid-card-img';
     const cardCover = pub.cardCover || pub.cover;
     if (cardCover) {
-      img.style.backgroundImage = `url(${cardCover})`;
-      const probe = new Image();
-      probe.decoding = 'async';
-      probe.onload = () => {
-        const isPortrait = probe.naturalHeight > probe.naturalWidth;
-        img.classList.add(isPortrait ? 'is-portrait' : 'is-landscape');
+      const img = document.createElement('img');
+      img.className = 'vid-card-img';
+      img.alt = cardTitle(pub);
+      img.decoding = 'async';
+      img.loading = 'lazy';
+      const tagOrientation = () => {
+        if (!img.naturalWidth || !img.naturalHeight) return;
+        img.classList.add(
+          img.naturalHeight > img.naturalWidth ? 'is-portrait' : 'is-landscape'
+        );
       };
-      probe.src = cardCover;
+      img.addEventListener('load', tagOrientation);
+      img.src = cardCover;
+      if (img.complete) tagOrientation();
+      inner.appendChild(img);
     }
-    inner.appendChild(img);
     card.appendChild(inner);
 
     const caption = document.createElement('div');
@@ -72,28 +76,10 @@
     return card;
   }
 
-  function formatDisplayName(member) {
-    const name = String(member && member.name ? member.name : '').trim();
-    const aliases = Array.isArray(member && member.aliases) ? member.aliases.filter(Boolean) : [];
-    if (!name) return 'Unnamed';
-    if (member && member.id === 'phd-tianjiao(joey)-yu' && aliases.length) {
-      const alias = String(aliases[0] || '').trim();
-      if (!alias) return name;
-      const tokens = name.split(/\s+/);
-      if (tokens.length >= 2) {
-        const first = tokens[0];
-        const last = tokens[tokens.length - 1];
-        return `${first} (${alias}) ${last}`;
-      }
-    }
-    const aliasLabel = aliases.length ? ` (${aliases.join(', ')})` : '';
-    return name + aliasLabel;
-  }
-
   function buildTeamCard(member) {
     const a = document.createElement('a');
     a.className = 'team-card' + (member.group === 'alumni' ? ' is-alumni' : '');
-    a.href = member.profileUrl || 'member.html';
+    a.href = window.PLANContent.memberProfileUrl(member);
 
     const img = document.createElement('img');
     img.className = 'avatar-img';
@@ -103,7 +89,7 @@
     img.decoding = 'async';
 
     const h3 = document.createElement('h3');
-    h3.textContent = formatDisplayName(member);
+    h3.textContent = window.PLANContent.formatMemberName(member, 'Unnamed');
 
     const p1 = document.createElement('p');
     if (member.group === 'alumni') {
@@ -142,12 +128,10 @@
 	    const pubs = (await window.PLANContent.getPublications()).slice().sort(byDateDesc);
 	    const pubById = new Map(pubs.map((p) => [p.id, p]));
 	    const featuredIds = [
-	      '2025-Shen-fine-grained-preference-optimi', // SpatialReasoner
-	      '2025-Nguyen-calico-part-focused-semantic-c', // CALICO
-		  '2025-Liu-palm-progress-aware', //PALM
-          '2025-Li-hallusegbench-counterfactual-v', // HalluSeg
-	      '2025-Yu-core3d-collaborative-reasoning-as', // CoRe3D
-	      //'2025-Wahed-mocha-are-code-language-models', // MOCHA
+	      '2026-Shen-phantom-latent-physics-video', // PHANTOM
+	      '2025-Liu-palm-progress-aware', // PALM
+	      '2026-Susladkar-best-of-both-worlds-unidflow', // UniDFlow
+	      '2026-Yu-dreampartgen-semantically-grounded-part', // DreamPartGen
 	    ];
 
 	    const featured = featuredIds.map((id) => pubById.get(id)).filter(Boolean);
@@ -163,6 +147,108 @@
 
     if (typeof window.PLAN_setupHorizontalScroll === 'function') {
       window.PLAN_setupHorizontalScroll(true);
+    }
+  }
+
+  function newsDetailUrl(item) {
+    return `news.html?id=${encodeURIComponent(item.id || '')}`;
+  }
+
+  function newsMoreHref(item) {
+    // An explicit link always wins; otherwise the item's detail page.
+    return item.link || newsDetailUrl(item);
+  }
+
+  function toPlaceholder(media, item) {
+    media.innerHTML = '';
+    media.classList.add('is-placeholder');
+    const icon = document.createElement('i');
+    icon.className = item.icon || 'fa-solid fa-bullhorn';
+    icon.setAttribute('aria-hidden', 'true');
+    media.appendChild(icon);
+  }
+
+  function buildNewsCard(item, covers) {
+    const href = newsMoreHref(item);
+    const isExternal = /^https?:\/\//i.test(href);
+
+    const a = document.createElement('a');
+    a.className = 'news-card';
+    a.href = href;
+    if (isExternal) {
+      a.target = '_blank';
+      a.rel = 'noreferrer';
+    }
+
+    const media = document.createElement('div');
+    media.className = 'news-card-media';
+    // Homepage cards prefer a conference banner/logo (cropped to fill);
+    // otherwise the first paper cover renders publication-style (contained).
+    const banner = item.cardImage || item.banner;
+    const fallback = (covers && covers.length ? covers[0] : null) || item.image;
+    const mediaSrc = banner || fallback;
+    if (item.imageFit === 'cover') media.classList.add('fit-cover');
+    if (mediaSrc) {
+      const img = document.createElement('img');
+      img.src = mediaSrc;
+      img.alt = item.title || 'PLAN Lab news';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.onerror = function () {
+        if (fallback && img.src.indexOf(fallback) === -1) {
+          img.src = fallback; // banner file missing: fall back to the paper cover
+        } else {
+          toPlaceholder(media, item);
+        }
+      };
+      media.appendChild(img);
+    } else {
+      toPlaceholder(media, item);
+    }
+    a.appendChild(media);
+
+    const body = document.createElement('div');
+    body.className = 'news-card-body';
+    const h3 = document.createElement('h3');
+    h3.textContent = item.title || 'PLAN Lab news';
+    const p = document.createElement('p');
+    p.textContent = String(item.description || '').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1');
+    body.appendChild(h3);
+    body.appendChild(p);
+    a.appendChild(body);
+
+    const foot = document.createElement('div');
+    foot.className = 'news-card-foot';
+    const time = document.createElement('span');
+    time.className = 'news-card-date';
+    time.textContent = window.PLANContent.formatNewsDate(item.date);
+    const more = document.createElement('span');
+    more.className = 'news-card-more';
+    more.innerHTML = 'More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
+    foot.appendChild(time);
+    foot.appendChild(more);
+    a.appendChild(foot);
+
+    return a;
+  }
+
+  async function renderNews() {
+    const grid = document.getElementById('news-grid');
+    if (!grid || !window.PLANContent) return;
+
+    const [items, pubs] = await Promise.all([
+      window.PLANContent.getNews(),
+      window.PLANContent.getPublications().catch(() => []),
+    ]);
+    const pubById = new Map(pubs.map((p) => [p.id, p]));
+    grid.innerHTML = '';
+    items.slice(0, 3).forEach((item) => {
+      const covers = window.PLANContent.resolveNewsCovers(item, pubById);
+      grid.appendChild(buildNewsCard(item, covers));
+    });
+
+    if (window.ScrollTrigger) {
+      try { ScrollTrigger.refresh(); } catch (e) { /* not registered yet */ }
     }
   }
 
@@ -192,11 +278,13 @@
 
   const sectionState = {
     publications: false,
+    news: false,
     team: false,
   };
 
   const sectionLoaders = {
     publications: renderRecentWork,
+    news: renderNews,
     team: renderTeam,
   };
 
@@ -213,10 +301,58 @@
     }
   }
 
+  // Anchor navigation. The team grid and the horizontal card track render
+  // lazily and grow the page when they load. A plain jump to #partners or
+  // #contact lands first, then the sections above it inflate, and the
+  // viewport ends up on #team instead. So: load everything that changes
+  // layout above the target, let it settle, then scroll.
+  async function ensureLayoutSections() {
+    await loadSection('news');
+    await loadSection('publications');
+    await loadSection('team');
+  }
+
+  function afterLayout() {
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+  }
+
+  async function scrollToHash(hash, smooth) {
+    const id = String(hash || '').replace(/^#/, '').trim();
+    if (!id) return false;
+    const el = document.getElementById(id);
+    if (!el) return false;
+    await ensureLayoutSections();
+    await afterLayout();
+    if (window.ScrollTrigger) {
+      try { ScrollTrigger.refresh(); } catch (e) { /* not registered yet */ }
+    }
+    el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    return true;
+  }
+
+  function setupAnchorNavigation() {
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      const m = href.match(/^(?:index\.html)?#([A-Za-z0-9_-]+)$/);
+      if (!m) return;
+      if (!document.getElementById(m[1])) return;
+      e.preventDefault();
+      if (window.location.hash !== '#' + m[1]) {
+        history.pushState(null, '', '#' + m[1]);
+      }
+      scrollToHash(m[1], true);
+    });
+  }
+
   function hashToSectionId(hash) {
     const raw = String(hash || '').replace(/^#/, '').trim();
     if (!raw) return '';
     if (raw === 'team' || raw.startsWith('team-')) return 'team';
+    if (raw === 'news' || raw.startsWith('news-')) return 'news';
     if (raw === 'publications' || raw.startsWith('publications-')) return 'publications';
     return sectionLoaders[raw] ? raw : '';
   }
@@ -244,16 +380,19 @@
 
   async function init() {
     try {
-      const prioritized = hashToSectionId(window.location.hash);
-      if (prioritized) {
-        await loadSection(prioritized);
-      }
-
+      setupAnchorNavigation();
       setupSectionObserver();
 
+      if (window.location.hash) {
+        await scrollToHash(window.location.hash, false);
+        // Correct once more after images and fonts finish loading.
+        window.addEventListener('load', () => {
+          scrollToHash(window.location.hash, false);
+        }, { once: true });
+      }
+
       window.addEventListener('hashchange', () => {
-        const next = hashToSectionId(window.location.hash);
-        if (next) loadSection(next);
+        scrollToHash(window.location.hash, false);
       });
     } catch (e) {
       console.error(e);

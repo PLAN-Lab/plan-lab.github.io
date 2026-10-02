@@ -1,28 +1,358 @@
 {
   "publications": [
     {
+      "id": "2026-Yuan-dextacwam",
+      "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
+      "projectName": "DexTacWAM",
+      "authors": [
+        "Haoran Yuan",
+        "Zekai Wang",
+        "Boning Shao",
+        "Haoran Lu",
+        "Trevor Darrell",
+        "Ismini Lourentzou^",
+        "Wei Zhan^"
+      ],
+      "year": 2026,
+      "date": "2026-09-21",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/dextacwam.webp",
+      "doi": "10.48550/arXiv.2609.24976",
+      "links": {
+        "website": "https://dextacwam.github.io/",
+        "paper": "https://arxiv.org/pdf/2609.24976",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+       {
+      "id": "2026-Yu-silsa-sliding-window-slice-latents",
+      "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+      "projectName": "SILSA",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Ying Shen",
+        "Onkar Susladkar",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "assets/images/publications/silsa.webp",
+      "doi": "",
+      "links": {
+        "website": "/projects/silsa/",
+        "paper": "https://arxiv.org/abs/2610.02201",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "NeurIPS 2026"
+    },
+    {
+      "id": "2026-Yu-elsa3d-elastic-semantic-anchoring",
+      "title": "ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation",
+      "projectName": "ELSA3D",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Onkar Susladkar",
+        "Yuanzhe Liu",
+        "Xiaona Zhou",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "assets/images/publications/elsa3d.webp",
+      "doi": "10.48550/arXiv.2607.06565",
+      "links": {
+        "website": "/projects/elsa3D/",
+        "paper": "https://arxiv.org/pdf/2607.06565",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "NeurIPS 2026"
+    },
+    {
+  "id": "2026-Venkatesh-ravel-rare-concept-generation",
+  "title": "RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance",
+  "projectName": "RAVEL",
+  "authors": [
+    "Kavana Venkatesh",
+    "Yusuf Dalva",
+    "Ismini Lourentzou",
+    "Pinar Yanardag"
+  ],
+  "year": "2026",
+  "date":  "2026-09-19",
+  "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+  "type": "paper",
+  "cover": "assets/images/publications/ravel.webp",
+  "doi": "10.48550/arXiv.2412.09614",
+  "links": {
+    "website": "https://ravel-diffusion.github.io/",
+    "paper": "https://arxiv.org/pdf/2412.09614",
+    "code": "",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "NeurIPS 2026"
+},
+{
+  "id": "2026-Wang-fasa-frequency-aware-sparse-attention",
+  "title": "FASA: Frequency-aware Sparse Attention",
+  "projectName": "FASA",
+  "authors": [
+    "Yifei Wang",
+    "Yueqi Wang",
+    "Zhenrui Yue",
+    "Huimin Zeng",
+    "Yong Wang",
+    "Ismini Lourentzou",
+    "Zhengzhong Tu",
+    "Xiangxiang Chu",
+    "Julian McAuley"
+  ],
+  "year": 2026,
+  "date": "2026-02-03",
+  "venue": "International Conference on Learning Representations",
+  "type": "paper",
+  "cover": "assets/images/publications/fasa.webp",
+  "doi": "10.48550/arXiv.2602.03152",
+  "links": {
+    "website": "",
+    "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e839f274b3d3d682a0a82e5129d2cc4a-Paper-Conference.pdf",
+    "code": "https://github.com/AMAP-ML/FASA-ICLR2026",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "ICLR 2026"
+ },
+    {
+  "id": "2026-Zhang-libero-max",
+  "title": "LIBERO-MAX: Do Robot Policies Adapt When the World Changes?",
+  "projectName": "LIBERO-MAX",
+  "authors": [
+    "Yunbei Zhang",
+    "Zijian Jin",
+    "Yuanzhe Liu",
+    "Janet Wang",
+    "Xilun Zhang",
+    "Yuyou Zhang",
+    "Zhenyu Zhang",
+    "Daoan Zhang",
+    "Shuaicheng Niu",
+    "Gen Li",
+    "Jianfei Yang",
+    "Jihun Hamm",
+    "Ismini Lourentzou",
+    "Weirui Ye",
+    "Bo Liu",
+    "Peter Stone",
+    "Marco Pavone"
+  ],
+  "year": 2026,
+  "date": "2026-09-29",
+  "venue": "arXiv",
+  "type": "paper",
+  "cover": "assets/images/publications/libero-max.webp",
+  "doi": "10.48550/arXiv.2609.36518",
+  "links": {
+    "website": "https://liberomax.github.io",
+    "paper": "https://arxiv.org/pdf/2609.36518",
+    "code": "",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "arXiv"
+},
+    {
+      "id": "2026-Juvekar-editvid-one-editor-many-edits",
+      "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
+      "projectName": "EditVid",
+      "authors": [
+        "Adheesh Juvekar",
+        "Onkar Susladkar",
+        "Kiet A. Nguyen",
+        "Muntasir Wahed",
+        "Nabeel Bashir",
+        "Xiaona Zhou",
+        "Tianjiao Yu",
+        "Vedant Shah",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-03",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/editvid-promo-animated.webp",
+      "cardCover": "assets/images/publications/editvid-promo-animated.webp",
+      "doi": "10.48550/arXiv.2609.04190",
+      "links": {
+        "website": "/projects/editvid/",
+        "paper": "https://arxiv.org/pdf/2609.04190",
+        "code": "https://github.com/PLAN-Lab/EditVid",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+  "id": "2026-Shen-evaluating-cognitive-age-alignment",
+  "title": "Evaluating Cognitive Age Alignment in Interactive AI Agents",
+  "projectName": "ChildAgentEval",
+  "authors": [
+    "Yifan Shen",
+    "Jiawen Zhang",
+    "Jian Xu",
+    "Junho Kim",
+    "Ismini Lourentzou",
+    "Xu Cao",
+    "Meihuan Huang"
+  ],
+  "year": 2026,
+  "date": "2026-05-18",
+  "venue": "arXiv",
+  "type": "paper",
+  "cover": "assets/images/publications/childagent-eval.webp",
+  "doi": "10.48550/arXiv.2605.17894",
+  "links": {
+    "website": "",
+    "paper": "https://arxiv.org/pdf/2605.17894",
+    "code": "https://github.com/PediaMedAI/ChildAgentEval",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "arXiv"
+},
+    {
+      "id": "2026-Shah-graphvid-interactive-graph-controllable",
+      "title": "GraphVid: Interactive Graph-Controllable Video Generation",
+      "projectName": "GraphVid",
+      "authors": [
+        "Vedant Shah",
+        "Onkar Susladkar",
+        "Tushar Prakash",
+        "Kiet A. Nguyen",
+        "Tianjiao Yu",
+        "Adheesh Juvekar",
+        "Muntasir Wahed",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "European Conference on Computer Vision",
+      "type": "paper",
+      "cover": "assets/images/publications/graphvid.webp",
+      "doi": "",
+      "links": {
+        "website": "/projects/graphvid/",
+        "paper": "https://arxiv.org/abs/2607.21580",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/publications/graphvid.webp",
+      "venueAbbr": "ECCV 2026"
+    },
+    {
+      "id": "2026-Yu-dreampartgen-semantically-grounded-part",
+      "title": "DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising",
+      "projectName": "DreamPartGen",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Muntasir Wahed",
+        "Jerry Xiong",
+        "Yifan Shen",
+        "Ying Shen",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "European Conference on Computer Vision",
+      "type": "paper",
+      "cover": "assets/images/publications/dreampartgen.webp",
+      "doi": "10.48550/arXiv.2603.19216",
+      "links": {
+        "website": "/projects/dreampartgen/",
+        "paper": "https://arxiv.org/pdf/2603.19216",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "cardCover": "assets/images/publications/dreampartgen.webp",
+      "venueAbbr": "ECCV 2026"
+    },
+    {
+  "id": "2026-Shen-childgait-decoding-childrens-gait",
+  "title": "Decoding Children's Gait Behavior",
+  "projectName": "ChildGait",
+  "authors": [
+    "Yifan Shen*",
+    "Boyi Li*",
+    "Meihuan Huang*",
+    "Yuanzhe Liu*",
+    "Xu Cao*",
+    "Jinyang Jin",
+    "Zhengyuan Li",
+    "Anglin Liu",
+    "Junho Kim",
+    "Jingyuan Zhu",
+    "Fangzhou Lan",
+    "Jianguo Cao",
+    "Jintai Chen",
+    "Ismini Lourentzou",
+    "James M. Rehg"
+  ],
+  "year": 2026,
+  "date": "2026-09-01",
+  "venue": "European Conference on Computer Vision",
+  "type": "paper",
+  "cover": "assets/images/publications/childgait.webp",
+  "doi": "10.1007/978-3-032-37577-3_7",
+  "links": {
+    "website": "https://pediamedai.com/ChildrenGait/",
+    "paper": "https://arxiv.org/pdf/2608.00371",
+    "code": "https://github.com/PediaMedAI/ChildrenGait",
+    "video": "",
+    "data": "https://huggingface.co/datasets/PediaMedAI/ChildGait"
+  },
+  "venueAbbr": "ECCV 2026"
+},
+    {
       "id": "2025-Liu-palm-progress-aware",
       "title": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
       "projectName": "PALM",
       "authors": [
-        "Yuanzhe Liu", 
-        "Jingyuan Zhu", 
-        "Yuchen Mo", 
-        "Gen Li", 
-        "Xu Cao", 
-        "Jin Jin", 
+        "Yuanzhe Liu",
+        "Jingyuan Zhu",
+        "Yuchen Mo",
+        "Gen Li",
+        "Xu Cao",
+        "Jin Jin",
         "Yifan Shen",
-        "Zhengyuan Li", 
-        "Tianjiao Yu", 
-        "Wenzhen Yuan", 
-        "Fangqiang Ding", 
+        "Zhengyuan Li",
+        "Tianjiao Yu",
+        "Wenzhen Yuan",
+        "Fangqiang Ding",
         "Ismini Lourentzou"
       ],
       "year": 2026,
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/palm.png",
+      "cover": "assets/images/publications/palm.webp",
       "doi": "10.48550/arXiv.2601.07060",
       "links": {
         "website": "/projects/palm/",
@@ -31,24 +361,24 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/palmteaser.png",
+      "cardCover": "assets/images/cards/palmteaser.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
       "id": "2026-Shen-phantom-latent-physics-video",
-      "title": "Phantom: Learning Latent Physical Dynamics for Video Generation",
+      "title": "Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics",
       "projectName": "Phantom",
       "authors": [
         "Ying Shen",
         "Jerry Xiong",
-        "Tianjiao Yu", 
+        "Tianjiao Yu",
         "Ismini Lourentzou"
       ],
       "year": 2026,
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/phantom.gif",      
+      "cover": "assets/images/publications/phantom.webp",
       "doi": "",
       "links": {
         "website": "/projects/phantom/",
@@ -56,9 +386,9 @@
         "code": "",
         "video": "",
         "data": ""
-        },
-        "cardCover": "assets/images/publications/phantom.gif",
-        "venueAbbr": "CVPR 2026"
+      },
+      "cardCover": "assets/images/cards/phantom.webp",
+      "venueAbbr": "CVPR 2026"
     },
     {
       "id": "2026-Susladkar-pyratok-language-aligned",
@@ -77,16 +407,16 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/pyratok.gif",
+      "cover": "assets/images/publications/pyratok.webp",
       "doi": "10.48550/arXiv.2601.16210",
       "links": {
         "website": "/projects/pyratok/",
         "paper": "https://arxiv.org/pdf/2601.16210",
-        "code": "https://github.com/PLAN-Lab/CVPR25-PyraTok",
+        "code": "https://github.com/PLAN-Lab/PyraTok",
         "video": "",
-        "data": "https://huggingface.co/onkarsus13/PyraTok"
+        "data": "https://huggingface.co/PLAN-Lab/PyraTok"
       },
-      "cardCover": "assets/images/cards/pyratok.png",
+      "cardCover": "assets/images/cards/pyratok.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -109,7 +439,7 @@
       "date": "2026-04-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/rewardflow.png",
+      "cover": "assets/images/publications/rewardflow.webp",
       "doi": "",
       "links": {
         "website": "/projects/rewardflow/",
@@ -118,7 +448,7 @@
         "video": "",
         "data": "https://huggingface.co/onkarsus13/RewardFlow"
       },
-      "cardCover": "assets/images/cards/rewardflow.png",
+      "cardCover": "assets/images/cards/rewardflow.webp",
       "venueAbbr": "CVPR 2026"
     },
     {
@@ -138,7 +468,7 @@
       "date": "2026-04-09",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "projects/3d-vcd/static/images/3D-VCD-Method.png",
+      "cover": "assets/images/publications/3d-vcd_method.webp",
       "doi": "10.48550/arXiv.2604.08645",
       "links": {
         "website": "/projects/3d-vcd/",
@@ -171,7 +501,7 @@
       "date": "2026-03-24",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "projects/vtam/static/images/teaser.png",
+      "cover": "assets/images/publications/vtam_teaser.webp",
       "doi": "10.48550/arXiv.2603.23481",
       "links": {
         "website": "/projects/vtam/",
@@ -203,7 +533,7 @@
       "date": "2026-06-03",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "projects/unidflow/static/images/teaser.jpg",
+      "cover": "assets/images/publications/unidflow_teaser.webp",
       "doi": "10.48550/arXiv.2602.12221",
       "links": {
         "website": "/projects/unidflow/",
@@ -212,6 +542,7 @@
         "video": "",
         "data": ""
       },
+      "cardCover": "assets/images/cards/unidflow.webp",
       "venueAbbr": "ICML 2026"
     },
     {
@@ -233,10 +564,10 @@
       "date": "2026-06-02",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/latte.png",
+      "cover": "assets/images/publications/latte.webp",
       "doi": "10.48550/arXiv.2506.06952",
       "links": {
-        "website": "",
+        "website": "/projects/latte-flow/",
         "paper": "https://arxiv.org/pdf/2506.06952",
         "code": "",
         "video": "",
@@ -262,7 +593,7 @@
       "date": "2021-10-26",
       "venue": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management",
       "type": "paper",
-      "cover": "assets/images/publications/sauce.png",
+      "cover": "assets/images/publications/sauce.webp",
       "doi": "10.1145/3459637.3481950",
       "links": {
         "website": "",
@@ -289,7 +620,7 @@
       "date": "2022-01-01",
       "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
       "type": "paper",
-      "cover": "assets/images/publications/chexrelnet.png",
+      "cover": "assets/images/publications/chexrelnet.webp",
       "doi": "10.1007/978-3-031-16431-6_55",
       "links": {
         "website": "",
@@ -315,7 +646,7 @@
       "date": "2022-12-17",
       "venue": "2022 IEEE International Conference on Big Data (Big Data)",
       "type": "paper",
-      "cover": "assets/images/publications/pried.png",
+      "cover": "assets/images/publications/pried.webp",
       "doi": "10.1109/BigData55660.2022.10020861",
       "links": {
         "website": "",
@@ -339,7 +670,7 @@
       "date": "2022-06-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/unremix.png",
+      "cover": "assets/images/publications/unremix.webp",
       "doi": "10.48550/arXiv.2206.01197",
       "links": {
         "website": "",
@@ -362,7 +693,7 @@
       "date": "2022-04-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/swaro.png",
+      "cover": "assets/images/publications/swaro.webp",
       "doi": "10.48550/arXiv.2204.10314",
       "links": {
         "website": "",
@@ -386,7 +717,7 @@
       "date": "2023-01-01",
       "venue": "Medical Image Computing and Computer Assisted Intervention (MICCAI)",
       "type": "paper",
-      "cover": "assets/images/publications/chexrelformer.png",
+      "cover": "assets/images/publications/chexrelformer.webp",
       "doi": "10.1007/978-3-031-43904-9_66",
       "links": {
         "website": "",
@@ -411,7 +742,7 @@
       "date": "2023-03-01",
       "venue": "Mechanical Systems and Signal Processing",
       "type": "paper",
-      "cover": "assets/images/publications/shm.png",
+      "cover": "assets/images/publications/shm.webp",
       "doi": "10.1016/j.ymssp.2022.109910",
       "links": {
         "website": "",
@@ -434,7 +765,7 @@
       "date": "2024-01-04",
       "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
       "type": "paper",
-      "cover": "assets/images/publications/marble.png",
+      "cover": "assets/images/publications/marble.webp",
       "doi": "10.1145/3583780.3615485",
       "links": {
         "website": "",
@@ -458,7 +789,7 @@
       "date": "2024-04-17",
       "venue": "Proceedings of the ACM on Human-Computer Interaction",
       "type": "paper",
-      "cover": "assets/images/publications/discourse.png",
+      "cover": "assets/images/publications/discourse.webp",
       "doi": "10.1145/3653703",
       "links": {
         "website": "",
@@ -481,7 +812,7 @@
       "date": "2024-03-24",
       "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
       "type": "paper",
-      "cover": "assets/images/publications/coronet.png",
+      "cover": "assets/images/publications/coronet.webp",
       "doi": "10.1609/aaai.v38i3.27989",
       "links": {
         "website": "",
@@ -506,7 +837,7 @@
       "date": "2024-04-14",
       "venue": "ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
       "type": "paper",
-      "cover": "assets/images/publications/uamixmae.png",
+      "cover": "assets/images/publications/uamixmae.webp",
       "doi": "10.1109/ICASSP48485.2024.10446342",
       "links": {
         "website": "",
@@ -530,7 +861,7 @@
       "date": "2024-01-04",
       "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
       "type": "paper",
-      "cover": "assets/images/publications/farm.png",
+      "cover": "assets/images/publications/farm.webp",
       "doi": "10.1109/wacv57701.2024.00549",
       "links": {
         "website": "",
@@ -563,7 +894,7 @@
       "date": "2024-12-31",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/prima.png",
+      "cover": "assets/images/publications/prima.webp",
       "doi": "10.48550/arXiv.2412.15209",
       "links": {
         "website": "/projects/prima/",
@@ -587,7 +918,7 @@
       "date": "2024-10-27",
       "venue": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
       "type": "paper",
-      "cover": "assets/images/publications/miracle.png",
+      "cover": "assets/images/publications/miracle.webp",
       "doi": "10.1145/3691620.3695524",
       "links": {
         "website": "",
@@ -619,9 +950,9 @@
       ],
       "year": 2026,
       "date": "2026-05-01",
-      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (Findings)",
       "type": "paper",
-      "cover": "assets/images/publications/hallusegbench.png",
+      "cover": "assets/images/publications/hallusegbench.webp",
       "doi": "10.48550/arXiv.2506.21546",
       "links": {
         "website": "/projects/hallusegbench/",
@@ -630,7 +961,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/hallu_teaser.png",
+      "cardCover": "assets/images/cards/hallu_teaser.webp",
       "venueAbbr": "CVPR 2026 (Findings)"
     },
     {
@@ -657,14 +988,14 @@
       "date": "2025-12-07",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "assets/images/publications/purpcode.png",
+      "cover": "assets/images/publications/purpcode.webp",
       "doi": "10.48550/arXiv.2507.19060",
       "links": {
         "website": "",
         "paper": "https://doi.org/10.48550/arXiv.2507.19060",
-        "code": "",
+        "code": "https://github.com/purpcode-uiuc/purpcode",
         "video": "",
-        "data": ""
+        "data": "https://huggingface.co/purpcode"
       }
     },
     {
@@ -682,7 +1013,7 @@
       "date": "2025-06-12",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/calico.png",
+      "cover": "assets/images/publications/calico.webp",
       "doi": "10.48550/arXiv.2412.19331",
       "links": {
         "website": "/projects/calico/",
@@ -691,7 +1022,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/calico.png"
+      "cardCover": "assets/images/cards/calico.webp"
     },
     {
       "id": "2025-Shen-fine-grained-preference-optimi",
@@ -712,7 +1043,7 @@
       "date": "2025-12-07",
       "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "assets/images/publications/spatialreasonerr1.png",
+      "cover": "assets/images/publications/spatialreasonerr1.webp",
       "doi": "10.48550/arXiv.2506.21656",
       "links": {
         "website": "/projects/spatialreasoner/",
@@ -721,7 +1052,7 @@
         "video": "",
         "data": ""
       },
-      "cardCover": "assets/images/cards/sreasoner.png"
+      "cardCover": "assets/images/cards/sreasoner.webp"
     },
     {
       "id": "2025-Shen-learning-by-asking-for-embodie",
@@ -729,13 +1060,14 @@
       "projectName": "ELBA",
       "authors": [
         "Ying Shen",
+        "Daniel Biś", "Cynthia Lu",
         "Ismini Lourentzou"
       ],
       "year": 2025,
       "date": "2025-01-04",
       "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
       "type": "paper",
-      "cover": "assets/images/publications/elba.gif",
+      "cover": "assets/images/publications/elba.webp",
       "doi": "10.48550/arXiv.2302.04865",
       "links": {
         "website": "",
@@ -763,7 +1095,7 @@
       "date": "2025-11-04",
       "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP) Findings",
       "type": "paper",
-      "cover": "assets/images/publications/mocha.png",
+      "cover": "assets/images/publications/mocha.webp",
       "doi": "10.48550/arXiv.2507.19598",
       "links": {
         "website": "",
@@ -772,7 +1104,7 @@
         "video": "",
         "data": "https://huggingface.co/purpcode"
       },
-      "cardCover": "assets/images/cards/mocha.png"
+      "cardCover": "assets/images/cards/mocha.webp"
     },
     {
       "id": "2025-Yu-part2gs-part-aware-modeling-of",
@@ -790,7 +1122,7 @@
       "date": "2026-06-01",
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
       "type": "paper",
-      "cover": "assets/images/publications/part2gs.gif",
+      "cover": "assets/images/publications/part2gs.webp",
       "doi": "10.48550/arXiv.2506.17212",
       "links": {
         "website": "/projects/part2gs/",
@@ -817,7 +1149,7 @@
       "date": "2025-03-01",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/ece.png",
+      "cover": "assets/images/publications/ece.webp",
       "doi": "10.48550/arXiv.2503.10628",
       "links": {
         "website": "/projects/ece/",
@@ -840,7 +1172,7 @@
       "date": "2026-2-07",
       "venue": "Transactions on Machine Learning Research",
       "type": "paper",
-      "cover": "assets/images/publications/mtsbench.png",
+      "cover": "assets/images/publications/mtsbench.webp",
       "doi": "10.48550/arXiv.2506.21550",
       "links": {
         "website": "https://plan-lab.github.io/projects/mtsbench/",
@@ -864,7 +1196,7 @@
       "date": "2025-01-01",
       "venue": "Transactions on Machine Learning Research",
       "type": "paper",
-      "cover": "assets/images/publications/ec-vlm.png",
+      "cover": "assets/images/publications/ec-vlm.webp",
       "doi": "https://openreview.net/pdf?id=bivKGSaXkD",
       "links": {
         "website": "/projects/ec-vlm/",
@@ -890,7 +1222,7 @@
       "date": "2025-11-04",
       "venue": "Findings of the Association for Computational Linguistics: EMNLP",
       "type": "paper",
-      "cover": "assets/images/publications/mmplanner.png",
+      "cover": "assets/images/publications/mmplanner.webp",
       "doi": "10.18653/v1/2025.findings-emnlp.1011",
       "links": {
         "website": "/projects/mmplanner/",
@@ -916,8 +1248,8 @@
       "date": "2025-12-14",
       "venue": "arXiv",
       "type": "paper",
-      "cover": "assets/images/publications/core3d.png",
-      "cardCover": "assets/images/cards/core3d.png",
+      "cover": "assets/images/publications/core3d.webp",
+      "cardCover": "assets/images/cards/core3d.webp",
       "doi": "10.48550/arXiv.2512.12768",
       "links": {
         "website": "/projects/core3d/",
@@ -941,7 +1273,7 @@
       "date": "2026-01-01",
       "venue": "AAAI Conference on Artificial Intelligence (Oral)",
       "type": "paper",
-      "cover": "assets/images/publications/dash.png",
+      "cover": "assets/images/publications/dash.webp",
       "doi": "10.48550/arXiv.2512.10952",
       "links": {
         "website": "/projects/dash/",
@@ -952,7 +1284,7 @@
       },
       "venueAbbr": "AAAI 2026 (ORAL)"
     },
-        {
+    {
       "id": "2026-zhou-tiny-but-trusted-efficient-vision-language-reasoning-for-time-series",
       "title": "Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection",
       "projectName": "VisAnom",
@@ -964,10 +1296,10 @@
         "Ismini Lourentzou"
       ],
       "year": 2026,
-      "date": "2026-05-28",
-      "venue": "arXiv",
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
       "type": "paper",
-      "cover": "projects/VisAnom/static/images/VisAnomReasoner_teaser.png",
+      "cover": "assets/images/publications/visanom_teaser.webp",
       "doi": "10.48550/arXiv.2605.30344",
       "links": {
         "website": "/projects/VisAnom/",
@@ -976,7 +1308,108 @@
         "video": "",
         "data": ""
       },
+      "venueAbbr": "NeurIPS 2026"
+    },
+    {
+      "id": "2026-Shen-egoforge-goal-directed-egocentric-world-simulator",
+      "title": "EgoForge: Goal-Directed Egocentric World Simulator",
+      "projectName": "EgoForge",
+      "authors": [
+        "Yifan Shen",
+        "Jiateng Liu",
+        "Xinzhuo Li",
+        "Yuanzhe Liu",
+        "Bingxuan Li",
+        "Houze Yang",
+        "Wenqi Jia",
+        "Yijiang Li",
+        "Tianjiao Yu",
+        "James Matthew Rehg",
+        "Xu Cao",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-03-20",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/egoforge.webp",
+      "doi": "10.48550/arXiv.2603.20169",
+      "links": {
+        "website": "/projects/egoforge/",
+        "paper": "https://arxiv.org/pdf/2603.20169",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
       "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Shen-cogniroute-learning-to-route-social-evidence",
+      "title": "CogniRoute: Learning to Route Social Evidence in Omni-Modal Models",
+      "projectName": "CogniRoute",
+      "authors": [
+        "Yifan Shen",
+        "Pei Tian",
+        "Xinzhuo Li",
+        "Bowen Fang",
+        "Shujun Xia",
+        "Bingxuan Li",
+        "Ana Jojic",
+        "Wenming Ye",
+        "Xu Cao",
+        "James Matthew Rehg",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-06-30",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/cogniroute.webp",
+      "doi": "10.48550/arXiv.2606.20970",
+      "links": {
+        "website": "/projects/cogniroute/",
+        "paper": "https://arxiv.org/pdf/2606.20970",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv"
+    },
+    {
+      "id": "2026-Li-toward-cognitive-supersensing-multimodal-llm",
+      "title": "Toward Cognitive Supersensing in Multimodal Large Language Model",
+      "projectName": "Cognitive Supersensing",
+      "authors": [
+        "Boyi Li*",
+        "Yifan Shen*",
+        "Yuanzhe Liu*",
+        "Yifan Xu",
+        "Jiateng Liu",
+        "Xinzhuo Li",
+        "Zhengyuan Li",
+        "Jingyuan Zhu",
+        "Yunhan Zhong",
+        "Fangzhou Lan",
+        "Jianguo Cao",
+        "James Matthew Rehg",
+        "Heng Ji",
+        "Ismini Lourentzou^",
+        "Xu Cao^"
+      ],
+      "year": 2026,
+      "date": "2026-09-20",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "type": "paper",
+      "cover": "assets/images/publications/cognitive-supersensing.webp",
+      "doi": "10.48550/arXiv.2602.01541",
+      "links": {
+        "website": "",
+        "paper": "https://arxiv.org/pdf/2602.01541",
+        "code": "https://github.com/PediaMedAI/Cognition-MLLM",
+        "video": "",
+        "data": "https://huggingface.co/datasets/PediaMedAI/CogSense-Bench"
+      },
+      "venueAbbr": "NeurIPS 2026"
     }
   ]
 }

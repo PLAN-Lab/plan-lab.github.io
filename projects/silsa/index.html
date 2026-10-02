@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SILSA | Topology-Preserving 3D Generation · NeurIPS 2026</title>
+  <meta name="description" content="SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation. NeurIPS 2026. Compact 384-token geometry with coherent thin structures, holes, and connectivity.">
+  <link rel="canonical" href="https://plan-lab.github.io/projects/silsa/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SILSA · NeurIPS 2026">
+  <meta property="og:description" content="High-resolution 3D generation in 384 tokens. Sliding-window slice latents preserve thin structures, holes, and global connectivity.">
+  <meta property="og:url" content="https://plan-lab.github.io/projects/silsa/">
+  <meta property="og:image" content="https://plan-lab.github.io/projects/silsa/static/images/teaser.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#13294b">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="static/images/teaser.webp" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../assets/js/project-pages.js" defer></script>
+  <script src="main.js" defer></script>
+  <!-- Keep the lab's existing analytics property. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-48J3PYKGQ6');</script>
+</head>
+<body class="page-project silsa-page">
+  <div class="project-bg"></div><div class="project-grid"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav class="glass-nav" aria-label="PLAN Lab navigation">
+    <a href="../../index.html#hero" class="nav-logo"><img src="../../assets/images/logo.svg" alt="PLAN Lab Logo"></a>
+    <div class="nav-menu">
+      <a href="../../publications.html" class="nav-item" aria-label="Publications"><i class="fa-solid fa-layer-group"></i><span>Publications</span></a>
+      <a href="../../index.html#team" class="nav-item" aria-label="Team"><i class="fa-solid fa-users"></i><span>Team</span></a>
+      <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game"><i class="fa-solid fa-cube"></i><span>PLAN Cubes</span></a>
+      <a href="../../index.html#partners" class="nav-item" aria-label="Partner"><i class="fa-solid fa-circle-nodes"></i><span>Partner</span></a>
+      <a href="../../index.html#contact" class="nav-item" aria-label="Join"><i class="fa-solid fa-paper-plane"></i><span>Join</span></a>
+    </div>
+  </nav>
+  <main id="main">
+    <section class="hero project-hero" aria-labelledby="paper-title"><div class="hero-body"><div class="container is-max-desktop"><div class="has-text-centered">
+      <h1 id="paper-title" class="publication-title"><span class="model-name">SILSA</span>: Sliding-Window Slice Latents for<br class="desktop-break">Topology-Preserving High-Resolution 3D Generation</h1>
+      <div class="is-size-5 publication-authors author-list">
+            <span class="author-block"><a href="/team/tianjiao(joey)-yu" class="illini-blue">Tianjiao Yu</a>,</span>
+            <span class="author-block"><a href="/team/xinzhuo-li" class="illini-blue">Xinzhuo Li</a>,</span>
+            <span class="author-block"><a href="/team/yifan-shen" class="illini-blue">Yifan Shen</a>,</span>
+            <span class="author-block"><a href="/team/ying-shen" class="illini-blue">Ying Shen</a>,</span>
+            <span class="author-block"><a href="/team/onkar-susladkar" class="illini-blue">Onkar Susladkar</a>,</span>
+            <span class="author-block"><a href="/team/ismini-lourentzou" class="illini-blue">Ismini Lourentzou</a></span>
+      </div>
+      <div class="is-size-5 publication-authors"><span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span><span class="author-block illini-orange">University of Illinois Urbana-Champaign</span></div>
+      <h2 class="publication-venue illini-orange">NeurIPS 2026</h2>
+      <div class="publication-links" aria-label="Project resources">
+        <span class="link-block"><a href="https://arxiv.org/abs/2610.02201" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
+        <span class="link-block"><span class="button is-rounded is-dark is-disabled" aria-disabled="true"><span class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span><span>Code <small>(Coming soon)</small></span></span></span>
+        <span class="link-block"><a href="#results" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></span><span>Results</span></a></span>
+        <span class="link-block"><a href="#citation" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-quote-right" aria-hidden="true"></i></span><span>BibTeX</span></a></span>
+      </div>
+    </div></div></div></section>
+
+    <section class="hero teaser" id="showcase"><div class="container is-max-desktop"><div class="hero-body">
+      <div class="tldr"><strong>TL;DR</strong><span>SILSA generates high-resolution 3D shapes from a single image using <strong>384 sliding-window slice tokens</strong>, preserving thin structures, holes, repeated parts, and long-range connectivity with single-stage rectified flow.</span></div>
+      <figure class="teaser">
+          <img src="static/images/teaser.webp" width="2400" height="907" fetchpriority="high" alt="SILSA-generated detailed 3D shapes, including articulated robots and a creature with thin spines; enlarged insets show small structural details.">
+          <figcaption><span><strong>384 tokens. Coherent 3D structure.</strong> Thin geometry, repeated parts, and long-range connectivity.</span><span class="axis-key"><span><i class="x"></i>x-axis</span><span><i class="y"></i>y-axis</span><span><i class="z"></i>z-axis</span></span></figcaption>
+        </figure>
+      <div class="stat-strip" aria-label="Key results">
+          <div class="stat"><div class="stat-value">384</div><div class="stat-label">fixed slice tokens</div><div class="stat-note">128 along each of three axes</div></div>
+          <div class="stat"><div class="stat-value">70.0%</div><div class="stat-label">fewer latent tokens</div><div class="stat-note">vs. Dora, the next-most compact baseline</div></div>
+          <div class="stat"><div class="stat-value">58.5%</div><div class="stat-label">less inference time</div><div class="stat-note">0.34 vs. 0.82 seconds per shape, vs. Dora</div></div>
+          <div class="stat"><div class="stat-value">9.2%</div><div class="stat-label">lower Betti error</div><div class="stat-note">vs. SparseFlex in VAE reconstruction</div></div>
+        </div>
+    </div></div></section>
+
+    <section class="section gallery-section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">Image-to-3D generation</p><h2 id="results-title" class="title is-3">Image-to-3D results</h2></div><p>Generate a high-resolution mesh from a single image. Browse eight examples and inspect four rendered views of each SILSA output.</p></div>
+        <div class="object-tabs" role="group" aria-label="Choose an image-to-3D example"><button class="object-tab" type="button" data-object="tower" aria-pressed="true"><span class="sprite"><img src="static/images/tower.webp" alt="" width="2800" height="560" loading="lazy"></span>Tower</button>
+<button class="object-tab" type="button" data-object="rover" aria-pressed="false"><span class="sprite"><img src="static/images/rover.webp" alt="" width="2800" height="560" loading="lazy"></span>Rover</button>
+<button class="object-tab" type="button" data-object="wagon" aria-pressed="false"><span class="sprite"><img src="static/images/wagon.webp" alt="" width="2800" height="560" loading="lazy"></span>Wagon</button>
+<button class="object-tab" type="button" data-object="chair" aria-pressed="false"><span class="sprite"><img src="static/images/chair.webp" alt="" width="2800" height="560" loading="lazy"></span>Chair</button>
+<button class="object-tab" type="button" data-object="drone" aria-pressed="false"><span class="sprite"><img src="static/images/drone.webp" alt="" width="2800" height="560" loading="lazy"></span>Drone</button>
+<button class="object-tab" type="button" data-object="robot" aria-pressed="false"><span class="sprite"><img src="static/images/robot.webp" alt="" width="2800" height="560" loading="lazy"></span>Robot</button>
+<button class="object-tab" type="button" data-object="flower" aria-pressed="false"><span class="sprite"><img src="static/images/flower.webp" alt="" width="2800" height="560" loading="lazy"></span>Flower</button>
+<button class="object-tab" type="button" data-object="motorcycle" aria-pressed="false"><span class="sprite"><img src="static/images/motorcycle.webp" alt="" width="2800" height="560" loading="lazy"></span>Motorcycle</button></div>
+        <div class="gallery-stage">
+          <div class="gallery-input"><div class="panel-label">Single input image</div><div class="sprite"><img id="input-image" src="static/images/tower.webp" alt="Input image of a tower" width="2800" height="560" loading="lazy"></div><p class="input-note">Image conditioning</p></div>
+          <div class="gallery-output"><div class="panel-label"><b>SILSA</b> Generated geometry <span id="view-label" style="margin-left:auto;letter-spacing:0;text-transform:none">View 1 / 4</span></div><div class="sprite" id="output-frame" style="--view:1"><img id="output-image" src="static/images/tower.webp" alt="SILSA-generated tower, rendered view 1" width="2800" height="560" loading="lazy"></div><div class="view-tabs" role="group" aria-label="Choose a rendered view"><button class="view-tab" type="button" data-view="1" aria-pressed="true">View 1</button><button class="view-tab" type="button" data-view="2" aria-pressed="false">View 2</button><button class="view-tab" type="button" data-view="3" aria-pressed="false">View 3</button><button class="view-tab" type="button" data-view="4" aria-pressed="false">View 4</button></div></div>
+        </div>
+        <div class="gallery-foot"><span><strong id="example-name">Tower</strong> — <span id="example-description">Open arches, repeating windows, and connected architectural detail.</span></span><span>Results from the paper · geometry renders</span></div>
+        <noscript><p class="noscript-gallery">Enable JavaScript to switch examples and rendered views.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section idea" aria-labelledby="idea-title">
+      <div class="container">
+        <p class="section-kicker">Overview</p><h2 id="idea-title" class="title is-3">Sliding-window slice representation</h2>
+        <p class="idea-copy">Voxel tokenization divides a surface into many local pieces. SILSA instead summarizes overlapping depth windows along three axes. This compact, fixed layout preserves cross-sectional continuity and supports a single-stage generator.</p>
+        <div class="token-equation" aria-label="128 x-axis tokens plus 128 y-axis tokens plus 128 z-axis tokens equals 384 tokens"><span class="x-text">128 x</span> + <span class="y-text">128 y</span> + <span class="z-text">128 z</span> <span class="sum">= 384 tokens</span></div>
+        <div class="concepts">
+          <article class="concept"><span class="concept-number x-text">01 / REPRESENT</span><h3>Sliding-window SliceVAE</h3><p>Each token aggregates oriented surface samples across a local depth window. A sparse volumetric decoder reconstructs the high-resolution mesh.</p></article>
+          <article class="concept"><span class="concept-number y-text">02 / COORDINATE</span><h3>Volumetric Anchor Lattice</h3><p>A shared 3D workspace lets the x-, y-, and z-axis streams exchange spatial evidence as the rectified-flow transformer generates the slice latents.</p></article>
+          <article class="concept"><span class="concept-number z-text">03 / PRESERVE</span><h3>Slice-wise topology loss</h3><p>Persistent-homology supervision preserves components and holes. Betti-transition matching aligns where they appear, disappear, split, or merge.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <p class="section-kicker">Method</p><h2 id="method-title" class="title is-3">SILSA architecture</h2>
+        <p class="intro-copy">A topology-aware SliceVAE learns the representation. An image-conditioned rectified-flow transformer generates its 384 slice latents, and the frozen decoder reconstructs geometry through sparse volumetric upsampling.</p>
+        <figure class="method-figure"><button class="figure-button" type="button" data-enlarge="SILSA architecture" aria-label="Enlarge the SILSA architecture figure"><img src="static/images/method.webp" width="2400" height="839" loading="lazy" decoding="async" alt="SILSA architecture: a multi-axis sliding-window encoder creates slice latents; image-conditioned rectified flow coordinates them through a Volumetric Anchor Lattice; a sparse decoder reconstructs a mesh and receives slice-wise topology supervision."></button><figcaption class="figure-caption"><span><strong>From slices to surfaces.</strong> Overlapping windows encode local geometry; volumetric anchors connect the axes.</span><span class="zoom-label">Click figure to enlarge</span></figcaption></figure>
+        <div class="topology-block"><div><h3>Topology is more than surface similarity.</h3><p>Thin supports can disconnect, holes can close, and nearby parts can merge even when a reconstruction looks locally similar. SILSA supervises both the topology of each cross-section and the transitions between neighboring slices.</p><p class="mini-label">Components + holes + where they change</p></div><button class="figure-button" type="button" data-enlarge="Multi-axis topology supervision" aria-label="Enlarge the topology supervision figure"><img src="static/images/topology.webp" width="2400" height="983" loading="lazy" decoding="async" alt="Cross-sections along three axes, with connected-component and hole persistence bars showing how topology changes through a shape."></button></div>
+      </div>
+    </section>
+
+    <section class="section comparison-section" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">Qualitative evaluation</p><h2 id="comparison-title" class="title is-3">VAE reconstruction comparisons</h2></div><p>Compare SliceVAE with representative 3D tokenizers on thin supports, dense branches, holes, and repeated structures.</p></div>
+        <div class="compare-columns" aria-label="Methods shown from left to right"><span>Ground truth</span><span class="ours">SILSA</span><span>SparseFlex</span><span>Trellis</span><span>XCube</span><span>Dora</span></div>
+        <figure class="comparison-figure"><button class="figure-button" type="button" data-enlarge="VAE reconstruction comparison" aria-label="Enlarge the VAE reconstruction comparison"><img src="static/images/reconstruction.webp" width="2400" height="2145" loading="lazy" decoding="async" alt="Reconstructed meshes for a forklift, articulated robot, branching plant, rhinoceros, and office chair. Columns compare ground truth, SILSA, SparseFlex, Trellis, XCube, and Dora; insets show normal maps and surface-error maps."></button><div class="legend"><span>Surface error</span><span>Low</span><span class="error-scale" aria-hidden="true"></span><span>High</span></div><figcaption class="figure-caption"><span><strong>Geometry, normals, and surface error.</strong> Normal maps appear in the upper insets; error maps appear in the lower insets.</span><span class="zoom-label">Click figure to enlarge</span></figcaption></figure>
+        <details class="extra-results"><summary>More reconstruction examples</summary><button class="figure-button" type="button" data-enlarge="Additional VAE reconstruction examples" aria-label="Enlarge additional reconstruction examples"><img src="static/images/additional-reconstruction.webp" width="2400" height="1400" loading="lazy" alt="Additional reconstruction comparisons for a keyboard, animal, and chair across SILSA and four baseline tokenizers."></button></details>
+      </div>
+    </section>
+
+    <section class="section" id="benchmarks" aria-labelledby="benchmarks-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">Quantitative evaluation</p><h2 id="benchmarks-title" class="title is-3">Quantitative results</h2></div><p>Trained on Trellis-500K. Evaluated on 200 randomly sampled Toys4K assets and 50 in-the-wild images, with no training-set overlap.</p></div>
+        <div class="benchmark-tabs" role="tablist" aria-label="Benchmark results"><button type="button" id="efficiency-tab" class="benchmark-tab" role="tab" aria-selected="true" aria-controls="efficiency-panel">Efficiency</button><button type="button" id="reconstruction-tab" class="benchmark-tab" role="tab" aria-selected="false" aria-controls="reconstruction-panel" tabindex="-1">Reconstruction</button><button type="button" id="generation-tab" class="benchmark-tab" role="tab" aria-selected="false" aria-controls="generation-panel" tabindex="-1">Image-to-3D</button></div>
+        <div class="benchmark-pane" id="efficiency-panel" role="tabpanel" aria-labelledby="efficiency-tab"><div class="table-scroll" tabindex="0" role="region" aria-label="Efficiency comparison from the paper. Lower is better for all columns."><table class="results-table"><caption class="sr-only">Efficiency comparison from the paper. Lower is better for all columns.</caption><thead><tr><th scope="col">Method</th><th scope="col">Tokens ↓</th><th scope="col">Stages ↓</th><th scope="col">Parameters ↓</th><th scope="col">Train memory ↓</th><th scope="col">Train time ↓</th><th scope="col">Inference ↓</th><th scope="col">CD ↓</th></tr></thead><tbody><tr class=""><th scope="row">Dora</th><td>1,280</td><td>1</td><td>124 M</td><td>14.6 GB</td><td>0.38 s</td><td>0.82 s</td><td>9.76</td></tr>
+<tr class=""><th scope="row">XCube</th><td>64,821</td><td>2</td><td>87 M</td><td>68.4 GB</td><td>1.18 s</td><td>2.74 s</td><td>3.21</td></tr>
+<tr class=""><th scope="row">Trellis</th><td>19,847 ± 4,312</td><td>2</td><td>347 M</td><td>42.7 GB</td><td>0.71 s</td><td>1.93 s</td><td>1.12</td></tr>
+<tr class=""><th scope="row">SparseFlex</th><td>87,453 ± 18,264</td><td>2</td><td>213 M</td><td>55.4 GB</td><td>1.47 s</td><td>1.15 s</td><td>0.61</td></tr>
+<tr class="ours"><th scope="row">SILSA</th><td>384</td><td>1</td><td>96 M</td><td>8.7 GB</td><td>0.21 s</td><td>0.34 s</td><td>0.59</td></tr>
+</tbody></table></div><p class="table-note">Training memory and time: batch size 4 on one A100; training time is seconds per iteration. Inference is end-to-end seconds per shape. Variable-length token counts are mean ± standard deviation. ↓ Lower is better.</p></div>
+        <div class="benchmark-pane" id="reconstruction-panel" role="tabpanel" aria-labelledby="reconstruction-tab" hidden><div class="table-scroll" tabindex="0" role="region" aria-label="VAE reconstruction quality from the paper."><table class="results-table"><caption class="sr-only">VAE reconstruction quality from the paper.</caption><thead><tr><th scope="col">Method</th><th scope="col">CD ↓</th><th scope="col">F-score @ 0.01 ↑</th><th scope="col">F-score @ 0.005 ↑</th><th scope="col">IoU ↑</th><th scope="col">Betti error ↓</th></tr></thead><tbody><tr class=""><th scope="row">Dora</th><td>9.76</td><td>67.92</td><td>38.71</td><td>64.85</td><td>4.916</td></tr>
+<tr class=""><th scope="row">XCube</th><td>3.21</td><td>81.74</td><td>52.06</td><td>78.13</td><td>4.382</td></tr>
+<tr class=""><th scope="row">Trellis (SLAT)</th><td>1.12</td><td>92.83</td><td>71.45</td><td>86.29</td><td>2.871</td></tr>
+<tr class=""><th scope="row">SparseFlex</th><td>0.61</td><td>96.18</td><td>83.62</td><td>92.54</td><td>1.743</td></tr>
+<tr class="ours"><th scope="row">SILSA</th><td>0.59</td><td>96.79</td><td>84.03</td><td>93.01</td><td>1.582</td></tr>
+</tbody></table></div><p class="table-note">Betti error measures the average mismatch in connected components and holes. F-score thresholds are 0.01 and 0.005. ↓ Lower is better; ↑ higher is better.</p></div>
+        <div class="benchmark-pane" id="generation-panel" role="tabpanel" aria-labelledby="generation-tab" hidden><div class="table-scroll" tabindex="0" role="region" aria-label="Image-to-3D generation performance from the paper."><table class="results-table"><caption class="sr-only">Image-to-3D generation performance from the paper.</caption><thead><tr><th scope="col">Method</th><th scope="col">CLIP ↑</th><th scope="col">FD ↓</th><th scope="col">KD ↓</th><th scope="col">PSNR ↑</th><th scope="col">LPIPS ↓</th><th scope="col">COV (%) ↑</th><th scope="col">MMD (‰) ↓</th></tr></thead><tbody><tr class=""><th scope="row">Shap-E</th><td>80.16</td><td>34.64</td><td>0.87</td><td>16.84</td><td>0.21</td><td>61.41</td><td>19.19</td></tr>
+<tr class=""><th scope="row">LN3Diff</th><td>82.79</td><td>26.98</td><td>0.76</td><td>18.73</td><td>0.19</td><td>55.21</td><td>19.84</td></tr>
+<tr class=""><th scope="row">Direct3D</th><td>74.12</td><td>24.97</td><td>0.33</td><td>22.36</td><td>0.17</td><td>58.72</td><td>18.46</td></tr>
+<tr class=""><th scope="row">3DTopia-XL</th><td>76.46</td><td>24.21</td><td>0.29</td><td>22.06</td><td>0.18</td><td>58.93</td><td>17.62</td></tr>
+<tr class=""><th scope="row">InstantMesh</th><td>84.41</td><td>20.13</td><td>0.29</td><td>25.72</td><td>0.11</td><td>66.84</td><td>16.72</td></tr>
+<tr class=""><th scope="row">GaussianAnything</th><td>80.91</td><td>22.46</td><td>0.44</td><td>23.84</td><td>0.15</td><td>60.01</td><td>15.47</td></tr>
+<tr class=""><th scope="row">XCube</th><td>84.91</td><td>10.32</td><td>0.09</td><td>23.99</td><td>0.13</td><td>73.01</td><td>14.92</td></tr>
+<tr class=""><th scope="row">Dora</th><td>80.35</td><td>22.84</td><td>0.23</td><td>24.68</td><td>0.13</td><td>67.42</td><td>15.63</td></tr>
+<tr class=""><th scope="row">SAR3D</th><td>84.67</td><td>22.12</td><td>0.18</td><td>26.31</td><td>0.10</td><td>70.30</td><td>15.12</td></tr>
+<tr class=""><th scope="row">Trellis</th><td>85.03</td><td>10.31</td><td>0.08</td><td>24.01</td><td>0.14</td><td>72.10</td><td>14.36</td></tr>
+<tr class=""><th scope="row">SparseFlex</th><td>88.22</td><td>11.16</td><td>0.08</td><td>30.12</td><td>0.05</td><td>73.12</td><td>14.52</td></tr>
+<tr class="ours"><th scope="row">SILSA</th><td>87.94</td><td>10.16</td><td>0.08</td><td>32.74</td><td>0.05</td><td>79.08</td><td>14.02</td></tr>
+</tbody></table></div><p class="table-note">CLIP measures image-output alignment; FD and KD measure generative quality; PSNR and LPIPS measure visual fidelity; COV and MMD measure distributional fidelity. ↓ Lower is better; ↑ higher is better.</p></div>
+        <div class="result-highlights"><div class="result-highlight"><strong>+8.7% PSNR</strong><p>32.74 vs. 30.12 for SparseFlex in image-to-3D generation.</p></div><div class="result-highlight"><strong>+5.96 points coverage</strong><p>79.08% vs. 73.12% for SparseFlex, an absolute gain.</p></div><div class="result-highlight"><strong>40.4% less training memory</strong><p>8.7 GB vs. 14.6 GB for Dora under the reported A100 setup.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section abstract-section" aria-labelledby="abstract-title"><div class="container abstract-box content"><div><p class="section-kicker">The paper</p><h2 id="abstract-title" class="title is-3">Abstract</h2></div><div><p>High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes.</p><p>We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact <em>sliding-window slice latents</em>. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A <strong>Slice VAE</strong> encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a <strong>Volumetric Anchor Lattice</strong> coordinates directional slice streams through a shared 3D workspace. To preserve structural correctness, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices.</p><p>Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by 8.7%, coverage by 5.96 absolute points, and Betti error by 9.2% over the strongest baseline, while using 70.0% fewer tokens than the next-most compact baseline and over 98% fewer tokens than sparse or hierarchical tokenizers, effectively reducing training memory by 40.4% and inference time by 58.5%. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.</p></div></div></section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title"><div class="container"><div class="citation-heading"><h2 id="citation-title" class="title is-3">Citation</h2><button id="copy-citation" class="copy-button" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{yu2026silsa,
+  title = {SILSA: Sliding-Window Slice Latents for Topology-Preserving
+           High-Resolution 3D Generation},
+  author = {Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Shen, Ying
+            and Susladkar, Onkar and Lourentzou, Ismini},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2026}
+}</code></pre><span id="copy-status" class="sr-only" aria-live="polite"></span><p class="release-note">Accepted at NeurIPS 2026. Paper and code links will be added when released.</p></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span><a href="../../index.html">PLAN Lab</a> · University of Illinois Urbana-Champaign</span><span><a href="../../publications.html">More research</a> · <a href="mailto:ty41@illinois.edu">Contact</a> · © 2026 PLAN Lab</span></div></footer>
+  <dialog id="image-dialog" class="image-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><span id="dialog-title">Figure</span><button class="dialog-close" type="button" aria-label="Close enlarged figure">Close</button></div><img alt=""></dialog>
+</body>
+</html>

@@ -11,10 +11,28 @@
   gtag('config', 'G-48J3PYKGQ6');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PLAN Lab | Perception AND LANguage</title>
+    <meta name="description" content="The Perception and LANguage (PLAN) Lab at the University of Illinois Urbana-Champaign develops multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. Directed by Ismini Lourentzou.">
+    <meta name="keywords" content="multimodal machine learning, vision-language models, embodied AI, 3D generative models, video generation, world models, physical AI, computer vision, generative models, PLAN Lab, Ismini Lourentzou, UIUC">
+    <link rel="canonical" href="https://plan-lab.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PLAN Lab | Perception AND LANguage">
+    <meta property="og:description" content="Multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. University of Illinois Urbana-Champaign.">
+    <meta property="og:url" content="https://plan-lab.github.io/">
+    <meta property="og:site_name" content="PLAN Lab">
+    <meta property="og:image" content="https://plan-lab.github.io/assets/images/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PLAN Lab — Perception and LANguage, University of Illinois Urbana-Champaign">
+    <meta name="twitter:image" content="https://plan-lab.github.io/assets/images/og-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Ismini_L">
+    <meta name="twitter:title" content="PLAN Lab | Perception AND LANguage">
+    <meta name="twitter:description" content="Multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. UIUC.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,15 +40,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script src="assets/js/content.js" defer></script>
     <script src="assets/js/index.js" defer></script>
 
    <style>
-        /* Compact floating PLAN@CVPR'26 sign on the homepage hero */
-        .cvpr-float-sign {
+        /* Compact floating conference sign on the homepage hero */
+        .conference-float-sign {
             position: absolute;
             top: clamp(92px, 10vh, 128px);
             right: clamp(18px, 4vw, 72px);
@@ -42,7 +60,7 @@
             pointer-events: auto;
         }
 
-        .cvpr-float-sign::before {
+        .conference-float-sign::before {
             content: "";
             position: absolute;
             inset: -12px;
@@ -57,7 +75,7 @@
             z-index: -1;
         }
 
-        .cvpr-float-card {
+        .conference-float-card {
             position: relative;
             overflow: hidden;
             border-radius: 22px;
@@ -77,14 +95,14 @@
             transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
         }
 
-        .cvpr-float-sign:hover::before,
-        .cvpr-float-sign:focus-visible::before {
+        .conference-float-sign:hover::before,
+        .conference-float-sign:focus-visible::before {
             opacity: 1;
             filter: blur(22px);
         }
 
-        .cvpr-float-sign:hover .cvpr-float-card,
-        .cvpr-float-sign:focus-visible .cvpr-float-card {
+        .conference-float-sign:hover .conference-float-card,
+        .conference-float-sign:focus-visible .conference-float-card {
             transform: translateY(-3px) rotate(0deg);
             border-color: rgba(255, 255, 255, 0.58);
             box-shadow:
@@ -93,7 +111,7 @@
                 0 25px 72px rgba(0, 0, 0, 0.34);
         }
 
-        .cvpr-float-card::before {
+        .conference-float-card::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -105,7 +123,7 @@
             pointer-events: none;
         }
 
-        .cvpr-float-card::after {
+        .conference-float-card::after {
             content: "";
             position: absolute;
             top: -45%;
@@ -118,27 +136,27 @@
         }
 
         @media (prefers-reduced-motion: no-preference) {
-            .cvpr-float-sign::before {
-                animation: cvprGlowPulse 2.8s ease-in-out infinite;
+            .conference-float-sign::before {
+                animation: conferenceGlowPulse 2.8s ease-in-out infinite;
             }
 
-            .cvpr-float-card::after {
-                animation: cvprSheen 4.6s ease-in-out infinite;
+            .conference-float-card::after {
+                animation: conferenceSheen 4.6s ease-in-out infinite;
             }
         }
 
-        @keyframes cvprGlowPulse {
+        @keyframes conferenceGlowPulse {
             0%, 100% { opacity: 0.58; transform: rotate(1.2deg) scale(0.98); }
             50% { opacity: 0.98; transform: rotate(1.2deg) scale(1.04); }
         }
 
-        @keyframes cvprSheen {
+        @keyframes conferenceSheen {
             0%, 52% { transform: translateX(0) rotate(25deg); opacity: 0; }
             62% { opacity: 0.65; }
             82%, 100% { transform: translateX(430%) rotate(25deg); opacity: 0; }
         }
 
-        .cvpr-float-topline {
+        .conference-float-topline {
             position: relative;
             display: flex;
             align-items: center;
@@ -147,7 +165,7 @@
             margin-bottom: 8px;
         }
 
-        .cvpr-float-kicker {
+        .conference-float-kicker {
             display: inline-flex;
             align-items: center;
             gap: 7px;
@@ -158,7 +176,7 @@
             color: rgba(255, 255, 255, 0.92);
         }
 
-        .cvpr-float-count {
+        .conference-float-count {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -173,7 +191,7 @@
             box-shadow: 0 8px 22px rgba(84, 43, 180, 0.28);
         }
 
-        .cvpr-float-title {
+        .conference-float-title {
             position: relative;
             margin: 0;
             font-size: 1.14rem;
@@ -183,7 +201,7 @@
             color: #ffffff;
         }
 
-        .cvpr-float-ticker {
+        .conference-float-ticker {
             position: relative;
             display: flex;
             align-items: center;
@@ -198,7 +216,7 @@
             color: rgba(255,255,255,0.90);
         }
 
-        .cvpr-ticker-label {
+        .conference-ticker-label {
             flex: 0 0 auto;
             font-size: 0.60rem;
             font-weight: 900;
@@ -207,7 +225,7 @@
             color: rgba(255,255,255,0.66);
         }
 
-        .cvpr-paper-cycle {
+        .conference-paper-cycle {
             position: relative;
             flex: 1 1 auto;
             height: 18px;
@@ -218,29 +236,25 @@
             white-space: nowrap;
         }
 
-        .cvpr-paper-cycle span {
+        .conference-paper-cycle span {
             position: absolute;
             inset: 0;
             opacity: 0;
             transform: translateY(9px);
-            animation: cvprPaperTicker 14s infinite;
+            animation: conferencePaperTicker 9s infinite;
         }
 
-        .cvpr-paper-cycle span:nth-child(1) { animation-delay: 0s; }
-        .cvpr-paper-cycle span:nth-child(2) { animation-delay: 2s; }
-        .cvpr-paper-cycle span:nth-child(3) { animation-delay: 4s; }
-        .cvpr-paper-cycle span:nth-child(4) { animation-delay: 6s; }
-        .cvpr-paper-cycle span:nth-child(5) { animation-delay: 8s; }
-        .cvpr-paper-cycle span:nth-child(6) { animation-delay: 10s; }
-        .cvpr-paper-cycle span:nth-child(7) { animation-delay: 12s; }
+        .conference-paper-cycle span:nth-child(1) { animation-delay: 0s; }
+        .conference-paper-cycle span:nth-child(2) { animation-delay: 3s; }
+        .conference-paper-cycle span:nth-child(3) { animation-delay: 6s; }
 
-        @keyframes cvprPaperTicker {
-            0%, 10% { opacity: 0; transform: translateY(9px); }
-            13%, 24% { opacity: 1; transform: translateY(0); }
-            28%, 100% { opacity: 0; transform: translateY(-9px); }
+        @keyframes conferencePaperTicker {
+            0%, 5% { opacity: 0; transform: translateY(9px); }
+            8%, 28% { opacity: 1; transform: translateY(0); }
+            33%, 100% { opacity: 0; transform: translateY(-9px); }
         }
 
-        .cvpr-float-meta {
+        .conference-float-meta {
             position: relative;
             display: flex;
             align-items: center;
@@ -252,13 +266,13 @@
             color: rgba(255, 255, 255, 0.86);
         }
 
-        .cvpr-float-cta {
+        .conference-float-cta {
             flex: 0 0 auto;
             color: #ffffff;
             font-weight: 900;
         }
 
-        .cvpr-float-hover-panel {
+        .conference-float-hover-panel {
             position: absolute;
             top: calc(100% + 10px);
             right: 0;
@@ -278,14 +292,14 @@
             transition: opacity 0.18s ease, transform 0.18s ease;
         }
 
-        .cvpr-float-sign:hover .cvpr-float-hover-panel,
-        .cvpr-float-sign:focus-visible .cvpr-float-hover-panel {
+        .conference-float-sign:hover .conference-float-hover-panel,
+        .conference-float-sign:focus-visible .conference-float-hover-panel {
             opacity: 1;
             pointer-events: auto;
             transform: translateY(0) scale(1);
         }
 
-        .cvpr-hover-copy {
+        .conference-hover-copy {
             margin: 0 0 8px;
             color: rgba(255,255,255,0.88);
             font-size: 0.72rem;
@@ -293,12 +307,12 @@
             font-weight: 700;
         }
 
-        .cvpr-hover-schedule {
+        .conference-hover-schedule {
             display: grid;
             gap: 5px;
         }
 
-        .cvpr-hover-row {
+        .conference-hover-row {
             display: grid;
             grid-template-columns: 94px 1fr auto;
             gap: 8px;
@@ -310,7 +324,7 @@
             border: 1px solid rgba(255,255,255,0.08);
         }
 
-        .cvpr-hover-paper {
+        .conference-hover-paper {
             color: #fff;
             font-size: 0.67rem;
             font-weight: 900;
@@ -319,14 +333,14 @@
             white-space: nowrap;
         }
 
-        .cvpr-hover-time {
+        .conference-hover-time {
             color: rgba(255,255,255,0.78);
             font-size: 0.64rem;
             line-height: 1.12;
             white-space: nowrap;
         }
 
-        .cvpr-hover-loc {
+        .conference-hover-loc {
             color: #271442;
             font-size: 0.62rem;
             font-weight: 900;
@@ -336,7 +350,7 @@
             white-space: nowrap;
         }
 
-        .cvpr-hover-footer {
+        .conference-hover-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -347,38 +361,38 @@
             line-height: 1.2;
         }
 
-        .cvpr-hover-open {
+        .conference-hover-open {
             color: #fff;
             font-weight: 900;
             white-space: nowrap;
         }
 
         @media (max-width: 1100px) {
-            .cvpr-float-sign {
+            .conference-float-sign {
                 top: 96px;
                 right: 18px;
                 width: 262px;
             }
 
-            .cvpr-float-title {
+            .conference-float-title {
                 font-size: 1.02rem;
             }
 
-            .cvpr-float-meta {
+            .conference-float-meta {
                 font-size: 0.73rem;
             }
 
-            .cvpr-float-hover-panel {
+            .conference-float-hover-panel {
                 width: min(386px, calc(100vw - 36px));
             }
 
-            .cvpr-hover-row {
+            .conference-hover-row {
                 grid-template-columns: 86px 1fr auto;
             }
         }
 
         @media (max-width: 760px) {
-            .cvpr-float-sign {
+            .conference-float-sign {
                 position: absolute;
                 top: 92px;
                 right: 12px;
@@ -386,64 +400,119 @@
                 width: 218px;
             }
 
-            .cvpr-float-card {
+            .conference-float-card {
                 padding: 12px 13px;
                 border-radius: 18px;
                 transform: none;
             }
 
-            .cvpr-float-kicker {
+            .conference-float-kicker {
                 font-size: 0.63rem;
             }
 
-            .cvpr-float-count {
+            .conference-float-count {
                 padding: 5px 7px;
                 font-size: 0.63rem;
             }
 
-            .cvpr-float-title {
+            .conference-float-title {
                 font-size: 0.90rem;
             }
 
-            .cvpr-float-ticker {
+            .conference-float-ticker {
                 height: 17px;
                 margin-top: 6px;
             }
 
-            .cvpr-ticker-label {
+            .conference-ticker-label {
                 display: none;
             }
 
-            .cvpr-paper-cycle {
+            .conference-paper-cycle {
                 height: 17px;
                 font-size: 0.64rem;
                 line-height: 17px;
             }
 
-            .cvpr-float-meta {
+            .conference-float-meta {
                 margin-top: 8px;
                 font-size: 0.66rem;
             }
 
-            .cvpr-float-hover-panel {
+            .conference-float-hover-panel {
                 display: none;
             }
         }
 
         @media (max-width: 480px) {
-            .cvpr-float-sign {
+            .conference-float-sign {
                 top: 84px;
                 right: 10px;
                 width: 190px;
             }
 
-            .cvpr-float-meta span:first-child {
+            .conference-float-meta span:first-child {
                 display: inline;
             }
         }
     </style>
 
-    </head>
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://plan-lab.github.io/#website",
+      "url": "https://plan-lab.github.io/",
+      "name": "PLAN Lab",
+      "description": "Multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds.",
+      "publisher": { "@id": "https://plan-lab.github.io/#org" }
+    },
+    {
+      "@type": ["Organization", "ResearchOrganization"],
+      "@id": "https://plan-lab.github.io/#org",
+      "name": "Perception and LANguage (PLAN) Lab",
+      "alternateName": "PLAN Lab",
+      "url": "https://plan-lab.github.io/",
+      "logo": "https://plan-lab.github.io/assets/images/logo.png",
+      "image": "https://plan-lab.github.io/assets/images/og-card.png",
+      "description": "The Perception and LANguage (PLAN) Lab at the University of Illinois Urbana-Champaign develops multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. Directed by Ismini Lourentzou.",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Illinois Urbana-Champaign",
+        "url": "https://illinois.edu/"
+      },
+      "sameAs": [
+        "https://github.com/PLAN-Lab",
+        "https://huggingface.co/PLAN-Lab"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://plan-lab.github.io/#pi",
+      "name": "Ismini Lourentzou",
+      "jobTitle": "Assistant Professor",
+      "url": "https://isminoula.github.io/",
+      "worksFor": { "@id": "https://plan-lab.github.io/#org" },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Illinois Urbana-Champaign"
+      },
+      "knowsAbout": [
+        "Multimodal machine learning", "Vision-language models", "Embodied AI",
+        "3D generative models", "Video generation", "World models",
+        "Physical AI", "Computer vision", "Generative models"
+      ],
+      "sameAs": [
+        "https://isminoula.github.io/",
+        "https://ischool.illinois.edu/people/ismini-lourentzou"
+      ]
+    }
+  ]
+}
+    </script>
+</head>
 <body class="page-plan">
 
     <nav class="glass-nav">
@@ -455,6 +524,10 @@
                 <i class="fa-solid fa-layer-group"></i>
                 <span>Publications</span>
             </a>
+            <a href="news.html" class="nav-item" aria-label="News">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>News</span>
+            </a>
             <a href="index.html#team" class="nav-item" aria-label="Team">
                 <i class="fa-solid fa-users"></i>
                 <span>Team</span>
@@ -463,13 +536,13 @@
                 <i class="fa-solid fa-cube"></i>
                 <span>PLAN Cubes</span>
             </a>
-            <a href="index.html#partners" class="nav-item" aria-label="Partner with Us">
+            <a href="index.html#partners" class="nav-item" aria-label="Partner">
                 <i class="fa-solid fa-circle-nodes"></i>
-                <span>Partner with Us</span>
+                <span>Partner</span>
             </a>
-            <a href="index.html#contact" class="nav-item" aria-label="Join Us">
+            <a href="index.html#contact" class="nav-item" aria-label="Join">
                 <i class="fa-solid fa-paper-plane"></i>
-                <span>Join Us</span>
+                <span>Join</span>
             </a>
         </div>
     </nav>
@@ -492,43 +565,35 @@
         </h1>
         <p> The Perception and LANguage (PLAN) Lab develops multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. 
 			Our research spans vision-language models, 2D/3D generative models, and reasoning-centered methods for grounding AI in visual, physical, and interactive environments.</p>
-        <a class="cvpr-float-sign" href="cvpr2026.html" aria-label="Explore PLAN Lab at CVPR 2026: 7 papers, poster schedule, project links, and presentation times">
-            <div class="cvpr-float-card">
-                <div class="cvpr-float-topline">
-                    <span class="cvpr-float-kicker"><i class="fa-solid fa-location-dot"></i> CVPR'26</span>
-                    <span class="cvpr-float-count">7 papers</span>
+        <a class="conference-float-sign" href="eccv2026.html" aria-label="Explore PLAN Lab at ECCV 2026: 3 papers, poster schedule, project links, and presentation times">
+            <div class="conference-float-card">
+                <div class="conference-float-topline">
+                    <span class="conference-float-kicker"><i class="fa-solid fa-location-dot"></i> ECCV'26</span>
+                    <span class="conference-float-count">3 papers</span>
                 </div>
-                <h2 class="cvpr-float-title">PLAN Lab in Denver</h2>
-                <div class="cvpr-float-ticker" aria-label="Cycling through PLAN Lab CVPR 2026 paper names">
-                    <span class="cvpr-ticker-label"></span>
-                    <span class="cvpr-paper-cycle">
-                        <span>PHANTOM</span>
-                        <span>Part²GS</span>
-                        <span>RewardFlow</span>
-                        <span>PALM</span>
-                        <span>PyraTok</span>
-                        <span>3D-VCD</span>
-                        <span>HalluSegBench (Findings)</span>
+                <h2 class="conference-float-title">PLAN Lab in Malmö</h2>
+                <div class="conference-float-ticker" aria-label="Cycling through PLAN Lab ECCV 2026 paper names">
+                    <span class="conference-ticker-label"></span>
+                    <span class="conference-paper-cycle">
+                        <span>GraphVid</span>
+                        <span>DreamPartGen</span>
+                        <span>Children’s Gait</span>
                     </span>
                 </div>
-                <div class="cvpr-float-meta">
+                <div class="conference-float-meta">
                     <span>Explore our papers</span>
-                    <span class="cvpr-float-cta">Click for full page →</span>
+                    <span class="conference-float-cta">Click for full page →</span>
                 </div>
             </div>
-            <div class="cvpr-float-hover-panel" aria-hidden="true">
-                <div class="cvpr-hover-schedule" aria-label="Compact PLAN Lab CVPR 2026 poster schedule">
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PHANTOM</span><span class="cvpr-hover-time">Fri Jun 5 · 16:00–18:00</span><span class="cvpr-hover-loc">ExHall A · #372</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">Part²GS</span><span class="cvpr-hover-time">Sat Jun 6 · 11:45–13:45</span><span class="cvpr-hover-loc">ExHall F · #435</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">RewardFlow</span><span class="cvpr-hover-time">Sat Jun 6 · 11:45–13:45</span><span class="cvpr-hover-loc">ExHall F · #543</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PALM</span><span class="cvpr-hover-time">Sat Jun 6 · 16:45–18:45</span><span class="cvpr-hover-loc">ExHall A · #622</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">HalluSegBench</span><span class="cvpr-hover-time">Sun Jun 7 · 07:30–09:00</span><span class="cvpr-hover-loc">ExHall A · #81</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">PyraTok</span><span class="cvpr-hover-time">Sun Jun 7 · 15:30–17:30</span><span class="cvpr-hover-loc">ExHall A · #161</span></div>
-                    <div class="cvpr-hover-row"><span class="cvpr-hover-paper">3D-VCD</span><span class="cvpr-hover-time">Sun Jun 7 · 15:30–17:30</span><span class="cvpr-hover-loc">ExHall A · #373</span></div>
+            <div class="conference-float-hover-panel" aria-hidden="true">
+                <div class="conference-hover-schedule" aria-label="Compact PLAN Lab ECCV 2026 poster schedule">
+                    <div class="conference-hover-row"><span class="conference-hover-paper">GraphVid</span><span class="conference-hover-time">Fri Sep 11 · 10:30–12:30</span><span class="conference-hover-loc">ExHall · #410</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">DreamPartGen</span><span class="conference-hover-time">Fri Sep 11 · 16:00–18:00</span><span class="conference-hover-loc">ExHall · #78</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">Children’s Gait</span><span class="conference-hover-time">Fri Sep 11 · 16:00–18:00</span><span class="conference-hover-loc">ExHall · #320</span></div>
                 </div>
-                <div class="cvpr-hover-footer">
-                    <span>Denver local time</span>
-                    <span class="cvpr-hover-open">Open full page →</span>
+                <div class="conference-hover-footer">
+                    <span>Malmö local time (CEST)</span>
+                    <span class="conference-hover-open">Open full page →</span>
                 </div>
             </div>
         </a>
@@ -538,6 +603,20 @@
             <i class="fa-solid fa-arrow-down"></i>
         </div>
     </section>
+
+    <section id="news">
+        <div class="news-container">
+            <h2 class="section-title">Recent News</h2>
+            <div class="news-grid" id="news-grid" aria-live="polite"></div>
+            <div class="news-more-wrap">
+                <a href="news.html" class="news-more-btn" aria-label="View all PLAN Lab news">
+                    <span>All News</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
 
     <section id="publications">
         <div class="cards-wrap">
@@ -587,35 +666,14 @@
             <h3 class="section-title">Drive AI Innovation</h3>
 
             <div class="funding-cta">
-                <p>Partner with us to accelerate advances in multimodal perception and generative modeling. Connect with exceptional student talent to build next-generation intelligent systems.
+                <p>Partner with us to accelerate advances in multimodal perception and generative modeling. Connect with exceptional student talent to build next-generation intelligent systems. 
+					Contact us for collaborations and joint projects on 3D/video generative models, world models / WAMs, embodied AI.
                 </p>
                 <a href="mailto:lourent2@illinois.edu" class="btn-primary">
-                    <i class="fa-solid fa-envelope" style="margin-right:8px;"></i> Partner with Us
+                    <i class="fa-solid fa-envelope" style="margin-right:8px;"></i> Partner
                 </a>
             </div>
         </div>
-
-<div class="sponsors-panel">
-    <h2>Current Sponsors and Partners</h2>
-    
-    <div class="logo-grid">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
-             alt="Google" class="logo-item" title="Google Research" loading="lazy">
-        
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" 
-             alt="Amazon" class="logo-item" title="Amazon Science" loading="lazy">
-       
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/DARPA_Logo_2010.png" 
-             alt="DARPA" class="logo-item" title="Defense Advanced Research Projects Agency" loading="lazy">
-        
-        <img src="https://www.onr.navy.mil/themes/custom/onr/logo.png" 
-             alt="Office of Naval Research" class="logo-item" title="Office of Naval Research" loading="lazy">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Lawrence_Livermore_National_Laboratory_logo.svg" 
-             alt="Lawrence Livermore National Laboratory" class="logo-item" title="Lawrence Livermore National Laboratory" loading="lazy">
-    </div>
-</div>
 
     </section>
 
@@ -623,23 +681,23 @@
 	        <div class="join-card">
 		            <div class="carousel-container">
 		                <div class="carousel-track" id="teamCarousel">
-                            <div class="carousel-slide active" role="img" aria-label="Lab Retreat" data-bg="assets/images/group/retreat.jpg"></div>
-		                    <div class="carousel-slide" role="img" aria-label="Afrina Ming" data-bg="assets/images/group/Afrina_Ming.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Onkar Xinzhuo Ismini" data-bg="assets/images/group/ICCV25_2.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Yifan" data-bg="assets/images/group/ICCV25_Yifan.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="ICCV 2025" data-bg="assets/images/group/ICCV25.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="Joey Amazon" data-bg="assets/images/group/JoeyAmazon.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="Meghana Poster VT" data-bg="assets/images/group/MeghanaVT.jpg"></div>
+                            <div class="carousel-slide active" role="img" aria-label="Lab Retreat" data-bg="assets/images/group/retreat.webp"></div>
+		                    <div class="carousel-slide" role="img" aria-label="Afrina Ming" data-bg="assets/images/group/Afrina_Ming.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Onkar Xinzhuo Ismini" data-bg="assets/images/group/ICCV25_2.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Yifan" data-bg="assets/images/group/ICCV25_Yifan.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025" data-bg="assets/images/group/ICCV25.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="Joey Amazon" data-bg="assets/images/group/JoeyAmazon.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="Meghana Poster VT" data-bg="assets/images/group/MeghanaVT.webp"></div>
                             <div class="carousel-slide" role="img" aria-label="Ming Graduation" data-bg="assets/images/group/MingGraduation.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="WACV 2024 Muntasir" data-bg="assets/images/group/MuntasirWACV24.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 2025 Onkar" data-bg="assets/images/group/Onkar.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Xinzhuo" data-bg="assets/images/group/Xinzhuo.jpg"></div>
-                            <div class="carousel-slide" role="img" aria-label="NeurIPS 2025 Yifan" data-bg="assets/images/group/YifanNeurIPS25.jpg"></div>
+                            <div class="carousel-slide" role="img" aria-label="WACV 2024 Muntasir" data-bg="assets/images/group/MuntasirWACV24.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 2025 Onkar" data-bg="assets/images/group/Onkar.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="ICCV 2025 Xinzhuo" data-bg="assets/images/group/Xinzhuo.webp"></div>
+                            <div class="carousel-slide" role="img" aria-label="NeurIPS 2025 Yifan" data-bg="assets/images/group/YifanNeurIPS25.webp"></div>
 		                </div>
 		                <div class="carousel-badge">Our Team</div>
 		            </div>
 	            <div class="join-content">
-	                <h2>Join Us</h2>
+	                <h2>Join</h2>
 	                <p>We are actively recruiting highly motivated students with a strong background in computer vision and multimodal ML (specifically generative modeling, embodied AI, or 3D vision) to build the next generation of models for perception, reasoning, and action.</p>
 					<p>If you are excited to tackle these research problems within a fast-paced, diverse, and collaborative team, consider joining PLAN Lab.</p>
 	                <div class="btn-group">
@@ -688,7 +746,6 @@
 
 	    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         const initThreeJS = () => {
             const container = document.getElementById('canvas-container');
@@ -756,23 +813,43 @@
                 renderer.setSize(window.innerWidth, window.innerHeight); 
             });
 	        };
-	        if (window.THREE) {
+	        // The WebGL background is decorative: load Three.js only after the
+	        // page itself has finished loading, and skip it entirely for users
+	        // who prefer reduced motion.
+	        function startThreeScenes() {
 	            try { initThreeJS(); } catch (e) { console.error(e); }
+	            if (typeof window.PLAN_initCubes === 'function') {
+	                try { window.PLAN_initCubes(); } catch (e) { console.error(e); }
+	            }
+	        }
+	        function loadThree() {
+	            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	            if (window.THREE) { startThreeScenes(); return; }
+	            var s = document.createElement('script');
+	            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+	            s.onload = startThreeScenes;
+	            s.onerror = function () { console.warn('[PLAN] THREE.js failed to load; skipping background.'); };
+	            document.body.appendChild(s);
+	        }
+	        if (document.readyState === 'complete') {
+	            setTimeout(loadThree, 0);
 	        } else {
-	            console.warn('[PLAN] THREE.js not available; skipping background.');
+	            window.addEventListener('load', function () { setTimeout(loadThree, 0); });
 	        }
 
-	        if (window.gsap && window.ScrollTrigger) {
-	            gsap.registerPlugin(ScrollTrigger);
-	            
-	            ScrollTrigger.create({
-	                start: "top -100",
-	                end: 99999,
-	                toggleClass: { className: "scrolled-nav", targets: ".glass-nav" }
-	            });
-	        } else {
-	            console.warn('[PLAN] GSAP/ScrollTrigger not available; skipping scroll effects.');
-	        }
+	        document.addEventListener('DOMContentLoaded', function () {
+	            if (window.gsap && window.ScrollTrigger) {
+	                gsap.registerPlugin(ScrollTrigger);
+
+	                ScrollTrigger.create({
+	                    start: "top -100",
+	                    end: 99999,
+	                    toggleClass: { className: "scrolled-nav", targets: ".glass-nav" }
+	                });
+	            } else {
+	                console.warn('[PLAN] GSAP/ScrollTrigger not available; skipping scroll effects.');
+	            }
+	        });
 
         // ----- GSAP HORIZONTAL SCROLL SETUP (DISABLE ON MOBILE) -----
         const track = document.querySelector('.track-cards');
@@ -833,22 +910,7 @@
 
             const cards = gsap.utils.toArray('.vid-card');
             cards.forEach((card) => {
-                const img = card.querySelector('.vid-card-img');
                 const caption = card.querySelector('.vid-card-caption');
-
-                if (img) {
-                    gsap.to(img, {
-                        backgroundPosition: "100% center",
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: card,
-                            containerAnimation: scrollTween,
-                            start: "left right",
-                            end: "right left",
-                            scrub: true
-                        }
-                    });
-                }
 
                 if (caption) {
                     gsap.fromTo(
@@ -872,8 +934,10 @@
 
         window.PLAN_setupHorizontalScroll = setupHorizontalScroll;
 
-        // Initial setup
-        setupHorizontalScroll();
+        // Initial setup once deferred GSAP has executed
+        document.addEventListener('DOMContentLoaded', () => {
+            setupHorizontalScroll();
+        });
 
         // Recalculate on resize (e.g., rotate phone, resize browser)
         window.addEventListener('resize', () => {
@@ -883,11 +947,13 @@
         // ----- CAROUSEL + TABS -----
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 4000);
+        if (slides.length > 1) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 4000);
+        }
 
         function openTab(tabName) {
             const contents = document.getElementsByClassName("tab-content");
@@ -922,7 +988,7 @@
     </script>
 
     <script>
-    (function() {
+    window.PLAN_initCubes = function() {
         if (!window.THREE) return;
         var cubeLayer = document.getElementById('cube-layer');
         if (!cubeLayer) return;
@@ -1211,7 +1277,7 @@
             renderer.render(scene, camera);
         }
         animate();
-    })();
+    };
     </script>
 <footer>
   <div class="footer-logo">PLAN Lab</div>
@@ -1219,7 +1285,7 @@
     <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
     <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
   </div>
-  <div class="footer-copy">Website built by <a href="/member.html?id=phd-adheesh-juvekar">Adheesh Juvekar</a>, <a href="/member.html?id=phd-kiet-nguyen">Kiet A. Nguyen</a>, <a href="/member.html?id=pi-ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="/member.html?id=phd-kiet-nguyen">Kiet Nguyen</a></div>
+  <div class="footer-copy">Website built by <a href="/member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="/member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="/member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="/member.html?id=kiet-nguyen">Kiet Nguyen</a></div>
   <div class="footer-copy">© 2026 PLAN Lab</div>
 </footer>
 </body>

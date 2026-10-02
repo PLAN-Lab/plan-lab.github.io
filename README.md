@@ -1,8 +1,41 @@
 # PLAN Lab Website
 
-This folder is a standalone static site. Team members and publications are rendered from JSON in `assets/data/`.
+This folder is a standalone static site. Team members, publications, and news are rendered from JSON in `assets/data/`.
 
 ## Update content
+
+### Adding a news item
+- Edit `assets/data/news.json` and add an entry at the top of the `news` array:
+```
+    {
+      "id": "YYYY-short-slug",                # permanent anchor on news.html (news.html#news-YYYY-short-slug)
+      "date": "YYYY-MM-DD",                   # also accepts "YYYY-MM" or "YYYY"; items are sorted by this
+      "title": "2 papers at X 2026!",
+      "description": "One or two sentences shown on the card.",
+      "image": "assets/images/publications/xyz.webp", # optional; use the publication cover images
+      "banner": "assets/images/news/xyz.webp",# optional; homepage-only image (conference banner/logo art, cropped to fill)
+      "imageFit": "cover",                    # optional; images render like publications (contained, white box); cover crops photos to fill
+      "icon": "fa-solid fa-trophy",           # optional Font Awesome class, used when there is no image
+      "link": "publications.html",            # optional; used as the More target only when the item has no papers/body
+      "linkLabel": "More",                    # optional; custom label for that link
+      "body": ["Optional longer paragraph shown on the item's detail page."],
+      "papers": [                             # optional; gives the item a detail page listing these papers
+        { "pubId": "2026-LastName-paper-slug" },        # reference into publications.json (rendered from there)
+        {                                                # OR an inline paper that is NOT on the publications list
+          "title": "Full Paper Title",
+          "authors": ["Firstname Lastname"],             # lab members are auto-linked to their profiles
+          "venueAbbr": "ECCV 2026", "year": 2026,
+          "cover": "assets/images/news/xyz.webp",        # optional
+          "links": { "paper": "https://...", "code": "https://..." },
+        }
+      ]
+    }
+```
+- Remove the comments before saving; JSON does not support comments.
+- The homepage shows the 4 most recent items. `news.html` lists everything, grouped by year.
+- The More button routing: `link` always wins when set; otherwise the item's detail page (`news.html?id=<id>`).
+- On `news.html`, items whose `papers` resolve to 2+ publication covers rotate through them as a small carousel; the homepage card stays static (`banner` first, then `image`).
+- To link a news item to a filtered publications view instead, use `"link": "publications.html?q=ECCV 2026"` (the publications search supports `?q=` prefill).
 
 ### Adding a publication
 - Edit `assets/data/publications.json` and add images under `assets/images/publications/`.
@@ -44,9 +77,10 @@ This folder is a standalone static site. Team members and publications are rende
 - Edit `assets/data/team.json` 
 ```
     {
-      "id": "phd-firstname-lastname",
-      "group": "phd/masters/undergrad/alumni/",
+      "id": "firstname-lastname", # permanent URL slug; never include member status
+      "group": "pi/phd/masters/undergrad/alumni",
       "name": "Firstname Lastename", # don't add aliases here, add them in the aliases field
+      "displayName": "Firstname (Alias) Lastname", # optional custom display formatting
       "aliases": [
         "alias1"
       ]
@@ -66,6 +100,8 @@ This folder is a standalone static site. Team members and publications are rende
     },
 ```
 - Add profile picture under `assets/images/team/` as `firstname-lastname.jpg`
+- Link project-page authors with `/team/firstname-lastname`; `assets/js/project-pages.js` resolves it to the member profile.
+- To change a member's status, update `group`, `role`, `title`, and `currently` as needed. Do not change `id` or project links.
 - Send a pull request
 
 ## Projects
@@ -74,3 +110,17 @@ To create a new project page:
 
 - Copy `simple-site/projects/template/` to `simple-site/projects/<slug>/`
 - Edit `simple-site/projects/<slug>/index.html`
+
+## Images
+
+Use WebP for all images (`cwebp` or Pillow). Card covers up to 1600px wide,
+publication thumbnails up to 960px, team avatars up to 640px. Animated GIFs
+should be converted to animated WebP. Anything over ~300 KB on a card or
+thumbnail is too big.
+
+## Short links (plan-lab.github.io/<project>)
+
+Short links redirect through `404.html`. A slug map at the top of that file
+redirects known projects before the page paints. When adding a project,
+add its folder name to the `SLUGS` map in `404.html` (or leave it: unknown
+slugs are probed automatically with a short delay before redirecting).
