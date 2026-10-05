@@ -1,0 +1,481 @@
+{
+  "projects": {
+    "3d-vcd": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2604.08645",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2604.08645"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Dataset",
+        "href": null
+      }
+    ],
+    "VisAnom": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2605.30344",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2605.30344"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Dataset",
+        "href": null
+      },
+      {
+        "label": "Checkpoint",
+        "href": null
+      }
+    ],
+    "calico": [
+      {
+        "label": "Paper",
+        "href": "https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf",
+        "source": "proceedings"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2412.19331"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/CALICO"
+      },
+      {
+        "label": "Dataset",
+        "href": "https://huggingface.co/datasets/PLAN-Lab/MixedParts"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/CALICO"
+      }
+    ],
+    "cogniroute": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2606.20970",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2606.20970"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "core3d": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2512.12768",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2512.12768"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Interactive 3D Models",
+        "href": "#studio-interactive-models"
+      }
+    ],
+    "dash": [
+      {
+        "label": "Paper",
+        "href": "https://ojs.aaai.org/index.php/AAAI/article/view/40139",
+        "source": "proceedings"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2512.10952"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/DaSH"
+      }
+    ],
+    "dreampartgen": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2603.19216",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2603.19216"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Dataset",
+        "href": null
+      },
+      {
+        "label": "Interactive 3D Models",
+        "href": "#studio-interactive-models"
+      }
+    ],
+    "ec-vlm": [
+      {
+        "label": "Paper",
+        "href": "https://openreview.net/pdf?id=bivKGSaXkD",
+        "source": "proceedings"
+      }
+    ],
+    "ece": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2503.10628",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2503.10628"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "editvid": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2609.04190",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2609.04190"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/EditVid"
+      },
+      {
+        "label": "Comparisons",
+        "href": "#comparisons"
+      }
+    ],
+    "egoforge": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2603.20169",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2603.20169"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "elsa3D": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2607.06565",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2607.06565"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "graphvid": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2607.21580",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2607.21580"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/GraphVid"
+      },
+      {
+        "label": "Dataset",
+        "href": "https://huggingface.co/PLAN-Lab/GraphVid"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder"
+      }
+    ],
+    "hallusegbench": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2506.21546",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2506.21546"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/HalluSegBench"
+      },
+      {
+        "label": "Dataset",
+        "href": "https://huggingface.co/datasets/PLAN-Lab/HalluSegBench"
+      }
+    ],
+    "latte-flow": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2506.06952",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2506.06952"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "mmplanner": [
+      {
+        "label": "Paper",
+        "href": "https://aclanthology.org/2025.findings-emnlp.1011.pdf",
+        "source": "proceedings"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2509.21662"
+      }
+    ],
+    "mtsbench": [
+      {
+        "label": "Paper",
+        "href": "https://openreview.net/forum?id=8LfB8HD1WU",
+        "source": "proceedings"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2506.21550"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/mTSBench"
+      },
+      {
+        "label": "Dataset",
+        "href": "https://huggingface.co/datasets/PLAN-Lab/mTSBench"
+      }
+    ],
+    "palm": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2601.07060",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2601.07060"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/PALM"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/PALM"
+      }
+    ],
+    "part2gs": [
+      {
+        "label": "Paper",
+        "href": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Part2GS_Part-aware_Modeling_of_Articulated_Objects_using_3D_Gaussian_Splatting_CVPR_2026_paper.pdf",
+        "source": "proceedings"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2506.17212"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/Part2GS-CVPR2026"
+      }
+    ],
+    "phantom": [
+      {
+        "label": "Paper",
+        "href": "static/Phantom_cvpr.pdf",
+        "source": "supplied conference PDF"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2604.08503"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ],
+    "prima": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2412.15209",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2412.15209"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Dataset",
+        "href": null
+      },
+      {
+        "label": "Demo",
+        "href": null
+      }
+    ],
+    "pyratok": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2601.16210",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2601.16210"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/PyraTok"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/PyraTok"
+      }
+    ],
+    "rewardflow": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2604.08536",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2604.08536"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/RewardFlow"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/RewardFlow"
+      }
+    ],
+    "silsa": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2610.02201",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2610.02201"
+      },
+      {
+        "label": "Results",
+        "href": "#results"
+      }
+    ],
+    "spatialreasoner": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2506.21656",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2506.21656"
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/PLAN-Lab/SpatialReasonerR1"
+      },
+      {
+        "label": "Checkpoint",
+        "href": "https://huggingface.co/PLAN-Lab/SpatialReasoner-R1"
+      },
+      {
+        "label": "Google Blog",
+        "href": "https://opensource.googleblog.com/2025/12/spatialreasoner-teaching-vlms-to-see-structure-accelerated-with-tunix-on-tpus.html"
+      }
+    ],
+    "unidflow": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2602.12221",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2602.12221"
+      },
+      {
+        "label": "Code",
+        "href": null
+      },
+      {
+        "label": "Checkpoint",
+        "href": null
+      }
+    ],
+    "vtam": [
+      {
+        "label": "Paper",
+        "href": "https://arxiv.org/pdf/2603.23481",
+        "source": "manuscript"
+      },
+      {
+        "label": "arXiv",
+        "href": "https://arxiv.org/abs/2603.23481"
+      },
+      {
+        "label": "Code",
+        "href": null
+      }
+    ]
+  }
+}

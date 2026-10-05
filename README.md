@@ -106,6 +106,24 @@ This folder is a standalone static site. Team members, publications, and news ar
 
 ## Projects
 
+The 27 reviewed project pages load the shared presentation at their normal
+`/projects/<slug>/` URLs. Their `<body>` elements carry
+`data-project-presentation="reviewed"`, which activates the project presentation
+in `assets/js/project-pages.js`.
+
+- Presentation: `assets/css/project-studio.css`, `assets/js/project-studio.js`,
+  and each project's `static/js/studio.js` module where present.
+- Authors, citations, resources, sections, and results: the `project-*.json`
+  files and `project-results/` folder in `assets/data/`. Update the canonical
+  resource/citation metadata along with the corresponding page's HTML fallback.
+- Shared footer and browser libraries: `assets/components/project-footer.html`
+  and `assets/vendor/`.
+- Asset versions are set by the reviewed-page loader and the project HTML's
+  script/style URLs. Bump those versions when publishing asset changes.
+
+Run `python3 -m http.server 8000` from the repository root to inspect the pages
+locally at `http://localhost:8000/projects/<slug>/`.
+
 To create a new project page:
 
 - Copy `simple-site/projects/template/` to `simple-site/projects/<slug>/`

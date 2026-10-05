@@ -13,21 +13,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models" />
-    <title>[TMLR'25] EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models</title>
+    <title>EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
+    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -103,30 +103,6 @@
                     <span>Paper</span>
                   </a>
                 </span>
-                <span class="link-block">
-                  <a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data (coming soon)</span>
-                  </a>
-                </span>
               </div>
 
             </div>
@@ -175,15 +151,15 @@
                to improve sample efficiency in VL-PTMs. We pre-train a Vision-Language Model (VLM) using 
                EC tokens generated through a referential game between two artificial agents. 
                Across three diverse cross-modal matching and reasoning benchmarks, EC pretraining yields 
-               substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6\% and 
-               Visual Entailment (VE) by 69.6\%.
+               substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6% and
+               Visual Entailment (VE) by 69.6%.
               </p>
                
               <p>
                To further validate the effectiveness of EC pretraining, we introduce LLaVA-1.5-EC, 
                a LLaVA variant trained entirely on EC tokens. LLaVA-1.5-EC outperforms strong 
-               LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23\% on VizWiz, 
-               34.8\% on GQA, and 10.8\% on VQAv2, and top performance on MMBench, a challenging instruction-following 
+               LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23% on VizWiz,
+               34.8% on GQA, and 10.8% on VQAv2, and top performance on MMBench, a challenging instruction-following
                benchmark. 
               </p>
                
@@ -283,13 +259,13 @@
                 LVLMs across five benchmarks: VQAv2, GQA, VizWiz, SciQA-IMG, and TextVQA. Despite using only 558K images
                  and no natural language supervision, LLaVA-1.5-EC achieves competitive performance, outperforming 
                  well-established models such as BLIP-2 (13B) and InstructBLIP (13B) across most datasets. 
-                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and 
-                 10.8% on VQAv2. 
+                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and
+                 10.8% on VQAv2.
               </p>
               <p class="has-text-justified">
-                 It also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs 
+                 LLaVA-1.5-EC also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs
                  and fine-tuned on 1.2M additional examples, highlighting the impressive representational capacity of EC pretraining. 
-                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- it achieves 
+                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- LLaVA-1.5-EC achieves
                  strong results despite having seen 2–3 orders of magnitude fewer samples and no human-written captions. 
                  For example, on VizWiz, LLaVA-1.5-EC even outperforms Qwen-VL (40.03 vs. 35.2), showing its effectiveness on visually grounded tasks. 
               </p>
@@ -388,7 +364,7 @@
       <pre><code>@article{ogunleye2025ecvlm,
   title={EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models},
   author={Ogunleye, Makanjuola A. and Vickery, Chase and Lourentzou, Ismini},
-  journal={Transactions on machine learning research},
+  journal={Transactions on Machine Learning Research (TMLR)},
   year={2025}
 }</code></pre>
     </div>
@@ -398,7 +374,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
+        <a class="icon-link" href="https://openreview.net/pdf?id=bivKGSaXkD">
           <i class="fas fa-file-pdf"></i>
         </a>
         <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>

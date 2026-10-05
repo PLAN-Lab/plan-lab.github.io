@@ -1,0 +1,254 @@
+{
+  "projects": {
+    "core3d": {
+      "General reasoning benchmarks": {
+        "description": "Language understanding and reasoning scores for vision-language and 3D models. Higher scores are better."
+      },
+      "3D captioning": {
+        "description": "Object captioning on Objaverse, comparing lexical overlap and semantic similarity. Higher scores are better."
+      },
+      "3D generation": {
+        "description": "Text-to-3D and image-to-3D generation quality. CLIP measures alignment; lower FD and KD indicate closer agreement with the reference distribution."
+      }
+    },
+    "rewardflow": {
+      "PIE-Bench image editing": {
+        "description": "Image editing quality, background preservation, prompt alignment, and sampling cost on PIE-Bench. Standard and four-step settings are reported separately."
+      }
+    },
+    "3d-vcd": {
+      "3D-POPE comparison": {
+        "description": "Object-presence reasoning under random, popular, and adversarial queries. Precision, recall, F1, and accuracy measure grounded answers; Yes-rate reports over-affirmation."
+      }
+    },
+    "VisAnom": {
+      "Anomaly detection on VisAnomBench": {
+        "description": "Interval-level anomaly detection and localization on the held-out VisAnomBench split. Precision, recall, F1, and overlap compare the predicted anomalies with ground truth."
+      }
+    },
+    "calico": {
+      "MixedParts benchmark": {
+        "description": "Average performance across common objects, common parts, and unique parts. The first three metrics measure segmentation; SS and S-IoU measure semantic labeling."
+      }
+    },
+    "cogniroute": {
+      "htmlTable:0": {
+        "title": "OmniSocialBench social reasoning",
+        "description": "Accuracy across social norms, action goals, mental states, and pragmatic meaning. Higher scores are better."
+      },
+      "htmlTable:1": {
+        "title": "Public audio-visual benchmarks",
+        "description": "Generalization from Qwen3-Omni-30B to CogniRoute on AV-SpeakerBench, OmniBench, MMVU, WorldSense, and Daily-Omni. Higher scores are better."
+      },
+      "htmlTable:2": {
+        "title": "Additional video and audio benchmarks",
+        "description": "Accuracy on AV-Odyssey, MVBench, MMAU, OmniVideoBench, and Video-MME-v2. Higher scores are better."
+      }
+    },
+    "dash": {
+      "DIGIT-FIVE accuracy": {
+        "description": "Target-domain accuracy on DIGIT-FIVE, averaged over five runs. Higher scores are better; reported gains compare DaSH with competing selectors."
+      },
+      "DomainNet accuracy": {
+        "description": "Target-domain accuracy across DomainNet domains, averaged over five runs. Higher scores are better."
+      }
+    },
+    "dreampartgen": {
+      "Object generation": {
+        "description": "Object generation across four benchmarks. Lower Chamfer Distance (CD) and Earth Mover’s Distance (EMD) indicate better geometric agreement."
+      },
+      "Text–shape alignment": {
+        "description": "Object-level and part-level text–shape alignment across the evaluated categories. Higher scores are better."
+      }
+    },
+    "ec-vlm": {
+      "SNLI-VE accuracy across training-set sizes": {
+        "description": "Visual entailment accuracy with and without emergent-communication pretraining across training-set sizes."
+      },
+      "Instruction-following evaluation": {
+        "description": "Multimodal instruction-following results, with model size and training data reported alongside benchmark scores."
+      },
+      "MMBench evaluation": {
+        "description": "Multimodal understanding on MMBench, comparing standard pretraining with emergent-communication pretraining."
+      }
+    },
+    "ece": {
+      "Confidence elicitation": {
+        "description": "Calibration error (ECE) and failure prediction (AUROC) compare elicited confidence across agents and reasoning strategies."
+      },
+      "Execution policies and confidence estimation": {
+        "description": "Select an agent to compare confidence calibration and failure prediction across action sampling, scenario reinterpretation, and hypothetical reasoning."
+      }
+    },
+    "editvid": {
+      "FiVE editing accuracy": {
+        "description": "Instruction-following accuracy on the FiVE benchmark. Higher scores indicate better agreement with the requested edit."
+      },
+      "FiVE fidelity and perceptual metrics": {
+        "description": "Video quality and fidelity on FiVE, comparing perceptual quality with preservation of the source content."
+      },
+      "IVEBench and curated editing evaluation": {
+        "description": "Editing quality on IVEBench and curated subject-guided and general video-editing examples."
+      }
+    },
+    "egoforge": {
+      "htmlTable:0": {
+        "title": "X-Ego benchmark",
+        "description": "Semantic, perceptual, and temporal quality on the X-Ego benchmark. Arrows indicate the preferred direction of each metric."
+      },
+      "htmlTable:1": {
+        "title": "Enhanced baseline variants",
+        "description": "Comparisons with external-view conditioning (+EV), text-only adaptation (+TT), and the proposed conditioning inputs (+CI)."
+      },
+      "htmlTable:2": {
+        "title": "User study",
+        "description": "Ratings on a 1–5 scale from 20 annotators over 25 video groups. Higher scores are better; asterisks mark enhanced baseline variants."
+      }
+    },
+    "elsa3D": {
+      "htmlTable:0": {
+        "title": "Text-to-3D generation",
+        "description": "Prompt alignment and generated-shape quality, measured with CLIP, FD, KD, and Q-Align."
+      },
+      "htmlTable:1": {
+        "title": "3D object captioning",
+        "description": "Lexical and semantic similarity between generated object descriptions and reference captions. Higher scores are better."
+      }
+    },
+    "graphvid": {
+      "htmlTable:0": {
+        "title": "Interaction-centric MoveBench",
+        "description": "Video quality and motion control on the interaction-centric MoveBench subset, with training data, trainable parameters, and inference time."
+      },
+      "htmlTable:1": {
+        "title": "Multi-object MoveBench",
+        "description": "Perceptual, reconstruction, temporal, and motion quality on the harder multi-object subset."
+      }
+    },
+    "hallusegbench": {
+      "Counterfactual segmentation evaluation": {
+        "description": "Factual and counterfactual segmentation across referral and reasoning tasks. IoU drops and confusion-mask scores expose unsupported segmentation."
+      }
+    },
+    "latte-flow": {
+      "htmlTable:0": {
+        "title": "ImageNet-50K image generation",
+        "description": "Generation quality and inference cost on ImageNet-50K. Active parameters and relative runtime show the cost per sampling step."
+      },
+      "htmlTable:1": {
+        "title": "Multimodal understanding",
+        "description": "Understanding benchmarks compare LaTtE-Flow with other multimodal models after adding image generation."
+      }
+    },
+    "mmplanner": {
+      "Textual planning evaluation": {
+        "description": "Textual plan quality on RecipePlan and WikiPlan."
+      },
+      "Cross-modal planning evaluation": {
+        "description": "Step-level agreement between visual and textual plans."
+      },
+      "Visual Step Ordering (VS-Ordering)": {
+        "description": "Visual sequence ordering evaluates whether generated steps follow a coherent procedure."
+      }
+    },
+    "mtsbench": {
+      "Detector performance across datasets": {
+        "description": "AUC-ROC scores for 24 anomaly detectors across 19 multivariate datasets."
+      },
+      "How detector scores vary across time series": {
+        "description": "Score distributions across time series. Select a metric to compare variability across detectors."
+      },
+      "Detector runtime by dataset": {
+        "description": "Runtime across detectors and datasets. The logarithmic color scale distinguishes fast and computationally expensive methods."
+      },
+      "Detector selection performance": {
+        "description": "Detector-selection quality for MetaOD, FMMS, and Orthus across the benchmark’s scoring metrics."
+      },
+      "Recovering the best detector: Recall@k": {
+        "description": "Recall as the number of recommended detectors increases."
+      },
+      "Ranking quality among the top three recommendations": {
+        "description": "Precision, recall, and ranking quality within the first three detector recommendations."
+      }
+    },
+    "palm": {
+      "Robustness in real-world manipulation": {
+        "description": "Long-horizon task completion under relocation, unfamiliar lighting, and visual distractions."
+      },
+      "image:real_world_setup.png": {
+        "title": "Real-world evaluation setup",
+        "description": "The six-step manipulation task is evaluated with an xArm6 robot and two RealSense cameras."
+      },
+      "image:robustness_settings.png": {
+        "title": "Real-world robustness settings",
+        "description": "Evaluation introduces object relocation, unfamiliar lighting, and multi-object visual distractions."
+      }
+    },
+    "part2gs": {
+      "Articulated reconstruction: simulation and real scenes": {
+        "description": "Reconstruction and motion-estimation errors on simulated and real articulated objects. Lower scores are better."
+      },
+      "Objects with multiple articulated parts": {
+        "description": "Multi-part reconstruction on DTA-Multi and ArtGS-Multi. Lower errors indicate more accurate geometry and joint motion."
+      }
+    },
+    "phantom": {
+      "htmlTable:0": {
+        "title": "VideoPhy and VideoPhy-2",
+        "description": "Semantic adherence (SA) and physical commonsense (PC) compare video–text alignment and physically plausible motion."
+      },
+      "htmlTable:1": {
+        "title": "Physics-IQ",
+        "description": "Physical extrapolation from real motion sequences under single-frame and multi-frame conditioning."
+      },
+      "htmlTable:2": {
+        "title": "VBench-2",
+        "description": "Overall video quality and five dimensions: creativity, commonsense, controllability, human fidelity, and physics."
+      }
+    },
+    "prima": {
+      "Multi-image reasoning segmentation": {
+        "description": "Segmentation performance on M4Seg for general-purpose and pixel-grounded vision-language models."
+      }
+    },
+    "pyratok": {
+      "Reconstruction quality": {
+        "description": "Reconstruction quality and inference cost on WebVid-10M and COCO-Val. Latency is measured on 25 frames at 256 × 256 using one V100 GPU."
+      }
+    },
+    "silsa": {
+      "htmlTable:0": {
+        "title": "Efficiency comparison",
+        "description": "Training and inference cost, token counts, and geometric error under the reported A100 setup. Lower scores are better."
+      },
+      "htmlTable:1": {
+        "title": "VAE reconstruction quality",
+        "description": "Geometric reconstruction, occupancy overlap, and topology. F-scores use thresholds of 0.01 and 0.005."
+      },
+      "htmlTable:2": {
+        "title": "Image-to-3D generation",
+        "description": "Prompt alignment, distributional quality, visual fidelity, and coverage for generated 3D objects."
+      }
+    },
+    "spatialreasoner": {
+      "Qualitative spatial relations": {
+        "description": "Accuracy on relative-position and relative-size questions in SpatialRGPT-Bench."
+      },
+      "Quantitative spatial measurements": {
+        "description": "Accuracy on distance, width, height, and direction questions in SpatialRGPT-Bench."
+      }
+    },
+    "unidflow": {
+      "Multimodal understanding": {
+        "description": "Multimodal understanding across general, mathematical, and visual reasoning benchmarks."
+      },
+      "Text-to-image generation": {}
+    },
+    "vtam": {
+      "htmlTable:0": {
+        "title": "Contact-rich manipulation",
+        "description": "Success rates on chip pick-and-place, cucumber peeling, and whiteboard wiping, with 80 trials per model."
+      }
+    }
+  }
+}

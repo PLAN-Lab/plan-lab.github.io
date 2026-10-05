@@ -24,11 +24,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css" />
-  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
+  <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg" />
 
   <style>
@@ -149,7 +149,7 @@
   </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -233,30 +233,8 @@
                     <span>arXiv</span>
                   </a>
                 </span>
-                <span class="link-block">
-                  <a href="#method" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
-                    <span>Method</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#results" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-regular fa-images"></i></span>
-                    <span>Results</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#videos" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-video"></i></span>
-                    <span>Videos</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#BibTeX" class="button is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-obp"></i></span>
-                    <span>BibTeX</span>
-                  </a>
-                </span>
+                <span class="link-block"><a href="https://github.com/PLAN-Lab/PALM" class="button is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+                <span class="link-block"><a href="https://huggingface.co/PLAN-Lab/PALM" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-cube"></i></span><span>Checkpoint</span></a></span>
               </div>
             </div>
           </div>
@@ -321,7 +299,7 @@
         <h2 class="title is-3">Results and Analysis</h2>
         <div class="content has-text-justified">
           <p>
-            PALM is evaluated across simulation benchmarks and real-world long-horizon generalization settings. The real-world setup uses a UFACTORY xArm6 with Gripper G2 and dual RealSense D455 cameras. The long-horizon task requires a robot to complete a six-step instruction sequence while remaining robust to relocation, lighting shifts, and distractor objects.
+            PALM completes an average of 3.05 subtasks under random object relocation, 3.80 with visual distractions, and 3.55 under unseen lighting. OpenVLA completes 0.95, 1.60, and 1.25 subtasks, respectively; Octo completes 0.65, 0.95, and 1.05.
           </p>
 
           <div class="palm-result-grid">
@@ -339,14 +317,7 @@
             </div>
           </div>
 
-          <img src="./static/images/real_world_setup.png" class="palm-figure" alt="PALM real-world experiment setup" />
-          <p class="palm-caption">Real-world robot setup and six-step long-horizon task guided by one high-level instruction.</p>
-
-          <img src="./static/images/robustness_settings.png" class="palm-figure" alt="PALM robustness under relocation, unseen lighting, and visual distractions" />
-          <p class="palm-caption">Robustness settings: random relocation, unseen lighting disturbances, and multi-object visual distractions.</p>
-
           <img src="./static/images/real_world_results.png" class="palm-figure tight" alt="PALM real-world results" />
-          <p class="palm-caption">PALM achieves longer-horizon completion across real-world generalization settings.</p>
         </div>
       </div>
     </section>
@@ -356,32 +327,32 @@
         <h2 class="title is-3">Qualitative Videos</h2>
         <div class="content has-text-justified">
           <p>
-            The videos below show PALM rollouts across the original task and robustness settings. Each clip illustrates how progress-aware affordance reasoning supports temporally coherent execution across multi-step manipulation.
+            A UFACTORY xArm6 with a Gripper G2 and two RealSense D455 cameras executes a six-step manipulation sequence. These PALM rollouts show the original task and three generalization settings: unseen lighting, visual distractions, and random object relocation.
           </p>
 
           <div class="palm-video-grid">
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Original</div>
               <div class="palm-video-wrap">
-                <video controls playsinline preload="metadata" src="./static/videos/original.mp4"></video>
+                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/original.mp4"></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Unseen Lighting</div>
               <div class="palm-video-wrap">
-                <video controls playsinline preload="metadata" src="./static/videos/unseen-lighting.mp4"></video>
+                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/unseen-lighting.mp4"></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Visual Distraction</div>
               <div class="palm-video-wrap">
-                <video controls playsinline preload="metadata" src="./static/videos/visual-distraction.mp4"></video>
+                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/visual-distraction.mp4"></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Random Relocation</div>
               <div class="palm-video-wrap">
-                <video controls playsinline preload="metadata" src="./static/videos/random-relocation.mp4"></video>
+                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/random-relocation.mp4"></video>
               </div>
             </div>
     </section>
@@ -389,13 +360,10 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content palm-bibtex">
         <h2 class="title" style="justify-content: left; display:flex;">BibTeX</h2>
-        <pre><code>@article{liu2026palm,
+        <pre><code>@inproceedings{liu2026palm,
   title={PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation},
   author={Liu, Yuanzhe and Zhu, Jingyuan and Mo, Yuchen and Li, Gen and Cao, Xu and Jin, Jin and Shen, Yifan and Li, Zhengyuan and Yu, Tianjiao and Yuan, Wenzhen and Ding, Fangqiang and Lourentzou, Ismini},
-  journal={arXiv preprint arXiv:2601.07060},
-  eprint={2601.07060},
-  archivePrefix={arXiv},
-  primaryClass={cs.RO},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026}
 }</code></pre>
       </div>

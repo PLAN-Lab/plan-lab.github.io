@@ -27,18 +27,43 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
   const tabs=document.querySelector('.case-tabs'),grid=document.querySelector('#video-grid'),prompt=document.querySelector('#case-prompt');
   if(!tabs||!grid)return;
-  let playing=true;
+  let playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let visible=false;
   const videos=()=>[...grid.querySelectorAll('video')];
   function setButton(){document.querySelector('#toggle-play').innerHTML=playing?'<i class="fa-solid fa-pause"></i><span>Pause all</span>':'<i class="fa-solid fa-play"></i><span>Play all</span>'}
-  function toggle(){playing=!playing;videos().forEach(v=>playing?v.play().catch(()=>{}):v.pause());setButton()}
+  function align(v,source){
+    if(!source || source===v || !Number.isFinite(v.duration) || v.duration===0)return;
+    const time=source.currentTime%v.duration;
+    if(Math.abs(time-v.currentTime)>.15)v.currentTime=time;
+  }
+  function start(v){
+    if(!v.isConnected || !playing || !visible || document.hidden)return;
+    align(v,videos()[0]);v.play().catch(()=>{});
+  }
+  function updatePlayback(){
+    videos().forEach(v=>{v.autoplay=playing&&visible&&!document.hidden;if(v.autoplay)start(v);else v.pause()});
+    setButton();
+  }
+  function toggle(){playing=!playing;updatePlayback()}
   function render(item){
+    videos().forEach(v=>v.pause());
     prompt.textContent=item.prompt;document.querySelector('#reference-panel').hidden=!item.subject;
     tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.case===item.id;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on))});
-    grid.innerHTML=item.files.map(([file,name])=>`<article class="video-card ${name.includes('Ours')?'ours':''}"><div class="video-label"><span>${name}</span>${name.includes('Ours')?'<b>Ours</b>':''}</div><video muted loop playsinline preload="metadata" aria-label="${name} result"><source src="${BASE}${item.id}/${file}" type="video/mp4"></video></article>`).join('');
-    const list=videos();let ready=0;list.forEach((v,index)=>{v.playbackRate=Number(document.querySelector('#playback-rate').value);v.addEventListener('loadedmetadata',()=>{if(index===0&&v.videoWidth&&v.videoHeight)grid.style.setProperty('--case-aspect',`${v.videoWidth}/${v.videoHeight}`);ready++;if(ready===list.length){list.forEach(x=>x.currentTime=0);if(playing)list.forEach(x=>x.play().catch(()=>{}))}},{once:true});v.addEventListener('click',toggle)});
+    grid.innerHTML=item.files.map(([file,name])=>`<article class="video-card ${name.includes('Ours')?'ours':''}"><div class="video-label"><span>${name}</span>${name.includes('Ours')?'<b>Ours</b>':''}</div><video muted loop playsinline preload="auto" aria-label="${name} result"><source src="${BASE}${item.id}/${file}" type="video/mp4"></video></article>`).join('');
+    const list=videos();list.forEach((v,index)=>{
+      v.muted=true;v.playbackRate=Number(document.querySelector('#playback-rate').value);
+      v.addEventListener('loadedmetadata',()=>{if(index===0&&v.videoWidth&&v.videoHeight)grid.style.setProperty('--case-aspect',`${v.videoWidth}/${v.videoHeight}`)},{once:true});
+      // A slow baseline must not hold back ready videos.
+      v.addEventListener('loadeddata',()=>start(v),{once:true});
+      v.addEventListener('click',toggle);
+    });
+    list[0].addEventListener('timeupdate',()=>{if(playing&&visible)list.forEach(v=>align(v,list[0]))});
+    updatePlayback();
   }
   CASES.forEach(c=>{const b=document.createElement('button');b.type='button';b.role='tab';b.dataset.case=c.id;b.textContent=c.label;b.onclick=()=>render(c);tabs.appendChild(b)});
   document.querySelector('#toggle-play').addEventListener('click',toggle);
   document.querySelector('#playback-rate').addEventListener('change',e=>videos().forEach(v=>v.playbackRate=Number(e.target.value)));
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;updatePlayback()},{threshold:0}).observe(grid);
+  document.addEventListener('visibilitychange',updatePlayback);
   render(CASES[0]);
 });

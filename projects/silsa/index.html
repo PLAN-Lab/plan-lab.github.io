@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SILSA | Topology-Preserving 3D Generation · NeurIPS 2026</title>
+  <title>SILSA | Topology-Preserving 3D Generation | PLAN Lab</title>
   <meta name="description" content="SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation. NeurIPS 2026. Compact 384-token geometry with coherent thin structures, holes, and connectivity.">
   <link rel="canonical" href="https://plan-lab.github.io/projects/silsa/">
   <meta property="og:type" content="website">
@@ -18,17 +18,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="static/images/teaser.webp" as="image">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/projects.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1">
   <link rel="stylesheet" href="style.css">
-  <script src="../../assets/js/project-pages.js" defer></script>
+  <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
   <script src="main.js" defer></script>
   <!-- Keep the lab's existing analytics property. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-48J3PYKGQ6');</script>
 </head>
-<body class="page-project silsa-page">
+<body class="page-project silsa-page" data-project-presentation="reviewed">
   <div class="project-bg"></div><div class="project-grid"></div>
   <a class="skip" href="#main">Skip to content</a>
   <nav class="glass-nav" aria-label="PLAN Lab navigation">
@@ -58,7 +58,6 @@
         <span class="link-block"><a href="https://arxiv.org/abs/2610.02201" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
         <span class="link-block"><span class="button is-rounded is-dark is-disabled" aria-disabled="true"><span class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span><span>Code <small>(Coming soon)</small></span></span></span>
         <span class="link-block"><a href="#results" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></span><span>Results</span></a></span>
-        <span class="link-block"><a href="#citation" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-quote-right" aria-hidden="true"></i></span><span>BibTeX</span></a></span>
       </div>
     </div></div></div></section>
 
@@ -163,12 +162,10 @@
     <section class="section abstract-section" aria-labelledby="abstract-title"><div class="container abstract-box content"><div><p class="section-kicker">The paper</p><h2 id="abstract-title" class="title is-3">Abstract</h2></div><div><p>High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes.</p><p>We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact <em>sliding-window slice latents</em>. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A <strong>Slice VAE</strong> encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a <strong>Volumetric Anchor Lattice</strong> coordinates directional slice streams through a shared 3D workspace. To preserve structural correctness, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices.</p><p>Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by 8.7%, coverage by 5.96 absolute points, and Betti error by 9.2% over the strongest baseline, while using 70.0% fewer tokens than the next-most compact baseline and over 98% fewer tokens than sparse or hierarchical tokenizers, effectively reducing training memory by 40.4% and inference time by 58.5%. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.</p></div></div></section>
 
     <section class="section citation-section" id="citation" aria-labelledby="citation-title"><div class="container"><div class="citation-heading"><h2 id="citation-title" class="title is-3">Citation</h2><button id="copy-citation" class="copy-button" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{yu2026silsa,
-  title = {SILSA: Sliding-Window Slice Latents for Topology-Preserving
-           High-Resolution 3D Generation},
-  author = {Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Shen, Ying
-            and Susladkar, Onkar and Lourentzou, Ismini},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year = {2026}
+  title={SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation},
+  author={Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Shen, Ying and Nguyen, Kiet A. and Juvekar, Adheesh Sunil and Lourentzou, Ismini},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2026}
 }</code></pre><span id="copy-status" class="sr-only" aria-live="polite"></span><p class="release-note">Accepted at NeurIPS 2026. Paper and code links will be added when released.</p></div></section>
   </main>
   <footer class="footer"><div class="container footer-inner"><span><a href="../../index.html">PLAN Lab</a> · University of Illinois Urbana-Champaign</span><span><a href="../../publications.html">More research</a> · <a href="mailto:ty41@illinois.edu">Contact</a> · © 2026 PLAN Lab</span></div></footer>

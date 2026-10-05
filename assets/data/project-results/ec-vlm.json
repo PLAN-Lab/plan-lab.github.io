@@ -1,0 +1,267 @@
+{
+  "instruc-following.png": {
+    "type": "table",
+    "title": "Instruction-following evaluation",
+    "columns": [
+      "Method",
+      "LLM",
+      "Image size",
+      "Pretrain",
+      "Finetune",
+      "VQAv2",
+      "GQA",
+      "VizWiz",
+      "SciQA IMG",
+      "TextVQA"
+    ],
+    "rows": [
+      [
+        "BLIP-2",
+        "Vicuna-13B",
+        "224²",
+        "129M",
+        "—",
+        "65.0",
+        "41",
+        "19.6",
+        "61",
+        "42.5"
+      ],
+      [
+        "InstructBLIP",
+        "Vicuna-7B",
+        "224²",
+        "129M",
+        "1.2M",
+        "—",
+        "49.2",
+        "34.5",
+        "60.5",
+        "50.1"
+      ],
+      [
+        "InstructBLIP",
+        "Vicuna-13B",
+        "224²",
+        "129M",
+        "1.2M",
+        "—",
+        "49.5",
+        "33.4",
+        "63.1",
+        "50.7"
+      ],
+      [
+        "Shikra",
+        "Vicuna-13B",
+        "224²",
+        "600K",
+        "5.5M",
+        "77.4",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      [
+        "IDEFICS-9B",
+        "LLaMA-7B",
+        "224²",
+        "353M",
+        "1M",
+        "50.9",
+        "38.4",
+        "35.5",
+        "—",
+        "25.9"
+      ],
+      [
+        "IDEFICS-80B",
+        "LLaMA-65B",
+        "224²",
+        "353M",
+        "1M",
+        "60.0",
+        "45.2",
+        "36.0",
+        "—",
+        "30.9"
+      ],
+      [
+        "Qwen-VL",
+        "Qwen-7B",
+        "448²",
+        "1.4B",
+        "50M",
+        "78.8",
+        "59.3",
+        "35.2",
+        "67.1",
+        "63.8"
+      ],
+      [
+        "Qwen-VL-Chat",
+        "Qwen-7B",
+        "448²",
+        "1.4B",
+        "50M",
+        "78.2",
+        "57.5",
+        "38.9",
+        "68.2",
+        "61.5"
+      ],
+      [
+        "LLaVA-1.5",
+        "Vicuna-7B",
+        "336²",
+        "558K",
+        "665K",
+        "78.5",
+        "62.0",
+        "50.0",
+        "66.8",
+        "58.2"
+      ],
+      [
+        "LLaVA-1.5-EC",
+        "Vicuna-7B",
+        "336²",
+        "558K",
+        "665K",
+        "72.03",
+        "55.27",
+        "40.03",
+        "64.45",
+        "48.61"
+      ]
+    ],
+    "note": "",
+    "source": "static/images/instruc-following.png"
+  },
+  "snlive result.png": {
+    "type": "line",
+    "title": "SNLI-VE accuracy across training-set sizes",
+    "source": "static/images/snlive result.png",
+    "categories": [
+      "10K",
+      "50K",
+      "Full"
+    ],
+    "xLabel": "Training-set size",
+    "metrics": [
+      {
+        "label": "Validation accuracy (%)",
+        "min": 40,
+        "max": 95,
+        "series": [
+          {
+            "name": "Base",
+            "values": [
+              50.85,
+              50.46,
+              50.3
+            ]
+          },
+          {
+            "name": "+ EC",
+            "color": "#ff915b",
+            "values": [
+              57.3,
+              70.8,
+              85.3
+            ]
+          },
+          {
+            "name": "+ NL",
+            "values": [
+              81.3,
+              84.9,
+              89.05
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Test accuracy (%)",
+        "min": 40,
+        "max": 95,
+        "series": [
+          {
+            "name": "Base",
+            "values": [
+              48.0,
+              48.5,
+              49.94
+            ]
+          },
+          {
+            "name": "+ EC",
+            "color": "#ff915b",
+            "values": [
+              57.3,
+              70.3,
+              85.01
+            ]
+          },
+          {
+            "name": "+ NL",
+            "values": [
+              80.3,
+              84.2,
+              88.95
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "mmbench.png": {
+    "type": "bars",
+    "title": "MMBench evaluation",
+    "source": "static/images/mmbench.png",
+    "categories": [
+      "InstructBLIP-8B",
+      "Qwen-VL",
+      "IDEFICS-9B",
+      "IDEFICS-80B",
+      "Qwen-VL-Chat",
+      "LLaVA-7B",
+      "LLaVA-1.5-CLIP-7B",
+      "LLaVA-1.5-7B",
+      "LLaVA-1.5-EC-7B"
+    ],
+    "yLabel": "Accuracy (%) ↑",
+    "max": 80,
+    "series": [
+      {
+        "name": "MMBench (EN)",
+        "values": [
+          36,
+          38.2,
+          48.2,
+          54.5,
+          60.6,
+          38.7,
+          50.56,
+          64.3,
+          67.3
+        ]
+      },
+      {
+        "name": "MMBench (CN)",
+        "values": [
+          23.7,
+          7.4,
+          25.2,
+          38.1,
+          56.7,
+          36.4,
+          48.49,
+          58.3,
+          64.01
+        ]
+      }
+    ]
+  }
+}

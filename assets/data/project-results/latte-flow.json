@@ -1,0 +1,147 @@
+{
+  "performance_vs_training_steps.png": {
+    "type": "line",
+    "title": "Performance as training progresses",
+    "source": "static/images/performance_vs_training_steps.png",
+    "xLabel": "Training steps (K)",
+    "yLabel": "FID-50K ↓",
+    "xTicks": [
+      20,
+      40,
+      60,
+      80,
+      120,
+      160
+    ],
+    "yMin": 5,
+    "yMax": 38,
+    "approximate": true,
+    "series": [
+      {
+        "name": "Vanilla",
+        "points": [
+          [
+            20,
+            36
+          ],
+          [
+            40,
+            20
+          ],
+          [
+            60,
+            16.1
+          ],
+          [
+            80,
+            13
+          ],
+          [
+            120,
+            10.8
+          ],
+          [
+            160,
+            8.8
+          ]
+        ]
+      },
+      {
+        "name": "LaTtE-Flows",
+        "color": "#ff915b",
+        "points": [
+          [
+            20,
+            18.3
+          ],
+          [
+            40,
+            11.9
+          ],
+          [
+            60,
+            10
+          ],
+          [
+            80,
+            9.3
+          ],
+          [
+            120,
+            8.5
+          ],
+          [
+            160,
+            7.2
+          ]
+        ]
+      }
+    ],
+    "note": ""
+  },
+  "group_size.png": {
+    "type": "scatter",
+    "title": "Group size: speed and generation quality",
+    "source": "static/images/group_size.png",
+    "xLabel": "Inference time (ms)",
+    "yLabel": "FID-50K ↓",
+    "xMin": 20,
+    "xMax": 180,
+    "xTicks": [
+      20,
+      60,
+      100,
+      140,
+      180
+    ],
+    "yMin": 0,
+    "yMax": 30,
+    "approximate": true,
+    "series": [
+      {
+        "name": "LaTtE-Flows",
+        "points": [
+          [
+            39,
+            25.5
+          ],
+          [
+            51,
+            8.5
+          ],
+          [
+            91,
+            7.3
+          ]
+        ],
+        "radii": [
+          7.75,
+          10,
+          14.14
+        ],
+        "labels": [
+          "Group 4 · 0.3B",
+          "Group 7 · 0.5B",
+          "Group 14 · 1B"
+        ]
+      },
+      {
+        "name": "Vanilla · 2B",
+        "color": "#ff915b",
+        "points": [
+          [
+            158,
+            10.7
+          ]
+        ],
+        "radii": [
+          20
+        ],
+        "labels": [
+          "Vanilla · 2B"
+        ]
+      }
+    ],
+    "note": "Bubble areas indicate model size."
+  }
+}

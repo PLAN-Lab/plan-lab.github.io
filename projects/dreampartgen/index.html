@@ -6,6 +6,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    if (new URLSearchParams(location.search).get('design') === 'studio') return;
     const SPEED = 2;
     const DELAY = 1200;
     const videos = Array.from(document.querySelectorAll('.delay-loop'));
@@ -55,19 +56,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising" />
-    <title>DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising</title>
+    <title>DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
+    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
     <style>
       .gif-grid {
         display: grid;
@@ -143,9 +144,9 @@
       }
           </style>
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script type="module" src="../../assets/vendor/model-viewer/model-viewer.min.js?v=4.0.0"></script>
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -220,6 +221,7 @@
 
             </div>
 
+            <p class="publication-venue">ECCV 2026</p>
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
@@ -360,28 +362,12 @@
   </section>
 
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-               Recent advances in large multimodal models suggest that explicit reasoning mechanisms play a critical
-                role in improving model reliability, interpretability, and cross-modal alignment. While such reasoning-centric
-                approaches have been proven effective in language and vision tasks, their extension to 3D remains underdeveloped.
-                CoRe3D introduces a unified 3D understanding and generation reasoning framework that jointly operates over
-                semantic and spatial abstractions, enabling high-level intent inferred from language to directly guide low-level 3D
-                content formation. Central to this design is a spatially grounded reasoning representation that decomposes 3D
-                latent space into localized regions, allowing the model to reason over geometry in a compositional and procedural
-                manner. By tightly coupling semantic chain-of-thought inference with structured spatial reasoning, CoRe3D
-                produces 3D outputs that exhibit strong local consistency and faithful alignment with linguistic descriptions.
-            </p>
-          </div>
-        </div>
-      </div>
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content"><p>Understanding and generating 3D objects as compositions of meaningful parts is fundamental to human perception and reasoning. However, most text-to-3D methods overlook the semantic and functional structure of parts. While recent part-aware approaches introduce decomposition, they remain largely geometry-focused, lacking semantic grounding and failing to model how parts align with textual descriptions or their inter-part relations. We propose DreamPartGen, a framework for semantically grounded, part-aware text-to-3D generation. DreamPartGen introduces Duplex Part Latents (DPLs) that jointly model each part's geometry and appearance, and Relational Semantic Latents (RSLs) that capture inter-part dependencies derived from language. A synchronized co-denoising process enforces mutual geometric and semantic consistency, enabling coherent, interpretable, and text-aligned 3D synthesis. Across multiple benchmarks, DreamPartGen delivers state-of-the-art performance in geometric fidelity and text-shape alignment.</p></div>
     </div>
-  </section> -->
+  </section>
 
 
   <section class="section">
@@ -391,9 +377,7 @@
           <h2 class="title is-3"><span class="model-name">DreamPartGen</span> Architecture</h2>
           <div class="content has-text-justified">
 
-          </p>
-          <img loading="lazy" decoding="async" src="./static/images/sempartgen_main_v4_1.png" class="interpolation-image" style="width: 85%;" alt="Part²GS physical constraints visualization.">
-          <p>
+          <img loading="lazy" decoding="async" src="./static/images/sempartgen_main_v4_1.png" class="interpolation-image" style="width: 85%;" alt="DreamPartGen synchronizes geometry, appearance, and language-derived relational latents.">
           <p style="margin: 0 0 0.75rem 0; text-align: justify;">
              Our key novelty is to introduce persistent, language-derived relational semantic latents that remain active
                throughout the denoising process, rather than using text only as a one-shot condition, and to synchronize them with part-level geometric latents. To this end,
@@ -419,12 +403,7 @@
            <h2 class="title is-3 has-text-centered"><span class="dataset-name">PartRel3D</span> Dataset</h2>
           <div class="content has-text-justified">
 
-          </p>
-          <img loading="lazy" decoding="async" src="./static/images/sempartgen_dataset_1.png" class="interpolation-image" style="width: 85%;" alt="Part²GS physical constraints visualization.">
-          <p>
-
-
-
+          <img loading="lazy" decoding="async" src="./static/images/sempartgen_dataset_1.png" class="interpolation-image" style="width: 85%;" alt="PartRel3D annotates functional and spatial relations between object parts.">
           <p style="margin: 0 0 0.75rem 0; text-align: justify;">
             We introduce  <span class="dataset-name">PartRel3D</span>, a large-scale, relationally 
             annotated part dataset that links part geometry, appearance, and language through explicit 
@@ -457,32 +436,32 @@
 
               <!-- === Viewer 1 Block === -->
       
-                <model-viewer id="viewer1" src="./static/dreampart_glbs/astronaut_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer1" src="./static/dreampart_glbs/astronaut_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
         
-                <model-viewer id="viewer2" src="./static/dreampart_glbs/sheep_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer2" src="./static/dreampart_glbs/sheep_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
              
-                <model-viewer id="viewer3" src="./static/dreampart_glbs/space_jet_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer3" src="./static/dreampart_glbs/space_jet_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
           
-                <model-viewer id="viewer4" src="./static/dreampart_glbs/speaker_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer4" src="./static/dreampart_glbs/speaker_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer5" src="./static/dreampart_glbs/unicorn_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer5" src="./static/dreampart_glbs/unicorn_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer6" src="./static/dreampart_glbs/cannon_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer6" src="./static/dreampart_glbs/cannon_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer7" src="./static/dreampart_glbs/hydrant_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer7" src="./static/dreampart_glbs/hydrant_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer8" src="./static/dreampart_glbs/rifle_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer8" src="./static/dreampart_glbs/rifle_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer9" src="./static/dreampart_glbs/prize_cup_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer9" src="./static/dreampart_glbs/prize_cup_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer10" src="./static/dreampart_glbs/panda_girl_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer10" src="./static/dreampart_glbs/panda_girl_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer11" src="./static/dreampart_glbs/butterfly_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer11" src="./static/dreampart_glbs/butterfly_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
-                <model-viewer id="viewer12" src="./static/dreampart_glbs/car_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 154px; height: 210px;">
+                <model-viewer id="viewer12" src="./static/dreampart_glbs/car_r.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" loading="lazy" style="width: 154px; height: 210px;">
                 </model-viewer>
               
             </div>
@@ -509,21 +488,21 @@
           <div style="text-align: center; padding: 0 0 20px 0;">
             <h2 class="title is-3">Results</h2>
 
-            <img loading="lazy" decoding="async" src="./static/images/quant1_object_gen.png" alt="quant results." width="80%" height="20em">
+            <img loading="lazy" decoding="async" src="./static/images/quant1_object_gen.png" alt="Object generation results across four benchmarks." width="80%" height="20em">
             <p class="has-text-centered" style="margin: 0 auto 24px auto; max-width: 900px;">
               <strong>Quantitative evaluation on 3D object generation.</strong>
               <span class="best-highlight">Best</span> and
               <span class="second-highlight">second-best</span> are highlighted.
             </p>
 
-            <img loading="lazy" decoding="async" src="./static/images/quant2_text_shape_alignment.png" alt="quant results." width="80%" height="20em">
+            <img loading="lazy" decoding="async" src="./static/images/quant2_text_shape_alignment.png" alt="Object-level and part-level text–shape alignment results." width="80%" height="20em">
             <p class="has-text-centered" style="margin: 0 auto 24px auto; max-width: 900px;">
               <strong>Text-shape alignment comparison.</strong>
               <span class="best-highlight">Best</span> and
               <span class="second-highlight">second-best</span> are highlighted.
             </p>
 
-            <img loading="lazy" decoding="async" src="./static/images/qual1.png" alt="quant results." width="80%" height="20em">
+            <img loading="lazy" decoding="async" src="./static/images/qual1.png" alt="Qualitative comparison of generated object parts across methods." width="80%" height="20em">
             <p class="has-text-centered" style="margin: 0 auto; max-width: 900px;">
               <strong>Qualitative comparison on part-level 3D generation.</strong>
               Across diverse object categories, <span class="model-name">DreamPartGen</span> yields the most faithful decompositions, preserving clear part boundaries, correct topology, and consistent spatial alignment.
@@ -543,11 +522,11 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@article{yu2026dreampartgen,
- title = {DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising},
- author = {Yu, Tianjiao and Li, Xinzhuo and Wahed, Muntasir and Xiong, Jerry and Shen, Yifan and Shen, Ying and Lourentzou, Ismini},
- journal = {arXiv preprint arXiv:2603.19216},
- year = {2026}
+      <pre><code>@inproceedings{yu2026dreampartgen,
+  title={DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising},
+  author={Yu, Tianjiao and Li, Xinzhuo and Wahed, Muntasir and Xiong, Jerry and Shen, Yifan and Shen, Ying and Lourentzou, Ismini},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
 }</code></pre>
     </div>
   </section>
@@ -556,7 +535,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+        <a class="icon-link" href="https://arxiv.org/pdf/2603.19216">
           <i class="fas fa-file-pdf"></i>
         </a>
         <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>

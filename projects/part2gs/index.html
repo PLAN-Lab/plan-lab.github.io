@@ -13,19 +13,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Part&lt;sup&gt;2&lt;/sup&gt;GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting" />
-    <title>Part²GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting</title>
+    <title>Part²GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
+    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
     <style>
       .gif-grid {
         display: grid;
@@ -42,7 +42,7 @@
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -309,12 +309,10 @@
               <br>
 
             <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/main_result.png" class="interpolation-image" alt="ece results." width="95%">
+              <img loading="lazy" decoding="async" src="./static/images/main_result.png" class="interpolation-image" alt="Articulated reconstruction results on PARIS" width="95%">
               <p class="has-text-justified">
                 <strong>Quantitative Results on <span style="font-variant: small-caps;">Paris</span>.</strong>
                 Lower (↓) is better across all metrics.
-                <span> </span>
-                highlights best performing results.
                 Objects with <strong>*</strong> are seen categories trained in Ditto.
                 <strong>F</strong> indicates wrong motion type predictions.
                 Pos Err is omitted for objects with only prismatic joints (Blade, Storage*, and Real-Storage).              
@@ -323,13 +321,11 @@
               <br>
               <br>
               <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/main_result2.png" class="interpolation-image" alt="ece results." width="95%">
+              <img loading="lazy" decoding="async" src="./static/images/main_result2.png" class="interpolation-image" alt="Articulated reconstruction results on DTA-Multi and ArtGS-Multi" width="95%">
               <p class="has-text-justified">
                 <strong>Results on <span style="font-variant: small-caps;"><strong>DTA</strong>-Multi</span> and <span style="font-variant: small-caps;"><strong>ArtGS</strong>-Multi</span>.</strong>
                 Lower (↓) is better across all metrics.
-                <span> </span>
-                highlights best performing results.
-                Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
+                Pos Err is omitted for objects with only prismatic joints.
               </p>
               </div>
           </div>
@@ -345,15 +341,15 @@
 
           <div style="text-align: center; padding: 0 0 20px 0;">
             <div class="gif-grid">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/blade_103706.gif" alt="GIF 1">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="GIF 2">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="GIF 3">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/USB_100109.gif" alt="GIF 4">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/storage_45135.gif" alt="GIF 5">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/washer_103776.gif" alt="GIF 6">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/blade_103706.gif" alt="Folding blade articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="Laptop articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="Stapler articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/USB_100109.gif" alt="USB cover articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/storage_45135.gif" alt="Storage unit articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/washer_103776.gif" alt="Washing machine articulation">
             </div>
             <p class="has-text-justified">
-              <strong>Rendering Results of Simple (two-parts) objets</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
+              <strong>Rendering Results of Simple (two-parts) objects</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
                Our method captures part-aware geometry and consistent transformations, even in minimal degrees of freedom, demonstrating the effectiveness of Part²GS in simple settings.          
             </p>
             </div>
@@ -362,45 +358,28 @@
 
             <div style="text-align: center; padding: 0 0 20px 0;">
               <div class="gif-grid">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/fridge_10489.gif" alt="GIF 1">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_25493.gif" alt="GIF 2">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_31249.gif" alt="GIF 3">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/oven_101908.gif" alt="GIF 4">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47254.gif" alt="GIF 5">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47648.gif" alt="GIF 6">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/fridge_10489.gif" alt="Refrigerator articulation">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_25493.gif" alt="Articulated table">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_31249.gif" alt="Multi-part articulated table">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/oven_101908.gif" alt="Oven articulation">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47254.gif" alt="Articulated storage unit">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47648.gif" alt="Multi-part articulated storage unit">
               </div>
               <p class="has-text-justified">
-                <strong>Rendering Results of Complex (Multi-parts) objets</strong>. Our method captures accurate part-aware geometry and consistent transformations,
+                <strong>Rendering Results of Complex (Multi-parts) objects</strong>. Our method captures accurate part-aware geometry and consistent transformations,
                  even for complex objects, demonstrating the effectiveness of Part²GS.          
               </p>
               </div>
               <br>
               <br>
-
-              <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/part_result.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
-                <strong>Qualitative Comparison of Part Discovery Across Object States (columns) and Discovery Methods (rows).</strong>
-                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
-                accurately isolates moving parts across start, end, and canonical states.               
-              </p>
-              </div>
               <br>
               <br>
               <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/ablate.png" class="interpolation-image" alt="ece results." width="95%">
+              <img loading="lazy" decoding="async" src="./static/images/ablate.png" class="interpolation-image" alt="Part²GS component ablations on Table and Storage" width="95%">
               <p class="has-text-justified">
-                <strong><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Ablations</strong>
-                on the two most complex objects in our evaluation, <em>Table (5 parts)</em> and <em>Storage (7 parts)</em>.
-                Lower (↓) is better on all metrics.
-                <span> </span>
-                shows results with <strong>all <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> modules</strong>,
-                while
-                <span> </span>
-                highlights severe failures caused by removing components of our method.
-                Severe failures are defined as metrics that are more than 5× worse than the full 
-                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> for the same object.
-              
+                <strong>Component ablations on Table (5 parts) and Storage (7 parts).</strong>
+                Lower values are better for all metrics. Removing individual components causes large errors
+                on these complex objects; severe failures exceed five times the full model’s error for the same object.
               </p>
               </div>
           </div>
@@ -416,15 +395,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@misc{yu2025part2gspartawaremodelingarticulated,
-        title={Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting}, 
-        author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Ying Shen and Kiet A. Nguyen and Ismini Lourentzou},
-        year={2025},
-        eprint={2506.17212},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2506.17212}, 
-        }</code></pre>
+      <pre><code>@inproceedings{yu2025part2gspartawaremodelingarticulated,
+  title={Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting},
+  author={Yu, Tianjiao and Shah, Vedant and Wahed, Muntasir and Shen, Ying and Nguyen, Kiet A. and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
     </div>
   </section>
 

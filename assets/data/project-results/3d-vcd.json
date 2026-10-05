@@ -1,0 +1,286 @@
+{
+  "3d-pope-result1.png": {
+    "type": "table",
+    "title": "3D-POPE comparison",
+    "columns": [
+      "Model",
+      "Training-free",
+      "Precision ↑",
+      "Recall ↑",
+      "F1 ↑",
+      "Accuracy ↑",
+      "Yes (%) ↓"
+    ],
+    "rows": [
+      {
+        "group": "Random"
+      },
+      [
+        "Random Baseline",
+        "—",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00"
+      ],
+      [
+        "3D-LLM [13]",
+        "No",
+        "50.03",
+        "99.88",
+        "66.67",
+        "50.07",
+        "99.81"
+      ],
+      [
+        "3D-VisTA [48]",
+        "No",
+        "50.12",
+        "53.58",
+        "51.79",
+        "49.66",
+        "53.95"
+      ],
+      [
+        "LEO [15]",
+        "No",
+        "51.95",
+        "77.65",
+        "62.25",
+        "52.91",
+        "74.73"
+      ],
+      [
+        "3D-VCD (Ours)",
+        "Yes",
+        "62.16",
+        "92.90",
+        "74.48",
+        "67.99",
+        "75.15"
+      ],
+      {
+        "group": "Popular"
+      },
+      [
+        "Random Baseline",
+        "—",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00"
+      ],
+      [
+        "3D-LLM [13]",
+        "No",
+        "49.97",
+        "99.88",
+        "66.61",
+        "49.94",
+        "99.94"
+      ],
+      [
+        "3D-VisTA [48]",
+        "No",
+        "47.40",
+        "51.88",
+        "49.54",
+        "49.49",
+        "52.30"
+      ],
+      [
+        "LEO [15]",
+        "No",
+        "48.30",
+        "77.65",
+        "59.55",
+        "47.27",
+        "80.38"
+      ],
+      [
+        "3D-VCD (Ours)",
+        "Yes",
+        "52.35",
+        "92.86",
+        "66.95",
+        "54.00",
+        "89.02"
+      ],
+      {
+        "group": "Adversarial"
+      },
+      [
+        "Random Baseline",
+        "—",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00",
+        "50.00"
+      ],
+      [
+        "3D-LLM [13]",
+        "No",
+        "49.97",
+        "99.88",
+        "66.61",
+        "49.94",
+        "99.94"
+      ],
+      [
+        "3D-VisTA [48]",
+        "No",
+        "48.28",
+        "54.39",
+        "51.15",
+        "51.14",
+        "52.99"
+      ],
+      [
+        "LEO [15]",
+        "No",
+        "48.47",
+        "77.98",
+        "59.78",
+        "47.52",
+        "80.45"
+      ],
+      [
+        "3D-VCD (Ours)",
+        "Yes",
+        "52.90",
+        "92.59",
+        "67.32",
+        "54.92",
+        "87.82"
+      ]
+    ],
+    "note": "",
+    "source": "static/images/3d-pope-result1.png"
+  },
+  "heal-result1.png": {
+    "type": "table",
+    "title": "HEAL: distractor injection",
+    "columns": [
+      "Model",
+      "Object hallucination · CO (%) ↓",
+      "State hallucination · CS (%) ↓"
+    ],
+    "rows": [
+      [
+        "Llama-3-8B-Instruct-VCD",
+        "2.39",
+        "12.43"
+      ],
+      [
+        "Llama-3-8B-Instruct",
+        "2.58",
+        "9.49"
+      ],
+      [
+        "Qwen-14B-Instruct-VCD",
+        "3.55",
+        "5.00"
+      ],
+      [
+        "Qwen-14B-Instruct",
+        "4.13",
+        "16.45"
+      ],
+      [
+        "Gemma-2-9b-it",
+        "11.60",
+        "5.70"
+      ],
+      [
+        "DS-R1-Distil-LLaMA-8B",
+        "13.90",
+        "27.20"
+      ]
+    ],
+    "note": "CO and CS denote object and state hallucination rates. Best scores are bold; second-best scores are underlined.",
+    "source": "static/images/heal-result1.png",
+    "highlight": [
+      "-VCD"
+    ],
+    "description": "Object and state hallucination rates when prompts introduce distracting objects. Lower CHAIR scores are better; VCD rows use the corresponding Llama or Qwen backbone.",
+    "rankMetrics": true,
+    "provenance": {
+      "url": "https://arxiv.org/pdf/2604.08645",
+      "table": "2",
+      "page": 6
+    }
+  },
+  "ablation2.png": {
+    "type": "bars",
+    "title": "Robustness across graph perturbations",
+    "source": "static/images/ablation2.png",
+    "categories": [
+      "Baseline",
+      "Struct-ReFlip",
+      "Low-SemSub-Geom",
+      "High-SemSub-Geom",
+      "Low-Geom",
+      "High-Geom",
+      "High-Sem-DropMod",
+      "Struct-Dist",
+      "High-SemSub",
+      "Low-SemSub",
+      "Struct-Sparse"
+    ],
+    "yLabel": "F1 ↑",
+    "max": 0.85,
+    "series": [
+      {
+        "name": "Adversarial",
+        "values": [
+          0.58,
+          0.668,
+          0.669,
+          0.668,
+          0.666,
+          0.666,
+          0.668,
+          0.669,
+          0.672,
+          0.675,
+          0.672
+        ]
+      },
+      {
+        "name": "Popular",
+        "values": [
+          0.591,
+          0.673,
+          0.671,
+          0.676,
+          0.673,
+          0.675,
+          0.674,
+          0.673,
+          0.677,
+          0.677,
+          0.68
+        ]
+      },
+      {
+        "name": "Random",
+        "values": [
+          0.632,
+          0.743,
+          0.743,
+          0.743,
+          0.75,
+          0.749,
+          0.749,
+          0.749,
+          0.755,
+          0.761,
+          0.77
+        ]
+      }
+    ]
+  }
+}

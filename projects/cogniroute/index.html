@@ -13,15 +13,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="CogniRoute: Learning to Route Social Evidence in Omni-Modal Models" />
-    <title>CogniRoute: Learning to Route Social Evidence in Omni-Modal Models</title>
+    <title>CogniRoute: Learning to Route Social Evidence in Omni-Modal Models | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
+    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
     <style>
         .page-project .interpolation-image {
             width: 90%;
@@ -109,7 +109,7 @@
     </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -432,7 +432,7 @@
                     <h2 class="title is-3">Quantitative Results</h2>
                     <div class="content has-text-justified">
 
-                        <p>
+                        <p data-result-for="htmlTable:0">
                             <strong>Table 1:</strong> Social understanding results on OmniSocialBench across four social
                             inference categories. CogniRoute achieves the best result in every category, surpassing
                             Gemini 3.1 Pro by 15.33 points on average.
@@ -471,7 +471,7 @@
                         </div>
                     </br>
 
-                        <p>
+                        <p data-result-for="htmlTable:1">
                             <strong>Table 2:</strong> Audio-visual benchmark comparison between Qwen3-Omni-30B and
                             CogniRoute across 10 public benchmarks spanning audio-visual, audio-only, and video-only
                             understanding. CogniRoute improves on most audio-visual and video-only tasks, indicating that
@@ -568,16 +568,6 @@
                                 this with the speaker's gaze and body orientation toward Player4 during the final turn.
                                 The cross-modal, discourse-level grounding identifies Player4 as the addressee.</li>
                         </ul>
-                        <p class="has-text-justified">
-                            This case exemplifies the general pattern observed across Appendix E: Gemini 3.1 Pro often
-                            identifies a locally plausible cue but maps it to the wrong evidence structure, while
-                            CogniRoute's schema-aligned routing — trained over <em>evidence source</em>,
-                            <em>reasoning demand</em>, and <em>temporal scope</em> — favors discourse-level reference
-                            tracking, multi-party turn-taking, and long-range affect continuity over single-utterance
-                            shortcuts. The qualitative outcome complements the quantitative gains in Table 1 by showing
-                            <em>how</em> CogniRoute improves evidence selection, cross-modal grounding, and temporal
-                            reasoning in social video question answering.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -589,9 +579,9 @@
                 <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
                 <pre><code>@article{shen2025cogniroute,
   title={CogniRoute: Learning to Route Social Evidence in Omni-Modal Models},
-  author={Shen, Yifan and Liu, Jiateng and Li, Xinzhuo and Liu, Yuanzhe and Li, Bingxuan and Yang, Houze and Jia, Wenqi and Li, Yijiang and Yu, Tianjiao and Rehg, James Matthew and Cao, Xu and Lourentzou, Ismini},
-  journal={arXiv preprint},
-  year={2025}
+  author={Shen, Yifan and Tian, Pei and Li, Xinzhuo and Fang, Bowen and Xia, Shujun and Li, Bingxuan and Jojic, Ana and Ye, Wenming and Cao, Xu and Rehg, James Matthew and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:2606.20970},
+  year={2026}
 }</code></pre>
             </div>
         </section>

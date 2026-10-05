@@ -1,0 +1,509 @@
+{
+  "VisAnomBench_stats.png": {
+    "type": "table",
+    "title": "VisAnomBench datasets",
+    "columns": [
+      "Benchmark",
+      "#TS",
+      "#Domains",
+      "Avg length",
+      "Anomaly rate (%)",
+      "#Explanations",
+      "Explanation length"
+    ],
+    "rows": [
+      [
+        "KPI [51]",
+        "160",
+        "1",
+        "1,777",
+        "4.3",
+        "640",
+        "170"
+      ],
+      [
+        "GUTENTAG [47]",
+        "810",
+        "10",
+        "5,000",
+        "2.2",
+        "3240",
+        "188"
+      ],
+      [
+        "UCR-EGI [9]",
+        "2,097",
+        "5",
+        "8,268",
+        "5.8",
+        "8388",
+        "112"
+      ],
+      [
+        "UCR-TSAD [48]",
+        "249",
+        "8",
+        "2,755",
+        "6.9",
+        "996",
+        "112"
+      ]
+    ],
+    "note": "",
+    "source": "static/images/VisAnomBench_stats.png"
+  },
+  "VisAnomBench_result.png": {
+    "type": "table",
+    "title": "Anomaly detection on VisAnomBench",
+    "columns": [
+      "Model",
+      "TP",
+      "FP",
+      "FN",
+      "Precision (%)",
+      "Recall (%)",
+      "F1 (%)",
+      "Overlap (%)"
+    ],
+    "rows": [
+      {
+        "group": "Vision-language models"
+      },
+      [
+        "Grok-4-Fast (314B) [49]",
+        "242",
+        "837",
+        "517",
+        "22.43",
+        "31.88",
+        "26.33",
+        "3.26"
+      ],
+      [
+        "LLaMA-4-Maverick (17B) [35]",
+        "442",
+        "1128",
+        "317",
+        "28.15",
+        "58.23",
+        "37.96",
+        "12.92"
+      ],
+      [
+        "Qwen2.5-VL-7B [4]",
+        "517",
+        "1784",
+        "242",
+        "22.47",
+        "68.12",
+        "33.79",
+        "14.04"
+      ],
+      [
+        "Idefics3-8B [25]",
+        "123",
+        "2057",
+        "636",
+        "5.64",
+        "16.21",
+        "8.37",
+        "2.25"
+      ],
+      [
+        "SmolVLM-7B [34]",
+        "49",
+        "1416",
+        "710",
+        "3.34",
+        "6.46",
+        "4.41",
+        "1.29"
+      ],
+      [
+        "LLaVA-7B [30]",
+        "9",
+        "523",
+        "750",
+        "1.69",
+        "1.19",
+        "1.39",
+        "0.23"
+      ],
+      {
+        "group": "Time-series foundation models"
+      },
+      [
+        "TimesFM (200M) [8]",
+        "196",
+        "543",
+        "563",
+        "26.52",
+        "25.82",
+        "26.17",
+        "2.03"
+      ],
+      [
+        "Chronos (120M) [2]",
+        "200",
+        "538",
+        "559",
+        "27.10",
+        "26.35",
+        "26.72",
+        "2.27"
+      ],
+      {
+        "group": "Language-model methods"
+      },
+      [
+        "AnomLLM (GPT-4o) [62]",
+        "149",
+        "862",
+        "610",
+        "14.74",
+        "19.63",
+        "16.84",
+        "4.04"
+      ],
+      [
+        "LLM-TSAD (GPT-4o) [38]",
+        "477",
+        "5621",
+        "282",
+        "7.82",
+        "66.53",
+        "14.00",
+        "20.81"
+      ],
+      [
+        "LLMAD (GPT-4o) [31]",
+        "349",
+        "402",
+        "410",
+        "46.47",
+        "45.98",
+        "46.23",
+        "17.31"
+      ],
+      [
+        "VLM4TS (GPT-4o) [14]",
+        "435",
+        "642",
+        "324",
+        "40.39",
+        "57.31",
+        "47.39",
+        "17.94"
+      ],
+      {
+        "group": "Conventional detectors"
+      },
+      [
+        "Sub-PCA [1]",
+        "329",
+        "411",
+        "430",
+        "44.46",
+        "43.35",
+        "43.90",
+        "17.41"
+      ],
+      [
+        "Matrix Profile [28]",
+        "290",
+        "450",
+        "469",
+        "39.19",
+        "38.21",
+        "38.69",
+        "8.33"
+      ],
+      [
+        "IForest [29]",
+        "362",
+        "378",
+        "397",
+        "48.92",
+        "47.69",
+        "48.30",
+        "20.53"
+      ],
+      {
+        "group": "VisAnomReasoner"
+      },
+      [
+        "VisAnomReasoner (3B)",
+        "564 ↑47",
+        "240 ↓138",
+        "195 ↓47",
+        "70.15 ↑21.23",
+        "74.30 ↑6.18",
+        "72.17 ↑23.87",
+        "27.07 ↑6.26"
+      ],
+      [
+        "VisAnomReasoner (7B)",
+        "576 ↑59",
+        "223 ↓155",
+        "183 ↓59",
+        "72.09 ↑23.17",
+        "75.88 ↑7.76",
+        "73.94 ↑25.64",
+        "25.35 ↑4.54"
+      ]
+    ],
+    "note": "",
+    "source": "static/images/VisAnomBench_result.png"
+  },
+  "ablation_reasoning.png": {
+    "type": "table",
+    "title": "Effect of reasoning-augmented fine-tuning",
+    "columns": [
+      "Mode",
+      "TP",
+      "FP",
+      "FN",
+      "Precision",
+      "Recall",
+      "F1"
+    ],
+    "rows": [
+      [
+        "Base",
+        "517",
+        "1784",
+        "242",
+        "22.47",
+        "68.12",
+        "33.79"
+      ],
+      [
+        "No reasoning",
+        "516",
+        "393",
+        "243",
+        "56.76",
+        "67.98",
+        "61.87"
+      ],
+      [
+        "With reasoning",
+        "576",
+        "223",
+        "183",
+        "72.09",
+        "75.88",
+        "73.94"
+      ]
+    ],
+    "note": "",
+    "source": "static/images/ablation_reasoning.png"
+  },
+  "VisAnomReasoner_teaser.png": {
+    "type": "overview",
+    "title": "From plot to explanation",
+    "source": "static/images/VisAnomReasoner_teaser.png",
+    "steps": [
+      [
+        "Read the time-series plot",
+        "Visual input preserves the shape and context of the signal."
+      ],
+      [
+        "Localize anomalies",
+        "Predict the intervals where the signal departs from its usual behavior."
+      ],
+      [
+        "Explain the decision",
+        "Ground the reasoning in visible patterns in the plot."
+      ]
+    ]
+  },
+  "@tsb-ad-u": {
+    "type": "table",
+    "appendTo": "quantitative",
+    "title": "Generalization to TSB-AD-U",
+    "description": "Cross-benchmark anomaly detection on unseen time series, evaluated with standard point-wise metrics and event-level affiliation metrics.",
+    "columns": [
+      "Method",
+      "Precision (%) ↑",
+      "Recall (%) ↑",
+      "F1 (%) ↑",
+      "Precision (%) ↑",
+      "Recall (%) ↑",
+      "F1 (%) ↑"
+    ],
+    "columnGroups": [
+      {
+        "label": "Standard metrics",
+        "span": 3
+      },
+      {
+        "label": "Affiliation metrics",
+        "span": 3
+      }
+    ],
+    "rows": [
+      [
+        "Grok-4-Fast (314B)",
+        "27.95",
+        "15.53",
+        "16.78",
+        "32.43",
+        "33.24",
+        "32.20"
+      ],
+      [
+        "LLaMA-4-Maverick (17B)",
+        "63.35",
+        "46.49",
+        "48.89",
+        "76.07",
+        "79.18",
+        "76.75"
+      ],
+      [
+        "Qwen2.5-VL-7B",
+        "66.18",
+        "48.85",
+        "49.52",
+        "75.90",
+        "74.93",
+        "74.36"
+      ],
+      [
+        "Idefics3-8B",
+        "45.12",
+        "35.11",
+        "34.64",
+        "50.83",
+        "59.02",
+        "53.03"
+      ],
+      [
+        "SmolVLM-7B",
+        "35.07",
+        "12.48",
+        "15.80",
+        "37.57",
+        "35.84",
+        "35.75"
+      ],
+      [
+        "LLaVA-7B",
+        "14.06",
+        "0.72",
+        "1.35",
+        "14.06",
+        "8.16",
+        "10.15"
+      ],
+      [
+        "TimesFM (200M)",
+        "32.32",
+        "43.21",
+        "32.19",
+        "71.09",
+        "57.23",
+        "60.08"
+      ],
+      [
+        "Chronos (120M)",
+        "47.18",
+        "55.37",
+        "47.23",
+        "74.36",
+        "75.61",
+        "73.31"
+      ],
+      [
+        "AnomLLM (GPT-4o)",
+        "12.97",
+        "10.54",
+        "11.63",
+        "13.05",
+        "7.08",
+        "8.42"
+      ],
+      [
+        "LLM-TSAD (GPT-4o)",
+        "31.74",
+        "28.40",
+        "29.98",
+        "66.69",
+        "52.76",
+        "53.69"
+      ],
+      [
+        "LLMAD (GPT-4o)",
+        "32.96",
+        "37.54",
+        "22.91",
+        "67.50",
+        "73.37",
+        "64.16"
+      ],
+      [
+        "VLM4TS (GPT-4o)",
+        "29.78",
+        "40.10",
+        "19.84",
+        "72.52",
+        "51.38",
+        "54.06"
+      ],
+      [
+        "Sub-PCA",
+        "11.80",
+        "16.82",
+        "12.28",
+        "48.22",
+        "31.71",
+        "34.99"
+      ],
+      [
+        "Matrix Profile",
+        "9.40",
+        "15.84",
+        "9.91",
+        "44.90",
+        "41.44",
+        "41.90"
+      ],
+      [
+        "IForest",
+        "12.44",
+        "17.89",
+        "13.05",
+        "50.44",
+        "41.51",
+        "42.67"
+      ],
+      [
+        "VisAnomReasoner (3B)",
+        "77.93",
+        "40.46",
+        "49.59",
+        "95.05",
+        "71.69",
+        "78.36"
+      ],
+      [
+        "VisAnomReasoner (7B)",
+        "75.75",
+        "60.91",
+        "62.91",
+        "95.27",
+        "81.51",
+        "85.58"
+      ]
+    ],
+    "rankMetrics": true,
+    "source": "paper:2605.30344:table-3",
+    "provenance": {
+      "url": "https://arxiv.org/pdf/2605.30344",
+      "table": "3",
+      "page": 7
+    },
+    "note": ""
+  }
+}
