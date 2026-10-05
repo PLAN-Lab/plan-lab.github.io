@@ -13,21 +13,342 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding" />
-    <title>[CVPR'26] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding</title>
+    <title>3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "3D-VCD",
+    "tldr": [
+      "We introduce 3D-VCD, a training-free method for reducing hallucinations in embodied agents reasoning about 3D scenes. By contrasting predictions from the observed scene with deliberately distorted versions, 3D-VCD suppresses answers unsupported by the scene’s objects and geometry."
+    ],
+    "method": {
+      "teaser": true
+    },
+    "quantitative": {
+      "source": "Quantitative Results on 3D-POPE",
+      "additionalSources": [
+        "Results on the HEAL Probing Set"
+      ]
+    },
+    "contributions": [
+      "3D-VCD as a New Inference Framework. We introduce 3D-VCD, the first training-free, inference-time contrastive decoding framework for hallucination mitigation in 3D embodied agents.",
+      "Semantic and Geometric Distortion Operators. We propose a simple and effective 3D counterfactual grounding mechanism that constructs distorted scene graphs through semantic and geometric perturbations, and uses dual-context logit fusion to suppress predictions unsupported by the underlying 3D evidence.",
+      "Strong Generalization Without Retraining. We demonstrate 3D-VCD improves grounded reasoning across embodied hallucination benchmarks, reducing over-affirmation on 3D-POPE and lowering hallucination on HEAL with minimal computational overhead."
+    ],
+    "contributionLeads": [
+      "3D-VCD as a New Inference Framework.",
+      "Semantic and Geometric Distortion Operators.",
+      "Strong Generalization Without Retraining."
+    ]
+  },
+  "resultPanels": {
+    "3D-POPE comparison": {
+      "description": "Object-presence reasoning under random, popular, and adversarial queries. Precision, recall, F1, and accuracy measure grounded answers; Yes-rate reports over-affirmation."
+    }
+  },
+  "results": {
+    "3d-pope-result1.png": {
+      "type": "table",
+      "title": "3D-POPE comparison",
+      "columns": [
+        "Model",
+        "Training-free",
+        "Precision ↑",
+        "Recall ↑",
+        "F1 ↑",
+        "Accuracy ↑",
+        "Yes (%) ↓"
+      ],
+      "rows": [
+        {
+          "group": "Random"
+        },
+        [
+          "Random Baseline",
+          "—",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00"
+        ],
+        [
+          "3D-LLM [13]",
+          "No",
+          "50.03",
+          "99.88",
+          "66.67",
+          "50.07",
+          "99.81"
+        ],
+        [
+          "3D-VisTA [48]",
+          "No",
+          "50.12",
+          "53.58",
+          "51.79",
+          "49.66",
+          "53.95"
+        ],
+        [
+          "LEO [15]",
+          "No",
+          "51.95",
+          "77.65",
+          "62.25",
+          "52.91",
+          "74.73"
+        ],
+        [
+          "3D-VCD (Ours)",
+          "Yes",
+          "62.16",
+          "92.90",
+          "74.48",
+          "67.99",
+          "75.15"
+        ],
+        {
+          "group": "Popular"
+        },
+        [
+          "Random Baseline",
+          "—",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00"
+        ],
+        [
+          "3D-LLM [13]",
+          "No",
+          "49.97",
+          "99.88",
+          "66.61",
+          "49.94",
+          "99.94"
+        ],
+        [
+          "3D-VisTA [48]",
+          "No",
+          "47.40",
+          "51.88",
+          "49.54",
+          "49.49",
+          "52.30"
+        ],
+        [
+          "LEO [15]",
+          "No",
+          "48.30",
+          "77.65",
+          "59.55",
+          "47.27",
+          "80.38"
+        ],
+        [
+          "3D-VCD (Ours)",
+          "Yes",
+          "52.35",
+          "92.86",
+          "66.95",
+          "54.00",
+          "89.02"
+        ],
+        {
+          "group": "Adversarial"
+        },
+        [
+          "Random Baseline",
+          "—",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00",
+          "50.00"
+        ],
+        [
+          "3D-LLM [13]",
+          "No",
+          "49.97",
+          "99.88",
+          "66.61",
+          "49.94",
+          "99.94"
+        ],
+        [
+          "3D-VisTA [48]",
+          "No",
+          "48.28",
+          "54.39",
+          "51.15",
+          "51.14",
+          "52.99"
+        ],
+        [
+          "LEO [15]",
+          "No",
+          "48.47",
+          "77.98",
+          "59.78",
+          "47.52",
+          "80.45"
+        ],
+        [
+          "3D-VCD (Ours)",
+          "Yes",
+          "52.90",
+          "92.59",
+          "67.32",
+          "54.92",
+          "87.82"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/3d-pope-result1.png"
+    },
+    "heal-result1.png": {
+      "type": "table",
+      "title": "HEAL: distractor injection",
+      "columns": [
+        "Model",
+        "Object hallucination · CO (%) ↓",
+        "State hallucination · CS (%) ↓"
+      ],
+      "rows": [
+        [
+          "Llama-3-8B-Instruct-VCD",
+          "2.39",
+          "12.43"
+        ],
+        [
+          "Llama-3-8B-Instruct",
+          "2.58",
+          "9.49"
+        ],
+        [
+          "Qwen-14B-Instruct-VCD",
+          "3.55",
+          "5.00"
+        ],
+        [
+          "Qwen-14B-Instruct",
+          "4.13",
+          "16.45"
+        ],
+        [
+          "Gemma-2-9b-it",
+          "11.60",
+          "5.70"
+        ],
+        [
+          "DS-R1-Distil-LLaMA-8B",
+          "13.90",
+          "27.20"
+        ]
+      ],
+      "note": "CO and CS denote object and state hallucination rates. Best scores are bold; second-best scores are underlined.",
+      "source": "static/images/heal-result1.png",
+      "highlight": [
+        "-VCD"
+      ],
+      "description": "Object and state hallucination rates when prompts introduce distracting objects. Lower CHAIR scores are better; VCD rows use the corresponding Llama or Qwen backbone.",
+      "rankMetrics": true,
+      "provenance": {
+        "url": "https://arxiv.org/pdf/2604.08645",
+        "table": "2",
+        "page": 6
+      }
+    },
+    "ablation2.png": {
+      "type": "bars",
+      "title": "Robustness across graph perturbations",
+      "source": "static/images/ablation2.png",
+      "categories": [
+        "Baseline",
+        "Struct-ReFlip",
+        "Low-SemSub-Geom",
+        "High-SemSub-Geom",
+        "Low-Geom",
+        "High-Geom",
+        "High-Sem-DropMod",
+        "Struct-Dist",
+        "High-SemSub",
+        "Low-SemSub",
+        "Struct-Sparse"
+      ],
+      "yLabel": "F1 ↑",
+      "max": 0.85,
+      "series": [
+        {
+          "name": "Adversarial",
+          "values": [
+            0.58,
+            0.668,
+            0.669,
+            0.668,
+            0.666,
+            0.666,
+            0.668,
+            0.669,
+            0.672,
+            0.675,
+            0.672
+          ]
+        },
+        {
+          "name": "Popular",
+          "values": [
+            0.591,
+            0.673,
+            0.671,
+            0.676,
+            0.673,
+            0.675,
+            0.674,
+            0.673,
+            0.677,
+            0.677,
+            0.68
+          ]
+        },
+        {
+          "name": "Random",
+          "values": [
+            0.632,
+            0.743,
+            0.743,
+            0.743,
+            0.75,
+            0.749,
+            0.749,
+            0.749,
+            0.755,
+            0.761,
+            0.77
+          ]
+        }
+      ]
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -68,63 +389,20 @@
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title"><span style="color:#1f4ed8; font-weight:600;">3D-</span><span style="color:#22d3ee; font-weight:600;">VCD</span>: 
               Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding</h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="/team/makanjuola-ogunleye">Makanjuola Ogunleye<sup>*</sup><sup class="vt-maroon">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/eman-abdelrahman">Eman Abdelrahman<sup>*</sup><sup class="vt-maroon">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ismini-lourentzou">Ismini Lourentzou<sup class="illini-orange">2</sup></a>
-                </span>
-              </div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=makanjuola-ogunleye">Makanjuola Ogunleye</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=eman-abdelrahman">Eman Abdelrahman</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
               
               <div class="equal-note has-text-centered">
                 <sup>*</sup> Equal contribution.
               </div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://plan-lab.github.io/">PLAN Lab</a>
-                <span class="author-affiliations">
-                  <sup class="vt-maroon">1</sup><span class="vt-maroon">Virginia Tech</span>,
-                  <sup class="illini-orange">2</sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
-                </span>
-              </span>
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2604.08645" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data (coming soon)</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2604.08645" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2604.08645" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded" data-resource="Dataset" aria-disabled="true" title="Dataset is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset (coming soon)</span></a></div>
 
             </div>
           </div>
@@ -759,10 +1037,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{ogunleye20263dvcd,
+      <pre><code>@inproceedings{ogunleye20263dvcd,
   title={3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding},
-  author={Ogunleye, Makanjuola A. and Abdelrahman, Eman and Lourentzou, Ismini},
-  journal={Proceedings for the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  author={Ogunleye, Makanjuola Adekunmi and Abdelrahman, Eman and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026}
 }</code></pre>
     </div>

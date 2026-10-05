@@ -1,0 +1,334 @@
+{
+  "tasks": [
+    {
+      "id": "generation",
+      "title": "Text-to-video generation",
+      "source": "paper:2601.16210:table-2",
+      "description": "Replacing the tokenizer improves generation quality across three backbones on WebVid-10M. Compare each model with and without PyraTok.",
+      "columns": [
+        "Model",
+        "FVD \u2193",
+        "TC \u2191"
+      ],
+      "rows": [
+        [
+          "MotionAura",
+          374,
+          204
+        ],
+        [
+          "MotionAura + PyraTok",
+          365,
+          246
+        ],
+        [
+          "Open MAGVITv2",
+          433,
+          191
+        ],
+        [
+          "Open MAGVITv2 + PyraTok",
+          411,
+          214
+        ],
+        [
+          "OmniGenV2",
+          398,
+          185
+        ],
+        [
+          "OmniGenV2 + PyraTok",
+          377,
+          208
+        ]
+      ]
+    },
+    {
+      "id": "segmentation",
+      "title": "Zero-shot video segmentation",
+      "source": "paper:2601.16210:table-3",
+      "description": "Text-guided segmentation on YouTube-VIS 2021 and OVIS. Training settings are shown for each method so supervised, unsupervised, and zero-shot results remain distinguishable.",
+      "columns": [
+        "Model",
+        "Training",
+        "YouTube-VIS 2021 \u00b7 mAP \u2191",
+        "YouTube-VIS 2021 \u00b7 Jaccard \u2191",
+        "OVIS \u00b7 mAP \u2191",
+        "OVIS \u00b7 Jaccard \u2191"
+      ],
+      "rows": [
+        [
+          "CLIP-VIS",
+          "Supervised",
+          44.2,
+          76.31,
+          18.6,
+          60.09
+        ],
+        [
+          "VideoCutLER",
+          "Unsupervised",
+          17.1,
+          62.23,
+          null,
+          null
+        ],
+        [
+          "UVIS",
+          "Unsupervised",
+          17.5,
+          63.11,
+          3.5,
+          36.71
+        ],
+        [
+          "VideoVAE+",
+          "Zero-shot",
+          12.33,
+          51.21,
+          2.8,
+          29.91
+        ],
+        [
+          "LARP",
+          "Zero-shot",
+          10.52,
+          49.37,
+          1.7,
+          28.45
+        ],
+        [
+          "OmniTokenizer",
+          "Zero-shot",
+          14.54,
+          51.12,
+          2.8,
+          33.27
+        ],
+        [
+          "PyraTok",
+          "Zero-shot",
+          24.54,
+          66.56,
+          8.9,
+          49.44
+        ]
+      ],
+      "defaultColumn": 2
+    },
+    {
+      "id": "localization",
+      "title": "Temporal action localization",
+      "source": "paper:2601.16210:table-4",
+      "description": "Average mAP under a 50% seen / 50% unseen split on THUMOS14 and ActivityNet v1.3. The comparison includes supervised and zero-shot methods.",
+      "columns": [
+        "Model",
+        "Training",
+        "THUMOS14 \u00b7 Avg. mAP \u2191",
+        "ActivityNet v1.3 \u00b7 Avg. mAP \u2191"
+      ],
+      "rows": [
+        [
+          "STALE",
+          "Supervised",
+          22.2,
+          20.5
+        ],
+        [
+          "DeTAL",
+          "Supervised",
+          24.1,
+          22.4
+        ],
+        [
+          "STOV-TAL",
+          "Supervised",
+          48.8,
+          29.6
+        ],
+        [
+          "STOV-TAL",
+          "Zero-shot",
+          31.5,
+          28.0
+        ],
+        [
+          "VideoVAE+",
+          "Zero-shot",
+          23.12,
+          21.37
+        ],
+        [
+          "OmniTokenizer",
+          "Zero-shot",
+          23.47,
+          22.48
+        ],
+        [
+          "SweetTok",
+          "Zero-shot",
+          25.32,
+          24.53
+        ],
+        [
+          "LARP",
+          "Zero-shot",
+          27.42,
+          25.53
+        ],
+        [
+          "PyraTok",
+          "Zero-shot",
+          33.17,
+          29.11
+        ]
+      ],
+      "defaultColumn": 2
+    },
+    {
+      "id": "understanding",
+      "title": "Video understanding and classification",
+      "source": "paper:2601.16210:table-5",
+      "description": "Accuracy on MVBench and Kinetics-400, Kinetics-600, and Kinetics-700. The VAE column identifies models that use a video autoencoder.",
+      "columns": [
+        "Model",
+        "VAE",
+        "MVBench \u00b7 Accuracy \u2191",
+        "Kinetics-400 \u00b7 Accuracy \u2191",
+        "Kinetics-600 \u00b7 Accuracy \u2191",
+        "Kinetics-700 \u00b7 Accuracy \u2191"
+      ],
+      "rows": [
+        [
+          "InternVL3-78B",
+          "No",
+          79.2,
+          null,
+          null,
+          null
+        ],
+        [
+          "Qwen2.5-72B",
+          "No",
+          71.3,
+          null,
+          null,
+          null
+        ],
+        [
+          "InternVL3-38B",
+          "No",
+          76.0,
+          null,
+          null,
+          null
+        ],
+        [
+          "Qwen2.5VL-7B",
+          "No",
+          67.2,
+          null,
+          null,
+          null
+        ],
+        [
+          "Qwen2.5VL-3B",
+          "No",
+          67.0,
+          null,
+          null,
+          null
+        ],
+        [
+          "InternVL",
+          "No",
+          null,
+          69.1,
+          68.9,
+          60.6
+        ],
+        [
+          "InternVideo2",
+          "No",
+          null,
+          73.1,
+          72.8,
+          64.9
+        ],
+        [
+          "VideoPrism-g",
+          "No",
+          null,
+          76.4,
+          null,
+          null
+        ],
+        [
+          "SigLIP2-g-opt",
+          "No",
+          null,
+          69.8,
+          67.0,
+          61.8
+        ],
+        [
+          "PEcoreG",
+          "No",
+          null,
+          76.9,
+          76.1,
+          69.1
+        ],
+        [
+          "VILA-U",
+          "Yes",
+          81.21,
+          null,
+          null,
+          null
+        ],
+        [
+          "VideoVAE+",
+          "Yes",
+          null,
+          63.32,
+          61.27,
+          55.55
+        ],
+        [
+          "OmniTokenizer",
+          "Yes",
+          79.44,
+          65.03,
+          62.75,
+          58.71
+        ],
+        [
+          "SweetTok",
+          "Yes",
+          null,
+          67.54,
+          65.01,
+          61.45
+        ],
+        [
+          "LARP",
+          "Yes",
+          83.21,
+          69.27,
+          68.52,
+          66.89
+        ],
+        [
+          "PyraTok",
+          "Yes",
+          86.03,
+          78.43,
+          77.11,
+          74.08
+        ]
+      ],
+      "defaultColumn": 2
+    }
+  ]
+}

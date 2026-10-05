@@ -13,21 +13,235 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation." />
-    <title>PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation</title>
+    <title>PRIMA: Multi-Image Vision-Language Models for Reasoning Segmentation | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "PRIMA",
+    "tldr": [
+      "We introduce PRIMA, a multi-image vision-language model that couples cross-image reasoning with pixel-grounded explanations. Its SQuARE module uses learnable relational queries to gather shared context across images, then injects that context into compact visual tokens before language fusion. PRIMA generates answers and segmentation masks together, trained and evaluated on M⁴Seg’s approximately 744K multi-image question-answer pairs with object and part masks."
+    ],
+    "method": {
+      "source": "PRIMA Architecture",
+      "additionalSources": [
+        "SQuARE module"
+      ]
+    },
+    "dataset": {
+      "name": "M⁴Seg",
+      "paragraphs": [
+        "M⁴Seg is a multi-image pixel-grounded reasoning segmentation benchmark containing approximately 744K question-answer pairs. Each example combines an image set with object and part segmentation annotations, enabling training and evaluation of reasoning grounded in pixel-level evidence across images. The benchmark covers functional, spatial, numerical, and open-ended reasoning."
+      ]
+    },
+    "quantitative": {
+      "source": "Quantitative Results"
+    },
+    "qualitative": {
+      "source": "Qualitative Examples",
+      "additionalSources": [
+        "PRIMA in the Wild"
+      ]
+    },
+    "contributions": [
+      "Novel Task. We propose the novel task of multi-image pixel-grounded reasoning segmentation which requires fine-grained comparison and contextual understanding across multiple images at pixel level and natural language reasoning.",
+      "New Benchmark. We curate M4Seg a new challenging benchmark with ~744K multi-image QA pairs, annotated with multiple object and part segmentation masks to train and evaluate multi-image pixel-grounding models.",
+      "New Multi-Image Pixel-Grounded LVLM. We propose PRIMA an LVLM designed to perform instruction-guided cross-image alignment of relevant visual features via a novel SQuARE module, enabling reasoning with contextually grounded segmentation masks across multiple images. Experiments demonstrate PRIMA's impressive performance compared to strong baselines across segmentation (+↑8.11% mIoU and +↑7.83% Recall) and text-based metrics (+↑6.45% Semantic Similarity and +↑11.25% S-IoU)."
+    ],
+    "contributionLeads": [
+      "Novel Task.",
+      "New Benchmark.",
+      "New Multi-Image Pixel-Grounded LVLM."
+    ],
+    "opening": {
+      "source": "prima_teaser.png",
+      "alt": "PRIMA compares multiple images and grounds reasoning in segmentation masks.",
+      "caption": "PRIMA answers questions across images and segments the objects or parts that support each answer."
+    }
+  },
+  "resultPanels": {
+    "Multi-image reasoning segmentation": {
+      "description": "Segmentation performance on M4Seg for general-purpose and pixel-grounded vision-language models."
+    }
+  },
+  "results": {
+    "results.png": {
+      "type": "table",
+      "title": "Multi-image reasoning segmentation",
+      "columns": [
+        "Model",
+        "mIoU ↑",
+        "Recall ↑",
+        "I-SS ↑",
+        "I-SIoU ↑",
+        "SS ↑",
+        "SIoU ↑",
+        "METEOR ↑"
+      ],
+      "rows": [
+        {
+          "group": "Open-source LVLMs · post-hoc grounding"
+        },
+        [
+          "Qwen3-VL-8B",
+          "21.52",
+          "12.03",
+          "20.76",
+          "16.05",
+          "68.44",
+          "53.57",
+          "20.47"
+        ],
+        [
+          "Nemotron-Nano-12B-v2",
+          "10.45",
+          "4.48",
+          "7.76",
+          "4.29",
+          "56.45",
+          "41.83",
+          "18.69"
+        ],
+        [
+          "Qwen3-VL-235B-A22B",
+          "27.52",
+          "15.2",
+          "25.05",
+          "18.00",
+          "71.29",
+          "52.85",
+          "22.24"
+        ],
+        [
+          "InternVL3-78B",
+          "19.65",
+          "10.4",
+          "19.07",
+          "15.35",
+          "65.02",
+          "49.23",
+          "20.03"
+        ],
+        [
+          "Pixtral-Large-124B",
+          "28.54",
+          "14.20",
+          "26.90",
+          "20.72",
+          "70.88",
+          "54.29",
+          "21.44"
+        ],
+        {
+          "group": "Closed-source LVLMs · post-hoc grounding"
+        },
+        [
+          "GPT-4o",
+          "25.47",
+          "12.19",
+          "21.59",
+          "15.76",
+          "68.62",
+          "50.55",
+          "21.56"
+        ],
+        [
+          "Gemini 2.5 Pro",
+          "30.21",
+          "15.25",
+          "24.69",
+          "15.51",
+          "68.51",
+          "45.21",
+          "18.89"
+        ],
+        {
+          "group": "Pixel-grounding LVLMs"
+        },
+        [
+          "LISA",
+          "37.21",
+          "21.36",
+          "39.34",
+          "33.31",
+          "73.32",
+          "63.86",
+          "25.47"
+        ],
+        [
+          "GLaMM",
+          "38.12",
+          "22.78",
+          "41.91",
+          "35.76",
+          "74.05",
+          "64.59",
+          "25.33"
+        ],
+        {
+          "group": "SQuARE ablations"
+        },
+        [
+          "Pooling instead of SQuARE",
+          "44.34",
+          "26.59",
+          "45.79",
+          "37.11",
+          "72.37",
+          "60.05",
+          "26.24"
+        ],
+        [
+          "Projection instead of SQuARE",
+          "45.08",
+          "28.12",
+          "50.41",
+          "45.91",
+          "78.14",
+          "71.33",
+          "25.88"
+        ],
+        [
+          "PRIMA (Ours)",
+          "46.23",
+          "30.61",
+          "54.24",
+          "51.62",
+          "80.50",
+          "75.84",
+          "25.70"
+        ],
+        [
+          "Δ PRIMA − GLaMM",
+          "+8.11",
+          "+7.83",
+          "+12.33",
+          "+15.86",
+          "+6.45",
+          "+11.25",
+          "+0.37"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/results.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -67,94 +281,15 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title"><img src="static/images/prima_ballerina.svg" alt="PRIMA logo" width="80px"><span class="model-name">PRIMA</span>: Multi-Image Vision-Language Models for Reasoning
               Segmentation</h1>
-            <div class="is-size-5 publication-authors">
-              <div>
-                <span class="author-block">
-                  <a href="/team/muntasir-wahed" >Muntasir Wahed<sup class="illini-orange">1*</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/kiet-nguyen" >Kiet A. Nguyen<sup class="illini-orange">1*</sup></a>,
-                  <span class="author-block">
-                    <a href="/team/adheesh-juvekar" >Adheesh Juvekar<sup class="illini-orange">1</sup></a>,</span>
-                  <span class="author-block">
-                    <a href="/team/xinzhuo-li" >Xinzhuo Li<sup class="illini-orange">1</sup></a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/xiaona-zhou" >Xiaona Zhou<sup class="illini-orange">1</sup></a>,
-                  </span>
-              </span></div>
-              <div>
-                <span class="author-block">
-                  <a href="/team/vedant-shah" >Vedant Shah<sup class="illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/tianjiao(joey)-yu" >Tianjiao Yu<sup class="illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="https://pinguar.org/">Pinar Yanardag<sup class="vt-maroon">2</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">1</sup></a>
-                </span>
-              </div>
-            </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="https://pinguar.org/">Pinar Yanardag</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-            <div class="is-size-5 publication-authors">
-              <!--<span class="author-block">PLAN Lab</span>-->
-              <span class="author-block illini-orange"><sup class="illini-orange">1</sup>University of Illinois Urbana-Champaign</span>
-              <span class="author-block vt-maroon"><sup class="vt-maroon">2</sup>Virginia Tech</span>
-            </div>
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span></div>
+            <div class="is-size-5 publication-authors studio-contribution-note">
               <span class="illini-blue"><span class="illini-orange">*</span> Equal Contribution</span>
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2412.15209" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2412.15209" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-                <!-- Dataset Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data (coming soon)</span>
-                  </a>
-                </span>
-                <!-- Demo Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-vr-cardboard"></i>
-                    </span>
-                    <span>Demo (coming soon)</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2412.15209" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2412.15209" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Dataset" aria-disabled="true" title="Dataset is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset (coming soon)</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Demo" aria-disabled="true" title="Demo is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Demo (coming soon)</span></a></div>
 
             </div>
           </div>

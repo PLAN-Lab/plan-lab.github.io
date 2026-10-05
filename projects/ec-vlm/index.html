@@ -13,21 +13,331 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models" />
-    <title>[TMLR'25] EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models</title>
+    <title>EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "EC-VLM",
+    "openingCaption": "Left: a speaker describes a target image with learned EC tokens, and a listener selects that image among distractors. Center: image–message pairs pretrain a vision-language model. Right: visual grounding transfers to entailment, captioning, referring expressions, and question answering.",
+    "tldr": [
+      "We introduce EC-VLM, a framework that uses communication between artificial agents to pretrain vision-language models. Messages learned in an image-based speaker–listener game provide visual supervision that transfers to tasks such as captioning, question answering, and referring-expression understanding."
+    ],
+    "method": {
+      "teaser": true
+    },
+    "quantitative": {
+      "source": "Quantitative Results on the Visual Entailment Task",
+      "additionalSources": [
+        "Instruction Following LVLM Tasks",
+        "Results on MMBench"
+      ]
+    },
+    "contributions": [
+      "Novel Pretraining Framework. We introduce a vision-language pretraining framework that employs Emergent Communication (EC) between agents to generate supervision signals for pretraining. We demonstrate that EC pretraining transfers effectively to diverse downstream multimodal tasks.",
+      "New Understanding of EC Structure. We empirically show that EC tokens encode structured and compositional semantics that generalize across tasks and modalities, positioning EC as a scalable, annotation-free alternative to natural language supervision in multimodal learning.",
+      "Theoretical and Empirical Insights. We provide insights into the structure and transferability of emergent language for vision-language pretraining and outline future research opportunities at the intersection of EC, multimodal representation learning, and human-machine communication."
+    ],
+    "contributionLeads": [
+      "Novel Pretraining Framework.",
+      "New Understanding of EC Structure.",
+      "Theoretical and Empirical Insights."
+    ]
+  },
+  "resultPanels": {
+    "SNLI-VE accuracy across training-set sizes": {
+      "description": "Visual entailment accuracy with and without emergent-communication pretraining across training-set sizes."
+    },
+    "Instruction-following evaluation": {
+      "description": "Multimodal instruction-following results, with model size and training data reported alongside benchmark scores."
+    },
+    "MMBench evaluation": {
+      "description": "Multimodal understanding on MMBench, comparing standard pretraining with emergent-communication pretraining."
+    }
+  },
+  "results": {
+    "instruc-following.png": {
+      "type": "table",
+      "title": "Instruction-following evaluation",
+      "columns": [
+        "Method",
+        "LLM",
+        "Image size",
+        "Pretrain",
+        "Finetune",
+        "VQAv2",
+        "GQA",
+        "VizWiz",
+        "SciQA IMG",
+        "TextVQA"
+      ],
+      "rows": [
+        [
+          "BLIP-2",
+          "Vicuna-13B",
+          "224²",
+          "129M",
+          "—",
+          "65.0",
+          "41",
+          "19.6",
+          "61",
+          "42.5"
+        ],
+        [
+          "InstructBLIP",
+          "Vicuna-7B",
+          "224²",
+          "129M",
+          "1.2M",
+          "—",
+          "49.2",
+          "34.5",
+          "60.5",
+          "50.1"
+        ],
+        [
+          "InstructBLIP",
+          "Vicuna-13B",
+          "224²",
+          "129M",
+          "1.2M",
+          "—",
+          "49.5",
+          "33.4",
+          "63.1",
+          "50.7"
+        ],
+        [
+          "Shikra",
+          "Vicuna-13B",
+          "224²",
+          "600K",
+          "5.5M",
+          "77.4",
+          "—",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "IDEFICS-9B",
+          "LLaMA-7B",
+          "224²",
+          "353M",
+          "1M",
+          "50.9",
+          "38.4",
+          "35.5",
+          "—",
+          "25.9"
+        ],
+        [
+          "IDEFICS-80B",
+          "LLaMA-65B",
+          "224²",
+          "353M",
+          "1M",
+          "60.0",
+          "45.2",
+          "36.0",
+          "—",
+          "30.9"
+        ],
+        [
+          "Qwen-VL",
+          "Qwen-7B",
+          "448²",
+          "1.4B",
+          "50M",
+          "78.8",
+          "59.3",
+          "35.2",
+          "67.1",
+          "63.8"
+        ],
+        [
+          "Qwen-VL-Chat",
+          "Qwen-7B",
+          "448²",
+          "1.4B",
+          "50M",
+          "78.2",
+          "57.5",
+          "38.9",
+          "68.2",
+          "61.5"
+        ],
+        [
+          "LLaVA-1.5",
+          "Vicuna-7B",
+          "336²",
+          "558K",
+          "665K",
+          "78.5",
+          "62.0",
+          "50.0",
+          "66.8",
+          "58.2"
+        ],
+        [
+          "LLaVA-1.5-EC",
+          "Vicuna-7B",
+          "336²",
+          "558K",
+          "665K",
+          "72.03",
+          "55.27",
+          "40.03",
+          "64.45",
+          "48.61"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/instruc-following.png"
+    },
+    "snlive result.png": {
+      "type": "line",
+      "title": "SNLI-VE accuracy across training-set sizes",
+      "source": "static/images/snlive result.png",
+      "categories": [
+        "10K",
+        "50K",
+        "Full"
+      ],
+      "xLabel": "Training-set size",
+      "metrics": [
+        {
+          "label": "Validation accuracy (%)",
+          "min": 40,
+          "max": 95,
+          "series": [
+            {
+              "name": "Base",
+              "values": [
+                50.85,
+                50.46,
+                50.3
+              ]
+            },
+            {
+              "name": "+ EC",
+              "color": "#ff915b",
+              "values": [
+                57.3,
+                70.8,
+                85.3
+              ]
+            },
+            {
+              "name": "+ NL",
+              "values": [
+                81.3,
+                84.9,
+                89.05
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Test accuracy (%)",
+          "min": 40,
+          "max": 95,
+          "series": [
+            {
+              "name": "Base",
+              "values": [
+                48.0,
+                48.5,
+                49.94
+              ]
+            },
+            {
+              "name": "+ EC",
+              "color": "#ff915b",
+              "values": [
+                57.3,
+                70.3,
+                85.01
+              ]
+            },
+            {
+              "name": "+ NL",
+              "values": [
+                80.3,
+                84.2,
+                88.95
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mmbench.png": {
+      "type": "bars",
+      "title": "MMBench evaluation",
+      "source": "static/images/mmbench.png",
+      "categories": [
+        "InstructBLIP-8B",
+        "Qwen-VL",
+        "IDEFICS-9B",
+        "IDEFICS-80B",
+        "Qwen-VL-Chat",
+        "LLaVA-7B",
+        "LLaVA-1.5-CLIP-7B",
+        "LLaVA-1.5-7B",
+        "LLaVA-1.5-EC-7B"
+      ],
+      "yLabel": "Accuracy (%) ↑",
+      "max": 80,
+      "series": [
+        {
+          "name": "MMBench (EN)",
+          "values": [
+            36,
+            38.2,
+            48.2,
+            54.5,
+            60.6,
+            38.7,
+            50.56,
+            64.3,
+            67.3
+          ]
+        },
+        {
+          "name": "MMBench (CN)",
+          "values": [
+            23.7,
+            7.4,
+            25.2,
+            38.1,
+            56.7,
+            36.4,
+            48.49,
+            58.3,
+            64.01
+          ]
+        }
+      ]
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -67,67 +377,16 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title"><span class="model-name">EC-VLM</span>: Emergent Corpus Pre-training Benefits Vision Language Models</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="/team/makanjuola-ogunleye" >Makanjuola Ogunleye<sup class="vt-maroon">1</sup></a>,
-              </span>
-              <span class="author-block">
-                <a href="/team/chase-vickery" >Chase Vickery<sup class="vt-maroon">1</sup></a>,
-              </span>
-              <span class="author-block">
-                <a href="/team/ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">2</sup></a>
-              </span>
-            </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=makanjuola-ogunleye">Makanjuola Ogunleye</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=chase-vickery">Chase Vickery</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://plan-lab.github.io/">PLAN Lab</a>
-                (<span class="author-affiliations">
-                  <sup class="vt-maroon">1</sup><span class="vt-maroon">Virginia Tech</span>,
-                  <sup class="illini-orange">2</sup><span class="illini-orange">University of Illinois Urbana-Champaign</span>
-                </span>)
-              </span>
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">TMLR 2025</h1>
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data (coming soon)</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a></div>
 
             </div>
           </div>
@@ -175,15 +434,15 @@
                to improve sample efficiency in VL-PTMs. We pre-train a Vision-Language Model (VLM) using 
                EC tokens generated through a referential game between two artificial agents. 
                Across three diverse cross-modal matching and reasoning benchmarks, EC pretraining yields 
-               substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6\% and 
-               Visual Entailment (VE) by 69.6\%.
+               substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6% and
+               Visual Entailment (VE) by 69.6%.
               </p>
                
               <p>
                To further validate the effectiveness of EC pretraining, we introduce LLaVA-1.5-EC, 
                a LLaVA variant trained entirely on EC tokens. LLaVA-1.5-EC outperforms strong 
-               LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23\% on VizWiz, 
-               34.8\% on GQA, and 10.8\% on VQAv2, and top performance on MMBench, a challenging instruction-following 
+               LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23% on VizWiz,
+               34.8% on GQA, and 10.8% on VQAv2, and top performance on MMBench, a challenging instruction-following
                benchmark. 
               </p>
                
@@ -283,13 +542,13 @@
                 LVLMs across five benchmarks: VQAv2, GQA, VizWiz, SciQA-IMG, and TextVQA. Despite using only 558K images
                  and no natural language supervision, LLaVA-1.5-EC achieves competitive performance, outperforming 
                  well-established models such as BLIP-2 (13B) and InstructBLIP (13B) across most datasets. 
-                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and 
-                 10.8% on VQAv2. 
+                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and
+                 10.8% on VQAv2.
               </p>
               <p class="has-text-justified">
-                 It also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs 
+                 LLaVA-1.5-EC also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs
                  and fine-tuned on 1.2M additional examples, highlighting the impressive representational capacity of EC pretraining. 
-                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- it achieves 
+                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- LLaVA-1.5-EC achieves
                  strong results despite having seen 2–3 orders of magnitude fewer samples and no human-written captions. 
                  For example, on VizWiz, LLaVA-1.5-EC even outperforms Qwen-VL (40.03 vs. 35.2), showing its effectiveness on visually grounded tasks. 
               </p>
@@ -388,7 +647,7 @@
       <pre><code>@article{ogunleye2025ecvlm,
   title={EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models},
   author={Ogunleye, Makanjuola A. and Vickery, Chase and Lourentzou, Ismini},
-  journal={Transactions on machine learning research},
+  journal={Transactions on Machine Learning Research (TMLR)},
   year={2025}
 }</code></pre>
     </div>
@@ -398,7 +657,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
+        <a class="icon-link" href="https://openreview.net/pdf?id=bivKGSaXkD">
           <i class="fas fa-file-pdf"></i>
         </a>
         <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>

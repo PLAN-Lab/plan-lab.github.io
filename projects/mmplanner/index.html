@@ -13,21 +13,271 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning." />
-    <title>MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</title>
+    <title>MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "MMPlanner",
+    "tldr": [
+      "We introduce MMPlanner, a framework for generating step-by-step plans with aligned text and images without task-specific training. MMPlanner reasons about how objects change throughout a procedure, keeping instructions, visual depictions, and object states consistent across the plan."
+    ],
+    "method": {
+      "source": "MMPlanner Overview"
+    },
+    "quantitative": {
+      "source": "Quantitative Results"
+    },
+    "qualitative": {
+      "source": "Qualitative Examples"
+    },
+    "contributions": [
+      "We introduce MMPlanner, a zero-shot MPP method that generates coherent multimodal plans with accurate explicit and implicit object state changes in visual plan sequences.",
+      "MMPlanner incorporates background context from previous textual steps through a novel Chain-of-Thought (CoT) with Object State Reasoning (OSR-CoT) prompting method, ensuring precise visual representations of object states across steps. OSR-CoT reduces inference time by ~46.25% compared to SoTA MPP baselines.",
+      "We propose a comprehensive evaluation framework with two metrics, T-PlanScore and CA-Score, and an evaluation task, VS-Ordering, to collectively assess the planning accuracy, cross-modal alignment, temporal coherence, and visual informativeness of the generated plans."
+    ],
+    "contributionLeads": [
+      "We introduce MMPlanner",
+      "MMPlanner incorporates background context",
+      "We propose a comprehensive evaluation framework"
+    ],
+    "opening": {
+      "source": "mmplanner_teaser.png",
+      "alt": "MMPlanner produces a procedural plan with aligned text and images.",
+      "caption": "MMPlanner tracks how objects change across steps, keeping the textual plan and generated images aligned.",
+      "context": "quantitative"
+    }
+  },
+  "resultPanels": {
+    "Textual planning evaluation": {
+      "description": "Textual plan quality on RecipePlan and WikiPlan."
+    },
+    "Cross-modal planning evaluation": {
+      "description": "Step-level agreement between visual and textual plans."
+    },
+    "Visual Step Ordering (VS-Ordering)": {
+      "description": "Visual sequence ordering evaluates whether generated steps follow a coherent procedure."
+    }
+  },
+  "results": {
+    "mmplanner_textual_evaluation.png": {
+      "type": "table",
+      "title": "Textual planning evaluation",
+      "columns": [
+        "Model",
+        "RecipePlan · T-PlanScore ↑",
+        "RecipePlan · S-BERT ↑",
+        "RecipePlan · WMD ↑",
+        "RecipePlan · METEOR ↑",
+        "WikiPlan · T-PlanScore ↑",
+        "WikiPlan · S-BERT ↑",
+        "WikiPlan · WMD ↑",
+        "WikiPlan · METEOR ↑"
+      ],
+      "rows": [
+        [
+          "Text-Ref+SD",
+          "73.85",
+          "0.72",
+          "0.13",
+          "0.09",
+          "62.53",
+          "0.78",
+          "0.70",
+          "0.20"
+        ],
+        [
+          "GPT-3.5+SD",
+          "80.43",
+          "0.73",
+          "0.86",
+          "0.14",
+          "81.93",
+          "0.75",
+          "0.77",
+          "0.09"
+        ],
+        [
+          "TIP",
+          "82.00",
+          "0.73",
+          "0.86",
+          "0.14",
+          "83.00",
+          "0.78",
+          "0.77",
+          "0.09"
+        ],
+        [
+          "MMPlanner (Ours)",
+          "82.05",
+          "0.78",
+          "0.88",
+          "0.15",
+          "84.43",
+          "0.77",
+          "0.75",
+          "0.23"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/mmplanner_textual_evaluation.png"
+    },
+    "mmplanner_crossmodal_evaluation.png": {
+      "type": "table",
+      "title": "Cross-modal planning evaluation",
+      "columns": [
+        "Model",
+        "RecipePlan · CA-Score ↑",
+        "RecipePlan · CLIPScore ↑",
+        "WikiPlan · CA-Score ↑",
+        "WikiPlan · CLIPScore ↑"
+      ],
+      "rows": [
+        [
+          "Text-Ref+SD",
+          "70.81",
+          "60.68",
+          "61.61",
+          "65.42"
+        ],
+        [
+          "GPT-3.5+SD",
+          "71.49",
+          "73.00",
+          "63.18",
+          "71.08"
+        ],
+        [
+          "TIP",
+          "67.68",
+          "73.09",
+          "63.30",
+          "72.17"
+        ],
+        [
+          "MMPlanner (Ours)",
+          "77.07",
+          "77.44",
+          "69.23",
+          "76.10"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/mmplanner_crossmodal_evaluation.png"
+    },
+    "mmplanner_vs_ordering.png": {
+      "type": "table",
+      "title": "Planning order evaluation",
+      "columns": [
+        "Model",
+        "Accuracy ↑",
+        "LCS ↑",
+        "τ ↑",
+        "Distance ↓",
+        "MS ↓",
+        "WMS ↓"
+      ],
+      "rows": [
+        {
+          "group": "RecipePlan"
+        },
+        [
+          "Text-Ref+SD",
+          "22.60",
+          "2.09",
+          "0.04",
+          "7.76",
+          "2.66",
+          "6.07"
+        ],
+        [
+          "GPT-3.5+SD",
+          "21.65",
+          "1.83",
+          "0.03",
+          "7.78",
+          "2.63",
+          "5.99"
+        ],
+        [
+          "TIP",
+          "21.70",
+          "1.81",
+          "0.05",
+          "7.79",
+          "2.66",
+          "5.99"
+        ],
+        [
+          "MMPlanner (Ours)",
+          "27.50",
+          "3.09",
+          "0.22",
+          "6.51",
+          "2.39",
+          "4.99"
+        ],
+        {
+          "group": "WikiPlan"
+        },
+        [
+          "Text-Ref+SD",
+          "19.70",
+          "2.80",
+          "0.01",
+          "7.87",
+          "2.78",
+          "6.43"
+        ],
+        [
+          "GPT-3.5+SD",
+          "18.95",
+          "2.69",
+          "0.01",
+          "7.66",
+          "2.67",
+          "6.23"
+        ],
+        [
+          "TIP",
+          "18.79",
+          "2.83",
+          "0.02",
+          "7.92",
+          "2.75",
+          "6.30"
+        ],
+        [
+          "MMPlanner (Ours)",
+          "23.43",
+          "2.91",
+          "0.05",
+          "7.60",
+          "2.60",
+          "5.90"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/mmplanner_vs_ordering.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -66,60 +316,12 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning</h1>
-            <div class="is-size-5 publication-authors">
-              
-                <span class="author-block">
-                  <a href="/team/afrina-tabassum" >Afrina Tabassum<sup class="vt-maroon">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="">Bin Guo<sup class="amazon-blue">2</sup></a>,
-                  <span class="author-block">
-                    <a href="">Xiyao Ma<sup class="amazon-blue">2</sup></a>,</span>
-                  <span class="author-block">
-                    <a href="https://people.cs.vt.edu/hdardiry/">Hoda Eldardiry<sup class="vt-maroon">1</sup></a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">3</sup></a>,
-                  </span>
-              </span></div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=afrina-tabassum">Afrina Tabassum</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="amazon"><a href="">Bin Guo</a><sup class="studio-affiliation-marker" title="Amazon" aria-label="Amazon">♠</sup>, </span><span class="author-block studio-author" data-affiliations="amazon"><a href="">Xiyao Ma</a><sup class="studio-affiliation-marker" title="Amazon" aria-label="Amazon">♠</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="https://people.cs.vt.edu/hdardiry/">Hoda Eldardiry</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-            <div class="is-size-5 publication-authors">
-              <!--<span class="author-block">PLAN Lab</span>-->
-              <span class="author-block vt-maroon"><sup class="vt-maroon">1</sup>Virginia Tech</span>
-              <span class="author-block amazon-blue"><sup>2</sup>Amazon</span>
-              <span class="author-block illini-orange"><sup class="illini-orange">3</sup>University of Illinois Urbana-Champaign</span>
-              
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="amazon"><sup class="studio-affiliation-marker" title="Amazon" aria-label="Amazon">♠</sup><span class="studio-affiliation-name">Amazon</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
             
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://aclanthology.org/2025.findings-emnlp.1011.pdf" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2509.21662" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-                </div>
+              <div class="publication-links"><a href="https://aclanthology.org/2025.findings-emnlp.1011.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2509.21662" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a></div>
 
             </div>
           </div>
@@ -285,10 +487,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@article{tabassum2025mmplanner,
-  title={MMPlanner: Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning},
+      <pre><code>@inproceedings{tabassum2025mmplanner,
+  title={{MMP}lanner: Zero-Shot Multimodal Procedural Planning with Chain-of-Thought Object State Reasoning},
   author={Tabassum, Afrina and Guo, Bin and Ma, Xiyao and Eldardiry, Hoda and Lourentzou, Ismini},
-  journal={arXiv preprint arXiv:},
+  booktitle={Findings of the Association for Computational Linguistics: Empirical Methods in Natural Language Processing (EMNLP)},
   year={2025}
 }</code></pre>
     </div>
