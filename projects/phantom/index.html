@@ -18,12 +18,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css" />
-  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg" />
 
   <style>
@@ -273,7 +273,53 @@
   </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "Phantom",
+    "tldr": [
+      "We introduce PHANTOM, a physics-infused video generation framework that jointly models visual content and latent physical dynamics, producing videos that are both visually realistic and physically consistent."
+    ],
+    "contributions": [
+      "We propose Phantom, a physics-infused video generation framework that jointly models visual content and latent physical dynamics through two coupled visual and physical reasoning branches.",
+      "We validate the effectiveness of Phantom in producing video sequences that are both perceptually realistic and physically coherent through extensive experiments on standard video generation and physics-aware benchmarks."
+    ],
+    "method": {
+      "teaser": true
+    },
+    "qualitative": {
+      "source": "Video Comparisons"
+    },
+    "headingName": [
+      {
+        "text": "Phantom",
+        "color": "#a78bfa"
+      }
+    ],
+    "contributionLeads": [
+      "We propose Phantom, a physics-infused video generation framework",
+      "We validate the effectiveness of Phantom"
+    ]
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "VideoPhy and VideoPhy-2",
+      "description": "Semantic adherence (SA) and physical commonsense (PC) compare video–text alignment and physically plausible motion."
+    },
+    "htmlTable:1": {
+      "title": "Physics-IQ",
+      "description": "Physical extrapolation from real motion sequences under single-frame and multi-frame conditioning."
+    },
+    "htmlTable:2": {
+      "title": "VBench-2",
+      "description": "Overall video quality and five dimensions: creativity, commonsense, controllability, human fidelity, and physics."
+    }
+  },
+  "results": {}
+}
+  </script>
+
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -320,31 +366,9 @@
                 of Visual and Latent Physical Dynamics
               </h1>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="/team/ying-shen">Ying Shen<sup class="aff illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/jerry-xiong">Jerry Xiong<sup class="aff illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/tianjiao(joey)-yu">Tianjiao Yu<sup class="aff illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ismini-lourentzou">Ismini Lourentzou<sup class="aff illini-orange">1</sup></a>
-                </span>
-              </div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jerry-xiong">Jerry Xiong</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="https://plan-lab.github.io/">PLAN Lab</a>
-                  <span class="author-affiliations">
-                    &nbsp;&mdash;&nbsp;
-                    <sup class="aff illini-orange">1</sup>
-                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
-                  </span>
-                </span>
-              </div>
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
               <div class="has-text-centered" style="margin: 5px 0;">
                 <h1 class="title is-3 publication-venue" style="color:#f97316;">
@@ -352,28 +376,7 @@
                 </h1>
               </div>
 
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2604.08503" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2604.08503" target="_blank" class="button is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="static/Phantom_cvpr.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2604.08503" target="_blank" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
 
             </div>
           </div>
@@ -402,7 +405,6 @@
             style="width:75%; border-radius:12px; margin-bottom:16px; display:block; margin-left:auto; margin-right:auto;" />
 
           <div class="content has-text-justified">
-            <span style="font-weight: bold;">Overview.</span>
             <strong style="color:#a78bfa;">Phantom</strong> consists of two parallel latent flow-matching branches:
             the <strong style="color:#e2e8f0;">video branch</strong> and
             <strong style="color:#5eead4;">physics branch</strong>.
@@ -626,7 +628,7 @@
               <div class="video-compare-section">
                 <div class="video-compare-prompt">
                   <strong>Prompt:</strong>
-                  A round cookie falls from a table and shatters into crumbs on the hard floor below.
+                  A cookie is being dipped into a cup of hot coffee
                 </div>
                 <div class="video-grid" style="grid-template-columns:repeat(2,1fr);">
                   <div class="video-item"><video src="static/images/supplementary/Text-to-Video/wan2.2/cookie.mp4"
@@ -1212,11 +1214,11 @@
       <div class="container is-max-desktop content">
         <h2 class="title" style="display:flex; justify-content:left;">BibTeX</h2>
         <pre><code>@inproceedings{shen2026phantom,
-          title     = {Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics},
-          author    = {Shen, Ying and Xiong, Jerry and Yu, Tianjiao and Lourentzou, Ismini},
-          booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-          year      = {2026}
-        }</code></pre>
+  title={PHANTOM: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics},
+  author={Shen, Ying and Xiong, Jerry and Yu, Tianjiao and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
       </div>
     </section>
 

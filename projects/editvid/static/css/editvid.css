@@ -8,3 +8,9 @@
 @media(max-width:1000px){.video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ours-showcase{grid-template-columns:repeat(2,1fr)}.method-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.editvid-page .project-hero{padding-top:0}.ours-showcase,.video-grid{grid-template-columns:1fr}.prompt-card{align-items:flex-start;flex-direction:column}.editvid-page main{padding-bottom:90px}}
 .editvid-page .section .section-intro{display:block;width:100%!important;max-width:none!important}
+/* Match the shared title panel and keep short method explanations naturally spaced. */
+.project-studio.editvid-page main>.studio-header>.hero-body>.container{width:100%!important;max-width:1000px!important}
+.project-studio.editvid-page .publication-title .studio-name{font-weight:750;color:#fff;text-wrap:balance}
+.project-studio.editvid-page .publication-title .studio-subtitle{color:#c7d6ee;text-wrap:balance}
+.project-studio.editvid-page .method-grid{max-width:1112px;margin-inline:auto}
+.project-studio.editvid-page main .section[data-studio-section="method"] .method-grid p{text-align:left!important;text-align-last:left;text-wrap:pretty}

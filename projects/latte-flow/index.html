@@ -18,12 +18,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css" />
-  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
   <link rel="icon" type="image/png" href="static/images/favicon.png" />
 
   <style>
@@ -260,7 +260,207 @@
   </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "LaTtE-Flow",
+    "tldr": [
+      "We introduce LaTtE-Flow, which adds image generation to a frozen vision-language model through Layerwise Timestep Experts. Each transformer layer group handles a distinct flow-matching timestep range, so only that group runs at each sampling step. Timestep-Conditioned Residual Attention reuses and refines attention across layers, delivering competitive generation quality with about six times faster inference while preserving multimodal understanding."
+    ],
+    "contributions": [
+      "Layerwise Timestep Experts make unified flow-based generation more efficient. We introduce LaTtE-Flow, which inherits multimodal understanding from a frozen pretrained VLM and adds a trainable generation pathway. Transformer layers are divided into non-overlapping groups, each responsible for a distinct flow-matching timestep interval, so only the current group runs at each sampling step instead of the full stack.",
+      "Timestep-Conditioned Residual Attention reuses attention across layers. A lightweight, head-wise gate controls how much image self-attention each layer reuses from the previous layer as a function of the current timestep. Gradually refining attention speeds up training convergence and improves generation quality without additional inference cost.",
+      "Experiments demonstrate faster generation while preserving understanding. By retaining the frozen VLM backbone, LaTtE-Flow maintains strong multimodal understanding and competitive image generation quality while reaching approximately six times faster inference than recent unified multimodal models."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "splits": [
+      {
+        "heading": "Qualitative Samples",
+        "label": "Qualitative Results"
+      },
+      {
+        "heading": "Ablations",
+        "label": "Ablation Studies"
+      }
+    ],
+    "quantitative": {
+      "source": "Results"
+    },
+    "contributionLeads": [
+      "Layerwise Timestep Experts make unified flow-based generation more efficient.",
+      "Timestep-Conditioned Residual Attention reuses attention across layers.",
+      "Experiments demonstrate faster generation while preserving understanding."
+    ],
+    "opening": {
+      "source": "diffusion_process_fig.png",
+      "label": "Layerwise timestep experts",
+      "alt": "Standard diffusion repeats the full transformer at every sampling step; LaTtE-Flow assigns different timestep ranges to different layer groups.",
+      "caption": "Left: conventional diffusion and flow-matching models run every transformer layer at every sampling step. Right: LaTtE-Flow assigns layer groups to different timestep ranges, activating only the group needed at each step to reduce generation cost."
+    }
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "ImageNet-50K image generation",
+      "description": "Generation quality and inference cost on ImageNet-50K. Active parameters and relative runtime show the cost per sampling step."
+    },
+    "htmlTable:1": {
+      "title": "Multimodal understanding",
+      "description": "Understanding benchmarks compare LaTtE-Flow with other multimodal models after adding image generation."
+    }
+  },
+  "results": {
+    "performance_vs_training_steps.png": {
+      "type": "line",
+      "title": "Performance as training progresses",
+      "source": "static/images/performance_vs_training_steps.png",
+      "xLabel": "Training steps (K)",
+      "yLabel": "FID-50K ↓",
+      "xTicks": [
+        20,
+        40,
+        60,
+        80,
+        120,
+        160
+      ],
+      "yMin": 5,
+      "yMax": 38,
+      "approximate": true,
+      "series": [
+        {
+          "name": "Vanilla",
+          "points": [
+            [
+              20,
+              36
+            ],
+            [
+              40,
+              20
+            ],
+            [
+              60,
+              16.1
+            ],
+            [
+              80,
+              13
+            ],
+            [
+              120,
+              10.8
+            ],
+            [
+              160,
+              8.8
+            ]
+          ]
+        },
+        {
+          "name": "LaTtE-Flows",
+          "color": "#ff915b",
+          "points": [
+            [
+              20,
+              18.3
+            ],
+            [
+              40,
+              11.9
+            ],
+            [
+              60,
+              10
+            ],
+            [
+              80,
+              9.3
+            ],
+            [
+              120,
+              8.5
+            ],
+            [
+              160,
+              7.2
+            ]
+          ]
+        }
+      ],
+      "note": ""
+    },
+    "group_size.png": {
+      "type": "scatter",
+      "title": "Group size: speed and generation quality",
+      "source": "static/images/group_size.png",
+      "xLabel": "Inference time (ms)",
+      "yLabel": "FID-50K ↓",
+      "xMin": 20,
+      "xMax": 180,
+      "xTicks": [
+        20,
+        60,
+        100,
+        140,
+        180
+      ],
+      "yMin": 0,
+      "yMax": 30,
+      "approximate": true,
+      "series": [
+        {
+          "name": "LaTtE-Flows",
+          "points": [
+            [
+              39,
+              25.5
+            ],
+            [
+              51,
+              8.5
+            ],
+            [
+              91,
+              7.3
+            ]
+          ],
+          "radii": [
+            7.75,
+            10,
+            14.14
+          ],
+          "labels": [
+            "Group 4 · 0.3B",
+            "Group 7 · 0.5B",
+            "Group 14 · 1B"
+          ]
+        },
+        {
+          "name": "Vanilla · 2B",
+          "color": "#ff915b",
+          "points": [
+            [
+              158,
+              10.7
+            ]
+          ],
+          "radii": [
+            20
+          ],
+          "labels": [
+            "Vanilla · 2B"
+          ]
+        }
+      ],
+      "note": "Bubble areas indicate model size."
+    }
+  }
+}
+  </script>
+
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -307,52 +507,13 @@
                 Layerwise Timestep-Expert Flow-based Transformer
               </h1>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="/team/ying-shen">Ying Shen<sup class="aff">1*</sup></a>,
-                </span>
-                <span class="author-block">
-                  Zhiyang Xu<sup class="aff">2*</sup>,
-                </span>
-                <span class="author-block">
-                  Jiuhai Chen<sup class="aff">3</sup>,
-                </span>
-                <span class="author-block">
-                  Shizhe Diao<sup class="aff">4</sup>,
-                </span>
-                <span class="author-block">
-                  Jiaxin Zhang<sup class="aff">5</sup>,
-                </span>
-                <span class="author-block">
-                  Yuguang Yao<sup class="aff">6</sup>,
-                </span>
-                <span class="author-block">
-                  Joy Rimchala<sup class="aff">6</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ismini-lourentzou">Ismini Lourentzou<sup class="aff">1&dagger;</sup></a>,
-                </span>
-                <span class="author-block">
-                  Lifu Huang<sup class="aff">7&dagger;</sup>
-                </span>
-              </div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="vt">Zhiyang Xu<sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="maryland">Jiuhai Chen<sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup>, </span><span class="author-block studio-author" data-affiliations="nvidia">Shizhe Diao<sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup>, </span><span class="author-block studio-author" data-affiliations="salesforce">Jiaxin Zhang<sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="intuit">Yuguang Yao<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="intuit">Joy Rimchala<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="ucdavis">Lifu Huang<sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
 
               <div class="equal-note">
-                <sup>*</sup>Equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup>Equal supervision
+                <sup>*</sup>Equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup>Co-corresponding authors
               </div>
 
-              <div class="publication-authors">
-                <span class="author-affiliations">
-                  <sup class="aff">1</sup><span>University of Illinois
-                    Urbana-Champaign</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">2</sup><span class="ext">Virginia Tech</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">3</sup><span class="ext">University of Maryland</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">4</sup><span class="ext">NVIDIA</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">5</sup><span class="ext">Salesforce AI Research</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">6</sup><span class="ext">Intuit AI Research</span> &nbsp;&middot;&nbsp;
-                  <sup class="aff">7</sup><span class="ext">UC Davis</span>
-                </span>
-              </div>
+              <div class="publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="maryland"><sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup><span class="studio-affiliation-name">University of Maryland</span></span><span class="studio-affiliation" data-institution="nvidia"><sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup><span class="studio-affiliation-name">NVIDIA</span></span><span class="studio-affiliation" data-institution="salesforce"><sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup><span class="studio-affiliation-name">Salesforce AI Research</span></span><span class="studio-affiliation" data-institution="intuit"><sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup><span class="studio-affiliation-name">Intuit AI Research</span></span><span class="studio-affiliation" data-institution="ucdavis"><sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><span class="studio-affiliation-name">UC Davis</span></span></div>
 
               <div class="has-text-centered" style="margin: 8px 0;">
                 <h1 class="title is-3 publication-venue" style="color:#FF5F05;">
@@ -360,27 +521,7 @@
                 </h1>
               </div>
 
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.06952" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.06952" target="_blank" class="button is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2506.06952" target="_blank" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.06952" target="_blank" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
 
             </div>
           </div>
@@ -832,12 +973,10 @@ strong understanding performance while adding generation capabilities.
       <div class="container is-max-desktop content">
         <h2 class="title" style="display:flex; justify-content:left;">BibTeX</h2>
         <pre><code>@inproceedings{shen2026latteflow,
-  title     = {LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer},
-  author    = {Shen, Ying and Xu, Zhiyang and Chen, Jiuhai and Diao, Shizhe and
-               Zhang, Jiaxin and Yao, Yuguang and Rimchala, Joy and
-               Lourentzou, Ismini and Huang, Lifu},
-  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
-  year      = {2026}
+  title={LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer},
+  author={Shen, Ying and Xu, Zhiyang and Chen, Jiuhai and Diao, Shizhe and Zhang, Jiaxin and Yao, Yuguang and Rimchala, Joy and Lourentzou, Ismini and Huang, Lifu},
+  booktitle={Proceedings of the International Conference on Machine Learning (ICML)},
+  year={2026}
 }</code></pre>
       </div>
     </section>

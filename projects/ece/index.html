@@ -13,21 +13,471 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Uncertainty in Action: Confidence Elicitation in Embodied Agents" />
-    <title>Uncertainty in Action: Confidence Elicitation in Embodied Agents</title>
+    <title>Uncertainty in Action: Confidence Elicitation in Embodied Agents | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "Embodied Confidence Elicitation",
+    "tldr": [
+      "We study how embodied agents assess uncertainty in what they see and the actions they plan to take. Our framework elicits confidence through structured reasoning and alternative interpretations, evaluating how well elicited confidence predicts success and failure in Minecraft tasks."
+    ],
+    "contributions": [
+      "We investigate open-world embodied confidence elicitation. We study language- and vision-language-powered agents in settings where uncertainty arises from perception and decision making, while the agents lack direct access to their internal reasoning processes.",
+      "Elicitation and execution policies address distinct forms of uncertainty. We introduce Elicitation Policies for inductive, deductive, and abductive uncertainty, together with Execution Policies for scenario reinterpretation, action sampling, and hypothetical reasoning. These policies let agents express and refine confidence through structured reasoning and interaction with the environment.",
+      "Minecraft experiments evaluate calibration and failure prediction. Structured reasoning approaches, including Chain-of-Thought, improve confidence calibration. The evaluation also identifies persistent difficulty distinguishing uncertainty under abductive settings, highlighting the need for more capable embodied confidence elicitation methods."
+    ],
+    "method": {
+      "source": "Embodied Confidence Elicitation"
+    },
+    "quantitative": {
+      "source": "Results"
+    },
+    "contributionLeads": [
+      "We investigate open-world embodied confidence elicitation.",
+      "Elicitation and execution policies address distinct forms of uncertainty.",
+      "Minecraft experiments evaluate calibration and failure prediction."
+    ]
+  },
+  "resultPanels": {
+    "Confidence elicitation": {
+      "description": "Calibration error (ECE) and failure prediction (AUROC) compare elicited confidence across agents and reasoning strategies."
+    },
+    "Execution policies and confidence estimation": {
+      "description": "Select an agent to compare confidence calibration and failure prediction across action sampling, scenario reinterpretation, and hypothetical reasoning."
+    }
+  },
+  "results": {
+    "r1.png": {
+      "type": "table",
+      "title": "Confidence elicitation",
+      "columns": [
+        "Model",
+        "Vanilla",
+        "Self-Intervention",
+        "CoT (Inductive)",
+        "P&S (Deductive)",
+        "Top-K (Abductive)"
+      ],
+      "rows": [
+        {
+          "group": "ECE ↓"
+        },
+        [
+          "GPT-4V",
+          "0.27",
+          "0.21",
+          "0.16",
+          "0.15",
+          "0.17"
+        ],
+        [
+          "MineLLM",
+          "0.49",
+          "0.41",
+          "0.34",
+          "0.39",
+          "0.43"
+        ],
+        [
+          "STEVE",
+          "0.43",
+          "0.32",
+          "0.26",
+          "0.26",
+          "0.35"
+        ],
+        {
+          "group": "AUROC ↑"
+        },
+        [
+          "GPT-4V",
+          "0.69",
+          "0.76",
+          "0.83",
+          "0.82",
+          "0.73"
+        ],
+        [
+          "MineLLM",
+          "0.53",
+          "0.59",
+          "0.64",
+          "0.61",
+          "0.58"
+        ],
+        [
+          "STEVE",
+          "0.58",
+          "0.69",
+          "0.72",
+          "0.67",
+          "0.68"
+        ],
+        {
+          "group": "PR-P ↑"
+        },
+        [
+          "GPT-4V",
+          "0.66",
+          "0.76",
+          "0.81",
+          "0.79",
+          "0.70"
+        ],
+        [
+          "MineLLM",
+          "0.51",
+          "0.59",
+          "0.63",
+          "0.60",
+          "0.57"
+        ],
+        [
+          "STEVE",
+          "0.56",
+          "0.67",
+          "0.69",
+          "0.66",
+          "0.64"
+        ],
+        {
+          "group": "PR-N ↑"
+        },
+        [
+          "GPT-4V",
+          "0.52",
+          "0.53",
+          "0.58",
+          "0.55",
+          "0.53"
+        ],
+        [
+          "MineLLM",
+          "0.39",
+          "0.42",
+          "0.42",
+          "0.43",
+          "0.40"
+        ],
+        [
+          "STEVE",
+          "0.41",
+          "0.46",
+          "0.46",
+          "0.43",
+          "0.42"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/r1.png"
+    },
+    "r2.png": {
+      "type": "bars",
+      "title": "Confidence estimation by reasoning strategy",
+      "source": "static/images/r2.png",
+      "categories": [
+        "Action sampling",
+        "Scenario reinterpretation",
+        "Hypothetical reasoning"
+      ],
+      "metrics": [
+        {
+          "label": "GPT-4V · ECE ↓",
+          "max": 0.6,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.24,
+                0.22,
+                0.14
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.1,
+                0.12,
+                0.11
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.11,
+                0.12,
+                0.11
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.11,
+                0.13,
+                0.18
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.12,
+                0.14,
+                0.15
+              ]
+            }
+          ]
+        },
+        {
+          "label": "GPT-4V · AUROC ↑",
+          "max": 1,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.76,
+                0.75,
+                0.78
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.8,
+                0.79,
+                0.81
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.84,
+                0.82,
+                0.84
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.88,
+                0.79,
+                0.85
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.78,
+                0.77,
+                0.81
+              ]
+            }
+          ]
+        },
+        {
+          "label": "MineLLM · ECE ↓",
+          "max": 0.6,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.5,
+                0.53,
+                0.52
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.35,
+                0.42,
+                0.5
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.32,
+                0.44,
+                0.33
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.3,
+                0.45,
+                0.38
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.42,
+                0.47,
+                0.43
+              ]
+            }
+          ]
+        },
+        {
+          "label": "MineLLM · AUROC ↑",
+          "max": 1,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.55,
+                0.64,
+                0.51
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.64,
+                0.68,
+                0.68
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.69,
+                0.74,
+                0.71
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.67,
+                0.71,
+                0.65
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.63,
+                0.66,
+                0.65
+              ]
+            }
+          ]
+        },
+        {
+          "label": "STEVE · ECE ↓",
+          "max": 0.6,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.4,
+                0.42,
+                0.41
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.28,
+                0.27,
+                0.39
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.24,
+                0.24,
+                0.33
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.27,
+                0.28,
+                0.35
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.3,
+                0.31,
+                0.34
+              ]
+            }
+          ]
+        },
+        {
+          "label": "STEVE · AUROC ↑",
+          "max": 1,
+          "series": [
+            {
+              "name": "Vanilla",
+              "values": [
+                0.62,
+                0.66,
+                0.57
+              ]
+            },
+            {
+              "name": "Self-Intervention",
+              "values": [
+                0.74,
+                0.74,
+                0.65
+              ]
+            },
+            {
+              "name": "CoT",
+              "values": [
+                0.72,
+                0.7,
+                0.65
+              ]
+            },
+            {
+              "name": "P&S",
+              "values": [
+                0.72,
+                0.72,
+                0.64
+              ]
+            },
+            {
+              "name": "Top-K",
+              "values": [
+                0.7,
+                0.68,
+                0.64
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "Select a model and metric to compare reasoning strategies."
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -66,78 +516,12 @@
         <div class="columns is-centered"><div class="column has-text-centered">
             <h1 class="title is-1 publication-title"><img src="static/images/player_head.png" alt="ECE logo" width="40px"><span class="model-name"> Uncertainty in Action: Confidence
                     Elicitation in Embodied Agents</span></h1>
-            <div class="is-size-5 publication-authors">
-              <div>
-                <span class="author-block">
-                    <a href="/team/tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/vedant-shah" class="illini-blue" >Vedant Shah</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/muntasir-wahed" class="illini-blue" >Muntasir Wahed</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/kiet-nguyen" class="illini-blue" >Kiet A. Nguyen</a>,
-                </span>
-                
-                <span class="author-block">
-                    <a href="/team/adheesh-juvekar" class="illini-blue" >Adheesh Juvekar</a>,
-                </span>
-                <span class="author-block">
-                    <a href="https://talaugust.github.io/" class="illini-blue">Tal August</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
-                </span>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://talaugust.github.io/">Tal August</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              </div>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2503.10628" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2503.10628" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-
-                <!-- Demo Link. -->
-                <!-- <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-vr-cardboard"></i>
-                    </span>
-                    <span>Demo (coming soon)</span>
-                  </a>
-                </span> -->
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2503.10628" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2503.10628" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
 
             </div>
           </div>
@@ -235,7 +619,7 @@
                     <b>Chain-of-Thought</b> (step-by-step reasoning),  
                     <b>Plan &amp; Solve</b> (explicit planning before execution), and  
                     <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.  
-                    The best performance across each model is in <b>bold</b>.
+                    The best performance across each model is in <b>bold</b>, and second best is <u>underlined</u>.
               </p>
             </div>
               <br>
@@ -260,15 +644,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@misc{yu2025uncertaintyactionconfidenceelicitation,
-      title={Uncertainty in Action: Confidence Elicitation in Embodied Agents}, 
-      author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Kiet A. Nguyen and Adheesh Juvekar and Tal August and Ismini Lourentzou},
-      year={2025},
-      eprint={2503.10628},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2503.10628}, 
-      }</code></pre>
+      <pre><code>@article{yu2025uncertaintyactionconfidenceelicitation,
+  title={Uncertainty in Action: Confidence Elicitation in Embodied Agents},
+  author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Kiet A. Nguyen and Adheesh Juvekar and Tal August and Ismini Lourentzou},
+  journal={arXiv preprint arXiv:2503.10628},
+  year={2025}
+}</code></pre>
     </div>
   </section>
 
@@ -276,7 +657,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
+        <a class="icon-link" href="https://arxiv.org/pdf/2503.10628">
           <i class="fas fa-file-pdf"></i>
         </a>
         <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>

@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation. A unified 3D model that grounds language in scale-specific geometry through sparse Anchor Tokens and elastic routing." />
 
-    <title>ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation</title>
+    <title>ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation | PLAN Lab</title>
 
     <!-- Open Graph -->
     <meta property="og:title" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation" />
@@ -27,12 +27,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 
     <style>
@@ -84,7 +84,59 @@
     </style>
   </head>
 
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "ELSA3D",
+    "tldr": [
+      "We introduce ELSA3D, a unified 3D model built around elastic semantic anchoring: sparse Anchor Tokens link selected language tokens to geometric evidence at the relevant scale. One router jointly controls anchor selection, geometric scale, block execution, and MLP width, improving language–geometry grounding while roughly halving FLOPs and inference latency compared with the non-elastic variant."
+    ],
+    "abstract": [
+      "ELSA3D is a unified 3D foundation model that structures language and geometric reasoning along matched abstraction scales. Scale-aware octree tokenization retains coarse structural cues and fine geometric detail. Sparse Anchor Tokens provide an explicit cross-modal interface: selected semantic tokens retrieve geometric evidence at a routed scale and fuse it back into the unified representation. An elastic router jointly controls block execution, MLP width, anchor selection, and geometric-scale assignment. Evaluations cover image-to-3D generation, text-to-3D generation, and object captioning, with ablations examining grounding and computational efficiency."
+    ],
+    "contributions": [
+      "Elastic semantic anchoring structures language and geometric reasoning jointly. ELSA3D makes text–3D interaction explicit across matched abstraction scales, rather than collapsing coarse structural cues and fine geometric detail into an undifferentiated sequence. Scale-aware octree tokenization supplies structural bits, scale-specific content codes, positional embeddings, and fixed scale tags for multiscale geometry.",
+      "Anchor Tokens provide a sparse, dynamic cross-modal interface. Each anchor selects a semantic token, routes it to the most relevant 3D scale, retrieves scale-specific geometric evidence, and writes the fused language–geometry signal back into the unified sequence, keeping interaction sparse yet precise.",
+      "An elastic router jointly controls computation and grounding. One routing scheme controls block execution, MLP width, anchor selection, and geometric-scale assignment. The elastic router concentrates cross-modal capacity where semantic–geometric alignment is needed, adapting both computation and grounding to the input.",
+      "ELSA3D improves unified 3D performance while reducing computation. The model achieves state-of-the-art results on image-to-3D generation, text-to-3D generation, and 3D captioning, outperforming the strongest unified baseline on every reported metric while roughly halving FLOPs and inference latency relative to a non-elastic variant of the same model."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "headingName": [
+      {
+        "text": "ELSA3D",
+        "gradient": "linear-gradient(90deg, #FF5F05, #FF0000)"
+      }
+    ],
+    "contributionLeads": [
+      "Elastic semantic anchoring structures language and geometric reasoning jointly.",
+      "Anchor Tokens provide a sparse, dynamic cross-modal interface.",
+      "An elastic router jointly controls computation and grounding.",
+      "ELSA3D improves unified 3D performance while reducing computation."
+    ],
+    "opening": {
+      "source": "qual_image_to_3d.png",
+      "alt": "ELSA3D image-to-3D generation compared with generative and unified baselines.",
+      "caption": "ELSA3D generates 3D objects from an image while preserving overall shape and local appearance."
+    },
+    "teaserSummary": true
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "Text-to-3D generation",
+      "description": "Prompt alignment and generated-shape quality, measured with CLIP, FD, KD, and Q-Align."
+    },
+    "htmlTable:1": {
+      "title": "3D object captioning",
+      "description": "Lexical and semantic similarity between generated object descriptions and reference captions. Higher scores are better."
+    }
+  },
+  "results": {}
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -127,53 +179,16 @@
                 Elastic Semantic Anchoring for Unified 3D Understanding and Generation
               </h1>
 
-              <div class="is-size-5 publication-authors">
-                <div>
-                  <span class="author-block">
-                    <a href="/team/tianjiao(joey)-yu" class="illini-blue">Tianjiao Yu</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/xinzhuo-li" class="illini-blue">Xinzhuo Li</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/yifan-shen" class="illini-blue">Yifan Shen</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/onkar-susladkar" class="illini-blue">Onkar Susladkar</a>,
-                  </span>
-                  <span class="author-block">
-                    <span class="illini-blue">Yuanzhe Liu</span>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/xiaona-zhou" class="illini-blue">Xiaona Zhou</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/ismini-lourentzou" class="illini-blue">Ismini Lourentzou</a>
-                  </span>
-                </div>
-              </div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">PLAN Lab</span>
-                <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-              </div>
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
               <div class="has-text-centered" style="margin: 5px 0;">
                 <h1 class="title is-3 publication-venue">NeurIPS 2026</h1>
               </div>
               
               <div class="column has-text-centered">
-                <div class="publication-links">
-                  <span class="link-block"><a href="https://arxiv.org/abs/2607.06565" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
-
-                  <!-- Code -->
-                  <span class="link-block">
-                    <a href="https://github.com/PLAN-Lab" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fab fa-github"></i></span>
-                      <span>Code (coming soon)</span>
-                    </a>
-                  </span>
-                </div>
+                <div class="publication-links"><a href="https://arxiv.org/pdf/2607.06565" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2607.06565" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
               </div>
             </div></div>
           </div>
@@ -521,12 +536,11 @@
         <div class="container is-max-desktop content">
           <h2 class="title" style="justify-content: left; display: flex;">BibTeX</h2>
           <!-- TODO: update with the arXiv id / venue once available -->
-          <pre><code>@article{yu2026elsa3d,
-  title   = {ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation},
-  author  = {Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Susladkar, Onkar
-             and Liu, Yuanzhe and Zhou, Xiaona and Lourentzou, Ismini},
-  journal = {arXiv preprint},
-  year    = {2026}
+          <pre><code>@inproceedings{yu2026elsa3d,
+  title={ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation},
+  author={Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Susladkar, Onkar and Liu, Yuanzhe and Zhou, Xiaona and Lourentzou, Ismini},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2026}
 }</code></pre>
         </div>
       </section>

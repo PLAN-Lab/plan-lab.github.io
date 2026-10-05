@@ -19,11 +19,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css" />
-  <script src="../../assets/js/project-pages.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
   <style>
     .page-project .vtam-grid-2 {
@@ -211,7 +211,72 @@
   </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "VTAM",
+    "teaserSummary": true,
+    "tldr": [
+      "We introduce VTAM, a video–tactile–action model for contact-rich robotic manipulation. By combining visual observations with touch, VTAM predicts actions and object dynamics while capturing contact and deformation, providing physically grounded guidance for tasks where vision alone is insufficient."
+    ],
+    "contributions": [
+      "VTAM grounds contact-rich manipulation in visual and tactile signals. We introduce a Video-Tactile Action Model that augments a pretrained video transformer with tactile perception. This complements visual observations with force and contact information that vision alone cannot reliably encode.",
+      "Modality transfer fine-tuning adds tactile perception efficiently. The model learns cross-modal representations without tactile–language paired data or independent tactile pretraining. Its first stage learns joint visuo-tactile predictive dynamics through multi-view diffusion over two RGB views and one GelSight stream.",
+      "Tactile regularization and joint action–state–force prediction preserve sensitivity. A regularization loss balances cross-modal attention to prevent visual latents from dominating. In the control stage, conditional diffusion jointly predicts actions, states, and a deformation-derived virtual force proxy, preserving tactile sensitivity during multimodal optimization.",
+      "Real-world experiments demonstrate improved contact-rich control. VTAM achieves 90% average success across chip pick-and-place, cucumber peeling, and whiteboard wiping, with task success rates of 90%, 85%, and 95%, respectively. On potato chip pick-and-place, it exceeds the vision-only pi 0.5 baseline by 80 percentage points."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "splits": [
+      {
+        "heading": "Video Comparisons",
+        "label": "Qualitative Results"
+      }
+    ],
+    "quantitative": {
+      "source": "Results and Analysis"
+    },
+    "contributionLeads": [
+      "VTAM grounds contact-rich manipulation in visual and tactile signals.",
+      "Modality transfer fine-tuning adds tactile perception efficiently.",
+      "Tactile regularization and joint action–state–force prediction preserve sensitivity.",
+      "Real-world experiments demonstrate improved contact-rich control."
+    ],
+    "opening": {
+      "media": [
+        {
+          "type": "iframe",
+          "source": "504763a39872834ba8b508e7ac69a79f",
+          "label": "Chip pick-and-place",
+          "caption": "VTAM uses touch to guide precise contact during chip manipulation."
+        },
+        {
+          "type": "iframe",
+          "source": "a5c32edaa275609be8aeed060d527fb7",
+          "label": "Cucumber peeling",
+          "caption": "VTAM uses visual and tactile feedback to guide contact while peeling a cucumber."
+        },
+        {
+          "type": "iframe",
+          "source": "9ac52cca684a3b48b51b130951bd74ba",
+          "label": "Whiteboard wiping",
+          "caption": "Visual and tactile feedback guide sustained contact during wiping."
+        }
+      ]
+    }
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "Contact-rich manipulation",
+      "description": "Success rates on chip pick-and-place, cucumber peeling, and whiteboard wiping, with 80 trials per model."
+    }
+  },
+  "results": {}
+}
+  </script>
+
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -249,72 +314,20 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="publication-title">VTAM: Video-Tactile-Action Models for<br>Complex Physical Interaction Beyond VLAs
+              <h1 class="publication-title">VTAM: Video-Tactile-Action Models for <br>Complex Physical Interaction Beyond VLAs
               </h1>
 
-              <div class="publication-authors">
-                <span class="author-block name">Haoran Yuan<sup>1,*,&#8225;</sup>,</span>
-                <span class="author-block name">Weigang Yi<sup>1,*</sup>,</span>
-                <span class="author-block name">Zhenyu Zhang<sup>2,*</sup>,</span>
-                <span class="author-block name">Wendi Chen<sup>3,*</sup></span>
-              </div>
-              <div class="publication-authors">
-                <span class="author-block name">Yuchen Mo<sup>1</sup>,</span>
-                <span class="author-block name">Jiashi Yin<sup>1</sup>,</span>
-                <span class="author-block name">Xinzhuo Li<sup>1</sup>,</span>
-                <span class="author-block name">Xiangyu Zeng<sup>1</sup></span>
-              </div>
-              <div class="publication-authors">
-                <span class="author-block name">Chuan Wen<sup>3</sup>,</span>
-                <span class="author-block name">Cewu Lu<sup>3</sup>,</span>
-                <span class="author-block name">Katherine Driggs-Campbell<sup>1</sup>,</span>
-                <span class="author-block name">Ismini Lourentzou<sup>1,&dagger;</sup></span>
-              </div>
+              <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Haoran Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*‡</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Weigang Yi<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="stanford">Zhenyu Zhang<sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Wendi Chen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><sup class="studio-contribution-marker">*</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiashi Yin<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xiangyu Zeng<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="sjtu">Chuan Wen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Cewu Lu<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Katherine Driggs-Campbell<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
 
-              <div class="is-size-5 publication-authors" style="justify-content: center;">
-                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
-                <span class="author-block"><sup>2</sup>Stanford University</span>
-                <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>
-              </div>
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="stanford"><sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><span class="studio-affiliation-name">Stanford University</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span></div>
 
-              <div class="publication-authors notes" style="justify-content: center;">
+              <div class="publication-authors notes studio-contribution-note" style="justify-content: center;">
                 <span class="author-block"><sup>&#8225;</sup>Project lead</span>
                 <span class="author-block"><sup>*</sup>Equal contribution</span>
                 <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
               </div>
 
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="#" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                    <span>Paper (coming soon)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2603.23481" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-link"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/haorany7/VTAM" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-brands fa-github"></i></span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#results-section" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-regular fa-images"></i></span>
-                    <span>Results</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#video-comparisons" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-video"></i></span>
-                    <span>Video</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2603.23481" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.23481" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
             </div>
           </div>
         </div>
@@ -537,23 +550,6 @@
               </div>
             </div>
 
-            <div>
-              <h4 class="title is-6">Success Cases for Baseline Models</h4>
-              <div class="vtam-video-grid vtam-video-grid-2">
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) - Success Case</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f90f86f458ff3555be42bb1c984eb31a/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff90f86f458ff3555be42bb1c984eb31a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-                <div class="vtam-video-card">
-                  <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile - Success Case</div>
-                  <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/fd23275503a3c6a6876226a4f4a8b66b/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ffd23275503a3c6a6876226a4f4a8b66b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <br>
           <h3 class="title is-5">Prediction Visualization</h3>
@@ -578,10 +574,7 @@
         <pre><code>@article{vtam2026,
   title={VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs},
   author={Yuan, Haoran and Yi, Weigang and Zhang, Zhenyu and Chen, Wendi and Mo, Yuchen and Yin, Jiashi and Li, Xinzhuo and Zeng, Xiangyu and Wen, Chuan and Lu, Cewu and Driggs-Campbell, Katherine and Lourentzou, Ismini},
-  journal={arXiv preprint arXiv:2603.23481},
-  eprint={2603.23481},
-  archivePrefix={arXiv},
-  primaryClass={cs.RO},
+  journal={arXiv},
   year={2026}
 }</code></pre>
       </div>

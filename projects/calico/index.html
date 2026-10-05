@@ -14,19 +14,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models" />
-  <title>[CVPR'25] CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models</title>
+  <title>CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models | PLAN Lab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css" />
-  <script src="../../assets/js/project-pages.js" defer></script>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <style>
     .calico-arch-split {
       display: flex;
@@ -180,7 +180,284 @@
   </style>
 </head>
 
-<body class="page-project">
+<body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "Calico",
+    "openingCaption": "Across two images, Calico segments the common object (top), shared parts (middle), and parts unique to each image (bottom). The colored masks ground each answer in the corresponding pixels.",
+    "tldr": [
+      "We introduce Calico, a vision-language model that compares multiple images to identify and segment common objects and shared or unique parts. Calico learns fine-grained correspondences across images, supporting reasoning about similarities and differences with pixel-level grounding."
+    ],
+    "method": {
+      "source": "Calico Architecture"
+    },
+    "dataset": {
+      "name": "MixedParts",
+      "source": "MixedParts Dataset"
+    },
+    "contributions": [
+      "Novel Task. We introduce the novel task of part-focused semantic co-segmentation which aims to co-segment and label common and unique parts between objects across images for granular object comparison. To the best of our knowledge, this is the first work to formalize this multi-image object/part co-segmentation task.",
+      "New Multi-Image Pixel-Grounded LVLM. We propose Calico (Component-Focused Adaptive Learning for Multi-Image Co-Localization of Objects), an LVLM designed for part-focused semantic co-segmentation. Calico incorporates a novel correspondence extraction module to learn cross-image semantic correspondences and an adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient manner.",
+      "New Dataset. We introduce the MixedParts dataset for part-focused semantic co-segmentation, compiled from diverse part segmentation datasets and featuring images of logically comparable objects and parts."
+    ],
+    "contributionLeads": [
+      "Novel Task.",
+      "New Multi-Image Pixel-Grounded LVLM.",
+      "New Dataset."
+    ]
+  },
+  "resultPanels": {
+    "MixedParts benchmark": {
+      "description": "Average performance across common objects, common parts, and unique parts. The first three metrics measure segmentation; SS and S-IoU measure semantic labeling."
+    }
+  },
+  "results": {
+    "results.png": {
+      "type": "table",
+      "title": "MixedParts benchmark",
+      "columns": [
+        "Method",
+        "AP50",
+        "mIoU",
+        "Recall",
+        "SS",
+        "S-IoU"
+      ],
+      "rows": [
+        [
+          "Cascade [1, 22, 27]",
+          "5.7",
+          "27.9",
+          "19.0",
+          "32.2",
+          "14.8"
+        ],
+        [
+          "Multi-Image PartGLEE [32]",
+          "1.2",
+          "29.3",
+          "9.7",
+          "78.5",
+          "63.3"
+        ],
+        [
+          "Multi-Image VLPart [60]",
+          "13.4",
+          "42.8",
+          "34.6",
+          "59.1",
+          "46.5"
+        ],
+        [
+          "Multi-Image GLaMM [50]",
+          "42.9",
+          "59.9",
+          "54.9",
+          "76.8",
+          "71.2"
+        ],
+        [
+          "Multi-Image LISA [27]",
+          "41.4",
+          "59.7",
+          "55.5",
+          "78.7",
+          "72.5"
+        ],
+        [
+          "CALICO",
+          "45.9",
+          "63.7",
+          "59.7",
+          "82.7",
+          "77.1"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/results.png"
+    },
+    "@per-task-results": {
+      "type": "table",
+      "appendTo": "quantitative",
+      "title": "MixedParts results by task",
+      "description": "Separate comparisons for common objects, shared parts, and unique parts. AP50, mIoU, and recall evaluate segmentation; semantic similarity (SS) and semantic IoU (S-IoU) evaluate labels. Higher scores are better.",
+      "columns": [
+        "Method",
+        "AP50 ↑",
+        "mIoU ↑",
+        "Recall ↑",
+        "SS ↑",
+        "S-IoU ↑"
+      ],
+      "rows": [
+        {
+          "group": "Common objects"
+        },
+        [
+          "Cascade",
+          "7.9",
+          "37.0",
+          "28.2",
+          "38.1",
+          "29.6"
+        ],
+        [
+          "Multi-Image PartGLEE",
+          "1.5",
+          "33.5",
+          "9.7",
+          "87.2",
+          "82.8"
+        ],
+        [
+          "Multi-Image VLPart",
+          "18.2",
+          "42.4",
+          "45.6",
+          "58.8",
+          "55.2"
+        ],
+        [
+          "Multi-Image GLaMM",
+          "63.2",
+          "71.6",
+          "73.3",
+          "86.5",
+          "86.2"
+        ],
+        [
+          "Multi-Image LISA",
+          "60.2",
+          "70.0",
+          "71.9",
+          "86.0",
+          "85.3"
+        ],
+        [
+          "CALICO (ours)",
+          "69.2",
+          "75.2",
+          "78.5",
+          "93.7",
+          "93.4"
+        ],
+        {
+          "group": "Common parts"
+        },
+        [
+          "Cascade",
+          "3.5",
+          "18.6",
+          "11.7",
+          "25.6",
+          "6.5"
+        ],
+        [
+          "Multi-Image PartGLEE",
+          "1.9",
+          "32.0",
+          "10.5",
+          "78.4",
+          "63.3"
+        ],
+        [
+          "Multi-Image VLPart",
+          "15.7",
+          "44.5",
+          "29.1",
+          "54.4",
+          "39.9"
+        ],
+        [
+          "Multi-Image GLaMM",
+          "36.7",
+          "52.7",
+          "48.4",
+          "68.5",
+          "59.0"
+        ],
+        [
+          "Multi-Image LISA",
+          "37.3",
+          "54.2",
+          "50.5",
+          "73.9",
+          "63.4"
+        ],
+        [
+          "CALICO (ours)",
+          "38.4",
+          "56.9",
+          "51.9",
+          "74.4",
+          "64.4"
+        ],
+        {
+          "group": "Unique parts"
+        },
+        [
+          "Cascade",
+          "5.7",
+          "28.1",
+          "17.2",
+          "32.8",
+          "8.2"
+        ],
+        [
+          "Multi-Image PartGLEE",
+          "0.1",
+          "22.3",
+          "8.8",
+          "69.9",
+          "43.9"
+        ],
+        [
+          "Multi-Image VLPart",
+          "6.4",
+          "41.5",
+          "29.0",
+          "64.0",
+          "44.4"
+        ],
+        [
+          "Multi-Image GLaMM",
+          "28.9",
+          "55.3",
+          "43.1",
+          "75.3",
+          "68.4"
+        ],
+        [
+          "Multi-Image LISA",
+          "26.6",
+          "55.0",
+          "44.1",
+          "76.2",
+          "68.7"
+        ],
+        [
+          "CALICO (ours)",
+          "30.2",
+          "59.1",
+          "48.8",
+          "80.1",
+          "73.4"
+        ]
+      ],
+      "rankMetrics": true,
+      "source": "paper:calico:supplement-table-5",
+      "provenance": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Nguyen_CALICO_Part-Focused_Semantic_CVPR_2025_supplemental.pdf",
+        "table": "5",
+        "page": 5
+      },
+      "note": ""
+    }
+  }
+}
+  </script>
+
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -222,79 +499,16 @@
               <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
                   width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
                 Vision-Language Models</h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="/team/kiet-nguyen" class="illini-blue">Kiet A. Nguyen</a>,</span>
-                <span class="author-block">
-                  <a href="/team/adheesh-juvekar" class="illini-blue">Adheesh Juvekar</a>,</span>
-                <span class="author-block">
-                  <a href="/team/tianjiao(joey)-yu" class="illini-blue">Tianjiao Yu</a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/muntasir-wahed" class="illini-blue">Muntasir Wahed</a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ismini-lourentzou" class="illini-blue">Ismini Lourentzou</a>
-                </span>
-              </div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span>
-                <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-              </div>
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
               <div class="has-text-centered" style="margin: 5px 0;">
                 <h1 class="title is-3 publication-venue illini-orange">CVPR 2025</h1>
               </div>
 
               <div class="column has-text-centered">
-                <div class="publication-links">
-                  <span class="link-block">
-                    <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://arxiv.org/abs/2412.19331"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/PLAN-Lab/CALICO"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://huggingface.co/PLAN-Lab/CALICO"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <span class="huggingface-icon">🤗</span>
-                      </span>
-                      <span>Checkpoint</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://huggingface.co/datasets/PLAN-Lab/MixedParts"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-chair"></i>
-                      </span>
-                      <span>Dataset</span>
-                    </a>
-                  </span>
-                </div>
+                <div class="publication-links"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2412.19331" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/datasets/PLAN-Lab/MixedParts" class="external-link button is-normal is-rounded is-dark" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a href="https://huggingface.co/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
 
               </div>
             </div>
@@ -650,10 +864,10 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@article{nguyen2025calico,
+        <pre><code>@inproceedings{nguyen2025calico,
   title={CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models},
   author={Nguyen, Kiet A. and Juvekar, Adheesh and Yu, Tianjiao and Wahed, Muntasir and Lourentzou, Ismini},
-  journal={In Proceedings for the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2025}
 }</code></pre>
       </div>

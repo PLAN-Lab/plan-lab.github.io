@@ -13,19 +13,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence" />
-    <title>Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence</title>
+    <title>Core3D: Collaborative Reasoning as a Foundation for 3D Intelligence | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
     <style>
       .gif-grid {
         display: grid;
@@ -67,9 +67,250 @@
       }
     </style>
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script type="module" src="../../assets/vendor/model-viewer/model-viewer.min.js?v=4.0.0"></script>
 </head>
-  <body class="page-project">
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "CoRe3D",
+    "tldr": [
+      "We introduce CoRe3D, a framework that couples language-based planning with geometric reasoning over localized 3D blocks. Joint reinforcement learning aligns semantic plans with geometric construction, enabling CoRe3D to infer objects from implicit descriptions and generate shapes faithful to their intended structure."
+    ],
+    "abstract": [
+      "Recent advances in large multimodal models suggest that explicit reasoning mechanisms play a critical role in improving model reliability, interpretability, and cross-modal alignment. While such reasoning-centric approaches have been proven effective in language and vision tasks, their extension to 3D remains underdeveloped. CoRe3D introduces a unified 3D understanding and generation reasoning framework that jointly operates over semantic and spatial abstractions, enabling high-level intent inferred from language to directly guide low-level 3D content formation. Central to this design is a spatially grounded reasoning representation that decomposes 3D latent space into localized regions, allowing the model to reason over geometry in a compositional and procedural manner. By tightly coupling semantic chain-of-thought inference with structured spatial reasoning, CoRe3D produces 3D outputs that exhibit strong local consistency and faithful alignment with linguistic descriptions."
+    ],
+    "contributions": [
+      "CoRe3D unifies semantic planning and geometric reasoning. We introduce a collaborative reasoning framework with two complementary levels: Semantic Chain-of-Thought for high-level planning and an octant-based Geometric Chain-of-Thought that realizes the plan through a spatially grounded reasoning trajectory over 3D octant tokens.",
+      "Collaborative reasoning interprets implicit descriptive cues. The framework reasons over challenging text prompts that require inferring the correct object or interpreting an indirect description, such as identifying the Statue of Liberty from a description of a colossal copper figure holding a torch.",
+      "3D Co-GRPO aligns semantic plans with geometric construction. We propose a multi-critic optimization method with dense 3D-aware rewards to improve language alignment, geometric structure, and robustness by coordinating the two reasoning levels.",
+      "CoRe3D extends from generation to reciprocal 3D understanding. The same framework supports tasks such as 3D-to-text captioning, demonstrating bidirectional understanding and generation and its potential as a scalable foundation for general 3D intelligence."
+    ],
+    "method": {
+      "source": "CoRe3D Architecture"
+    },
+    "splits": [
+      {
+        "heading": "Quantitative Results",
+        "label": "Quantitative Results"
+      }
+    ],
+    "qualitative": {
+      "source": "Qualitative Results",
+      "additionalSources": [
+        {
+          "source": "Rendered GLBs:",
+          "label": "Interactive 3D Models"
+        }
+      ]
+    },
+    "contributionLeads": [
+      "CoRe3D unifies semantic planning and geometric reasoning.",
+      "Collaborative reasoning interprets implicit descriptive cues.",
+      "3D Co-GRPO aligns semantic plans with geometric construction.",
+      "CoRe3D extends from generation to reciprocal 3D understanding."
+    ]
+  },
+  "resultPanels": {
+    "General reasoning benchmarks": {
+      "description": "Language understanding and reasoning scores for vision-language and 3D models. Higher scores are better."
+    },
+    "3D captioning": {
+      "description": "Object captioning on Objaverse, comparing lexical overlap and semantic similarity. Higher scores are better."
+    },
+    "3D generation": {
+      "description": "Text-to-3D and image-to-3D generation quality. CLIP measures alignment; lower FD and KD indicate closer agreement with the reference distribution."
+    }
+  },
+  "results": {
+    "quant_r1.png": {
+      "type": "table",
+      "title": "General reasoning benchmarks",
+      "columns": [
+        "Model",
+        "MMLU ↑",
+        "PIQA ↑",
+        "GSM8K ↑",
+        "SIQA ↑"
+      ],
+      "rows": [
+        [
+          "Qwen2.5-VL-7B",
+          "67.5",
+          "81.3",
+          "43.2",
+          "41.0"
+        ],
+        [
+          "LLaMA3.2-Vision-11B",
+          "66.2",
+          "80.1",
+          "42.1",
+          "40.6"
+        ],
+        [
+          "LLaMA-Mesh-8B",
+          "59.8",
+          "79.8",
+          "37.2",
+          "40.3"
+        ],
+        [
+          "ShapeLLM-Omni-7B",
+          "64.3",
+          "78.9",
+          "55.6",
+          "41.5"
+        ],
+        [
+          "CoRe3D",
+          "67.6",
+          "79.4",
+          "57.3",
+          "41.5"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/quant_r1.png"
+    },
+    "quant_r2.png": {
+      "type": "table",
+      "title": "3D captioning",
+      "columns": [
+        "Model",
+        "BLEU-1 ↑",
+        "ROUGE-L ↑",
+        "METEOR ↑",
+        "Sentence-BERT ↑",
+        "SimCSE ↑"
+      ],
+      "rows": [
+        [
+          "LLaVA-13B",
+          "4.01",
+          "8.18",
+          "13.18",
+          "46.97",
+          "48.86"
+        ],
+        [
+          "Qwen2.5-VL-7B",
+          "4.05",
+          "7.85",
+          "14.23",
+          "48.90",
+          "50.86"
+        ],
+        [
+          "3D-LLM",
+          "15.11",
+          "17.84",
+          "19.22",
+          "42.36",
+          "43.58"
+        ],
+        [
+          "LEO",
+          "16.98",
+          "20.12",
+          "20.91",
+          "48.01",
+          "47.25"
+        ],
+        [
+          "PointLLM-13B",
+          "3.18",
+          "7.54",
+          "12.24",
+          "47.89",
+          "49.01"
+        ],
+        [
+          "ShapeLLM-Omni",
+          "18.92",
+          "21.46",
+          "22.12",
+          "49.43",
+          "50.72"
+        ],
+        [
+          "CoRe3D",
+          "24.02",
+          "26.45",
+          "24.98",
+          "51.17",
+          "52.79"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/quant_r2.png"
+    },
+    "quant_r3.png": {
+      "type": "table",
+      "title": "3D generation",
+      "columns": [
+        "Method",
+        "Text · CLIP ↑",
+        "Text · FD ↓",
+        "Text · KD ↓",
+        "Image · CLIP ↑",
+        "Image · FD ↓",
+        "Image · KD ↓"
+      ],
+      "rows": [
+        [
+          "SAR3D",
+          "23.1",
+          "28.4",
+          "0.27",
+          "83.9",
+          "22.1",
+          "0.18"
+        ],
+        [
+          "CLAY",
+          "27.3",
+          "23.9",
+          "0.21",
+          "84.6",
+          "13.5",
+          "0.10"
+        ],
+        [
+          "Trellis",
+          "28.9",
+          "18.6",
+          "0.19",
+          "85.1",
+          "10.9",
+          "0.08"
+        ],
+        [
+          "ShapeLLM-Omni",
+          "27.0",
+          "24.4",
+          "0.24",
+          "84.4",
+          "14.1",
+          "0.09"
+        ],
+        [
+          "CoRe3D",
+          "30.4",
+          "18.5",
+          "0.18",
+          "85.9",
+          "11.2",
+          "0.08"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/quant_r3.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -111,72 +352,12 @@
           Collaborative Reasoning as a Foundation for 3D Intelligence
         </h1>
 
-              <div class="is-size-5 publication-authors">
-              <div>
-                <span class="author-block">
-                    <a href="/team/tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/xinzhuo-li" class="illini-blue" >Xinzhuo Li</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/yifan-shen" class="illini-blue" >Yifan Shen</a>,
-                </span>
-                <span class="author-block">
-                  <a href="" class="illini-blue" >Yuanzhe Liu</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
-                </span>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="">Yuanzhe Liu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              </div>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">PLAN Lab</span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2512.12768" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2512.12768" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
-                  </a>
-                </span>
-
-                <!-- Demo Link. -->
-                <!-- <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-vr-cardboard"></i>
-                    </span>
-                    <span>Demo (coming soon)</span>
-                  </a>
-                </span> -->
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2512.12768" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2512.12768" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded" data-resource="Interactive 3D Models" href="#studio-interactive-models"><span class="icon" aria-hidden="true"><i class="fa-solid fa-cube"></i></span><span>Interactive 3D Models</span></a></div>
 
             </div>
           </div>
@@ -447,11 +628,11 @@
     <div class="container is-max-desktop content">
       <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
       <pre><code>@article{yu2025core3d,
-          title={CoRe3D: Collaborative Reasoning as a Foundation for 3D Intelligence},
-          author={Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Liu, Yuanzhe and Lourentzou, Ismini},
-          journal={arXiv preprint arXiv:2512.12768},
-          year={2025}
-        }</code></pre>
+  title={CoRe3D: Collaborative Reasoning as a Foundation for 3D Intelligence},
+  author={Yu, Tianjiao and Li, Xinzhuo and Shen, Yifan and Liu, Yuanzhe and Lourentzou, Ismini},
+  journal={arXiv preprint arXiv:2512.12768},
+  year={2025}
+}</code></pre>
     </div>
   </section>
 
