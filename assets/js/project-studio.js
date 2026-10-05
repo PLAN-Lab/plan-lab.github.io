@@ -1,7 +1,7 @@
 /* Shared presentation for the reviewed PLAN Lab project pages. */
 (async () => {
  'use strict';
- const assetVersion = window.PLAN_PROJECT_ASSET_VERSION || 'reviewed-project-pages-e418f00-v1';
+ const assetVersion = window.PLAN_PROJECT_ASSET_VERSION || 'project-pages-inline-data-v2';
  if (document.body.classList.contains('project-studio')) return;
  const main = document.querySelector('main');
  const hero = main?.querySelector('.hero');
@@ -49,105 +49,10 @@
  if (colon > 0 && colon < 40) {
   title.replaceChildren(el('span','studio-name',rawTitle.slice(0,colon)),el('span','studio-subtitle',rawTitle.slice(colon+1).trim()));
  }
- // Read affiliation mappings separately from the original names and author links.
- // The source byline remains authoritative, including contribution annotations.
- const authorResponse = await fetch('../../assets/data/project-authors.json?v='+assetVersion);
- if (!authorResponse.ok) throw new Error(`Author metadata HTTP ${authorResponse.status}`);
- const authorData = await authorResponse.json();
- const authorSpec = authorData.projects[slug];
- if (authorSpec?.authorGroups.length) {
-  const groups = [...hero.querySelectorAll('.publication-authors')];
-  const institutionIds = [...new Set(Object.values(authorSpec.markers))];
-  const multipleInstitutions = institutionIds.length > 1;
-  const marker = id => {
-   const institution = authorData.institutions[id];
-   const sup = el('sup',`studio-affiliation-marker${id==='uiuc'?' studio-plan-marker':''}`,institution.symbol);
-   sup.title = institution.name; sup.setAttribute('aria-label',institution.name); return sup;
-  };
-  const authors = authorSpec.authorGroups.flatMap(i=>[...groups[i].querySelectorAll('.author-block')].map(source=>{
-   const copy = source.cloneNode(true);
-   // A few legacy author spans contain other authors; handle each exactly once.
-   copy.querySelectorAll('.author-block').forEach(n=>n.remove());
-   const ids = [], notes = [];
-   copy.querySelectorAll('sup').forEach(sup=>{
-    const tokens = sup.textContent.match(/\d+|[♦♣♠♥★*†‡]/g) || [];
-    tokens.forEach(token=>{
-     if(authorSpec.markers[token]) ids.push(authorSpec.markers[token]);
-     else if(/^[*†‡]$/.test(token)) notes.push(token);
-     else throw new Error(`Unknown affiliation ${slug}: ${token}`);
-    }); sup.remove();
-   });
-   if(!ids.length && institutionIds.length===1) ids.push(institutionIds[0]);
-   if(!ids.length) throw new Error(`Missing affiliation in ${slug}: ${copy.textContent.trim()}`);
-   const name = copy.textContent.replace(/\s+/g,' ').replace(/[,;\s]+$/,'').trim();
-   const node = el('span','author-block studio-author');
-   node.dataset.affiliations = [...new Set(ids)].join(',');
-   const originalLink = copy.querySelector('a');
-   if(originalLink) {
-    const link = originalLink.cloneNode(false); link.removeAttribute('class'); link.removeAttribute('style');
-    link.textContent = name; node.append(link);
-   } else node.append(document.createTextNode(name));
-   if(multipleInstitutions) [...new Set(ids)].forEach((id,i)=>{
-    if(i) node.append(el('sup','studio-marker-separator',',')); node.append(marker(id));
-   });
-   if(notes.length) node.append(el('sup','studio-contribution-marker',notes.join('')));
-   return node;
-  }));
-  authors.forEach((node,i)=>{if(i<authors.length-1)node.append(document.createTextNode(', '));});
-  const byline = groups[authorSpec.authorGroups[0]];
-  byline.classList.add('studio-author-list');
-  const rowSizes = authorSpec.rows || (authors.length>8?[Math.ceil(authors.length/2),Math.floor(authors.length/2)]:[authors.length]);
-  let offset = 0;
-  byline.replaceChildren(...rowSizes.map(size=>{
-   const row = el('div','studio-author-row'); row.append(...authors.slice(offset,offset+size)); offset+=size; return row;
-  }));
-  authorSpec.authorGroups.slice(1).forEach(i=>groups[i].remove());
-  const affiliations = groups[authorSpec.affiliationGroups[0]];
-  affiliations.classList.add('studio-affiliations');
-  affiliations.removeAttribute('style');
-  affiliations.replaceChildren(...institutionIds.map(id=>{
-   const item = el('span','studio-affiliation');
-   item.dataset.institution = id;
-   if(multipleInstitutions) item.append(marker(id));
-   if(id==='uiuc' && authorSpec.planLab) {
-    const lab = el('a','studio-lab-name','PLAN Lab'); lab.href='../../index.html';
-    item.append(lab,document.createTextNode(' · '));
-   }
-   item.append(el('span','studio-affiliation-name',authorData.institutions[id].name)); return item;
-  }));
-  authorSpec.affiliationGroups.slice(1).forEach(i=>groups[i].remove());
-  (authorSpec.contributionGroups || []).forEach(i=>groups[i].classList.add('studio-contribution-note'));
-  hero.querySelectorAll('.equal-note, .author-notes, .equal-contribution').forEach(n=>n.classList.add('studio-contribution-note'));
- }
- // Use the same resource labels, icons and order, with recorded project URLs.
- const resourceVersion = assetVersion;
- const resourceResponse = await fetch('../../assets/data/project-resources.json?v='+resourceVersion);
- if (!resourceResponse.ok) throw new Error(`Resource metadata HTTP ${resourceResponse.status}`);
- const resources = (await resourceResponse.json()).projects[slug];
- const icons = {Paper:'fa-solid fa-file-pdf', arXiv:'fa-solid fa-file-lines', Code:'fa-brands fa-github', Dataset:'fa-solid fa-database', 'Interactive 3D Models':'fa-solid fa-cube'};
- const linkGroups = [...hero.querySelectorAll('.publication-links')];
- const links = linkGroups[0];
- if (links && resources) {
-  const original = [...hero.querySelectorAll('.publication-links a.button')];
-  const buttons = resources.map((resource,index)=>{
-   const button = original[index] || el('a','button is-rounded');
-   button.classList.toggle('studio-primary',resource.label==='Paper');
-   button.dataset.resource = resource.label;
-   button.removeAttribute('aria-disabled');button.removeAttribute('title');
-   if(resource.href) button.setAttribute('href',resource.href);
-   else {
-    button.removeAttribute('href');button.setAttribute('aria-disabled','true');
-    button.title = resource.label==='arXiv'?'No arXiv version is recorded for this project.':`${resource.label} is not available yet.`;
-   }
-   const icon=el('span','icon');icon.setAttribute('aria-hidden','true');
-   if(resource.label==='Checkpoint') {icon.classList.add('studio-hf-icon');icon.textContent='🤗';}
-   else icon.append(el('i',icons[resource.label] || 'fa-solid fa-arrow-up-right-from-square'));
-   const suffix=resource.href?'':resource.label==='arXiv'?' (unavailable)':' (coming soon)';
-   button.replaceChildren(icon,el('span','',resource.label+suffix));
-   return button;
-  });
-  links.replaceChildren(...buttons);linkGroups.slice(1).forEach(group=>group.remove());
- }
+ // Bylines, affiliations, resource buttons, and citations are authored in this page's HTML.
+ const dataNode=document.getElementById('project-data');
+ const projectData=dataNode?JSON.parse(dataNode.textContent):{};
+ hero.querySelectorAll('.equal-note, .author-notes, .equal-contribution').forEach(n=>n.classList.add('studio-contribution-note'));
  // Remove legacy inline paint; the shared palette controls text, tables and charts.
  main.querySelectorAll('[style]').forEach(node=>{
   if(node.style.color) node.style.removeProperty('color');
@@ -160,7 +65,7 @@
   script.onload=resolve;script.onerror=()=>reject(new Error('Native result renderer unavailable'));
   document.head.append(script);
  });
- await window.PLANResults.render(main,slug);
+ await window.PLANResults.render(main,projectData.results);
  if (slug === 'graphvid') {
   main.querySelectorAll('.model-spec-grid').forEach(grid=>grid.remove());
   const heatmap = main.querySelector('[data-result-source="static/images/gvc_corr.png"]');
@@ -174,24 +79,13 @@
   script.onload=resolve;script.onerror=()=>reject(new Error('Project section renderer unavailable'));
   document.head.append(script);
  });
- const sectionSpec = await window.PLANSections.normalize(main,slug);
+ const sectionSpec = await window.PLANSections.normalize(main,projectData.sections);
  if(sectionSpec?.heroTitle) {
   title.replaceChildren(el('span','studio-name',sectionSpec.heroTitle.name),el('span','studio-subtitle',sectionSpec.heroTitle.subtitle));
   hero.querySelectorAll('img[src*="logo"]').forEach(image=>image.remove());
  }
  const wordmark=title.querySelector('.studio-name');
  if(wordmark && wordmark.textContent.length>11 && !/\s/.test(wordmark.textContent))wordmark.classList.add('studio-long-name');
- // Read the current citation independently of cached page HTML.
- const citationCode=main.querySelector('[data-studio-section="bibtex"] pre code');
- if(citationCode && slug!=='template') {
-  const citationVersion=assetVersion;
-  const response=await fetch('../../assets/data/project-citations.json?v='+citationVersion,{cache:'no-store'});
-  if(!response.ok)throw new Error(`Citation metadata HTTP ${response.status}`);
-  const citation=(await response.json()).projects[slug];
-  if(!citation)throw new Error(`Missing citation metadata for ${slug}`);
-  const fields=Object.entries(citation.fields).map(([key,value])=>`  ${key}={${value}}`);
-  citationCode.textContent=`@${citation.entryType}{${citation.key},\n${fields.join(',\n')}\n}`;
- }
  const presentationModules={egoforge:'PLANEgoForge',hallusegbench:'PLANHalluSeg', 'latte-flow':'PLANLatteFlow',mmplanner:'PLANMMPlanner',mtsbench:'PLANmTSBench',prima:'PLANPRIMA',pyratok:'PLANPyraTok',silsa:'PLANSILSA',spatialreasoner:'PLANSpatialReasoner',unidflow:'PLANUniDFlow',vtam:'PLANVTAM'};
  if(presentationModules[slug]) {
   await new Promise((resolve,reject)=>{
@@ -259,7 +153,7 @@
    const script=document.createElement('script');script.src='static/js/studio.js?v='+assetVersion;
    script.onload=resolve;script.onerror=()=>reject(new Error('Uncertainty in Action presentation unavailable'));document.head.append(script);
   });
-  await window.PLANECE.prepare(main);
+  await window.PLANECE.prepare(main,projectData.results);
  }
  if (slug === 'ec-vlm') {
   await new Promise((resolve,reject)=>{
@@ -736,7 +630,7 @@
   const before=lineBreak.previousElementSibling,after=lineBreak.nextElementSibling;
   if(before?.matches('div,p,figure,table,h2,h3,br') && after?.matches('div,p,figure,table,h2,h3,br'))lineBreak.remove();
  });
- await window.PLANResults.format(main,slug,zoomable);
+ await window.PLANResults.format(main,projectData.resultPanels,zoomable);
  // Offscreen videos stop decoding. Reduced motion requires explicit playback.
  const observer=new IntersectionObserver(entries=>entries.forEach(({target:video,isIntersecting})=>{
   if(!isIntersecting) video.pause();

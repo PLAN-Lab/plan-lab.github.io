@@ -14,7 +14,7 @@
  }
  async function prepare(main) {
   await new Promise((resolve,reject)=>{
-   const style=el('link');style.rel='stylesheet';style.href='static/css/studio.css?v=reviewed-project-pages-e418f00-v1';
+   const style=el('link');style.rel='stylesheet';style.href='static/css/studio.css?v=project-pages-inline-data-v2';
    style.onload=resolve;style.onerror=()=>reject(new Error('EC-VLM presentation styles unavailable'));document.head.append(style);
   });
   const header=main.querySelector('.studio-header'),oldVenue=header.querySelector('.publication-venue'),venueWrapper=oldVenue.parentElement;

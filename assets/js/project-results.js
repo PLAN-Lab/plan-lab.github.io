@@ -1,7 +1,6 @@
-/* Native, accessible result views. Data lives in assets/data/project-results/*.json. */
+/* Native, accessible result views using data embedded in each project HTML page. */
 (() => {
  'use strict';
- const assetVersion = window.PLAN_PROJECT_ASSET_VERSION || 'reviewed-project-pages-e418f00-v1';
  const colors=['#83afd9','#b2c9e1','#507ca7','#d3deeb','#ff915b'];
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const entrance=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
@@ -112,11 +111,8 @@
    spec.categories.forEach((name,i)=>{const y=28+i*step;const [lo,q1,med,q3,hi]=metric.values[i];svg.append(sv('text',{x:left-15,y:y+4,'text-anchor':'end'},name),sv('line',{x1:x(lo),x2:x(hi),y1:y,y2:y,stroke:'#83afd9'}),sv('line',{x1:x(lo),x2:x(lo),y1:y-5,y2:y+5,stroke:'#83afd9'}),sv('line',{x1:x(hi),x2:x(hi),y1:y-5,y2:y+5,stroke:'#83afd9'}));const box=sv('rect',{x:x(q1),y:y-7,width:Math.max(x(q3)-x(q1),1),height:14,fill:'#83afd933',stroke:'#83afd9'});const estimate=spec.approximate?'≈ ':'';box.append(sv('title',{},`${name}: Q1 ${estimate}${q1}, median ${estimate}${med}, Q3 ${estimate}${q3}`));svg.append(box,sv('line',{x1:x(med),x2:x(med),y1:y-7,y2:y+7,stroke:'#ff915b','stroke-width':2}));});holder.append(svg);
   }select.addEventListener('change',()=>draw(spec.metrics[Number(select.value)]));draw(spec.metrics[0]);note(figure,spec);return figure;
  }
- async function render(main,slug){
-  const version=assetVersion;
-  const response=await fetch(`../../assets/data/project-results/${encodeURIComponent(slug)}.json?v=${version}`);
-  if(response.status===404)return; if(!response.ok)throw new Error(`Result data HTTP ${response.status}`);
-  const data=await response.json();resultData=data;
+ async function render(main,data={}){
+  resultData=data;
   for(const [filename,spec] of Object.entries(data)){
    const targets=[...main.querySelectorAll('img')].filter(img=>decodeURIComponent(new URL(img.src).pathname).split('/').pop()===filename);
    for(const image of targets){
@@ -138,10 +134,7 @@
    section.append(table(spec));
   });
  }
- async function format(main,slug,zoomable){
-  const response=await fetch('../../assets/data/project-result-panels.json?v='+assetVersion);
-  if(!response.ok)throw new Error(`Result panel metadata HTTP ${response.status}`);
-  const metadata=(await response.json()).projects[slug] || {};
+ async function format(main,metadata={},zoomable){
   main.querySelectorAll('[data-studio-section="quantitative"]').forEach(section=>{
    const box=section.querySelector(':scope > .container'),heading=section.querySelector('h2');
    const units=[...box.querySelectorAll('.studio-native-result,table,img')].filter(node=>node.matches('.studio-native-result') || !node.closest('.studio-native-result'));

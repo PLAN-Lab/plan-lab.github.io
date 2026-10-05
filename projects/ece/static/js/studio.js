@@ -1,7 +1,7 @@
 /* Page-specific presentation; the source abstract, policies, and scores remain intact. */
 (() => {
  'use strict';
- const version='reviewed-project-pages-e418f00-v1';
+ const version='project-pages-inline-data-v2';
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
  const sv=(tag,attrs={},text)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([key,value])=>n.setAttribute(key,value));if(text!=null)n.textContent=text;return n;};
  const colors=['#ff6c2f','#fb873d','#ffa85c','#ffc887','#ffdda5'];
@@ -58,7 +58,7 @@
   }
   select.addEventListener('change',()=>draw(Number(select.value)));draw(0);
  }
- async function prepare(main) {
+ async function prepare(main, data) {
   await new Promise((resolve,reject)=>{
    const style=el('link');style.rel='stylesheet';style.href=`static/css/studio.css?v=${version}`;style.onload=resolve;style.onerror=()=>reject(new Error('Uncertainty in Action styles unavailable'));document.head.append(style);
   });
@@ -77,7 +77,7 @@
    const lower=body.querySelector('.studio-group').textContent.includes('↓');[...body.rows].filter(row=>!row.classList.contains('studio-group')).forEach(row=>rank([...row.cells].slice(1),lower));
   });
   box.replaceChildren(title,...figures);
-  const response=await fetch(`../../assets/data/project-results/ece.json?v=${version}`);if(!response.ok)throw new Error(`Confidence results HTTP ${response.status}`);const data=await response.json();verticalBars(figures[1],data['r2.png'],data['r1.png']);
+  verticalBars(figures[1],data['r2.png'],data['r1.png']);
  }
  function feature({nav,zoomable,main}) {
   const section=el('section','studio-feature ece-feature');section.setAttribute('aria-labelledby','ece-feature-title');

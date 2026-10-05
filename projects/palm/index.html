@@ -27,8 +27,8 @@
   <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
   <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-  <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg" />
 
   <style>
@@ -150,6 +150,191 @@
 </head>
 
 <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "PALM",
+    "teaserSummary": true,
+    "tldr": [
+      "We introduce PALM, a vision-language-action (VLA) model for long-horizon robotic manipulation that anticipates future interactions and tracks subtask progress. By combining visual cues about objects, contact, and motion with progress-aware action generation, PALM helps robots carry out coherent multi-step tasks."
+    ],
+    "contributions": [
+      "Structured affordance foresight anticipates future interaction needs. PALM predicts factorized affordances for object relevance, contact geometry, spatial placement, and motion dynamics. These global, local, spatial, and dynamic cues help the policy reason about which object matters, where to interact, where to place or move it, and how the next interaction should unfold.",
+      "A progress-aware diffusion policy coordinates long-horizon subtasks. The policy conditions on the predicted affordances and jointly estimates actions and continuous within-subtask progress. These estimates guide continuation, transition, and termination decisions, reducing repeated or skipped actions during multi-step manipulation.",
+      "Simulation and real-world evaluations demonstrate long-horizon robustness. PALM reaches 91.8% success on LIBERO-LONG, improves average length on CALVIN ABCD by 12.5%, and achieves a twofold improvement over real-world baselines across three generalization settings: object relocation, unseen lighting, and visual distractors."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "quantitative": {
+      "source": "Results and Analysis"
+    },
+    "qualitative": {
+      "source": "Qualitative Videos"
+    },
+    "contributionLeads": [
+      "Structured affordance foresight anticipates future interaction needs.",
+      "A progress-aware diffusion policy coordinates long-horizon subtasks.",
+      "Simulation and real-world evaluations demonstrate long-horizon robustness."
+    ],
+    "opening": {
+      "media": [
+        {
+          "source": "./static/videos/original.mp4",
+          "type": "video",
+          "label": "Multi-step manipulation",
+          "caption": "PALM tracks progress through the original task."
+        },
+        {
+          "source": "./static/videos/unseen-lighting.mp4",
+          "type": "video",
+          "label": "Unseen lighting",
+          "caption": "The policy executes the task under changed illumination."
+        },
+        {
+          "source": "./static/videos/random-relocation.mp4",
+          "type": "video",
+          "label": "Object relocation",
+          "caption": "PALM responds when objects are moved during execution."
+        }
+      ]
+    }
+  },
+  "resultPanels": {
+    "Robustness in real-world manipulation": {
+      "description": "Long-horizon task completion under relocation, unfamiliar lighting, and visual distractions."
+    },
+    "image:real_world_setup.png": {
+      "title": "Real-world evaluation setup",
+      "description": "The six-step manipulation task is evaluated with an xArm6 robot and two RealSense cameras."
+    },
+    "image:robustness_settings.png": {
+      "title": "Real-world robustness settings",
+      "description": "Evaluation introduces object relocation, unfamiliar lighting, and multi-object visual distractions."
+    }
+  },
+  "results": {
+    "real_world_results.png": {
+      "type": "table",
+      "title": "Robustness in real-world manipulation",
+      "columns": [
+        "Method",
+        "1 task",
+        "2 tasks",
+        "3 tasks",
+        "4 tasks",
+        "5 tasks",
+        "6 tasks",
+        "Average length ↑"
+      ],
+      "rows": [
+        {
+          "group": "Random localization"
+        },
+        [
+          "OpenVLA [55]",
+          "0.45",
+          "0.30",
+          "0.15",
+          "0.05",
+          "0.00",
+          "0.00",
+          "0.95"
+        ],
+        [
+          "Octo [111]",
+          "0.35",
+          "0.20",
+          "0.10",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.65"
+        ],
+        [
+          "PALM",
+          "0.70",
+          "0.65",
+          "0.55",
+          "0.45",
+          "0.40",
+          "0.30",
+          "3.05"
+        ],
+        {
+          "group": "Visual distraction"
+        },
+        [
+          "OpenVLA [55]",
+          "0.65",
+          "0.50",
+          "0.25",
+          "0.15",
+          "0.05",
+          "0.00",
+          "1.60"
+        ],
+        [
+          "Octo [111]",
+          "0.45",
+          "0.35",
+          "0.15",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.95"
+        ],
+        [
+          "PALM",
+          "0.85",
+          "0.80",
+          "0.65",
+          "0.60",
+          "0.50",
+          "0.40",
+          "3.80"
+        ],
+        {
+          "group": "Unseen lighting"
+        },
+        [
+          "OpenVLA [55]",
+          "0.55",
+          "0.35",
+          "0.25",
+          "0.10",
+          "0.00",
+          "0.00",
+          "1.25"
+        ],
+        [
+          "Octo [111]",
+          "0.50",
+          "0.35",
+          "0.15",
+          "0.05",
+          "0.00",
+          "0.00",
+          "1.05"
+        ],
+        [
+          "PALM",
+          "0.80",
+          "0.70",
+          "0.60",
+          "0.60",
+          "0.45",
+          "0.40",
+          "3.55"
+        ]
+      ],
+      "note": "Task columns report the probability of completing that many tasks in a row.",
+      "source": "static/images/real_world_results.png"
+    }
+  }
+}
+  </script>
+
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
@@ -189,53 +374,15 @@
             <div class="column has-text-centered">
               <h1 class="publication-title">PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation</h1>
 
-              <div class="publication-authors">
-                <span class="author-block name">Yuanzhe Liu<sup>1,2</sup>,</span>
-                <span class="author-block name">Jingyuan Zhu<sup>1</sup>,</span>
-                <span class="author-block name">Yuchen Mo<sup>2</sup>,</span>
-                <span class="author-block name">Gen Li<sup>3</sup>,</span>
-                <span class="author-block name">Xu Cao<sup>2</sup>,</span>
-                <span class="author-block name">Jin Jin<sup>4</sup></span>
-              </div>
-              <div class="publication-authors">
-                <span class="author-block name">Yifan Shen<sup>2</sup>,</span>
-                <span class="author-block name">Zhengyuan Li<sup>2</sup>,</span>
-                <span class="author-block name">Tianjiao Yu<sup>2</sup>,</span>
-                <span class="author-block name">Wenzhen Yuan<sup>2</sup>,</span>
-                <span class="author-block name">Fangqiang Ding<sup>5</sup>,</span>
-                <span class="author-block name">Ismini Lourentzou<sup>2</sup></span>
-              </div>
+              <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="penn,uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn">Jingyuan Zhu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ntu">Gen Li<sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="oxford">Jin Jin<sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Zhengyuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Wenzhen Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="mit">Fangqiang Ding<sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-              <div class="is-size-5 publication-authors" style="justify-content: center;">
-                <span class="author-block"><sup>1</sup>University of Pennsylvania</span>
-                <span class="author-block"><sup>2</sup>University of Illinois Urbana-Champaign</span>
-                <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
-              </div>
-              <div class="is-size-5 publication-authors" style="justify-content: center;">
-                <span class="author-block"><sup>4</sup>University of Oxford</span>
-                <span class="author-block"><sup>5</sup>Massachusetts Institute of Technology</span>
-              </div>
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ntu"><sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup><span class="studio-affiliation-name">Nanyang Technological University</span></span><span class="studio-affiliation" data-institution="oxford"><sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup><span class="studio-affiliation-name">University of Oxford</span></span><span class="studio-affiliation" data-institution="mit"><sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup><span class="studio-affiliation-name">Massachusetts Institute of Technology</span></span></div>
 
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
             </div>
 
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2601.07060" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2601.07060" class="button is-rounded is-dark">
-                    <span class="icon"><i class="fa-solid fa-link"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block"><a href="https://github.com/PLAN-Lab/PALM" class="button is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
-                <span class="link-block"><a href="https://huggingface.co/PLAN-Lab/PALM" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-cube"></i></span><span>Checkpoint</span></a></span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2601.07060" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.07060" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
             </div>
           </div>
         </div>

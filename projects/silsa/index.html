@@ -20,15 +20,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2">
   <link rel="stylesheet" href="style.css">
-  <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
   <script src="main.js" defer></script>
   <!-- Keep the lab's existing analytics property. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-48J3PYKGQ6');</script>
 </head>
 <body class="page-project silsa-page" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "SILSA",
+    "tldr": [
+      "We introduce SILSA, a framework for generating high-resolution 3D shapes from a single image using compact slice-based representations. SILSA coordinates overlapping slices across three axes and preserves thin structures, holes, and connectivity, producing detailed shapes with substantially fewer tokens."
+    ],
+    "contributions": [
+      "Sliding-window slice latents provide a compact representation of 3D shapes. We introduce SILSA, a topology-aware generation framework that replaces expensive local voxel tokens with a fixed set of overlapping depth-window slices along the three canonical axes. The representation preserves cross-sectional continuity and supports single-stage rectified-flow generation.",
+      "SliceVAE and a Volumetric Anchor Lattice coordinate reconstruction. A Slice VAE encodes oriented surface samples into multi-axis slice latents and reconstructs geometry with a sparse volumetric decoder. A shared 3D anchor workspace coordinates the directional slice streams.",
+      "Slice-level topology supervision preserves structural correctness. Persistence-diagram matching and Betti-transition alignment across neighboring slices encourage correct cross-sectional topology, preserving thin structures, repeated components, and long-range connectivity.",
+      "Experiments measure structural fidelity and generation cost. SILSA improves PSNR by 8.7%, coverage by 5.96 absolute points, and Betti error by 9.2% over the strongest baseline. It uses 70.0% fewer tokens than the next-most compact baseline and over 98% fewer than sparse or hierarchical tokenizers, reducing training memory by 40.4% and inference time by 58.5%."
+    ],
+    "method": {
+      "source": "SILSA architecture",
+      "additionalSources": [
+        "Sliding-window slice representation"
+      ]
+    },
+    "quantitative": {
+      "source": "Quantitative results"
+    },
+    "qualitative": {
+      "source": "Image-to-3D results",
+      "additionalSources": [
+        "VAE reconstruction comparisons"
+      ]
+    },
+    "contributionLeads": [
+      "Sliding-window slice latents provide a compact representation of 3D shapes.",
+      "SliceVAE and a Volumetric Anchor Lattice coordinate reconstruction.",
+      "Slice-level topology supervision preserves structural correctness.",
+      "Experiments measure structural fidelity and generation cost."
+    ],
+    "opening": {
+      "source": "teaser.webp",
+      "alt": "SILSA-generated 3D shapes preserve thin structures, repeated parts, and connectivity.",
+      "caption": "SILSA generates detailed 3D geometry from an image using 384 slice tokens.",
+      "context": "quantitative"
+    }
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "Efficiency comparison",
+      "description": "Training and inference cost, token counts, and geometric error under the reported A100 setup. Lower scores are better."
+    },
+    "htmlTable:1": {
+      "title": "VAE reconstruction quality",
+      "description": "Geometric reconstruction, occupancy overlap, and topology. F-scores use thresholds of 0.01 and 0.005."
+    },
+    "htmlTable:2": {
+      "title": "Image-to-3D generation",
+      "description": "Prompt alignment, distributional quality, visual fidelity, and coverage for generated 3D objects."
+    }
+  },
+  "results": {}
+}
+  </script>
+
   <div class="project-bg"></div><div class="project-grid"></div>
   <a class="skip" href="#main">Skip to content</a>
   <nav class="glass-nav" aria-label="PLAN Lab navigation">
@@ -44,21 +103,10 @@
   <main id="main">
     <section class="hero project-hero" aria-labelledby="paper-title"><div class="hero-body"><div class="container is-max-desktop"><div class="has-text-centered">
       <h1 id="paper-title" class="publication-title"><span class="model-name">SILSA</span>: Sliding-Window Slice Latents for<br class="desktop-break">Topology-Preserving High-Resolution 3D Generation</h1>
-      <div class="is-size-5 publication-authors author-list">
-            <span class="author-block"><a href="/team/tianjiao(joey)-yu" class="illini-blue">Tianjiao Yu</a>,</span>
-            <span class="author-block"><a href="/team/xinzhuo-li" class="illini-blue">Xinzhuo Li</a>,</span>
-            <span class="author-block"><a href="/team/yifan-shen" class="illini-blue">Yifan Shen</a>,</span>
-            <span class="author-block"><a href="/team/ying-shen" class="illini-blue">Ying Shen</a>,</span>
-            <span class="author-block"><a href="/team/onkar-susladkar" class="illini-blue">Onkar Susladkar</a>,</span>
-            <span class="author-block"><a href="/team/ismini-lourentzou" class="illini-blue">Ismini Lourentzou</a></span>
-      </div>
-      <div class="is-size-5 publication-authors"><span class="author-block"><a href="https://plan-lab.github.io/">PLAN Lab</a></span><span class="author-block illini-orange">University of Illinois Urbana-Champaign</span></div>
+      <div class="is-size-5 publication-authors author-list studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
+      <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
       <h2 class="publication-venue illini-orange">NeurIPS 2026</h2>
-      <div class="publication-links" aria-label="Project resources">
-        <span class="link-block"><a href="https://arxiv.org/abs/2610.02201" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
-        <span class="link-block"><span class="button is-rounded is-dark is-disabled" aria-disabled="true"><span class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span><span>Code <small>(Coming soon)</small></span></span></span>
-        <span class="link-block"><a href="#results" class="button is-rounded is-dark"><span class="icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></span><span>Results</span></a></span>
-      </div>
+      <div class="publication-links" aria-label="Project resources"><a href="https://arxiv.org/pdf/2610.02201" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2610.02201" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded" data-resource="Results" href="#results"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Results</span></a></div>
     </div></div></div></section>
 
     <section class="hero teaser" id="showcase"><div class="container is-max-desktop"><div class="hero-body">

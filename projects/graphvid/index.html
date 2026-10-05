@@ -22,8 +22,8 @@
 <link href="../../assets/vendor/fontawesome/css/all.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
 <link href="../../assets/css/style.css" rel="stylesheet">
-<link href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" rel="stylesheet">
-<script defer="" src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1"></script>
+<link href="../../assets/css/projects.css?v=project-pages-inline-data-v2" rel="stylesheet">
+<script defer="" src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2"></script>
 <style>
       html, body { max-width: 100%; overflow-x: hidden; }
 
@@ -361,6 +361,613 @@
 <link href="../../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
 </link></link></head>
 <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "GraphVid",
+    "method": {
+      "source": "Graph Vid Method"
+    },
+    "dataset": {
+      "name": "GraphVid-Bench",
+      "source": "GraphVid -Bench Dataset"
+    },
+    "headingName": [
+      {
+        "text": "Graph",
+        "color": "#a9ccff"
+      },
+      {
+        "text": "Vid",
+        "color": "#ff915b"
+      }
+    ],
+    "contributions": [
+      "Interactive graph-based control. GraphVid enables multi-object image-to-video control through directed interaction scene graphs constructed from a single image, replacing dense trajectory authoring with intuitive object-level interaction edits.",
+      "Edge-Aware Graph Reasoning. A GINEConv-based graph module injects directed edge semantics into message passing so that node representations capture both object identity and interaction-driven dynamics.",
+      "Parameter-efficient graph-to-video adaptation. A lightweight graph-to-token adapter and LoRA modules condition a frozen LTX-Video 2B backbone and frozen VAE while preserving pretrained generative priors.",
+      "GraphVid-Bench and efficient performance. We curate approximately 27K interaction-centric clips with structured graphs. GraphVid uses 0.6B trainable parameters and achieves the fastest inference among the compared methods at 200 seconds."
+    ],
+    "contributionLeads": [
+      "Interactive graph-based control.",
+      "Edge-Aware Graph Reasoning.",
+      "Parameter-efficient graph-to-video adaptation.",
+      "GraphVid-Bench and efficient performance."
+    ],
+    "tldr": [
+      "We introduce GraphVid, a framework for controlling image-to-video generation through object interactions. Users edit a graph to specify how objects push, pull, lift, or move relative to one another, guiding coherent multi-object motion."
+    ]
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "Interaction-centric MoveBench",
+      "description": "Video quality and motion control on the interaction-centric MoveBench subset, with training data, trainable parameters, and inference time."
+    },
+    "htmlTable:1": {
+      "title": "Multi-object MoveBench",
+      "description": "Perceptual, reconstruction, temporal, and motion quality on the harder multi-object subset."
+    }
+  },
+  "results": {
+    "gvc_data_tax.png": {
+      "type": "bars",
+      "title": "GraphVideoCorpus interaction counts",
+      "source": "static/images/gvc_data_tax.png",
+      "categories": [
+        "Holding",
+        "Pushing",
+        "Supporting",
+        "Pulling",
+        "Lifting",
+        "Rotating",
+        "Colliding",
+        "Resting",
+        "Pressing",
+        "Compressing",
+        "Sliding",
+        "Standing",
+        "Reflecting",
+        "Moving",
+        "Reaching",
+        "Placing",
+        "Rolling",
+        "Falling",
+        "Swimming",
+        "Walking"
+      ],
+      "yLabel": "Interaction count",
+      "max": 45000,
+      "series": [
+        {
+          "name": "Annotated occurrences",
+          "values": [
+            40466,
+            32849,
+            21864,
+            4281,
+            2651,
+            2268,
+            2035,
+            1393,
+            1251,
+            987,
+            945,
+            866,
+            813,
+            690,
+            625,
+            581,
+            561,
+            554,
+            455,
+            437
+          ],
+          "color": "#ff915b"
+        }
+      ],
+      "note": "",
+      "compact": true
+    },
+    "gvc_corr.png": {
+      "type": "heatmap",
+      "title": "Which interactions occur together?",
+      "source": "static/images/gvc_corr.png",
+      "columns": [
+        "holding",
+        "pushing",
+        "supporting",
+        "pulling",
+        "lifting",
+        "rotating",
+        "colliding",
+        "resting",
+        "pressing",
+        "compressing",
+        "sliding",
+        "standing",
+        "reflecting",
+        "moving",
+        "reaching",
+        "placing",
+        "rolling",
+        "falling",
+        "swimming",
+        "walking"
+      ],
+      "rows": [
+        "holding",
+        "pushing",
+        "supporting",
+        "pulling",
+        "lifting",
+        "rotating",
+        "colliding",
+        "resting",
+        "pressing",
+        "compressing",
+        "sliding",
+        "standing",
+        "reflecting",
+        "moving",
+        "reaching",
+        "placing",
+        "rolling",
+        "falling",
+        "swimming",
+        "walking"
+      ],
+      "values": [
+        [
+          10.6,
+          9.4,
+          9.1,
+          7.7,
+          7.2,
+          7.2,
+          6.3,
+          6.6,
+          6.6,
+          6.3,
+          6.0,
+          6.2,
+          6.0,
+          5.9,
+          5.9,
+          5.7,
+          5.1,
+          4.8,
+          4.4,
+          5.3
+        ],
+        [
+          9.4,
+          10.4,
+          9.1,
+          7.6,
+          7.1,
+          6.9,
+          6.5,
+          6.7,
+          6.4,
+          6.2,
+          6.3,
+          5.7,
+          5.9,
+          5.8,
+          5.9,
+          5.7,
+          5.4,
+          4.9,
+          4.4,
+          5.0
+        ],
+        [
+          9.1,
+          9.1,
+          10.0,
+          7.3,
+          7.0,
+          6.7,
+          6.2,
+          6.4,
+          6.3,
+          6.0,
+          5.9,
+          5.6,
+          5.7,
+          5.6,
+          5.7,
+          5.5,
+          5.2,
+          4.6,
+          4.4,
+          5.2
+        ],
+        [
+          7.7,
+          7.6,
+          7.3,
+          8.4,
+          4.9,
+          4.8,
+          4.1,
+          4.7,
+          4.5,
+          4.3,
+          4.5,
+          4.1,
+          3.2,
+          4.0,
+          4.4,
+          3.0,
+          2.5,
+          2.7,
+          2.1,
+          3.0
+        ],
+        [
+          7.2,
+          7.1,
+          7.0,
+          4.9,
+          7.9,
+          3.8,
+          3.6,
+          4.8,
+          3.9,
+          3.5,
+          3.6,
+          3.7,
+          2.1,
+          3.6,
+          4.2,
+          3.1,
+          1.4,
+          2.5,
+          1.9,
+          1.4
+        ],
+        [
+          7.2,
+          6.9,
+          6.7,
+          4.8,
+          3.8,
+          7.7,
+          3.6,
+          4.1,
+          4.0,
+          4.0,
+          3.4,
+          3.5,
+          3.5,
+          3.7,
+          3.8,
+          2.3,
+          2.2,
+          1.6,
+          0.0,
+          1.1
+        ],
+        [
+          6.3,
+          6.5,
+          6.2,
+          4.1,
+          3.6,
+          3.6,
+          7.6,
+          3.7,
+          3.0,
+          3.0,
+          3.2,
+          3.1,
+          1.4,
+          2.6,
+          3.0,
+          3.1,
+          3.4,
+          3.3,
+          1.4,
+          1.1
+        ],
+        [
+          6.6,
+          6.7,
+          6.4,
+          4.7,
+          4.8,
+          4.1,
+          3.7,
+          7.2,
+          4.0,
+          3.5,
+          3.7,
+          3.0,
+          3.0,
+          3.3,
+          3.0,
+          4.1,
+          2.9,
+          2.4,
+          1.1,
+          2.5
+        ],
+        [
+          6.6,
+          6.4,
+          6.3,
+          4.5,
+          3.9,
+          4.0,
+          3.0,
+          4.0,
+          7.2,
+          4.3,
+          3.2,
+          2.6,
+          1.9,
+          3.0,
+          3.2,
+          2.5,
+          2.5,
+          2.2,
+          2.4,
+          2.4
+        ],
+        [
+          6.3,
+          6.2,
+          6.0,
+          4.3,
+          3.5,
+          4.0,
+          3.0,
+          3.5,
+          4.3,
+          6.9,
+          2.3,
+          2.5,
+          2.1,
+          3.3,
+          3.0,
+          1.9,
+          2.4,
+          1.9,
+          1.1,
+          2.5
+        ],
+        [
+          6.0,
+          6.3,
+          5.9,
+          4.5,
+          3.6,
+          3.4,
+          3.2,
+          3.7,
+          3.2,
+          2.3,
+          6.9,
+          2.4,
+          1.6,
+          2.6,
+          2.6,
+          2.4,
+          1.8,
+          1.8,
+          0.7,
+          1.4
+        ],
+        [
+          6.2,
+          5.7,
+          5.6,
+          4.1,
+          3.7,
+          3.5,
+          3.1,
+          3.0,
+          2.6,
+          2.5,
+          2.4,
+          6.8,
+          3.8,
+          3.0,
+          1.8,
+          1.4,
+          1.9,
+          1.1,
+          2.1,
+          2.8
+        ],
+        [
+          6.0,
+          5.9,
+          5.7,
+          3.2,
+          2.1,
+          3.5,
+          1.4,
+          3.0,
+          1.9,
+          2.1,
+          1.6,
+          3.8,
+          6.7,
+          2.1,
+          1.1,
+          0.0,
+          0.7,
+          1.8,
+          1.1,
+          2.3
+        ],
+        [
+          5.9,
+          5.8,
+          5.6,
+          4.0,
+          3.6,
+          3.7,
+          2.6,
+          3.3,
+          3.0,
+          3.3,
+          2.6,
+          3.0,
+          2.1,
+          6.5,
+          2.1,
+          1.4,
+          1.8,
+          1.9,
+          1.1,
+          2.1
+        ],
+        [
+          5.9,
+          5.9,
+          5.7,
+          4.4,
+          4.2,
+          3.8,
+          3.0,
+          3.0,
+          3.2,
+          3.0,
+          2.6,
+          1.8,
+          1.1,
+          2.1,
+          6.4,
+          2.4,
+          0.7,
+          1.6,
+          0.7,
+          1.4
+        ],
+        [
+          5.7,
+          5.7,
+          5.5,
+          3.0,
+          3.1,
+          2.3,
+          3.1,
+          4.1,
+          2.5,
+          1.9,
+          2.4,
+          1.4,
+          0.0,
+          1.4,
+          2.4,
+          6.3,
+          0.7,
+          1.4,
+          0.0,
+          0.7
+        ],
+        [
+          5.1,
+          5.4,
+          5.2,
+          2.5,
+          1.4,
+          2.2,
+          3.4,
+          2.9,
+          2.5,
+          2.4,
+          1.8,
+          1.9,
+          0.7,
+          1.8,
+          0.7,
+          0.7,
+          6.3,
+          1.4,
+          0.0,
+          0.0
+        ],
+        [
+          4.8,
+          4.9,
+          4.6,
+          2.7,
+          2.5,
+          1.6,
+          3.3,
+          2.4,
+          2.2,
+          1.9,
+          1.8,
+          1.1,
+          1.8,
+          1.9,
+          1.6,
+          1.4,
+          1.4,
+          6.3,
+          0.7,
+          0.7
+        ],
+        [
+          4.4,
+          4.4,
+          4.4,
+          2.1,
+          1.9,
+          0.0,
+          1.4,
+          1.1,
+          2.4,
+          1.1,
+          0.7,
+          2.1,
+          1.1,
+          1.1,
+          0.7,
+          0.0,
+          0.0,
+          0.7,
+          6.1,
+          1.8
+        ],
+        [
+          5.3,
+          5.0,
+          5.2,
+          3.0,
+          1.4,
+          1.1,
+          1.1,
+          2.5,
+          2.4,
+          2.5,
+          1.4,
+          2.8,
+          2.3,
+          2.1,
+          1.4,
+          0.7,
+          0.0,
+          0.7,
+          1.8,
+          6.0
+        ]
+      ],
+      "min": 0,
+      "max": 11,
+      "unit": "log(count + 1)",
+      "approximate": true,
+      "note": ""
+    }
+  }
+}
+  </script>
+
 <div class="project-bg"></div>
 <div class="project-grid"></div>
 <nav class="glass-nav">
@@ -400,51 +1007,13 @@
 <h1 class="title is-2 publication-title">
 <span class="model-name"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></span>: Interactive Graph-Controllable Video Generation
                 </h1>
-<div class="is-size-5 publication-authors">
-<span class="author-block">Vedant Shah<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Onkar Susladkar<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Tushar Prakash<sup style="">♣</sup>,</span>
-<span class="author-block">Kiet A. Nguyen<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Tianjiao Yu<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Adheesh Juvekar<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Muntasir Wahed<sup class="illini-orange">♦</sup>,</span>
-<span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
-</div>
-<div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
-<span class="author-block"><sup class="illini-orange">♦</sup><a class="illini-blue" href="https://plan-lab.github.io/">PLAN Lab</a></span>
-<span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-<span class="author-block"><sup style="">♣</sup>Sony Research India</span>
-</div>
+<div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+<div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span></div>
 <div class="has-text-centered" style="margin: 5px 0;">
 <h1 class="title is-3 publication-venue">ECCV 2026</h1>
 </div>
 <div class="column has-text-centered" style="padding-top:0;">
-<div class="publication-links">
-<span class="link-block">
-<a href="https://arxiv.org/abs/2607.21580" class="button is-rounded is-dark">
-<span class="icon"><i class="fas fa-file-pdf"></i></span>
-<span>Paper</span>
-</a>
-</span>
-<span class="link-block">
-<a class="external-link button is-normal is-rounded is-dark" href="https://github.com/PLAN-Lab/GraphVid">
-<span class="icon"><i class="fab fa-github"></i></span>
-<span>Code</span>
-</a>
-</span>
-<span class="link-block">
-<a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid">
-<span class="icon"><i class="fa-solid fa-database"></i></span>
-<span>Dataset</span>
-</a>
-</span>
-<span class="link-block">
-<a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder">
-<span class="icon"><i class="fa-solid fa-box-archive"></i></span>
-<span>Checkpoint</span>
-</a>
-</span>
-</div>
+<div class="publication-links"><a href="https://arxiv.org/pdf/2607.21580" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2607.21580" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://github.com/PLAN-Lab/GraphVid" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
 </div>
 </div>
 </div>

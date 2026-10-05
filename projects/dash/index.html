@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 
 <script>
@@ -33,6 +33,401 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
   <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "DaSH",
+    "openingCaption": "DaSH selects useful training data from a heterogeneous pool by learning which dataset groups and individual datasets improve a target model. Hierarchical selection prioritizes relevant sources under a limited exploration budget.",
+    "tldr": [
+      "We introduce DaSH, a method for selecting useful datasets from diverse repositories or institutions under limited exploration budgets. By learning which groups and datasets improve a target model, DaSH finds relevant training data efficiently while avoiding less useful sources."
+    ],
+    "method": {
+      "source": "DaSH Overview"
+    },
+    "quantitative": {
+      "source": "Quantitative Results"
+    },
+    "qualitative": {
+      "source": "Qualitative Examples"
+    },
+    "contributions": [
+      "We formalize the task of dataset selection from a heterogeneous pool of external datasets, a setting common in real-world workflows such as public data acquisition and cross-institutional collaboration, where data is organized into discrete, variably relevant sources.",
+      "We propose DaSH, the first dataset selection method that models dataset utility through hierarchical inference over groups and datasets, enabling efficient and robust selection under limited feedback.",
+      "We benchmark DaSH against four state-of-the-art data selection methods across two public datasets, demonstrating consistent performance improvements of up to 26.2% on Digit-Five and 10.8% on DomainNet. Ablation studies show DaSH remains robust to grouping noise and scales effectively to large dataset pools, whereas existing methods frequently select irrelevant or low-utility data samples."
+    ],
+    "contributionLeads": [
+      "We formalize the task of dataset selection",
+      "We propose DaSH",
+      "We benchmark DaSH"
+    ]
+  },
+  "resultPanels": {
+    "DIGIT-FIVE accuracy": {
+      "description": "Target-domain accuracy on DIGIT-FIVE, averaged over five runs. Higher scores are better; reported gains compare DaSH with competing selectors."
+    },
+    "DomainNet accuracy": {
+      "description": "Target-domain accuracy across DomainNet domains, averaged over five runs. Higher scores are better."
+    }
+  },
+  "results": {
+    "table1.png": {
+      "type": "table",
+      "title": "DIGIT-FIVE accuracy",
+      "columns": [
+        "Method",
+        "Hierarchical",
+        "MNIST",
+        "SVHN",
+        "USPS",
+        "MNIST-M",
+        "SYN",
+        "Average"
+      ],
+      "rows": [
+        [
+          "Local",
+          "No",
+          "52.7 ±6.5",
+          "50.9 ±3.4",
+          "52.2 ±3.2",
+          "49.4 ±2.4",
+          "50.9 ±5.1",
+          "51.2 ±4.1"
+        ],
+        [
+          "Global",
+          "No",
+          "89.3 ±1.1",
+          "69.7 ±1.4",
+          "92.2 ±0.7",
+          "80.2 ±1.1",
+          "62.8 ±2.8",
+          "78.8 ±1.4"
+        ],
+        [
+          "Core-sets (Sener and Savarese 2018)",
+          "No",
+          "75.7 ±2.3 ↓13.8",
+          "52.8 ±2.7 ↓16.4",
+          "74.0 ±3.6 ↓17.2",
+          "60.8 ±2.1 ↓18.1",
+          "40.8 ±1.9 ↓22.1",
+          "60.8 ±2.5 ↓17.5"
+        ],
+        [
+          "FreeSel (Xie et al. 2023a)",
+          "No",
+          "87.6 ±1.2 ↓1.9",
+          "39.3 ±4.0 ↓29.9",
+          "29.3 ±3.1 ↓61.9",
+          "65.4 ±2.2 ↓13.5",
+          "40.7 ±2.9 ↓22.2",
+          "52.5 ±2.7 ↓25.8"
+        ],
+        [
+          "ActiveFT (Xie et al. 2023b)",
+          "No",
+          "58.2 ±1.6 ↓31.3",
+          "53.6 ±1.6 ↓15.6",
+          "59.2 ±1.3 ↓32.0",
+          "48.3 ±0.9 ↓30.6",
+          "41.4 ±1.5 ↓21.5",
+          "52.1 ±1.4 ↓26.2"
+        ],
+        [
+          "BiLAF (Lu et al. 2024)",
+          "No",
+          "62.6 ±0.5 ↓26.9",
+          "56.8 ±0.4 ↓12.4",
+          "67.3 ±0.5 ↓23.9",
+          "50.1 ±0.5 ↓28.8",
+          "52.6 ±1.0 ↓10.3",
+          "57.9 ±0.6 ↓20.4"
+        ],
+        [
+          "DaSH",
+          "Yes",
+          "89.5 ±0.6",
+          "69.2 ±3.4",
+          "91.2 ±0.9",
+          "78.9 ±0.5",
+          "62.9 ±1.6",
+          "78.3 ±1.4"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/table1.png"
+    },
+    "table2.png": {
+      "type": "table",
+      "title": "DomainNet accuracy",
+      "columns": [
+        "Method",
+        "Hierarchical",
+        "CLIPART",
+        "QUICKDRAW",
+        "REAL",
+        "SKETCH",
+        "Average"
+      ],
+      "rows": [
+        [
+          "Local",
+          "No",
+          "40.0 ±2.4",
+          "64.0 ±2.1",
+          "61.0 ±1.1",
+          "67.5 ±1.1",
+          "58.1 ±1.7"
+        ],
+        [
+          "Global",
+          "No",
+          "78.5 ±0.6",
+          "86.7 ±0.5",
+          "88.4 ±0.6",
+          "72.3 ±0.8",
+          "81.6 ±1.1"
+        ],
+        [
+          "Core-sets (Sener and Savarese 2018)",
+          "No",
+          "59.1 ±0.9 ↓18.2",
+          "74.1 ±0.3 ↓12.3",
+          "80.1 ±0.6 ↓8.3",
+          "67.6 ±0.4 ↓4.2",
+          "70.2 ±0.6 ↓10.8"
+        ],
+        [
+          "FreeSel (Xie et al. 2023a)",
+          "No",
+          "70.1 ±2.1 ↓7.2",
+          "81.7 ±0.8 ↓4.6",
+          "85.6 ±0.7 ↓2.8",
+          "67.2 ±1.3 ↓4.6",
+          "77.7 ±1.2 ↓3.3"
+        ],
+        [
+          "ActiveFT (Xie et al. 2023b)",
+          "No",
+          "67.6 ±1.8 ↓9.7",
+          "78.0 ±1.0 ↓8.3",
+          "83.8 ±1.1 ↓4.6",
+          "67.8 ±1.1 ↓4.0",
+          "74.3 ±1.3 ↓6.7"
+        ],
+        [
+          "BiLAF (Lu et al. 2024)",
+          "No",
+          "69.0 ±1.6 ↓8.3",
+          "81.3 ±0.5 ↓5.0",
+          "85.8 ±0.5 ↓2.6",
+          "67.8 ±0.7 ↓4.0",
+          "76.0 ±0.8 ↓5.0"
+        ],
+        [
+          "DaSH",
+          "Yes",
+          "77.3 ±0.8",
+          "86.3 ±1.1",
+          "88.4 ±0.8",
+          "71.8 ±0.9",
+          "81.0 ±0.9"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/table2.png"
+    },
+    "pareto.png": {
+      "type": "scatter",
+      "title": "Communication cost versus accuracy",
+      "source": "static/images/pareto.png",
+      "xLabel": "Communication steps (fewer is better)",
+      "xMin": 120,
+      "xMax": 240,
+      "xTicks": [
+        120,
+        150,
+        180,
+        210,
+        240
+      ],
+      "approximate": true,
+      "metrics": [
+        {
+          "label": "DIGIT-FIVE · accuracy (%)",
+          "min": 50,
+          "max": 95,
+          "series": [
+            {
+              "name": "MNIST",
+              "points": [
+                [
+                  166,
+                  88.6
+                ],
+                [
+                  137,
+                  89.5
+                ],
+                [
+                  133,
+                  88.5
+                ]
+              ]
+            },
+            {
+              "name": "SVHN",
+              "points": [
+                [
+                  224,
+                  69.9
+                ],
+                [
+                  183,
+                  69.2
+                ],
+                [
+                  173,
+                  69.8
+                ]
+              ]
+            },
+            {
+              "name": "USPS",
+              "points": [
+                [
+                  163,
+                  91.1
+                ],
+                [
+                  140,
+                  91.3
+                ],
+                [
+                  143,
+                  90.6
+                ]
+              ]
+            },
+            {
+              "name": "MNIST-M",
+              "points": [
+                [
+                  188,
+                  77.6
+                ],
+                [
+                  154,
+                  78.9
+                ],
+                [
+                  165,
+                  77.8
+                ]
+              ]
+            },
+            {
+              "name": "SYN",
+              "points": [
+                [
+                  208,
+                  58.7
+                ],
+                [
+                  194,
+                  62.9
+                ],
+                [
+                  187,
+                  58.6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "label": "DomainNet · accuracy (%)",
+          "min": 65,
+          "max": 92,
+          "series": [
+            {
+              "name": "CLIPART",
+              "points": [
+                [
+                  215,
+                  77.5
+                ],
+                [
+                  184,
+                  77.3
+                ],
+                [
+                  186,
+                  77.3
+                ]
+              ]
+            },
+            {
+              "name": "QUICKDRAW",
+              "points": [
+                [
+                  180,
+                  87
+                ],
+                [
+                  166,
+                  86.3
+                ],
+                [
+                  150,
+                  86.9
+                ]
+              ]
+            },
+            {
+              "name": "REAL",
+              "points": [
+                [
+                  175,
+                  88.5
+                ],
+                [
+                  164,
+                  88.6
+                ],
+                [
+                  190,
+                  89
+                ]
+              ]
+            },
+            {
+              "name": "SKETCH",
+              "points": [
+                [
+                  177,
+                  70.8
+                ],
+                [
+                  168,
+                  71.8
+                ],
+                [
+                  158,
+                  70.5
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "note": ""
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -71,61 +466,13 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing</h1>
-            <div class="is-size-5 publication-authors">
-              
-                <span class="author-block">
-                  <a href="/team/xiaona-zhou" >Xiaona Zhou<sup class="illini-orange">1</sup></a>,
-                </span>
-                <span class="author-block">
-                  <a href="https://yyzeng43.github.io/">Yingyan Zeng<sup class="cincinnati-red">2</sup></a>,
-                </span>
-                  <span class="author-block">
-                    <a href="https://www.ise.vt.edu/people/faculty/jin.html">Ran Jin<sup class="vt-maroon">3</sup></a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="/team/ismini-lourentzou" >Ismini Lourentzou<sup class="illini-orange">1</sup></a>,
-                  </span>
-              </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="cincinnati"><a href="https://yyzeng43.github.io/">Yingyan Zeng</a><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="https://www.ise.vt.edu/people/faculty/jin.html">Ran Jin</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-            <div class="is-size-5 publication-authors">
-              <!--<span class="author-block">PLAN Lab</span>-->
-              <span class="author-block illini-orange"><sup class="illini-orange">1</sup>University of Illinois Urbana-Champaign</span>
-              <span class="author-block cincinnati-red"><sup>2</sup>University of Cincinnati</span>
-              <span class="author-block vt-maroon"><sup class="vt-maroon">3</sup>Virginia Tech</span>
-              
-              
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="cincinnati"><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup><span class="studio-affiliation-name">University of Cincinnati</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span></div>
             
             <p class="publication-venue">AAAI 2026 (Oral)</p>
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40139" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2512.10952" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/DaSH" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-            </div>
+              <div class="publication-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40139" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2512.10952" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/DaSH" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a></div>
           </div>
         </div>
       </div>

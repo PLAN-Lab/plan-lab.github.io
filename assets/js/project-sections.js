@@ -1,7 +1,6 @@
 /* Shared section structure for the reviewed project pages. */
 (() => {
  'use strict';
- const assetVersion = window.PLAN_PROJECT_ASSET_VERSION || 'reviewed-project-pages-e418f00-v1';
  const el = (tag, cls, text) => {
   const node = document.createElement(tag);
   if (cls) node.className = cls;
@@ -44,12 +43,9 @@
   } else content.prepend(el('h2', 'title is-3', label));
   section.after(tail); return tail;
  }
- async function normalize(main, slug) {
-  const version = assetVersion;
-  const response = await fetch('../../assets/data/project-sections.json?v=' + version);
-  if (!response.ok) throw new Error(`Project section metadata HTTP ${response.status}`);
-  const data = await response.json(); const spec = data.projects[slug];
+ async function normalize(main, spec) {
   if (!spec) return;
+  const slug=location.pathname.split("/").filter(Boolean).at(-1);
   const hero = main.querySelector(':scope > .hero');
   // Some source pages accidentally nest complete sections. Promote the same nodes
   // in document order, preserving media, result controls, IDs and event listeners.

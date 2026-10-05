@@ -424,7 +424,7 @@
 // Reviewed project pages load their approved presentation at the existing URLs.
 if (document.body?.dataset.projectPresentation === 'reviewed' ||
     new URLSearchParams(window.location.search).get('design') === 'studio') {
-  const version = 'reviewed-project-pages-e418f00-v1';
+  const version = 'project-pages-inline-data-v2';
   window.PLAN_PROJECT_ASSET_VERSION = version;
   const style = document.createElement('link');
   style.rel = 'stylesheet';

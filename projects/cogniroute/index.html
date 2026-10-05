@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <style>
         .page-project .interpolation-image {
             width: 90%;
@@ -110,6 +110,108 @@
 </head>
 
 <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "CogniRoute",
+    "openingCaption": "CogniRoute combines speech, gestures, and visual context to infer requests and recognize social cues such as polite refusal.",
+    "tldr": [
+      "We introduce CogniRoute, a framework that teaches omni-modal models to select the evidence each social question needs. CogniRoute guides expert routing toward relevant visual cues, audio cues, and moments in a video, improving reasoning about gestures, intent, and conversational context."
+    ],
+    "contributions": [
+      "CogniRoute aligns expert routing with the evidence needed for social reasoning. We introduce a schema-guided Mixture-of-Experts framework for social video question answering. Schema-Aligned Predictive Routing (SAPR) aligns modality-pooled, layer-wise routing signatures with a training-only cognitive schema that describes evidence source, reasoning demand, and temporal scope. This connects expert allocation to the visual, audio, joint, or conflicting evidence required by each question.",
+      "Route-Aware MoE Reinforcement Learning jointly optimizes answers and expert allocation. RMRL supplies rollout-level rewards for answer correctness, modality-consistent reasoning, and cognitive temporal grounding. These complementary signals update both token generation and expert routing, encouraging correct answers whose reasoning uses the relevant modality and annotated temporal evidence.",
+      "OmniSocialBench supports diagnostic social omni reasoning. We construct a resource with 118K structured training examples, grounded reasoning traces, cognitive schema labels, and temporal evidence spans. Its manually verified evaluation split covers mental state inference, pragmatic meaning, action goals, and social norms, with checks for answer validity, evidence consistency, reasoning support, and temporal grounding.",
+      "Experiments show gains in cross-modal and temporally grounded social inference. CogniRoute achieves 59.38% average accuracy on OmniSocialBench, exceeding the strongest proprietary baseline by 15.33 points and the strongest open-source omni baseline by 26.77 points. The largest gains occur on questions requiring audio-visual coordination, conflict resolution, and temporally grounded social inference."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "dataset": {
+      "name": "OmniSocialBench",
+      "source": "OmniSocialBench: Diagnostic Social Omni Reasoning"
+    },
+    "qualitative": {
+      "source": "Qualitative Analysis: Discourse-Grounded Reference Resolution"
+    },
+    "contributionLeads": [
+      "CogniRoute aligns expert routing with the evidence needed for social reasoning.",
+      "Route-Aware MoE Reinforcement Learning jointly optimizes answers and expert allocation.",
+      "OmniSocialBench supports diagnostic social omni reasoning.",
+      "Experiments show gains in cross-modal and temporally grounded social inference."
+    ]
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "OmniSocialBench social reasoning",
+      "description": "Accuracy across social norms, action goals, mental states, and pragmatic meaning. Higher scores are better."
+    },
+    "htmlTable:1": {
+      "title": "Public audio-visual benchmarks",
+      "description": "Generalization from Qwen3-Omni-30B to CogniRoute on AV-SpeakerBench, OmniBench, MMVU, WorldSense, and Daily-Omni. Higher scores are better."
+    },
+    "htmlTable:2": {
+      "title": "Additional video and audio benchmarks",
+      "description": "Accuracy on AV-Odyssey, MVBench, MMAU, OmniVideoBench, and Video-MME-v2. Higher scores are better."
+    }
+  },
+  "results": {
+    "ablation.jpg": {
+      "type": "bars",
+      "title": "Contribution of routing and learning components",
+      "source": "static/images/ablation.jpg",
+      "metrics": [
+        {
+          "label": "SAPR ablation",
+          "categories": [
+            "Standard SFT",
+            "Random tags",
+            "Shuffled tags",
+            "Shared projection",
+            "Full SAPR"
+          ],
+          "series": [
+            {
+              "name": "Average accuracy (%)",
+              "values": [
+                40.1,
+                40.6,
+                41.4,
+                44.5,
+                50.1
+              ]
+            }
+          ]
+        },
+        {
+          "label": "RMRL ablation",
+          "categories": [
+            "SAPR checkpoint",
+            "Token only",
+            "Token + trainable router",
+            "Gate only",
+            "Full RMRL"
+          ],
+          "series": [
+            {
+              "name": "Average accuracy (%)",
+              "values": [
+                50.1,
+                56.1,
+                56.8,
+                51.9,
+                59.4
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "Select an ablation to compare the reported component configurations."
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -150,51 +252,11 @@
                         <div class="column has-text-centered">
                             <h1 class="publication-title">CogniRoute: Learning to Route Social Evidence in Omni-Modal Models</h1>
 
-                            <div class="publication-authors">
-                                <span class="author-block">Yifan Shen<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Pei Tian<sup class="color:#4285F4;">2</sup>,</span>
-                                <span class="author-block">Xinzhuo Li<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Bowen Fang<sup class="color:#4285F4;">2</sup>,</span>
-                                <span class="author-block">Shujun Xia<sup class="color:#4285F4;">2</sup>,</span>
-                                <span class="author-block">Bingxuan Li<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Ana Jojic<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Wenming Ye<sup style="color:#FFCD00;">3</sup>,</span>
-                                <span class="author-block">Xu Cao<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">James Matthew Rehg<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Ismini Lourentzou<sup class="illini-orange">1</sup></span>
-                            </div>
+                            <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="columbia">Pei Tian<sup class="studio-affiliation-marker" title="Columbia University" aria-label="Columbia University">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="columbia">Bowen Fang<sup class="studio-affiliation-marker" title="Columbia University" aria-label="Columbia University">♣</sup>, </span><span class="author-block studio-author" data-affiliations="columbia">Shujun Xia<sup class="studio-affiliation-marker" title="Columbia University" aria-label="Columbia University">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Bingxuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Ana Jojic<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="google">Wenming Ye<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">James Matthew Rehg<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block">
-                                    <a href="https://plan-lab.github.io/"><sup class="illini-orange">1</sup></a>
-                                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="author-block" style="color:#4285F4";><sup>2</sup>Columbia University</span>
-                                &nbsp;&nbsp;
-                                <span class="author-block" style="color:#FFCD00";><sup>2</sup>Google</span>
-                            </div>
+                            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="columbia"><sup class="studio-affiliation-marker" title="Columbia University" aria-label="Columbia University">♣</sup><span class="studio-affiliation-name">Columbia University</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span></div>
 
-                            <div class="publication-links">
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2606.20970" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                                        <span>Paper</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2606.20970" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-solid fa-link"></i></span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
-                                        <span>Code (coming soon)</span>
-                                    </a>
-                                </span>
-                            </div>
+                            <div class="publication-links"><a href="https://arxiv.org/pdf/2606.20970" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2606.20970" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
                         </div>
                     </div>
                 </div>

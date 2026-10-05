@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
     <style>
       .gif-grid {
@@ -43,6 +43,888 @@
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
   <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "Part²GS",
+    "tldr": [
+      "We introduce Part²GS, which jointly discovers articulated parts and learns their motion from multi-view images at two object states. Each 3D Gaussian carries a learnable part identity in a motion-aware canonical representation. Contact, velocity, and vector-field constraints keep articulation coherent, while a field of repel points prevents collisions between parts."
+    ],
+    "contributions": [
+      "A part-aware Gaussian representation models articulated digital twins. We introduce Part²GS, a framework for multi-part objects with high-fidelity geometry and physically consistent articulation. Articulated components carry learnable attributes that enable structured, disentangled transformations while preserving the reconstructed geometry.",
+      "A motion-aware canonical representation enforces physically consistent motion. Contact enforcement, velocity consistency, and vector-field alignment constrain articulation, encouraging components to move coherently while maintaining their spatial relationships.",
+      "A field of repel points prevents collisions between parts. Repulsion discourages inter-part collisions and stabilizes articulation paths, improving motion coherence over the evaluated baselines.",
+      "Synthetic and real-world evaluations assess geometry and articulation. Part²GS consistently outperforms state-of-the-art methods, with improvements of up to tenfold in Chamfer Distance for movable parts."
+    ],
+    "method": {
+      "source": "P art² GS Architecture"
+    },
+    "quantitative": {
+      "source": "Results"
+    },
+    "contributionLeads": [
+      "A part-aware Gaussian representation models articulated digital twins.",
+      "A motion-aware canonical representation enforces physically consistent motion.",
+      "A field of repel points prevents collisions between parts.",
+      "Synthetic and real-world evaluations assess geometry and articulation."
+    ],
+    "opening": {
+      "media": [
+        {
+          "source": "./static/part2gs_videos/2parts/blade_103706.gif",
+          "label": "Folding blade"
+        },
+        {
+          "source": "./static/part2gs_videos/2parts/laptop_10211.gif",
+          "label": "Laptop"
+        },
+        {
+          "source": "./static/part2gs_videos/2parts/stapler_103111.gif",
+          "label": "Stapler"
+        }
+      ],
+      "caption": ""
+    },
+    "splits": [
+      {
+        "image": "ablate.png",
+        "label": "Ablation Studies"
+      }
+    ]
+  },
+  "resultPanels": {
+    "Articulated reconstruction: simulation and real scenes": {
+      "description": "Reconstruction and motion-estimation errors on simulated and real articulated objects. Lower scores are better."
+    },
+    "Objects with multiple articulated parts": {
+      "description": "Multi-part reconstruction on DTA-Multi and ArtGS-Multi. Lower errors indicate more accurate geometry and joint motion."
+    }
+  },
+  "results": {
+    "main_result2.png": {
+      "type": "table",
+      "title": "Objects with multiple articulated parts",
+      "columns": [
+        "Method",
+        "Fridge · 3 parts",
+        "Table · 4 parts",
+        "Table · 5 parts",
+        "Storage · 3 parts",
+        "Storage · 4 parts",
+        "Storage · 7 parts",
+        "Oven · 4 parts"
+      ],
+      "rows": [
+        {
+          "group": "Angular error ↓"
+        },
+        [
+          "DTA",
+          "0.16",
+          "24.35",
+          "20.62",
+          "0.29",
+          "51.18",
+          "19.07",
+          "17.83"
+        ],
+        [
+          "ArtGS",
+          "0.01",
+          "1.16",
+          "0.04",
+          "0.02",
+          "0.02",
+          "0.14",
+          "0.04"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.01",
+          "0.08",
+          "0.03",
+          "0.01",
+          "0.01",
+          "0.11",
+          "0.03"
+        ],
+        {
+          "group": "Position error ↓"
+        },
+        [
+          "DTA",
+          "0.01",
+          "—",
+          "4.2",
+          "0.04",
+          "2.44",
+          "0.31",
+          "6.51"
+        ],
+        [
+          "ArtGS",
+          "0.00",
+          "—",
+          "0.00",
+          "0.01",
+          "0.00",
+          "0.02",
+          "0.01"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.00",
+          "—",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.01",
+          "0.01"
+        ],
+        {
+          "group": "Motion error ↓"
+        },
+        [
+          "DTA",
+          "0.16",
+          "0.12",
+          "30.8",
+          "0.07",
+          "43.77",
+          "10.67",
+          "31.80"
+        ],
+        [
+          "ArtGS",
+          "0.03",
+          "0.00",
+          "0.01",
+          "0.01",
+          "0.03",
+          "0.62",
+          "0.23"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.02",
+          "0.00",
+          "0.01",
+          "0.01",
+          "0.02",
+          "0.55",
+          "0.18"
+        ],
+        {
+          "group": "Static Chamfer distance ↓"
+        },
+        [
+          "DTA",
+          "0.63",
+          "0.59",
+          "1.39",
+          "0.86",
+          "5.74",
+          "0.82",
+          "1.17"
+        ],
+        [
+          "ArtGS",
+          "0.62",
+          "0.74",
+          "1.22",
+          "0.78",
+          "0.75",
+          "0.67",
+          "1.08"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.59",
+          "0.56",
+          "1.18",
+          "0.73",
+          "0.68",
+          "0.61",
+          "1.01"
+        ],
+        {
+          "group": "Movable Chamfer distance ↓"
+        },
+        [
+          "DTA",
+          "0.48",
+          "104.38",
+          "230.38",
+          "0.23",
+          "246.63",
+          "476.91",
+          "359.16"
+        ],
+        [
+          "ArtGS",
+          "0.13",
+          "3.53",
+          "3.09",
+          "0.23",
+          "0.13",
+          "3.70",
+          "0.25"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.08",
+          "1.95",
+          "1.85",
+          "0.09",
+          "0.07",
+          "1.83",
+          "0.11"
+        ],
+        {
+          "group": "Whole-object Chamfer distance ↓"
+        },
+        [
+          "DTA",
+          "0.88",
+          "0.55",
+          "1.00",
+          "0.97",
+          "0.88",
+          "0.71",
+          "1.01"
+        ],
+        [
+          "ArtGS",
+          "0.75",
+          "0.74",
+          "1.16",
+          "0.93",
+          "0.88",
+          "0.70",
+          "1.03"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.73",
+          "0.51",
+          "1.10",
+          "0.87",
+          "0.80",
+          "0.63",
+          "0.95"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/main_result2.png"
+    },
+    "ablate.png": {
+      "type": "table",
+      "title": "Component ablations",
+      "columns": [
+        "Configuration",
+        "Angular error ↓",
+        "Position error ↓",
+        "Motion error ↓",
+        "Static CD ↓",
+        "Movable CD ↓",
+        "Whole CD ↓"
+      ],
+      "rows": [
+        {
+          "group": "Table · 5 parts"
+        },
+        [
+          "Without part parameters",
+          "0.21",
+          "0.08",
+          "7.32",
+          "7.35",
+          "145.17",
+          "3.10"
+        ],
+        [
+          "Without repel points",
+          "0.09",
+          "0.16",
+          "0.48",
+          "1.19",
+          "4.82",
+          "1.85"
+        ],
+        [
+          "Without physical constraints",
+          "0.05",
+          "0.03",
+          "0.18",
+          "1.32",
+          "4.47",
+          "1.65"
+        ],
+        [
+          "Without canonical initialization",
+          "0.14",
+          "0.06",
+          "6.32",
+          "2.47",
+          "117.25",
+          "2.62"
+        ],
+        [
+          "Part²GS (all)",
+          "0.03",
+          "0.00",
+          "0.01",
+          "1.18",
+          "1.85",
+          "1.10"
+        ],
+        {
+          "group": "Storage · 7 parts"
+        },
+        [
+          "Without part parameters",
+          "0.26",
+          "0.11",
+          "10.43",
+          "2.95",
+          "198.67",
+          "3.54"
+        ],
+        [
+          "Without repel points",
+          "0.16",
+          "0.14",
+          "1.32",
+          "0.93",
+          "7.43",
+          "2.04"
+        ],
+        [
+          "Without physical constraints",
+          "0.04",
+          "0.05",
+          "0.04",
+          "1.22",
+          "4.54",
+          "1.12"
+        ],
+        [
+          "Without canonical initialization",
+          "22.15",
+          "0.93",
+          "19.67",
+          "0.79",
+          "442.32",
+          "1.89"
+        ],
+        [
+          "Part²GS (all)",
+          "0.11",
+          "0.01",
+          "0.55",
+          "0.61",
+          "1.83",
+          "0.63"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/ablate.png"
+    },
+    "main_result.png": {
+      "type": "table",
+      "title": "Articulated reconstruction: simulation and real scenes",
+      "columns": [
+        "Method",
+        "Foldchair",
+        "Fridge",
+        "Laptop*",
+        "Oven*",
+        "Scissor",
+        "Stapler",
+        "USB",
+        "Washer",
+        "Blade",
+        "Storage*",
+        "Real-Fridge",
+        "Real-Storage"
+      ],
+      "rows": [
+        {
+          "group": "Angular error ↓"
+        },
+        [
+          "Ditto",
+          "89.35",
+          "89.30",
+          "3.12",
+          "0.96",
+          "4.50",
+          "89.86",
+          "89.77",
+          "89.51",
+          "79.54",
+          "6.32",
+          "1.71",
+          "5.88"
+        ],
+        [
+          "PARIS",
+          "19.05",
+          "7.87",
+          "0.03",
+          "9.21",
+          "22.34",
+          "8.89",
+          "0.82",
+          "22.18",
+          "50.45",
+          "0.03",
+          "9.92",
+          "77.83"
+        ],
+        [
+          "DTA",
+          "0.03",
+          "0.09",
+          "0.07",
+          "0.22",
+          "0.10",
+          "0.07",
+          "0.11",
+          "0.36",
+          "0.20",
+          "0.09",
+          "2.08",
+          "13.64"
+        ],
+        [
+          "ArtGS",
+          "0.01",
+          "0.03",
+          "0.01",
+          "0.01",
+          "0.05",
+          "0.01",
+          "0.04",
+          "0.02",
+          "0.03",
+          "0.01",
+          "2.09",
+          "3.47"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.02",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.02",
+          "0.03",
+          "1.24"
+        ],
+        {
+          "group": "Position error ↓"
+        },
+        [
+          "Ditto",
+          "3.77",
+          "1.02",
+          "0.01",
+          "0.13",
+          "5.70",
+          "0.20",
+          "5.41",
+          "0.66",
+          "—",
+          "—",
+          "1.84",
+          "—"
+        ],
+        [
+          "PARIS",
+          "0.35",
+          "3.13",
+          "0.04",
+          "0.07",
+          "2.59",
+          "7.67",
+          "6.35",
+          "4.05",
+          "—",
+          "—",
+          "1.50",
+          "—"
+        ],
+        [
+          "DTA",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.02",
+          "0.02",
+          "0.00",
+          "0.05",
+          "—",
+          "—",
+          "0.59",
+          "—"
+        ],
+        [
+          "ArtGS",
+          "0.00",
+          "0.00",
+          "0.01",
+          "0.00",
+          "0.00",
+          "0.01",
+          "0.00",
+          "0.00",
+          "—",
+          "—",
+          "0.47",
+          "—"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.00",
+          "0.01",
+          "0.00",
+          "0.00",
+          "—",
+          "—",
+          "0.13",
+          "—"
+        ],
+        {
+          "group": "Motion error ↓"
+        },
+        [
+          "Ditto",
+          "99.36",
+          "F",
+          "5.18",
+          "2.09",
+          "19.28",
+          "56.61",
+          "80.60",
+          "55.72",
+          "F",
+          "0.09",
+          "8.43",
+          "0.38"
+        ],
+        [
+          "PARIS",
+          "166.24",
+          "102.34",
+          "0.03",
+          "28.18",
+          "124.38",
+          "117.71",
+          "167.98",
+          "126.77",
+          "0.38",
+          "0.36",
+          "2.68",
+          "0.58"
+        ],
+        [
+          "DTA",
+          "0.10",
+          "0.12",
+          "0.11",
+          "0.12",
+          "0.37",
+          "0.08",
+          "0.15",
+          "0.28",
+          "0.00",
+          "0.00",
+          "1.85",
+          "0.14"
+        ],
+        [
+          "ArtGS",
+          "0.03",
+          "0.04",
+          "0.02",
+          "0.02",
+          "0.04",
+          "0.01",
+          "0.03",
+          "0.03",
+          "0.00",
+          "0.00",
+          "1.94",
+          "0.04"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.01",
+          "0.01",
+          "0.01",
+          "0.00",
+          "0.01",
+          "0.00",
+          "0.01",
+          "0.02",
+          "0.00",
+          "0.00",
+          "0.72",
+          "0.02"
+        ],
+        {
+          "group": "Static geometry: Chamfer distance ↓"
+        },
+        [
+          "Ditto",
+          "33.79",
+          "3.05",
+          "0.25",
+          "2.52",
+          "39.07",
+          "41.64",
+          "2.64",
+          "10.32",
+          "46.90",
+          "9.18",
+          "47.01",
+          "16.09"
+        ],
+        [
+          "PARIS",
+          "11.21",
+          "11.78",
+          "0.17",
+          "3.58",
+          "17.88",
+          "4.79",
+          "2.41",
+          "15.92",
+          "2.24",
+          "9.83",
+          "13.79",
+          "23.92"
+        ],
+        [
+          "DTA",
+          "0.18",
+          "0.62",
+          "0.30",
+          "4.60",
+          "3.55",
+          "2.91",
+          "2.32",
+          "4.56",
+          "0.55",
+          "4.90",
+          "2.36",
+          "10.98"
+        ],
+        [
+          "ArtGS",
+          "0.26",
+          "0.52",
+          "0.63",
+          "3.88",
+          "0.61",
+          "3.83",
+          "2.25",
+          "6.43",
+          "0.54",
+          "7.31",
+          "1.64",
+          "2.93"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.14",
+          "0.41",
+          "0.15",
+          "2.91",
+          "0.48",
+          "2.36",
+          "1.84",
+          "3.92",
+          "0.42",
+          "3.58",
+          "1.29",
+          "2.12"
+        ],
+        {
+          "group": "Movable geometry: Chamfer distance ↓"
+        },
+        [
+          "Ditto",
+          "141.11",
+          "0.99",
+          "0.19",
+          "0.94",
+          "20.68",
+          "31.21",
+          "15.88",
+          "12.89",
+          "195.93",
+          "2.20",
+          "50.60",
+          "20.35"
+        ],
+        [
+          "PARIS",
+          "24.23",
+          "12.88",
+          "0.17",
+          "7.49",
+          "18.89",
+          "38.42",
+          "13.81",
+          "379.40",
+          "200.24",
+          "63.97",
+          "91.72",
+          "528.83"
+        ],
+        [
+          "DTA",
+          "0.15",
+          "0.27",
+          "0.13",
+          "0.44",
+          "10.11",
+          "1.13",
+          "1.47",
+          "0.45",
+          "2.05",
+          "0.36",
+          "1.12",
+          "30.78"
+        ],
+        [
+          "ArtGS",
+          "0.54",
+          "0.21",
+          "0.13",
+          "0.89",
+          "0.64",
+          "0.52",
+          "1.22",
+          "0.45",
+          "1.12",
+          "1.02",
+          "0.66",
+          "6.28"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.12",
+          "0.18",
+          "0.11",
+          "0.38",
+          "0.51",
+          "0.41",
+          "1.05",
+          "0.39",
+          "1.42",
+          "0.78",
+          "0.55",
+          "5.01"
+        ],
+        {
+          "group": "Whole geometry: Chamfer distance ↓"
+        },
+        [
+          "Ditto",
+          "6.80",
+          "2.16",
+          "0.31",
+          "2.51",
+          "1.70",
+          "2.38",
+          "2.09",
+          "7.29",
+          "42.04",
+          "3.91",
+          "6.50",
+          "14.08"
+        ],
+        [
+          "PARIS",
+          "8.22",
+          "9.31",
+          "0.28",
+          "5.44",
+          "6.13",
+          "9.62",
+          "2.14",
+          "14.35",
+          "0.76",
+          "9.62",
+          "11.52",
+          "38.94"
+        ],
+        [
+          "DTA",
+          "0.27",
+          "0.70",
+          "0.32",
+          "4.24",
+          "0.41",
+          "1.92",
+          "1.17",
+          "4.48",
+          "0.36",
+          "3.99",
+          "2.08",
+          "8.98"
+        ],
+        [
+          "ArtGS",
+          "0.43",
+          "0.58",
+          "0.50",
+          "3.58",
+          "0.67",
+          "2.63",
+          "1.28",
+          "5.99",
+          "0.61",
+          "5.21",
+          "1.29",
+          "3.23"
+        ],
+        [
+          "Part²GS (Ours)",
+          "0.19",
+          "0.43",
+          "0.20",
+          "1.85",
+          "0.42",
+          "1.45",
+          "0.92",
+          "3.45",
+          "0.35",
+          "2.87",
+          "1.03",
+          "2.78"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/main_result.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -81,79 +963,16 @@
         <div class="columns is-centered"><div class="column has-text-centered">
             <h1 class="title is-1 publication-title"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art</span>-Aware Modeling of <span style="color:rgb(183,55,35); font-weight:bold;">Art</span>iculated Objects Using 3D <span style="color:rgb(88,41,0); font-weight:bold;">G</span>aussian <span style="color:rgb(88,41,0); font-weight:bold;">S</span>platting</span></h1>
-            <div class="is-size-5 publication-authors">
-              <div>
-                <span class="author-block">
-                    <a href="/team/tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/vedant-shah" class="illini-blue" >Vedant Shah</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/muntasir-wahed" class="illini-blue" >Muntasir Wahed</a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ying-shen" class="illini-blue" >Ying Shen</a>,
-              </span>
-                <span class="author-block">
-                    <a href="/team/kiet-nguyen" class="illini-blue" >Kiet A. Nguyen</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
-                </span>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
 
-              </div>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">PLAN Lab</span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
           
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Part2GS_Part-aware_Modeling_of_Articulated_Objects_using_3D_Gaussian_Splatting_CVPR_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.17212" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/Part2GS-CVPR2026" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (now available!)</span>
-                  </a>
-                </span>
-
-                <!-- Demo Link. -->
-                <!-- <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-vr-cardboard"></i>
-                    </span>
-                    <span>Demo (coming soon)</span>
-                  </a>
-                </span> -->
-              </div>
+              <div class="publication-links"><a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Part2GS_Part-aware_Modeling_of_Articulated_Objects_using_3D_Gaussian_Splatting_CVPR_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.17212" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/Part2GS-CVPR2026" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a></div>
 
             </div>
           </div>

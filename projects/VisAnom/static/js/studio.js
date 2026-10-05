@@ -4,7 +4,7 @@
  const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!=null)node.textContent=text;return node;};
  async function prepare(main) {
   await new Promise((resolve,reject)=>{
-   const style=document.createElement('link');style.rel='stylesheet';style.href='static/css/studio.css?v=reviewed-project-pages-e418f00-v1';
+   const style=document.createElement('link');style.rel='stylesheet';style.href='static/css/studio.css?v=project-pages-inline-data-v2';
    style.onload=resolve;style.onerror=()=>reject(new Error('VisAnom presentation styles unavailable'));document.head.append(style);
   });
   // The converted teaser left a detached caption after its overview moved to the opening.

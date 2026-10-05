@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
-    <link rel="stylesheet" href="static/css/studio.css?v=reviewed-project-pages-e418f00-v1" />
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="static/css/studio.css?v=project-pages-inline-data-v2" />
     <style>
         .page-project .interpolation-image {
             width: 90%;
@@ -111,6 +111,60 @@
 </head>
 
 <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "EgoForge",
+    "splits": [
+      {
+        "heading": "Ablations",
+        "label": "Ablation Studies"
+      }
+    ],
+    "tldr": [
+      "We introduce EgoForge, a framework for generating goal-directed first-person video from an image and an instruction, with an optional external view providing additional context. Reward-guided refinement aligns the video with the intended goal while preserving scene consistency and coherent motion."
+    ],
+    "contributions": [
+      "EgoForge generates goal-directed first-person rollouts from minimal static inputs. We introduce an egocentric world simulator conditioned on a single egocentric image, a high-level instruction, and an optional auxiliary exocentric view. It models scene evolution and hand–object interactions without requiring camera trajectories, pose signals, or synchronized multi-view streams at inference time.",
+      "Geometry weak supervision improves spatial consistency. Intermediate diffusion-transformer representations are aligned with geometry features from a pretrained VGGT encoder. Angular alignment matches feature directions, while scale alignment prevents scale collapse and encourages spatially stable video rollouts.",
+      "GRAFT refines complete trajectories using complementary rewards. We propose trajectory-level reward-guided refinement for goal completion, scene consistency, temporal causality, and perceptual fidelity. Evaluating these signals over entire trajectories encourages the intended outcome while reducing scene drift and inconsistent motion.",
+      "Experiments test both benchmark performance and real-world use. EgoForge shows consistent improvements in semantic alignment, geometric stability, and motion fidelity over strong baselines and maintains robust performance in real-world smart-glasses experiments."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "qualitative": {
+      "source": "Qualitative Results: Comparison with Baselines",
+      "additionalSources": [
+        "Qualitative Results: With vs. Without Exocentric Input",
+        "Qualitative Results: Long-Duration Sequences"
+      ]
+    },
+    "contributionLeads": [
+      "EgoForge generates goal-directed first-person rollouts from minimal static inputs.",
+      "Geometry weak supervision improves spatial consistency.",
+      "GRAFT refines complete trajectories using complementary rewards.",
+      "Experiments test both benchmark performance and real-world use."
+    ]
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "X-Ego benchmark",
+      "description": "Semantic, perceptual, and temporal quality on the X-Ego benchmark. Arrows indicate the preferred direction of each metric."
+    },
+    "htmlTable:1": {
+      "title": "Enhanced baseline variants",
+      "description": "Comparisons with external-view conditioning (+EV), text-only adaptation (+TT), and the proposed conditioning inputs (+CI)."
+    },
+    "htmlTable:2": {
+      "title": "User study",
+      "description": "Ratings on a 1–5 scale from 20 annotators over 25 video groups. Higher scores are better; asterisks mark enhanced baseline variants."
+    }
+  },
+  "results": {}
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -151,51 +205,12 @@
                         <div class="column has-text-centered">
                             <h1 class="publication-title">EgoForge: Goal-Directed Egocentric World Simulator</h1>
 
-                            <div class="publication-authors">
-                                <span class="author-block">Yifan Shen<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Jiateng Liu<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Xinzhuo Li<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Yuanzhe Liu<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Bingxuan Li<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Houze Yang<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Wenqi Jia<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Yijiang Li<sup style="color:#FFCD00;">2</sup>,</span>
-                                <span class="author-block">Tianjiao Yu<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">James Matthew Rehg<sup class="illini-orange">1</sup>,</span>
-                                <span class="author-block">Xu Cao<sup class="illini-orange">1,†</sup>,</span>
-                                <span class="author-block">Ismini Lourentzou<sup class="illini-orange">1,†</sup></span>
-                            </div>
+                            <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiateng Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Bingxuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Houze Yang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Wenqi Jia<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ucsd">Yijiang Li<sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">James Matthew Rehg<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
 
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block">
-                                    <a href="https://plan-lab.github.io/"><sup class="illini-orange">1</sup></a>
-                                    <span class="illini-orange">University of Illinois Urbana-Champaign</span>
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="author-block" style="color:#FFCD00";><sup>2</sup>University of California San Diego</span>
-                            </div>
+                            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ucsd"><sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup><span class="studio-affiliation-name">University of California San Diego</span></span></div>
 
                         
-                            <div class="publication-links">
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                                        <span>Paper</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-solid fa-link"></i></span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
-                                        <span>Code (coming soon)</span>
-                                    </a>
-                                </span>
-                            </div>
+                            <div class="publication-links"><a href="https://arxiv.org/pdf/2603.20169" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.20169" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
                         </div>
                     </div>
                 </div>

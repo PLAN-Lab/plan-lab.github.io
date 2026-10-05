@@ -9,7 +9,7 @@
   card.append(video,el('figcaption','',label));return card;
  }
  async function prepare(main) {
-  const response=await fetch('static/data/benchmarks.json?v=reviewed-project-pages-e418f00-v1');if(!response.ok)throw new Error('PyraTok benchmark data unavailable');const {tasks}=await response.json();
+  const response=await fetch('static/data/benchmarks.json?v=project-pages-inline-data-v2');if(!response.ok)throw new Error('PyraTok benchmark data unavailable');const {tasks}=await response.json();
   const result=main.querySelector('[data-studio-section="quantitative"] > .container');
   const dashboard=el('figure','studio-native-result pyratok-benchmark-dashboard');dashboard.dataset.resultSource='paper:2601.16210:tables-2-5';dashboard.append(el('h3','','Beyond reconstruction: generation and understanding'));
   const intro=el('p','studio-result-description','Ten benchmarks cover reconstruction, generation, segmentation, action localization, and video understanding. The reconstruction comparison appears above. Choose a task below to explore the remaining results.');dashboard.append(intro);

@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-  <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <style>
       .media-card {
         position: relative;
@@ -81,6 +81,220 @@
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   </head>
   <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "PyraTok",
+    "tldr": [
+      "We introduce PyraTok, a video tokenizer whose Language-aligned Pyramidal Quantization (LaPQ) discretizes features at multiple encoder depths into a shared binary codebook of approximately 48K tokens. Text guidance aligns each pyramid level locally, while an autoregressive objective aligns the token hierarchy globally. This dual alignment preserves semantic consistency across scales and time, supporting high-resolution reconstruction, generation, and zero-shot video understanding."
+    ],
+    "method": {
+      "paragraphs": [
+        "PyraTok builds on a pretrained video VAE and applies Language-aligned Pyramidal Quantization (LaPQ) at multiple encoder depths. A shared large binary codebook discretizes the resulting hierarchy into compact, semantically structured video tokens. Text-guided quantization provides local alignment at each scale, while an autoregressive objective over the token hierarchy enforces global sequence coherence. A hierarchical semantic codebook loss links the shared codebook to text embeddings and regularizes consistency across pyramid levels."
+      ],
+      "image": {
+        "source": "teaser.png",
+        "src": "./static/images/architecture.png",
+        "alt": "PyraTok architecture with multi-scale Language-aligned Pyramidal Quantization, text conditioning, and autoregressive semantic alignment"
+      }
+    },
+    "contributions": [
+      "Multi-scale semantically aligned VAE. We introduce PyraTok, a multi-scale semantically aligned Video VAE that couples spatiotemporal quantization with dual semantic alignment, enabling coarse-to-fine understanding and efficient video generation.",
+      "LaPQ quantization. PyraTok leverages LaPQ, a novel language-aligned pyramidal quantization framework, designed to hierarchically encode multi-scale video representations through lateral encoder connections at each stage. Our design enables efficient use of a large ∼48K token vocabulary, with up to 95% codebook utilization.",
+      "Dual semantic alignment. We propose a dual semantic alignment strategy that injects text-conditioned priors at every LaPQ level (local alignment) and refines them with an autoregressive objective over the sequence of quantized tokens (global alignment). This jointly enforces token-level grounding and sequence-level coherence, preventing semantic drift across scales and time.",
+      "Hierarchical semantic codebook loss. We further introduce a hierarchical semantic codebook loss that ties a shared binary codebook to text embeddings and preserves semantic consistency across pyramid levels through stage-wise KL regularization."
+    ],
+    "contributionLeads": [
+      "Multi-scale semantically aligned VAE.",
+      "LaPQ quantization.",
+      "Dual semantic alignment.",
+      "Hierarchical semantic codebook loss."
+    ],
+    "opening": {
+      "media": [
+        {
+          "type": "video",
+          "source": "./static/videos/recon/recon-1080p-1.mp4",
+          "label": "1080p reconstruction comparison",
+          "poster": "./static/images/recon-1080p-1-poster.jpg"
+        },
+        {
+          "type": "video",
+          "source": "./static/videos/recon/recon-4k-1.mp4",
+          "label": "4K reconstruction comparison",
+          "poster": "./static/images/recon-4k-1-poster.jpg"
+        },
+        {
+          "type": "video",
+          "source": "./static/videos/recon/recon-4k-4.mp4",
+          "label": "4K reconstruction comparison",
+          "poster": "./static/images/recon-4k-4-poster.jpg"
+        }
+      ],
+      "caption": ""
+    }
+  },
+  "resultPanels": {
+    "Reconstruction quality": {
+      "description": "Reconstruction quality and inference cost on WebVid-10M and COCO-Val. Latency is measured on 25 frames at 256 × 256 using one V100 GPU."
+    }
+  },
+  "results": {
+    "quantitative-results.png": {
+      "type": "table",
+      "title": "Reconstruction quality",
+      "columns": [
+        "Method",
+        "Parameters",
+        "Latency (ms)",
+        "WebVid · PSNR ↑",
+        "WebVid · SSIM ↑",
+        "WebVid · LPIPS ↓",
+        "COCO · PSNR ↑",
+        "COCO · SSIM ↑",
+        "COCO · LPIPS ↓"
+      ],
+      "rows": [
+        [
+          "CogVideoX [67]",
+          "288M",
+          "712",
+          "29.92",
+          "0.811",
+          "0.141",
+          "30.11",
+          "0.833",
+          "0.111"
+        ],
+        [
+          "3D-MBQ-VAE [44]",
+          "317M",
+          "650",
+          "33.00",
+          "0.848",
+          "0.092",
+          "32.11",
+          "0.858",
+          "0.108"
+        ],
+        [
+          "WAN 2.2 [53]",
+          "222M",
+          "449",
+          "32.94",
+          "0.841",
+          "0.101",
+          "33.43",
+          "0.861",
+          "0.103"
+        ],
+        [
+          "OmniTokenizer [57]",
+          "82M",
+          "444",
+          "32.03",
+          "0.812",
+          "0.152",
+          "32.09",
+          "0.845",
+          "0.141"
+        ],
+        [
+          "LARP [55]",
+          "183M",
+          "689",
+          "33.03",
+          "0.851",
+          "0.091",
+          "34.26",
+          "0.853",
+          "0.089"
+        ],
+        [
+          "TokenFlow [37]",
+          "176M",
+          "600",
+          "28.21",
+          "0.799",
+          "0.189",
+          "30.11",
+          "0.811",
+          "0.177"
+        ],
+        [
+          "VideoVae+ [63]",
+          "192M",
+          "555",
+          "29.17",
+          "0.812",
+          "0.201",
+          "31.45",
+          "0.832",
+          "0.162"
+        ],
+        [
+          "TexTok [71]",
+          "173M",
+          "661",
+          "27.42",
+          "0.831",
+          "0.222",
+          "29.29",
+          "0.841",
+          "0.181"
+        ],
+        [
+          "LG-VQ [13]",
+          "168M",
+          "598",
+          "30.23",
+          "0.807",
+          "0.173",
+          "31.32",
+          "0.836",
+          "0.152"
+        ],
+        [
+          "TokLIP [28]",
+          "207M",
+          "604",
+          "31.28",
+          "0.837",
+          "0.152",
+          "33.42",
+          "0.849",
+          "0.105"
+        ],
+        [
+          "SweetTok [46]",
+          "128M",
+          "432",
+          "32.32",
+          "0.842",
+          "0.137",
+          "32.78",
+          "0.847",
+          "0.123"
+        ],
+        [
+          "PyraTok (Ours)",
+          "192M",
+          "492",
+          "35.72",
+          "0.879",
+          "0.066",
+          "36.05",
+          "0.885",
+          "0.071"
+        ]
+      ],
+      "note": "Latency measured on 25 frames at 256×256 with one V100 GPU.",
+      "source": "static/images/quantitative-results.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -119,54 +333,15 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Onkar Susladkar<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Tushar Prakash<sup style="color:#f6a34f;">♣</sup>,</span>
-              <span class="author-block">Adheesh Juvekar<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Kiet A. Nguyen<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Dong-Hwan Jang<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Inderjit S Dhillon<sup style="color:cyan;">★</sup><sup style="color:yellow;">♠</sup>,</span>
-              <span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
-            </div>
-            <div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
-              <span class="author-block"><sup class="illini-orange">♦</sup><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-              <span class="author-block"><sup style="color:#f6a34f;">♣</sup>Sony Research India</span>
-              <span class="author-block"><sup style="color:cyan;">★</sup>University of Texas at Austin</span>
-              <span class="author-block"><sup style="color:yellow;">♠</sup>Google</span>
-            </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span></div>
 
              <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue">CVPR 2026</h1>
             </div>
 
              <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/PyraTok" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/PLAN-Lab/PyraTok" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <span class="huggingface-icon">🤗</span>
-                    </span>
-                    <span>Weights</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2601.16210" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PyraTok" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/PyraTok"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
             </div>
           </div>
         </div>

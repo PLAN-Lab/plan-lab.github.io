@@ -23,11 +23,421 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 </head>
   <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "SpatialReasoner-R1",
+    "tldr": [
+      "We introduce SpatialReasoner-R1, a model for answering fine-grained spatial questions with interpretable, step-by-step reasoning. SpatialReasoner-R1 learns to connect descriptions and logical deductions to visible spatial evidence, helping models reason about object locations, relationships, and layouts."
+    ],
+    "method": {
+      "source": "Method Overview",
+      "additionalSources": [
+        "Fine-Grained Spatial Rewards"
+      ]
+    },
+    "quantitative": {
+      "source": "Spatial Reasoning Evaluation"
+    },
+    "qualitative": {
+      "source": "Examples and Results"
+    },
+    "contributions": [
+      "SpatialReasoner-R1. We introduce SpatialReasoner-R1, a VLM designed for fine-grained LongCoT spatial reasoning that effectively generates interpretable, step-by-step explanations directly from 2D images. SpatialReasoner-R1 establishes a new SoTA in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.",
+      "Fine-grained Direct Preference Optimization. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.",
+      "Multi-Model Monte Carlo Tree Search. To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training."
+    ],
+    "contributionLeads": [
+      "SpatialReasoner-R1.",
+      "Fine-grained Direct Preference Optimization.",
+      "Multi-Model Monte Carlo Tree Search."
+    ],
+    "opening": {
+      "source": "additionexample1.png",
+      "alt": "A spatial question with visually grounded reasoning from SpatialReasoner-R1.",
+      "caption": "SpatialReasoner-R1 connects each reasoning step to the objects and relationships visible in the scene.",
+      "processTitle": "Visually grounded spatial reasoning"
+    },
+    "heroTitle": {
+      "name": "SpatialReasoner-R1",
+      "subtitle": "Fine-Grained Preference Optimization for Spatial Reasoning in VLMs"
+    }
+  },
+  "resultPanels": {
+    "Qualitative spatial relations": {
+      "description": "Accuracy on relative-position and relative-size questions in SpatialRGPT-Bench."
+    },
+    "Quantitative spatial measurements": {
+      "description": "Accuracy on distance, width, height, and direction questions in SpatialRGPT-Bench."
+    }
+  },
+  "results": {
+    "result.png": {
+      "type": "table",
+      "title": "Qualitative spatial relations",
+      "columns": [
+        "Model",
+        "Below/Above",
+        "Left/Right",
+        "Big/Small",
+        "Tall/Short",
+        "Wide/Thin",
+        "Behind/Front",
+        "Qual. accuracy"
+      ],
+      "rows": [
+        [
+          "Gemini 2.0 Flash [20]",
+          "58.33",
+          "68.57",
+          "16.98",
+          "50.00",
+          "15.38",
+          "53.63",
+          "44.29"
+        ],
+        [
+          "Llama 4 Maverick [47]",
+          "54.17",
+          "61.90",
+          "33.02",
+          "50.89",
+          "25.96",
+          "55.45",
+          "47.18"
+        ],
+        [
+          "Gemini 1.5 Pro [62]",
+          "85.83",
+          "56.19",
+          "58.49",
+          "71.42",
+          "55.76",
+          "60.00",
+          "65.14"
+        ],
+        [
+          "ChatGPT-4o [49]",
+          "87.50",
+          "80.00",
+          "53.77",
+          "63.39",
+          "51.92",
+          "60.90",
+          "66.67"
+        ],
+        [
+          "SpatialBot-3B [6]",
+          "52.50",
+          "62.86",
+          "57.54",
+          "49.11",
+          "49.04",
+          "62.73",
+          "55.56"
+        ],
+        [
+          "SpaceThinker Qwen2.5VL-3B [4]",
+          "89.16",
+          "63.81",
+          "76.41",
+          "56.25",
+          "56.73",
+          "70.91",
+          "69.25"
+        ],
+        [
+          "InternVL2.5-78B [11]",
+          "94.16",
+          "94.28",
+          "64.15",
+          "65.17",
+          "55.76",
+          "58.18",
+          "72.29"
+        ],
+        [
+          "Sa2va 4B [87]",
+          "22.50",
+          "25.71",
+          "25.47",
+          "16.07",
+          "27.88",
+          "30.91",
+          "24.65"
+        ],
+        [
+          "Sa2va 8B [87]",
+          "50.00",
+          "39.04",
+          "45.28",
+          "26.78",
+          "45.19",
+          "53.63",
+          "43.37"
+        ],
+        [
+          "SpatialRGPT-8B [12]",
+          "99.17",
+          "100.00",
+          "84.90",
+          "89.28",
+          "91.34",
+          "90.90",
+          "92.69"
+        ],
+        [
+          "SpatialReasoner-R1 SFT 4B",
+          "79.16",
+          "78.09",
+          "55.66",
+          "66.96",
+          "59.61",
+          "75.45",
+          "69.41"
+        ],
+        [
+          "SpatialReasoner-R1 SFT 8B",
+          "81.66",
+          "81.90",
+          "75.47",
+          "75.89",
+          "79.80",
+          "83.63",
+          "79.75"
+        ],
+        [
+          "SpatialReasoner-R1 DPO 4B",
+          "91.66",
+          "91.42",
+          "69.81",
+          "65.17",
+          "71.15",
+          "85.45",
+          "79.29"
+        ],
+        [
+          "SpatialReasoner-R1 DPO 8B",
+          "94.16",
+          "93.33",
+          "89.62",
+          "90.18",
+          "88.64",
+          "92.27",
+          "91.48"
+        ],
+        [
+          "SpatialReasoner-R1 fDPO 4B",
+          "95.83",
+          "93.33",
+          "83.96",
+          "74.10",
+          "87.50",
+          "89.09",
+          "87.37"
+        ],
+        [
+          "SpatialReasoner-R1 fDPO 8B",
+          "98.33",
+          "98.10",
+          "95.28",
+          "96.43",
+          "91.34",
+          "93.64",
+          "95.59"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/result.png",
+      "extra": [
+        {
+          "type": "table",
+          "title": "Quantitative spatial measurements",
+          "columns": [
+            "Model",
+            "Direct distance",
+            "Horizontal distance",
+            "Vertical distance",
+            "Width",
+            "Height",
+            "Direction",
+            "Quant. accuracy"
+          ],
+          "rows": [
+            [
+              "Gemini 2.0 Flash [20]",
+              "9.45",
+              "10.65",
+              "26.41",
+              "10.52",
+              "30.82",
+              "54.20",
+              "22.43"
+            ],
+            [
+              "Llama 4 Maverick [47]",
+              "24.48",
+              "28.68",
+              "34.28",
+              "35.71",
+              "44.61",
+              "58.09",
+              "36.72"
+            ],
+            [
+              "Gemini 1.5 Pro [62]",
+              "14.18",
+              "17.21",
+              "14.15",
+              "19.54",
+              "36.09",
+              "30.84",
+              "21.90"
+            ],
+            [
+              "ChatGPT-4o [49]",
+              "—",
+              "—",
+              "—",
+              "—",
+              "—",
+              "60.75",
+              "—"
+            ],
+            [
+              "SpatialBot-3B [6]",
+              "6.00",
+              "15.51",
+              "8.00",
+              "10.52",
+              "18.75",
+              "39.00",
+              "15.62"
+            ],
+            [
+              "SpaceThinker Qwen2.5VL-3B [4]",
+              "24.32",
+              "17.21",
+              "59.43",
+              "23.27",
+              "23.62",
+              "32.35",
+              "28.97"
+            ],
+            [
+              "InternVL2.5-78B [11]",
+              "27.70",
+              "22.13",
+              "41.50",
+              "29.32",
+              "34.58",
+              "62.61",
+              "35.25"
+            ],
+            [
+              "Sa2va 4B [87]",
+              "13.51",
+              "15.57",
+              "19.81",
+              "13.53",
+              "12.03",
+              "10.28",
+              "14.02"
+            ],
+            [
+              "Sa2va 8B [87]",
+              "14.18",
+              "14.75",
+              "9.43",
+              "14.28",
+              "19.54",
+              "14.18",
+              "14.55"
+            ],
+            [
+              "SpatialRGPT-8B [12]",
+              "45.90",
+              "68.00",
+              "56.60",
+              "48.90",
+              "61.70",
+              "95.30",
+              "61.42"
+            ],
+            [
+              "SpatialReasoner-R1 SFT 4B",
+              "22.29",
+              "27.86",
+              "31.13",
+              "25.56",
+              "33.80",
+              "47.66",
+              "30.71"
+            ],
+            [
+              "SpatialReasoner-R1 SFT 8B",
+              "28.43",
+              "20.49",
+              "44.05",
+              "33.59",
+              "51.63",
+              "46.72",
+              "37.12"
+            ],
+            [
+              "SpatialReasoner-R1 DPO 4B",
+              "47.97",
+              "46.72",
+              "60.37",
+              "45.11",
+              "55.63",
+              "91.58",
+              "56.61"
+            ],
+            [
+              "SpatialReasoner-R1 DPO 8B",
+              "62.83",
+              "56.55",
+              "60.37",
+              "70.45",
+              "68.42",
+              "93.45",
+              "68.22"
+            ],
+            [
+              "SpatialReasoner-R1 fDPO 4B",
+              "60.13",
+              "59.01",
+              "71.70",
+              "65.41",
+              "57.89",
+              "92.52",
+              "66.76"
+            ],
+            [
+              "SpatialReasoner-R1 fDPO 8B",
+              "70.95",
+              "72.13",
+              "74.52",
+              "80.45",
+              "74.43",
+              "94.39",
+              "77.30"
+            ]
+          ],
+          "source": "static/images/result.png"
+        }
+      ]
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -66,44 +476,9 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title" style="display: flex; align-items: center; justify-content: center; gap: 15px;"><img src="static/images/logo.png" alt="SpatialReasoner Logo" width="100px"><span>Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs</span></h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="/team/yifan-shen" class="external-link" ><span class="illini-blue">Yifan Shen</span></a><sup class="illini-orange">1</sup>,</span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/yuanzhe-liu-upenn-ds/" class="external-link"><span class="illini-blue">Yuanzhe Liu</span></a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/jingyuan-zhu-6a0ab3322/" class="external-link"><span class="illini-blue">Jingyuan Zhu</span></a><sup>2</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://www.irohxucao.com/" class="external-link"><span class="illini-blue">Xu Cao</span></a><sup class="illini-orange">1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" class="external-link"><span class="illini-blue">Xiaofeng Zhang</span></a><sup>3</sup>,
-              </span>
-              <span class="author-block">
-                <a href="#" class="external-link"><span class="illini-blue">Yixiao He</span></a><sup class="illini-orange">1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/wenming-ye-0170b11/" class="external-link"><span class="illini-blue">Wenming Ye</span></a><sup>4</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://rehg.org/" class="external-link"><span class="illini-blue">James Matthew Rehg</span></a><sup class="illini-orange">1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="/team/ismini-lourentzou" class="external-link" ><span class="illini-blue">Ismini Lourentzou</span></a><sup class="illini-orange">1</sup>
-              </span>
-            </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/yuanzhe-liu-upenn-ds/">Yuanzhe Liu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/jingyuan-zhu-6a0ab3322/">Jingyuan Zhu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://www.irohxucao.com/">Xu Cao</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu"><a href="#">Xiaofeng Zhang</a><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="#">Yixiao He</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="google"><a href="https://www.linkedin.com/in/wenming-ye-0170b11/">Wenming Ye</a><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://rehg.org/">James Matthew Rehg</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-            <div class="is-size-5 publication-authors" style="margin-top: 10px;">
-              <div>
-                <span class="author-block illini-orange"><sup class="illini-orange">1</sup>University of Illinois Urbana-Champaign</span>
-                <span class="author-block"><sup>2</sup>University of Pennsylvania</span>
-              </div>
-              <div>
-                <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>
-                <span class="author-block"><sup>4</sup>Google</span>
-              </div>
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span></div>
             
             <!-- <div class="has-text-centered" style="margin: 5px 0;">
               <img src="./static/images/u_logo.png" alt="Affiliation Logos" style="height: 55px;">
@@ -114,41 +489,7 @@
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2506.21656.pdf" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/PLAN-Lab/SpatialReasoner-R1" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      🤗
-                    </span>
-                    <span>Model</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/SpatialReasonerR1" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://opensource.googleblog.com/2025/12/spatialreasoner-teaching-vlms-to-see-structure-accelerated-with-tunix-on-tpus.html" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-blog"></i>
-                    </span>
-                    <span>Google Blog</span>
-                  </a>
-                </span>
-
-              </div>
+              <div class="publication-links"><a href="https://arxiv.org/pdf/2506.21656" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.21656" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/SpatialReasonerR1" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/SpatialReasoner-R1" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a><a class="button is-rounded" data-resource="Google Blog" href="https://opensource.googleblog.com/2025/12/spatialreasoner-teaching-vlms-to-see-structure-accelerated-with-tunix-on-tpus.html"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Google Blog</span></a></div>
 
             </div>
           </div>

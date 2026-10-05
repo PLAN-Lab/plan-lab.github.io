@@ -113,9 +113,13 @@ in `assets/js/project-pages.js`.
 
 - Presentation: `assets/css/project-studio.css`, `assets/js/project-studio.js`,
   and each project's `static/js/studio.js` module where present.
-- Authors, citations, resources, sections, and results: the `project-*.json`
-  files and `project-results/` folder in `assets/data/`. Update the canonical
-  resource/citation metadata along with the corresponding page's HTML fallback.
+- Author bylines, affiliations, resource buttons, and BibTeX citations live
+  directly in each project's `index.html`.
+- Section copy, result descriptions, and chart/table values live in that page's
+  `<script id="project-data" type="application/json">` block. Shared renderers
+  read that block without fetching separate project metadata files.
+- The existing `assets/data/publications.json` remains the publication catalogue
+  for the lab homepage and publications page.
 - Shared footer and browser libraries: `assets/components/project-footer.html`
   and `assets/vendor/`.
 - Asset versions are set by the reviewed-page loader and the project HTML's

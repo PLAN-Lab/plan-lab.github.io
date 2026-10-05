@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <link rel="icon" type="image/svg+xml" href="./static/images/unidflow_logo.svg">
     <style>
         .page-project .interpolation-image {
@@ -81,6 +81,310 @@
 </head>
 
 <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "UniDFlow",
+    "tldr": [
+      "We introduce UniDFlow, a discrete flow-matching model that unifies image understanding, generation, and reasoning-guided editing. Separate text and image LoRA adapters preserve specialized capabilities, while a lightweight Mixture-of-LoRA router composes them during diffusion. Multimodal Reference-based DPO (mRef-DPO) uses a visual reference and structured reflection traces to align edits with instructions, geometry, and physical transformations."
+    ],
+    "contributions": [
+      "UniDFlow unifies multimodal understanding, generation, and editing. We introduce a discrete flow-matching framework that bridges high-level visual reasoning and high-fidelity image synthesis within a unified model.",
+      "Task-specific adapters prevent interference between understanding and generation. Separate text and image LoRA adapters are trained while keeping the backbone frozen; KL regularization helps preserve linguistic ability. A lightweight Mixture-of-LoRA (MoRA) router dynamically composes the adapters during diffusion, combining their specialized capabilities.",
+      "Multimodal reference-based preference alignment improves faithful editing. mRef-DPO compares outcomes under identical conditioning against a frozen reference policy and a visual reference image. Structured reflection traces help the model reason through geometric, physical, and temporal transformations before generating the edited image.",
+      "Evaluation demonstrates broad performance and zero-shot generalization. UniDFlow achieves state-of-the-art performance across eight benchmarks and generalizes to inpainting, in-context image generation, reference-based editing, and compositional generation without explicit task-specific training for those tasks."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "qualitative": {
+      "source": "Qualitative Results: Image Editing",
+      "additionalSources": [
+        "Qualitative Results: Text-to-Image Generation",
+        "Qualitative Results: Reasoning-Based Image Editing",
+        "Qualitative Results: Image Understanding"
+      ]
+    },
+    "contributionLeads": [
+      "UniDFlow unifies multimodal understanding, generation, and editing.",
+      "Task-specific adapters prevent interference between understanding and generation.",
+      "Multimodal reference-based preference alignment improves faithful editing.",
+      "Evaluation demonstrates broad performance and zero-shot generalization."
+    ],
+    "opening": {
+      "source": "teaser.jpg",
+      "alt": "UniDFlow examples of image understanding, generation, and reasoning-guided editing.",
+      "caption": "One model supports visual understanding, text-to-image generation, and edits guided by reasoning."
+    },
+    "heroTitle": {
+      "name": "UniDFlow",
+      "subtitle": "Multimodal Reasoning and Generation via Unified Discrete Flow Matching"
+    }
+  },
+  "resultPanels": {
+    "Multimodal understanding": {
+      "description": "Multimodal understanding across general, mathematical, and visual reasoning benchmarks."
+    },
+    "Text-to-image generation": {}
+  },
+  "results": {
+    "quant_understanding.png": {
+      "type": "table",
+      "title": "Multimodal understanding",
+      "columns": [
+        "Model",
+        "Parameters",
+        "MME-P",
+        "MME-S",
+        "MMBench",
+        "MMMU",
+        "MM-Vet",
+        "MathVista",
+        "MMVP"
+      ],
+      "rows": [
+        [
+          "Qwen2.5-VL (Bai et al., 2025b)",
+          "3B",
+          "—",
+          "2157",
+          "79.1",
+          "53.1",
+          "61.8",
+          "62.3",
+          "—"
+        ],
+        [
+          "BLIP-3 (Xue et al., 2024)",
+          "4B",
+          "—",
+          "—",
+          "76.8",
+          "41.1",
+          "—",
+          "39.6",
+          "—"
+        ],
+        [
+          "DeepSeek-VL2 (Wu et al., 2024b)",
+          "4B",
+          "—",
+          "—",
+          "51.1",
+          "60.0",
+          "62.8",
+          "—",
+          "—"
+        ],
+        [
+          "Qwen3-VL (Bai et al., 2025c)",
+          "4B",
+          "—",
+          "—",
+          "85.1",
+          "64.1",
+          "72.5",
+          "—",
+          "—"
+        ],
+        [
+          "VILA-U (Wu et al., 2024a)",
+          "7B",
+          "1336",
+          "—",
+          "66.6",
+          "32.2",
+          "27.7",
+          "—",
+          "22.0"
+        ],
+        [
+          "Chameleon (Team, 2024a)",
+          "7B",
+          "—",
+          "—",
+          "35.7",
+          "28.4",
+          "8.3",
+          "—",
+          "0.0"
+        ],
+        [
+          "Janus-Pro (Chen et al., 2025a)",
+          "7B",
+          "1567",
+          "—",
+          "79.2",
+          "41.0",
+          "50.0",
+          "—",
+          "—"
+        ],
+        [
+          "TokenFlow-XL (Geyer et al., 2023)",
+          "13B",
+          "1546",
+          "—",
+          "68.9",
+          "38.7",
+          "40.7",
+          "—",
+          "—"
+        ],
+        [
+          "BAGEL (Deng et al., 2025)",
+          "7B",
+          "1687",
+          "2388",
+          "85.0",
+          "55.3",
+          "67.2",
+          "73.1",
+          "69.3"
+        ],
+        [
+          "OmniGen-v2 (Wu et al., 2025)",
+          "8B",
+          "—",
+          "—",
+          "53.1",
+          "61.5",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "EMMA (He et al., 2025)",
+          "4B",
+          "—",
+          "—",
+          "85.8",
+          "65.1",
+          "73.0",
+          "75.8",
+          "—"
+        ],
+        [
+          "MammothModa-2 (Shen et al., 2025)",
+          "4B",
+          "1753",
+          "1998",
+          "86.6",
+          "71.23",
+          "79.4",
+          "81.8",
+          "77.5"
+        ],
+        [
+          "Muddit (Shi et al., 2025)",
+          "4B",
+          "1700",
+          "1832",
+          "82.8",
+          "66.6",
+          "76.2",
+          "79.1",
+          "74.1"
+        ],
+        [
+          "UniDFlow",
+          "4B",
+          "1803",
+          "2555",
+          "91.2",
+          "74.3",
+          "82.7",
+          "85.9",
+          "80.2"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/quant_understanding.png"
+    },
+    "quant_generation.png": {
+      "type": "table",
+      "title": "Text-to-image generation",
+      "columns": [
+        "Model",
+        "Parameters",
+        "GenEval",
+        "DPGBench"
+      ],
+      "rows": [
+        [
+          "DALL-E 3 (Betker et al., 2023)",
+          "—",
+          "0.67",
+          "83.50"
+        ],
+        [
+          "SD3-Medium (Esser et al., 2024)",
+          "2B",
+          "0.74",
+          "80.43"
+        ],
+        [
+          "Qwen-Image(-RL) (et al., 2025)",
+          "7B+20B",
+          "0.91",
+          "88.32"
+        ],
+        [
+          "TokenFlow-XL (Geyer et al., 2023)",
+          "14B",
+          "0.55",
+          "—"
+        ],
+        [
+          "Janus-Pro-7B (Chen et al., 2025a)",
+          "7B",
+          "0.80",
+          "84.19"
+        ],
+        [
+          "Bagel (Deng et al., 2025)",
+          "7B+7B",
+          "0.88",
+          "87.74"
+        ],
+        [
+          "OmniGen2/V2 (Wu et al., 2025)",
+          "3B+4B",
+          "0.78",
+          "83.57"
+        ],
+        [
+          "MammothModa-2 (Shen et al., 2025)",
+          "8B+3B+2B",
+          "0.87",
+          "87.20"
+        ],
+        [
+          "EMMA (He et al., 2025)",
+          "4B",
+          "0.93",
+          "85.63"
+        ],
+        [
+          "MUDDIT (Shi et al., 2025)",
+          "8B",
+          "0.90",
+          "86.37"
+        ],
+        [
+          "UniDFlow",
+          "4B",
+          "0.95",
+          "91.19"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/quant_generation.png"
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -127,69 +431,13 @@
                                 </h1>
                             </div>
 
-                            <div class="publication-authors">
-                                <span class="author-block"><a href="/team/onkar-susladkar">Onkar
-                                        Susladkar<sup class="illini-orange">♦</sup></a>,</span>
-                                <span class="author-block">Tushar Prakash<sup style="color:green;">♣</sup>,</span>
-                                <span class="author-block">Gayatri Deshmukh<sup style="color:green;">♣</sup>,</span>
-                                <span class="author-block"><a href="/team/kiet-nguyen">Kiet A. Nguyen<sup
-                                            class="illini-orange">♦</sup></a>,</span>
-                                <span class="author-block"><a href="/team/jiaxun-zhang">Jiaxun
-                                        Zhang<sup class="illini-orange">♦</sup></a>,</span>
-                                <span class="author-block"><a href="/team/adheesh-juvekar">Adheesh
-                                        Juvekar<sup class="illini-orange">♦</sup></a>,</span>
-                                <span class="author-block">Tianshu Bao<sup style="color:yellow;">♠</sup>,</span>
-                                <span class="author-block">Lin Chai<sup style="color:yellow;">♠</sup>,</span>
-                                <span class="author-block">Sparsh Mittal<sup style="color:magenta;">♥</sup>,</span>
-                                <span class="author-block">Inderjit S Dhillon<sup style="color:cyan;">★</sup><sup
-                                        style="color:yellow;">♠</sup>,</span>
-                                <span class="author-block"><a href="/team/ismini-lourentzou">Ismini
-                                        Lourentzou<sup class="illini-orange">♦</sup></a></span>
-                            </div>
+                            <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Tushar Prakash<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Gayatri Deshmukh<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jiaxun-zhang">Jiaxun Zhang</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="google">Tianshu Bao<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="google">Lin Chai<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="iit">Sparsh Mittal<sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
 
-                            <div class="is-size-5 publication-authors" style="justify-content: space-between;">
-                                <span><span class="author-block"><a href="https://plan-lab.github.io/"><sup
-                                                class="illini-orange">♦</sup>PLAN Lab,</a></span>
-                                    <span class="author-block illini-orange">University of Illinois
-                                        Urbana-Champaign</span></span>
-                                <span class="author-block"><sup style="color:green;">♣</sup>Independent
-                                    Researcher</span>
-                                <span class="author-block"><sup style="color:yellow;">♠</sup>Google</span>
-                                <span class="author-block"><sup style="color:magenta;">♥</sup>IIT Roorkee</span>
-                                <span class="author-block"><sup style="color:cyan;">★</sup>University of Texas at
-                                    Austin</span>
-                            </div>
+                            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="independent"><sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup><span class="studio-affiliation-name">Independent Researcher</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span><span class="studio-affiliation" data-institution="iit"><sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup><span class="studio-affiliation-name">IIT Roorkee</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span></div>
 
                             <p class="publication-venue illini-orange">ICML 2026</p>
 
-                            <div class="publication-links">
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/pdf/2602.12221" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
-                                        <span>Paper</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2602.12221" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-solid fa-link"></i></span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
-                                        <span>Code (coming soon)</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="#" class="button is-rounded is-dark">
-                                        <span class="icon">
-                                            🤗
-                                        </span>
-                                        <span>Model (coming soon)</span>
-                                    </a>
-                                </span>
-                            </div>
+                            <div class="publication-links"><a href="https://arxiv.org/pdf/2602.12221" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2602.12221" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Checkpoint" aria-disabled="true" title="Checkpoint is not available yet."><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint (coming soon)</span></a></div>
                         </div>
                     </div>
                 </div>

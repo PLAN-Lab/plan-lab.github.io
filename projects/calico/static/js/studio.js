@@ -5,7 +5,7 @@
  let taskImage,taskCaption;
  async function prepare(main) {
   await new Promise((resolve,reject)=>{
-   const style=document.createElement('link');style.rel='stylesheet';style.href='static/css/studio.css?v=reviewed-project-pages-e418f00-v1';
+   const style=document.createElement('link');style.rel='stylesheet';style.href='static/css/studio.css?v=project-pages-inline-data-v2';
    style.onload=resolve;style.onerror=()=>reject(new Error('CALICO presentation styles unavailable'));document.head.append(style);
   });
   const teaser=main.querySelector('.hero.teaser');

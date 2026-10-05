@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=reviewed-project-pages-e418f00-v1" />
-    <script src="../../assets/js/project-pages.js?v=reviewed-project-pages-e418f00-v1" defer></script>
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
     <style>
       .media-card {
         position: relative;
@@ -74,6 +74,454 @@
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   </head>
   <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "RewardFlow",
+    "tldr": [
+      "We introduce RewardFlow, a training-free framework for image generation and editing that guides pretrained models with complementary rewards. RewardFlow adapts to each instruction, balancing prompt alignment, visual quality, and localized changes without inversion or model fine-tuning."
+    ],
+    "method": {
+      "paragraphs": [
+        "RewardFlow fuses complementary differentiable reward gradients into a multi-reward Langevin sampling update. A prompt-aware policy parses the instruction and adapts reward weights and step sizes throughout sampling. Fine-grained guidance includes a differentiable VQA reward and a SAM2 text-guided object reward to improve attribute correctness and localize edits. A clean-latent KL regularizer tethers sampling to the originating latent, controlling drift while the fused guidance steers generation or editing."
+      ],
+      "image": {
+        "source": "abstract_diagram.png",
+        "src": "./static/images/attention_localization.png",
+        "alt": "Source images paired with attention-localization maps for changing juice type, changing shoe color, creating a Ghibli-style portrait, and adding glasses.",
+        "caption": "Source images and attention-localization maps for attribute changes, portrait stylization, and adding glasses.",
+        "width": 2200,
+        "height": 1171
+      }
+    },
+    "contributions": [
+      "RewardFlow. We introduce a multi-reward-guided Langevin framework that combines semantic, perceptual, regional, object-level, and human-preference signals to enable controllable, inversion-free editing and generation.",
+      "Prompt-aware adaptive policy. Our lightweight policy parses semantic primitives from the instruction, infers edit intent, and dynamically adjusts reward weights and step sizes to balance coarse-to-fine optimization.",
+      "Fine-grained rewards. We design a differentiable VQA reward for attribute-level correctness and a SAM-guided localization reward that penalizes edits leaking outside the region of interest.",
+      "Theoretical grounding. We prove the update corresponds to a valid discretization of a Langevin SDE targeting a prompt-tilted density, giving a sound foundation for stable convergence during reward-guided sampling."
+    ],
+    "contributionLeads": [
+      "RewardFlow.",
+      "Prompt-aware adaptive policy.",
+      "Fine-grained rewards.",
+      "Theoretical grounding."
+    ]
+  },
+  "resultPanels": {
+    "PIE-Bench image editing": {
+      "description": "Image editing quality, background preservation, prompt alignment, and sampling cost on PIE-Bench. Standard and four-step settings are reported separately."
+    }
+  },
+  "results": {
+    "results.png": {
+      "type": "table",
+      "title": "PIE-Bench image editing",
+      "columns": [
+        "Method",
+        "Distance ↓ (×10³)",
+        "PSNR ↑",
+        "LPIPS ↓ (×10³)",
+        "MSE ↓ (×10⁴)",
+        "SSIM ↑ (×10²)",
+        "Whole ↑",
+        "Edited ↑",
+        "NFE ↓",
+        "Steps ↓"
+      ],
+      "rows": [
+        {
+          "group": "Standard inference budgets"
+        },
+        [
+          "EF",
+          "8.39",
+          "27.49",
+          "44.38",
+          "29.79",
+          "85.61",
+          "25.87",
+          "22.14",
+          "70",
+          "50"
+        ],
+        [
+          "ProxG",
+          "8.39",
+          "28.45",
+          "38.27",
+          "25.63",
+          "85.87",
+          "25.04",
+          "21.64",
+          "100",
+          "50"
+        ],
+        [
+          "P2P",
+          "9.58",
+          "27.72",
+          "44.98",
+          "30.02",
+          "85.01",
+          "24.94",
+          "21.57",
+          "100",
+          "50"
+        ],
+        [
+          "DI",
+          "11.60",
+          "27.25",
+          "49.25",
+          "32.87",
+          "84.86",
+          "25.83",
+          "22.39",
+          "100",
+          "50"
+        ],
+        [
+          "AREdit",
+          "13.12",
+          "28.78",
+          "42.67",
+          "37.88",
+          "87.19",
+          "26.57",
+          "24.51",
+          "16",
+          "30"
+        ],
+        [
+          "InfEdit",
+          "13.87",
+          "28.63",
+          "39.80",
+          "33.19",
+          "86.28",
+          "25.84",
+          "22.44",
+          "12",
+          "12"
+        ],
+        [
+          "TurboEdit",
+          "15.11",
+          "26.04",
+          "69.54",
+          "55.12",
+          "84.27",
+          "26.09",
+          "23.35",
+          "24",
+          "12"
+        ],
+        [
+          "InstantEdit",
+          "12.57",
+          "29.63",
+          "35.27",
+          "24.57",
+          "87.40",
+          "26.06",
+          "22.73",
+          "24",
+          "12"
+        ],
+        [
+          "FlowEdit",
+          "11.56",
+          "28.33",
+          "43.57",
+          "37.48",
+          "86.23",
+          "26.43",
+          "23.03",
+          "33",
+          "30"
+        ],
+        [
+          "FlowChef",
+          "9.67",
+          "29.03",
+          "43.11",
+          "36.67",
+          "87.44",
+          "27.05",
+          "23.09",
+          "28",
+          "30"
+        ],
+        [
+          "KV-Edit",
+          "8.47",
+          "29.04",
+          "43.44",
+          "35.47",
+          "86.66",
+          "28.21",
+          "23.92",
+          "27",
+          "40"
+        ],
+        [
+          "Flux+RewardFlow",
+          "7.78",
+          "31.21",
+          "40.55",
+          "26.47",
+          "89.67",
+          "29.44",
+          "26.62",
+          "43",
+          "20"
+        ],
+        [
+          "QwenImage+RewardFlow",
+          "7.64",
+          "32.09",
+          "38.47",
+          "23.57",
+          "90.21",
+          "29.78",
+          "27.57",
+          "54",
+          "25"
+        ],
+        {
+          "group": "Four-step inference"
+        },
+        [
+          "InfEdit",
+          "16.19",
+          "26.75",
+          "50.79",
+          "42.33",
+          "84.71",
+          "25.68",
+          "22.27",
+          "4",
+          "4"
+        ],
+        [
+          "TurboEdit",
+          "18.57",
+          "24.59",
+          "77.53",
+          "58.48",
+          "82.64",
+          "25.70",
+          "22.30",
+          "4",
+          "4"
+        ],
+        [
+          "InstantEdit",
+          "17.14",
+          "27.96",
+          "44.39",
+          "34.94",
+          "86.44",
+          "26.28",
+          "22.82",
+          "8",
+          "4"
+        ],
+        [
+          "Flux+RewardFlow",
+          "13.44",
+          "29.57",
+          "40.03",
+          "29.66",
+          "88.13",
+          "27.31",
+          "24.69",
+          "6",
+          "4"
+        ],
+        [
+          "QwenImage+RewardFlow",
+          "10.33",
+          "29.92",
+          "37.92",
+          "26.95",
+          "90.12",
+          "28.55",
+          "27.52",
+          "6",
+          "4"
+        ]
+      ],
+      "note": "",
+      "source": "static/images/results.png"
+    },
+    "@compositional-generation": {
+      "type": "table",
+      "appendTo": "quantitative",
+      "title": "T2I-CompBench compositional generation",
+      "description": "Compositional accuracy across attribute binding, object relationships, and complex prompts. Each backbone is compared with ReNO and RewardFlow; higher scores are better.",
+      "columns": [
+        "Model",
+        "Color ↑",
+        "Shape ↑",
+        "Texture ↑",
+        "Spatial ↑",
+        "Non-spatial ↑",
+        "Complex ↑"
+      ],
+      "rows": [
+        [
+          "SD v1.4",
+          "0.38",
+          "0.36",
+          "0.42",
+          "0.12",
+          "0.31",
+          "0.31"
+        ],
+        [
+          "SD v2.1",
+          "0.51",
+          "0.42",
+          "0.49",
+          "0.13",
+          "0.31",
+          "0.34"
+        ],
+        [
+          "SDXL",
+          "0.64",
+          "0.54",
+          "0.56",
+          "0.20",
+          "0.31",
+          "0.41"
+        ],
+        [
+          "PixArt-α",
+          "0.69",
+          "0.56",
+          "0.70",
+          "0.21",
+          "0.32",
+          "0.41"
+        ],
+        [
+          "DALL-E 2",
+          "0.57",
+          "0.55",
+          "0.64",
+          "0.13",
+          "0.30",
+          "0.37"
+        ],
+        [
+          "DALL-E 3",
+          "0.81",
+          "0.68",
+          "0.81",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "PixArt-α DMD",
+          "0.38",
+          "0.34",
+          "0.47",
+          "0.19",
+          "0.30",
+          "0.36"
+        ],
+        [
+          "PixArt-α DMD + ReNO",
+          "0.64",
+          "0.57",
+          "0.72",
+          "0.25",
+          "0.31",
+          "0.46"
+        ],
+        [
+          "PixArt-α DMD + RewardFlow",
+          "0.74",
+          "0.66",
+          "0.75",
+          "0.30",
+          "0.39",
+          "0.52"
+        ],
+        [
+          "Flux",
+          "0.75",
+          "0.61",
+          "0.69",
+          "0.26",
+          "0.33",
+          "0.47"
+        ],
+        [
+          "Flux + ReNO",
+          "0.81",
+          "0.64",
+          "0.72",
+          "0.29",
+          "0.35",
+          "0.49"
+        ],
+        [
+          "Flux + RewardFlow",
+          "0.88",
+          "0.69",
+          "0.78",
+          "0.33",
+          "0.42",
+          "0.57"
+        ],
+        [
+          "Qwen Image",
+          "0.83",
+          "0.72",
+          "0.80",
+          "0.35",
+          "0.39",
+          "0.61"
+        ],
+        [
+          "Qwen Image + ReNO",
+          "0.84",
+          "0.75",
+          "0.84",
+          "0.36",
+          "0.43",
+          "0.63"
+        ],
+        [
+          "Qwen Image + RewardFlow",
+          "0.91",
+          "0.83",
+          "0.90",
+          "0.39",
+          "0.51",
+          "0.78"
+        ]
+      ],
+      "rankMetrics": true,
+      "highlight": [
+        "RewardFlow"
+      ],
+      "source": "paper:2604.08536:table-2",
+      "provenance": {
+        "url": "https://arxiv.org/pdf/2604.08536",
+        "table": "2",
+        "page": 7
+      },
+      "note": ""
+    }
+  }
+}
+  </script>
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -112,53 +560,13 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">RewardFlow: Generate Images by Optimizing What You Reward</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Onkar Kishor Susladkar<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Dong-Hwan Jang<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Tushar Prakash<sup style="color:#f6a34f;">♣</sup>,</span>
-              <span class="author-block">Adheesh Sunil Juvekar<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Vedant Shah<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Ayush Barik<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Nabeel Bashir<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Muntasir Wahed<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Ritish Shrirao<sup class="illini-orange">♦</sup>,</span>
-              <span class="author-block">Ismini Lourentzou<sup class="illini-orange">♦</sup></span>
-            </div>
-            <div class="is-size-5 publication-authors" style="justify-content:center;flex-wrap:wrap;gap:.5rem;">
-              <span class="author-block"><sup class="illini-orange">♦</sup><a href="https://plan-lab.github.io/" class="illini-blue">PLAN Lab</a></span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-              <span class="author-block"><sup style="color:#f6a34f;">♣</sup>Sony Research India</span>
-            </div>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Onkar Kishor Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Sunil Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Ayush Barik<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Nabeel Bashir<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ritish Shrirao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span></div>
              <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue">CVPR 2026</h1>
             </div>
              <div class="column has-text-centered">
-              <div class="publication-links clear-link-group" style="justify-content:center; display:flex; flex-wrap:wrap; gap:0.35rem;">
-                <span class="link-block">
-                  <a href="../../Language_Guided_editing_CVPR_26.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/PLAN-Lab/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer">
-                    <span class="icon">
-                      <span class="huggingface-icon">🤗</span>
-                    </span>
-                    <span>Weights</span>
-                  </a>
-                </span>
-              </div>
+              <div class="publication-links clear-link-group" style="justify-content:center; display:flex; flex-wrap:wrap; gap:0.35rem;"><a href="https://arxiv.org/pdf/2604.08536" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2604.08536" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/RewardFlow"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
             </div>
           </div>
         </div>
