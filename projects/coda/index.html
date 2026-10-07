@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NK0GM1GM0Q');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CoDA: Co-Evolution of Data Engines and Action Policies. A simulation data engine and a robot action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress." />
+
+    <title>CoDA: Co-Evolution of Data Engines and Action Policies | PLAN Lab</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CoDA: Co-Evolution of Data Engines and Action Policies" />
+    <meta property="og:description" content="A simulation data engine and an action policy co-evolve through shared memory. Text2potential turns failure diagnoses into dense, policy-preserving supervision, raising OOD manipulation success from 5.3% to 27.6%." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plan-lab.github.io/coda/" />
+    <meta property="og:image" content="https://plan-lab.github.io/projects/coda/static/images/teaser_og.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
+    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <style>
+      /* CoDA wordmark: lavender -> sky -> teal -> green (matches the paper) */
+      .model-name {
+        font-weight: 800;
+        background: linear-gradient(90deg, #A4AFD8 0%, #5DBFE1 38%, #77C99C 68%, #93D25B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Concept accent colors (one per memory tier / component) */
+      .c-episodic   { color: #D58BE6; font-weight: 700; }  /* episodic tier */
+      .c-semantic   { color: #5DBFE1; font-weight: 700; }  /* semantic tier */
+      .c-procedural { color: #77C99C; font-weight: 700; }  /* procedural tier */
+      .c-potential  { color: #93D25B; font-weight: 700; }  /* Text2potential */
+
+      .fig-caption { max-width: 920px; margin: 4px auto 0; }
+
+      .eq-block { text-align: center; font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+                  font-size: 1.12rem; margin: 0.8rem 0 1rem; letter-spacing: 0.01em; }
+      .eq-block i { font-style: italic; }
+
+      .tbl-note { font-size: 0.9rem; color: rgba(226, 232, 240, 0.85);
+                  margin: 2px auto 30px; max-width: 940px; }
+      /* Best and second-best results in colored fonts; overrides the shared plain-white table emphasis. */
+      .page-project main table td.best, .page-project main table td.best *, .hl-best
+                   { color: #FF915B !important; font-weight: 800 !important; }
+      .page-project main table td.second, .page-project main table td.second *, .hl-second
+                   { color: #83AFD9 !important; font-weight: 700 !important; text-decoration: none !important; }
+
+      .section-sub { color: #cfe9f5; font-weight: 700; font-size: 1.05rem;
+                     margin: 1.4rem 0 0.4rem; text-align: left; }
+    </style>
+  </head>
+
+  <body class="page-project" data-project-presentation="reviewed">
+  <script id="project-data" type="application/json">
+{
+  "sections": {
+    "name": "CoDA",
+    "tldr": [
+      "We introduce CoDA, a framework in which a simulation data engine and a robot action policy co-evolve through a shared heterogeneous memory. Validated failure diagnoses compile into generation programs that recreate a difficulty and training programs that help the policy overcome it, while Text2potential turns those diagnoses into dense, policy-preserving value targets. Across four manipulation task families, CoDA raises out-of-distribution success from 5.3% to 27.6%, and on LIBERO-Pro from 25% to 84% under position perturbations."
+    ],
+    "abstract": [
+      "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy’s failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task’s optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations."
+    ],
+    "contributions": [
+      "Closed-loop co-evolution. CoDA co-evolves a simulation data engine and an action policy. Each round of environment synthesis is guided by the policy’s measured learning progress, rather than scene validity or current task success alone.",
+      "Shared heterogeneous memory. A memory shared by the generator and the policy combines episodic evidence, semantic difficulty modes, and procedural programs. The same diagnosis compiles into a generation program that recreates the difficulty and a training program that helps the policy overcome it, both indexed by difficulty mode and reusable across tasks.",
+      "Dense supervision through Text2potential. Text2potential compiles failure diagnoses into potentials over simulator states that provide dense targets for learning the value of action chunks. Shaping requires only chunk-endpoint evaluations and preserves the policies that maximize the original task return.",
+      "Improved out-of-distribution generalization. Across four manipulation task families, CoDA achieves 27.6% OOD success versus 5.3% after supervised fine-tuning, exceeding success-rate-guided generation by 9.5 percentage points with the same budget. On LIBERO-Pro, success rises from 25% to 84% on position generalization and from 1% to 76% on task generalization."
+    ],
+    "method": {
+      "source": "Method"
+    },
+    "headingName": [
+      {
+        "text": "CoDA",
+        "gradient": "linear-gradient(90deg, #A4AFD8, #5DBFE1 38%, #77C99C 68%, #93D25B)"
+      }
+    ],
+    "contributionLeads": [
+      "Closed-loop co-evolution.",
+      "Shared heterogeneous memory.",
+      "Dense supervision through Text2potential.",
+      "Improved out-of-distribution generalization."
+    ],
+    "opening": {
+      "source": "teaser.webp",
+      "alt": "CoDA overview: embodied scene generation and action policy training linked by a shared episodic, semantic, and procedural memory.",
+      "caption": "Shared memory integrates scene-construction experience and policy rollout diagnoses to decide both which environments to generate and how to train the policy. Subsequent rollouts update the memory and guide the next round."
+    },
+    "teaserSummary": true
+  },
+  "resultPanels": {
+    "htmlTable:0": {
+      "title": "Generalization across four manipulation task families",
+      "description": "OOD success rates (%) under different generation and training strategies with the π0.5 backbone. In denotes success on each generator’s own distribution. Mean ± standard error over three seeds."
+    },
+    "htmlTable:1": {
+      "title": "LIBERO-Pro: position and instruction perturbations",
+      "description": "Success rates under position (Pos) and instruction (Task) perturbations for the Object, Goal, and Spatial suites. Std. LIBERO reports success on the standard benchmark."
+    },
+    "image:coevolution_rounds.webp": {
+      "title": "Co-evolution over rounds",
+      "description": "(a) Average OOD success as accepted environments per task family increase; the dashed line marks the Table 1 comparison. (b) Difficulty modes entering, staying in, and leaving memory each round; labels count generation programs reused from other task families. (c) OOD success gained per round by CoDA and by generation guided by task success rates."
+    }
+  },
+  "results": {}
+}
+  </script>
+
+    <div class="project-bg"></div>
+    <div class="project-grid"></div>
+
+    <nav class="glass-nav">
+      <a href="../../index.html#hero" class="nav-logo">
+        <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
+      </a>
+      <div class="nav-menu">
+        <a href="../../publications.html" class="nav-item" aria-label="Publications">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Publications</span>
+        </a>
+        <a href="../../index.html#team" class="nav-item" aria-label="Team">
+          <i class="fa-solid fa-users"></i>
+          <span>Team</span>
+        </a>
+        <a href="../../game.html" class="nav-item" aria-label="PLAN Cubes Game">
+          <i class="fa-solid fa-cube"></i>
+          <span>PLAN Cubes</span>
+        </a>
+        <a href="../../index.html#partners" class="nav-item" aria-label="Partner">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <span>Partner</span>
+        </a>
+        <a href="../../index.html#contact" class="nav-item" aria-label="Join">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Join</span>
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered"><div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span class="model-name">CoDA</span>:
+                Co-Evolution of Data Engines and Action Policies
+              </h1>
+
+              <!-- TODO: replace with the author list once the paper is de-anonymized.
+                   Lab members: <span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=<member-id>">Name</a>, </span> -->
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Anonymous Authors</span></div></div>
+
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
+
+              <div class="has-text-centered" style="margin: 5px 0;">
+                <h1 class="title is-3 publication-venue">Under Review</h1>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links"><a class="button is-rounded studio-primary" data-resource="Paper" aria-disabled="true" title="The paper is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper (coming soon)</span></a><a class="button is-rounded" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TL;DR + TEASER ===================== -->
+      <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <div class="content">
+              <p><strong>TL;DR:</strong> <span class="model-name">CoDA</span> closes the loop between generative
+                simulation and robot policy learning. A simulation data engine and an action policy co-evolve through
+                a <strong>shared heterogeneous memory</strong>: validated failure diagnoses become programs that
+                recreate a difficulty and programs that help the policy overcome it, and
+                <span class="c-potential">Text2potential</span> turns those diagnoses into dense, policy-preserving
+                value targets.</p>
+            </div>
+
+            <!-- The opening figure (static/images/teaser.webp) is placed by "sections.opening" in project-data. -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== METHOD ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <h2 class="title is-3">Method</h2>
+
+              <div class="content has-text-justified">
+                <p>
+                  Generative simulation has made environments plentiful: coding agents synthesize scenes,
+                  articulations, and task specifications, and language models author their rewards. The open question
+                  is which environments to build next and what supervision will help the policy learn from them.
+                  Existing engines sample variation from hand-specified ranges, refine a scene until it is physically
+                  valid, or allocate budget by per-task success rate. None of these signals measures how much the
+                  policy actually <em>improves</em> through training, so a generator risks spending its budget on
+                  environments the policy has already mastered or cannot yet learn to solve.
+                  <span class="model-name">CoDA</span> couples scene generation and policy learning through a shared
+                  memory that guides both.
+                </p>
+
+                <img loading="lazy" decoding="async" src="./static/images/method_overview.webp"
+                     class="interpolation-image" style="width: 97%;" alt="The CoDA framework: data engine, scene population, shared memory, Text2potential, policy training, and rollouts.">
+                <p class="fig-caption">
+                  <strong>The <span class="model-name">CoDA</span> framework.</strong> The data engine generates
+                  executable scenes with independently editable task, spatial, and object-attribute factors and a
+                  sparse success verifier. Construction traces and rollout-grounded failure diagnoses enter a shared
+                  memory, which organizes them into reusable difficulty modes. Validated modes compile into generation
+                  programs that reproduce the diagnosed conditions and training programs that specify subgoals,
+                  potentials, and learning tools. <span class="c-potential">Text2potential</span> supplies dense
+                  feedback through chunk-level value targets, and measured learning progress guides the next round.
+                </p>
+
+                <h3 class="section-sub">Factored scene programs</h3>
+                <p>
+                  The data engine is a tool-augmented coding agent that writes executable scene programs against a
+                  simulator SDK. Each environment is parameterized as <em>s</em> = (<em>τ</em>, <em>σ</em>,
+                  <em>α</em>): the <strong>task</strong> factor <em>τ</em> (goal predicate, instruction, initial and
+                  terminal object states), the <strong>object-spatial</strong> factor <em>σ</em> (poses, support and
+                  containment, clearances, occlusion), and the <strong>object self-attribute</strong> factor
+                  <em>α</em> (geometry, scale, mass, friction, articulation, appearance). Any one factor can be
+                  resampled while the other two stay fixed, so the critic's diagnoses, the engine's interventions, and
+                  the conditions for applying compiled programs all share one representation. Every program emits a
+                  sparse, machine-checkable success predicate <em>ν</em>, and scenes must pass collision, stability,
+                  and metric-scale checks before any policy rollout.
+                </p>
+
+                <h3 class="section-sub">Shared heterogeneous memory</h3>
+                <p>
+                  The memory combines the engine's construction and repair traces with the policy's rollout outcomes
+                  and failure diagnoses, organized into three tiers.
+                  The <span class="c-episodic">episodic</span> tier records each scene program, its verifier, the full
+                  generation trace, success rates, learning progress, and a failure diagnosis from a vision–language
+                  critic that names the attributed factor, the trajectory phase, a cause, and supporting evidence.
+                  The <span class="c-semantic">semantic</span> tier clusters these records into reusable
+                  <em>difficulty modes</em> &mdash; such as &ldquo;an occluder adjacent to the target on the approach
+                  side&rdquo; &mdash; each characterized by its <em>hardness</em> (policy success rate) and
+                  <em>importance</em> (learning progress from training on it).
+                  The <span class="c-procedural">procedural</span> tier compiles each validated mode into two
+                  complementary programs: <strong>generation programs</strong> that recreate and vary the diagnosed
+                  conditions over symbolic object roles, and <strong>training programs</strong> that specify subgoal
+                  decompositions, potentials, and learning tools.
+                </p>
+
+                <h3 class="section-sub">Memory-guided scene generation</h3>
+                <p>
+                  Each round allocates the generation budget across difficulty modes with an upper-confidence rule
+                  over hardness and learning progress, reserving a fraction for novel environments and a replay fraction
+                  to catch regressions. For each diagnosis tied to a scene factor, the engine generates a
+                  <strong>targeted batch</strong> that varies the identified factor and a <strong>control batch</strong>
+                  that varies a different one. A difficulty mode is compiled into programs only if the targeted
+                  variants yield lower policy success than the controls, so every stored diagnosis is tested rather than
+                  taken on the critic's word. Because generation programs refer to symbolic roles such as
+                  <em>target</em>, <em>obstacle</em>, or <em>support</em>, they transfer across task families by
+                  binding those roles to objects in a new scene.
+                </p>
+
+                <h3 class="section-sub"><span class="c-potential">Text2potential</span></h3>
+                <p>
+                  The success predicate <em>ν</em> says whether a task is complete but gives little feedback on
+                  intermediate progress, which makes value learning slow on long-horizon tasks.
+                  Text2potential compiles a validated failure diagnosis into a sequence of subgoals split at the
+                  diagnosed phase, each with a completion predicate done<sub><i>k</i></sub>(<i>s</i>) and a progress
+                  potential φ<sub><i>k</i></sub>(<i>s</i>) &isin; [0, 1) over simulator state, with the final
+                  predicate equal to the task verifier. These are combined into a staged potential
+                </p>
+                <p class="eq-block">
+                  Φ(<i>s</i>) = <i>k</i>*(<i>s</i>) + φ<sub><i>k</i>*(<i>s</i>)</sub>(<i>s</i>),&emsp;
+                  <i>k</i>*(<i>s</i>) = |{<i>k</i> : done<sub><i>k</i></sub>(<i>s</i>)}|
+                </p>
+                <p>
+                  where the diagnosed phase guides the decomposition and the diagnosed cause guides the potentials.
+                  Unlike free-form reward synthesis, the potential <em>shapes</em> the critic's targets rather than
+                  replacing the task reward. Emitted programs are executed before use, and a potential that does not
+                  speed up value-critic convergence sends the diagnosis back for revision.
+                </p>
+
+                <h3 class="section-sub">Policy training with shaped chunk values</h3>
+                <p>
+                  The policy emits action chunks that execute open-loop. A value critic over chunks is trained with an
+                  <i>h</i>-step temporal-difference target under potential-based shaping, where the shaping term
+                  telescopes so that the potential needs to be evaluated only at a chunk's endpoints. During data
+                  collection, several candidate chunks are sampled and blended by their critic scores; the policy is
+                  then updated by <strong>advantage-weighted regression</strong>, which reweights the policy's own
+                  supervised action loss and therefore applies equally to discrete, flow-matching, and diffusion
+                  policies. For a fixed, bounded potential, shaping shifts action and state values by the same
+                  &minus;Φ(<i>s</i>), leaving advantages &mdash; and the optimal policy &mdash; unchanged. The potential
+                  is used only during training; at deployment the policy acts from observations and the instruction
+                  alone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== QUALITATIVE RESULTS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <h2 class="title is-3">Qualitative Results</h2>
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/rollouts.webp"
+                     class="interpolation-image" style="width: 97%;" alt="Successful policy rollouts on LIBERO-Pro tasks and evolved vegetable-preparation scenes.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Successful rollouts.</strong> Left: pre-defined LIBERO-Pro tasks. Right: scenes evolved by
+                  <span class="model-name">CoDA</span>, one row per variant (spatial shifts of 5, 19, and 43&nbsp;cm,
+                  a size change, and a target replacement). Columns show the initial state, grasp, transport, place,
+                  and success. Despite changes in object position, size, and identity, the policy follows the subgoal
+                  sequence encoded by the staged potential.
+                </p>
+              </div>
+
+              <br>
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/scene_variations.webp"
+                     class="interpolation-image" style="width: 97%;" alt="Scene variations generated by CoDA for tool sorting, serving board, craft station, and noodle preparation tasks.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Scene variations generated by <span class="model-name">CoDA</span>.</strong> For tool
+                  sorting, serving-board arrangement, craft-station organization, and noodle preparation, each panel
+                  shows a seed scene, three spatial perturbations of increasing magnitude, a target-size change, and a
+                  target-object replacement. All displayed variants pass the scene-validity checks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== QUANTITATIVE RESULTS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+
+            <!-- Table 1: four task families -->
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th rowspan="2">Data generation</th>
+                    <th colspan="4">OOD by family</th>
+                    <th colspan="2">Average</th>
+                  </tr>
+                  <tr>
+                    <th>Pick-place</th><th>Articulated</th><th>Put-inside</th><th>Stack/insert</th>
+                    <th>In</th><th>OOD</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>π0.5 pretrained, zero-shot</td><td>3.1 ± 0.6</td><td>1.6 ± 0.5</td><td>2.7 ± 0.6</td><td>1.8 ± 0.6</td><td>3.4 ± 0.2</td><td>2.3 ± 0.3</td></tr>
+                  <tr><td>+ seed demonstrations (SFT)</td><td>6.4 ± 0.6</td><td>4.7 ± 0.4</td><td>5.9 ± 0.5</td><td>4.2 ± 0.4</td><td>11.7 ± 0.4</td><td>5.3 ± 0.3</td></tr>
+                  <tr><td>Domain randomization</td><td>8.8 ± 0.4</td><td>8.3 ± 0.6</td><td>7.6 ± 0.4</td><td>6.9 ± 0.5</td><td>17.2 ± 0.3</td><td>7.9 ± 0.4</td></tr>
+                  <tr><td>Uniform variants (SimFoundry)</td><td>10.6 ± 0.4</td><td>6.9 ± 0.6</td><td>9.7 ± 0.4</td><td>6.8 ± 0.3</td><td>21.6 ± 0.3</td><td>8.5 ± 0.2</td></tr>
+                  <tr><td>Scalar-feedback co-evolution (SimWorld Studio)</td><td>20.9 ± 0.7</td><td>15.3 ± 0.7</td><td class="second">19.6 ± 1.2</td><td>16.6 ± 0.7</td><td class="second">33.8 ± 0.4</td><td>18.1 ± 0.5</td></tr>
+                  <tr><td>Our critic, no memory</td><td class="second">22.4 ± 0.7</td><td class="second">17.8 ± 0.9</td><td>18.3 ± 1.3</td><td class="second">18.3 ± 0.8</td><td>31.7 ± 0.6</td><td class="second">19.2 ± 0.7</td></tr>
+                  <tr class="ours"><td>CoDA (ours)</td><td class="best">33.1 ± 1.2</td><td class="best">24.7 ± 0.9</td><td class="best">28.9 ± 1.3</td><td class="best">23.7 ± 1.0</td><td class="best">39.4 ± 0.5</td><td class="best">27.6 ± 0.6</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              With the same generation budget, <span class="model-name">CoDA</span> exceeds generation guided by task
+              success rates by <strong>9.5 points</strong> and our critic without memory by 8.4 points. Extending the
+              loop from five to fifteen rounds raises OOD success further, from 27.6% to <strong>42.1%</strong>.
+              <em>In</em> is success on each generator's own distribution; values are mean ± standard error over
+              three seeds with the π0.5 backbone. <span class="hl-best">Best</span> and <span class="hl-second">second best</span> highlighted.
+            </p>
+
+            <!-- Table 2: LIBERO-Pro -->
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th rowspan="2">Method</th>
+                    <th rowspan="2">Std. LIBERO</th>
+                    <th colspan="2">Object</th>
+                    <th colspan="2">Goal</th>
+                    <th colspan="2">Spatial</th>
+                    <th colspan="2">Overall</th>
+                  </tr>
+                  <tr>
+                    <th>Pos</th><th>Task</th><th>Pos</th><th>Task</th><th>Pos</th><th>Task</th><th>Pos</th><th>Task</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>OpenVLA</td><td>0.765</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+                  <tr><td>π0</td><td>0.942</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+                  <tr><td>π0.5</td><td>0.971</td><td>0.17</td><td>0.01</td><td>0.38</td><td>0.00</td><td>0.20</td><td>0.01</td><td>0.25</td><td>0.01</td></tr>
+                  <tr><td>Human-written programs</td><td>&mdash;</td><td>0.14</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.23</td><td>0.05</td><td>0.12</td><td>0.02</td></tr>
+                  <tr><td>ASPIRE (code-as-policy)</td><td>&mdash;</td><td class="best">0.98</td><td class="best">0.95</td><td class="second">0.81</td><td>0.45</td><td>0.51</td><td>0.60</td><td>0.77</td><td>0.67</td></tr>
+                  <tr><td>CoDA (π0.5), 5 rounds</td><td class="second">0.971</td><td>0.90</td><td>0.86</td><td>0.80</td><td class="second">0.58</td><td class="second">0.76</td><td class="second">0.72</td><td class="second">0.82</td><td class="second">0.72</td></tr>
+                  <tr class="ours"><td>CoDA (π0.5), 15 rounds</td><td class="best">0.974</td><td class="second">0.91</td><td class="second">0.88</td><td class="best">0.83</td><td class="best">0.64</td><td class="best">0.78</td><td class="best">0.76</td><td class="best">0.84</td><td class="best">0.76</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              Training on <span class="model-name">CoDA</span>-generated variants of the LIBERO-Pro source tasks lifts
+              overall success from 25% to <strong>84%</strong> under position perturbations and from 1% to
+              <strong>76%</strong> under instruction perturbations, while standard LIBERO success is preserved
+              (97.4% vs. 97.1%). <span class="hl-best">Best</span> and <span class="hl-second">second best</span> highlighted.
+            </p>
+
+            <!-- Figure 3: co-evolution over rounds -->
+            <img loading="lazy" decoding="async" src="./static/images/coevolution_rounds.webp"
+                 class="interpolation-image" style="width: 97%;" alt="Co-evolution over rounds">
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABLATIONS ===================== -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Ablations</h2>
+
+            <!-- Table 3: critic -->
+            <h3 class="section-sub">Failure-diagnosis critic</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Critic</th><th>OOD success (%) ↑</th><th>Refuted (%) ↓</th><th>Human agr. (%) ↑</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Qwen3-VL-235B (open weights)</td><td>24.9 ± 0.8</td><td>27.5</td><td>73.8</td></tr>
+                  <tr><td>InternVL3-78B (open weights)</td><td>25.7 ± 0.7</td><td>24.1</td><td>76.3</td></tr>
+                  <tr><td>Claude Opus 5</td><td class="second">26.1 ± 0.6</td><td class="second">20.3</td><td class="second">81.5</td></tr>
+                  <tr class="ours"><td>GPT-5.5 (default)</td><td class="best">27.6 ± 0.5</td><td class="best">18.2</td><td class="best">82.4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              Critics with lower human agreement produce more diagnoses that the control batches refute, yet every
+              critic outperforms generation guided by task success rates &mdash; even Qwen3-VL-235B exceeds that
+              baseline by 6.8 points. <span class="hl-best">Best</span> and <span class="hl-second">second best</span> highlighted.
+            </p>
+
+            <!-- Table 4: Text2potential -->
+            <h3 class="section-sub">Text2potential</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Training signal</th><th>OOD success (%) ↑</th><th>Steps to 25% OOD (k) ↓</th><th>Agreement (%) ↑</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Sparse verifier only (Φ ≡ 0)</td><td>22.3 ± 0.8</td><td>31</td><td>&mdash;</td></tr>
+                  <tr><td>Potential from task description</td><td>24.6 ± 0.7</td><td>29</td><td>95.3</td></tr>
+                  <tr><td>Free-form dense reward, not a potential</td><td>23.5 ± 1.0</td><td>33</td><td>72.4</td></tr>
+                  <tr><td>Frozen actor: Q-weighted selection only</td><td>21.4 ± 0.9</td><td>&mdash;</td><td class="second">96.8</td></tr>
+                  <tr><td>Text2potential without refinement</td><td class="second">26.1 ± 0.6</td><td class="second">27</td><td>95.9</td></tr>
+                  <tr class="ours"><td>Text2potential (ours)</td><td class="best">27.6 ± 0.5</td><td class="best">21</td><td class="best">97.2</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="tbl-note">
+              Text2potential reaches 25% OOD success in 21k policy updates versus 31k with sparse rewards alone
+              &mdash; roughly <strong>32% fewer updates</strong>. Deriving the potential from the failure diagnosis
+              rather than the task description, refining it, and using the learned values to update the policy rather
+              than only to select chunks each contribute to the gain. <span class="hl-best">Best</span> and <span class="hl-second">second best</span> highlighted.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== BIBTEX ===================== -->
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title" style="justify-content: left; display: flex;">BibTeX</h2>
+          <!-- TODO: update authors, venue, and key once the paper is public -->
+          <pre><code>@article{coda2026,
+  title={CoDA: Co-Evolution of Data Engines and Action Policies},
+  author={Anonymous},
+  journal={Under review},
+  year={2026}
+}</code></pre>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <a class="icon-link" href="https://github.com/PLAN-Lab" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  This site is built upon the work of
+                  <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+                  made available under the
+                  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
