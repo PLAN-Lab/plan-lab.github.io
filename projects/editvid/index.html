@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-48J3PYKGQ6');</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,490 +10,23 @@
   <meta property="og:description" content="A unified training-free framework for diverse video editing.">
   <title>EᴅɪᴛVɪᴅ | PLAN Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2">
-  <link rel="stylesheet" href="static/css/editvid.css?v=project-pages-inline-data-v2">
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
-  <script src="static/js/editvid.js?v=project-pages-inline-data-v2" defer></script>
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <link rel="stylesheet" href="static/css/editvid.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
+  <script src="static/js/editvid.js?v=project-pages-static-v4" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-<body class="page-project editvid-page" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "EditVid",
-    "tldr": [
-      "We introduce EditVid, a training-free framework for diverse video editing, supporting various instruction-guided and reference-guided edits in one framework, including style transfer, attribute modification, object insertion, part-level editing, and subject replacement."
-    ],
-    "contributions": [
-      "EditVid unifies instruction-guided and reference-guided video editing without training. The framework extends frozen MM-DiT-based image editors to temporally consistent video editing, supporting style transfer, attribute modification, object insertion, part-level editing, and subject replacement within the same pipeline.",
-      "Sparse causal memory preserves local temporal coherence. Adjacent-frame spatio-temporal attention shares information across nearby frames, while correspondence-based post-attention token injection preserves long-range appearance and identity. Confidence- and cycle-consistent correspondences match each frame to an anchor before matched visual representations are injected after attention.",
-      "Soft latent blending maintains edit locality. Timestep-dependent preservation weights derived from source–edit trajectory discrepancies retain source content where needed while allowing the requested modification elsewhere in the video.",
-      "Benchmarks and a user study assess quality across editing paradigms. EditVid achieves 78.16 FiVE-Acc on FiVE, compared with 58.95 for the strongest evaluated training-free baseline, and obtains competitive IVEBench results. A user study reports 51.8% overall preference for EditVid over seven competing methods."
-    ],
-    "method": {
-      "source": "A local–global decomposition for temporal control"
-    },
-    "quantitative": {
-      "source": "Results"
-    },
-    "qualitative": {
-      "source": "Comparisons with training-free baselines"
-    },
-    "contributionLeads": [
-      "EditVid unifies instruction-guided and reference-guided video editing without training.",
-      "Sparse causal memory preserves local temporal coherence.",
-      "Soft latent blending maintains edit locality.",
-      "Benchmarks and a user study assess quality across editing paradigms."
-    ]
-  },
-  "resultPanels": {
-    "FiVE editing accuracy": {
-      "description": "Instruction-following accuracy on the FiVE benchmark. Higher scores indicate better agreement with the requested edit."
-    },
-    "FiVE fidelity and perceptual metrics": {
-      "description": "Video quality and fidelity on FiVE, comparing perceptual quality with preservation of the source content."
-    },
-    "IVEBench and curated editing evaluation": {
-      "description": "Editing quality on IVEBench and curated subject-guided and general video-editing examples."
-    }
-  },
-  "results": {
-    "table-1.png": {
-      "type": "table",
-      "title": "FiVE editing accuracy",
-      "columns": [
-        "Method",
-        "Foundation",
-        "Subject-guided",
-        "FiVE-YN ↑",
-        "FiVE-MC ↑",
-        "FiVE-U ↑",
-        "FiVE-O ↑",
-        "FiVE-Acc ↑"
-      ],
-      "rows": [
-        [
-          "Pyramid-Edit [32]",
-          "Video",
-          "No",
-          "33.67",
-          "54.01",
-          "56.36",
-          "31.31",
-          "43.84"
-        ],
-        [
-          "Wan-Edit [32]",
-          "Video",
-          "No",
-          "41.41",
-          "52.53",
-          "55.72",
-          "38.22",
-          "46.97"
-        ],
-        [
-          "FlowDirector [31]",
-          "Video",
-          "No",
-          "49.16",
-          "68.74",
-          "70.41",
-          "47.49",
-          "58.95"
-        ],
-        [
-          "StreamEdit (SF) [25]",
-          "Video",
-          "No",
-          "43.09",
-          "61.09",
-          "64.11",
-          "40.07",
-          "51.94"
-        ],
-        [
-          "DMT* [53]",
-          "Image",
-          "No",
-          "34.78",
-          "62.06",
-          "62.98",
-          "33.86",
-          "48.42"
-        ],
-        [
-          "VideoGrain† [51]",
-          "Image",
-          "No",
-          "30.50",
-          "43.97",
-          "44.30",
-          "30.17",
-          "37.23"
-        ],
-        [
-          "TokenFlow [18]",
-          "Image",
-          "No",
-          "19.36",
-          "35.51",
-          "36.68",
-          "18.18",
-          "27.43"
-        ],
-        [
-          "VidToMe [33]",
-          "Image",
-          "No",
-          "20.03",
-          "33.50",
-          "36.20",
-          "17.34",
-          "26.77"
-        ],
-        [
-          "AnyV2V [29]",
-          "Hybrid",
-          "Yes",
-          "30.62",
-          "45.42",
-          "48.96",
-          "27.09",
-          "38.02"
-        ],
-        [
-          "EditVid (Ours)",
-          "Image",
-          "Yes",
-          "69.45",
-          "86.87",
-          "88.78",
-          "67.54",
-          "78.16"
-        ]
-      ],
-      "note": "* Requires additional depth maps. † Requires additional masks.",
-      "source": "static/images/table-1.png"
-    },
-    "table-2.png": {
-      "type": "table",
-      "title": "FiVE fidelity and perceptual metrics",
-      "columns": [
-        "Method",
-        "Foundation",
-        "Subject-guided",
-        "Str. Dist. ↓",
-        "PSNR ↑",
-        "LPIPS ↓",
-        "MSE ↓",
-        "SSIM ↑",
-        "CLIP source ↑",
-        "CLIP edit ↑",
-        "NIQE ↓",
-        "MEFS ↑"
-      ],
-      "rows": [
-        [
-          "Source Videos",
-          "—",
-          "—",
-          "0",
-          "∞",
-          "0",
-          "0",
-          "100",
-          "24.59",
-          "19.87",
-          "6.33",
-          "93.76"
-        ],
-        [
-          "Pyramid-Edit [32]",
-          "Video",
-          "No",
-          "28.65",
-          "20.84",
-          "276.59",
-          "95.63",
-          "71.72",
-          "26.82",
-          "20.20",
-          "5.48",
-          "80.59"
-        ],
-        [
-          "Wan-Edit [32]",
-          "Video",
-          "No",
-          "12.53",
-          "25.57",
-          "94.61",
-          "41.84",
-          "82.55",
-          "26.39",
-          "21.23",
-          "6.54",
-          "89.43"
-        ],
-        [
-          "FlowDirector [31]",
-          "Video",
-          "No",
-          "21.56",
-          "22.74",
-          "107.09",
-          "65.20",
-          "81.68",
-          "27.93",
-          "22.00",
-          "4.98",
-          "81.22"
-        ],
-        [
-          "StreamEdit (SF)",
-          "Video",
-          "No",
-          "10.27",
-          "28.47",
-          "49.84",
-          "21.88",
-          "87.52",
-          "26.95",
-          "21.73",
-          "4.38",
-          "90.93"
-        ],
-        [
-          "DMT* [53]",
-          "Image",
-          "No",
-          "85.95",
-          "14.71",
-          "404.60",
-          "372.78",
-          "51.64",
-          "26.66",
-          "21.44",
-          "5.24",
-          "82.30"
-        ],
-        [
-          "VideoGrain† [51]",
-          "Image",
-          "No",
-          "12.40",
-          "27.05",
-          "185.21",
-          "25.10",
-          "79.13",
-          "25.69",
-          "20.31",
-          "4.08",
-          "88.57"
-        ],
-        [
-          "TokenFlow [18]",
-          "Image",
-          "No",
-          "35.62",
-          "19.06",
-          "263.61",
-          "138.65",
-          "72.51",
-          "26.46",
-          "21.15",
-          "4.01",
-          "89.00"
-        ],
-        [
-          "VidToMe [33]",
-          "Image",
-          "No",
-          "22.37",
-          "21.15",
-          "263.91",
-          "88.75",
-          "70.69",
-          "26.84",
-          "21.05",
-          "4.68",
-          "90.06"
-        ],
-        [
-          "AnyV2V [29]",
-          "Hybrid",
-          "Yes",
-          "71.36",
-          "15.90",
-          "348.59",
-          "342.97",
-          "50.77",
-          "24.89",
-          "19.72",
-          "5.04",
-          "60.36"
-        ],
-        [
-          "EditVid (Ours)",
-          "Image",
-          "Yes",
-          "17.10",
-          "25.97",
-          "218.71",
-          "36.37",
-          "83.31",
-          "28.83",
-          "22.40",
-          "4.17",
-          "85.31"
-        ]
-      ],
-      "note": "Source videos are the reference. * Requires additional depth maps. † Requires additional masks.",
-      "source": "static/images/table-2.png"
-    },
-    "table-3.png": {
-      "type": "table",
-      "title": "IVEBench and curated editing evaluation",
-      "columns": [
-        "Method",
-        "Training-free",
-        "Total",
-        "Quality",
-        "Compliance",
-        "Fidelity",
-        "Subject · PF ↑",
-        "Subject · EQ ↑",
-        "Subject · BC ↑",
-        "General · PF ↑",
-        "General · EQ ↑",
-        "General · BC ↑"
-      ],
-      "rows": [
-        [
-          "LucyEditDev [34]",
-          "No",
-          "0.6220",
-          "0.8164",
-          "0.3679",
-          "0.6817",
-          "2.019",
-          "3.731",
-          "6.596",
-          "4.667",
-          "6.292",
-          "8.542"
-        ],
-        [
-          "Kiwi-Edit-5B [35]",
-          "No",
-          "0.6936",
-          "0.8101",
-          "0.5182",
-          "0.7524",
-          "3.115",
-          "4.327",
-          "6.596",
-          "8.000",
-          "8.229",
-          "9.458"
-        ],
-        [
-          "Qwen-Video-Edit [5]",
-          "No",
-          "0.6765",
-          "0.7752",
-          "0.5256",
-          "0.7286",
-          "1.865",
-          "2.654",
-          "7.654",
-          "7.812",
-          "7.979",
-          "8.958"
-        ],
-        [
-          "VidToMe [33]",
-          "Yes",
-          "0.6297",
-          "0.7826",
-          "0.4010",
-          "0.7056",
-          "4.308",
-          "5.942",
-          "5.923",
-          "3.875",
-          "5.938",
-          "5.250"
-        ],
-        [
-          "WANEdit [32]",
-          "Yes",
-          "0.6072",
-          "0.7973",
-          "0.2801",
-          "0.7441",
-          "5.962",
-          "6.654",
-          "8.942",
-          "5.125",
-          "6.625",
-          "8.375"
-        ],
-        [
-          "FlowDirector [31]",
-          "Yes",
-          "0.6264",
-          "0.7771",
-          "0.3765",
-          "0.7255",
-          "4.019",
-          "5.865",
-          "8.058",
-          "4.021",
-          "5.521",
-          "6.875"
-        ],
-        [
-          "StreamEdit [25]",
-          "Yes",
-          "0.6229",
-          "0.8238",
-          "0.2921",
-          "0.7530",
-          "4.077",
-          "6.673",
-          "8.288",
-          "5.250",
-          "7.000",
-          "9.792"
-        ],
-        [
-          "EditVid",
-          "Yes",
-          "0.6847",
-          "0.8114",
-          "0.4587",
-          "0.7839",
-          "7.769",
-          "7.846",
-          "9.558",
-          "9.458",
-          "9.000",
-          "9.500"
-        ]
-      ],
-      "note": "PF: prompt following; EQ: edit quality; BC: background consistency.",
-      "source": "static/images/table-3.png"
-    }
-  }
-}
-  </script>
+<body class="page-project editvid-page project-studio" data-project-presentation="static">
+<div id="canvas-container"></div>
 
-  <div class="project-bg"></div><div class="project-grid"></div>
+
+  <div class="project-bg"></div>
+<div class="project-grid"></div>
   <nav class="glass-nav">
     <a href="../../index.html#hero" class="nav-logo"><img src="../../assets/images/logo.svg" alt="PLAN Lab Logo"></a>
     <div class="nav-menu">
@@ -506,73 +39,590 @@
   </nav>
 
   <main>
-    <section class="hero project-hero"><div class="hero-body"><div class="container is-max-desktop"><div class="has-text-centered">
-      <h1 class="publication-title">One Editor, Many Edits:<br><span>A Unified Training-free Framework for Diverse Video Editing</span></h1>
-      <div class="is-size-5 publication-authors author-list studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Sunil Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Kishor Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc">Nabeel Bashir, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="hero project-hero studio-header"><div class="hero-body"><div class="container is-max-desktop"><div class="has-text-centered">
+      <h1 class="publication-title">
+<span class="studio-name">One Editor, Many Edits</span><span class="studio-subtitle">A Unified Training-free Framework for Diverse Video Editing</span>
+</h1>
+      <div class="is-size-5 publication-authors author-list studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Sunil Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Kishor Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc">Nabeel Bashir, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div>
+</div>
       <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
-      <div class="publication-links"><a href="https://arxiv.org/pdf/2609.04190" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2609.04190" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/EditVid" class="button is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="#comparisons" class="button is-rounded is-dark" data-resource="Comparisons"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Comparisons</span></a></div>
-    </div></div></div></section>
+      <div class="publication-links">
+<a href="https://arxiv.org/pdf/2609.04190" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2609.04190" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/EditVid" class="button is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="#comparisons" class="button is-rounded is-dark" data-resource="Comparisons"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Comparisons</span></a>
+</div>
+    </div></div></div></section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce EditVid, a training-free framework for diverse video editing, supporting various instruction-guided and reference-guided edits in one framework, including style transfer, attribute modification, object insertion, part-level editing, and <span class="studio-tldr-tail">subject replacement.</span></p></div>
+</div></section><section class="section studio-opening-examples" id="showcase" data-studio-section="examples"><div class="container showcase-container"><div class="hero-body">
 
-    <section class="hero teaser" id="showcase"><div class="container showcase-container"><div class="hero-body">
-      <div class="tldr"><strong>TL;DR</strong><span>We introduce EditVid, a training-free framework for diverse video editing, supporting various instruction-guided and reference-guided edits in one framework, including style transfer, attribute modification, object insertion, part-level editing, and subject replacement.</span></div>
       <div class="ours-showcase">
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/subject_appearance_elephant_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/subject_appearance_elephant_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited blue elephant video"></div><div class="showcase-caption"><span>Attribute edit</span><p>“Change the elephant's color to blue.”</p></div></article>
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/global_tone_black_white_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/global_tone_black_white_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited black and white video"></div><div class="showcase-caption"><span>Global tone</span><p>“Convert the video to black and white.”</p></div></article>
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/environment_appearance_waves_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/environment_appearance_waves_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited black waves video"></div><div class="showcase-caption"><span>Environment appearance</span><p>“Change the turquoise waves to black.”</p></div></article>
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/style_ukiyo_e_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/style_ukiyo_e_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited ukiyo-e video"></div><div class="showcase-caption"><span>Style transfer</span><p>“Convert the video style to ukiyo-e.”</p></div></article>
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/dynamic_phenomenon_fire_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/dynamic_phenomenon_fire_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited blue fire video"></div><div class="showcase-caption"><span>Dynamic phenomenon</span><p>“Change the color of the fire to blue.”</p></div></article>
-        <article class="showcase-card"><div class="video-compare" style="--split:50%"><video class="source-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/short_0122_source.mp4" type="video/mp4"></video><video class="edited-video" autoplay muted loop playsinline preload="metadata"><source src="static/videos/showcase/short_0122_editvid.mp4" type="video/mp4"></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited red clothing video"></div><div class="showcase-caption"><span>Attribute edit</span><p>“Change the black clothing to red.”</p></div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/subject_appearance_elephant_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/subject_appearance_elephant_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited blue elephant video">
+</div>
+<div class="showcase-caption">
+<span>Attribute edit</span><p>“Change the elephant's color to blue.”</p>
+</div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/global_tone_black_white_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/global_tone_black_white_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited black and white video">
+</div>
+<div class="showcase-caption">
+<span>Global tone</span><p>“Convert the video to black and white.”</p>
+</div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/environment_appearance_waves_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/environment_appearance_waves_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited black waves video">
+</div>
+<div class="showcase-caption">
+<span>Environment appearance</span><p>“Change the turquoise waves to black.”</p>
+</div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/style_ukiyo_e_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/style_ukiyo_e_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited ukiyo-e video">
+</div>
+<div class="showcase-caption">
+<span>Style transfer</span><p>“Convert the video style to ukiyo-e.”</p>
+</div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/dynamic_phenomenon_fire_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/dynamic_phenomenon_fire_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited blue fire video">
+</div>
+<div class="showcase-caption">
+<span>Dynamic phenomenon</span><p>“Change the color of the fire to blue.”</p>
+</div></article>
+        <article class="showcase-card"><div class="video-compare" style="--split:50%">
+<video class="source-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/short_0122_source.mp4" type="video/mp4"></source></video><video class="edited-video" muted="" loop="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay=""><source src="static/videos/showcase/short_0122_editvid.mp4" type="video/mp4"></source></video><span class="compare-label source-label">Source</span><span class="compare-label edited-label">EᴅɪᴛVɪᴅ</span><span class="compare-handle"><i class="fa-solid fa-left-right"></i></span><input type="range" min="0" max="100" value="50" aria-label="Reveal source or edited red clothing video">
+</div>
+<div class="showcase-caption">
+<span>Attribute edit</span><p>“Change the black clothing to red.”</p>
+</div></article>
       </div>
-    </div></div></section>
-
-    <section class="section" id="abstract"><div class="container is-max-desktop">
-      <div class="section-kicker">Overview</div><h2 class="title is-3">Abstract</h2>
+    </div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#method" data-section="method">EditVid Method</a><a href="#results" data-section="quantitative">Quantitative Results</a><a href="#comparisons" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" id="abstract" data-studio-section="abstract" aria-labelledby="abstract-title"><div class="container is-max-desktop">
+      <h2 class="title is-3" id="abstract-title">Abstract</h2>
       <div class="content has-text-justified"><p>Video editing spans diverse editing paradigms, yet achieving high-quality instruction-guided and subject-guided editing within a single unified framework remains challenging. We introduce EditVid, a training-free framework combining sparse causal memory for local coherence, correspondence-based post-attention token injection for long-range identity preservation, and soft latent blending for edit locality. The same framework supports instruction-guided and reference-guided edits, including style transfer, attribute modification, object insertion, part-level editing, and subject replacement. On FiVE, EditVid achieves 78.16 FiVE-Acc, compared with 58.95 for the strongest evaluated training-free baseline, while obtaining competitive results on IVEBench. A user study further shows a 51.8% overall preference for EditVid over 7 competing methods.</p></div>
-    </div></section>
-
-    <section class="section" id="method"><div class="container method-container">
-      <div class="section-kicker">Method</div><h2 class="title is-3">A local–global decomposition for temporal control</h2>
+    </div></section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">EditVid unifies instruction-guided and reference-guided video editing without training.</strong> The framework extends frozen MM-DiT-based image editors to temporally consistent video editing, supporting style transfer, attribute modification, object insertion, part-level editing, and subject replacement within the same pipeline.</li>
+<li>
+<strong class="studio-contribution-lead">Sparse causal memory preserves local temporal coherence.</strong> Adjacent-frame spatio-temporal attention shares information across nearby frames, while correspondence-based post-attention token injection preserves long-range appearance and identity. Confidence- and cycle-consistent correspondences match each frame to an anchor before matched visual representations are injected after attention.</li>
+<li>
+<strong class="studio-contribution-lead">Soft latent blending maintains edit locality.</strong> Timestep-dependent preservation weights derived from source–edit trajectory discrepancies retain source content where needed while allowing the requested modification elsewhere in the video.</li>
+<li>
+<strong class="studio-contribution-lead">Benchmarks and a user study assess quality across editing paradigms.</strong> EditVid achieves 78.16 FiVE-Acc on FiVE, compared with 58.95 for the strongest evaluated training-free baseline, and obtains competitive IVEBench results. A user study reports 51.8% overall preference for EditVid over seven competing methods.</li>
+</ul></div>
+</div></section><section class="section" id="method" data-studio-section="method" aria-labelledby="method-title"><div class="container method-container">
+      <h2 class="title is-3" id="method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">EditVid</span> Method</h2>
       <p class="section-intro">EᴅɪᴛVɪᴅ operates only on visual latent tokens inside frozen MM-DiT-based image editors. Text and optional reference-image conditioning remain unchanged, preserving each editor's original semantic control.</p>
       <figure class="architecture-figure">
         <img src="static/images/editvid-architecture.png" alt="EᴅɪᴛVɪᴅ architecture: sparse causal memory, correspondence-based post-attention token injection, and soft latent blending within frozen MM-DiT-based image editors">
         <figcaption>EᴅɪᴛVɪᴅ combines adjacent-frame spatio-temporal attention, correspondence-based post-attention token injection, and soft latent blending in frozen MM-DiT-based image editors.</figcaption>
       </figure>
-      <div class="method-grid">
-        <article><div class="step">01</div><i class="fa-solid fa-link"></i><h3>Sparse causal memory</h3><p>Each frame attends to visual key–value states from the immediately preceding frame. This bounded context gives strong short-range coherence while avoiding unreliable long-range RoPE interactions.</p></article>
-        <article><div class="step">02</div><i class="fa-solid fa-crosshairs"></i><h3>Post-attention token injection</h3><p>Confidence- and cycle-consistent correspondences match each frame to an anchor. Matched visual representations are injected after attention for long-range appearance and identity preservation.</p></article>
-        <article><div class="step">03</div><i class="fa-solid fa-layer-group"></i><h3>Soft latent blending</h3><p>Timestep-dependent preservation weights are derived from source–edit trajectory discrepancies, retaining source content where needed while allowing the requested edit elsewhere.</p></article>
+      <div class="method-grid studio-explainer-grid">
+        <article class="studio-explainer-card"><div class="step">01</div>
+<i class="fa-solid fa-link"></i><h3>Sparse causal memory</h3>
+<p>Each frame attends to visual key–value states from the immediately preceding frame. This bounded context gives strong short-range coherence while avoiding unreliable long-range RoPE interactions.</p></article>
+        <article class="studio-explainer-card"><div class="step">02</div>
+<i class="fa-solid fa-crosshairs"></i><h3>Post-attention token injection</h3>
+<p>Confidence- and cycle-consistent correspondences match each frame to an anchor. Matched visual representations are injected after attention for long-range appearance and identity preservation.</p></article>
+        <article class="studio-explainer-card"><div class="step">03</div>
+<i class="fa-solid fa-layer-group"></i><h3>Soft latent blending</h3>
+<p>Timestep-dependent preservation weights are derived from source–edit trajectory discrepancies, retaining source content where needed while allowing the requested edit elsewhere.</p></article>
       </div>
-    </div></section>
-
-    <section class="section" id="results"><div class="container results-container">
-      <div class="section-kicker">Quantitative evaluation</div><h2 class="title is-3">Results</h2>
-      <p class="section-intro">EᴅɪᴛVɪᴅ is evaluated on fine-grained editing accuracy, traditional preservation metrics, IVEBench, and curated subject-guided and general video-editing sets.</p>
-      <div class="result-placeholders">
-        <figure><img src="static/images/table-1.png" alt="Quantitative comparison on FiVE editing accuracy"><figcaption>FiVE editing accuracy</figcaption></figure>
-        <figure><img src="static/images/table-2.png" alt="Quantitative comparison on FiVE traditional metrics"><figcaption>FiVE traditional metrics</figcaption></figure>
-        <figure><img src="static/images/table-3.png" alt="Quantitative evaluation on IVEBench and curated video-editing sets"><figcaption>IVEBench and curated-set evaluation</figcaption></figure>
-      </div>
-    </div></section>
-
-    <section class="section comparison-section" id="comparisons"><div class="container comparison-container">
-      <div class="section-kicker">Qualitative evaluation</div><h2 class="title is-3">Comparisons with training-free baselines</h2>
+    </div></section><section class="section studio-quantitative" id="results" data-studio-section="quantitative" aria-labelledby="results-title"><div class="container results-container">
+<h2 class="title is-3" id="results-title">Quantitative Results</h2>
+<p class="section-intro studio-results-intro">EᴅɪᴛVɪᴅ is evaluated on fine-grained editing accuracy, traditional preservation metrics, IVEBench, and curated subject-guided and general video-editing sets.</p>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/table-1.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">FiVE editing accuracy</h3>
+<p class="studio-result-description">Instruction-following accuracy on the FiVE benchmark. Higher scores indicate better agreement with the requested edit.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="FiVE editing accuracy"><table class="studio-native-table">
+<caption class="studio-sr-only">FiVE editing accuracy</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Foundation</th>
+<th scope="col">Subject-guided</th>
+<th scope="col">FiVE-YN ↑</th>
+<th scope="col">FiVE-MC ↑</th>
+<th scope="col">FiVE-U ↑</th>
+<th scope="col">FiVE-O ↑</th>
+<th scope="col">FiVE-Acc ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Pyramid-Edit</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">33.67</td>
+<td class="studio-numeric-cell">54.01</td>
+<td class="studio-numeric-cell">56.36</td>
+<td class="studio-numeric-cell">31.31</td>
+<td class="studio-numeric-cell">43.84</td>
+</tr>
+<tr>
+<th scope="row">Wan-Edit</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">41.41</td>
+<td class="studio-numeric-cell">52.53</td>
+<td class="studio-numeric-cell">55.72</td>
+<td class="studio-numeric-cell">38.22</td>
+<td class="studio-numeric-cell">46.97</td>
+</tr>
+<tr>
+<th scope="row">FlowDirector</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">49.16</td>
+<td class="studio-numeric-cell">68.74</td>
+<td class="studio-numeric-cell">70.41</td>
+<td class="studio-numeric-cell">47.49</td>
+<td class="studio-numeric-cell">58.95</td>
+</tr>
+<tr>
+<th scope="row">StreamEdit (SF)</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">43.09</td>
+<td class="studio-numeric-cell">61.09</td>
+<td class="studio-numeric-cell">64.11</td>
+<td class="studio-numeric-cell">40.07</td>
+<td class="studio-numeric-cell">51.94</td>
+</tr>
+<tr>
+<th scope="row">DMT*</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">34.78</td>
+<td class="studio-numeric-cell">62.06</td>
+<td class="studio-numeric-cell">62.98</td>
+<td class="studio-numeric-cell">33.86</td>
+<td class="studio-numeric-cell">48.42</td>
+</tr>
+<tr>
+<th scope="row">VideoGrain†</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">30.50</td>
+<td class="studio-numeric-cell">43.97</td>
+<td class="studio-numeric-cell">44.30</td>
+<td class="studio-numeric-cell">30.17</td>
+<td class="studio-numeric-cell">37.23</td>
+</tr>
+<tr>
+<th scope="row">TokenFlow</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">19.36</td>
+<td class="studio-numeric-cell">35.51</td>
+<td class="studio-numeric-cell">36.68</td>
+<td class="studio-numeric-cell">18.18</td>
+<td class="studio-numeric-cell">27.43</td>
+</tr>
+<tr>
+<th scope="row">VidToMe</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">20.03</td>
+<td class="studio-numeric-cell">33.50</td>
+<td class="studio-numeric-cell">36.20</td>
+<td class="studio-numeric-cell">17.34</td>
+<td class="studio-numeric-cell">26.77</td>
+</tr>
+<tr>
+<th scope="row">AnyV2V</th>
+<td>Hybrid</td>
+<td>Yes</td>
+<td class="studio-numeric-cell">30.62</td>
+<td class="studio-numeric-cell">45.42</td>
+<td class="studio-numeric-cell">48.96</td>
+<td class="studio-numeric-cell">27.09</td>
+<td class="studio-numeric-cell">38.02</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">EditVid (Ours)</th>
+<td>Image</td>
+<td>Yes</td>
+<td class="studio-numeric-cell">69.45</td>
+<td class="studio-numeric-cell">86.87</td>
+<td class="studio-numeric-cell">88.78</td>
+<td class="studio-numeric-cell">67.54</td>
+<td class="studio-numeric-cell">78.16</td>
+</tr>
+</tbody>
+</table></div>
+<figcaption class="studio-result-note">* Requires additional depth maps. † Requires additional masks.</figcaption></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/table-2.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">FiVE fidelity and perceptual metrics</h3>
+<p class="studio-result-description">Video quality and fidelity on FiVE, comparing perceptual quality with preservation of the source content.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="FiVE fidelity and perceptual metrics"><table class="studio-native-table">
+<caption class="studio-sr-only">FiVE fidelity and perceptual metrics</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Foundation</th>
+<th scope="col">Subject-guided</th>
+<th scope="col">Str. Dist. ↓</th>
+<th scope="col">PSNR ↑</th>
+<th scope="col">LPIPS ↓</th>
+<th scope="col">MSE ↓</th>
+<th scope="col">SSIM ↑</th>
+<th scope="col">CLIP source ↑</th>
+<th scope="col">CLIP edit ↑</th>
+<th scope="col">NIQE ↓</th>
+<th scope="col">MEFS ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Source Videos</th>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">0</td>
+<td>∞</td>
+<td class="studio-numeric-cell">0</td>
+<td class="studio-numeric-cell">0</td>
+<td class="studio-numeric-cell">100</td>
+<td class="studio-numeric-cell">24.59</td>
+<td class="studio-numeric-cell">19.87</td>
+<td class="studio-numeric-cell">6.33</td>
+<td class="studio-numeric-cell">93.76</td>
+</tr>
+<tr>
+<th scope="row">Pyramid-Edit</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">28.65</td>
+<td class="studio-numeric-cell">20.84</td>
+<td class="studio-numeric-cell">276.59</td>
+<td class="studio-numeric-cell">95.63</td>
+<td class="studio-numeric-cell">71.72</td>
+<td class="studio-numeric-cell">26.82</td>
+<td class="studio-numeric-cell">20.20</td>
+<td class="studio-numeric-cell">5.48</td>
+<td class="studio-numeric-cell">80.59</td>
+</tr>
+<tr>
+<th scope="row">Wan-Edit</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">12.53</td>
+<td class="studio-numeric-cell">25.57</td>
+<td class="studio-numeric-cell">94.61</td>
+<td class="studio-numeric-cell">41.84</td>
+<td class="studio-numeric-cell">82.55</td>
+<td class="studio-numeric-cell">26.39</td>
+<td class="studio-numeric-cell">21.23</td>
+<td class="studio-numeric-cell">6.54</td>
+<td class="studio-numeric-cell">89.43</td>
+</tr>
+<tr>
+<th scope="row">FlowDirector</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">21.56</td>
+<td class="studio-numeric-cell">22.74</td>
+<td class="studio-numeric-cell">107.09</td>
+<td class="studio-numeric-cell">65.20</td>
+<td class="studio-numeric-cell">81.68</td>
+<td class="studio-numeric-cell">27.93</td>
+<td class="studio-numeric-cell">22.00</td>
+<td class="studio-numeric-cell">4.98</td>
+<td class="studio-numeric-cell">81.22</td>
+</tr>
+<tr>
+<th scope="row">StreamEdit (SF)</th>
+<td>Video</td>
+<td>No</td>
+<td class="studio-numeric-cell">10.27</td>
+<td class="studio-numeric-cell">28.47</td>
+<td class="studio-numeric-cell">49.84</td>
+<td class="studio-numeric-cell">21.88</td>
+<td class="studio-numeric-cell">87.52</td>
+<td class="studio-numeric-cell">26.95</td>
+<td class="studio-numeric-cell">21.73</td>
+<td class="studio-numeric-cell">4.38</td>
+<td class="studio-numeric-cell">90.93</td>
+</tr>
+<tr>
+<th scope="row">DMT*</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">85.95</td>
+<td class="studio-numeric-cell">14.71</td>
+<td class="studio-numeric-cell">404.60</td>
+<td class="studio-numeric-cell">372.78</td>
+<td class="studio-numeric-cell">51.64</td>
+<td class="studio-numeric-cell">26.66</td>
+<td class="studio-numeric-cell">21.44</td>
+<td class="studio-numeric-cell">5.24</td>
+<td class="studio-numeric-cell">82.30</td>
+</tr>
+<tr>
+<th scope="row">VideoGrain†</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">12.40</td>
+<td class="studio-numeric-cell">27.05</td>
+<td class="studio-numeric-cell">185.21</td>
+<td class="studio-numeric-cell">25.10</td>
+<td class="studio-numeric-cell">79.13</td>
+<td class="studio-numeric-cell">25.69</td>
+<td class="studio-numeric-cell">20.31</td>
+<td class="studio-numeric-cell">4.08</td>
+<td class="studio-numeric-cell">88.57</td>
+</tr>
+<tr>
+<th scope="row">TokenFlow</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">35.62</td>
+<td class="studio-numeric-cell">19.06</td>
+<td class="studio-numeric-cell">263.61</td>
+<td class="studio-numeric-cell">138.65</td>
+<td class="studio-numeric-cell">72.51</td>
+<td class="studio-numeric-cell">26.46</td>
+<td class="studio-numeric-cell">21.15</td>
+<td class="studio-numeric-cell">4.01</td>
+<td class="studio-numeric-cell">89.00</td>
+</tr>
+<tr>
+<th scope="row">VidToMe</th>
+<td>Image</td>
+<td>No</td>
+<td class="studio-numeric-cell">22.37</td>
+<td class="studio-numeric-cell">21.15</td>
+<td class="studio-numeric-cell">263.91</td>
+<td class="studio-numeric-cell">88.75</td>
+<td class="studio-numeric-cell">70.69</td>
+<td class="studio-numeric-cell">26.84</td>
+<td class="studio-numeric-cell">21.05</td>
+<td class="studio-numeric-cell">4.68</td>
+<td class="studio-numeric-cell">90.06</td>
+</tr>
+<tr>
+<th scope="row">AnyV2V</th>
+<td>Hybrid</td>
+<td>Yes</td>
+<td class="studio-numeric-cell">71.36</td>
+<td class="studio-numeric-cell">15.90</td>
+<td class="studio-numeric-cell">348.59</td>
+<td class="studio-numeric-cell">342.97</td>
+<td class="studio-numeric-cell">50.77</td>
+<td class="studio-numeric-cell">24.89</td>
+<td class="studio-numeric-cell">19.72</td>
+<td class="studio-numeric-cell">5.04</td>
+<td class="studio-numeric-cell">60.36</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">EditVid (Ours)</th>
+<td>Image</td>
+<td>Yes</td>
+<td class="studio-numeric-cell">17.10</td>
+<td class="studio-numeric-cell">25.97</td>
+<td class="studio-numeric-cell">218.71</td>
+<td class="studio-numeric-cell">36.37</td>
+<td class="studio-numeric-cell">83.31</td>
+<td class="studio-numeric-cell">28.83</td>
+<td class="studio-numeric-cell">22.40</td>
+<td class="studio-numeric-cell">4.17</td>
+<td class="studio-numeric-cell">85.31</td>
+</tr>
+</tbody>
+</table></div>
+<figcaption class="studio-result-note">Source videos are the reference. * Requires additional depth maps. † Requires additional masks.</figcaption></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/table-3.png" aria-labelledby="studio-result-2"><h3 class="studio-result-title" id="studio-result-2">IVEBench and curated editing evaluation</h3>
+<p class="studio-result-description">Editing quality on IVEBench and curated subject-guided and general video-editing examples.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="IVEBench and curated editing evaluation"><table class="studio-native-table">
+<caption class="studio-sr-only">IVEBench and curated editing evaluation</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Training-free</th>
+<th scope="col">Total</th>
+<th scope="col">Quality</th>
+<th scope="col">Compliance</th>
+<th scope="col">Fidelity</th>
+<th scope="col">Subject · PF ↑</th>
+<th scope="col">Subject · EQ ↑</th>
+<th scope="col">Subject · BC ↑</th>
+<th scope="col">General · PF ↑</th>
+<th scope="col">General · EQ ↑</th>
+<th scope="col">General · BC ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">LucyEditDev</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.6220</td>
+<td class="studio-numeric-cell">0.8164</td>
+<td class="studio-numeric-cell">0.3679</td>
+<td class="studio-numeric-cell">0.6817</td>
+<td class="studio-numeric-cell">2.019</td>
+<td class="studio-numeric-cell">3.731</td>
+<td class="studio-numeric-cell">6.596</td>
+<td class="studio-numeric-cell">4.667</td>
+<td class="studio-numeric-cell">6.292</td>
+<td class="studio-numeric-cell">8.542</td>
+</tr>
+<tr>
+<th scope="row">Kiwi-Edit-5B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.6936</td>
+<td class="studio-numeric-cell">0.8101</td>
+<td class="studio-numeric-cell">0.5182</td>
+<td class="studio-numeric-cell">0.7524</td>
+<td class="studio-numeric-cell">3.115</td>
+<td class="studio-numeric-cell">4.327</td>
+<td class="studio-numeric-cell">6.596</td>
+<td class="studio-numeric-cell">8.000</td>
+<td class="studio-numeric-cell">8.229</td>
+<td class="studio-numeric-cell">9.458</td>
+</tr>
+<tr>
+<th scope="row">Qwen-Video-Edit</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.6765</td>
+<td class="studio-numeric-cell">0.7752</td>
+<td class="studio-numeric-cell">0.5256</td>
+<td class="studio-numeric-cell">0.7286</td>
+<td class="studio-numeric-cell">1.865</td>
+<td class="studio-numeric-cell">2.654</td>
+<td class="studio-numeric-cell">7.654</td>
+<td class="studio-numeric-cell">7.812</td>
+<td class="studio-numeric-cell">7.979</td>
+<td class="studio-numeric-cell">8.958</td>
+</tr>
+<tr>
+<th scope="row">VidToMe</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.6297</td>
+<td class="studio-numeric-cell">0.7826</td>
+<td class="studio-numeric-cell">0.4010</td>
+<td class="studio-numeric-cell">0.7056</td>
+<td class="studio-numeric-cell">4.308</td>
+<td class="studio-numeric-cell">5.942</td>
+<td class="studio-numeric-cell">5.923</td>
+<td class="studio-numeric-cell">3.875</td>
+<td class="studio-numeric-cell">5.938</td>
+<td class="studio-numeric-cell">5.250</td>
+</tr>
+<tr>
+<th scope="row">WANEdit</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.6072</td>
+<td class="studio-numeric-cell">0.7973</td>
+<td class="studio-numeric-cell">0.2801</td>
+<td class="studio-numeric-cell">0.7441</td>
+<td class="studio-numeric-cell">5.962</td>
+<td class="studio-numeric-cell">6.654</td>
+<td class="studio-numeric-cell">8.942</td>
+<td class="studio-numeric-cell">5.125</td>
+<td class="studio-numeric-cell">6.625</td>
+<td class="studio-numeric-cell">8.375</td>
+</tr>
+<tr>
+<th scope="row">FlowDirector</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.6264</td>
+<td class="studio-numeric-cell">0.7771</td>
+<td class="studio-numeric-cell">0.3765</td>
+<td class="studio-numeric-cell">0.7255</td>
+<td class="studio-numeric-cell">4.019</td>
+<td class="studio-numeric-cell">5.865</td>
+<td class="studio-numeric-cell">8.058</td>
+<td class="studio-numeric-cell">4.021</td>
+<td class="studio-numeric-cell">5.521</td>
+<td class="studio-numeric-cell">6.875</td>
+</tr>
+<tr>
+<th scope="row">StreamEdit</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.6229</td>
+<td class="studio-numeric-cell">0.8238</td>
+<td class="studio-numeric-cell">0.2921</td>
+<td class="studio-numeric-cell">0.7530</td>
+<td class="studio-numeric-cell">4.077</td>
+<td class="studio-numeric-cell">6.673</td>
+<td class="studio-numeric-cell">8.288</td>
+<td class="studio-numeric-cell">5.250</td>
+<td class="studio-numeric-cell">7.000</td>
+<td class="studio-numeric-cell">9.792</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">EditVid</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.6847</td>
+<td class="studio-numeric-cell">0.8114</td>
+<td class="studio-numeric-cell">0.4587</td>
+<td class="studio-numeric-cell">0.7839</td>
+<td class="studio-numeric-cell">7.769</td>
+<td class="studio-numeric-cell">7.846</td>
+<td class="studio-numeric-cell">9.558</td>
+<td class="studio-numeric-cell">9.458</td>
+<td class="studio-numeric-cell">9.000</td>
+<td class="studio-numeric-cell">9.500</td>
+</tr>
+</tbody>
+</table></div>
+<figcaption class="studio-result-note">PF: prompt following; EQ: edit quality; BC: background consistency.</figcaption></figure>
+</div>
+</div></section><section class="section comparison-section" id="comparisons" data-studio-section="qualitative" aria-labelledby="comparisons-title"><div class="container comparison-container">
+      <h2 class="title is-3" id="comparisons-title">Qualitative Results</h2>
       <p class="section-intro">Select an edit to compare synchronized outputs from the source, representative baselines, and EᴅɪᴛVɪᴅ. Click any video to pause or resume the complete row.</p>
-      <div class="case-tabs" role="tablist" aria-label="Video editing examples"></div>
-      <div class="prompt-card"><span>Editing instruction</span><strong id="case-prompt"></strong></div>
-      <div id="reference-panel" class="reference-panel" hidden><img src="static/videos/comparisons/subject_guided_edit/0_source.jpg" alt="Reference subject: a chicken"></div>
-      <div id="video-grid" class="video-grid" aria-live="polite"></div>
-      <div class="playback-bar"><button type="button" id="toggle-play"><i class="fa-solid fa-pause"></i><span>Pause all</span></button><label><span>Playback</span><select id="playback-rate"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>
-    </div></section>
-
-    <section class="section" id="BibTeX"><div class="container is-max-desktop content">
-      <div class="section-kicker">Citation</div><h2 class="title is-3">BibTeX</h2>
+      <div class="case-tabs" role="tablist" aria-label="Video editing examples">
+<button type="button" role="tab" data-case="subject_appearance_elephant" class="active" aria-selected="true">Blue elephant</button><button type="button" role="tab" data-case="environment_appearance_waves" aria-selected="false">Black waves</button><button type="button" role="tab" data-case="style_ukiyo_e" aria-selected="false">Ukiyo-e</button><button type="button" role="tab" data-case="dynamic_phenomenon_fire" aria-selected="false">Blue fire</button><button type="button" role="tab" data-case="multi_object_attribute_lemons" aria-selected="false">Red lemons</button><button type="button" role="tab" data-case="style_pixel" aria-selected="false">Pixel style</button><button type="button" role="tab" data-case="style_van_gogh" aria-selected="false">Van Gogh</button><button type="button" role="tab" data-case="global_tone_black_white" aria-selected="false">Black &amp; white</button><button type="button" role="tab" data-case="weather_illumination_starry_night" aria-selected="false">Starry night</button><button type="button" role="tab" data-case="subject_guided_edit" aria-selected="false">Subject-guided</button>
+</div>
+      <div class="prompt-card">
+<span>Editing instruction</span><strong id="case-prompt">Change the elephant's color to blue.</strong>
+</div>
+      <div id="reference-panel" class="reference-panel" hidden=""><img src="static/videos/comparisons/subject_guided_edit/0_source.jpg" alt="Reference subject: a chicken"></div>
+      <div id="video-grid" class="video-grid" aria-live="polite" style="--case-aspect: 864/480;">
+<article class="video-card "><div class="video-label"><span>Source</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="Source result"><source src="static/videos/comparisons/subject_appearance_elephant/0_source.mp4" type="video/mp4"></source></video></article><article class="video-card "><div class="video-label"><span>VidToMe</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="VidToMe result"><source src="static/videos/comparisons/subject_appearance_elephant/1_vidtome.mp4" type="video/mp4"></source></video></article><article class="video-card "><div class="video-label"><span>Pyramid-Edit</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="Pyramid-Edit result"><source src="static/videos/comparisons/subject_appearance_elephant/2_pyramidedit.mp4" type="video/mp4"></source></video></article><article class="video-card "><div class="video-label"><span>Wan-Edit</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="Wan-Edit result"><source src="static/videos/comparisons/subject_appearance_elephant/3_wanedit.mp4" type="video/mp4"></source></video></article><article class="video-card "><div class="video-label"><span>FlowDirector</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="FlowDirector result"><source src="static/videos/comparisons/subject_appearance_elephant/4_flowdirector.mp4" type="video/mp4"></source></video></article><article class="video-card "><div class="video-label"><span>StreamEdit</span></div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="StreamEdit result"><source src="static/videos/comparisons/subject_appearance_elephant/5_streamedit.mp4" type="video/mp4"></source></video></article><article class="video-card ours"><div class="video-label">
+<span>EᴅɪᴛVɪᴅ (Ours)</span><b>Ours</b>
+</div>
+<video muted="" loop="" playsinline="" preload="auto" aria-label="EᴅɪᴛVɪᴅ (Ours) result"><source src="static/videos/comparisons/subject_appearance_elephant/6_editvid_ours.mp4" type="video/mp4"></source></video></article>
+</div>
+      <div class="playback-bar">
+<button type="button" id="toggle-play"><i class="fa-solid fa-play"></i><span>Play all</span></button><label><span>Playback</span><select id="playback-rate"><option value="0.5">0.5×</option>
+<option value="1" selected>1×</option>
+<option value="1.5">1.5×</option>
+<option value="2">2×</option></select></label>
+</div>
+    </div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title"><div class="container is-max-desktop content">
+      <h2 class="title is-3" id="BibTeX-title">BibTeX</h2>
       <pre><code>@article{juvekar2026editvid,
   title={One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing},
   author={Adheesh Sunil Juvekar and Onkar Kishor Susladkar and Kiet A. Nguyen and Muntasir Wahed and Nabeel Bashir and Xiaona Zhou and Tianjiao Yu and Vedant Shah and Ismini Lourentzou},
   journal={arXiv preprint arXiv:2609.04190},
   year={2026}
 }</code></pre>
-    </div></section>
-  </main>
+    </div></section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
 </body>
 </html>

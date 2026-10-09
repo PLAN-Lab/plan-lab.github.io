@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,433 +10,28 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs">
     <title>Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "SpatialReasoner-R1",
-    "tldr": [
-      "We introduce SpatialReasoner-R1, a model for answering fine-grained spatial questions with interpretable, step-by-step reasoning. SpatialReasoner-R1 learns to connect descriptions and logical deductions to visible spatial evidence, helping models reason about object locations, relationships, and layouts."
-    ],
-    "method": {
-      "source": "Method Overview",
-      "additionalSources": [
-        "Fine-Grained Spatial Rewards"
-      ]
-    },
-    "quantitative": {
-      "source": "Spatial Reasoning Evaluation"
-    },
-    "qualitative": {
-      "source": "Examples and Results"
-    },
-    "contributions": [
-      "SpatialReasoner-R1. We introduce SpatialReasoner-R1, a VLM designed for fine-grained LongCoT spatial reasoning that effectively generates interpretable, step-by-step explanations directly from 2D images. SpatialReasoner-R1 establishes a new SoTA in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.",
-      "Fine-grained Direct Preference Optimization. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.",
-      "Multi-Model Monte Carlo Tree Search. To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training."
-    ],
-    "contributionLeads": [
-      "SpatialReasoner-R1.",
-      "Fine-grained Direct Preference Optimization.",
-      "Multi-Model Monte Carlo Tree Search."
-    ],
-    "opening": {
-      "source": "additionexample1.png",
-      "alt": "A spatial question with visually grounded reasoning from SpatialReasoner-R1.",
-      "caption": "SpatialReasoner-R1 connects each reasoning step to the objects and relationships visible in the scene.",
-      "processTitle": "Visually grounded spatial reasoning"
-    },
-    "heroTitle": {
-      "name": "SpatialReasoner-R1",
-      "subtitle": "Fine-Grained Preference Optimization for Spatial Reasoning in VLMs"
-    }
-  },
-  "resultPanels": {
-    "Qualitative spatial relations": {
-      "description": "Accuracy on relative-position and relative-size questions in SpatialRGPT-Bench."
-    },
-    "Quantitative spatial measurements": {
-      "description": "Accuracy on distance, width, height, and direction questions in SpatialRGPT-Bench."
-    }
-  },
-  "results": {
-    "result.png": {
-      "type": "table",
-      "title": "Qualitative spatial relations",
-      "columns": [
-        "Model",
-        "Below/Above",
-        "Left/Right",
-        "Big/Small",
-        "Tall/Short",
-        "Wide/Thin",
-        "Behind/Front",
-        "Qual. accuracy"
-      ],
-      "rows": [
-        [
-          "Gemini 2.0 Flash [20]",
-          "58.33",
-          "68.57",
-          "16.98",
-          "50.00",
-          "15.38",
-          "53.63",
-          "44.29"
-        ],
-        [
-          "Llama 4 Maverick [47]",
-          "54.17",
-          "61.90",
-          "33.02",
-          "50.89",
-          "25.96",
-          "55.45",
-          "47.18"
-        ],
-        [
-          "Gemini 1.5 Pro [62]",
-          "85.83",
-          "56.19",
-          "58.49",
-          "71.42",
-          "55.76",
-          "60.00",
-          "65.14"
-        ],
-        [
-          "ChatGPT-4o [49]",
-          "87.50",
-          "80.00",
-          "53.77",
-          "63.39",
-          "51.92",
-          "60.90",
-          "66.67"
-        ],
-        [
-          "SpatialBot-3B [6]",
-          "52.50",
-          "62.86",
-          "57.54",
-          "49.11",
-          "49.04",
-          "62.73",
-          "55.56"
-        ],
-        [
-          "SpaceThinker Qwen2.5VL-3B [4]",
-          "89.16",
-          "63.81",
-          "76.41",
-          "56.25",
-          "56.73",
-          "70.91",
-          "69.25"
-        ],
-        [
-          "InternVL2.5-78B [11]",
-          "94.16",
-          "94.28",
-          "64.15",
-          "65.17",
-          "55.76",
-          "58.18",
-          "72.29"
-        ],
-        [
-          "Sa2va 4B [87]",
-          "22.50",
-          "25.71",
-          "25.47",
-          "16.07",
-          "27.88",
-          "30.91",
-          "24.65"
-        ],
-        [
-          "Sa2va 8B [87]",
-          "50.00",
-          "39.04",
-          "45.28",
-          "26.78",
-          "45.19",
-          "53.63",
-          "43.37"
-        ],
-        [
-          "SpatialRGPT-8B [12]",
-          "99.17",
-          "100.00",
-          "84.90",
-          "89.28",
-          "91.34",
-          "90.90",
-          "92.69"
-        ],
-        [
-          "SpatialReasoner-R1 SFT 4B",
-          "79.16",
-          "78.09",
-          "55.66",
-          "66.96",
-          "59.61",
-          "75.45",
-          "69.41"
-        ],
-        [
-          "SpatialReasoner-R1 SFT 8B",
-          "81.66",
-          "81.90",
-          "75.47",
-          "75.89",
-          "79.80",
-          "83.63",
-          "79.75"
-        ],
-        [
-          "SpatialReasoner-R1 DPO 4B",
-          "91.66",
-          "91.42",
-          "69.81",
-          "65.17",
-          "71.15",
-          "85.45",
-          "79.29"
-        ],
-        [
-          "SpatialReasoner-R1 DPO 8B",
-          "94.16",
-          "93.33",
-          "89.62",
-          "90.18",
-          "88.64",
-          "92.27",
-          "91.48"
-        ],
-        [
-          "SpatialReasoner-R1 fDPO 4B",
-          "95.83",
-          "93.33",
-          "83.96",
-          "74.10",
-          "87.50",
-          "89.09",
-          "87.37"
-        ],
-        [
-          "SpatialReasoner-R1 fDPO 8B",
-          "98.33",
-          "98.10",
-          "95.28",
-          "96.43",
-          "91.34",
-          "93.64",
-          "95.59"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/result.png",
-      "extra": [
-        {
-          "type": "table",
-          "title": "Quantitative spatial measurements",
-          "columns": [
-            "Model",
-            "Direct distance",
-            "Horizontal distance",
-            "Vertical distance",
-            "Width",
-            "Height",
-            "Direction",
-            "Quant. accuracy"
-          ],
-          "rows": [
-            [
-              "Gemini 2.0 Flash [20]",
-              "9.45",
-              "10.65",
-              "26.41",
-              "10.52",
-              "30.82",
-              "54.20",
-              "22.43"
-            ],
-            [
-              "Llama 4 Maverick [47]",
-              "24.48",
-              "28.68",
-              "34.28",
-              "35.71",
-              "44.61",
-              "58.09",
-              "36.72"
-            ],
-            [
-              "Gemini 1.5 Pro [62]",
-              "14.18",
-              "17.21",
-              "14.15",
-              "19.54",
-              "36.09",
-              "30.84",
-              "21.90"
-            ],
-            [
-              "ChatGPT-4o [49]",
-              "—",
-              "—",
-              "—",
-              "—",
-              "—",
-              "60.75",
-              "—"
-            ],
-            [
-              "SpatialBot-3B [6]",
-              "6.00",
-              "15.51",
-              "8.00",
-              "10.52",
-              "18.75",
-              "39.00",
-              "15.62"
-            ],
-            [
-              "SpaceThinker Qwen2.5VL-3B [4]",
-              "24.32",
-              "17.21",
-              "59.43",
-              "23.27",
-              "23.62",
-              "32.35",
-              "28.97"
-            ],
-            [
-              "InternVL2.5-78B [11]",
-              "27.70",
-              "22.13",
-              "41.50",
-              "29.32",
-              "34.58",
-              "62.61",
-              "35.25"
-            ],
-            [
-              "Sa2va 4B [87]",
-              "13.51",
-              "15.57",
-              "19.81",
-              "13.53",
-              "12.03",
-              "10.28",
-              "14.02"
-            ],
-            [
-              "Sa2va 8B [87]",
-              "14.18",
-              "14.75",
-              "9.43",
-              "14.28",
-              "19.54",
-              "14.18",
-              "14.55"
-            ],
-            [
-              "SpatialRGPT-8B [12]",
-              "45.90",
-              "68.00",
-              "56.60",
-              "48.90",
-              "61.70",
-              "95.30",
-              "61.42"
-            ],
-            [
-              "SpatialReasoner-R1 SFT 4B",
-              "22.29",
-              "27.86",
-              "31.13",
-              "25.56",
-              "33.80",
-              "47.66",
-              "30.71"
-            ],
-            [
-              "SpatialReasoner-R1 SFT 8B",
-              "28.43",
-              "20.49",
-              "44.05",
-              "33.59",
-              "51.63",
-              "46.72",
-              "37.12"
-            ],
-            [
-              "SpatialReasoner-R1 DPO 4B",
-              "47.97",
-              "46.72",
-              "60.37",
-              "45.11",
-              "55.63",
-              "91.58",
-              "56.61"
-            ],
-            [
-              "SpatialReasoner-R1 DPO 8B",
-              "62.83",
-              "56.55",
-              "60.37",
-              "70.45",
-              "68.42",
-              "93.45",
-              "68.22"
-            ],
-            [
-              "SpatialReasoner-R1 fDPO 4B",
-              "60.13",
-              "59.01",
-              "71.70",
-              "65.41",
-              "57.89",
-              "92.52",
-              "66.76"
-            ],
-            [
-              "SpatialReasoner-R1 fDPO 8B",
-              "70.95",
-              "72.13",
-              "74.52",
-              "80.45",
-              "74.43",
-              "94.39",
-              "77.30"
-            ]
-          ],
-          "source": "static/images/result.png"
-        }
-      ]
-    }
-  }
-}
-  </script>
+  <body class="page-project project-studio studio-spatialreasoner" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -470,16 +65,51 @@
 </nav>
 
     <main>
-<section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title" style="display: flex; align-items: center; justify-content: center; gap: 15px;"><img src="static/images/logo.png" alt="SpatialReasoner Logo" width="100px"><span>Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs</span></h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/yuanzhe-liu-upenn-ds/">Yuanzhe Liu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/jingyuan-zhu-6a0ab3322/">Jingyuan Zhu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://www.irohxucao.com/">Xu Cao</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu"><a href="#">Xiaofeng Zhang</a><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="#">Yixiao He</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="google"><a href="https://www.linkedin.com/in/wenming-ye-0170b11/">Wenming Ye</a><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://rehg.org/">James Matthew Rehg</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+            <h1 class="title is-2 publication-title" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+<span class="studio-name studio-long-name">SpatialReasoner-R1</span><span class="studio-subtitle">Fine-Grained Preference Optimization for Spatial Reasoning in VLMs</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/yuanzhe-liu-upenn-ds/">Yuanzhe Liu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="penn"><a href="https://www.linkedin.com/in/jingyuan-zhu-6a0ab3322/">Jingyuan Zhu</a><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://www.irohxucao.com/">Xu Cao</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu"><a href="#">Xiaofeng Zhang</a><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="#">Yixiao He</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="google"><a href="https://www.linkedin.com/in/wenming-ye-0170b11/">Wenming Ye</a><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://rehg.org/">James Matthew Rehg</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div>
+</div>
 
-            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span></div>
-            
+            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span>
+</div>
+
             <!-- <div class="has-text-centered" style="margin: 5px 0;">
               <img src="./static/images/u_logo.png" alt="Affiliation Logos" style="height: 55px;">
             </div> -->
@@ -489,163 +119,442 @@
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2506.21656" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.21656" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/SpatialReasonerR1" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/SpatialReasoner-R1" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a><a class="button is-rounded" data-resource="Google Blog" href="https://opensource.googleblog.com/2025/12/spatialreasoner-teaching-vlms-to-see-structure-accelerated-with-tunix-on-tpus.html"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Google Blog</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2506.21656" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.21656" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/SpatialReasonerR1" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/SpatialReasoner-R1" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a><a class="button is-rounded" data-resource="Google Blog" href="https://opensource.googleblog.com/2025/12/spatialreasoner-teaching-vlms-to-see-structure-accelerated-with-tunix-on-tpus.html"><span class="icon" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><span>Google Blog</span></a>
+</div>
 
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span> We propose a novel fine-grained preference optimization approach that significantly improves spatial reasoning capabilities in Vision-Language Models (VLMs). Our method leverages carefully designed preference data and training strategies to enhance spatial understanding without compromising general visual capabilities.
-        </div>
-        <div class="pdf-container">
-          <img loading="lazy" decoding="async" src="./static/images/teaser.png" class="interpolation-image" alt="Workflow Overview">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce SpatialReasoner-R1, a model for answering fine-grained spatial questions with interpretable, step-by-step reasoning. SpatialReasoner-R1 learns to connect descriptions and logical deductions to visible spatial evidence, helping models reason about object locations, relationships, <span class="studio-tldr-tail">and layouts.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples"><div class="container is-max-desktop"><figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/images/additionexample1.png" class="interpolation-image" alt="SpatialReasoner-R1 example with visually grounded multi-step spatial reasoning"></div>
+<figcaption class="studio-opening-caption"><h2 class="studio-opening-label">Fine-grained preference optimization for spatial reasoning</h2>
+<p>SpatialReasoner-R1 connects descriptions and reasoning to the objects and relationships visible in the scene.</p></figcaption></figure></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">SpatialReasoner-R1 Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> a vision-language reasoning model designed to address these limitations. To construct high-quality supervision for spatial reasoning, we design a Multi-Model Monte Carlo Tree Search (M3CTS) method that generates diverse, logically consistent Long Chain-of-Thought (LongCoT) reasoning trajectories. In addition, we propose fine-grained Direct Preference Optimization (fDPO), which introduces segment-specific preference granularity for descriptive grounding and logical reasoning, guided by a spatial reward mechanism that evaluates candidate responses based on visual consistency, spatial grounding, and logical coherence. Experimental results demonstrate that fDPO achieves an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% gain in spatial quantity tasks. SpatialReasoner-R1, trained with fDPO, sets a new SoTA on SpatialRGPT-Bench, outperforming the strongest baseline by 9.4% in average accuracy, while maintaining competitive performance on general vision-language tasks.           </p>
+              Current Vision-Language Models (VLMs) struggle with fine-grained spatial reasoning, particularly when multi-step logic and precise spatial alignment are required. In this work, we introduce <span style="font-weight: bold;">Spatial</span><span style="font-weight: bold;">Reasoner-R1</span> a vision-language reasoning model designed to address these limitations. To construct high-quality supervision for spatial reasoning, we design a Multi-Model Monte Carlo Tree Search (M3CTS) method that generates diverse, logically consistent Long Chain-of-Thought (LongCoT) reasoning trajectories. In addition, we propose fine-grained Direct Preference Optimization (fDPO), which introduces segment-specific preference granularity for descriptive grounding and logical reasoning, guided by a spatial reward mechanism that evaluates candidate responses based on visual consistency, spatial grounding, and logical coherence. Experimental results demonstrate that fDPO achieves an average improvement of 4.1% over standard DPO across spatial quality tasks, and a 9.0% gain in spatial quantity tasks. SpatialReasoner-R1, trained with fDPO, sets a new SoTA on SpatialRGPT-Bench, outperforming the strongest baseline by 9.4% in average accuracy, while maintaining competitive performance on general vision-language tasks.           </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">✅ Contributions</h2>
+          <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
           <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>SpatialReasoner-R1</b>. We introduce SpatialReasoner-R1, a VLM designed for fine-grained LongCoT spatial reasoning that effectively generates interpretable, step-by-step explanations directly from 2D images. SpatialReasoner-R1 establishes a new SoTA in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Fine-grained Direct Preference Optimization</b>. To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Multi-Model Monte Carlo Tree Search</b>. To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search  (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training.</li>
-            </ul>
+            <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">SpatialReasoner-R1.</strong> We introduce SpatialReasoner-R1, a VLM designed for fine-grained LongCoT spatial reasoning that effectively generates interpretable, step-by-step explanations directly from 2D images. SpatialReasoner-R1 establishes a new SoTA in spatial understanding tasks, while maintaining robust performance on general vision-language benchmarks.</li>
+<li>
+<strong class="studio-contribution-lead">Fine-grained Direct Preference Optimization.</strong> To enhance training stability and precision, we propose a new fine-grained Direct Preference Optimization fDPO method that employs segment-specific learning updates tailored explicitly for descriptive grounding and logical reasoning.</li>
+<li>
+<strong class="studio-contribution-lead">Multi-Model Monte Carlo Tree Search.</strong> To address the scarcity of high-quality spatial reasoning data, we introduce a data generation pipeline that combines Multi-Model Monte Carlo Tree Search (M3CTS) with fine-grained spatial rewards, enabling the creation of diverse, logically consistent LongCoT trajectories for fine-grained preference training.</li>
+</ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Method Overview</h2>
-          <div class="content has-text-justified">
-            <div class="pdf-container">
-              <img loading="lazy" decoding="async" src="./static/images/workflow_c.png" class="interpolation-image" alt="Fine-Grained Preference Optimization">
-            </div>
-            <div class="horizontal-container">
-              <p>Method Overview including <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> model architecture and training pipeline. Training pipeline consisting of three stages: (1) generating reasoning paths using M3CTS; (2) constructing fine-grained preference pairs via reward-based selection; (3) training with fine-grained DPO (fDPO) to optimize descriptive and logical reasoning separately.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">SpatialReasoner-R1</span> Method</h2>
+<p class="spatial-method-intro">SpatialReasoner-R1 takes an image, a question, and visual region prompts to generate a grounded description and multi-step spatial reasoning. Its training pipeline first constructs reasoning trajectories, then selects preference pairs, and finally optimizes the descriptive and reasoning segments separately.</p>
+<figure class="spatial-method-figure"><img loading="lazy" decoding="async" src="./static/images/workflow_c.png" class="interpolation-image" alt="SpatialReasoner-R1 architecture and three-stage training pipeline with M3CTS, preference-pair construction, and fine-grained DPO"><figcaption>M3CTS produces reasoning paths. Spatial rewards select positive and negative responses, and fDPO applies distinct preference updates to descriptive grounding and logical reasoning.</figcaption></figure><ol class="spatial-training-steps">
+<li>
+<h3>Generate reasoning paths with M3CTS</h3>
+<p>Multi-Model Monte Carlo Tree Search explores diverse long reasoning trajectories grounded in the scene.</p>
+</li>
+<li>
+<h3>Construct fine-grained preference pairs</h3>
+<p>Candidate responses receive separate descriptive, spatial, and reasoning scores. Reward-based selection produces preferences for the relevant response segments.</p>
+</li>
+<li>
+<h3>Optimize descriptions and reasoning with fDPO</h3>
+<p>Segment-specific preference updates improve visual grounding and logical coherence instead of treating the entire response as one undifferentiated preference.</p>
+</li>
+</ol>
+</div>
+  </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Fine-Grained Spatial Rewards</h2>
-          <div class="content has-text-justified">
-            <div class="pdf-container">
-              <img loading="lazy" decoding="async" src="./static/images/fdpo_c.png" class="interpolation-image" alt="Fine-Grained Preference Optimization">
-            </div>
-            <div class="horizontal-container">
-                             <p>Fine-Grained Spatial Rewards. Candidate reasoning paths are decomposed into three aspects, <em>descriptive</em>, <em>spatial</em>, and <em>reasoning</em>, scored separately; the higher value in each row is marked by <span style="color: green;">✔</span> and the lower by <span style="color: red;">✖</span>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<p class="studio-results-intro">SpatialRGPT-Bench evaluates qualitative relations and quantitative measurements. The two tables report each question type separately.</p>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/result.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Qualitative spatial relations</h3>
+<p class="studio-result-description">Accuracy on relative-position and relative-size questions in SpatialRGPT-Bench.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Qualitative spatial relations"><table class="studio-native-table">
+<caption class="studio-sr-only">Qualitative spatial relations</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Below/Above</th>
+<th scope="col">Left/Right</th>
+<th scope="col">Big/Small</th>
+<th scope="col">Tall/Short</th>
+<th scope="col">Wide/Thin</th>
+<th scope="col">Behind/Front</th>
+<th scope="col">Qual. accuracy</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Gemini 2.0 Flash</th>
+<td class="studio-numeric-cell">58.33</td>
+<td class="studio-numeric-cell">68.57</td>
+<td class="studio-numeric-cell">16.98</td>
+<td class="studio-numeric-cell">50.00</td>
+<td class="studio-numeric-cell">15.38</td>
+<td class="studio-numeric-cell">53.63</td>
+<td class="studio-numeric-cell">44.29</td>
+</tr>
+<tr>
+<th scope="row">Llama 4 Maverick</th>
+<td class="studio-numeric-cell">54.17</td>
+<td class="studio-numeric-cell">61.90</td>
+<td class="studio-numeric-cell">33.02</td>
+<td class="studio-numeric-cell">50.89</td>
+<td class="studio-numeric-cell">25.96</td>
+<td class="studio-numeric-cell">55.45</td>
+<td class="studio-numeric-cell">47.18</td>
+</tr>
+<tr>
+<th scope="row">Gemini 1.5 Pro</th>
+<td class="studio-numeric-cell">85.83</td>
+<td class="studio-numeric-cell">56.19</td>
+<td class="studio-numeric-cell">58.49</td>
+<td class="studio-numeric-cell">71.42</td>
+<td class="studio-numeric-cell">55.76</td>
+<td class="studio-numeric-cell">60.00</td>
+<td class="studio-numeric-cell">65.14</td>
+</tr>
+<tr>
+<th scope="row">ChatGPT-4o</th>
+<td class="studio-numeric-cell">87.50</td>
+<td class="studio-numeric-cell">80.00</td>
+<td class="studio-numeric-cell">53.77</td>
+<td class="studio-numeric-cell">63.39</td>
+<td class="studio-numeric-cell">51.92</td>
+<td class="studio-numeric-cell">60.90</td>
+<td class="studio-numeric-cell">66.67</td>
+</tr>
+<tr>
+<th scope="row">SpatialBot-3B</th>
+<td class="studio-numeric-cell">52.50</td>
+<td class="studio-numeric-cell">62.86</td>
+<td class="studio-numeric-cell">57.54</td>
+<td class="studio-numeric-cell">49.11</td>
+<td class="studio-numeric-cell">49.04</td>
+<td class="studio-numeric-cell">62.73</td>
+<td class="studio-numeric-cell">55.56</td>
+</tr>
+<tr>
+<th scope="row">SpaceThinker Qwen2.5VL-3B</th>
+<td class="studio-numeric-cell">89.16</td>
+<td class="studio-numeric-cell">63.81</td>
+<td class="studio-numeric-cell">76.41</td>
+<td class="studio-numeric-cell">56.25</td>
+<td class="studio-numeric-cell">56.73</td>
+<td class="studio-numeric-cell">70.91</td>
+<td class="studio-numeric-cell">69.25</td>
+</tr>
+<tr>
+<th scope="row">InternVL2.5-78B</th>
+<td class="studio-numeric-cell">94.16</td>
+<td class="studio-numeric-cell">94.28</td>
+<td class="studio-numeric-cell">64.15</td>
+<td class="studio-numeric-cell">65.17</td>
+<td class="studio-numeric-cell">55.76</td>
+<td class="studio-numeric-cell">58.18</td>
+<td class="studio-numeric-cell">72.29</td>
+</tr>
+<tr>
+<th scope="row">Sa2va 4B</th>
+<td class="studio-numeric-cell">22.50</td>
+<td class="studio-numeric-cell">25.71</td>
+<td class="studio-numeric-cell">25.47</td>
+<td class="studio-numeric-cell">16.07</td>
+<td class="studio-numeric-cell">27.88</td>
+<td class="studio-numeric-cell">30.91</td>
+<td class="studio-numeric-cell">24.65</td>
+</tr>
+<tr>
+<th scope="row">Sa2va 8B</th>
+<td class="studio-numeric-cell">50.00</td>
+<td class="studio-numeric-cell">39.04</td>
+<td class="studio-numeric-cell">45.28</td>
+<td class="studio-numeric-cell">26.78</td>
+<td class="studio-numeric-cell">45.19</td>
+<td class="studio-numeric-cell">53.63</td>
+<td class="studio-numeric-cell">43.37</td>
+</tr>
+<tr>
+<th scope="row">SpatialRGPT-8B</th>
+<td class="studio-numeric-cell">99.17</td>
+<td class="studio-numeric-cell">100.00</td>
+<td class="studio-numeric-cell">84.90</td>
+<td class="studio-numeric-cell">89.28</td>
+<td class="studio-numeric-cell">91.34</td>
+<td class="studio-numeric-cell">90.90</td>
+<td class="studio-numeric-cell">92.69</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 SFT 4B</th>
+<td class="studio-numeric-cell">79.16</td>
+<td class="studio-numeric-cell">78.09</td>
+<td class="studio-numeric-cell">55.66</td>
+<td class="studio-numeric-cell">66.96</td>
+<td class="studio-numeric-cell">59.61</td>
+<td class="studio-numeric-cell">75.45</td>
+<td class="studio-numeric-cell">69.41</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 SFT 8B</th>
+<td class="studio-numeric-cell">81.66</td>
+<td class="studio-numeric-cell">81.90</td>
+<td class="studio-numeric-cell">75.47</td>
+<td class="studio-numeric-cell">75.89</td>
+<td class="studio-numeric-cell">79.80</td>
+<td class="studio-numeric-cell">83.63</td>
+<td class="studio-numeric-cell">79.75</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 DPO 4B</th>
+<td class="studio-numeric-cell">91.66</td>
+<td class="studio-numeric-cell">91.42</td>
+<td class="studio-numeric-cell">69.81</td>
+<td class="studio-numeric-cell">65.17</td>
+<td class="studio-numeric-cell">71.15</td>
+<td class="studio-numeric-cell">85.45</td>
+<td class="studio-numeric-cell">79.29</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 DPO 8B</th>
+<td class="studio-numeric-cell">94.16</td>
+<td class="studio-numeric-cell">93.33</td>
+<td class="studio-numeric-cell">89.62</td>
+<td class="studio-numeric-cell">90.18</td>
+<td class="studio-numeric-cell">88.64</td>
+<td class="studio-numeric-cell">92.27</td>
+<td class="studio-numeric-cell">91.48</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 fDPO 4B</th>
+<td class="studio-numeric-cell">95.83</td>
+<td class="studio-numeric-cell">93.33</td>
+<td class="studio-numeric-cell">83.96</td>
+<td class="studio-numeric-cell">74.10</td>
+<td class="studio-numeric-cell">87.50</td>
+<td class="studio-numeric-cell">89.09</td>
+<td class="studio-numeric-cell">87.37</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 fDPO 8B</th>
+<td class="studio-numeric-cell">98.33</td>
+<td class="studio-numeric-cell">98.10</td>
+<td class="studio-numeric-cell">95.28</td>
+<td class="studio-numeric-cell">96.43</td>
+<td class="studio-numeric-cell">91.34</td>
+<td class="studio-numeric-cell">93.64</td>
+<td class="studio-numeric-cell">95.59</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/result.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Quantitative spatial measurements</h3>
+<p class="studio-result-description">Accuracy on distance, width, height, and direction questions in SpatialRGPT-Bench.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Quantitative spatial measurements"><table class="studio-native-table">
+<caption class="studio-sr-only">Quantitative spatial measurements</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Direct distance</th>
+<th scope="col">Horizontal distance</th>
+<th scope="col">Vertical distance</th>
+<th scope="col">Width</th>
+<th scope="col">Height</th>
+<th scope="col">Direction</th>
+<th scope="col">Quant. accuracy</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Gemini 2.0 Flash</th>
+<td class="studio-numeric-cell">9.45</td>
+<td class="studio-numeric-cell">10.65</td>
+<td class="studio-numeric-cell">26.41</td>
+<td class="studio-numeric-cell">10.52</td>
+<td class="studio-numeric-cell">30.82</td>
+<td class="studio-numeric-cell">54.20</td>
+<td class="studio-numeric-cell">22.43</td>
+</tr>
+<tr>
+<th scope="row">Llama 4 Maverick</th>
+<td class="studio-numeric-cell">24.48</td>
+<td class="studio-numeric-cell">28.68</td>
+<td class="studio-numeric-cell">34.28</td>
+<td class="studio-numeric-cell">35.71</td>
+<td class="studio-numeric-cell">44.61</td>
+<td class="studio-numeric-cell">58.09</td>
+<td class="studio-numeric-cell">36.72</td>
+</tr>
+<tr>
+<th scope="row">Gemini 1.5 Pro</th>
+<td class="studio-numeric-cell">14.18</td>
+<td class="studio-numeric-cell">17.21</td>
+<td class="studio-numeric-cell">14.15</td>
+<td class="studio-numeric-cell">19.54</td>
+<td class="studio-numeric-cell">36.09</td>
+<td class="studio-numeric-cell">30.84</td>
+<td class="studio-numeric-cell">21.90</td>
+</tr>
+<tr>
+<th scope="row">ChatGPT-4o</th>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">60.75</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">SpatialBot-3B</th>
+<td class="studio-numeric-cell">6.00</td>
+<td class="studio-numeric-cell">15.51</td>
+<td class="studio-numeric-cell">8.00</td>
+<td class="studio-numeric-cell">10.52</td>
+<td class="studio-numeric-cell">18.75</td>
+<td class="studio-numeric-cell">39.00</td>
+<td class="studio-numeric-cell">15.62</td>
+</tr>
+<tr>
+<th scope="row">SpaceThinker Qwen2.5VL-3B</th>
+<td class="studio-numeric-cell">24.32</td>
+<td class="studio-numeric-cell">17.21</td>
+<td class="studio-numeric-cell">59.43</td>
+<td class="studio-numeric-cell">23.27</td>
+<td class="studio-numeric-cell">23.62</td>
+<td class="studio-numeric-cell">32.35</td>
+<td class="studio-numeric-cell">28.97</td>
+</tr>
+<tr>
+<th scope="row">InternVL2.5-78B</th>
+<td class="studio-numeric-cell">27.70</td>
+<td class="studio-numeric-cell">22.13</td>
+<td class="studio-numeric-cell">41.50</td>
+<td class="studio-numeric-cell">29.32</td>
+<td class="studio-numeric-cell">34.58</td>
+<td class="studio-numeric-cell">62.61</td>
+<td class="studio-numeric-cell">35.25</td>
+</tr>
+<tr>
+<th scope="row">Sa2va 4B</th>
+<td class="studio-numeric-cell">13.51</td>
+<td class="studio-numeric-cell">15.57</td>
+<td class="studio-numeric-cell">19.81</td>
+<td class="studio-numeric-cell">13.53</td>
+<td class="studio-numeric-cell">12.03</td>
+<td class="studio-numeric-cell">10.28</td>
+<td class="studio-numeric-cell">14.02</td>
+</tr>
+<tr>
+<th scope="row">Sa2va 8B</th>
+<td class="studio-numeric-cell">14.18</td>
+<td class="studio-numeric-cell">14.75</td>
+<td class="studio-numeric-cell">9.43</td>
+<td class="studio-numeric-cell">14.28</td>
+<td class="studio-numeric-cell">19.54</td>
+<td class="studio-numeric-cell">14.18</td>
+<td class="studio-numeric-cell">14.55</td>
+</tr>
+<tr>
+<th scope="row">SpatialRGPT-8B</th>
+<td class="studio-numeric-cell">45.90</td>
+<td class="studio-numeric-cell">68.00</td>
+<td class="studio-numeric-cell">56.60</td>
+<td class="studio-numeric-cell">48.90</td>
+<td class="studio-numeric-cell">61.70</td>
+<td class="studio-numeric-cell">95.30</td>
+<td class="studio-numeric-cell">61.42</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 SFT 4B</th>
+<td class="studio-numeric-cell">22.29</td>
+<td class="studio-numeric-cell">27.86</td>
+<td class="studio-numeric-cell">31.13</td>
+<td class="studio-numeric-cell">25.56</td>
+<td class="studio-numeric-cell">33.80</td>
+<td class="studio-numeric-cell">47.66</td>
+<td class="studio-numeric-cell">30.71</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 SFT 8B</th>
+<td class="studio-numeric-cell">28.43</td>
+<td class="studio-numeric-cell">20.49</td>
+<td class="studio-numeric-cell">44.05</td>
+<td class="studio-numeric-cell">33.59</td>
+<td class="studio-numeric-cell">51.63</td>
+<td class="studio-numeric-cell">46.72</td>
+<td class="studio-numeric-cell">37.12</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 DPO 4B</th>
+<td class="studio-numeric-cell">47.97</td>
+<td class="studio-numeric-cell">46.72</td>
+<td class="studio-numeric-cell">60.37</td>
+<td class="studio-numeric-cell">45.11</td>
+<td class="studio-numeric-cell">55.63</td>
+<td class="studio-numeric-cell">91.58</td>
+<td class="studio-numeric-cell">56.61</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 DPO 8B</th>
+<td class="studio-numeric-cell">62.83</td>
+<td class="studio-numeric-cell">56.55</td>
+<td class="studio-numeric-cell">60.37</td>
+<td class="studio-numeric-cell">70.45</td>
+<td class="studio-numeric-cell">68.42</td>
+<td class="studio-numeric-cell">93.45</td>
+<td class="studio-numeric-cell">68.22</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 fDPO 4B</th>
+<td class="studio-numeric-cell">60.13</td>
+<td class="studio-numeric-cell">59.01</td>
+<td class="studio-numeric-cell">71.70</td>
+<td class="studio-numeric-cell">65.41</td>
+<td class="studio-numeric-cell">57.89</td>
+<td class="studio-numeric-cell">92.52</td>
+<td class="studio-numeric-cell">66.76</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">SpatialReasoner-R1 fDPO 8B</th>
+<td class="studio-numeric-cell">70.95</td>
+<td class="studio-numeric-cell">72.13</td>
+<td class="studio-numeric-cell">74.52</td>
+<td class="studio-numeric-cell">80.45</td>
+<td class="studio-numeric-cell">74.43</td>
+<td class="studio-numeric-cell">94.39</td>
+<td class="studio-numeric-cell">77.30</td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
 
-
-  <section class="section">
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Spatial Reasoning Evaluation</h2>
-          <div class="content has-text-justified">
-            <p>We conduct comprehensive evaluation on spatial reasoning tasks to demonstrate the effectiveness of our approach.</p>
-            <div class="pdf-container" style="width: 65%; margin: 0 auto;">
-              <img loading="lazy" decoding="async" src="./static/images/result.png" class="interpolation-image" alt="Comparison Results">
-            </div>
-            <p>Spatial reasoning success rates (↑) on SpatialRGPT-Bench. "/" indicates that the model refuses to provide a response for that metric. <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> 8B, trained with fDPO, establishes a new SoTA in spatial reasoning.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
+<h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
+<div class="spatial-qualitative-grid">
+<figure class="spatial-qualitative-case"><img loading="lazy" decoding="async" src="./static/images/spatial_comparison_c.png" class="interpolation-image" alt="Spatial Comparison"></figure><figure class="spatial-qualitative-case"><img loading="lazy" decoding="async" src="./static/images/additional_example2.png" class="interpolation-image" alt="Additional Examples 2"></figure>
+</div>
+</div>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Examples and Results</h2>
-          <p class="has-text-justified" style="padding-bottom:30px;">
-            <span style="color:rgb(26,78,138); font-weight:bold;">Spatial</span><span style="color:rgb(86,187,204); font-weight:bold;">Reasoner-R1</span> demonstrates improved spatial reasoning across various scenarios and object types:
-          </p>
-          
-          <div style="text-align: center; padding: 0 0 30px 0;">
-            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
-              <img loading="lazy" decoding="async" src="./static/images/spatial_comparison_c.png" class="interpolation-image" alt="Spatial Comparison">
-            </div>
-            <p class="has-text-justified" style="margin-top: 20px;">
-              <!-- Comparison of spatial reasoning performance across different models and approaches. -->
-            </p>
-          </div>
-
-          <div style="text-align: center; padding: 0 0 20px 0;">
-            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
-              <img loading="lazy" decoding="async" src="./static/images/additionexample1.png" class="interpolation-image" alt="Additional Examples">
-            </div>
-            <p class="has-text-justified" style="margin-top: 20px;">
-              <!-- Additional examples showing the improved spatial reasoning capabilities of our fine-grained preference optimized models. -->
-            </p>
-          </div>
-
-          <div style="text-align: center; padding: 0 0 20px 0;">
-            <div class="pdf-container" style="width: 80%; margin: 0 auto;">
-              <img loading="lazy" decoding="async" src="./static/images/additional_example2.png" class="interpolation-image" alt="Additional Examples 2">
-            </div>
-            <p class="has-text-justified" style="margin-top: 20px;">
-              <!-- More examples demonstrating enhanced spatial reasoning capabilities through fine-grained preference optimization. -->
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
-
-
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title is-3" id="BibTeX-title">BibTeX</h2>
       <pre><code>@inproceedings{shen2025finegrainedpreferenceoptimizationimproves,
   title={Fine-Grained Preference Optimization Improves Spatial Reasoning in VLMs},
   author={Shen, Yifan and Liu, Yuanzhe and Zhu, Jingyuan and Cao, Xu and Zhang, Xiaofeng and He, Yixiao and Ye, Wenming and Rehg, James Matthew and Lourentzou, Ismini},
@@ -653,32 +562,21 @@
   year={2025}
 }</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2506.21656.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -11,19 +10,19 @@
 
     gtag('config', 'G-48J3PYKGQ6');
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection.">
   <title>Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection | PLAN Lab</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <style>
     :root {
@@ -36,565 +35,21 @@
     .va-blue { color: var(--illinois-blue); }
     .va-darker-blue { color: var(--illinois-darker-blue); }
   </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "VisAnomReasoner",
-    "tldr": [
-      "We introduce VisAnomReasoner, a compact vision-language model that detects and localizes anomalies in time-series plots and explains its decisions. Trained with visually grounded reasoning on our curated VisAnomBench dataset, VisAnomReasoner connects unusual patterns to specific time intervals and supporting evidence."
-    ],
-    "contributions": [
-      "VisAnomBench provides explanation-augmented supervision. We introduce VisAnomBench, an explanation-augmented benchmark constructed from four public time-series anomaly detection datasets. Each plot is paired with anomaly interval annotations and temporally grounded, step-by-step explanations. Reasoning traces from multiple large VLMs are selected using fine-grained rewards for anomaly localization, visual groundedness, axis awareness, and clarity. The benchmark contains 2,576 training and 740 held-out test time series.",
-      "VisAnomReasoner jointly localizes and explains anomalies. We develop a parameter-efficient vision-language model by supervised fine-tuning Qwen2.5-VL-3B and Qwen2.5-VL-7B on VisAnomBench. Structured outputs separate anomaly decisions, interval localization, and reasoning, allowing the model to explain spikes, level shifts, periodic deviations, and other anomalies using evidence in the plotted time series.",
-      "Evaluation demonstrates accurate localization and cross-benchmark transfer. VisAnomReasoner improves precision and F1 by at least 21.23 and 23.87 percentage points on VisAnomBench. On TSB-AD-U, it improves precision and F1 by 9.57 and 13.39 percentage points, respectively, demonstrating generalization beyond the training benchmark.",
-      "Ablations isolate the benefit of explanation-augmented supervision. Comparisons between pretrained models, interval-only fine-tuning, and reasoning-augmented fine-tuning show that interval supervision reduces false positives, while adding grounded reasoning traces further improves precision and recall and yields more accurate temporal boundaries."
-    ],
-    "method": {
-      "source": "VisAnom Reasoner"
-    },
-    "dataset": {
-      "name": "VisAnomBench",
-      "source": "VisAnom Bench"
-    },
-    "quantitative": {
-      "source": "Results"
-    },
-    "qualitative": {
-      "source": "Qualitative Analysis"
-    },
-    "contributionLeads": [
-      "VisAnomBench provides explanation-augmented supervision.",
-      "VisAnomReasoner jointly localizes and explains anomalies.",
-      "Evaluation demonstrates accurate localization and cross-benchmark transfer.",
-      "Ablations isolate the benefit of explanation-augmented supervision."
-    ]
-  },
-  "resultPanels": {
-    "Anomaly detection on VisAnomBench": {
-      "description": "Interval-level anomaly detection and localization on the held-out VisAnomBench split. Precision, recall, F1, and overlap compare the predicted anomalies with ground truth."
-    }
-  },
-  "results": {
-    "VisAnomBench_stats.png": {
-      "type": "table",
-      "title": "VisAnomBench datasets",
-      "columns": [
-        "Benchmark",
-        "#TS",
-        "#Domains",
-        "Avg length",
-        "Anomaly rate (%)",
-        "#Explanations",
-        "Explanation length"
-      ],
-      "rows": [
-        [
-          "KPI [51]",
-          "160",
-          "1",
-          "1,777",
-          "4.3",
-          "640",
-          "170"
-        ],
-        [
-          "GUTENTAG [47]",
-          "810",
-          "10",
-          "5,000",
-          "2.2",
-          "3240",
-          "188"
-        ],
-        [
-          "UCR-EGI [9]",
-          "2,097",
-          "5",
-          "8,268",
-          "5.8",
-          "8388",
-          "112"
-        ],
-        [
-          "UCR-TSAD [48]",
-          "249",
-          "8",
-          "2,755",
-          "6.9",
-          "996",
-          "112"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/VisAnomBench_stats.png"
-    },
-    "VisAnomBench_result.png": {
-      "type": "table",
-      "title": "Anomaly detection on VisAnomBench",
-      "columns": [
-        "Model",
-        "TP",
-        "FP",
-        "FN",
-        "Precision (%)",
-        "Recall (%)",
-        "F1 (%)",
-        "Overlap (%)"
-      ],
-      "rows": [
-        {
-          "group": "Vision-language models"
-        },
-        [
-          "Grok-4-Fast (314B) [49]",
-          "242",
-          "837",
-          "517",
-          "22.43",
-          "31.88",
-          "26.33",
-          "3.26"
-        ],
-        [
-          "LLaMA-4-Maverick (17B) [35]",
-          "442",
-          "1128",
-          "317",
-          "28.15",
-          "58.23",
-          "37.96",
-          "12.92"
-        ],
-        [
-          "Qwen2.5-VL-7B [4]",
-          "517",
-          "1784",
-          "242",
-          "22.47",
-          "68.12",
-          "33.79",
-          "14.04"
-        ],
-        [
-          "Idefics3-8B [25]",
-          "123",
-          "2057",
-          "636",
-          "5.64",
-          "16.21",
-          "8.37",
-          "2.25"
-        ],
-        [
-          "SmolVLM-7B [34]",
-          "49",
-          "1416",
-          "710",
-          "3.34",
-          "6.46",
-          "4.41",
-          "1.29"
-        ],
-        [
-          "LLaVA-7B [30]",
-          "9",
-          "523",
-          "750",
-          "1.69",
-          "1.19",
-          "1.39",
-          "0.23"
-        ],
-        {
-          "group": "Time-series foundation models"
-        },
-        [
-          "TimesFM (200M) [8]",
-          "196",
-          "543",
-          "563",
-          "26.52",
-          "25.82",
-          "26.17",
-          "2.03"
-        ],
-        [
-          "Chronos (120M) [2]",
-          "200",
-          "538",
-          "559",
-          "27.10",
-          "26.35",
-          "26.72",
-          "2.27"
-        ],
-        {
-          "group": "Language-model methods"
-        },
-        [
-          "AnomLLM (GPT-4o) [62]",
-          "149",
-          "862",
-          "610",
-          "14.74",
-          "19.63",
-          "16.84",
-          "4.04"
-        ],
-        [
-          "LLM-TSAD (GPT-4o) [38]",
-          "477",
-          "5621",
-          "282",
-          "7.82",
-          "66.53",
-          "14.00",
-          "20.81"
-        ],
-        [
-          "LLMAD (GPT-4o) [31]",
-          "349",
-          "402",
-          "410",
-          "46.47",
-          "45.98",
-          "46.23",
-          "17.31"
-        ],
-        [
-          "VLM4TS (GPT-4o) [14]",
-          "435",
-          "642",
-          "324",
-          "40.39",
-          "57.31",
-          "47.39",
-          "17.94"
-        ],
-        {
-          "group": "Conventional detectors"
-        },
-        [
-          "Sub-PCA [1]",
-          "329",
-          "411",
-          "430",
-          "44.46",
-          "43.35",
-          "43.90",
-          "17.41"
-        ],
-        [
-          "Matrix Profile [28]",
-          "290",
-          "450",
-          "469",
-          "39.19",
-          "38.21",
-          "38.69",
-          "8.33"
-        ],
-        [
-          "IForest [29]",
-          "362",
-          "378",
-          "397",
-          "48.92",
-          "47.69",
-          "48.30",
-          "20.53"
-        ],
-        {
-          "group": "VisAnomReasoner"
-        },
-        [
-          "VisAnomReasoner (3B)",
-          "564 ↑47",
-          "240 ↓138",
-          "195 ↓47",
-          "70.15 ↑21.23",
-          "74.30 ↑6.18",
-          "72.17 ↑23.87",
-          "27.07 ↑6.26"
-        ],
-        [
-          "VisAnomReasoner (7B)",
-          "576 ↑59",
-          "223 ↓155",
-          "183 ↓59",
-          "72.09 ↑23.17",
-          "75.88 ↑7.76",
-          "73.94 ↑25.64",
-          "25.35 ↑4.54"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/VisAnomBench_result.png"
-    },
-    "ablation_reasoning.png": {
-      "type": "table",
-      "title": "Effect of reasoning-augmented fine-tuning",
-      "columns": [
-        "Mode",
-        "TP",
-        "FP",
-        "FN",
-        "Precision",
-        "Recall",
-        "F1"
-      ],
-      "rows": [
-        [
-          "Base",
-          "517",
-          "1784",
-          "242",
-          "22.47",
-          "68.12",
-          "33.79"
-        ],
-        [
-          "No reasoning",
-          "516",
-          "393",
-          "243",
-          "56.76",
-          "67.98",
-          "61.87"
-        ],
-        [
-          "With reasoning",
-          "576",
-          "223",
-          "183",
-          "72.09",
-          "75.88",
-          "73.94"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/ablation_reasoning.png"
-    },
-    "VisAnomReasoner_teaser.png": {
-      "type": "overview",
-      "title": "From plot to explanation",
-      "source": "static/images/VisAnomReasoner_teaser.png",
-      "steps": [
-        [
-          "Read the time-series plot",
-          "Visual input preserves the shape and context of the signal."
-        ],
-        [
-          "Localize anomalies",
-          "Predict the intervals where the signal departs from its usual behavior."
-        ],
-        [
-          "Explain the decision",
-          "Ground the reasoning in visible patterns in the plot."
-        ]
-      ]
-    },
-    "@tsb-ad-u": {
-      "type": "table",
-      "appendTo": "quantitative",
-      "title": "Generalization to TSB-AD-U",
-      "description": "Cross-benchmark anomaly detection on unseen time series, evaluated with standard point-wise metrics and event-level affiliation metrics.",
-      "columns": [
-        "Method",
-        "Precision (%) ↑",
-        "Recall (%) ↑",
-        "F1 (%) ↑",
-        "Precision (%) ↑",
-        "Recall (%) ↑",
-        "F1 (%) ↑"
-      ],
-      "columnGroups": [
-        {
-          "label": "Standard metrics",
-          "span": 3
-        },
-        {
-          "label": "Affiliation metrics",
-          "span": 3
-        }
-      ],
-      "rows": [
-        [
-          "Grok-4-Fast (314B)",
-          "27.95",
-          "15.53",
-          "16.78",
-          "32.43",
-          "33.24",
-          "32.20"
-        ],
-        [
-          "LLaMA-4-Maverick (17B)",
-          "63.35",
-          "46.49",
-          "48.89",
-          "76.07",
-          "79.18",
-          "76.75"
-        ],
-        [
-          "Qwen2.5-VL-7B",
-          "66.18",
-          "48.85",
-          "49.52",
-          "75.90",
-          "74.93",
-          "74.36"
-        ],
-        [
-          "Idefics3-8B",
-          "45.12",
-          "35.11",
-          "34.64",
-          "50.83",
-          "59.02",
-          "53.03"
-        ],
-        [
-          "SmolVLM-7B",
-          "35.07",
-          "12.48",
-          "15.80",
-          "37.57",
-          "35.84",
-          "35.75"
-        ],
-        [
-          "LLaVA-7B",
-          "14.06",
-          "0.72",
-          "1.35",
-          "14.06",
-          "8.16",
-          "10.15"
-        ],
-        [
-          "TimesFM (200M)",
-          "32.32",
-          "43.21",
-          "32.19",
-          "71.09",
-          "57.23",
-          "60.08"
-        ],
-        [
-          "Chronos (120M)",
-          "47.18",
-          "55.37",
-          "47.23",
-          "74.36",
-          "75.61",
-          "73.31"
-        ],
-        [
-          "AnomLLM (GPT-4o)",
-          "12.97",
-          "10.54",
-          "11.63",
-          "13.05",
-          "7.08",
-          "8.42"
-        ],
-        [
-          "LLM-TSAD (GPT-4o)",
-          "31.74",
-          "28.40",
-          "29.98",
-          "66.69",
-          "52.76",
-          "53.69"
-        ],
-        [
-          "LLMAD (GPT-4o)",
-          "32.96",
-          "37.54",
-          "22.91",
-          "67.50",
-          "73.37",
-          "64.16"
-        ],
-        [
-          "VLM4TS (GPT-4o)",
-          "29.78",
-          "40.10",
-          "19.84",
-          "72.52",
-          "51.38",
-          "54.06"
-        ],
-        [
-          "Sub-PCA",
-          "11.80",
-          "16.82",
-          "12.28",
-          "48.22",
-          "31.71",
-          "34.99"
-        ],
-        [
-          "Matrix Profile",
-          "9.40",
-          "15.84",
-          "9.91",
-          "44.90",
-          "41.44",
-          "41.90"
-        ],
-        [
-          "IForest",
-          "12.44",
-          "17.89",
-          "13.05",
-          "50.44",
-          "41.51",
-          "42.67"
-        ],
-        [
-          "VisAnomReasoner (3B)",
-          "77.93",
-          "40.46",
-          "49.59",
-          "95.05",
-          "71.69",
-          "78.36"
-        ],
-        [
-          "VisAnomReasoner (7B)",
-          "75.75",
-          "60.91",
-          "62.91",
-          "95.27",
-          "81.51",
-          "85.58"
-        ]
-      ],
-      "rankMetrics": true,
-      "source": "paper:2605.30344:table-3",
-      "provenance": {
-        "url": "https://arxiv.org/pdf/2605.30344",
-        "table": "3",
-        "page": 7
-      },
-      "note": ""
-    }
-  }
-}
-  </script>
+<body class="page-project project-studio studio-visanom" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
   <nav class="glass-nav">
     <a href="../../index.html#hero" class="nav-logo">
-      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
     </a>
     <div class="nav-menu">
       <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -621,140 +76,672 @@
   </nav>
 
   <main>
-    <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="hero studio-header">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="publication-title">Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection</h1>
+              <h1 class="publication-title">
+<span class="studio-name">Tiny but Trusted</span><span class="studio-subtitle">Efficient Vision-Language Reasoning for Time-Series Anomaly Detection</span>
+</h1>
 
-              <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sandia"><a href="https://sites.google.com/site/constantinbrif">Constantin Brif</a><sup class="studio-affiliation-marker" title="Sandia National Laboratories" aria-label="Sandia National Laboratories">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+              <div class="publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sandia"><a href="https://sites.google.com/site/constantinbrif">Constantin Brif</a><sup class="studio-affiliation-marker" title="Sandia National Laboratories" aria-label="Sandia National Laboratories">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div></div>
 
               <div class="has-text-centered" style="margin: 5px 0;">
-               <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sandia"><sup class="studio-affiliation-marker" title="Sandia National Laboratories" aria-label="Sandia National Laboratories">♣</sup><span class="studio-affiliation-name">Sandia National Laboratories</span></span></div>
+               <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sandia"><sup class="studio-affiliation-marker" title="Sandia National Laboratories" aria-label="Sandia National Laboratories">♣</sup><span class="studio-affiliation-name">Sandia National Laboratories</span></span>
+</div>
+<p class="publication-venue">NeurIPS 2026</p>
 
               <div class="has-text-centered" style="margin: 5px 0;">
-                <h1 class="title is-3 publication-venue illini-orange">NeurIPS 2026</h1>
+
               </div>
 
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2605.30344" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2605.30344" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Dataset" aria-disabled="true" title="Dataset is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Checkpoint" aria-disabled="true" title="Checkpoint is not available yet."><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint (coming soon)</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2605.30344" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2605.30344" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Dataset" aria-disabled="true" title="Dataset is not available yet."><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Checkpoint" aria-disabled="true" title="Checkpoint is not available yet."><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint (coming soon)</span></a>
+</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="hero teaser">
+    </div></section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce VisAnomReasoner, a compact vision-language model that detects and localizes anomalies in time-series plots and explains its decisions. Trained with visually grounded reasoning on our curated VisAnomBench dataset, VisAnomReasoner connects unusual patterns to specific time intervals and <span class="studio-tldr-tail">supporting evidence.</span></p></div>
+</div></section><section class="studio-feature visanom-feature" aria-labelledby="visanom-feature-title" data-studio-section="examples"><div class="visanom-example">
+<figure class="visanom-plot"><div class="visanom-plot-question">Do you see any anomalies on this plot?</div>
+<svg viewbox="130 75 970 390" role="img" aria-labelledby="visanom-plot-title"><title id="visanom-plot-title">Time-series plot from the paper teaser, showing the anomalous downward deflection.</title>
+<image href="static/images/VisAnomReasoner_teaser.png" width="2370" height="725"></image></svg></figure><div class="visanom-example-copy">
+<h2 id="visanom-feature-title">Anomaly localization and explanation</h2>
+<p>VisAnomReasoner reads a time-series plot and returns an anomaly decision, a localized interval, and reasoning grounded in the visible signal.</p>
+<dl class="visanom-answer">
+<div>
+<dt>Anomaly detected</dt>
+<dd>Yes</dd>
+</div>
+<div>
+<dt>Predicted index interval</dt>
+<dd>16970–17079</dd>
+</div>
+</dl>
+</div>
+</div>
+<dl class="visanom-highlights">
+<div>
+<dt>Training time series</dt>
+<dd>2,576</dd>
+</div>
+<div>
+<dt>Model variants</dt>
+<dd>3B / 7B</dd>
+</div>
+<div>
+<dt>F1 on VisAnomBench · 7B</dt>
+<dd>73.94%</dd>
+</div>
+</dl>
+<p class="visanom-opening-takeaway">
+            Despite its small scale, <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> consistently outperforms general-purpose VLMs, specialized LLM/VLM anomaly detectors, time-series foundation models, and classical detectors, improving precision and F<sub>1</sub> by at least 21.23 and 23.87 percentage <span class="studio-ending">points on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.</span>
+          </p></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">VisAnomReasoner Method</a><a href="#studio-dataset" data-section="dataset">VisAnomBench Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-ablations" data-section="ablations">Ablation Studies</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
       <div class="container is-max-desktop">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <strong>TL;DR:</strong> We introduce <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, the first explanation-augmented benchmark for vision-language time-series anomaly reasoning, together with <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong>, a parameter-efficient VLM fine-tuned to jointly localize anomalies and generate grounded explanations from time-series plots. Experimental results show substantial improvements over existing VLM and anomaly detection baselines, demonstrating that explanation-augmented supervision enables more accurate and interpretable time-series anomaly reasoning.
-          </div>
-
-          <!-- Replace with your teaser: put it at `projects/<your-slug>/static/images/teaser.png` -->
-          <img src="static/images/VisAnomReasoner_teaser.png" class="interpolation-image" alt="Project teaser image" />
-
-          <div class="content has-text-centered">
-            Given a time series plot (left top), <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> locates anomalies while providing details grounded in the plot (left bottom).
-Experimental results on two benchmarks demonstrate <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span>-7B</strong> outperforms the strongest baselines across all metrics (right).
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <h2 class="title is-3 has-text-centered" id="studio-abstract-title">Abstract</h2>
         <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
-          <p>Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance when applying large language or multimodal models to finding abnormal patterns in sequential data. 
+          <p>Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance when applying large language or multimodal models to finding abnormal patterns in sequential data.
             Public anomaly detection benchmarks typically provide interval annotations but not natural-language rationales, making it difficult to fine-tune VLMs to produce grounded, interpretable decisions.
 To address this gap, we construct <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, a curated benchmark built from public time-series datasets and augmented with high-quality anomaly explanations selected from multiple large VLMs using fine-grained, task-specific rewards.
 Through fine-tuning on this benchmark, we develop <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong>, a parameter-efficient VLM for time-series anomaly detection.
 Experimental results on <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong> show that <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> achieves more accurate anomaly localization and consistently outperforms all baselines, with improvements of at least 21.23 and 23.87 percentage points in precision and F<sub>1</sub>, respectively. Additional experiments on the TSB-AD-U benchmark demonstrate strong cross-benchmark generalization, with <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> improving precision and F<sub>1</sub> by 9.57 and 13.39 percentage points, respectively.</p>
         </div>
       </div>
-    </section>
-
-    <section class="section">
+    </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">VisAnomBench provides explanation-augmented supervision.</strong> We introduce VisAnomBench, an explanation-augmented benchmark constructed from four public time-series anomaly detection datasets. Each plot is paired with anomaly interval annotations and temporally grounded, step-by-step explanations. Reasoning traces from multiple large VLMs are selected using fine-grained rewards for anomaly localization, visual groundedness, axis awareness, and clarity. The benchmark contains 2,576 training and 740 held-out test time series.</li>
+<li>
+<strong class="studio-contribution-lead">VisAnomReasoner jointly localizes and explains anomalies.</strong> We develop a parameter-efficient vision-language model by supervised fine-tuning Qwen2.5-VL-3B and Qwen2.5-VL-7B on VisAnomBench. Structured outputs separate anomaly decisions, interval localization, and reasoning, allowing the model to explain spikes, level shifts, periodic deviations, and other anomalies using evidence in the plotted time series.</li>
+<li>
+<strong class="studio-contribution-lead">Evaluation demonstrates accurate localization and cross-benchmark transfer.</strong> VisAnomReasoner improves precision and F1 by at least 21.23 and 23.87 percentage points on VisAnomBench. On TSB-AD-U, it improves precision and F1 by 9.57 and 13.39 percentage points, respectively, demonstrating generalization beyond the training benchmark.</li>
+<li>
+<strong class="studio-contribution-lead">Ablations isolate the benefit of explanation-augmented supervision.</strong> Comparisons between pretrained models, interval-only fine-tuning, and reasoning-augmented fine-tuning show that interval supervision reduces false positives, while adding grounded reasoning traces further improves precision and recall and yields more accurate temporal boundaries.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column">
-            <h2 class="title is-3"><strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong></h2>
-            <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
-              <p>
-                <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong> is an explanation-augmented benchmark for vision-language time-series anomaly reasoning, constructed from four public anomaly detection datasets spanning diverse domains and anomaly types. For each time-series plot, the benchmark provides (1) anomaly interval annotations and (2) temporally grounded step-by-step explanations aligned with the labeled anomalies. To build the dataset, we segment and render time series as plots, elicit structured reasoning traces from multiple large VLMs, and select the highest-quality explanation using a reward that combines anomaly localization accuracy, visual groundedness, axis awareness, and clarity. The final benchmark contains 2,576 training and 740 held-out test time series for supervised fine-tuning and evaluation of reasoning-based anomaly detection models.
-              </p>
-              <img src="./static/images/VisAnomBench_stats.png" class="interpolation-image" alt="VisAnomBench dataset statistics table." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3"><strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong></h2>
+            <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">VisAnomReasoner</span> Method</h2>
             <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
               <p>
                 <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> is a parameter-efficient vision-language model for reasoning-based time-series anomaly detection from plots. Given a plotted time series and optional context, the model jointly predicts anomaly intervals and generates grounded step-by-step explanations aligned with observable visual patterns such as spikes, level shifts, and periodic deviations. Unlike prior prompt-based approaches, <strong><span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span></strong> is supervised using explanation-augmented training data from <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong>, where each example contains both target anomaly intervals and preferred reasoning traces. The model is implemented by supervised fine-tuning of Qwen2.5-VL-3B and Qwen2.5-VL-7B using structured outputs with dedicated tags for anomaly decisions, interval localization, and reasoning generation.
               </p>
+            <ol class="visanom-method-flow" aria-label="VisAnomReasoner method">
+<li>
+<span class="visanom-label">Input</span><h3>Time-series plot</h3>
+<p>The plotted signal retains its shape, axes, and temporal context.</p>
+</li>
+<li>
+<span class="visanom-label">Model</span><h3>Qwen2.5-VL · 3B / 7B</h3>
+<p>Supervised fine-tuning uses anomaly intervals and grounded reasoning traces from VisAnomBench.</p>
+</li>
+<li>
+<span class="visanom-label">Output</span><h3>Decision, interval, explanation</h3>
+<p>Structured outputs identify whether an anomaly exists, where it occurs, and the visual evidence.</p>
+</li>
+</ol>
+</div>
+          </div>
+        </div>
+      </div>
+    </section><section class="section" data-studio-section="dataset" id="studio-dataset" aria-labelledby="studio-dataset-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered studio-result-host">
+          <div class="column studio-result-host">
+            <h2 class="title is-3" id="studio-dataset-title">VisAnomBench Dataset</h2>
+            <div class="content has-text-centered studio-result-host" style="max-width: 980px; margin: 0 auto;">
+              <p>
+                <strong><span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span></strong> is an explanation-augmented benchmark for vision-language time-series anomaly reasoning, constructed from four public anomaly detection datasets spanning diverse domains and anomaly types. For each time-series plot, the benchmark provides (1) anomaly interval annotations and (2) temporally grounded step-by-step explanations aligned with the labeled anomalies. To build the dataset, we segment and render time series as plots, elicit structured reasoning traces from multiple large VLMs, and select the highest-quality explanation using a reward that combines anomaly localization accuracy, visual groundedness, axis awareness, and clarity. The final benchmark contains 2,576 training and 740 held-out test time series for supervised fine-tuning and evaluation of reasoning-based <span class="studio-ending">anomaly detection models.</span>
+              </p>
+              <figure class="studio-native-result" data-result-source="static/images/VisAnomBench_stats.png"><h3>VisAnomBench datasets</h3>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="VisAnomBench datasets"><table class="studio-native-table">
+<caption class="studio-sr-only">VisAnomBench datasets</caption>
+<thead><tr>
+<th scope="col">Benchmark</th>
+<th scope="col">#TS</th>
+<th scope="col">#Domains</th>
+<th scope="col">Avg length</th>
+<th scope="col">Anomaly rate (%)</th>
+<th scope="col">#Explanations</th>
+<th scope="col">Explanation length</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">KPI</th>
+<td class="studio-numeric-cell">160</td>
+<td class="studio-numeric-cell">1</td>
+<td class="studio-numeric-cell">1,777</td>
+<td class="studio-numeric-cell">4.3</td>
+<td class="studio-numeric-cell">640</td>
+<td class="studio-numeric-cell">170</td>
+</tr>
+<tr>
+<th scope="row">GUTENTAG</th>
+<td class="studio-numeric-cell">810</td>
+<td class="studio-numeric-cell">10</td>
+<td class="studio-numeric-cell">5,000</td>
+<td class="studio-numeric-cell">2.2</td>
+<td class="studio-numeric-cell">3240</td>
+<td class="studio-numeric-cell">188</td>
+</tr>
+<tr>
+<th scope="row">UCR-EGI</th>
+<td class="studio-numeric-cell">2,097</td>
+<td class="studio-numeric-cell">5</td>
+<td class="studio-numeric-cell">8,268</td>
+<td class="studio-numeric-cell">5.8</td>
+<td class="studio-numeric-cell">8388</td>
+<td class="studio-numeric-cell">112</td>
+</tr>
+<tr>
+<th scope="row">UCR-TSAD</th>
+<td class="studio-numeric-cell">249</td>
+<td class="studio-numeric-cell">8</td>
+<td class="studio-numeric-cell">2,755</td>
+<td class="studio-numeric-cell">6.9</td>
+<td class="studio-numeric-cell">996</td>
+<td class="studio-numeric-cell">112</td>
+</tr>
+</tbody>
+</table></div></figure>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="section">
+    </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Results</h2>
-        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
-          <p>
-            <b>Anomaly Detection Performance on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.</b>
-            Best performance is <b>bold</b>, and second best is <u>underlined</u>.
-            Green arrows (<span style="color:#228B22;">&uarr;</span>) indicate absolute improvement relative to the second best.
+<h2 class="title is-3 has-text-centered" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/VisAnomBench_result.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Anomaly detection on VisAnomBench</h3>
+<div class="content studio-result-description">
+<p>Anomaly detection and localization on the held-out VisAnomBench split, comparing vision-language models, language-model anomaly detectors, and conventional detectors.</p>
+<aside class="visanom-result-takeaway studio-result-callout" aria-label="VisAnomReasoner performance gains on VisAnomBench"><dl class="visanom-result-gains">
+<div>
+<dt>Precision improvement · at least</dt>
+<dd>+21.23 pp</dd>
+</div>
+<div>
+<dt>F1 improvement · at least</dt>
+<dd>+23.87 pp</dd>
+</div>
+</dl>
+<p>
+            Despite its small scale, <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> consistently outperforms general-purpose VLMs, specialized LLM/VLM anomaly detectors, time-series foundation models, and classical detectors, improving precision and F<sub>1</sub> by at least 21.23 and 23.87 percentage <span class="studio-ending">points on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.</span>
+          </p></aside>
+</div>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Anomaly detection on VisAnomBench"><table class="studio-native-table">
+<caption class="studio-sr-only">Anomaly detection on VisAnomBench</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">TP ↑</th>
+<th scope="col">FP ↓</th>
+<th scope="col">FN ↓</th>
+<th scope="col">Precision (%) ↑</th>
+<th scope="col">Recall (%) ↑</th>
+<th scope="col">F1 (%) ↑</th>
+<th scope="col">Overlap (%) ↑</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Vision-language models</th></tr>
+<tr>
+<th scope="row">Grok-4-Fast (314B)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">242</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">837</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">517</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">22.43</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">31.88</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">26.33</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">3.26</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">LLaMA-4-Maverick (17B)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">442</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1128</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">317</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">28.15</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">58.23</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">37.96</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">12.92</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Qwen2.5-VL-7B</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">517</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1784</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">242</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">22.47</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">68.12</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">33.79</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">14.04</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Idefics3-8B</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">123</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">2057</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">636</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">5.64</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">16.21</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">8.37</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">2.25</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">SmolVLM-7B</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">49</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1416</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">710</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">3.34</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">6.46</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">4.41</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1.29</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">LLaVA-7B</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">9</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">523</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">750</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1.69</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1.19</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">1.39</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">0.23</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Time-series foundation models</th></tr>
+<tr>
+<th scope="row">TimesFM (200M)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">196</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">543</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">563</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">26.52</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">25.82</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">26.17</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">2.03</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Chronos (120M)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">200</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">538</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">559</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">27.10</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">26.35</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">26.72</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">2.27</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Language-model methods</th></tr>
+<tr>
+<th scope="row">AnomLLM (GPT-4o)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">149</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">862</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">610</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">14.74</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">19.63</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">16.84</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">4.04</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">LLM-TSAD (GPT-4o)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">477</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">5621</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">282</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">7.82</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">66.53</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">14.00</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">20.81</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">LLMAD (GPT-4o)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">349</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">402</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">410</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">46.47</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">45.98</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">46.23</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">17.31</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">VLM4TS (GPT-4o)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">435</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">642</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">324</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">40.39</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">57.31</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">47.39</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">17.94</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Conventional detectors</th></tr>
+<tr>
+<th scope="row">Sub-PCA</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">329</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">411</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">430</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">44.46</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">43.35</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">43.90</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">17.41</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Matrix Profile</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">290</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">450</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">469</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">39.19</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">38.21</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">38.69</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">8.33</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">IForest</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">362</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">378</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value">397</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">48.92</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">47.69</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value">48.30</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">20.53</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">VisAnomReasoner</th></tr>
+<tr class="studio-ours">
+<th scope="row">VisAnomReasoner (3B)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>564</u></span><span class="studio-metric-gain">↑47</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>240</u></span><span class="studio-metric-gain">↓138</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>195</u></span><span class="studio-metric-gain">↓47</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>70.15</u></span><span class="studio-metric-gain">↑21.23</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>74.30</u></span><span class="studio-metric-gain">↑6.18</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>72.17</u></span><span class="studio-metric-gain">↑23.87</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>27.07</strong></span><span class="studio-metric-gain">↑6.26</span></span></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">VisAnomReasoner (7B)</th>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>576</strong></span><span class="studio-metric-gain">↑59</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 4ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>223</strong></span><span class="studio-metric-gain">↓155</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 3ch; --studio-gain-width: 3.2ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>183</strong></span><span class="studio-metric-gain">↓59</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>72.09</strong></span><span class="studio-metric-gain">↑23.17</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>75.88</strong></span><span class="studio-metric-gain">↑7.76</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 5.6000000000000005ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><strong>73.94</strong></span><span class="studio-metric-gain">↑25.64</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 5ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value"><u>25.35</u></span><span class="studio-metric-gain">↑4.54</span></span></td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="paper:2605.30344:table-3" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Generalization to TSB-AD-U</h3>
+<p class="studio-result-description">Cross-benchmark anomaly detection on unseen time series, evaluated with standard point-wise metrics and event-level affiliation metrics.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Generalization to TSB-AD-U"><table class="studio-native-table" data-rank-metrics="true">
+<caption class="studio-sr-only">Generalization to TSB-AD-U</caption>
+<thead>
+<tr>
+<th scope="col" rowspan="2">Method</th>
+<th scope="colgroup" colspan="3">Standard metrics</th>
+<th scope="colgroup" colspan="3">Affiliation metrics</th>
+</tr>
+<tr>
+<th scope="col">Precision (%) ↑</th>
+<th scope="col">Recall (%) ↑</th>
+<th scope="col">F1 (%) ↑</th>
+<th scope="col">Precision (%) ↑</th>
+<th scope="col">Recall (%) ↑</th>
+<th scope="col">F1 (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Grok-4-Fast (314B)</th>
+<td class="studio-numeric-cell">27.95</td>
+<td class="studio-numeric-cell">15.53</td>
+<td class="studio-numeric-cell">16.78</td>
+<td class="studio-numeric-cell">32.43</td>
+<td class="studio-numeric-cell">33.24</td>
+<td class="studio-numeric-cell">32.20</td>
+</tr>
+<tr>
+<th scope="row">LLaMA-4-Maverick (17B)</th>
+<td class="studio-numeric-cell">63.35</td>
+<td class="studio-numeric-cell">46.49</td>
+<td class="studio-numeric-cell">48.89</td>
+<td class="studio-numeric-cell">76.07</td>
+<td class="studio-numeric-cell"><u class="studio-second">79.18</u></td>
+<td class="studio-numeric-cell">76.75</td>
+</tr>
+<tr>
+<th scope="row">Qwen2.5-VL-7B</th>
+<td class="studio-numeric-cell">66.18</td>
+<td class="studio-numeric-cell">48.85</td>
+<td class="studio-numeric-cell">49.52</td>
+<td class="studio-numeric-cell">75.90</td>
+<td class="studio-numeric-cell">74.93</td>
+<td class="studio-numeric-cell">74.36</td>
+</tr>
+<tr>
+<th scope="row">Idefics3-8B</th>
+<td class="studio-numeric-cell">45.12</td>
+<td class="studio-numeric-cell">35.11</td>
+<td class="studio-numeric-cell">34.64</td>
+<td class="studio-numeric-cell">50.83</td>
+<td class="studio-numeric-cell">59.02</td>
+<td class="studio-numeric-cell">53.03</td>
+</tr>
+<tr>
+<th scope="row">SmolVLM-7B</th>
+<td class="studio-numeric-cell">35.07</td>
+<td class="studio-numeric-cell">12.48</td>
+<td class="studio-numeric-cell">15.80</td>
+<td class="studio-numeric-cell">37.57</td>
+<td class="studio-numeric-cell">35.84</td>
+<td class="studio-numeric-cell">35.75</td>
+</tr>
+<tr>
+<th scope="row">LLaVA-7B</th>
+<td class="studio-numeric-cell">14.06</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">1.35</td>
+<td class="studio-numeric-cell">14.06</td>
+<td class="studio-numeric-cell">8.16</td>
+<td class="studio-numeric-cell">10.15</td>
+</tr>
+<tr>
+<th scope="row">TimesFM (200M)</th>
+<td class="studio-numeric-cell">32.32</td>
+<td class="studio-numeric-cell">43.21</td>
+<td class="studio-numeric-cell">32.19</td>
+<td class="studio-numeric-cell">71.09</td>
+<td class="studio-numeric-cell">57.23</td>
+<td class="studio-numeric-cell">60.08</td>
+</tr>
+<tr>
+<th scope="row">Chronos (120M)</th>
+<td class="studio-numeric-cell">47.18</td>
+<td class="studio-numeric-cell"><u class="studio-second">55.37</u></td>
+<td class="studio-numeric-cell">47.23</td>
+<td class="studio-numeric-cell">74.36</td>
+<td class="studio-numeric-cell">75.61</td>
+<td class="studio-numeric-cell">73.31</td>
+</tr>
+<tr>
+<th scope="row">AnomLLM (GPT-4o)</th>
+<td class="studio-numeric-cell">12.97</td>
+<td class="studio-numeric-cell">10.54</td>
+<td class="studio-numeric-cell">11.63</td>
+<td class="studio-numeric-cell">13.05</td>
+<td class="studio-numeric-cell">7.08</td>
+<td class="studio-numeric-cell">8.42</td>
+</tr>
+<tr>
+<th scope="row">LLM-TSAD (GPT-4o)</th>
+<td class="studio-numeric-cell">31.74</td>
+<td class="studio-numeric-cell">28.40</td>
+<td class="studio-numeric-cell">29.98</td>
+<td class="studio-numeric-cell">66.69</td>
+<td class="studio-numeric-cell">52.76</td>
+<td class="studio-numeric-cell">53.69</td>
+</tr>
+<tr>
+<th scope="row">LLMAD (GPT-4o)</th>
+<td class="studio-numeric-cell">32.96</td>
+<td class="studio-numeric-cell">37.54</td>
+<td class="studio-numeric-cell">22.91</td>
+<td class="studio-numeric-cell">67.50</td>
+<td class="studio-numeric-cell">73.37</td>
+<td class="studio-numeric-cell">64.16</td>
+</tr>
+<tr>
+<th scope="row">VLM4TS (GPT-4o)</th>
+<td class="studio-numeric-cell">29.78</td>
+<td class="studio-numeric-cell">40.10</td>
+<td class="studio-numeric-cell">19.84</td>
+<td class="studio-numeric-cell">72.52</td>
+<td class="studio-numeric-cell">51.38</td>
+<td class="studio-numeric-cell">54.06</td>
+</tr>
+<tr>
+<th scope="row">Sub-PCA</th>
+<td class="studio-numeric-cell">11.80</td>
+<td class="studio-numeric-cell">16.82</td>
+<td class="studio-numeric-cell">12.28</td>
+<td class="studio-numeric-cell">48.22</td>
+<td class="studio-numeric-cell">31.71</td>
+<td class="studio-numeric-cell">34.99</td>
+</tr>
+<tr>
+<th scope="row">Matrix Profile</th>
+<td class="studio-numeric-cell">9.40</td>
+<td class="studio-numeric-cell">15.84</td>
+<td class="studio-numeric-cell">9.91</td>
+<td class="studio-numeric-cell">44.90</td>
+<td class="studio-numeric-cell">41.44</td>
+<td class="studio-numeric-cell">41.90</td>
+</tr>
+<tr>
+<th scope="row">IForest</th>
+<td class="studio-numeric-cell">12.44</td>
+<td class="studio-numeric-cell">17.89</td>
+<td class="studio-numeric-cell">13.05</td>
+<td class="studio-numeric-cell">50.44</td>
+<td class="studio-numeric-cell">41.51</td>
+<td class="studio-numeric-cell">42.67</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">VisAnomReasoner (3B)</th>
+<td class="studio-numeric-cell"><strong class="studio-best">77.93</strong></td>
+<td class="studio-numeric-cell">40.46</td>
+<td class="studio-numeric-cell"><u class="studio-second">49.59</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">95.05</u></td>
+<td class="studio-numeric-cell">71.69</td>
+<td class="studio-numeric-cell"><u class="studio-second">78.36</u></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">VisAnomReasoner (7B)</th>
+<td class="studio-numeric-cell"><u class="studio-second">75.75</u></td>
+<td class="studio-numeric-cell"><strong class="studio-best">60.91</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">62.91</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">95.27</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">81.51</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">85.58</strong></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+    </section><section class="section" data-studio-section="ablations" id="studio-ablations" aria-labelledby="studio-ablations-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="studio-ablations-title">Ablation Studies</h2>
+        <div class="content has-text-centered studio-result-host" style="max-width: 980px; margin: 0 auto;">
+
+          <div class="visanom-ablation-stack">
+<figure class="studio-native-result" data-result-source="static/images/base_vs_sft_3b_7b.png"><h3>Consistent gains across model sizes</h3>
+<p class="studio-result-description">Both 3B and 7B models improve over their Qwen2.5-VL baselines. Filled gray bars show base scores; blue and orange outlines show VisAnomReasoner scores, with arrows and percentages <span class="studio-ending">marking relative improvements.</span></p>
+<div class="media-card visanom-score-comparison" style="position: relative;"><img src="./static/images/base_vs_sft_3b_7b.png" class="interpolation-image" alt="Base and supervised fine-tuned Qwen2.5-VL scores for 3B and 7B models on a 0–1 axis. Filled gray bars show base scores; blue and orange outlines show SFT scores. Relative gains for 3B and 7B are 180% and 220% in precision, 2% and 11% in recall, 94% and 119% in F1, and 134% and 81% in overlap."></div></figure><figure class="studio-native-result" data-result-source="static/images/ablation_reasoning.png"><h3>Effect of reasoning-augmented fine-tuning</h3>
+<p class="studio-result-description">
+            Ablation studies compare the pretrained base model, interval-only fine-tuning, and reasoning-augmented fine-tuning. While interval-only supervision substantially reduces false positives, adding reasoning traces further improves both precision and recall, showing that explanation-augmented supervision contributes directly to <span class="studio-ending">improved anomaly localization.</span>
           </p>
-          <img src="./static/images/VisAnomBench_result.png" class="interpolation-image" alt="Anomaly detection results on VisAnomBench." style="max-width: 100%; height: auto; margin: 0 auto; display: block;" />
-          <p>
-            Despite its small scale, <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> consistently outperforms general-purpose VLMs, specialized LLM/VLM anomaly detectors, time-series foundation models, and classical detectors, improving precision and F<sub>1</sub> by at least 21.23 and 23.87 percentage points on <span class="va-orange">VisAnom</span><span class="sandia-blue">Bench</span>.
-          </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Effect of reasoning-augmented fine-tuning"><table class="studio-native-table">
+<caption class="studio-sr-only">Effect of reasoning-augmented fine-tuning</caption>
+<thead><tr>
+<th scope="col">Mode</th>
+<th scope="col">TP</th>
+<th scope="col">FP</th>
+<th scope="col">FN</th>
+<th scope="col">Precision</th>
+<th scope="col">Recall</th>
+<th scope="col">F1</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Base</th>
+<td class="studio-numeric-cell">517</td>
+<td class="studio-numeric-cell">1784</td>
+<td class="studio-numeric-cell">242</td>
+<td class="studio-numeric-cell">22.47</td>
+<td class="studio-numeric-cell">68.12</td>
+<td class="studio-numeric-cell">33.79</td>
+</tr>
+<tr>
+<th scope="row">No reasoning</th>
+<td class="studio-numeric-cell">516</td>
+<td class="studio-numeric-cell">393</td>
+<td class="studio-numeric-cell">243</td>
+<td class="studio-numeric-cell">56.76</td>
+<td class="studio-numeric-cell">67.98</td>
+<td class="studio-numeric-cell">61.87</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">With reasoning</th>
+<td class="studio-numeric-cell">576</td>
+<td class="studio-numeric-cell">223</td>
+<td class="studio-numeric-cell">183</td>
+<td class="studio-numeric-cell">72.09</td>
+<td class="studio-numeric-cell">75.88</td>
+<td class="studio-numeric-cell">73.94</td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+
+
         </div>
       </div>
-    </section>
-
-    <section class="section">
+    </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Qualitative Analysis</h2>
+        <h2 class="title is-3 has-text-centered" id="studio-qualitative-title">Qualitative Results</h2>
         <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
           <p>
             <!-- <b>Qualitative Examples of Anomaly Reasoning.</b> -->
             <span class="va-orange">VisAnom</span><span class="va-blue">Reasoner</span> precisely localizes the anomalous interval with visually grounded, structured reasoning; whereas other methods exhibit coarser localization or produce numerous spurious intervals with less grounded explanations.
           </p>
-          <img src="./static/images/Qualitative_VisAnomBench.png" class="interpolation-image" alt="Qualitative anomaly reasoning comparisons on VisAnomBench." style="max-width: 100%; height: auto; margin: 0 auto; display: block;" />
+          <figure class="visanom-qualitative"><img src="./static/images/Qualitative_VisAnomBench.png" class="interpolation-image" alt="Qualitative anomaly reasoning comparisons on VisAnomBench." style="max-width: 100%; height: auto; margin: 0 auto; display: block;"></figure>
         </div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
-        <div class="content has-text-centered" style="max-width: 980px; margin: 0 auto;">
-          <p>
-            Supervised fine-tuning substantially improves anomaly localization and temporal boundary accuracy over the base Qwen2.5-VL models. The largest gains occur in precision, indicating a major reduction in false positives, while overlap improvements reflect more accurate interval localization.
-          </p>
-          <img src="./static/images/base_vs_sft_3b_7b.png" class="interpolation-image" alt="Ablation comparison between base and supervised fine-tuned Qwen2.5-VL models." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
-          <p>
-            Ablation studies compare the pretrained base model, interval-only fine-tuning, and reasoning-augmented fine-tuning. While interval-only supervision substantially reduces false positives, adding reasoning traces further improves both precision and recall, showing that explanation-augmented supervision contributes directly to improved anomaly localization.
-          </p>
-          <img src="./static/images/ablation_reasoning.png" class="interpolation-image" alt="Ablation study of interval-only versus reasoning-augmented fine-tuning." style="max-width: 55%; height: auto; margin: 0 auto; display: block;" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="BibTeX">
+    </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
       <div class="container is-max-desktop content">
-        <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+        <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
         <pre><code>@inproceedings{zhou2026tiny,
   title={Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection},
   author={Zhou, Xiaona and Wahed, Muntasir and Yu, Tianjiao and Brif, Constantin and Lourentzou, Ismini},
@@ -762,8 +749,18 @@ Experimental results on <strong><span class="va-orange">VisAnom</span><span clas
   year={2026}
 }</code></pre>
       </div>
-    </section>
-  </main>
-</body>
+    </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
+
+
+</body>
 </html>

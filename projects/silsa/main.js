@@ -51,34 +51,4 @@
     });
   });
 
-  const dialog = document.querySelector('#image-dialog');
-  document.querySelectorAll('[data-enlarge]').forEach(button => button.addEventListener('click', () => {
-    const original = button.querySelector('img');
-    const enlarged = dialog.querySelector('img');
-    enlarged.src = original.src; enlarged.alt = original.alt;
-    dialog.querySelector('#dialog-title').textContent = button.dataset.enlarge;
-    dialog.showModal();
-  }));
-  dialog.querySelector('button').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    const rect = dialog.getBoundingClientRect();
-    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-  });
-  let copyTimer;
-  document.querySelector('#copy-citation').addEventListener('click', async event => {
-    const button = event.currentTarget;
-    const citation = document.querySelector('#bibtex').textContent;
-    try {
-      await navigator.clipboard.writeText(citation);
-      button.textContent = 'Copied';
-      document.querySelector('#copy-status').textContent = 'BibTeX citation copied to clipboard.';
-    } catch {
-      const selection = window.getSelection();
-      const range = document.createRange();range.selectNodeContents(document.querySelector('#bibtex'));
-      selection.removeAllRanges();selection.addRange(range);
-      button.textContent = 'Text selected';
-      document.querySelector('#copy-status').textContent = 'Citation selected. Use your browser’s Copy command.';
-    }
-    clearTimeout(copyTimer);copyTimer = setTimeout(() => {button.textContent = 'Copy BibTeX';}, 2500);
-  });
 })();

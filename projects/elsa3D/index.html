@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -10,29 +10,29 @@
       gtag('config', 'G-NK0GM1GM0Q');
     </script>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation. A unified 3D model that grounds language in scale-specific geometry through sparse Anchor Tokens and elastic routing." />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation. A unified 3D model that grounds language in scale-specific geometry through sparse Anchor Tokens and elastic routing.">
 
     <title>ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation | PLAN Lab</title>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation" />
-    <meta property="og:description" content="A unified 3D understanding-and-generation model. Sparse Anchor Tokens bind language to scale-specific geometry, and an elastic router roughly halves FLOPs and latency." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://plan-lab.github.io/elsa3D/" />
-    <meta property="og:image" content="https://plan-lab.github.io/elsa3D/static/images/method_overview.png" />
+    <meta property="og:title" content="ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation">
+    <meta property="og:description" content="A unified 3D understanding-and-generation model. Sparse Anchor Tokens bind language to scale-specific geometry, and an elastic router roughly halves FLOPs and latency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://plan-lab.github.io/elsa3D/">
+    <meta property="og:image" content="https://plan-lab.github.io/elsa3D/static/images/method_overview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 
     <style>
@@ -82,60 +82,13 @@
       .section-sub { color: #ffd9c2; font-weight: 700; font-size: 1.05rem;
                      margin: 1.4rem 0 0.4rem; text-align: left; }
     </style>
-  </head>
+  <link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
+</head>
 
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "ELSA3D",
-    "tldr": [
-      "We introduce ELSA3D, a unified 3D model built around elastic semantic anchoring: sparse Anchor Tokens link selected language tokens to geometric evidence at the relevant scale. One router jointly controls anchor selection, geometric scale, block execution, and MLP width, improving language–geometry grounding while roughly halving FLOPs and inference latency compared with the non-elastic variant."
-    ],
-    "abstract": [
-      "ELSA3D is a unified 3D foundation model that structures language and geometric reasoning along matched abstraction scales. Scale-aware octree tokenization retains coarse structural cues and fine geometric detail. Sparse Anchor Tokens provide an explicit cross-modal interface: selected semantic tokens retrieve geometric evidence at a routed scale and fuse it back into the unified representation. An elastic router jointly controls block execution, MLP width, anchor selection, and geometric-scale assignment. Evaluations cover image-to-3D generation, text-to-3D generation, and object captioning, with ablations examining grounding and computational efficiency."
-    ],
-    "contributions": [
-      "Elastic semantic anchoring structures language and geometric reasoning jointly. ELSA3D makes text–3D interaction explicit across matched abstraction scales, rather than collapsing coarse structural cues and fine geometric detail into an undifferentiated sequence. Scale-aware octree tokenization supplies structural bits, scale-specific content codes, positional embeddings, and fixed scale tags for multiscale geometry.",
-      "Anchor Tokens provide a sparse, dynamic cross-modal interface. Each anchor selects a semantic token, routes it to the most relevant 3D scale, retrieves scale-specific geometric evidence, and writes the fused language–geometry signal back into the unified sequence, keeping interaction sparse yet precise.",
-      "An elastic router jointly controls computation and grounding. One routing scheme controls block execution, MLP width, anchor selection, and geometric-scale assignment. The elastic router concentrates cross-modal capacity where semantic–geometric alignment is needed, adapting both computation and grounding to the input.",
-      "ELSA3D improves unified 3D performance while reducing computation. The model achieves state-of-the-art results on image-to-3D generation, text-to-3D generation, and 3D captioning, outperforming the strongest unified baseline on every reported metric while roughly halving FLOPs and inference latency relative to a non-elastic variant of the same model."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "headingName": [
-      {
-        "text": "ELSA3D",
-        "gradient": "linear-gradient(90deg, #FF5F05, #FF0000)"
-      }
-    ],
-    "contributionLeads": [
-      "Elastic semantic anchoring structures language and geometric reasoning jointly.",
-      "Anchor Tokens provide a sparse, dynamic cross-modal interface.",
-      "An elastic router jointly controls computation and grounding.",
-      "ELSA3D improves unified 3D performance while reducing computation."
-    ],
-    "opening": {
-      "source": "qual_image_to_3d.png",
-      "alt": "ELSA3D image-to-3D generation compared with generative and unified baselines.",
-      "caption": "ELSA3D generates 3D objects from an image while preserving overall shape and local appearance."
-    },
-    "teaserSummary": true
-  },
-  "resultPanels": {
-    "htmlTable:0": {
-      "title": "Text-to-3D generation",
-      "description": "Prompt alignment and generated-shape quality, measured with CLIP, FD, KD, and Q-Align."
-    },
-    "htmlTable:1": {
-      "title": "3D object captioning",
-      "description": "Lexical and semantic similarity between generated object descriptions and reference captions. Higher scores are better."
-    }
-  },
-  "results": {}
-}
-  </script>
+  <body class="page-project project-studio" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -170,95 +123,76 @@
 
     <main>
       <!-- ===================== HERO ===================== -->
-      <section class="hero">
+
+
+      <!-- ===================== TL;DR + TEASER ===================== -->
+
+
+      <!-- ===================== METHOD ===================== -->
+
+
+      <!-- ===================== QUALITATIVE RESULTS ===================== -->
+
+
+      <!-- ===================== QUANTITATIVE RESULTS ===================== -->
+      <section class="hero studio-header">
         <div class="hero-body">
           <div class="container is-max-desktop">
             <div class="columns is-centered"><div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
-                <span class="model-name">ELSA3D</span>:
-                Elastic Semantic Anchoring for Unified 3D Understanding and Generation
-              </h1>
+<span class="studio-name">ELSA3D</span><span class="studio-subtitle">Elastic Semantic Anchoring for Unified 3D Understanding and Generation</span>
+</h1>
 
-              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div></div>
 
               <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
               <div class="has-text-centered" style="margin: 5px 0;">
                 <h1 class="title is-3 publication-venue">NeurIPS 2026</h1>
               </div>
-              
+
               <div class="column has-text-centered">
-                <div class="publication-links"><a href="https://arxiv.org/pdf/2607.06565" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2607.06565" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
+                <div class="publication-links">
+<a href="https://arxiv.org/pdf/2607.06565" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2607.06565" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a>
+</div>
               </div>
             </div></div>
           </div>
         </div>
-      </section>
-
-      <!-- ===================== TL;DR + TEASER ===================== -->
-      <section class="hero teaser">
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <div class="content">
-              <p><strong>TL;DR:</strong> <span class="model-name">ELSA3D</span> is a unified 3D foundation
-                model that generates 3D assets and reasons about them in language within a single backbone.
-                Rather than concatenating text and 3D tokens into a flat sequence and leaving cross-modal
-                correspondence to self-attention, it makes text&ndash;3D interaction explicit through
-                <strong>elastic semantic anchoring</strong>, structuring language and geometric reasoning
-                jointly along matched abstraction scales.</p>
-
-              <ul class="tldr-list">
-                <li><i class="fa fa-star"></i>
-                  <strong>Elastic semantic anchoring.</strong> Language and geometric reasoning are structured
-                  jointly along matched abstraction scales, rather than collapsing coarse structural cues and
-                  fine geometric detail into a single undifferentiated representation.</li>
-                <li><i class="fa fa-star"></i>
-                  <span class="c-anchor">Anchor Tokens</span> are a sparse, dynamic cross-modal interface: each
-                  anchor selects a semantic token, routes it to the most relevant 3D scale, retrieves
-                  scale-specific geometric evidence, and writes the fused language&ndash;geometry signal back
-                  into the unified sequence &mdash; keeping interaction sparse yet precise.</li>
-                <li><i class="fa fa-star"></i>
-                  An <span class="c-route">elastic router</span> jointly controls block execution, MLP width,
-                  anchor selection, and geometric-scale assignment under a single routing scheme, concentrating
-                  cross-modal capacity where semantic&ndash;geometric alignment is most needed.</li>
-                <li><i class="fa fa-star"></i>
-                  State-of-the-art performance across image-to-3D generation, text-to-3D generation, and 3D
-                  captioning, outperforming the strongest unified baseline on every reported metric while
-                  roughly <strong>halving FLOPs and inference latency</strong> relative to a non-elastic variant
-                  of the same model.</li>
-              </ul>
-            </div>
-
-            <div style="text-align: center; padding: 12px 0 8px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/method_overview.png"
-                   class="interpolation-image" style="width: 94%;" alt="ELSA3D overview: router, transformer block, and anchor building.">
-              <p class="has-text-justified fig-caption">
-                <span class="model-name">ELSA3D</span> is built around <em>elastic semantic anchoring</em>, where
-                routing jointly controls computation and semantic&ndash;geometric grounding. The per-block
-                router has three heads: a <span class="c-route">Gating Head</span> (skip or run the block), a
-                <span class="c-route">Width Head</span> (MLP width), and an
-                <span class="c-anchor">Anchor Routing Head</span> (which text tokens become anchors, and at
-                which geometric scale). Selected text tokens are routed to their preferred scale, cross-attend
-                to the 3D tokens at that scale, and are fused into the anchor set.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== METHOD ===================== -->
-      <section class="section">
+      </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce ELSA3D, a unified 3D model built around elastic semantic anchoring: sparse Anchor Tokens link selected language tokens to geometric evidence at the relevant scale. One router jointly controls anchor selection, geometric scale, block execution, and MLP width, improving language–geometry grounding while roughly halving FLOPs and inference latency compared with the <span class="studio-tldr-tail">non-elastic variant.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="ELSA3D examples"><div class="container"><div class="studio-example-grid studio-example-single"><figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/images/qual_image_to_3d.png" alt="ELSA3D image-to-3D generation compared with generative and unified baselines."></div>
+<figcaption class="studio-example-caption"><p>ELSA3D generates 3D objects from an image while preserving overall shape and local appearance.</p></figcaption></figure></div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">ELSA3D Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-ablations" data-section="ablations">Ablation Studies</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
+<div class="content"><p>ELSA3D is a unified 3D foundation model that structures language and geometric reasoning along matched abstraction scales. Scale-aware octree tokenization retains coarse structural cues and fine geometric detail. Sparse Anchor Tokens provide an explicit cross-modal interface: selected semantic tokens retrieve geometric evidence at a routed scale and fuse it back into the unified representation. An elastic router jointly controls block execution, MLP width, anchor selection, and geometric-scale assignment. Evaluations cover image-to-3D generation, text-to-3D generation, and object captioning, with ablations examining grounding and computational efficiency.</p></div>
+</div></section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Elastic semantic anchoring structures language and geometric reasoning jointly.</strong> ELSA3D makes text–3D interaction explicit across matched abstraction scales, rather than collapsing coarse structural cues and fine geometric detail into an undifferentiated sequence. Scale-aware octree tokenization supplies structural bits, scale-specific content codes, positional embeddings, and fixed scale tags for multiscale geometry.</li>
+<li>
+<strong class="studio-contribution-lead">Anchor Tokens provide a sparse, dynamic cross-modal interface.</strong> Each anchor selects a semantic token, routes it to the most relevant 3D scale, retrieves scale-specific geometric evidence, and writes the fused language–geometry signal back into the unified sequence, keeping interaction sparse yet precise.</li>
+<li>
+<strong class="studio-contribution-lead">An elastic router jointly controls computation and grounding.</strong> One routing scheme controls block execution, MLP width, anchor selection, and geometric-scale assignment. The elastic router concentrates cross-modal capacity where semantic–geometric alignment is needed, adapting both computation and grounding to the input.</li>
+<li>
+<strong class="studio-contribution-lead">ELSA3D improves unified 3D performance while reducing computation.</strong> The model achieves state-of-the-art results on image-to-3D generation, text-to-3D generation, and 3D captioning, outperforming the strongest unified baseline on every reported metric while roughly halving FLOPs and inference latency relative to a non-elastic variant of the same model.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
         <div class="container is-max-desktop">
           <div class="columns is-centered has-text-centered">
             <div class="column">
-              <h2 class="title is-3">Method</h2>
+              <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name studio-method-gradient" style="background-image: linear-gradient(90deg, rgb(255, 95, 5), rgb(255, 0, 0));">ELSA3D</span> Method</h2>
 
               <div class="content has-text-justified">
                 <p>
                   Unified 3D foundation models aspire to generate 3D assets and reason about them in language
                   within a single backbone, where one model can reconstruct an object from an image, generate
                   one from text, describe its structure, and support downstream reasoning over geometry. Yet
-                  their text&ndash;3D interaction remains largely implicit: existing methods concatenate text
+                  their text–3D interaction remains largely implicit: existing methods concatenate text
                   and 3D tokens into a flat sequence and rely on self-attention to discover cross-modal
                   correspondences, collapsing coarse structural cues and fine geometric detail into a single
                   undifferentiated representation. What is missing is not merely a stronger hierarchical 3D
@@ -271,7 +205,7 @@
                 <h3 class="section-sub"><span class="c-geo">Scale-aware octree tokenization</span></h3>
                 <p>
                   Each 3D object is represented as a multiscale octree constructed from a canonicalized
-                  128&sup3; voxel grid, recursively subdivided to a maximum depth. The first three octree levels
+                  128³ voxel grid, recursively subdivided to a maximum depth. The first three octree levels
                   are fully populated to provide a stable global scaffold; beyond this coarse scaffold the octree
                   is sparse, with nodes added only where they intersect surface geometry. Each node carries a
                   <em>structural bit</em> indicating whether it is subdivided and a <em>content token</em>
@@ -282,8 +216,7 @@
                   and available to the transformer. Within each depth, nodes are serialized in Morton (Z-order)
                   to preserve spatial locality in the token sequence.
                 </p>
-                <img loading="lazy" decoding="async" src="./static/images/octree_tokenizer.png"
-                     class="interpolation-image" style="width: 94%;" alt="Scale-aware octree VQ-VAE tokenization.">
+                <img loading="lazy" decoding="async" src="./static/images/octree_tokenizer.png" class="interpolation-image" style="width: 94%;" alt="Scale-aware octree VQ-VAE tokenization.">
                 <p class="fig-caption">
                   <strong>Scale-aware octree tokenization.</strong>
                   <span class="model-name">ELSA3D</span>'s octree VQ-VAE encodes a voxelized 3D shape into
@@ -297,11 +230,11 @@
                   Dense interaction between all semantic tokens and all 3D tokens is computationally wasteful
                   and semantically noisy, since many words provide only global or contextual constraints while
                   only a subset requires precise geometric grounding.
-                  Anchor Tokens form a sparse semantic&ndash;geometric interface
+                  Anchor Tokens form a sparse semantic–geometric interface
                   that creates cross-modal interaction only where it is useful. At each block, every selected
                   semantic token is used as a query to cross-attend over the 3D tokens at its routed scale, and
                   the retrieved scale-specific evidence is fused with the semantic state to form a transient,
-                  block-local anchor. 
+                  block-local anchor.
                 </p>
 
                 <h3 class="section-sub"><span class="c-route">Dynamic routing and elastic reasoning</span></h3>
@@ -311,126 +244,216 @@
                   reasoning <strong>elastic in both computation and grounding</strong>. From a mean-pooled block
                   context it decides whether to execute the block and how much MLP width to allocate, discretized
                   into four levels. At the token level, it predicts for each semantic token an anchor gate
-                  &mdash; whether the token instantiates an anchor &mdash; and a soft distribution over geometric
+                  — whether the token instantiates an anchor — and a soft distribution over geometric
                   scales. By first selecting a scale and then attending within it, each token performs a
-                  coarse-to-fine search for its most relevant geometric correspondence. 
+                  coarse-to-fine search for its most relevant geometric correspondence.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- ===================== QUALITATIVE RESULTS ===================== -->
-      <section class="section">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered has-text-centered">
-            <div class="column">
-              <h2 class="title is-3">Qualitative Results</h2>
-
-              <div style="text-align: center; padding: 0 0 10px 0;">
-                <img loading="lazy" decoding="async" src="./static/images/qual_image_to_3d.png"
-                     class="interpolation-image" style="width: 97%;" alt="Image-to-3D qualitative comparison.">
-                <p class="has-text-justified fig-caption">
-                  <strong>Image-to-3D generation.</strong> From a single input image,
-                  <span class="model-name">ELSA3D</span> more faithfully preserves both the global shape and the
-                  local appearance cues of the input than strong generative and unified baselines.
-                </p>
-              </div>
-
-              <br>
-
-              <div style="text-align: center; padding: 0 0 10px 0;">
-                <img loading="lazy" decoding="async" src="./static/images/qual_text_to_3d.png"
-                     class="interpolation-image" style="width: 97%;" alt="Text-to-3D qualitative comparison.">
-                <p class="has-text-justified fig-caption">
-                  <strong>Text-to-3D generation.</strong> <span class="model-name">ELSA3D</span> more
-                  faithfully follows category-level intent and fine-grained prompt constraints, including object
-                  parts, support structures, materials, and surface appearance.
-                </p>
-              </div>
-
-              <br>
+        <div class="studio-subsection studio-teaser-context">
 
 
-              <br>
-
-              <div style="text-align: center; padding: 0 0 10px 0;">
-                <img loading="lazy" decoding="async" src="./static/images/qual_captioning.png"
-                     class="interpolation-image" style="width: 74%;" alt="3D captioning qualitative comparison.">
-                <p class="has-text-justified fig-caption">
-                  <strong>3D object captioning.</strong> Given a 3D shape,
-                  <span class="model-name">ELSA3D</span> produces richer, better-grounded descriptions, capturing
-                  both <span class="c-route">structure</span> and <span class="c-anchor">appearance</span> detail
-                  that terser baselines omit.
-                </p>
-              </div>
+            <div style="text-align: center; padding: 12px 0 8px 0;">
+              <img loading="lazy" decoding="async" src="./static/images/method_overview.png" class="interpolation-image" style="width: 94%;" alt="ELSA3D overview: router, transformer block, and anchor building.">
+              <p class="has-text-justified fig-caption">
+                <span class="model-name">ELSA3D</span> is built around <em>elastic semantic anchoring</em>, where
+                routing jointly controls computation and semantic–geometric grounding. The per-block
+                router has three heads: a <span class="c-route">Gating Head</span> (skip or run the block), a
+                <span class="c-route">Width Head</span> (MLP width), and an
+                <span class="c-anchor">Anchor Routing Head</span> (which text tokens become anchors, and at
+                which geometric scale). Selected text tokens are routed to their preferred scale, cross-attend
+                to the 3D tokens at that scale, and are fused into the anchor set.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- ===================== QUANTITATIVE RESULTS ===================== -->
-      <section class="section">
+</div>
+      </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
         <div class="container is-max-desktop">
-          <div class="column">
-            <h2 class="title is-3 has-text-centered">Quantitative Results</h2>           
-            <!-- Text-to-3D -->
-            <h3 class="section-sub">Text-to-3D generation</h3>
-            <div class="elsa-table-wrap">
-              <table class="elsa-table">
+<h2 class="title is-3 has-text-centered" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Text-to-3D generation</h3>
+<p class="studio-result-description">Prompt alignment and generated-shape quality, measured with CLIP, FD, KD, and Q-Align.</p>
+<div class="elsa-table-wrap studio-table-scroll" tabindex="0" role="region" aria-label="Text-to-3D generation">
+              <table class="elsa-table studio-native-table">
                 <thead>
-                  <tr><th>Method</th><th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th><th>Q-Align&uarr;</th></tr>
+                  <tr>
+<th scope="col">Method</th>
+<th scope="col">CLIP↑</th>
+<th scope="col">FD↓</th>
+<th scope="col">KD↓</th>
+<th scope="col">Q-Align↑</th>
+</tr>
                 </thead>
                 <tbody>
-                  <tr class="group"><td colspan="5">Text-/image-conditioned generators</td></tr>
-                  <tr><td>Shap-E</td><td>24.94</td><td>53.24</td><td>1.13</td><td>1.45</td></tr>
-                  <tr><td>LN3Diff</td><td>18.79</td><td>68.09</td><td>2.24</td><td>2.14</td></tr>
-                  <tr><td>XCube</td><td>26.37</td><td>31.82</td><td>0.42</td><td>1.68</td></tr>
-                  <tr><td>SAR3D</td><td>23.21</td><td>22.43</td><td>0.23</td><td>2.91</td></tr>
-                  <tr><td>3DTopia-XL</td><td>25.89</td><td>43.46</td><td>1.18</td><td>1.47</td></tr>
-                  <tr><td>GaussianAnything</td><td>24.76</td><td>28.94</td><td>0.51</td><td>2.27</td></tr>
-                  <tr><td>Trellis</td><td>29.43</td><td>21.61</td><td class="second">0.11</td><td>3.42</td></tr>
-                  <tr class="group"><td colspan="5">Unified 3D models</td></tr>
-                  <tr><td>ShapeLLM-Omni</td><td>27.98</td><td>24.40</td><td>0.15</td><td>3.21</td></tr>
-                  <tr><td>CoRe3D</td><td class="second">37.66</td><td class="second">20.55</td><td class="second">0.11</td><td class="second">3.68</td></tr>
-                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">3.82</td></tr>
+                  <tr class="group studio-group"><td colspan="5">Text-/image-conditioned generators</td></tr>
+                  <tr>
+<th scope="row">Shap-E</th>
+<td class="studio-numeric-cell">24.94</td>
+<td class="studio-numeric-cell">53.24</td>
+<td class="studio-numeric-cell">1.13</td>
+<td class="studio-numeric-cell">1.45</td>
+</tr>
+                  <tr>
+<th scope="row">LN3Diff</th>
+<td class="studio-numeric-cell">18.79</td>
+<td class="studio-numeric-cell">68.09</td>
+<td class="studio-numeric-cell">2.24</td>
+<td class="studio-numeric-cell">2.14</td>
+</tr>
+                  <tr>
+<th scope="row">XCube</th>
+<td class="studio-numeric-cell">26.37</td>
+<td class="studio-numeric-cell">31.82</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">1.68</td>
+</tr>
+                  <tr>
+<th scope="row">SAR3D</th>
+<td class="studio-numeric-cell">23.21</td>
+<td class="studio-numeric-cell">22.43</td>
+<td class="studio-numeric-cell">0.23</td>
+<td class="studio-numeric-cell">2.91</td>
+</tr>
+                  <tr>
+<td>3DTopia-XL</td>
+<td class="studio-numeric-cell">25.89</td>
+<td class="studio-numeric-cell">43.46</td>
+<td class="studio-numeric-cell">1.18</td>
+<td class="studio-numeric-cell">1.47</td>
+</tr>
+                  <tr>
+<th scope="row">GaussianAnything</th>
+<td class="studio-numeric-cell">24.76</td>
+<td class="studio-numeric-cell">28.94</td>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">2.27</td>
+</tr>
+                  <tr>
+<th scope="row">Trellis</th>
+<td class="studio-numeric-cell">29.43</td>
+<td class="studio-numeric-cell">21.61</td>
+<td class="second studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">3.42</td>
+</tr>
+                  <tr class="group studio-group"><td colspan="5">Unified 3D models</td></tr>
+                  <tr>
+<th scope="row">ShapeLLM-Omni</th>
+<td class="studio-numeric-cell">27.98</td>
+<td class="studio-numeric-cell">24.40</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">3.21</td>
+</tr>
+                  <tr>
+<th scope="row">CoRe3D</th>
+<td class="second studio-numeric-cell">37.66</td>
+<td class="second studio-numeric-cell">20.55</td>
+<td class="second studio-numeric-cell">0.11</td>
+<td class="second studio-numeric-cell">3.68</td>
+</tr>
+                  <tr class="ours studio-ours">
+<th scope="row"><span class="model-name">ELSA3D</span></th>
+<td class="best studio-numeric-cell">39.01</td>
+<td class="best studio-numeric-cell">16.50</td>
+<td class="best studio-numeric-cell">0.10</td>
+<td class="best studio-numeric-cell">3.82</td>
+</tr>
                 </tbody>
               </table>
-            </div>
-
-            <!-- 3D captioning -->
-            <h3 class="section-sub">3D object captioning</h3>
-            <div class="elsa-table-wrap">
-              <table class="elsa-table">
+            </div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">3D object captioning</h3>
+<p class="studio-result-description">Lexical and semantic similarity between generated object descriptions and reference captions. Higher scores are better.</p>
+<div class="elsa-table-wrap studio-table-scroll" tabindex="0" role="region" aria-label="3D object captioning">
+              <table class="elsa-table studio-native-table">
                 <thead>
-                  <tr><th>Model</th><th>BLEU-1&uarr;</th><th>ROUGE-L&uarr;</th><th>METEOR&uarr;</th><th>Sentence-BERT&uarr;</th><th>SimCSE&uarr;</th></tr>
+                  <tr>
+<th scope="col">Model</th>
+<th scope="col">BLEU-1↑</th>
+<th scope="col">ROUGE-L↑</th>
+<th scope="col">METEOR↑</th>
+<th scope="col">Sentence-BERT↑</th>
+<th scope="col">SimCSE↑</th>
+</tr>
                 </thead>
                 <tbody>
-                  <tr class="group"><td colspan="6">General vision-language models</td></tr>
-                  <tr><td>LLaVA-13B</td><td>4.01</td><td>8.18</td><td>13.18</td><td>46.97</td><td>48.86</td></tr>
-                  <tr><td>Qwen2.5-VL-7B</td><td>4.05</td><td>7.85</td><td>14.23</td><td>48.90</td><td>50.86</td></tr>
-                  <tr class="group"><td colspan="6">3D-specialized understanding models</td></tr>
-                  <tr><td>3D-LLM</td><td>15.11</td><td>17.84</td><td>19.22</td><td>42.36</td><td>43.58</td></tr>
-                  <tr><td>LEO</td><td>16.98</td><td>20.12</td><td>20.91</td><td>48.01</td><td>47.25</td></tr>
-                  <tr><td>PointLLM-13B</td><td>3.18</td><td>7.54</td><td>12.24</td><td>47.89</td><td>49.01</td></tr>
-                  <tr class="group"><td colspan="6">Unified 3D understanding and generation models</td></tr>
-                  <tr><td>ShapeLLM-Omni</td><td>18.92</td><td>21.46</td><td>22.12</td><td>49.43</td><td>50.72</td></tr>
-                  <tr><td>CoRe3D</td><td class="second">24.02</td><td class="second">26.45</td><td class="second">24.98</td><td class="second">51.17</td><td class="second">52.79</td></tr>
-                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">26.22</td><td class="best">28.15</td><td class="best">25.78</td><td class="best">54.73</td><td class="best">54.11</td></tr>
+                  <tr class="group studio-group"><td colspan="6">General vision-language models</td></tr>
+                  <tr>
+<th scope="row">LLaVA-13B</th>
+<td class="studio-numeric-cell">4.01</td>
+<td class="studio-numeric-cell">8.18</td>
+<td class="studio-numeric-cell">13.18</td>
+<td class="studio-numeric-cell">46.97</td>
+<td class="studio-numeric-cell">48.86</td>
+</tr>
+                  <tr>
+<th scope="row">Qwen2.5-VL-7B</th>
+<td class="studio-numeric-cell">4.05</td>
+<td class="studio-numeric-cell">7.85</td>
+<td class="studio-numeric-cell">14.23</td>
+<td class="studio-numeric-cell">48.90</td>
+<td class="studio-numeric-cell">50.86</td>
+</tr>
+                  <tr class="group studio-group"><td colspan="6">3D-specialized understanding models</td></tr>
+                  <tr>
+<td>3D-LLM</td>
+<td class="studio-numeric-cell">15.11</td>
+<td class="studio-numeric-cell">17.84</td>
+<td class="studio-numeric-cell">19.22</td>
+<td class="studio-numeric-cell">42.36</td>
+<td class="studio-numeric-cell">43.58</td>
+</tr>
+                  <tr>
+<th scope="row">LEO</th>
+<td class="studio-numeric-cell">16.98</td>
+<td class="studio-numeric-cell">20.12</td>
+<td class="studio-numeric-cell">20.91</td>
+<td class="studio-numeric-cell">48.01</td>
+<td class="studio-numeric-cell">47.25</td>
+</tr>
+                  <tr>
+<th scope="row">PointLLM-13B</th>
+<td class="studio-numeric-cell">3.18</td>
+<td class="studio-numeric-cell">7.54</td>
+<td class="studio-numeric-cell">12.24</td>
+<td class="studio-numeric-cell">47.89</td>
+<td class="studio-numeric-cell">49.01</td>
+</tr>
+                  <tr class="group studio-group"><td colspan="6">Unified 3D understanding and generation models</td></tr>
+                  <tr>
+<th scope="row">ShapeLLM-Omni</th>
+<td class="studio-numeric-cell">18.92</td>
+<td class="studio-numeric-cell">21.46</td>
+<td class="studio-numeric-cell">22.12</td>
+<td class="studio-numeric-cell">49.43</td>
+<td class="studio-numeric-cell">50.72</td>
+</tr>
+                  <tr>
+<th scope="row">CoRe3D</th>
+<td class="second studio-numeric-cell">24.02</td>
+<td class="second studio-numeric-cell">26.45</td>
+<td class="second studio-numeric-cell">24.98</td>
+<td class="second studio-numeric-cell">51.17</td>
+<td class="second studio-numeric-cell">52.79</td>
+</tr>
+                  <tr class="ours studio-ours">
+<th scope="row"><span class="model-name">ELSA3D</span></th>
+<td class="best studio-numeric-cell">26.22</td>
+<td class="best studio-numeric-cell">28.15</td>
+<td class="best studio-numeric-cell">25.78</td>
+<td class="best studio-numeric-cell">54.73</td>
+<td class="best studio-numeric-cell">54.11</td>
+</tr>
                 </tbody>
               </table>
-            </div>
-
-      <!-- ===================== ABLATIONS ===================== -->
-      <section class="section">
+            </div></figure>
+</div>
+</div></section><section class="section" data-studio-section="ablations" id="studio-ablations" aria-labelledby="studio-ablations-title">
         <div class="container is-max-desktop">
           <div class="column">
-            <h2 class="title is-3 has-text-centered">Ablations</h2>
+            <h2 class="title is-3 has-text-centered" id="studio-ablations-title">Ablation Studies</h2>
 
             <!-- Anchor tokens -->
             <h3 class="section-sub">Anchor design</h3>
-            <div class="elsa-table-wrap">
+            <div class="elsa-table-wrap studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
               <table class="elsa-table">
                 <thead>
                   <tr>
@@ -441,25 +464,79 @@
                     <th colspan="2">Cost</th>
                   </tr>
                   <tr>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
-                    <th>FLOPs&nbsp;<span class="unit">(G)</span>&darr;</th><th>Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>MET.↑</th>
+<th>SimCSE↑</th>
+                    <th>FLOPs <span class="unit">(G)</span>↓</th>
+<th>Lat. <span class="unit">(s)</span>↓</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>No Anchors</td><td>36.72</td><td>21.84</td><td>0.17</td><td>85.94</td><td>14.78</td><td>0.12</td><td>23.42</td><td>50.87</td><td class="best">568</td><td class="best">15.4</td></tr>
-                  <tr><td>Direct Cross-Attn</td><td>38.32</td><td class="second">17.91</td><td>0.12</td><td>88.41</td><td class="second">10.72</td><td>0.08</td><td>24.96</td><td>53.34</td><td>1081</td><td>29.8</td></tr>
-                  <tr><td>Dense Anchors</td><td class="second">38.57</td><td>18.34</td><td class="second">0.11</td><td class="second">88.63</td><td>11.16</td><td class="second">0.07</td><td class="second">25.21</td><td class="second">53.62</td><td>865</td><td>23.6</td></tr>
-                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="second">632</td><td class="second">17.2</td></tr>
+                  <tr>
+<td>No Anchors</td>
+<td class="studio-numeric-cell">36.72</td>
+<td class="studio-numeric-cell">21.84</td>
+<td class="studio-numeric-cell">0.17</td>
+<td class="studio-numeric-cell">85.94</td>
+<td class="studio-numeric-cell">14.78</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">23.42</td>
+<td class="studio-numeric-cell">50.87</td>
+<td class="best studio-numeric-cell">568</td>
+<td class="best studio-numeric-cell">15.4</td>
+</tr>
+                  <tr>
+<td>Direct Cross-Attn</td>
+<td class="studio-numeric-cell">38.32</td>
+<td class="second studio-numeric-cell">17.91</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">88.41</td>
+<td class="second studio-numeric-cell">10.72</td>
+<td class="studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">24.96</td>
+<td class="studio-numeric-cell">53.34</td>
+<td class="studio-numeric-cell">1081</td>
+<td class="studio-numeric-cell">29.8</td>
+</tr>
+                  <tr>
+<td>Dense Anchors</td>
+<td class="second studio-numeric-cell">38.57</td>
+<td class="studio-numeric-cell">18.34</td>
+<td class="second studio-numeric-cell">0.11</td>
+<td class="second studio-numeric-cell">88.63</td>
+<td class="studio-numeric-cell">11.16</td>
+<td class="second studio-numeric-cell">0.07</td>
+<td class="second studio-numeric-cell">25.21</td>
+<td class="second studio-numeric-cell">53.62</td>
+<td class="studio-numeric-cell">865</td>
+<td class="studio-numeric-cell">23.6</td>
+</tr>
+                  <tr class="ours studio-ours">
+<td><span class="model-name">ELSA3D</span></td>
+<td class="best studio-numeric-cell">39.01</td>
+<td class="best studio-numeric-cell">16.50</td>
+<td class="best studio-numeric-cell">0.10</td>
+<td class="best studio-numeric-cell">89.21</td>
+<td class="best studio-numeric-cell">9.23</td>
+<td class="best studio-numeric-cell">0.06</td>
+<td class="best studio-numeric-cell">25.78</td>
+<td class="best studio-numeric-cell">54.11</td>
+<td class="second studio-numeric-cell">632</td>
+<td class="second studio-numeric-cell">17.2</td>
+</tr>
                 </tbody>
               </table>
             </div>
 
 
             <!-- Scale routing -->
-            <h3 class="section-sub">Scale-aware routing</h3>
-            <div class="elsa-table-wrap">
+            <h3 class="section-sub studio-next-result">Scale-aware routing</h3>
+            <div class="elsa-table-wrap studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
               <table class="elsa-table">
                 <thead>
                   <tr>
@@ -467,20 +544,80 @@
                     <th colspan="3">Text-to-3D</th>
                     <th colspan="3">Image-to-3D</th>
                     <th colspan="2">Captioning</th>
-                    <th rowspan="2">Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                    <th rowspan="2">Lat. <span class="unit">(s)</span>↓</th>
                   </tr>
                   <tr>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>MET.↑</th>
+<th>SimCSE↑</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>All-Scale Attn.</td><td class="second">38.72</td><td class="second">17.21</td><td class="second">0.11</td><td class="second">88.71</td><td class="second">10.18</td><td class="second">0.07</td><td class="second">25.36</td><td class="second">53.76</td><td>22.4</td></tr>
-                  <tr><td>Coarse-Only</td><td>37.84</td><td>19.76</td><td>0.14</td><td>86.92</td><td>13.40</td><td>0.10</td><td>24.46</td><td>52.41</td><td class="best">16.5</td></tr>
-                  <tr><td>Fine-Only</td><td>38.09</td><td>18.88</td><td>0.13</td><td>87.63</td><td>12.46</td><td>0.09</td><td>24.73</td><td>52.86</td><td>18.6</td></tr>
-                  <tr><td>Random Scale</td><td>35.31</td><td>21.24</td><td>0.19</td><td>81.05</td><td>14.82</td><td>0.14</td><td>22.02</td><td>49.21</td><td>17.6</td></tr>
-                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="second">17.2</td></tr>
+                  <tr>
+<td>All-Scale Attn.</td>
+<td class="second studio-numeric-cell">38.72</td>
+<td class="second studio-numeric-cell">17.21</td>
+<td class="second studio-numeric-cell">0.11</td>
+<td class="second studio-numeric-cell">88.71</td>
+<td class="second studio-numeric-cell">10.18</td>
+<td class="second studio-numeric-cell">0.07</td>
+<td class="second studio-numeric-cell">25.36</td>
+<td class="second studio-numeric-cell">53.76</td>
+<td class="studio-numeric-cell">22.4</td>
+</tr>
+                  <tr>
+<td>Coarse-Only</td>
+<td class="studio-numeric-cell">37.84</td>
+<td class="studio-numeric-cell">19.76</td>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">86.92</td>
+<td class="studio-numeric-cell">13.40</td>
+<td class="studio-numeric-cell">0.10</td>
+<td class="studio-numeric-cell">24.46</td>
+<td class="studio-numeric-cell">52.41</td>
+<td class="best studio-numeric-cell">16.5</td>
+</tr>
+                  <tr>
+<td>Fine-Only</td>
+<td class="studio-numeric-cell">38.09</td>
+<td class="studio-numeric-cell">18.88</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">87.63</td>
+<td class="studio-numeric-cell">12.46</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">24.73</td>
+<td class="studio-numeric-cell">52.86</td>
+<td class="studio-numeric-cell">18.6</td>
+</tr>
+                  <tr>
+<td>Random Scale</td>
+<td class="studio-numeric-cell">35.31</td>
+<td class="studio-numeric-cell">21.24</td>
+<td class="studio-numeric-cell">0.19</td>
+<td class="studio-numeric-cell">81.05</td>
+<td class="studio-numeric-cell">14.82</td>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">22.02</td>
+<td class="studio-numeric-cell">49.21</td>
+<td class="studio-numeric-cell">17.6</td>
+</tr>
+                  <tr class="ours studio-ours">
+<td><span class="model-name">ELSA3D</span></td>
+<td class="best studio-numeric-cell">39.01</td>
+<td class="best studio-numeric-cell">16.50</td>
+<td class="best studio-numeric-cell">0.10</td>
+<td class="best studio-numeric-cell">89.21</td>
+<td class="best studio-numeric-cell">9.23</td>
+<td class="best studio-numeric-cell">0.06</td>
+<td class="best studio-numeric-cell">25.78</td>
+<td class="best studio-numeric-cell">54.11</td>
+<td class="second studio-numeric-cell">17.2</td>
+</tr>
                 </tbody>
               </table>
             </div>
@@ -489,12 +626,12 @@
               every cue to a single resolution (coarse-only or fine-only) underperforms, since category-level
               cues favor coarse geometry while part and appearance cues require finer scales. Attending to all
               scales is competitive but slower (22.4s), whereas learned routing attains the
-              <span class="chip-best">best</span> quality at near coarse-only latency.
+              <span class="chip-best">best</span> quality at <span class="studio-ending">near coarse-only latency.</span>
             </p>
 
             <!-- Elastic compute -->
-            <h3 class="section-sub">Elastic computation &mdash; adapt depth <em>and</em> width</h3>
-            <div class="elsa-table-wrap">
+            <h3 class="section-sub studio-next-result">Elastic computation — adapt depth <em>and</em> width</h3>
+            <div class="elsa-table-wrap studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
               <table class="elsa-table">
                 <thead>
                   <tr>
@@ -505,36 +642,131 @@
                     <th colspan="2">Compute</th>
                   </tr>
                   <tr>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>CLIP&uarr;</th><th>FD&darr;</th><th>KD&darr;</th>
-                    <th>MET.&uarr;</th><th>SimCSE&uarr;</th>
-                    <th>FLOPs&nbsp;<span class="unit">(G)</span>&darr;</th><th>Lat.&nbsp;<span class="unit">(s)</span>&darr;</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>CLIP↑</th>
+<th>FD↓</th>
+<th>KD↓</th>
+                    <th>MET.↑</th>
+<th>SimCSE↑</th>
+                    <th>FLOPs <span class="unit">(G)</span>↓</th>
+<th>Lat. <span class="unit">(s)</span>↓</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="ref"><td>Full-Compute <em>(reference)</em></td><td>39.18</td><td>16.22</td><td>0.09</td><td>89.34</td><td>8.92</td><td>0.06</td><td>25.89</td><td>54.28</td><td>1284</td><td>34.6</td></tr>
-                  <tr><td>Depth-Only Elastic</td><td class="second">38.52</td><td class="second">17.61</td><td class="second">0.12</td><td class="second">88.46</td><td class="second">10.42</td><td class="second">0.08</td><td class="second">25.23</td><td class="second">53.64</td><td class="second">811</td><td class="second">24.1</td></tr>
-                  <tr><td>Width-Only Elastic</td><td>38.21</td><td>18.04</td><td class="second">0.12</td><td>88.12</td><td>10.91</td><td class="second">0.08</td><td>25.05</td><td>53.37</td><td>985</td><td>27.0</td></tr>
-                  <tr class="ours"><td><span class="model-name">ELSA3D</span></td><td class="best">39.01</td><td class="best">16.50</td><td class="best">0.10</td><td class="best">89.21</td><td class="best">9.23</td><td class="best">0.06</td><td class="best">25.78</td><td class="best">54.11</td><td class="best">632</td><td class="best">17.2</td></tr>
+                  <tr class="ref">
+<td>Full-Compute <em>(reference)</em>
+</td>
+<td class="studio-numeric-cell">39.18</td>
+<td class="studio-numeric-cell">16.22</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">89.34</td>
+<td class="studio-numeric-cell">8.92</td>
+<td class="studio-numeric-cell">0.06</td>
+<td class="studio-numeric-cell">25.89</td>
+<td class="studio-numeric-cell">54.28</td>
+<td class="studio-numeric-cell">1284</td>
+<td class="studio-numeric-cell">34.6</td>
+</tr>
+                  <tr>
+<td>Depth-Only Elastic</td>
+<td class="second studio-numeric-cell">38.52</td>
+<td class="second studio-numeric-cell">17.61</td>
+<td class="second studio-numeric-cell">0.12</td>
+<td class="second studio-numeric-cell">88.46</td>
+<td class="second studio-numeric-cell">10.42</td>
+<td class="second studio-numeric-cell">0.08</td>
+<td class="second studio-numeric-cell">25.23</td>
+<td class="second studio-numeric-cell">53.64</td>
+<td class="second studio-numeric-cell">811</td>
+<td class="second studio-numeric-cell">24.1</td>
+</tr>
+                  <tr>
+<td>Width-Only Elastic</td>
+<td class="studio-numeric-cell">38.21</td>
+<td class="studio-numeric-cell">18.04</td>
+<td class="second studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">88.12</td>
+<td class="studio-numeric-cell">10.91</td>
+<td class="second studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">25.05</td>
+<td class="studio-numeric-cell">53.37</td>
+<td class="studio-numeric-cell">985</td>
+<td class="studio-numeric-cell">27.0</td>
+</tr>
+                  <tr class="ours studio-ours">
+<td><span class="model-name">ELSA3D</span></td>
+<td class="best studio-numeric-cell">39.01</td>
+<td class="best studio-numeric-cell">16.50</td>
+<td class="best studio-numeric-cell">0.10</td>
+<td class="best studio-numeric-cell">89.21</td>
+<td class="best studio-numeric-cell">9.23</td>
+<td class="best studio-numeric-cell">0.06</td>
+<td class="best studio-numeric-cell">25.78</td>
+<td class="best studio-numeric-cell">54.11</td>
+<td class="best studio-numeric-cell">632</td>
+<td class="best studio-numeric-cell">17.2</td>
+</tr>
                 </tbody>
               </table>
             </div>
             <p class="tbl-note">
-              The full-compute model &mdash; every block executed at full width &mdash; is a quality upper
+              The full-compute model — every block executed at full width — is a quality upper
               bound but costs 1284 GFLOPs and 34.6s. <span class="model-name">ELSA3D</span> retains
-              near-full-compute quality at <strong>632 GFLOPs and 17.2s, roughly a 2&times; reduction</strong>.
+              near-full-compute quality at <strong>632 GFLOPs and 17.2s, roughly a 2× reduction</strong>.
               Adapting depth or width alone is weaker than adapting both, indicating that efficient unified 3D
               modeling benefits from jointly choosing <em>which</em> blocks execute and <em>how much</em>
-              capacity each uses.
+              <span class="studio-ending">capacity each uses.</span>
             </p>
           </div>
         </div>
-      </section>
+      </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column">
+              <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
 
-      <!-- ===================== BIBTEX ===================== -->
-      <section class="section" id="BibTeX">
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_image_to_3d.png" class="interpolation-image" style="width: 97%;" alt="Image-to-3D qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Image-to-3D generation.</strong> From a single input image,
+                  <span class="model-name">ELSA3D</span> more faithfully preserves both the global shape and the
+                  local appearance cues of the input than strong generative and unified baselines.
+                </p>
+              </div>
+
+
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_text_to_3d.png" class="interpolation-image" style="width: 97%;" alt="Text-to-3D qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>Text-to-3D generation.</strong> <span class="model-name">ELSA3D</span> more
+                  faithfully follows category-level intent and fine-grained prompt constraints, including object
+                  parts, support structures, materials, and surface appearance.
+                </p>
+              </div>
+
+
+
+
+
+
+              <div style="text-align: center; padding: 0 0 10px 0;">
+                <img loading="lazy" decoding="async" src="./static/images/qual_captioning.png" class="interpolation-image" style="width: 74%;" alt="3D captioning qualitative comparison.">
+                <p class="has-text-justified fig-caption">
+                  <strong>3D object captioning.</strong> Given a 3D shape,
+                  <span class="model-name">ELSA3D</span> produces richer, better-grounded descriptions, capturing
+                  both <span class="c-route">structure</span> and <span class="c-anchor">appearance</span> detail
+                  that terser baselines omit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
         <div class="container is-max-desktop content">
-          <h2 class="title" style="justify-content: left; display: flex;">BibTeX</h2>
+          <h2 class="title is-3" style="justify-content: left; display: flex;" id="BibTeX-title">BibTeX</h2>
           <!-- TODO: update with the arXiv id / venue once available -->
           <pre><code>@inproceedings{yu2026elsa3d,
   title={ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation},
@@ -543,33 +775,23 @@
   year={2026}
 }</code></pre>
         </div>
-      </section>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <a class="icon-link" href="#" aria-label="Paper PDF">
-              <i class="fas fa-file-pdf"></i>
-            </a>
-            <a class="icon-link" href="https://github.com/PLAN-Lab" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <div class="columns is-centered">
-            <div class="column is-8">
-              <div class="content">
-                <p>
+      </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
                   This site is built upon the work of
                   <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
                   made available under the
                   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                     Commons Attribution-ShareAlike 4.0 International License</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-  </body>
+                </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

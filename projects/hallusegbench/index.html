@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,201 +10,28 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination">
     <title>Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "RobustSeg",
-    "tldr": [
-      "We introduce RobustSeg, a segmentation vision-language model trained on factual and counterfactual image pairs to ground masks in visual evidence and abstain when the queried object is absent. Our Counterfactual Segmentation Reasoning task and HalluSegBench benchmark test this distinction and measure the severity of hallucinated masks. Counterfactual fine-tuning reduces hallucinations by 30% while preserving segmentation fidelity."
-    ],
-    "method": {
-      "paragraphs": [
-        "RobustSeg is a segmentation vision-language model trained with Counterfactual Finetuning (CFT). Training pairs factual images with controlled visual counterfactuals so the model learns to segment a referenced object when visual evidence supports it and abstain when the object is absent. This counterfactual supervision helps distinguish observed evidence from contextual priors while preserving segmentation fidelity."
-      ]
-    },
-    "dataset": {
-      "name": "HalluSegBench",
-      "paragraphs": [
-        "HalluSegBench introduces controlled visual counterfactuals for diagnosing pixel-grounding hallucinations in referring and reasoning expression segmentation. The Counterfactual Segmentation Reasoning task requires segmentation in the factual image and abstention in its counterfactual counterpart. Complementary evaluation metrics measure hallucination severity and separate vision-driven from language-driven failure modes."
-      ]
-    },
-    "contributions": [
-      "New Task. To assess segmentation fidelity, we introduce the novel task of Counterfactual Segmentation Reasoning (CSR) which assesses whether segmentation models correctly adapt to counterfactual visual changes. Our experiments show that vision-driven hallucinations are far more severe than label-driven ones, highlighting critical gaps in current grounding capabilities.",
-      "New Benchmark. We curate HalluSegBench the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.",
-      "New Model. We present RobustSeg a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. RobustSeg learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity."
-    ],
-    "contributionLeads": [
-      "New Task.",
-      "New Benchmark.",
-      "New Model."
-    ],
-    "opening": {
-      "source": "teaser_new.jpg",
-      "label": "Counterfactual segmentation reasoning",
-      "alt": "Factual and counterfactual images used to test segmentation and abstention.",
-      "caption": "Left: factual and counterfactual image pairs test whether models segment the requested object when present and abstain when absent, for both referring expressions and reasoning questions. Center: HalluSegBench’s object-category distribution. Right: RobustSeg and baseline models compared on hallucination and factual segmentation metrics.",
-      "processTitle": "Counterfactual training and evaluation"
-    },
-    "heroTitle": {
-      "name": "HalluSegBench",
-      "subtitle": "Counterfactual Segmentation Reasoning for Pixel-Grounding Hallucinations"
-    }
-  },
-  "resultPanels": {
-    "Counterfactual segmentation evaluation": {
-      "description": "Factual and counterfactual segmentation across referral and reasoning tasks. IoU drops and confusion-mask scores expose unsupported segmentation."
-    }
-  },
-  "results": {
-    "quat_new.jpg": {
-      "type": "table",
-      "title": "Counterfactual segmentation evaluation",
-      "columns": [
-        "Model",
-        "HM",
-        "CMS Referral · Factual ↓",
-        "CMS Referral · Counterfactual ↓",
-        "CMS Reasoning · Factual ↓",
-        "CMS Reasoning · Counterfactual ↓",
-        "ΔIoU Referral · Textual ↑",
-        "ΔIoU Referral · Visual ↑",
-        "ΔIoU Reasoning · Textual ↑",
-        "ΔIoU Reasoning · Visual ↑"
-      ],
-      "rows": [
-        [
-          "LISA-7B",
-          "No",
-          "0.3080",
-          "0.7317",
-          "0.4438",
-          "0.6960",
-          "0.4534",
-          "0.2810",
-          "0.2991",
-          "0.2418"
-        ],
-        [
-          "PixelLM-7B",
-          "No",
-          "0.4748",
-          "0.7286",
-          "0.4284",
-          "0.5824",
-          "0.3952",
-          "0.4071",
-          "0.2792",
-          "0.2263"
-        ],
-        [
-          "GLaMM-7B",
-          "No",
-          "0.4196",
-          "0.6052",
-          "0.3556",
-          "0.4022",
-          "0.3273",
-          "0.3016",
-          "0.2446",
-          "0.3164"
-        ],
-        [
-          "LISA-13B",
-          "No",
-          "0.3194",
-          "0.6687",
-          "0.4979",
-          "0.6647",
-          "0.4591",
-          "0.3886",
-          "0.3430",
-          "0.3164"
-        ],
-        [
-          "PixelLM-13B",
-          "No",
-          "0.4306",
-          "0.7253",
-          "0.4267",
-          "0.5424",
-          "0.4285",
-          "0.4273",
-          "0.3106",
-          "0.3079"
-        ],
-        [
-          "Seg-Zero",
-          "Yes",
-          "0.4482",
-          "0.5598",
-          "0.6554",
-          "0.7671",
-          "0.4412",
-          "0.5312",
-          "0.2391",
-          "0.3042"
-        ],
-        [
-          "VisionReasoner",
-          "Yes",
-          "0.8191",
-          "0.6908",
-          "0.7315",
-          "0.8633",
-          "0.3619",
-          "0.4822",
-          "0.2464",
-          "0.3075"
-        ],
-        [
-          "SESAME-7B",
-          "Yes",
-          "0.1983",
-          "0.4304",
-          "0.2998",
-          "0.4873",
-          "0.4180",
-          "0.3605",
-          "0.3296",
-          "0.3000"
-        ],
-        [
-          "RobustSeg (Ours)",
-          "Yes",
-          "0.1062",
-          "0.4049",
-          "0.1541",
-          "0.3988",
-          "0.6105",
-          "0.5278",
-          "0.4085",
-          "0.3184"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/quat_new.jpg"
-    }
-  }
-}
-  </script>
+  <body class="page-project project-studio studio-hallusegbench" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -239,13 +66,39 @@
 
     <main>
 <!-- {% include navbar.html %} -->
-  <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><img src="static/images/logo.png" alt="HalluSegBench logo" width="80px">Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination</h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jiaxun-zhang">Jiaxun Zhang</a><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/">Xingyou Liu</a><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
+            <h1 class="title is-2 publication-title">
+<span class="studio-name studio-long-name">HalluSegBench</span><span class="studio-subtitle">Counterfactual Segmentation Reasoning for Pixel-Grounding Hallucinations</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jiaxun-zhang">Jiaxun Zhang</a><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://www.linkedin.com/in/xingyou-liu-aa216b1b6/">Xingyou Liu</a><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div>
+</div>
 
             <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
@@ -258,89 +111,276 @@
             </div>
 
             <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2506.21546" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.21546" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/HalluSegBench" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/datasets/PLAN-Lab/HalluSegBench" class="external-link button is-normal is-rounded is-dark" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2506.21546" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.21546" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/HalluSegBench" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/datasets/PLAN-Lab/HalluSegBench" class="external-link button is-normal is-rounded is-dark" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a>
+</div>
 
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce RobustSeg, a segmentation vision-language model trained on factual and counterfactual image pairs to ground masks in visual evidence and abstain when the queried object is absent. Our Counterfactual Segmentation Reasoning task and HalluSegBench benchmark test this distinction and measure the severity of hallucinated masks. Counterfactual fine-tuning reduces hallucinations by 30% while preserving <span class="studio-tldr-tail">segmentation fidelity.</span></p></div>
+</div></section><section class="section studio-opening-examples hallu-opening" data-studio-section="examples"><div class="container is-max-desktop"><figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/images/teaser_new.jpg" class="interpolation-image" alt="HalluSegBench paired examples, object distribution, and RobustSeg evaluation" width="85%"></div>
+<figcaption class="studio-opening-caption"><h2 class="studio-opening-label">Segmentation grounded in visual evidence</h2>
+<p>Paired factual and counterfactual examples test segmentation and abstention. The benchmark spans diverse objects and compares RobustSeg with existing segmentation models.</p></figcaption></figure></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">RobustSeg Method</a><a href="#studio-dataset" data-section="dataset">HalluSegBench Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Segmentation Vision-Language Models (VLMs) have significantly advanced grounded visual understanding, yet they remain prone to pixel-grounding hallucinations, producing masks for incorrect objects or for objects that are entirely absent. 
+              Segmentation Vision-Language Models (VLMs) have significantly advanced grounded visual understanding, yet they remain prone to pixel-grounding hallucinations, producing masks for incorrect objects or for objects that are entirely absent.
               Existing evaluations rely almost entirely on text- or label-based perturbations, which check only whether the predicted mask matches the queried label. Such evaluations overlook the spatial footprint and severity of hallucination and therefore fail to reveal vision-driven hallucinations, which are more challenging and more prevalent.
-              To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span> where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart. 
+              To address this gap, we formalize the task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span> where a model must segment the referenced object in the factual image and abstain in its counterfactual counterpart.
               To support this task, we curate <span class="model-name-gradient">HalluSegBench</span> the first large-scale benchmark to diagnose referring and reasoning expression segmentation hallucinations using controlled visual counterfactuals, alongside new evaluation metrics that measure hallucination severity and disentangle vision- and language-driven failure modes.
               We further introduce <span class="model-name-gradient">RobustSeg</span> a segmentation VLM trained with counterfactual fine-tuning (CFT) to learn when to segment and when to abstain. Experimental results confirm <span class="model-name-gradient">RobustSeg</span> reduces hallucinations by 30%, while improving segmentation performance on FP-RefCOCO(+/g).
             </p>
           </div>
-          <img loading="lazy" decoding="async" src="./static/images/teaser_new.jpg" class="interpolation-image" alt="Interpolate start reference image." width="85%">
+
         </div>
       </div>
   </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">✅ Contributions</h2>
+          <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
           <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Task</b>. To assess segmentation fidelity, we introduce the novel task of <span style="font-style: italic;">Counterfactual Segmentation Reasoning (CSR)</span> which assesses whether segmentation models correctly adapt to counterfactual visual changes.
-                Our experiments show that vision-driven hallucinations are far more severe than label-driven ones, highlighting critical gaps in current grounding capabilities.</li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Benchmark</b>. 
-                We curate <span class="model-name-gradient">HalluSegBench</span> the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>New Model</b>. 
-                We present <span class="model-name-gradient">RobustSeg</span> a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. <span class="model-name-gradient">RobustSeg</span> learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity.</li>
-              
-          </ul></div>
+            <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">New Task.</strong> To assess segmentation fidelity, we introduce the novel task of Counterfactual Segmentation Reasoning (CSR) which assesses whether segmentation models correctly adapt to counterfactual visual changes. Our experiments show that vision-driven hallucinations are far more severe than label-driven ones, highlighting critical gaps in current grounding capabilities.</li>
+<li>
+<strong class="studio-contribution-lead">New Benchmark.</strong> We curate HalluSegBench the first benchmark for pixel-grounding hallucination via counterfactual visual reasoning, and propose novel evaluation metrics that quantify hallucination along complementary dimensions.</li>
+<li>
+<strong class="studio-contribution-lead">New Model.</strong> We present RobustSeg a segmentation VLM, trained with Counterfactual Finetuning (CFT), with abstention-aware grounding capabilities. RobustSeg learns to distinguish visual evidence from contextual priors, yielding large and consistent reductions in hallucination while preserving segmentation fidelity.</li>
+</ul>
+</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">RobustSeg</span> Method</h2>
+<p class="hallu-method-intro">RobustSeg learns when a requested object has visual support. Counterfactual fine-tuning uses both present-object examples, which require a mask, and absent-object examples, which require abstention. Frozen vision and language encoders feed a trainable segmentation decoder and language adapters.</p>
+<figure class="hallu-model-figure"><img src="static/images/architecture.png" alt="RobustSeg architecture and counterfactual fine-tuning pipeline"><figcaption>The SAM image encoder and VLM encoder remain frozen. LoRA adapters and the SAM decoder learn from positive segmentation pairs and negative pairs formed by changing either the query or the image.</figcaption></figure>
+</div></section><section class="section" data-studio-section="dataset" id="studio-dataset" aria-labelledby="studio-dataset-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-dataset-title">HalluSegBench Dataset</h2>
+<p class="hallu-dataset-intro">HalluSegBench tests referring expressions and reasoning questions on paired factual and counterfactual images. Controlled object replacements preserve the scene context while changing whether the queried object is present, exposing masks generated from contextual expectations instead <span class="studio-ending">of visual evidence.</span></p>
+<dl class="studio-package-stats hallu-stats">
+<div>
+<dt>3,673</dt>
+<dd>Paired examples</dd>
+</div>
+<div>
+<dt>2,958</dt>
+<dd>Images</dd>
+</div>
+<div>
+<dt>7,346</dt>
+<dd>Segmentation masks</dd>
+</div>
+<div>
+<dt>816</dt>
+<dd>Object categories</dd>
+</div>
+</dl>
+<div class="hallu-dataset-layout">
+<div class="hallu-pair-explanation">
+<h3>One pair tests four decisions</h3>
+<p>Changing the image or the expression independently tests whether the mask follows the evidence. Both matching pairs require segmentation. Each mismatched pair requires abstention.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table"><table class="hallu-pair-table">
+<thead><tr>
+<th scope="col">Image</th>
+<th scope="col">Query</th>
+<th scope="col">Expected response</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Factual</th>
+<td>Original object</td>
+<td>Segment</td>
+</tr>
+<tr>
+<th scope="row">Factual</th>
+<td>Replacement object</td>
+<td>Abstain</td>
+</tr>
+<tr>
+<th scope="row">Counterfactual</th>
+<td>Original object</td>
+<td>Abstain</td>
+</tr>
+<tr>
+<th scope="row">Counterfactual</th>
+<td>Replacement object</td>
+<td>Segment</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<figure class="hallu-source-figure hallu-task-figure"><svg viewbox="1710 420 2440 820" role="img" aria-label="Counterfactual Segmentation Reasoning examples"><image href="static/images/halluseg_poster.png" width="6048" height="3024"></image></svg><figcaption>Paired scenes expose hallucination when a query names an object that was replaced. The examples illustrate baseline failures on the Counterfactual Segmentation Reasoning task.</figcaption></figure>
+</div>
+<p class="hallu-split-description">The benchmark includes 2,812 referring-expression pairs and 861 reasoning pairs. The training split contains 1,934 pairs and the test split contains 1,739.</p>
+<div class="studio-package-links">
+<a href="https://huggingface.co/datasets/PLAN-Lab/HalluSegBench">Explore the dataset</a><a href="https://arxiv.org/abs/2506.21546">Read the paper</a>
+</div>
+<div class="hallu-metrics">
+<h3>Measuring hallucination and grounding</h3>
+<p>Factual IoU measures mask quality when the object is present. The new metrics test whether the model changes its prediction when the evidence changes and how severe an <span class="studio-ending">unsupported mask is.</span></p>
+<div class="studio-explainer-grid">
+<article class="studio-explainer-card"><h4>Textual ΔIoU ↑</h4>
+<strong class="hallu-metric-subtitle">Change the query, keep the image</strong><p>The gap between factual IoU and mask overlap under a query-only change measures whether the model distinguishes a present object from an absent one named in the same scene.</p></article><article class="studio-explainer-card"><h4>Visual ΔIoU ↑</h4>
+<strong class="hallu-metric-subtitle">Change the image, keep the query</strong><p>The corresponding gap after replacing the queried object measures whether the mask responds to visual evidence rather than following the unchanged language prompt.</p></article><article class="studio-explainer-card"><h4>Confusion Mask Score ↓</h4>
+<strong class="hallu-metric-subtitle">Measure an unsupported mask</strong><p>CMS penalizes overlap with the replacement object and leakage into other regions, normalized by the reference object area. Lower scores mean less hallucination. Abstaining on an absent <span class="studio-ending">object gives zero.</span></p></article>
+</div>
+</div>
+</div></section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Quantitative Results</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/quat_new.jpg" class="interpolation-image" alt="HalluSegBench results." width="85%">
-              <p class="has-text-justified">
-                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>ΔIoU Referral</code>, <code>ΔIoU Reasoning</code>), 
-                factual and counterfactual Confusion Mask Score ( <code>CMS</code>).              
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack"><figure class="studio-native-result studio-result-card" data-result-source="static/images/quat_new.jpg" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Counterfactual segmentation evaluation</h3>
+<p class="has-text-justified studio-result-description">
+                Comparison of Reasoning Segmentation Models on <span class="model-name">HalluSegBench</span> Metrics, including textual and visual IoU drop for referral and reasoning tasks (<code>ΔIoU Referral</code>, <code>ΔIoU Reasoning</code>),
+                factual and counterfactual Confusion Mask <span class="studio-ending">Score ( <code>CMS</code>).</span>
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Counterfactual segmentation evaluation"><table class="studio-native-table">
+<caption class="studio-sr-only">Counterfactual segmentation evaluation</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">HM</th>
+<th scope="col">CMS Referral · Factual ↓</th>
+<th scope="col">CMS Referral · Counterfactual ↓</th>
+<th scope="col">CMS Reasoning · Factual ↓</th>
+<th scope="col">CMS Reasoning · Counterfactual ↓</th>
+<th scope="col">ΔIoU Referral · Textual ↑</th>
+<th scope="col">ΔIoU Referral · Visual ↑</th>
+<th scope="col">ΔIoU Reasoning · Textual ↑</th>
+<th scope="col">ΔIoU Reasoning · Visual ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">LISA-7B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.3080</td>
+<td class="studio-numeric-cell">0.7317</td>
+<td class="studio-numeric-cell">0.4438</td>
+<td class="studio-numeric-cell">0.6960</td>
+<td class="studio-numeric-cell">0.4534</td>
+<td class="studio-numeric-cell">0.2810</td>
+<td class="studio-numeric-cell">0.2991</td>
+<td class="studio-numeric-cell">0.2418</td>
+</tr>
+<tr>
+<th scope="row">PixelLM-7B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.4748</td>
+<td class="studio-numeric-cell">0.7286</td>
+<td class="studio-numeric-cell">0.4284</td>
+<td class="studio-numeric-cell">0.5824</td>
+<td class="studio-numeric-cell">0.3952</td>
+<td class="studio-numeric-cell">0.4071</td>
+<td class="studio-numeric-cell">0.2792</td>
+<td class="studio-numeric-cell">0.2263</td>
+</tr>
+<tr>
+<th scope="row">GLaMM-7B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.4196</td>
+<td class="studio-numeric-cell">0.6052</td>
+<td class="studio-numeric-cell">0.3556</td>
+<td class="studio-numeric-cell">0.4022</td>
+<td class="studio-numeric-cell">0.3273</td>
+<td class="studio-numeric-cell">0.3016</td>
+<td class="studio-numeric-cell">0.2446</td>
+<td class="studio-numeric-cell">0.3164</td>
+</tr>
+<tr>
+<th scope="row">LISA-13B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.3194</td>
+<td class="studio-numeric-cell">0.6687</td>
+<td class="studio-numeric-cell">0.4979</td>
+<td class="studio-numeric-cell">0.6647</td>
+<td class="studio-numeric-cell">0.4591</td>
+<td class="studio-numeric-cell">0.3886</td>
+<td class="studio-numeric-cell">0.3430</td>
+<td class="studio-numeric-cell">0.3164</td>
+</tr>
+<tr>
+<th scope="row">PixelLM-13B</th>
+<td>No</td>
+<td class="studio-numeric-cell">0.4306</td>
+<td class="studio-numeric-cell">0.7253</td>
+<td class="studio-numeric-cell">0.4267</td>
+<td class="studio-numeric-cell">0.5424</td>
+<td class="studio-numeric-cell">0.4285</td>
+<td class="studio-numeric-cell">0.4273</td>
+<td class="studio-numeric-cell">0.3106</td>
+<td class="studio-numeric-cell">0.3079</td>
+</tr>
+<tr>
+<th scope="row">Seg-Zero</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.4482</td>
+<td class="studio-numeric-cell">0.5598</td>
+<td class="studio-numeric-cell">0.6554</td>
+<td class="studio-numeric-cell">0.7671</td>
+<td class="studio-numeric-cell">0.4412</td>
+<td class="studio-numeric-cell">0.5312</td>
+<td class="studio-numeric-cell">0.2391</td>
+<td class="studio-numeric-cell">0.3042</td>
+</tr>
+<tr>
+<th scope="row">VisionReasoner</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.8191</td>
+<td class="studio-numeric-cell">0.6908</td>
+<td class="studio-numeric-cell">0.7315</td>
+<td class="studio-numeric-cell">0.8633</td>
+<td class="studio-numeric-cell">0.3619</td>
+<td class="studio-numeric-cell">0.4822</td>
+<td class="studio-numeric-cell">0.2464</td>
+<td class="studio-numeric-cell">0.3075</td>
+</tr>
+<tr>
+<th scope="row">SESAME-7B</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.1983</td>
+<td class="studio-numeric-cell">0.4304</td>
+<td class="studio-numeric-cell">0.2998</td>
+<td class="studio-numeric-cell">0.4873</td>
+<td class="studio-numeric-cell">0.4180</td>
+<td class="studio-numeric-cell">0.3605</td>
+<td class="studio-numeric-cell">0.3296</td>
+<td class="studio-numeric-cell">0.3000</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">RobustSeg (Ours)</th>
+<td>Yes</td>
+<td class="studio-numeric-cell">0.1062</td>
+<td class="studio-numeric-cell">0.4049</td>
+<td class="studio-numeric-cell">0.1541</td>
+<td class="studio-numeric-cell">0.3988</td>
+<td class="studio-numeric-cell">0.6105</td>
+<td class="studio-numeric-cell">0.5278</td>
+<td class="studio-numeric-cell">0.4085</td>
+<td class="studio-numeric-cell">0.3184</td>
+</tr>
+</tbody>
+</table></div></figure></div>
+</div>
 
-
-  <section class="section">
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Qualitative Results</h2>
+          <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
           <p class="has-text-justified" style="padding-bottom:30px;">
-            <span class="model-name">RobustSeg</span> demonstrates hallucination mitigation capabilities compared with other reasoning-based segmentation models. 
-            We present qualitative examples that illustrate the predictions of benchmarked models across the four query-image combinations in both referral and reasoning tasks, 
-            along with the corresponding ground truth mask.
+            <span class="model-name">RobustSeg</span> demonstrates hallucination mitigation capabilities compared with other reasoning-based segmentation models.
+            We present qualitative examples that illustrate the predictions of benchmarked models across the four query-image combinations in both referral and reasoning tasks,
+            along with the corresponding <span class="studio-ending">ground truth mask.</span>
           </p>
           <!-- <div class="qual-example">
             <div class="image-container">
@@ -359,9 +399,9 @@
             </p>
           <!-- </div> -->
           <!-- <div class="qual-example"> -->
-             
-            
-            
+
+
+
            <div>
               <img loading="lazy" decoding="async" src="static/images/example2_new.jpg" alt="Image 3" style="height: 800px; width: auto;">
             </div>
@@ -373,14 +413,11 @@
         </div>
       </div>
     </div>
-    
-    
-  </section>
 
 
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title is-3" id="BibTeX-title">BibTeX</h2>
       <pre><code>@inproceedings{li2025hallusegbench,
   title={Counterfactual Segmentation Reasoning: Diagnosing and Mitigating Pixel-Grounding Hallucination},
   author={Li, Xinzhuo and Juvekar, Adheesh and Zhang, Jiaxun and Liu, Xingyou and Wahed, Muntasir and Nguyen, Kiet A. and Shen, Yifan and Yu, Tianjiao and Lourentzou, Ismini},
@@ -388,39 +425,28 @@
   year={2026}
 }</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2506.21546.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge 
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge
               <a href="https://arxiv.org/pdf/2308.00692">LISA</a>,
               <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
-              <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>, 
+              <a href="https://arxiv.org/pdf/2312.02228">PixelLM</a>,
               <a href="https://arxiv.org/pdf/2503.06520">Seg-Zero</a>,
               <a href="https://arxiv.org/pdf/2505.12081">VisionReasoner</a>,
               and <a href="https://arxiv.org/pdf/2312.08366">SESAME</a>
                 for open-sourcing their models.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

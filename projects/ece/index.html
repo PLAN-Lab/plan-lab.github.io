@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,473 +10,29 @@
 
   gtag('config', 'G-NK0GM1GM0Q');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Uncertainty in Action: Confidence Elicitation in Embodied Agents" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uncertainty in Action: Confidence Elicitation in Embodied Agents">
     <title>Uncertainty in Action: Confidence Elicitation in Embodied Agents | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "Embodied Confidence Elicitation",
-    "tldr": [
-      "We study how embodied agents assess uncertainty in what they see and the actions they plan to take. Our framework elicits confidence through structured reasoning and alternative interpretations, evaluating how well elicited confidence predicts success and failure in Minecraft tasks."
-    ],
-    "contributions": [
-      "We investigate open-world embodied confidence elicitation. We study language- and vision-language-powered agents in settings where uncertainty arises from perception and decision making, while the agents lack direct access to their internal reasoning processes.",
-      "Elicitation and execution policies address distinct forms of uncertainty. We introduce Elicitation Policies for inductive, deductive, and abductive uncertainty, together with Execution Policies for scenario reinterpretation, action sampling, and hypothetical reasoning. These policies let agents express and refine confidence through structured reasoning and interaction with the environment.",
-      "Minecraft experiments evaluate calibration and failure prediction. Structured reasoning approaches, including Chain-of-Thought, improve confidence calibration. The evaluation also identifies persistent difficulty distinguishing uncertainty under abductive settings, highlighting the need for more capable embodied confidence elicitation methods."
-    ],
-    "method": {
-      "source": "Embodied Confidence Elicitation"
-    },
-    "quantitative": {
-      "source": "Results"
-    },
-    "contributionLeads": [
-      "We investigate open-world embodied confidence elicitation.",
-      "Elicitation and execution policies address distinct forms of uncertainty.",
-      "Minecraft experiments evaluate calibration and failure prediction."
-    ]
-  },
-  "resultPanels": {
-    "Confidence elicitation": {
-      "description": "Calibration error (ECE) and failure prediction (AUROC) compare elicited confidence across agents and reasoning strategies."
-    },
-    "Execution policies and confidence estimation": {
-      "description": "Select an agent to compare confidence calibration and failure prediction across action sampling, scenario reinterpretation, and hypothetical reasoning."
-    }
-  },
-  "results": {
-    "r1.png": {
-      "type": "table",
-      "title": "Confidence elicitation",
-      "columns": [
-        "Model",
-        "Vanilla",
-        "Self-Intervention",
-        "CoT (Inductive)",
-        "P&S (Deductive)",
-        "Top-K (Abductive)"
-      ],
-      "rows": [
-        {
-          "group": "ECE ↓"
-        },
-        [
-          "GPT-4V",
-          "0.27",
-          "0.21",
-          "0.16",
-          "0.15",
-          "0.17"
-        ],
-        [
-          "MineLLM",
-          "0.49",
-          "0.41",
-          "0.34",
-          "0.39",
-          "0.43"
-        ],
-        [
-          "STEVE",
-          "0.43",
-          "0.32",
-          "0.26",
-          "0.26",
-          "0.35"
-        ],
-        {
-          "group": "AUROC ↑"
-        },
-        [
-          "GPT-4V",
-          "0.69",
-          "0.76",
-          "0.83",
-          "0.82",
-          "0.73"
-        ],
-        [
-          "MineLLM",
-          "0.53",
-          "0.59",
-          "0.64",
-          "0.61",
-          "0.58"
-        ],
-        [
-          "STEVE",
-          "0.58",
-          "0.69",
-          "0.72",
-          "0.67",
-          "0.68"
-        ],
-        {
-          "group": "PR-P ↑"
-        },
-        [
-          "GPT-4V",
-          "0.66",
-          "0.76",
-          "0.81",
-          "0.79",
-          "0.70"
-        ],
-        [
-          "MineLLM",
-          "0.51",
-          "0.59",
-          "0.63",
-          "0.60",
-          "0.57"
-        ],
-        [
-          "STEVE",
-          "0.56",
-          "0.67",
-          "0.69",
-          "0.66",
-          "0.64"
-        ],
-        {
-          "group": "PR-N ↑"
-        },
-        [
-          "GPT-4V",
-          "0.52",
-          "0.53",
-          "0.58",
-          "0.55",
-          "0.53"
-        ],
-        [
-          "MineLLM",
-          "0.39",
-          "0.42",
-          "0.42",
-          "0.43",
-          "0.40"
-        ],
-        [
-          "STEVE",
-          "0.41",
-          "0.46",
-          "0.46",
-          "0.43",
-          "0.42"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/r1.png"
-    },
-    "r2.png": {
-      "type": "bars",
-      "title": "Confidence estimation by reasoning strategy",
-      "source": "static/images/r2.png",
-      "categories": [
-        "Action sampling",
-        "Scenario reinterpretation",
-        "Hypothetical reasoning"
-      ],
-      "metrics": [
-        {
-          "label": "GPT-4V · ECE ↓",
-          "max": 0.6,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.24,
-                0.22,
-                0.14
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.1,
-                0.12,
-                0.11
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.11,
-                0.12,
-                0.11
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.11,
-                0.13,
-                0.18
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.12,
-                0.14,
-                0.15
-              ]
-            }
-          ]
-        },
-        {
-          "label": "GPT-4V · AUROC ↑",
-          "max": 1,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.76,
-                0.75,
-                0.78
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.8,
-                0.79,
-                0.81
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.84,
-                0.82,
-                0.84
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.88,
-                0.79,
-                0.85
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.78,
-                0.77,
-                0.81
-              ]
-            }
-          ]
-        },
-        {
-          "label": "MineLLM · ECE ↓",
-          "max": 0.6,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.5,
-                0.53,
-                0.52
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.35,
-                0.42,
-                0.5
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.32,
-                0.44,
-                0.33
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.3,
-                0.45,
-                0.38
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.42,
-                0.47,
-                0.43
-              ]
-            }
-          ]
-        },
-        {
-          "label": "MineLLM · AUROC ↑",
-          "max": 1,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.55,
-                0.64,
-                0.51
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.64,
-                0.68,
-                0.68
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.69,
-                0.74,
-                0.71
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.67,
-                0.71,
-                0.65
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.63,
-                0.66,
-                0.65
-              ]
-            }
-          ]
-        },
-        {
-          "label": "STEVE · ECE ↓",
-          "max": 0.6,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.4,
-                0.42,
-                0.41
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.28,
-                0.27,
-                0.39
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.24,
-                0.24,
-                0.33
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.27,
-                0.28,
-                0.35
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.3,
-                0.31,
-                0.34
-              ]
-            }
-          ]
-        },
-        {
-          "label": "STEVE · AUROC ↑",
-          "max": 1,
-          "series": [
-            {
-              "name": "Vanilla",
-              "values": [
-                0.62,
-                0.66,
-                0.57
-              ]
-            },
-            {
-              "name": "Self-Intervention",
-              "values": [
-                0.74,
-                0.74,
-                0.65
-              ]
-            },
-            {
-              "name": "CoT",
-              "values": [
-                0.72,
-                0.7,
-                0.65
-              ]
-            },
-            {
-              "name": "P&S",
-              "values": [
-                0.72,
-                0.72,
-                0.64
-              ]
-            },
-            {
-              "name": "Top-K",
-              "values": [
-                0.7,
-                0.68,
-                0.64
-              ]
-            }
-          ]
-        }
-      ],
-      "note": "Select a model and metric to compare reasoning strategies."
-    }
-  }
-}
-  </script>
+  <body class="page-project project-studio studio-ece" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -510,59 +66,66 @@
 </nav>
 
     <main>
-<section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <div class="columns is-centered"><div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><img src="static/images/player_head.png" alt="ECE logo" width="40px"><span class="model-name"> Uncertainty in Action: Confidence
-                    Elicitation in Embodied Agents</span></h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://talaugust.github.io/">Tal August</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
+        <div class="columns is-centered">
+<div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+<span class="studio-name">Uncertainty in Action</span><span class="studio-subtitle">Confidence Elicitation in Embodied Agents</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="https://talaugust.github.io/">Tal August</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div></div>
 
             <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2503.10628" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2503.10628" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
-
-            </div>
+            <div class="publication-links">
+<a href="https://arxiv.org/pdf/2503.10628" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2503.10628" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a>
+</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="content has-text-justified">
-            <span style="font-weight: bold;">TL;DR:</span>
-            <i class="fa fa-star" style="color:#ff8400;"></i> We propose a framework for embodied verbalized confidence elicitation, designed for multimodal and
-            action-driven environments. 
-            <i class="fa fa-star" style="color:#ff8400;"></i> We introduce 
-            <span style="font-style: italic; font-weight: bold;">Elicitation Policies</span> and 
-            <span style="font-style: italic; font-weight: bold;">Execution Policies</span> to enhance confidence estimation in embodied settings. 
-            <i class="fa fa-star" style="color:#ff8400;"></i> We provide the 
-            first structured analysis of <span style="font-style: italic">open-world embodied uncertainty</span> and identify effective methods
-            for improving confidence calibration and failure prediction, while also pinpointing persistent challenges.
-          </div>
-        <div style="text-align: center; padding: 0 0 20px 0;">
-            <img src="./static/images/teaser.png" class="interpolation-image" alt="Interpolate start reference image." style="width: 50%; height: auto;">
-            <p class="has-text-justified">
-                Our proposed <span style="font-style: italic">Confidence Estimation Framework</span> introduces a structured approach to assessing and expressing an agent’s confidence through
-                 <span style="font-style: italic">Elicitation Policies</span> and <span style="font-style: italic">Execution Policies</span>.
-                  Operating at both perception and action stages, Elicitation Modules prompt the agent to evaluate uncertainty in its observations and decisions.
-                   Execution Policies further refine confidence calibration by expanding the agent’s reasoning space, enabling more robust and context-aware decision-making.
-            </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We study how embodied agents assess uncertainty in what they see and the actions they plan to take. Our framework elicits confidence through structured reasoning and alternative interpretations, evaluating how well elicited confidence predicts success and failure in <span class="studio-tldr-tail">Minecraft tasks.</span></p></div>
+</div></section><section class="studio-feature ece-feature" aria-labelledby="ece-feature-title" data-studio-section="examples"><div class="ece-feature-body">
+<figure class="ece-figure"><img src="./static/images/teaser.png" class="interpolation-image" alt="Confidence elicitation at the action and perception stages: an agent evaluates its next action and its observations in a Minecraft environment." width="572" height="356" loading="eager"><figcaption><h2 id="ece-feature-title" class="studio-opening-label">Confidence at perception and action stages</h2>
+<p>The agent assesses what it sees and the action it plans to take.</p></figcaption></figure><div class="ece-policy-copy">
+<p>Uncertainty in Action studies how embodied agents express confidence when their internal reasoning is inaccessible. The framework combines two policy types:</p>
+<div class="ece-policy">
+<h3>Elicitation policies</h3>
+<p>Structure how the agent reasons about uncertainty, from direct confidence prompts to inductive, deductive, and abductive reasoning.</p>
+</div>
+<div class="ece-policy">
+<h3>Execution policies</h3>
+<p>Expand the assessment through scenario reinterpretation, action sampling, and hypothetical reasoning.</p>
+</div>
+</div>
+</div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">Embodied Confidence Elicitation Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
                 Expressing confidence is crucial for embodied agents as they navigate dynamic, multimodal environments where uncertainty arises from both perception and decision-making processes.
@@ -579,71 +142,227 @@
       </div>
       <!--/ Abstract. -->
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">We investigate open-world embodied confidence elicitation.</strong> We study language- and vision-language-powered agents in settings where uncertainty arises from perception and decision making, while the agents lack direct access to their internal reasoning processes.</li>
+<li>
+<strong class="studio-contribution-lead">Elicitation and execution policies address distinct forms of uncertainty.</strong> We introduce Elicitation Policies for inductive, deductive, and abductive uncertainty, together with Execution Policies for scenario reinterpretation, action sampling, and hypothetical reasoning. These policies let agents express and refine confidence through structured reasoning and interaction with the environment.</li>
+<li>
+<strong class="studio-contribution-lead">Minecraft experiments evaluate calibration and failure prediction.</strong> Structured reasoning approaches, including Chain-of-Thought, improve confidence calibration. The evaluation also identifies persistent difficulty distinguishing uncertainty under abductive settings, highlighting the need for more capable embodied confidence elicitation methods.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span class="model-name"></span> Embodied Confidence Elicitation</h2>
+          <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">Embodied Confidence Elicitation</span> Method</h2>
           <div class="content has-text-justified" style="text-align: center; padding: 0 0 20px 0;">
-            <img loading="lazy" decoding="async" src="static/images/policy_examplev3.1.drawio.png" class="interpolation-image" alt="ECE Architecture" width="95%" style="display: block; margin: 0 auto;">
-            <p class="has-text-justified">
-                <b>Embodied Confidence Elicitation.</b> 
-                <i>Elicitation Policies</i> enable agents to express uncertainty, 
-                while <i>Execution Policies</i> refine and expand confidence assessment through scenario reinterpretation, 
-                action sampling, and hypothetical reasoning. Together, they enhance confidence calibration in embodied agents. 
-                The <span style="color: rgb(255, 140, 0); font-weight: bold;">orange text</span> represents the vanilla elicitation policy, 
-                which incorporates the vanilla confidence prompt into the original instruction. 
-                The <span style="color: rgb(94, 53, 2); font-weight: bold;">brown arrows</span> denote
-                 the Scenario-Reinterpretation execution policy, prompting the agent to generate additional scene insights. 
+<p class="has-text-justified">
+                Our proposed <span style="font-style: italic">Confidence Estimation Framework</span> introduces a structured approach to assessing and expressing an agent’s confidence through
+                 <span style="font-style: italic">Elicitation Policies</span> and <span style="font-style: italic">Execution Policies</span>.
+                  Operating at both perception and action stages, Elicitation Modules prompt the agent to evaluate uncertainty in its observations and decisions.
+                   Execution Policies further refine confidence calibration by expanding the agent’s reasoning space, enabling more robust and context-aware decision-making.
+            </p>
+            <img loading="lazy" decoding="async" src="static/images/policy_examplev3.1.drawio.png" class="interpolation-image ece-method-image" alt="Embodied confidence elicitation example showing elicitation prompts and scenario reinterpretation at perception and action stages." width="1793" height="795">
+            <p class="has-text-justified ece-method-caption">
+                <b>Embodied Confidence Elicitation.</b>
+                <i>Elicitation Policies</i> enable agents to express uncertainty,
+                while <i>Execution Policies</i> refine and expand confidence assessment through scenario reinterpretation,
+                action sampling, and hypothetical reasoning. Together, they enhance confidence calibration in embodied agents.
+                The <span style="font-weight: bold;">orange text</span> represents the vanilla elicitation policy,
+                which incorporates the vanilla confidence prompt into the original instruction.
+                The <span style="font-weight: bold;">brown arrows</span> denote
+                 the Scenario-Reinterpretation execution policy, prompting the agent to generate additional scene insights.
               </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Results</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/r1.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
-                    <b>Confidence Metrics Across Elicitation Policies</b> with three models (GPT-4V, MineLLM, and LLaMA-based STEVE) using different elicitation strategies:  
-                    <b>Vanilla</b> (basic task understanding),  
-                    <b>Self-Intervention</b> (reflection on own actions),  
-                    <b>Chain-of-Thought</b> (step-by-step reasoning),  
-                    <b>Plan &amp; Solve</b> (explicit planning before execution), and  
-                    <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.  
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/r1.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Confidence elicitation</h3>
+<div class="content studio-result-description">
+<p class="ece-result-takeaway">Calibration asks whether stated confidence matches observed success. Failure prediction asks whether confidence distinguishes successful from unsuccessful outcomes. These are different goals: a policy can improve one more than the other.</p>
+<p class="has-text-justified ece-result-caption">
+                    <b>Confidence Metrics Across Elicitation Policies</b> with three models (GPT-4V, MineLLM, and LLaMA-based STEVE) using different elicitation strategies:
+                    <b>Vanilla</b> (basic task understanding),
+                    <b>Self-Intervention</b> (reflection on own actions),
+                    <b>Chain-of-Thought</b> (step-by-step reasoning),
+                    <b>Plan &amp; Solve</b> (explicit planning before execution), and
+                    <b>Top-K</b> (confidence distribution across multiple outputs) with No Execution Policies applied.
                     The best performance across each model is in <b>bold</b>, and second best is <u>underlined</u>.
               </p>
-            </div>
-              <br>
-              <br>
-              <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/r2.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
-                 <b>ECE and AUROC across Models and Execution Policies.</b> Bars present ECE (top, lower is better) and AUROC (bottom, higher is better)
-                 under different elicitation strategies. <span style="color: rgb(238, 3, 3); font-weight: bold;">Red dashed lines</span> are metrics for Vanilla elicitation with no execution policy applied.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
+</div>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Confidence elicitation"><table class="studio-native-table">
+<caption class="studio-sr-only">Confidence elicitation</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Vanilla</th>
+<th scope="col">Self-Intervention</th>
+<th scope="col">CoT (Inductive)</th>
+<th scope="col">P&amp;S (Deductive)</th>
+<th scope="col">Top-K (Abductive)</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">ECE ↓</th></tr>
+<tr>
+<th scope="row">GPT-4V</th>
+<td class="studio-numeric-cell">0.27</td>
+<td class="studio-numeric-cell">0.21</td>
+<td class="studio-numeric-cell"><u class="ece-second">0.16</u></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.15</strong></td>
+<td class="studio-numeric-cell">0.17</td>
+</tr>
+<tr>
+<th scope="row">MineLLM</th>
+<td class="studio-numeric-cell">0.49</td>
+<td class="studio-numeric-cell">0.41</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.34</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.39</u></td>
+<td class="studio-numeric-cell">0.43</td>
+</tr>
+<tr>
+<th scope="row">STEVE</th>
+<td class="studio-numeric-cell">0.43</td>
+<td class="studio-numeric-cell"><u class="ece-second">0.32</u></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.26</strong></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.26</strong></td>
+<td class="studio-numeric-cell">0.35</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">AUROC ↑</th></tr>
+<tr>
+<th scope="row">GPT-4V</th>
+<td class="studio-numeric-cell">0.69</td>
+<td class="studio-numeric-cell">0.76</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.83</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.82</u></td>
+<td class="studio-numeric-cell">0.73</td>
+</tr>
+<tr>
+<th scope="row">MineLLM</th>
+<td class="studio-numeric-cell">0.53</td>
+<td class="studio-numeric-cell">0.59</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.64</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.61</u></td>
+<td class="studio-numeric-cell">0.58</td>
+</tr>
+<tr>
+<th scope="row">STEVE</th>
+<td class="studio-numeric-cell">0.58</td>
+<td class="studio-numeric-cell"><u class="ece-second">0.69</u></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.72</strong></td>
+<td class="studio-numeric-cell">0.67</td>
+<td class="studio-numeric-cell">0.68</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">PR-P ↑</th></tr>
+<tr>
+<th scope="row">GPT-4V</th>
+<td class="studio-numeric-cell">0.66</td>
+<td class="studio-numeric-cell">0.76</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.81</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.79</u></td>
+<td class="studio-numeric-cell">0.70</td>
+</tr>
+<tr>
+<th scope="row">MineLLM</th>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">0.59</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.63</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.60</u></td>
+<td class="studio-numeric-cell">0.57</td>
+</tr>
+<tr>
+<th scope="row">STEVE</th>
+<td class="studio-numeric-cell">0.56</td>
+<td class="studio-numeric-cell"><u class="ece-second">0.67</u></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.69</strong></td>
+<td class="studio-numeric-cell">0.66</td>
+<td class="studio-numeric-cell">0.64</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">PR-N ↑</th></tr>
+<tr>
+<th scope="row">GPT-4V</th>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">0.53</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.58</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.55</u></td>
+<td class="studio-numeric-cell">0.53</td>
+</tr>
+<tr>
+<th scope="row">MineLLM</th>
+<td class="studio-numeric-cell">0.39</td>
+<td class="studio-numeric-cell"><u class="ece-second">0.42</u></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.42</u></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.43</strong></td>
+<td class="studio-numeric-cell">0.40</td>
+</tr>
+<tr>
+<th scope="row">STEVE</th>
+<td class="studio-numeric-cell">0.41</td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.46</strong></td>
+<td class="studio-numeric-cell"><strong class="ece-best">0.46</strong></td>
+<td class="studio-numeric-cell"><u class="ece-second">0.43</u></td>
+<td class="studio-numeric-cell">0.42</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/r2.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Execution policies and confidence estimation</h3>
+<p class="studio-result-description">Select an agent to compare confidence calibration and failure prediction across action sampling, scenario reinterpretation, and hypothetical reasoning.</p>
+<div class="studio-result-controls"><label>Model <select aria-label="Execution-policy results model" data-chart-target="project-chart-0"><option value="0" selected>GPT-4V</option>
+<option value="1">MineLLM</option>
+<option value="2">STEVE</option></select></label></div>
+<aside class="ece-execution-takeaway"><h4>Exploring alternatives helps, with diminishing returns.</h4>
+<p>Action sampling targets uncertainty in planning by comparing alternative action paths. Pairing it with scenario reinterpretation also revisits environmental evidence. However, hypothetical reasoning can introduce additional uncertainty, and repeatedly applying execution policies eventually yields diminishing returns.</p></aside><div class="studio-legend">
+<span><i style="--series-color: #ff6c2f;"></i>Vanilla</span><span><i style="--series-color: #fb873d;"></i>Self-Intervention</span><span><i style="--series-color: #ffa85c;"></i>CoT</span><span><i style="--series-color: #ffc887;"></i>P&amp;S</span><span><i style="--series-color: #ffdda5;"></i>Top-K</span><span><i class="ece-reference-mark"></i>Vanilla, no execution policy</span>
+</div>
+<p class="ece-chart-scroll-hint">Scroll horizontally to compare all execution policies.</p>
+<div class="ece-chart-grid" aria-live="polite" id="project-chart-0">
+<div class="ece-chart-panel">
+<h4>ECE ↓</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="GPT-4V ECE vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="GPT-4V: GPT-4V · ECE ↓. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="251.76" y2="251.76" class="ece-baseline" stroke-dasharray="7 5"><title>GPT-4V · ECE · Vanilla, no execution policy: 0.27</title></line><rect x="66.33333333333331" y="261.12" width="22" height="74.88" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Vanilla: 0.24"><title>GPT-4V · ECE · Action sampling · Vanilla: 0.24</title></rect><text x="77.33333333333331" y="241.76" text-anchor="middle" class="ece-bar-value">0.24</text><rect x="92.33333333333331" y="304.8" width="22" height="31.200000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Self-Intervention: 0.1"><title>GPT-4V · ECE · Action sampling · Self-Intervention: 0.1</title></rect><text x="103.33333333333331" y="297.8" text-anchor="middle" class="ece-bar-value">0.10</text><rect x="118.33333333333331" y="301.68" width="22" height="34.32" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · CoT: 0.11"><title>GPT-4V · ECE · Action sampling · CoT: 0.11</title></rect><text x="129.33333333333331" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="144.33333333333331" y="301.68" width="22" height="34.32" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · P&amp;S: 0.11"><title>GPT-4V · ECE · Action sampling · P&amp;S: 0.11</title></rect><text x="155.33333333333331" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="170.33333333333331" y="298.56" width="22" height="37.44" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Top-K: 0.12"><title>GPT-4V · ECE · Action sampling · Top-K: 0.12</title></rect><text x="181.33333333333331" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="267.36" width="22" height="68.64" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Vanilla: 0.22"><title>GPT-4V · ECE · Scenario reinterpretation · Vanilla: 0.22</title></rect><text x="240" y="241.76" text-anchor="middle" class="ece-bar-value">0.22</text><rect x="255" y="298.56" width="22" height="37.44" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Self-Intervention: 0.12"><title>GPT-4V · ECE · Scenario reinterpretation · Self-Intervention: 0.12</title></rect><text x="266" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><rect x="281" y="298.56" width="22" height="37.44" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · CoT: 0.12"><title>GPT-4V · ECE · Scenario reinterpretation · CoT: 0.12</title></rect><text x="292" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><rect x="307" y="295.44" width="22" height="40.56" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · P&amp;S: 0.13"><title>GPT-4V · ECE · Scenario reinterpretation · P&amp;S: 0.13</title></rect><text x="318" y="288.44" text-anchor="middle" class="ece-bar-value">0.13</text><rect x="333" y="292.32" width="22" height="43.68000000000001" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Top-K: 0.14"><title>GPT-4V · ECE · Scenario reinterpretation · Top-K: 0.14</title></rect><text x="344" y="285.32" text-anchor="middle" class="ece-bar-value">0.14</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="292.32" width="22" height="43.68000000000001" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Vanilla: 0.14"><title>GPT-4V · ECE · Hypothetical reasoning · Vanilla: 0.14</title></rect><text x="402.66666666666663" y="285.32" text-anchor="middle" class="ece-bar-value">0.14</text><rect x="417.66666666666663" y="301.68" width="22" height="34.32" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Self-Intervention: 0.11"><title>GPT-4V · ECE · Hypothetical reasoning · Self-Intervention: 0.11</title></rect><text x="428.66666666666663" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="443.66666666666663" y="301.68" width="22" height="34.32" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · CoT: 0.11"><title>GPT-4V · ECE · Hypothetical reasoning · CoT: 0.11</title></rect><text x="454.66666666666663" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="469.66666666666663" y="279.84000000000003" width="22" height="56.16" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · P&amp;S: 0.18"><title>GPT-4V · ECE · Hypothetical reasoning · P&amp;S: 0.18</title></rect><text x="480.66666666666663" y="272.84000000000003" text-anchor="middle" class="ece-bar-value">0.18</text><rect x="495.66666666666663" y="289.2" width="22" height="46.8" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Top-K: 0.15"><title>GPT-4V · ECE · Hypothetical reasoning · Top-K: 0.15</title></rect><text x="506.66666666666663" y="282.2" text-anchor="middle" class="ece-bar-value">0.15</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.27</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div>
+<div class="ece-chart-panel">
+<h4>AUROC ↑</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="GPT-4V AUROC vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="GPT-4V: GPT-4V · AUROC ↑. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="120.72000000000003" y2="120.72000000000003" class="ece-baseline" stroke-dasharray="7 5"><title>GPT-4V · AUROC · Vanilla, no execution policy: 0.69</title></line><rect x="66.33333333333331" y="98.88" width="22" height="237.12" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Vanilla: 0.76"><title>GPT-4V · AUROC · Action sampling · Vanilla: 0.76</title></rect><text x="77.33333333333331" y="91.88" text-anchor="middle" class="ece-bar-value">0.76</text><rect x="92.33333333333331" y="86.39999999999998" width="22" height="249.60000000000002" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Self-Intervention: 0.8"><title>GPT-4V · AUROC · Action sampling · Self-Intervention: 0.8</title></rect><text x="103.33333333333331" y="79.39999999999998" text-anchor="middle" class="ece-bar-value">0.80</text><rect x="118.33333333333331" y="73.92000000000002" width="22" height="262.08" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · CoT: 0.84"><title>GPT-4V · AUROC · Action sampling · CoT: 0.84</title></rect><text x="129.33333333333331" y="66.92000000000002" text-anchor="middle" class="ece-bar-value">0.84</text><rect x="144.33333333333331" y="61.44" width="22" height="274.56" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · P&amp;S: 0.88"><title>GPT-4V · AUROC · Action sampling · P&amp;S: 0.88</title></rect><text x="155.33333333333331" y="54.44" text-anchor="middle" class="ece-bar-value">0.88</text><rect x="170.33333333333331" y="92.63999999999999" width="22" height="243.36" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Top-K: 0.78"><title>GPT-4V · AUROC · Action sampling · Top-K: 0.78</title></rect><text x="181.33333333333331" y="85.63999999999999" text-anchor="middle" class="ece-bar-value">0.78</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="102" width="22" height="234" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Vanilla: 0.75"><title>GPT-4V · AUROC · Scenario reinterpretation · Vanilla: 0.75</title></rect><text x="240" y="95" text-anchor="middle" class="ece-bar-value">0.75</text><rect x="255" y="89.51999999999998" width="22" height="246.48000000000002" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Self-Intervention: 0.79"><title>GPT-4V · AUROC · Scenario reinterpretation · Self-Intervention: 0.79</title></rect><text x="266" y="82.51999999999998" text-anchor="middle" class="ece-bar-value">0.79</text><rect x="281" y="80.16000000000003" width="22" height="255.83999999999997" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · CoT: 0.82"><title>GPT-4V · AUROC · Scenario reinterpretation · CoT: 0.82</title></rect><text x="292" y="73.16000000000003" text-anchor="middle" class="ece-bar-value">0.82</text><rect x="307" y="89.51999999999998" width="22" height="246.48000000000002" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · P&amp;S: 0.79"><title>GPT-4V · AUROC · Scenario reinterpretation · P&amp;S: 0.79</title></rect><text x="318" y="82.51999999999998" text-anchor="middle" class="ece-bar-value">0.79</text><rect x="333" y="95.75999999999999" width="22" height="240.24" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Top-K: 0.77"><title>GPT-4V · AUROC · Scenario reinterpretation · Top-K: 0.77</title></rect><text x="344" y="88.75999999999999" text-anchor="middle" class="ece-bar-value">0.77</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="92.63999999999999" width="22" height="243.36" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Vanilla: 0.78"><title>GPT-4V · AUROC · Hypothetical reasoning · Vanilla: 0.78</title></rect><text x="402.66666666666663" y="85.63999999999999" text-anchor="middle" class="ece-bar-value">0.78</text><rect x="417.66666666666663" y="83.27999999999997" width="22" height="252.72000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Self-Intervention: 0.81"><title>GPT-4V · AUROC · Hypothetical reasoning · Self-Intervention: 0.81</title></rect><text x="428.66666666666663" y="76.27999999999997" text-anchor="middle" class="ece-bar-value">0.81</text><rect x="443.66666666666663" y="73.92000000000002" width="22" height="262.08" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · CoT: 0.84"><title>GPT-4V · AUROC · Hypothetical reasoning · CoT: 0.84</title></rect><text x="454.66666666666663" y="66.92000000000002" text-anchor="middle" class="ece-bar-value">0.84</text><rect x="469.66666666666663" y="70.80000000000001" width="22" height="265.2" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · P&amp;S: 0.85"><title>GPT-4V · AUROC · Hypothetical reasoning · P&amp;S: 0.85</title></rect><text x="480.66666666666663" y="63.80000000000001" text-anchor="middle" class="ece-bar-value">0.85</text><rect x="495.66666666666663" y="83.27999999999997" width="22" height="252.72000000000003" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Top-K: 0.81"><title>GPT-4V · AUROC · Hypothetical reasoning · Top-K: 0.81</title></rect><text x="506.66666666666663" y="76.27999999999997" text-anchor="middle" class="ece-bar-value">0.81</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.69</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div>
+</div>
+<figcaption class="studio-result-note">ECE measures calibration error (lower is better); AUROC measures failure prediction (higher is better). Dashed lines show Vanilla elicitation without an execution policy.</figcaption><template data-chart-option="0" data-chart-target="project-chart-0"><div class="ece-chart-panel">
+<h4>ECE ↓</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="GPT-4V ECE vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="GPT-4V: GPT-4V · ECE ↓. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="251.76" y2="251.76" class="ece-baseline" stroke-dasharray="7 5"><title>GPT-4V · ECE · Vanilla, no execution policy: 0.27</title></line><rect x="66.33333333333331" y="261.12" width="22" height="74.88" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Vanilla: 0.24"><title>GPT-4V · ECE · Action sampling · Vanilla: 0.24</title></rect><text x="77.33333333333331" y="241.76" text-anchor="middle" class="ece-bar-value">0.24</text><rect x="92.33333333333331" y="304.8" width="22" height="31.200000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Self-Intervention: 0.1"><title>GPT-4V · ECE · Action sampling · Self-Intervention: 0.1</title></rect><text x="103.33333333333331" y="297.8" text-anchor="middle" class="ece-bar-value">0.10</text><rect x="118.33333333333331" y="301.68" width="22" height="34.32" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · CoT: 0.11"><title>GPT-4V · ECE · Action sampling · CoT: 0.11</title></rect><text x="129.33333333333331" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="144.33333333333331" y="301.68" width="22" height="34.32" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · P&amp;S: 0.11"><title>GPT-4V · ECE · Action sampling · P&amp;S: 0.11</title></rect><text x="155.33333333333331" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="170.33333333333331" y="298.56" width="22" height="37.44" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Action sampling · Top-K: 0.12"><title>GPT-4V · ECE · Action sampling · Top-K: 0.12</title></rect><text x="181.33333333333331" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="267.36" width="22" height="68.64" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Vanilla: 0.22"><title>GPT-4V · ECE · Scenario reinterpretation · Vanilla: 0.22</title></rect><text x="240" y="241.76" text-anchor="middle" class="ece-bar-value">0.22</text><rect x="255" y="298.56" width="22" height="37.44" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Self-Intervention: 0.12"><title>GPT-4V · ECE · Scenario reinterpretation · Self-Intervention: 0.12</title></rect><text x="266" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><rect x="281" y="298.56" width="22" height="37.44" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · CoT: 0.12"><title>GPT-4V · ECE · Scenario reinterpretation · CoT: 0.12</title></rect><text x="292" y="291.56" text-anchor="middle" class="ece-bar-value">0.12</text><rect x="307" y="295.44" width="22" height="40.56" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · P&amp;S: 0.13"><title>GPT-4V · ECE · Scenario reinterpretation · P&amp;S: 0.13</title></rect><text x="318" y="288.44" text-anchor="middle" class="ece-bar-value">0.13</text><rect x="333" y="292.32" width="22" height="43.68000000000001" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Scenario reinterpretation · Top-K: 0.14"><title>GPT-4V · ECE · Scenario reinterpretation · Top-K: 0.14</title></rect><text x="344" y="285.32" text-anchor="middle" class="ece-bar-value">0.14</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="292.32" width="22" height="43.68000000000001" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Vanilla: 0.14"><title>GPT-4V · ECE · Hypothetical reasoning · Vanilla: 0.14</title></rect><text x="402.66666666666663" y="285.32" text-anchor="middle" class="ece-bar-value">0.14</text><rect x="417.66666666666663" y="301.68" width="22" height="34.32" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Self-Intervention: 0.11"><title>GPT-4V · ECE · Hypothetical reasoning · Self-Intervention: 0.11</title></rect><text x="428.66666666666663" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="443.66666666666663" y="301.68" width="22" height="34.32" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · CoT: 0.11"><title>GPT-4V · ECE · Hypothetical reasoning · CoT: 0.11</title></rect><text x="454.66666666666663" y="294.68" text-anchor="middle" class="ece-bar-value">0.11</text><rect x="469.66666666666663" y="279.84000000000003" width="22" height="56.16" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · P&amp;S: 0.18"><title>GPT-4V · ECE · Hypothetical reasoning · P&amp;S: 0.18</title></rect><text x="480.66666666666663" y="272.84000000000003" text-anchor="middle" class="ece-bar-value">0.18</text><rect x="495.66666666666663" y="289.2" width="22" height="46.8" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · ECE · Hypothetical reasoning · Top-K: 0.15"><title>GPT-4V · ECE · Hypothetical reasoning · Top-K: 0.15</title></rect><text x="506.66666666666663" y="282.2" text-anchor="middle" class="ece-bar-value">0.15</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.27</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div>
+<div class="ece-chart-panel">
+<h4>AUROC ↑</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="GPT-4V AUROC vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="GPT-4V: GPT-4V · AUROC ↑. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="120.72000000000003" y2="120.72000000000003" class="ece-baseline" stroke-dasharray="7 5"><title>GPT-4V · AUROC · Vanilla, no execution policy: 0.69</title></line><rect x="66.33333333333331" y="98.88" width="22" height="237.12" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Vanilla: 0.76"><title>GPT-4V · AUROC · Action sampling · Vanilla: 0.76</title></rect><text x="77.33333333333331" y="91.88" text-anchor="middle" class="ece-bar-value">0.76</text><rect x="92.33333333333331" y="86.39999999999998" width="22" height="249.60000000000002" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Self-Intervention: 0.8"><title>GPT-4V · AUROC · Action sampling · Self-Intervention: 0.8</title></rect><text x="103.33333333333331" y="79.39999999999998" text-anchor="middle" class="ece-bar-value">0.80</text><rect x="118.33333333333331" y="73.92000000000002" width="22" height="262.08" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · CoT: 0.84"><title>GPT-4V · AUROC · Action sampling · CoT: 0.84</title></rect><text x="129.33333333333331" y="66.92000000000002" text-anchor="middle" class="ece-bar-value">0.84</text><rect x="144.33333333333331" y="61.44" width="22" height="274.56" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · P&amp;S: 0.88"><title>GPT-4V · AUROC · Action sampling · P&amp;S: 0.88</title></rect><text x="155.33333333333331" y="54.44" text-anchor="middle" class="ece-bar-value">0.88</text><rect x="170.33333333333331" y="92.63999999999999" width="22" height="243.36" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Action sampling · Top-K: 0.78"><title>GPT-4V · AUROC · Action sampling · Top-K: 0.78</title></rect><text x="181.33333333333331" y="85.63999999999999" text-anchor="middle" class="ece-bar-value">0.78</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="102" width="22" height="234" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Vanilla: 0.75"><title>GPT-4V · AUROC · Scenario reinterpretation · Vanilla: 0.75</title></rect><text x="240" y="95" text-anchor="middle" class="ece-bar-value">0.75</text><rect x="255" y="89.51999999999998" width="22" height="246.48000000000002" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Self-Intervention: 0.79"><title>GPT-4V · AUROC · Scenario reinterpretation · Self-Intervention: 0.79</title></rect><text x="266" y="82.51999999999998" text-anchor="middle" class="ece-bar-value">0.79</text><rect x="281" y="80.16000000000003" width="22" height="255.83999999999997" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · CoT: 0.82"><title>GPT-4V · AUROC · Scenario reinterpretation · CoT: 0.82</title></rect><text x="292" y="73.16000000000003" text-anchor="middle" class="ece-bar-value">0.82</text><rect x="307" y="89.51999999999998" width="22" height="246.48000000000002" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · P&amp;S: 0.79"><title>GPT-4V · AUROC · Scenario reinterpretation · P&amp;S: 0.79</title></rect><text x="318" y="82.51999999999998" text-anchor="middle" class="ece-bar-value">0.79</text><rect x="333" y="95.75999999999999" width="22" height="240.24" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Scenario reinterpretation · Top-K: 0.77"><title>GPT-4V · AUROC · Scenario reinterpretation · Top-K: 0.77</title></rect><text x="344" y="88.75999999999999" text-anchor="middle" class="ece-bar-value">0.77</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="92.63999999999999" width="22" height="243.36" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Vanilla: 0.78"><title>GPT-4V · AUROC · Hypothetical reasoning · Vanilla: 0.78</title></rect><text x="402.66666666666663" y="85.63999999999999" text-anchor="middle" class="ece-bar-value">0.78</text><rect x="417.66666666666663" y="83.27999999999997" width="22" height="252.72000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Self-Intervention: 0.81"><title>GPT-4V · AUROC · Hypothetical reasoning · Self-Intervention: 0.81</title></rect><text x="428.66666666666663" y="76.27999999999997" text-anchor="middle" class="ece-bar-value">0.81</text><rect x="443.66666666666663" y="73.92000000000002" width="22" height="262.08" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · CoT: 0.84"><title>GPT-4V · AUROC · Hypothetical reasoning · CoT: 0.84</title></rect><text x="454.66666666666663" y="66.92000000000002" text-anchor="middle" class="ece-bar-value">0.84</text><rect x="469.66666666666663" y="70.80000000000001" width="22" height="265.2" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · P&amp;S: 0.85"><title>GPT-4V · AUROC · Hypothetical reasoning · P&amp;S: 0.85</title></rect><text x="480.66666666666663" y="63.80000000000001" text-anchor="middle" class="ece-bar-value">0.85</text><rect x="495.66666666666663" y="83.27999999999997" width="22" height="252.72000000000003" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="GPT-4V · AUROC · Hypothetical reasoning · Top-K: 0.81"><title>GPT-4V · AUROC · Hypothetical reasoning · Top-K: 0.81</title></rect><text x="506.66666666666663" y="76.27999999999997" text-anchor="middle" class="ece-bar-value">0.81</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.69</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div></template><template data-chart-option="1" data-chart-target="project-chart-0"><div class="ece-chart-panel">
+<h4>ECE ↓</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="MineLLM ECE vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="MineLLM: MineLLM · ECE ↓. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="183.12" y2="183.12" class="ece-baseline" stroke-dasharray="7 5"><title>MineLLM · ECE · Vanilla, no execution policy: 0.49</title></line><rect x="66.33333333333331" y="180" width="22" height="156" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Action sampling · Vanilla: 0.5"><title>MineLLM · ECE · Action sampling · Vanilla: 0.5</title></rect><text x="77.33333333333331" y="173" text-anchor="middle" class="ece-bar-value">0.50</text><rect x="92.33333333333331" y="226.8" width="22" height="109.19999999999999" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Action sampling · Self-Intervention: 0.35"><title>MineLLM · ECE · Action sampling · Self-Intervention: 0.35</title></rect><text x="103.33333333333331" y="219.8" text-anchor="middle" class="ece-bar-value">0.35</text><rect x="118.33333333333331" y="236.16" width="22" height="99.84" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Action sampling · CoT: 0.32"><title>MineLLM · ECE · Action sampling · CoT: 0.32</title></rect><text x="129.33333333333331" y="229.16" text-anchor="middle" class="ece-bar-value">0.32</text><rect x="144.33333333333331" y="242.4" width="22" height="93.6" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Action sampling · P&amp;S: 0.3"><title>MineLLM · ECE · Action sampling · P&amp;S: 0.3</title></rect><text x="155.33333333333331" y="235.4" text-anchor="middle" class="ece-bar-value">0.30</text><rect x="170.33333333333331" y="204.96" width="22" height="131.04" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Action sampling · Top-K: 0.42"><title>MineLLM · ECE · Action sampling · Top-K: 0.42</title></rect><text x="181.33333333333331" y="197.96" text-anchor="middle" class="ece-bar-value">0.42</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="170.64" width="22" height="165.36" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Scenario reinterpretation · Vanilla: 0.53"><title>MineLLM · ECE · Scenario reinterpretation · Vanilla: 0.53</title></rect><text x="240" y="163.64" text-anchor="middle" class="ece-bar-value">0.53</text><rect x="255" y="204.96" width="22" height="131.04" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Scenario reinterpretation · Self-Intervention: 0.42"><title>MineLLM · ECE · Scenario reinterpretation · Self-Intervention: 0.42</title></rect><text x="266" y="197.96" text-anchor="middle" class="ece-bar-value">0.42</text><rect x="281" y="198.72" width="22" height="137.28" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Scenario reinterpretation · CoT: 0.44"><title>MineLLM · ECE · Scenario reinterpretation · CoT: 0.44</title></rect><text x="292" y="173.12" text-anchor="middle" class="ece-bar-value">0.44</text><rect x="307" y="195.6" width="22" height="140.4" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Scenario reinterpretation · P&amp;S: 0.45"><title>MineLLM · ECE · Scenario reinterpretation · P&amp;S: 0.45</title></rect><text x="318" y="173.12" text-anchor="middle" class="ece-bar-value">0.45</text><rect x="333" y="189.36" width="22" height="146.64" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Scenario reinterpretation · Top-K: 0.47"><title>MineLLM · ECE · Scenario reinterpretation · Top-K: 0.47</title></rect><text x="344" y="173.12" text-anchor="middle" class="ece-bar-value">0.47</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="173.76" width="22" height="162.24" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Hypothetical reasoning · Vanilla: 0.52"><title>MineLLM · ECE · Hypothetical reasoning · Vanilla: 0.52</title></rect><text x="402.66666666666663" y="166.76" text-anchor="middle" class="ece-bar-value">0.52</text><rect x="417.66666666666663" y="180" width="22" height="156" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Hypothetical reasoning · Self-Intervention: 0.5"><title>MineLLM · ECE · Hypothetical reasoning · Self-Intervention: 0.5</title></rect><text x="428.66666666666663" y="173" text-anchor="middle" class="ece-bar-value">0.50</text><rect x="443.66666666666663" y="233.04" width="22" height="102.96000000000001" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Hypothetical reasoning · CoT: 0.33"><title>MineLLM · ECE · Hypothetical reasoning · CoT: 0.33</title></rect><text x="454.66666666666663" y="226.04" text-anchor="middle" class="ece-bar-value">0.33</text><rect x="469.66666666666663" y="217.44" width="22" height="118.56" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Hypothetical reasoning · P&amp;S: 0.38"><title>MineLLM · ECE · Hypothetical reasoning · P&amp;S: 0.38</title></rect><text x="480.66666666666663" y="210.44" text-anchor="middle" class="ece-bar-value">0.38</text><rect x="495.66666666666663" y="201.84" width="22" height="134.16" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · ECE · Hypothetical reasoning · Top-K: 0.43"><title>MineLLM · ECE · Hypothetical reasoning · Top-K: 0.43</title></rect><text x="506.66666666666663" y="173.12" text-anchor="middle" class="ece-bar-value">0.43</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.49</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div>
+<div class="ece-chart-panel">
+<h4>AUROC ↑</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="MineLLM AUROC vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="MineLLM: MineLLM · AUROC ↑. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="170.64" y2="170.64" class="ece-baseline" stroke-dasharray="7 5"><title>MineLLM · AUROC · Vanilla, no execution policy: 0.53</title></line><rect x="66.33333333333331" y="164.39999999999998" width="22" height="171.60000000000002" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Action sampling · Vanilla: 0.55"><title>MineLLM · AUROC · Action sampling · Vanilla: 0.55</title></rect><text x="77.33333333333331" y="157.39999999999998" text-anchor="middle" class="ece-bar-value">0.55</text><rect x="92.33333333333331" y="136.32" width="22" height="199.68" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Action sampling · Self-Intervention: 0.64"><title>MineLLM · AUROC · Action sampling · Self-Intervention: 0.64</title></rect><text x="103.33333333333331" y="129.32" text-anchor="middle" class="ece-bar-value">0.64</text><rect x="118.33333333333331" y="120.72000000000003" width="22" height="215.27999999999997" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Action sampling · CoT: 0.69"><title>MineLLM · AUROC · Action sampling · CoT: 0.69</title></rect><text x="129.33333333333331" y="113.72000000000003" text-anchor="middle" class="ece-bar-value">0.69</text><rect x="144.33333333333331" y="126.95999999999998" width="22" height="209.04000000000002" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Action sampling · P&amp;S: 0.67"><title>MineLLM · AUROC · Action sampling · P&amp;S: 0.67</title></rect><text x="155.33333333333331" y="119.95999999999998" text-anchor="middle" class="ece-bar-value">0.67</text><rect x="170.33333333333331" y="139.44" width="22" height="196.56" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Action sampling · Top-K: 0.63"><title>MineLLM · AUROC · Action sampling · Top-K: 0.63</title></rect><text x="181.33333333333331" y="132.44" text-anchor="middle" class="ece-bar-value">0.63</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="136.32" width="22" height="199.68" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Scenario reinterpretation · Vanilla: 0.64"><title>MineLLM · AUROC · Scenario reinterpretation · Vanilla: 0.64</title></rect><text x="240" y="129.32" text-anchor="middle" class="ece-bar-value">0.64</text><rect x="255" y="123.83999999999997" width="22" height="212.16000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Scenario reinterpretation · Self-Intervention: 0.68"><title>MineLLM · AUROC · Scenario reinterpretation · Self-Intervention: 0.68</title></rect><text x="266" y="116.83999999999997" text-anchor="middle" class="ece-bar-value">0.68</text><rect x="281" y="105.12" width="22" height="230.88" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Scenario reinterpretation · CoT: 0.74"><title>MineLLM · AUROC · Scenario reinterpretation · CoT: 0.74</title></rect><text x="292" y="98.12" text-anchor="middle" class="ece-bar-value">0.74</text><rect x="307" y="114.48000000000002" width="22" height="221.51999999999998" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Scenario reinterpretation · P&amp;S: 0.71"><title>MineLLM · AUROC · Scenario reinterpretation · P&amp;S: 0.71</title></rect><text x="318" y="107.48000000000002" text-anchor="middle" class="ece-bar-value">0.71</text><rect x="333" y="130.07999999999998" width="22" height="205.92000000000002" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Scenario reinterpretation · Top-K: 0.66"><title>MineLLM · AUROC · Scenario reinterpretation · Top-K: 0.66</title></rect><text x="344" y="123.07999999999998" text-anchor="middle" class="ece-bar-value">0.66</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="176.88" width="22" height="159.12" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Hypothetical reasoning · Vanilla: 0.51"><title>MineLLM · AUROC · Hypothetical reasoning · Vanilla: 0.51</title></rect><text x="402.66666666666663" y="160.64" text-anchor="middle" class="ece-bar-value">0.51</text><rect x="417.66666666666663" y="123.83999999999997" width="22" height="212.16000000000003" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Hypothetical reasoning · Self-Intervention: 0.68"><title>MineLLM · AUROC · Hypothetical reasoning · Self-Intervention: 0.68</title></rect><text x="428.66666666666663" y="116.83999999999997" text-anchor="middle" class="ece-bar-value">0.68</text><rect x="443.66666666666663" y="114.48000000000002" width="22" height="221.51999999999998" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Hypothetical reasoning · CoT: 0.71"><title>MineLLM · AUROC · Hypothetical reasoning · CoT: 0.71</title></rect><text x="454.66666666666663" y="107.48000000000002" text-anchor="middle" class="ece-bar-value">0.71</text><rect x="469.66666666666663" y="133.2" width="22" height="202.8" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Hypothetical reasoning · P&amp;S: 0.65"><title>MineLLM · AUROC · Hypothetical reasoning · P&amp;S: 0.65</title></rect><text x="480.66666666666663" y="126.19999999999999" text-anchor="middle" class="ece-bar-value">0.65</text><rect x="495.66666666666663" y="133.2" width="22" height="202.8" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="MineLLM · AUROC · Hypothetical reasoning · Top-K: 0.65"><title>MineLLM · AUROC · Hypothetical reasoning · Top-K: 0.65</title></rect><text x="506.66666666666663" y="126.19999999999999" text-anchor="middle" class="ece-bar-value">0.65</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.53</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div></template><template data-chart-option="2" data-chart-target="project-chart-0"><div class="ece-chart-panel">
+<h4>ECE ↓</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="STEVE ECE vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="STEVE: STEVE · ECE ↓. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="201.84" y2="201.84" class="ece-baseline" stroke-dasharray="7 5"><title>STEVE · ECE · Vanilla, no execution policy: 0.43</title></line><rect x="66.33333333333331" y="211.2" width="22" height="124.80000000000001" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Action sampling · Vanilla: 0.4"><title>STEVE · ECE · Action sampling · Vanilla: 0.4</title></rect><text x="77.33333333333331" y="191.84" text-anchor="middle" class="ece-bar-value">0.40</text><rect x="92.33333333333331" y="248.64" width="22" height="87.36000000000001" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Action sampling · Self-Intervention: 0.28"><title>STEVE · ECE · Action sampling · Self-Intervention: 0.28</title></rect><text x="103.33333333333331" y="241.64" text-anchor="middle" class="ece-bar-value">0.28</text><rect x="118.33333333333331" y="261.12" width="22" height="74.88" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Action sampling · CoT: 0.24"><title>STEVE · ECE · Action sampling · CoT: 0.24</title></rect><text x="129.33333333333331" y="254.12" text-anchor="middle" class="ece-bar-value">0.24</text><rect x="144.33333333333331" y="251.76" width="22" height="84.24000000000001" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Action sampling · P&amp;S: 0.27"><title>STEVE · ECE · Action sampling · P&amp;S: 0.27</title></rect><text x="155.33333333333331" y="244.76" text-anchor="middle" class="ece-bar-value">0.27</text><rect x="170.33333333333331" y="242.4" width="22" height="93.6" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Action sampling · Top-K: 0.3"><title>STEVE · ECE · Action sampling · Top-K: 0.3</title></rect><text x="181.33333333333331" y="235.4" text-anchor="middle" class="ece-bar-value">0.30</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="204.96" width="22" height="131.04" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Scenario reinterpretation · Vanilla: 0.42"><title>STEVE · ECE · Scenario reinterpretation · Vanilla: 0.42</title></rect><text x="240" y="191.84" text-anchor="middle" class="ece-bar-value">0.42</text><rect x="255" y="251.76" width="22" height="84.24000000000001" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Scenario reinterpretation · Self-Intervention: 0.27"><title>STEVE · ECE · Scenario reinterpretation · Self-Intervention: 0.27</title></rect><text x="266" y="244.76" text-anchor="middle" class="ece-bar-value">0.27</text><rect x="281" y="261.12" width="22" height="74.88" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Scenario reinterpretation · CoT: 0.24"><title>STEVE · ECE · Scenario reinterpretation · CoT: 0.24</title></rect><text x="292" y="254.12" text-anchor="middle" class="ece-bar-value">0.24</text><rect x="307" y="248.64" width="22" height="87.36000000000001" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Scenario reinterpretation · P&amp;S: 0.28"><title>STEVE · ECE · Scenario reinterpretation · P&amp;S: 0.28</title></rect><text x="318" y="241.64" text-anchor="middle" class="ece-bar-value">0.28</text><rect x="333" y="239.28" width="22" height="96.72" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Scenario reinterpretation · Top-K: 0.31"><title>STEVE · ECE · Scenario reinterpretation · Top-K: 0.31</title></rect><text x="344" y="232.28" text-anchor="middle" class="ece-bar-value">0.31</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="208.08" width="22" height="127.91999999999999" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Hypothetical reasoning · Vanilla: 0.41"><title>STEVE · ECE · Hypothetical reasoning · Vanilla: 0.41</title></rect><text x="402.66666666666663" y="191.84" text-anchor="middle" class="ece-bar-value">0.41</text><rect x="417.66666666666663" y="214.32" width="22" height="121.68" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Hypothetical reasoning · Self-Intervention: 0.39"><title>STEVE · ECE · Hypothetical reasoning · Self-Intervention: 0.39</title></rect><text x="428.66666666666663" y="191.84" text-anchor="middle" class="ece-bar-value">0.39</text><rect x="443.66666666666663" y="233.04" width="22" height="102.96000000000001" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Hypothetical reasoning · CoT: 0.33"><title>STEVE · ECE · Hypothetical reasoning · CoT: 0.33</title></rect><text x="454.66666666666663" y="226.04" text-anchor="middle" class="ece-bar-value">0.33</text><rect x="469.66666666666663" y="226.8" width="22" height="109.19999999999999" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Hypothetical reasoning · P&amp;S: 0.35"><title>STEVE · ECE · Hypothetical reasoning · P&amp;S: 0.35</title></rect><text x="480.66666666666663" y="219.8" text-anchor="middle" class="ece-bar-value">0.35</text><rect x="495.66666666666663" y="229.92" width="22" height="106.08000000000001" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · ECE · Hypothetical reasoning · Top-K: 0.34"><title>STEVE · ECE · Hypothetical reasoning · Top-K: 0.34</title></rect><text x="506.66666666666663" y="222.92" text-anchor="middle" class="ece-bar-value">0.34</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.43</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div>
+<div class="ece-chart-panel">
+<h4>AUROC ↑</h4>
+<div class="studio-svg-scroll" tabindex="0" role="region" aria-label="STEVE AUROC vertical bar chart"><svg viewbox="0 0 560 440" role="img" aria-label="STEVE: STEVE · AUROC ↑. Each group is an execution policy; bars compare elicitation strategies."><line x1="48" x2="536" y1="336" y2="336" class="studio-grid"></line><text x="38" y="340" text-anchor="end">0</text><line x1="48" x2="536" y1="273.6" y2="273.6" class="studio-grid"></line><text x="38" y="277.6" text-anchor="end">0.2</text><line x1="48" x2="536" y1="211.2" y2="211.2" class="studio-grid"></line><text x="38" y="215.2" text-anchor="end">0.4</text><line x1="48" x2="536" y1="148.8" y2="148.8" class="studio-grid"></line><text x="38" y="152.8" text-anchor="end">0.6</text><line x1="48" x2="536" y1="86.39999999999998" y2="86.39999999999998" class="studio-grid"></line><text x="38" y="90.39999999999998" text-anchor="end">0.8</text><line x1="48" x2="536" y1="24" y2="24" class="studio-grid"></line><text x="38" y="28" text-anchor="end">1</text><line x1="48" x2="536" y1="336" y2="336" class="studio-axis"></line><line x1="48" x2="536" y1="155.04000000000002" y2="155.04000000000002" class="ece-baseline" stroke-dasharray="7 5"><title>STEVE · AUROC · Vanilla, no execution policy: 0.58</title></line><rect x="66.33333333333331" y="142.56" width="22" height="193.44" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Action sampling · Vanilla: 0.62"><title>STEVE · AUROC · Action sampling · Vanilla: 0.62</title></rect><text x="77.33333333333331" y="135.56" text-anchor="middle" class="ece-bar-value">0.62</text><rect x="92.33333333333331" y="105.12" width="22" height="230.88" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Action sampling · Self-Intervention: 0.74"><title>STEVE · AUROC · Action sampling · Self-Intervention: 0.74</title></rect><text x="103.33333333333331" y="98.12" text-anchor="middle" class="ece-bar-value">0.74</text><rect x="118.33333333333331" y="111.36000000000001" width="22" height="224.64" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Action sampling · CoT: 0.72"><title>STEVE · AUROC · Action sampling · CoT: 0.72</title></rect><text x="129.33333333333331" y="104.36000000000001" text-anchor="middle" class="ece-bar-value">0.72</text><rect x="144.33333333333331" y="111.36000000000001" width="22" height="224.64" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Action sampling · P&amp;S: 0.72"><title>STEVE · AUROC · Action sampling · P&amp;S: 0.72</title></rect><text x="155.33333333333331" y="104.36000000000001" text-anchor="middle" class="ece-bar-value">0.72</text><rect x="170.33333333333331" y="117.60000000000002" width="22" height="218.39999999999998" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Action sampling · Top-K: 0.7"><title>STEVE · AUROC · Action sampling · Top-K: 0.7</title></rect><text x="181.33333333333331" y="110.60000000000002" text-anchor="middle" class="ece-bar-value">0.70</text><text x="129.33333333333331" y="361" text-anchor="middle">Action</text><text x="129.33333333333331" y="378" text-anchor="middle">sampling</text><rect x="229" y="130.07999999999998" width="22" height="205.92000000000002" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Scenario reinterpretation · Vanilla: 0.66"><title>STEVE · AUROC · Scenario reinterpretation · Vanilla: 0.66</title></rect><text x="240" y="123.07999999999998" text-anchor="middle" class="ece-bar-value">0.66</text><rect x="255" y="105.12" width="22" height="230.88" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Scenario reinterpretation · Self-Intervention: 0.74"><title>STEVE · AUROC · Scenario reinterpretation · Self-Intervention: 0.74</title></rect><text x="266" y="98.12" text-anchor="middle" class="ece-bar-value">0.74</text><rect x="281" y="117.60000000000002" width="22" height="218.39999999999998" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Scenario reinterpretation · CoT: 0.7"><title>STEVE · AUROC · Scenario reinterpretation · CoT: 0.7</title></rect><text x="292" y="110.60000000000002" text-anchor="middle" class="ece-bar-value">0.70</text><rect x="307" y="111.36000000000001" width="22" height="224.64" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Scenario reinterpretation · P&amp;S: 0.72"><title>STEVE · AUROC · Scenario reinterpretation · P&amp;S: 0.72</title></rect><text x="318" y="104.36000000000001" text-anchor="middle" class="ece-bar-value">0.72</text><rect x="333" y="123.83999999999997" width="22" height="212.16000000000003" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Scenario reinterpretation · Top-K: 0.68"><title>STEVE · AUROC · Scenario reinterpretation · Top-K: 0.68</title></rect><text x="344" y="116.83999999999997" text-anchor="middle" class="ece-bar-value">0.68</text><text x="292" y="361" text-anchor="middle">Scenario</text><text x="292" y="378" text-anchor="middle">reinterpretation</text><rect x="391.66666666666663" y="158.16000000000003" width="22" height="177.83999999999997" rx="2" fill="#ff6c2f" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Hypothetical reasoning · Vanilla: 0.57"><title>STEVE · AUROC · Hypothetical reasoning · Vanilla: 0.57</title></rect><text x="402.66666666666663" y="145.04000000000002" text-anchor="middle" class="ece-bar-value">0.57</text><rect x="417.66666666666663" y="133.2" width="22" height="202.8" rx="2" fill="#fb873d" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Hypothetical reasoning · Self-Intervention: 0.65"><title>STEVE · AUROC · Hypothetical reasoning · Self-Intervention: 0.65</title></rect><text x="428.66666666666663" y="126.19999999999999" text-anchor="middle" class="ece-bar-value">0.65</text><rect x="443.66666666666663" y="133.2" width="22" height="202.8" rx="2" fill="#ffa85c" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Hypothetical reasoning · CoT: 0.65"><title>STEVE · AUROC · Hypothetical reasoning · CoT: 0.65</title></rect><text x="454.66666666666663" y="126.19999999999999" text-anchor="middle" class="ece-bar-value">0.65</text><rect x="469.66666666666663" y="136.32" width="22" height="199.68" rx="2" fill="#ffc887" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Hypothetical reasoning · P&amp;S: 0.64"><title>STEVE · AUROC · Hypothetical reasoning · P&amp;S: 0.64</title></rect><text x="480.66666666666663" y="129.32" text-anchor="middle" class="ece-bar-value">0.64</text><rect x="495.66666666666663" y="136.32" width="22" height="199.68" rx="2" fill="#ffdda5" class="ece-vertical-bar" tabindex="0" aria-label="STEVE · AUROC · Hypothetical reasoning · Top-K: 0.64"><title>STEVE · AUROC · Hypothetical reasoning · Top-K: 0.64</title></rect><text x="506.66666666666663" y="129.32" text-anchor="middle" class="ece-bar-value">0.64</text><text x="454.66666666666663" y="361" text-anchor="middle">Hypothetical</text><text x="454.66666666666663" y="378" text-anchor="middle">reasoning</text><text x="536" y="16" text-anchor="end" class="ece-baseline-label">Baseline: 0.58</text><text x="292" y="420" text-anchor="middle">Execution policy</text></svg></div>
+</div></template></figure>
+</div>
+</div>
 
-
-
-
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
       <pre><code>@article{yu2025uncertaintyactionconfidenceelicitation,
   title={Uncertainty in Action: Confidence Elicitation in Embodied Agents},
   author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Kiet A. Nguyen and Adheesh Juvekar and Tal August and Ismini Lourentzou},
@@ -651,35 +370,24 @@
   year={2025}
 }</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2503.10628">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/abs/2206.08853">Minedojo</a>,
-                <a href="https://arxiv.org/abs/2305.16291">Voyager</a>, and 
+                <a href="https://arxiv.org/abs/2305.16291">Voyager</a>, and
               <a href="https://arxiv.org/abs/2312.07472v2">MP5</a>
               for open-sourcing their projects.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>
