@@ -15,8 +15,8 @@ LOCATION:Atlanta · Hall C1
 DESCRIPTION:Toward Cognitive Supersensing in Multimodal Large Language Mode
  ls\n\nAtlanta Poster Session 1\nWednesday\, December 9\, 2026 · 10:00 a.m
  .–1:00 p.m. EST\n\nProject page: https://pediamedai.com/Cognition-MLLM/c
- ogsense/\nPaper: https://arxiv.org/pdf/2602.01541\nOfficial NeurIPS page: 
- https://neurips.cc/virtual/2026/loc/atlanta/poster/149050
+ ogsense/\nPaper: https://arxiv.org/pdf/2602.01541\nOfficial NeurIPS page:
+  https://neurips.cc/virtual/2026/loc/atlanta/poster/149050
 URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/149050
 END:VEVENT
 BEGIN:VEVENT
@@ -41,11 +41,11 @@ DTEND:20261211T003000Z
 SUMMARY:PLAN Lab @ NeurIPS 2026: VisAnom Poster
 LOCATION:Atlanta · Hall C1
 DESCRIPTION:Tiny but Trusted: Efficient Vision-Language Reasoning for Time-
- Series Anomaly Detection\n\nAtlanta Poster Session 4\nThursday\, December 
- 10\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.g
- ithub.io/projects/VisAnom/\nPaper: https://arxiv.org/pdf/2605.30344\nOffic
- ial NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/15146
- 0
+ Series Anomaly Detection\n\nAtlanta Poster Session 4\nThursday\, December
+  10\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.
+ github.io/projects/VisAnom/\nPaper: https://arxiv.org/pdf/2605.30344\nOffi
+ cial NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/1514
+ 60
 URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/151460
 END:VEVENT
 BEGIN:VEVENT
@@ -56,10 +56,10 @@ DTEND:20261211T180000Z
 SUMMARY:PLAN Lab @ NeurIPS 2026: ELSA3D Poster
 LOCATION:Atlanta · Hall C1
 DESCRIPTION:ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding
-  and Generation\n\nAtlanta Poster Session 5\nFriday\, December 11\, 2026 
- · 10:00 a.m.–1:00 p.m. EST\n\nProject page: https://plan-lab.github.io/
- projects/elsa3D/\nPaper: https://arxiv.org/pdf/2607.06565\nOfficial NeurIP
- S page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149339
+  and Generation\n\nAtlanta Poster Session 5\nFriday\, December 11\, 2026
+  · 10:00 a.m.–1:00 p.m. EST\n\nProject page: https://plan-lab.github.io
+ /projects/elsa3D/\nPaper: https://arxiv.org/pdf/2607.06565\nOfficial NeurI
+ PS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149339
 URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/149339
 END:VEVENT
 BEGIN:VEVENT
@@ -70,10 +70,10 @@ DTEND:20261212T003000Z
 SUMMARY:PLAN Lab @ NeurIPS 2026: SILSA Poster
 LOCATION:Atlanta · Hall C1
 DESCRIPTION:SILSA: Sliding-Window Slice Latents for Topology-Preserving Hig
- h-Resolution 3D Generation\n\nAtlanta Poster Session 6\nFriday\, December 
- 11\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.g
- ithub.io/projects/silsa/\nPaper: https://arxiv.org/abs/2610.02201\nOfficia
- l NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149726
+ h-Resolution 3D Generation\n\nAtlanta Poster Session 6\nFriday\, December
+  11\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.
+ github.io/projects/silsa/\nPaper: https://arxiv.org/abs/2610.02201\nOffici
+ al NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149726
 URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/149726
 END:VEVENT
 END:VCALENDAR
