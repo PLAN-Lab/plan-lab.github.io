@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//NeurIPS 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:VisAnom @ NeurIPS 2026
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:visanom-neurips2026@plan-lab.github.io
+DTSTAMP:20261009T120000Z
+DTSTART:20261210T213000Z
+DTEND:20261211T003000Z
+SUMMARY:PLAN Lab @ NeurIPS 2026: VisAnom Poster
+LOCATION:Atlanta · Hall C1
+DESCRIPTION:Tiny but Trusted: Efficient Vision-Language Reasoning for Time-
+ Series Anomaly Detection\n\nAtlanta Poster Session 4\nThursday\, December 
+ 10\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.g
+ ithub.io/projects/VisAnom/\nPaper: https://arxiv.org/pdf/2605.30344\nOffic
+ ial NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/15146
+ 0
+URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/151460
+END:VEVENT
+END:VCALENDAR

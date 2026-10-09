@@ -37,7 +37,8 @@
         "Xinzhuo Li",
         "Yifan Shen",
         "Ying Shen",
-        "Onkar Susladkar",
+        "Kiet A. Nguyen",
+        "Adheesh Sunil Juvekar",
         "Ismini Lourentzou"
       ],
       "year": 2026,
@@ -1377,7 +1378,7 @@
     },
     {
       "id": "2026-Li-toward-cognitive-supersensing-multimodal-llm",
-      "title": "Toward Cognitive Supersensing in Multimodal Large Language Model",
+      "title": "Toward Cognitive Supersensing in Multimodal Large Language Models",
       "projectName": "Cognitive Supersensing",
       "authors": [
         "Boyi Li*",

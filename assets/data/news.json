@@ -5,6 +5,7 @@
       "date": "2026-09",
       "title": "5 papers at NeurIPS 2026!",
       "description": "SILSA, ELSA3D, RAVEL, VisAnom, and Cognitive Supersensing will appear at NeurIPS 2026.",
+      "link": "neurips2026.html",
       "papers": [
         {
           "pubId": "2026-Yu-silsa-sliding-window-slice-latents"

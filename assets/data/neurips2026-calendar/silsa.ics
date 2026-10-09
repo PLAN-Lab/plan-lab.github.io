@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//NeurIPS 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SILSA @ NeurIPS 2026
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:silsa-neurips2026@plan-lab.github.io
+DTSTAMP:20261009T120000Z
+DTSTART:20261211T213000Z
+DTEND:20261212T003000Z
+SUMMARY:PLAN Lab @ NeurIPS 2026: SILSA Poster
+LOCATION:Atlanta · Hall C1
+DESCRIPTION:SILSA: Sliding-Window Slice Latents for Topology-Preserving Hig
+ h-Resolution 3D Generation\n\nAtlanta Poster Session 6\nFriday\, December 
+ 11\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.g
+ ithub.io/projects/silsa/\nPaper: https://arxiv.org/abs/2610.02201\nOfficia
+ l NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149726
+URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/149726
+END:VEVENT
+END:VCALENDAR

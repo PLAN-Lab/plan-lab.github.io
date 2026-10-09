@@ -1,0 +1,113 @@
+/* NeurIPS uses the existing ECCV conference design, with its own additions. */
+.page-neurips {
+  --cube-top-a: #5f80a8;
+  --cube-top-b: #355d88;
+  --cube-left-a: #1c3154;
+  --cube-left-b: #355d88;
+  --cube-right-a: #2b4d73;
+  --cube-right-b: #14294b;
+  --cube-stroke: #88a6c8;
+}
+
+.page-neurips [hidden] { display: none !important; }
+.page-neurips :is(button, a, input, select):focus-visible {
+  outline: 3px solid var(--plan-orange);
+  outline-offset: 4px;
+}
+.page-neurips .conference-paper h2,
+.page-neurips .workshop-paper h3 { margin: 0; }
+.page-neurips .paper-cube-card :is(.paper-short, .paper-area, .paper-time) {
+  display: block;
+}
+.page-neurips .paper-cube-card.active {
+  --cube-top-a: #ff8a18;
+  --cube-top-b: #ff5f05;
+  --cube-left-a: #cc4700;
+  --cube-left-b: #ff6d00;
+  --cube-right-a: #f05a00;
+  --cube-right-b: #b93b00;
+  --cube-stroke: #ffb06a;
+}
+.page-neurips .hero-badge { max-width: 100%; flex-wrap: wrap; }
+.page-neurips .hero-title {
+  background-image: linear-gradient(90deg, #ffe0bd, #f8fafc 55%, #dbeafe);
+}
+.page-neurips .paper-short {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+}
+.page-neurips .atlas-workshop {
+  margin: 1rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  color: #dbeafe;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+.page-neurips .atlas-workshop a { color: #fff; font-weight: 800; }
+.page-neurips .atlas-workshop span { font-size: 0.76rem; }
+.page-neurips .media-grid { grid-template-columns: minmax(0, 1fr); }
+.page-neurips figure.media-card { margin: 0; }
+.page-neurips .pdf-box { height: auto; }
+.page-neurips .pdf-box img { height: auto; max-height: 420px; object-fit: contain; }
+.page-neurips .action-row { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.page-neurips .action-row > :is(a, button) { width: auto; padding-inline: 1rem; }
+.page-neurips .schedule-paper {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--plan-blue);
+  text-align: left;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1.45;
+}
+.page-neurips .schedule-paper:hover { color: var(--plan-orange); }
+.page-neurips #scheduleBody th { max-width: 420px; font-weight: inherit; }
+.page-neurips #scheduleBody td { vertical-align: top; }
+.page-neurips .schedule-count { white-space: normal; }
+.page-neurips #workshops { padding-block: 28px; }
+.page-neurips .workshop-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #dbe3ef;
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 20px 60px rgba(19,41,75,0.09);
+}
+.page-neurips .workshop-paper { margin-top: 1.25rem; }
+.page-neurips .workshop-paper .paper-title-link {
+  font-size: clamp(1.5rem, 2.7vw, 2.15rem);
+  color: var(--plan-blue);
+  font-weight: 900;
+  text-decoration: none;
+}
+.page-neurips .workshop-paper .paper-title-link:hover { color: var(--plan-orange); }
+.page-neurips .workshop-paper .paper-title-link i { font-size: 0.7em; color: var(--plan-orange); }
+.page-neurips .workshop-paper .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.page-neurips .workshop-timing-note {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--plan-orange);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: #fff7ed;
+  color: #9a3412;
+  font-weight: 650;
+  line-height: 1.6;
+}
+.page-neurips .poster-grid[data-empty="true"] { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .page-neurips .workshop-paper .info-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .page-neurips .action-row > :is(a, button) { flex: 1 1 140px; }
+  .page-neurips .hero-badge { font-size: 0.75rem; }
+  .page-neurips .hero-title { font-size: 2.65rem; line-height: 1.02; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .page-neurips *, .page-neurips *::before, .page-neurips *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
