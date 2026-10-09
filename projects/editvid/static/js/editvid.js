@@ -50,6 +50,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     prompt.textContent=item.prompt;document.querySelector('#reference-panel').hidden=!item.subject;
     tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.case===item.id;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on))});
     grid.innerHTML=item.files.map(([file,name])=>`<article class="video-card ${name.includes('Ours')?'ours':''}"><div class="video-label"><span>${name}</span>${name.includes('Ours')?'<b>Ours</b>':''}</div><video muted loop playsinline preload="auto" aria-label="${name} result"><source src="${BASE}${item.id}/${file}" type="video/mp4"></video></article>`).join('');
+    bindVideos();
+    updatePlayback();
+  }
+  function bindVideos(){
     const list=videos();list.forEach((v,index)=>{
       v.muted=true;v.playbackRate=Number(document.querySelector('#playback-rate').value);
       v.addEventListener('loadedmetadata',()=>{if(index===0&&v.videoWidth&&v.videoHeight)grid.style.setProperty('--case-aspect',`${v.videoWidth}/${v.videoHeight}`)},{once:true});
@@ -58,12 +62,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       v.addEventListener('click',toggle);
     });
     list[0].addEventListener('timeupdate',()=>{if(playing&&visible)list.forEach(v=>align(v,list[0]))});
-    updatePlayback();
   }
-  CASES.forEach(c=>{const b=document.createElement('button');b.type='button';b.role='tab';b.dataset.case=c.id;b.textContent=c.label;b.onclick=()=>render(c);tabs.appendChild(b)});
+  CASES.forEach(c=>{const b=tabs.querySelector(`[data-case="${c.id}"]`);if(b)b.onclick=()=>render(c)});
   document.querySelector('#toggle-play').addEventListener('click',toggle);
   document.querySelector('#playback-rate').addEventListener('change',e=>videos().forEach(v=>v.playbackRate=Number(e.target.value)));
   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;updatePlayback()},{threshold:0}).observe(grid);
   document.addEventListener('visibilitychange',updatePlayback);
-  render(CASES[0]);
+  bindVideos();
+  updatePlayback();
 });

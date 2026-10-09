@@ -106,24 +106,24 @@ This folder is a standalone static site. Team members, publications, and news ar
 
 ## Projects
 
-The 27 reviewed project pages load the shared presentation at their normal
-`/projects/<slug>/` URLs. Their `<body>` elements carry
-`data-project-presentation="reviewed"`, which activates the project presentation
-in `assets/js/project-pages.js`.
+The 28 reviewed project pages are authored directly in their `index.html` files
+at the normal `/projects/<slug>/` URLs. Each file contains the complete reviewed
+presentation. The old layouts and browser-side layout conversion are removed.
 
-- Presentation: `assets/css/project-studio.css`, `assets/js/project-studio.js`,
-  and each project's `static/js/studio.js` module where present.
+- Styling: `assets/css/projects.css`, `assets/css/project-studio.css`, and
+  project-specific stylesheets where present.
 - Author bylines, affiliations, resource buttons, and BibTeX citations live
   directly in each project's `index.html`.
-- Section copy, result descriptions, and chart/table values live in that page's
-  `<script id="project-data" type="application/json">` block. Shared renderers
-  read that block without fetching separate project metadata files.
+- Section copy, result descriptions, tables, and initial charts are ordinary
+  HTML and SVG in the page. Metric and task alternatives are stored in local
+  HTML templates. `assets/js/project-interactions.js` connects their controls,
+  video playback, and 3D-viewer buttons; it does not construct the page layout.
 - The existing `assets/data/publications.json` remains the publication catalogue
   for the lab homepage and publications page.
-- Shared footer and browser libraries: `assets/components/project-footer.html`
-  and `assets/vendor/`.
-- Asset versions are set by the reviewed-page loader and the project HTML's
-  script/style URLs. Bump those versions when publishing asset changes.
+- The footer is included directly in each reviewed page; browser libraries live
+  in `assets/vendor/`.
+- Asset versions are set in the project HTML's script/style URLs. Bump those
+  versions when publishing asset changes.
 
 Run `python3 -m http.server 8000` from the repository root to inspect the pages
 locally at `http://localhost:8000/projects/<slug>/`.

@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,21 +10,21 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="RewardFlow project page for PLAN Lab." />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RewardFlow project page for PLAN Lab.">
     <title>RewardFlow: Generate Images by Optimizing What You Reward | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <style>
       .media-card {
         position: relative;
@@ -72,455 +72,12 @@
       }
     </style>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-  </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "RewardFlow",
-    "tldr": [
-      "We introduce RewardFlow, a training-free framework for image generation and editing that guides pretrained models with complementary rewards. RewardFlow adapts to each instruction, balancing prompt alignment, visual quality, and localized changes without inversion or model fine-tuning."
-    ],
-    "method": {
-      "paragraphs": [
-        "RewardFlow fuses complementary differentiable reward gradients into a multi-reward Langevin sampling update. A prompt-aware policy parses the instruction and adapts reward weights and step sizes throughout sampling. Fine-grained guidance includes a differentiable VQA reward and a SAM2 text-guided object reward to improve attribute correctness and localize edits. A clean-latent KL regularizer tethers sampling to the originating latent, controlling drift while the fused guidance steers generation or editing."
-      ],
-      "image": {
-        "source": "abstract_diagram.png",
-        "src": "./static/images/attention_localization.png",
-        "alt": "Source images paired with attention-localization maps for changing juice type, changing shoe color, creating a Ghibli-style portrait, and adding glasses.",
-        "caption": "Source images and attention-localization maps for attribute changes, portrait stylization, and adding glasses.",
-        "width": 2200,
-        "height": 1171
-      }
-    },
-    "contributions": [
-      "RewardFlow. We introduce a multi-reward-guided Langevin framework that combines semantic, perceptual, regional, object-level, and human-preference signals to enable controllable, inversion-free editing and generation.",
-      "Prompt-aware adaptive policy. Our lightweight policy parses semantic primitives from the instruction, infers edit intent, and dynamically adjusts reward weights and step sizes to balance coarse-to-fine optimization.",
-      "Fine-grained rewards. We design a differentiable VQA reward for attribute-level correctness and a SAM-guided localization reward that penalizes edits leaking outside the region of interest.",
-      "Theoretical grounding. We prove the update corresponds to a valid discretization of a Langevin SDE targeting a prompt-tilted density, giving a sound foundation for stable convergence during reward-guided sampling."
-    ],
-    "contributionLeads": [
-      "RewardFlow.",
-      "Prompt-aware adaptive policy.",
-      "Fine-grained rewards.",
-      "Theoretical grounding."
-    ]
-  },
-  "resultPanels": {
-    "PIE-Bench image editing": {
-      "description": "Image editing quality, background preservation, prompt alignment, and sampling cost on PIE-Bench. Standard and four-step settings are reported separately."
-    }
-  },
-  "results": {
-    "results.png": {
-      "type": "table",
-      "title": "PIE-Bench image editing",
-      "columns": [
-        "Method",
-        "Distance ↓ (×10³)",
-        "PSNR ↑",
-        "LPIPS ↓ (×10³)",
-        "MSE ↓ (×10⁴)",
-        "SSIM ↑ (×10²)",
-        "Whole ↑",
-        "Edited ↑",
-        "NFE ↓",
-        "Steps ↓"
-      ],
-      "rows": [
-        {
-          "group": "Standard inference budgets"
-        },
-        [
-          "EF",
-          "8.39",
-          "27.49",
-          "44.38",
-          "29.79",
-          "85.61",
-          "25.87",
-          "22.14",
-          "70",
-          "50"
-        ],
-        [
-          "ProxG",
-          "8.39",
-          "28.45",
-          "38.27",
-          "25.63",
-          "85.87",
-          "25.04",
-          "21.64",
-          "100",
-          "50"
-        ],
-        [
-          "P2P",
-          "9.58",
-          "27.72",
-          "44.98",
-          "30.02",
-          "85.01",
-          "24.94",
-          "21.57",
-          "100",
-          "50"
-        ],
-        [
-          "DI",
-          "11.60",
-          "27.25",
-          "49.25",
-          "32.87",
-          "84.86",
-          "25.83",
-          "22.39",
-          "100",
-          "50"
-        ],
-        [
-          "AREdit",
-          "13.12",
-          "28.78",
-          "42.67",
-          "37.88",
-          "87.19",
-          "26.57",
-          "24.51",
-          "16",
-          "30"
-        ],
-        [
-          "InfEdit",
-          "13.87",
-          "28.63",
-          "39.80",
-          "33.19",
-          "86.28",
-          "25.84",
-          "22.44",
-          "12",
-          "12"
-        ],
-        [
-          "TurboEdit",
-          "15.11",
-          "26.04",
-          "69.54",
-          "55.12",
-          "84.27",
-          "26.09",
-          "23.35",
-          "24",
-          "12"
-        ],
-        [
-          "InstantEdit",
-          "12.57",
-          "29.63",
-          "35.27",
-          "24.57",
-          "87.40",
-          "26.06",
-          "22.73",
-          "24",
-          "12"
-        ],
-        [
-          "FlowEdit",
-          "11.56",
-          "28.33",
-          "43.57",
-          "37.48",
-          "86.23",
-          "26.43",
-          "23.03",
-          "33",
-          "30"
-        ],
-        [
-          "FlowChef",
-          "9.67",
-          "29.03",
-          "43.11",
-          "36.67",
-          "87.44",
-          "27.05",
-          "23.09",
-          "28",
-          "30"
-        ],
-        [
-          "KV-Edit",
-          "8.47",
-          "29.04",
-          "43.44",
-          "35.47",
-          "86.66",
-          "28.21",
-          "23.92",
-          "27",
-          "40"
-        ],
-        [
-          "Flux+RewardFlow",
-          "7.78",
-          "31.21",
-          "40.55",
-          "26.47",
-          "89.67",
-          "29.44",
-          "26.62",
-          "43",
-          "20"
-        ],
-        [
-          "QwenImage+RewardFlow",
-          "7.64",
-          "32.09",
-          "38.47",
-          "23.57",
-          "90.21",
-          "29.78",
-          "27.57",
-          "54",
-          "25"
-        ],
-        {
-          "group": "Four-step inference"
-        },
-        [
-          "InfEdit",
-          "16.19",
-          "26.75",
-          "50.79",
-          "42.33",
-          "84.71",
-          "25.68",
-          "22.27",
-          "4",
-          "4"
-        ],
-        [
-          "TurboEdit",
-          "18.57",
-          "24.59",
-          "77.53",
-          "58.48",
-          "82.64",
-          "25.70",
-          "22.30",
-          "4",
-          "4"
-        ],
-        [
-          "InstantEdit",
-          "17.14",
-          "27.96",
-          "44.39",
-          "34.94",
-          "86.44",
-          "26.28",
-          "22.82",
-          "8",
-          "4"
-        ],
-        [
-          "Flux+RewardFlow",
-          "13.44",
-          "29.57",
-          "40.03",
-          "29.66",
-          "88.13",
-          "27.31",
-          "24.69",
-          "6",
-          "4"
-        ],
-        [
-          "QwenImage+RewardFlow",
-          "10.33",
-          "29.92",
-          "37.92",
-          "26.95",
-          "90.12",
-          "28.55",
-          "27.52",
-          "6",
-          "4"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/results.png"
-    },
-    "@compositional-generation": {
-      "type": "table",
-      "appendTo": "quantitative",
-      "title": "T2I-CompBench compositional generation",
-      "description": "Compositional accuracy across attribute binding, object relationships, and complex prompts. Each backbone is compared with ReNO and RewardFlow; higher scores are better.",
-      "columns": [
-        "Model",
-        "Color ↑",
-        "Shape ↑",
-        "Texture ↑",
-        "Spatial ↑",
-        "Non-spatial ↑",
-        "Complex ↑"
-      ],
-      "rows": [
-        [
-          "SD v1.4",
-          "0.38",
-          "0.36",
-          "0.42",
-          "0.12",
-          "0.31",
-          "0.31"
-        ],
-        [
-          "SD v2.1",
-          "0.51",
-          "0.42",
-          "0.49",
-          "0.13",
-          "0.31",
-          "0.34"
-        ],
-        [
-          "SDXL",
-          "0.64",
-          "0.54",
-          "0.56",
-          "0.20",
-          "0.31",
-          "0.41"
-        ],
-        [
-          "PixArt-α",
-          "0.69",
-          "0.56",
-          "0.70",
-          "0.21",
-          "0.32",
-          "0.41"
-        ],
-        [
-          "DALL-E 2",
-          "0.57",
-          "0.55",
-          "0.64",
-          "0.13",
-          "0.30",
-          "0.37"
-        ],
-        [
-          "DALL-E 3",
-          "0.81",
-          "0.68",
-          "0.81",
-          "—",
-          "—",
-          "—"
-        ],
-        [
-          "PixArt-α DMD",
-          "0.38",
-          "0.34",
-          "0.47",
-          "0.19",
-          "0.30",
-          "0.36"
-        ],
-        [
-          "PixArt-α DMD + ReNO",
-          "0.64",
-          "0.57",
-          "0.72",
-          "0.25",
-          "0.31",
-          "0.46"
-        ],
-        [
-          "PixArt-α DMD + RewardFlow",
-          "0.74",
-          "0.66",
-          "0.75",
-          "0.30",
-          "0.39",
-          "0.52"
-        ],
-        [
-          "Flux",
-          "0.75",
-          "0.61",
-          "0.69",
-          "0.26",
-          "0.33",
-          "0.47"
-        ],
-        [
-          "Flux + ReNO",
-          "0.81",
-          "0.64",
-          "0.72",
-          "0.29",
-          "0.35",
-          "0.49"
-        ],
-        [
-          "Flux + RewardFlow",
-          "0.88",
-          "0.69",
-          "0.78",
-          "0.33",
-          "0.42",
-          "0.57"
-        ],
-        [
-          "Qwen Image",
-          "0.83",
-          "0.72",
-          "0.80",
-          "0.35",
-          "0.39",
-          "0.61"
-        ],
-        [
-          "Qwen Image + ReNO",
-          "0.84",
-          "0.75",
-          "0.84",
-          "0.36",
-          "0.43",
-          "0.63"
-        ],
-        [
-          "Qwen Image + RewardFlow",
-          "0.91",
-          "0.83",
-          "0.90",
-          "0.39",
-          "0.51",
-          "0.78"
-        ]
-      ],
-      "rankMetrics": true,
-      "highlight": [
-        "RewardFlow"
-      ],
-      "source": "paper:2604.08536:table-2",
-      "provenance": {
-        "url": "https://arxiv.org/pdf/2604.08536",
-        "table": "2",
-        "page": 7
-      },
-      "note": ""
-    }
-  }
-}
-  </script>
+  <link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
+</head>
+  <body class="page-project project-studio studio-rewardflow" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -554,29 +111,62 @@
 </nav>
 
     <main>
-  <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">RewardFlow: Generate Images by Optimizing What You Reward</h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Onkar Kishor Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Sunil Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Ayush Barik<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Nabeel Bashir<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ritish Shrirao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
-            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span></div>
+            <h1 class="title is-2 publication-title">
+<span class="studio-name">RewardFlow</span><span class="studio-subtitle">Generate Images by Optimizing What You Reward</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Onkar Kishor Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Sunil Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Ayush Barik<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Nabeel Bashir<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ritish Shrirao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div>
+</div>
+            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span>
+</div>
              <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue">CVPR 2026</h1>
             </div>
              <div class="column has-text-centered">
-              <div class="publication-links clear-link-group" style="justify-content:center; display:flex; flex-wrap:wrap; gap:0.35rem;"><a href="https://arxiv.org/pdf/2604.08536" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2604.08536" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/RewardFlow"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
+              <div class="publication-links clear-link-group" style="justify-content:center; display:flex; flex-wrap:wrap; gap:0.35rem;">
+<a href="https://arxiv.org/pdf/2604.08536" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2604.08536" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/RewardFlow" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/RewardFlow"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a>
+</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce RewardFlow, a training-free framework for image generation and editing that guides pretrained models with complementary rewards. RewardFlow adapts to each instruction, balancing prompt alignment, visual quality, and localized changes without inversion or <span class="studio-tldr-tail">model fine-tuning.</span></p></div>
+</div></section><section class="studio-feature" aria-label="RewardFlow image editing" data-studio-section="examples"><div class="studio-image-feature">
+<div class="studio-media-card"><img src="static/images/abstract_diagram.png" alt="RewardFlow image editing examples"></div>
+<div>
+<p>RewardFlow combines semantic, perceptual, regional, object-level, and human-preference signals to steer editing and generation at inference time.</p>
+<div class="studio-tags">
+<span>Semantic alignment</span><span>Localized edits</span><span>No fine-tuning</span>
+</div>
+</div>
+</div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">RewardFlow Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Abstract</h2>
+      <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
       <div class="content has-text-justified">
         <p>
           We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow fuses complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference into a single guidance signal.
@@ -587,58 +177,440 @@
         <p>
           We further tether sampling to the originating latent via a clean-latent KL regularizer, which anchors the drift produced by the fused reward gradient. Across editing and compositional generation benchmarks, RewardFlow obtains state-of-the-art zero-shot fidelity and alignment without any fine-tuning.
         </p>
-        <div style="margin-top:1.5rem; text-align:center;">
-          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-            <img loading="lazy" decoding="async" src="./static/images/abstract_diagram.png" alt="RewardFlow abstract diagram">
-            <div class="media-skeleton">Loading...</div>
-          </div>
-        </div>
+
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">✅ Contributions</h2>
+      <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
       <div class="content has-text-justified">
-        <ul class="fa-ul">
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>RewardFlow.</b> We introduce a multi-reward-guided Langevin framework that combines semantic, perceptual, regional, object-level, and human-preference signals to enable controllable, inversion-free editing and generation.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Prompt-aware adaptive policy.</b> Our lightweight policy parses semantic primitives from the instruction, infers edit intent, and dynamically adjusts reward weights and step sizes to balance coarse-to-fine optimization.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Fine-grained rewards.</b> We design a differentiable VQA reward for attribute-level correctness and a SAM-guided localization reward that penalizes edits leaking outside the region of interest.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Theoretical grounding.</b> We prove the update corresponds to a valid discretization of a Langevin SDE targeting a prompt-tilted density, giving a sound foundation for stable convergence during reward-guided sampling.</li>
-        </ul>
+        <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">RewardFlow.</strong> We introduce a multi-reward-guided Langevin framework that combines semantic, perceptual, regional, object-level, and human-preference signals to enable controllable, inversion-free editing and generation.</li>
+<li>
+<strong class="studio-contribution-lead">Prompt-aware adaptive policy.</strong> Our lightweight policy parses semantic primitives from the instruction, infers edit intent, and dynamically adjusts reward weights and step sizes to balance coarse-to-fine optimization.</li>
+<li>
+<strong class="studio-contribution-lead">Fine-grained rewards.</strong> We design a differentiable VQA reward for attribute-level correctness and a SAM-guided localization reward that penalizes edits leaking outside the region of interest.</li>
+<li>
+<strong class="studio-contribution-lead">Theoretical grounding.</strong> We prove the update corresponds to a valid discretization of a Langevin SDE targeting a prompt-tilted density, giving a sound foundation for stable convergence during reward-guided sampling.</li>
+</ul>
       </div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Quantitative Results</h2>
-      <div style="display:grid; gap:1.5rem; justify-items:center;">
-        <div style="width:85%;">
-          <div class="media-card" data-loaded="false">
-            <img loading="lazy" decoding="async" src="./static/images/results.png" alt="RewardFlow results" style="height:100%;">
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">RewardFlow</span> Method</h2>
+<div class="content"><p>RewardFlow fuses complementary differentiable reward gradients into a multi-reward Langevin sampling update. A prompt-aware policy parses the instruction and adapts reward weights and step sizes throughout sampling. Fine-grained guidance includes a differentiable VQA reward and a SAM2 text-guided object reward to improve attribute correctness and localize edits. A clean-latent KL regularizer tethers sampling to the originating latent, controlling drift while the fused guidance steers generation or editing.</p></div>
+<figure class="studio-method-figure"><div class="media-card" data-loaded="true" style="width: 85%; margin: 0px auto; position: relative;">
+            <img loading="lazy" decoding="async" src="./static/images/attention_localization.png" alt="Source images paired with attention-localization maps for changing juice type, changing shoe color, creating a Ghibli-style portrait, and adding glasses." width="2200" height="1171">
             <div class="media-skeleton">Loading...</div>
           </div>
-          <p class="caption has-text-centered studio-results-intro" style="margin-top:0.5rem;">RewardFlow achieves high edit fidelity and compositional alignment across editing benchmarks.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+<figcaption>Source images and attention-localization maps for attribute changes, portrait stylization, and adding glasses.</figcaption></figure>
+</div></section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Qualitative Results</h2>
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<p class="caption has-text-centered studio-results-intro" style="margin-top:0.5rem;">RewardFlow achieves high edit fidelity and compositional alignment across editing benchmarks.</p>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/results.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">PIE-Bench image editing</h3>
+<p class="studio-result-description">Image editing quality, background preservation, prompt alignment, and sampling cost on PIE-Bench. Standard and four-step settings are reported separately.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="PIE-Bench image editing"><table class="studio-native-table">
+<caption class="studio-sr-only">PIE-Bench image editing</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Distance ↓ (×10³)</th>
+<th scope="col">PSNR ↑</th>
+<th scope="col">LPIPS ↓ (×10³)</th>
+<th scope="col">MSE ↓ (×10⁴)</th>
+<th scope="col">SSIM ↑ (×10²)</th>
+<th scope="col">Whole ↑</th>
+<th scope="col">Edited ↑</th>
+<th scope="col">NFE ↓</th>
+<th scope="col">Steps ↓</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="10" scope="rowgroup">Standard inference budgets</th></tr>
+<tr>
+<th scope="row">EF</th>
+<td class="studio-numeric-cell">8.39</td>
+<td class="studio-numeric-cell">27.49</td>
+<td class="studio-numeric-cell">44.38</td>
+<td class="studio-numeric-cell">29.79</td>
+<td class="studio-numeric-cell">85.61</td>
+<td class="studio-numeric-cell">25.87</td>
+<td class="studio-numeric-cell">22.14</td>
+<td class="studio-numeric-cell">70</td>
+<td class="studio-numeric-cell">50</td>
+</tr>
+<tr>
+<th scope="row">ProxG</th>
+<td class="studio-numeric-cell">8.39</td>
+<td class="studio-numeric-cell">28.45</td>
+<td class="studio-numeric-cell">38.27</td>
+<td class="studio-numeric-cell">25.63</td>
+<td class="studio-numeric-cell">85.87</td>
+<td class="studio-numeric-cell">25.04</td>
+<td class="studio-numeric-cell">21.64</td>
+<td class="studio-numeric-cell">100</td>
+<td class="studio-numeric-cell">50</td>
+</tr>
+<tr>
+<th scope="row">P2P</th>
+<td class="studio-numeric-cell">9.58</td>
+<td class="studio-numeric-cell">27.72</td>
+<td class="studio-numeric-cell">44.98</td>
+<td class="studio-numeric-cell">30.02</td>
+<td class="studio-numeric-cell">85.01</td>
+<td class="studio-numeric-cell">24.94</td>
+<td class="studio-numeric-cell">21.57</td>
+<td class="studio-numeric-cell">100</td>
+<td class="studio-numeric-cell">50</td>
+</tr>
+<tr>
+<th scope="row">DI</th>
+<td class="studio-numeric-cell">11.60</td>
+<td class="studio-numeric-cell">27.25</td>
+<td class="studio-numeric-cell">49.25</td>
+<td class="studio-numeric-cell">32.87</td>
+<td class="studio-numeric-cell">84.86</td>
+<td class="studio-numeric-cell">25.83</td>
+<td class="studio-numeric-cell">22.39</td>
+<td class="studio-numeric-cell">100</td>
+<td class="studio-numeric-cell">50</td>
+</tr>
+<tr>
+<th scope="row">AREdit</th>
+<td class="studio-numeric-cell">13.12</td>
+<td class="studio-numeric-cell">28.78</td>
+<td class="studio-numeric-cell">42.67</td>
+<td class="studio-numeric-cell">37.88</td>
+<td class="studio-numeric-cell">87.19</td>
+<td class="studio-numeric-cell">26.57</td>
+<td class="studio-numeric-cell">24.51</td>
+<td class="studio-numeric-cell">16</td>
+<td class="studio-numeric-cell">30</td>
+</tr>
+<tr>
+<th scope="row">InfEdit</th>
+<td class="studio-numeric-cell">13.87</td>
+<td class="studio-numeric-cell">28.63</td>
+<td class="studio-numeric-cell">39.80</td>
+<td class="studio-numeric-cell">33.19</td>
+<td class="studio-numeric-cell">86.28</td>
+<td class="studio-numeric-cell">25.84</td>
+<td class="studio-numeric-cell">22.44</td>
+<td class="studio-numeric-cell">12</td>
+<td class="studio-numeric-cell">12</td>
+</tr>
+<tr>
+<th scope="row">TurboEdit</th>
+<td class="studio-numeric-cell">15.11</td>
+<td class="studio-numeric-cell">26.04</td>
+<td class="studio-numeric-cell">69.54</td>
+<td class="studio-numeric-cell">55.12</td>
+<td class="studio-numeric-cell">84.27</td>
+<td class="studio-numeric-cell">26.09</td>
+<td class="studio-numeric-cell">23.35</td>
+<td class="studio-numeric-cell">24</td>
+<td class="studio-numeric-cell">12</td>
+</tr>
+<tr>
+<th scope="row">InstantEdit</th>
+<td class="studio-numeric-cell">12.57</td>
+<td class="studio-numeric-cell">29.63</td>
+<td class="studio-numeric-cell">35.27</td>
+<td class="studio-numeric-cell">24.57</td>
+<td class="studio-numeric-cell">87.40</td>
+<td class="studio-numeric-cell">26.06</td>
+<td class="studio-numeric-cell">22.73</td>
+<td class="studio-numeric-cell">24</td>
+<td class="studio-numeric-cell">12</td>
+</tr>
+<tr>
+<th scope="row">FlowEdit</th>
+<td class="studio-numeric-cell">11.56</td>
+<td class="studio-numeric-cell">28.33</td>
+<td class="studio-numeric-cell">43.57</td>
+<td class="studio-numeric-cell">37.48</td>
+<td class="studio-numeric-cell">86.23</td>
+<td class="studio-numeric-cell">26.43</td>
+<td class="studio-numeric-cell">23.03</td>
+<td class="studio-numeric-cell">33</td>
+<td class="studio-numeric-cell">30</td>
+</tr>
+<tr>
+<th scope="row">FlowChef</th>
+<td class="studio-numeric-cell">9.67</td>
+<td class="studio-numeric-cell">29.03</td>
+<td class="studio-numeric-cell">43.11</td>
+<td class="studio-numeric-cell">36.67</td>
+<td class="studio-numeric-cell">87.44</td>
+<td class="studio-numeric-cell">27.05</td>
+<td class="studio-numeric-cell">23.09</td>
+<td class="studio-numeric-cell">28</td>
+<td class="studio-numeric-cell">30</td>
+</tr>
+<tr>
+<th scope="row">KV-Edit</th>
+<td class="studio-numeric-cell">8.47</td>
+<td class="studio-numeric-cell">29.04</td>
+<td class="studio-numeric-cell">43.44</td>
+<td class="studio-numeric-cell">35.47</td>
+<td class="studio-numeric-cell">86.66</td>
+<td class="studio-numeric-cell">28.21</td>
+<td class="studio-numeric-cell">23.92</td>
+<td class="studio-numeric-cell">27</td>
+<td class="studio-numeric-cell">40</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Flux+RewardFlow</th>
+<td class="studio-numeric-cell">7.78</td>
+<td class="studio-numeric-cell">31.21</td>
+<td class="studio-numeric-cell">40.55</td>
+<td class="studio-numeric-cell">26.47</td>
+<td class="studio-numeric-cell">89.67</td>
+<td class="studio-numeric-cell">29.44</td>
+<td class="studio-numeric-cell">26.62</td>
+<td class="studio-numeric-cell">43</td>
+<td class="studio-numeric-cell">20</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">QwenImage+RewardFlow</th>
+<td class="studio-numeric-cell">7.64</td>
+<td class="studio-numeric-cell">32.09</td>
+<td class="studio-numeric-cell">38.47</td>
+<td class="studio-numeric-cell">23.57</td>
+<td class="studio-numeric-cell">90.21</td>
+<td class="studio-numeric-cell">29.78</td>
+<td class="studio-numeric-cell">27.57</td>
+<td class="studio-numeric-cell">54</td>
+<td class="studio-numeric-cell">25</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="10" scope="rowgroup">Four-step inference</th></tr>
+<tr>
+<th scope="row">InfEdit</th>
+<td class="studio-numeric-cell">16.19</td>
+<td class="studio-numeric-cell">26.75</td>
+<td class="studio-numeric-cell">50.79</td>
+<td class="studio-numeric-cell">42.33</td>
+<td class="studio-numeric-cell">84.71</td>
+<td class="studio-numeric-cell">25.68</td>
+<td class="studio-numeric-cell">22.27</td>
+<td class="studio-numeric-cell">4</td>
+<td class="studio-numeric-cell">4</td>
+</tr>
+<tr>
+<th scope="row">TurboEdit</th>
+<td class="studio-numeric-cell">18.57</td>
+<td class="studio-numeric-cell">24.59</td>
+<td class="studio-numeric-cell">77.53</td>
+<td class="studio-numeric-cell">58.48</td>
+<td class="studio-numeric-cell">82.64</td>
+<td class="studio-numeric-cell">25.70</td>
+<td class="studio-numeric-cell">22.30</td>
+<td class="studio-numeric-cell">4</td>
+<td class="studio-numeric-cell">4</td>
+</tr>
+<tr>
+<th scope="row">InstantEdit</th>
+<td class="studio-numeric-cell">17.14</td>
+<td class="studio-numeric-cell">27.96</td>
+<td class="studio-numeric-cell">44.39</td>
+<td class="studio-numeric-cell">34.94</td>
+<td class="studio-numeric-cell">86.44</td>
+<td class="studio-numeric-cell">26.28</td>
+<td class="studio-numeric-cell">22.82</td>
+<td class="studio-numeric-cell">8</td>
+<td class="studio-numeric-cell">4</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Flux+RewardFlow</th>
+<td class="studio-numeric-cell">13.44</td>
+<td class="studio-numeric-cell">29.57</td>
+<td class="studio-numeric-cell">40.03</td>
+<td class="studio-numeric-cell">29.66</td>
+<td class="studio-numeric-cell">88.13</td>
+<td class="studio-numeric-cell">27.31</td>
+<td class="studio-numeric-cell">24.69</td>
+<td class="studio-numeric-cell">6</td>
+<td class="studio-numeric-cell">4</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">QwenImage+RewardFlow</th>
+<td class="studio-numeric-cell">10.33</td>
+<td class="studio-numeric-cell">29.92</td>
+<td class="studio-numeric-cell">37.92</td>
+<td class="studio-numeric-cell">26.95</td>
+<td class="studio-numeric-cell">90.12</td>
+<td class="studio-numeric-cell">28.55</td>
+<td class="studio-numeric-cell">27.52</td>
+<td class="studio-numeric-cell">6</td>
+<td class="studio-numeric-cell">4</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="paper:2604.08536:table-2" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">T2I-CompBench compositional generation</h3>
+<p class="studio-result-description">Compositional accuracy across attribute binding, object relationships, and complex prompts. Each backbone is compared with ReNO and RewardFlow; higher scores are better.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="T2I-CompBench compositional generation"><table class="studio-native-table" data-rank-metrics="true">
+<caption class="studio-sr-only">T2I-CompBench compositional generation</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Color ↑</th>
+<th scope="col">Shape ↑</th>
+<th scope="col">Texture ↑</th>
+<th scope="col">Spatial ↑</th>
+<th scope="col">Non-spatial ↑</th>
+<th scope="col">Complex ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">SD v1.4</th>
+<td class="studio-numeric-cell">0.38</td>
+<td class="studio-numeric-cell">0.36</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">0.31</td>
+</tr>
+<tr>
+<th scope="row">SD v2.1</th>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">0.49</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">0.34</td>
+</tr>
+<tr>
+<th scope="row">SDXL</th>
+<td class="studio-numeric-cell">0.64</td>
+<td class="studio-numeric-cell">0.54</td>
+<td class="studio-numeric-cell">0.56</td>
+<td class="studio-numeric-cell">0.20</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">0.41</td>
+</tr>
+<tr>
+<th scope="row">PixArt-α</th>
+<td class="studio-numeric-cell">0.69</td>
+<td class="studio-numeric-cell">0.56</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.21</td>
+<td class="studio-numeric-cell">0.32</td>
+<td class="studio-numeric-cell">0.41</td>
+</tr>
+<tr>
+<th scope="row">DALL-E 2</th>
+<td class="studio-numeric-cell">0.57</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">0.64</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">0.37</td>
+</tr>
+<tr>
+<th scope="row">DALL-E 3</th>
+<td class="studio-numeric-cell">0.81</td>
+<td class="studio-numeric-cell">0.68</td>
+<td class="studio-numeric-cell">0.81</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">PixArt-α DMD</th>
+<td class="studio-numeric-cell">0.38</td>
+<td class="studio-numeric-cell">0.34</td>
+<td class="studio-numeric-cell">0.47</td>
+<td class="studio-numeric-cell">0.19</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">0.36</td>
+</tr>
+<tr>
+<th scope="row">PixArt-α DMD + ReNO</th>
+<td class="studio-numeric-cell">0.64</td>
+<td class="studio-numeric-cell">0.57</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">0.46</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PixArt-α DMD + RewardFlow</th>
+<td class="studio-numeric-cell">0.74</td>
+<td class="studio-numeric-cell">0.66</td>
+<td class="studio-numeric-cell">0.75</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">0.39</td>
+<td class="studio-numeric-cell">0.52</td>
+</tr>
+<tr>
+<th scope="row">Flux</th>
+<td class="studio-numeric-cell">0.75</td>
+<td class="studio-numeric-cell">0.61</td>
+<td class="studio-numeric-cell">0.69</td>
+<td class="studio-numeric-cell">0.26</td>
+<td class="studio-numeric-cell">0.33</td>
+<td class="studio-numeric-cell">0.47</td>
+</tr>
+<tr>
+<th scope="row">Flux + ReNO</th>
+<td class="studio-numeric-cell">0.81</td>
+<td class="studio-numeric-cell">0.64</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.29</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.49</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Flux + RewardFlow</th>
+<td class="studio-numeric-cell"><u class="studio-second">0.88</u></td>
+<td class="studio-numeric-cell">0.69</td>
+<td class="studio-numeric-cell">0.78</td>
+<td class="studio-numeric-cell">0.33</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">0.57</td>
+</tr>
+<tr>
+<th scope="row">Qwen Image</th>
+<td class="studio-numeric-cell">0.83</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.80</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.39</td>
+<td class="studio-numeric-cell">0.61</td>
+</tr>
+<tr>
+<th scope="row">Qwen Image + ReNO</th>
+<td class="studio-numeric-cell">0.84</td>
+<td class="studio-numeric-cell"><u class="studio-second">0.75</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">0.84</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">0.36</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">0.43</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">0.63</u></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Qwen Image + RewardFlow</th>
+<td class="studio-numeric-cell"><strong class="studio-best">0.91</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">0.83</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">0.90</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">0.39</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">0.51</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">0.78</strong></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
       <div class="content has-text-justified">
         RewardFlow keeps subject identity and layout while enabling localized style/text edits, delivering clean, compositional results without inversion.
       </div>
       <div style="display:flex; flex-direction:column; gap:1.5rem;">
         <div style="width:100%;">
           <div style="width:80%; margin:0 auto;">
-            <div class="media-card" data-loaded="false">
+            <div class="media-card" data-loaded="true" style="position: relative;">
               <img loading="lazy" decoding="async" src="./static/images/Generation_from_our_model.png" alt="RewardFlow generation showcase">
               <div class="media-skeleton">Loading...</div>
             </div>
@@ -647,8 +619,8 @@
         </div>
         <div style="width:100%;">
           <div style="width:80%; margin:0 auto;">
-            <div class="media-card" data-loaded="false">
-              <img loading="lazy" decoding="async" src="./static/images/More Visual results for editing.png" alt="More RewardFlow editing">
+            <div class="media-card" data-loaded="true" style="position: relative;">
+              <img loading="lazy" decoding="async" src="./static/images/More%20Visual%20results%20for%20editing.png" alt="More RewardFlow editing">
               <div class="media-skeleton">Loading...</div>
             </div>
             <p class="caption has-text-centered" style="margin-top:0.5rem;">Additional localized edits.</p>
@@ -656,7 +628,7 @@
         </div>
         <div style="width:100%;">
           <div style="width:80%; margin:0 auto;">
-            <div class="media-card" data-loaded="false">
+            <div class="media-card" data-loaded="false" style="position: relative;">
               <img loading="lazy" decoding="async" src="./static/images/image_generation_comparisom.png" alt="Image generation comparison">
               <div class="media-skeleton">Loading...</div>
             </div>
@@ -665,7 +637,7 @@
         </div>
         <div style="width:100%;">
           <div style="width:80%; margin:0 auto;">
-            <div class="media-card" data-loaded="false">
+            <div class="media-card" data-loaded="false" style="position: relative;">
               <img loading="lazy" decoding="async" src="./static/images/comparison_results.png" alt="Comparison results" style="height:100%;">
               <div class="media-skeleton">Loading...</div>
             </div>
@@ -674,11 +646,9 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
       <pre><code>@inproceedings{rewardflow2026,
   title={RewardFlow: Generate Images by Optimizing What You Reward},
   author={Susladkar, Onkar and Jang, Dong-Hwan and Prakash, Tushar and Juvekar, Adheesh and Shah, Vedant and Barik, Ayush and Bashir, Nabeel and Wahed, Muntasir and Shrirao, Ritish and Lourentzou, Ismini},
@@ -686,8 +656,16 @@
   year={2026}
 }</code></pre>
     </div>
-  </section>
-    </main>
+  </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const markLoaded = (media) => {
@@ -705,5 +683,7 @@
       });
     });
   </script>
-  </body>
+
+
+</body>
 </html>

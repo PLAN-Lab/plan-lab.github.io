@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,333 +10,29 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models">
     <title>EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "EC-VLM",
-    "openingCaption": "Left: a speaker describes a target image with learned EC tokens, and a listener selects that image among distractors. Center: image–message pairs pretrain a vision-language model. Right: visual grounding transfers to entailment, captioning, referring expressions, and question answering.",
-    "tldr": [
-      "We introduce EC-VLM, a framework that uses communication between artificial agents to pretrain vision-language models. Messages learned in an image-based speaker–listener game provide visual supervision that transfers to tasks such as captioning, question answering, and referring-expression understanding."
-    ],
-    "method": {
-      "teaser": true
-    },
-    "quantitative": {
-      "source": "Quantitative Results on the Visual Entailment Task",
-      "additionalSources": [
-        "Instruction Following LVLM Tasks",
-        "Results on MMBench"
-      ]
-    },
-    "contributions": [
-      "Novel Pretraining Framework. We introduce a vision-language pretraining framework that employs Emergent Communication (EC) between agents to generate supervision signals for pretraining. We demonstrate that EC pretraining transfers effectively to diverse downstream multimodal tasks.",
-      "New Understanding of EC Structure. We empirically show that EC tokens encode structured and compositional semantics that generalize across tasks and modalities, positioning EC as a scalable, annotation-free alternative to natural language supervision in multimodal learning.",
-      "Theoretical and Empirical Insights. We provide insights into the structure and transferability of emergent language for vision-language pretraining and outline future research opportunities at the intersection of EC, multimodal representation learning, and human-machine communication."
-    ],
-    "contributionLeads": [
-      "Novel Pretraining Framework.",
-      "New Understanding of EC Structure.",
-      "Theoretical and Empirical Insights."
-    ]
-  },
-  "resultPanels": {
-    "SNLI-VE accuracy across training-set sizes": {
-      "description": "Visual entailment accuracy with and without emergent-communication pretraining across training-set sizes."
-    },
-    "Instruction-following evaluation": {
-      "description": "Multimodal instruction-following results, with model size and training data reported alongside benchmark scores."
-    },
-    "MMBench evaluation": {
-      "description": "Multimodal understanding on MMBench, comparing standard pretraining with emergent-communication pretraining."
-    }
-  },
-  "results": {
-    "instruc-following.png": {
-      "type": "table",
-      "title": "Instruction-following evaluation",
-      "columns": [
-        "Method",
-        "LLM",
-        "Image size",
-        "Pretrain",
-        "Finetune",
-        "VQAv2",
-        "GQA",
-        "VizWiz",
-        "SciQA IMG",
-        "TextVQA"
-      ],
-      "rows": [
-        [
-          "BLIP-2",
-          "Vicuna-13B",
-          "224²",
-          "129M",
-          "—",
-          "65.0",
-          "41",
-          "19.6",
-          "61",
-          "42.5"
-        ],
-        [
-          "InstructBLIP",
-          "Vicuna-7B",
-          "224²",
-          "129M",
-          "1.2M",
-          "—",
-          "49.2",
-          "34.5",
-          "60.5",
-          "50.1"
-        ],
-        [
-          "InstructBLIP",
-          "Vicuna-13B",
-          "224²",
-          "129M",
-          "1.2M",
-          "—",
-          "49.5",
-          "33.4",
-          "63.1",
-          "50.7"
-        ],
-        [
-          "Shikra",
-          "Vicuna-13B",
-          "224²",
-          "600K",
-          "5.5M",
-          "77.4",
-          "—",
-          "—",
-          "—",
-          "—"
-        ],
-        [
-          "IDEFICS-9B",
-          "LLaMA-7B",
-          "224²",
-          "353M",
-          "1M",
-          "50.9",
-          "38.4",
-          "35.5",
-          "—",
-          "25.9"
-        ],
-        [
-          "IDEFICS-80B",
-          "LLaMA-65B",
-          "224²",
-          "353M",
-          "1M",
-          "60.0",
-          "45.2",
-          "36.0",
-          "—",
-          "30.9"
-        ],
-        [
-          "Qwen-VL",
-          "Qwen-7B",
-          "448²",
-          "1.4B",
-          "50M",
-          "78.8",
-          "59.3",
-          "35.2",
-          "67.1",
-          "63.8"
-        ],
-        [
-          "Qwen-VL-Chat",
-          "Qwen-7B",
-          "448²",
-          "1.4B",
-          "50M",
-          "78.2",
-          "57.5",
-          "38.9",
-          "68.2",
-          "61.5"
-        ],
-        [
-          "LLaVA-1.5",
-          "Vicuna-7B",
-          "336²",
-          "558K",
-          "665K",
-          "78.5",
-          "62.0",
-          "50.0",
-          "66.8",
-          "58.2"
-        ],
-        [
-          "LLaVA-1.5-EC",
-          "Vicuna-7B",
-          "336²",
-          "558K",
-          "665K",
-          "72.03",
-          "55.27",
-          "40.03",
-          "64.45",
-          "48.61"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/instruc-following.png"
-    },
-    "snlive result.png": {
-      "type": "line",
-      "title": "SNLI-VE accuracy across training-set sizes",
-      "source": "static/images/snlive result.png",
-      "categories": [
-        "10K",
-        "50K",
-        "Full"
-      ],
-      "xLabel": "Training-set size",
-      "metrics": [
-        {
-          "label": "Validation accuracy (%)",
-          "min": 40,
-          "max": 95,
-          "series": [
-            {
-              "name": "Base",
-              "values": [
-                50.85,
-                50.46,
-                50.3
-              ]
-            },
-            {
-              "name": "+ EC",
-              "color": "#ff915b",
-              "values": [
-                57.3,
-                70.8,
-                85.3
-              ]
-            },
-            {
-              "name": "+ NL",
-              "values": [
-                81.3,
-                84.9,
-                89.05
-              ]
-            }
-          ]
-        },
-        {
-          "label": "Test accuracy (%)",
-          "min": 40,
-          "max": 95,
-          "series": [
-            {
-              "name": "Base",
-              "values": [
-                48.0,
-                48.5,
-                49.94
-              ]
-            },
-            {
-              "name": "+ EC",
-              "color": "#ff915b",
-              "values": [
-                57.3,
-                70.3,
-                85.01
-              ]
-            },
-            {
-              "name": "+ NL",
-              "values": [
-                80.3,
-                84.2,
-                88.95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "mmbench.png": {
-      "type": "bars",
-      "title": "MMBench evaluation",
-      "source": "static/images/mmbench.png",
-      "categories": [
-        "InstructBLIP-8B",
-        "Qwen-VL",
-        "IDEFICS-9B",
-        "IDEFICS-80B",
-        "Qwen-VL-Chat",
-        "LLaVA-7B",
-        "LLaVA-1.5-CLIP-7B",
-        "LLaVA-1.5-7B",
-        "LLaVA-1.5-EC-7B"
-      ],
-      "yLabel": "Accuracy (%) ↑",
-      "max": 80,
-      "series": [
-        {
-          "name": "MMBench (EN)",
-          "values": [
-            36,
-            38.2,
-            48.2,
-            54.5,
-            60.6,
-            38.7,
-            50.56,
-            64.3,
-            67.3
-          ]
-        },
-        {
-          "name": "MMBench (CN)",
-          "values": [
-            23.7,
-            7.4,
-            25.2,
-            38.1,
-            56.7,
-            36.4,
-            48.49,
-            58.3,
-            64.01
-          ]
-        }
-      ]
-    }
-  }
-}
-  </script>
+  <body class="page-project project-studio studio-ec-vlm" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -371,86 +67,86 @@
 
     <main>
 <!-- {% include navbar.html %} -->
-  <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><span class="model-name">EC-VLM</span>: Emergent Corpus Pre-training Benefits Vision Language Models</h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=makanjuola-ogunleye">Makanjuola Ogunleye</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=chase-vickery">Chase Vickery</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+            <h1 class="title is-2 publication-title">
+<span class="studio-name">EC-VLM</span><span class="studio-subtitle">Emergent Corpus Pre-training Benefits Vision Language Models</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=makanjuola-ogunleye">Makanjuola Ogunleye</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="../../member.html?id=chase-vickery">Chase Vickery</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div></div>
 
-            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
+            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span>
+</div>
+<p class="publication-venue">TMLR 2025</p>
 
-            <div class="has-text-centered" style="margin: 5px 0;">
-              <h1 class="title is-3 publication-venue illini-orange">TMLR 2025</h1>
-            </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a></div>
 
-            </div>
+            <div class="publication-links"><a href="https://openreview.net/pdf?id=bivKGSaXkD" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span> We present <span class="model-name">EC-VLM</span>, a pretraining 
-          strategy using emergent communication tokens from artificial agents—as a way to 
-          boost sample efficiency in vision-language models. Our method, tested on multiple reasoning tasks, 
-          achieves major gains in low-resource settings and outperforms strong baselines like <span class="model-name">BLIP-2</span>.
-          We release <span class="model-name">LLaVA-1.5-EC</span>, a fully EC-trained variant of <span class="model-name">LLaVA</span>, 
-          which sets new state-of-the-art results on several benchmarks. 
-        </div>
-        <img src="./static/images/overview_paper.png" class="interpolation-image" alt="Interpolate start reference image." style="width: 80%; height: auto; display: block; margin: 0 auto;">
-        <div class="content has-text-justified">
-          <span style="font-weight: bold;">Overview of our EC Pretraining Framework.</span> A speaker-listener pair engages in a referential game, 
-          where the speaker generates an Emergent Communication (EC) message to describe a target image, and 
-          the listener must identify the correct image among distractors. The resulting EC tokens serve as 
-          pretraining supervision for a Vision-Language Model (VLM). This EC-pretrained VLM is then fine-tuned 
-          on a range of downstream vision-language tasks, including Visual Entailment, Visual Referring Expression, 
-          Image Captioning, and Visual Question Answering. The framework enables transferable visual 
-          grounding from synthetic EC messages to natural language tasks.
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce EC-VLM, a framework that uses communication between artificial agents to pretrain vision-language models. Messages learned in an image-based speaker–listener game provide visual supervision that transfers to tasks such as captioning, question answering, and <span class="studio-tldr-tail">referring-expression understanding.</span></p></div>
+</div></section><section class="studio-feature ecvlm-feature studio-figure-opening" aria-labelledby="ecvlm-feature-title" data-studio-section="examples"><figure class="ecvlm-figure"><img src="./static/images/overview_paper.png" class="interpolation-image" alt="A speaker generates image-grounded EC messages; a listener identifies the target image. These messages pretrain a VLM for downstream vision-language tasks." loading="eager" width="2094" height="962"><figcaption class="studio-opening-caption"><h2 id="ecvlm-feature-title" class="studio-opening-label">Emergent communication for vision-language pretraining</h2>
+<p>Left: a speaker describes a target image with learned EC tokens, and a listener selects that image among distractors. Center: image–message pairs pretrain a vision-language model. Right: visual grounding transfers to entailment, captioning, referring expressions, and question answering.</p></figcaption></figure></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">EC-VLM Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#studio-poster" data-section="poster">Poster</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Vision-Language Pre-trained Models (VL-PTMs) have achieved impressive performance across a 
-              wide range of tasks, but their success often hinges on access to large-scale multimodal 
-              datasets. While effective in high-resource settings, these models tend to struggle in 
+              Vision-Language Pre-trained Models (VL-PTMs) have achieved impressive performance across a
+              wide range of tasks, but their success often hinges on access to large-scale multimodal
+              datasets. While effective in high-resource settings, these models tend to struggle in
               data-scarce regimes. In this work, we investigate Emergent Communication (EC) as a mechanism
-               to improve sample efficiency in VL-PTMs. We pre-train a Vision-Language Model (VLM) using 
-               EC tokens generated through a referential game between two artificial agents. 
-               Across three diverse cross-modal matching and reasoning benchmarks, EC pretraining yields 
+               to improve sample efficiency in VL-PTMs. We pre-train a Vision-Language Model (VLM) using
+               EC tokens generated through a referential game between two artificial agents.
+               Across three diverse cross-modal matching and reasoning benchmarks, EC pretraining yields
                substantial gains, improving Visual Referring Expression (VRE) accuracy by 108.6% and
                Visual Entailment (VE) by 69.6%.
               </p>
-               
+
               <p>
-               To further validate the effectiveness of EC pretraining, we introduce LLaVA-1.5-EC, 
-               a LLaVA variant trained entirely on EC tokens. LLaVA-1.5-EC outperforms strong 
+               To further validate the effectiveness of EC pretraining, we introduce LLaVA-1.5-EC,
+               a LLaVA variant trained entirely on EC tokens. LLaVA-1.5-EC outperforms strong
                LVLM baselines, including BLIP-2 (13B), achieving relative gains of 104.23% on VizWiz,
                34.8% on GQA, and 10.8% on VQAv2, and top performance on MMBench, a challenging instruction-following
-               benchmark. 
+               benchmark.
               </p>
-               
+
               <p>
-               These results highlight the transferability and generalization capacity of EC pretraining 
-               and underscore the potential of leveraging grounded EC tokens to enhance vision-language 
-               reasoning in low-resource settings, especially in settings with limited natural language data. 
-               We discuss implications and propose avenues for future research to explore the connections between 
+               These results highlight the transferability and generalization capacity of EC pretraining
+               and underscore the potential of leveraging grounded EC tokens to enhance vision-language
+               reasoning in low-resource settings, especially in settings with limited natural language data.
+               We discuss implications and propose avenues for future research to explore the connections between
                EC and VL for multimodal understanding and effective human-machine communication.
               </p>
           </div>
@@ -470,180 +166,294 @@
     / Paper video.
   -->
 
-  <div class="columns is-centered has-text-centered">
-    <div class="container">
-      <h2 class="title is-3">Poster</h2>
-      <iframe loading="lazy" src="about:blank" data-pdf-src="static/images/ecvlm-poster.pdf" width="100%" height="550"></iframe>
-      </div>
-    </div>
+
   </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Contributions</h2>
+          <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
           <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Novel Pretraining Framework</b>. We introduce a vision-language 
-                pretraining framework that employs Emergent Communication (EC) between agents to 
-                generate supervision signals for pretraining. We demonstrate that EC pretraining
-                transfers effectively to diverse downstream multimodal tasks. </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>New Understanding of EC Structure</b>. 
-                We empirically show that EC tokens encode structured and compositional semantics that generalize
-                across tasks and modalities, positioning EC as a scalable, annotation-free alternative to natural
-                language supervision in multimodal learning.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star"></i></span><b>Theoretical and Empirical Insights.</b> We provide 
-                insights into the structure and transferability of emergent language for vision-language
-                pretraining and outline future research opportunities at the intersection of EC, multimodal repre-
-                sentation learning, and human-machine communication.</li>
-              
-          </ul></div>
+            <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Novel Pretraining Framework.</strong> We introduce a vision-language pretraining framework that employs Emergent Communication (EC) between agents to generate supervision signals for pretraining. We demonstrate that EC pretraining transfers effectively to diverse downstream multimodal tasks.</li>
+<li>
+<strong class="studio-contribution-lead">New Understanding of EC Structure.</strong> We empirically show that EC tokens encode structured and compositional semantics that generalize across tasks and modalities, positioning EC as a scalable, annotation-free alternative to natural language supervision in multimodal learning.</li>
+<li>
+<strong class="studio-contribution-lead">Theoretical and Empirical Insights.</strong> We provide insights into the structure and transferability of emergent language for vision-language pretraining and outline future research opportunities at the intersection of EC, multimodal representation learning, and human-machine communication.</li>
+</ul>
+</div>
         </div>
       </div>
     </div>
-  </section>
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
+    <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">EC-VLM</span> Method</h2>
+<div class="content">
+<p>
+          <span style="font-weight: bold;">Overview of our EC Pretraining Framework.</span> A speaker-listener pair engages in a referential game,
+          where the speaker generates an Emergent Communication (EC) message to describe a target image, and
+          the listener must identify the correct image among distractors. The resulting EC tokens serve as
+          pretraining supervision for a Vision-Language Model (VLM). This EC-pretrained VLM is then fine-tuned
+          on a range of downstream vision-language tasks, including Visual Entailment, Visual Referring Expression,
+          Image Captioning, and Visual Question Answering. The framework enables transferable visual
+          grounding from synthetic EC messages to natural language tasks.
+        </p>
+<ol class="ecvlm-method-flow" aria-label="EC-VLM pretraining and transfer stages">
+<li>
+<h3>Referential game</h3>
+<p>The speaker describes a target image through EC tokens. The listener uses the message to choose that image among distractors.</p>
+</li>
+<li>
+<h3>EC pretraining</h3>
+<p>Image–message pairs provide visually grounded supervision for a vision-language model, without human-written pretraining captions.</p>
+</li>
+<li>
+<h3>Downstream transfer</h3>
+<p>The pretrained model is fine-tuned for natural-language tasks, including entailment, referring expressions, captioning, and visual question answering.</p>
+</li>
+</ol>
+</div>
+</div>
+  </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+    <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/snlive result.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">SNLI-VE accuracy across training-set sizes</h3>
+<p class="studio-result-description">Visual entailment accuracy with and without emergent-communication pretraining across training-set sizes.</p>
+<div class="ecvlm-result-explanation"><p>EC pretraining improves both validation and test accuracy at every training size. With the full training set, EC pretraining reaches 85.3% validation accuracy and 85.01% test accuracy, versus 50.3% and 49.94% for the baseline. The gap to natural-language pretraining narrows as the training set grows.</p></div>
+<div class="studio-result-controls"><label>Metric <select aria-label="SNLI-VE accuracy across training-set sizes metric" data-chart-target="project-chart-0"><option value="0" selected>Validation accuracy (%)</option>
+<option value="1">Test accuracy (%)</option></select></label></div>
+<div id="project-chart-0">
+<div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>Base</span><span><i style="--series-color: #ff915b;"></i>+ EC</span><span><i style="--series-color: #507ca7;"></i>+ NL</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="SNLI-VE accuracy across training-set sizes"><svg viewbox="0 0 850 410" role="img" aria-label="SNLI-VE accuracy across training-set sizes: Validation accuracy (%)"><line x1="72" x2="818" y1="340" y2="340" class="studio-grid"></line><text x="60" y="344" text-anchor="end">40</text><line x1="72" x2="818" y1="261.25" y2="261.25" class="studio-grid"></line><text x="60" y="265.25" text-anchor="end">53.75</text><line x1="72" x2="818" y1="182.5" y2="182.5" class="studio-grid"></line><text x="60" y="186.5" text-anchor="end">67.5</text><line x1="72" x2="818" y1="103.75" y2="103.75" class="studio-grid"></line><text x="60" y="107.75" text-anchor="end">81.25</text><line x1="72" x2="818" y1="25" y2="25" class="studio-grid"></line><text x="60" y="29" text-anchor="end">95</text><text x="72" y="364" text-anchor="middle">10K</text><text x="445" y="364" text-anchor="middle">50K</text><text x="818" y="364" text-anchor="middle">Full</text><line x1="72" x2="818" y1="340" y2="340" class="studio-axis"></line><text x="445" y="395" text-anchor="middle">Training-set size</text><text x="18" y="182.5" transform="rotate(-90 18 182.5)" text-anchor="middle">Validation accuracy (%)</text><path d="M72,277.8590909090909 L445,280.09272727272725 L818,281.0090909090909" fill="none" stroke="#83afd9" stroke-width="2.5" stroke-dasharray="6 4"></path><circle cx="72" cy="277.8590909090909" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 10K, 50.85</title></circle><circle cx="445" cy="280.09272727272725" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 50K, 50.46</title></circle><circle cx="818" cy="281.0090909090909" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: Full, 50.3</title></circle><path d="M72,240.91818181818184 L445,163.60000000000002 L818,80.55454545454546" fill="none" stroke="#ff915b" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="240.91818181818184" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 10K, 57.3</title></circle><circle cx="445" cy="163.60000000000002" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 50K, 70.8</title></circle><circle cx="818" cy="80.55454545454546" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: Full, 85.3</title></circle><path d="M72,103.46363636363637 L445,82.84545454545452 L818,59.07727272727277" fill="none" stroke="#507ca7" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="103.46363636363637" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 10K, 81.3</title></circle><circle cx="445" cy="82.84545454545452" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 50K, 84.9</title></circle><circle cx="818" cy="59.07727272727277" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: Full, 89.05</title></circle></svg></div>
+</div>
+<template data-chart-option="0" data-chart-target="project-chart-0"><div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>Base</span><span><i style="--series-color: #ff915b;"></i>+ EC</span><span><i style="--series-color: #507ca7;"></i>+ NL</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="SNLI-VE accuracy across training-set sizes"><svg viewbox="0 0 850 410" role="img" aria-label="SNLI-VE accuracy across training-set sizes: Validation accuracy (%)"><line x1="72" x2="818" y1="340" y2="340" class="studio-grid"></line><text x="60" y="344" text-anchor="end">40</text><line x1="72" x2="818" y1="261.25" y2="261.25" class="studio-grid"></line><text x="60" y="265.25" text-anchor="end">53.75</text><line x1="72" x2="818" y1="182.5" y2="182.5" class="studio-grid"></line><text x="60" y="186.5" text-anchor="end">67.5</text><line x1="72" x2="818" y1="103.75" y2="103.75" class="studio-grid"></line><text x="60" y="107.75" text-anchor="end">81.25</text><line x1="72" x2="818" y1="25" y2="25" class="studio-grid"></line><text x="60" y="29" text-anchor="end">95</text><text x="72" y="364" text-anchor="middle">10K</text><text x="445" y="364" text-anchor="middle">50K</text><text x="818" y="364" text-anchor="middle">Full</text><line x1="72" x2="818" y1="340" y2="340" class="studio-axis"></line><text x="445" y="395" text-anchor="middle">Training-set size</text><text x="18" y="182.5" transform="rotate(-90 18 182.5)" text-anchor="middle">Validation accuracy (%)</text><path d="M72,277.8590909090909 L445,280.09272727272725 L818,281.0090909090909" fill="none" stroke="#83afd9" stroke-width="2.5" stroke-dasharray="6 4"></path><circle cx="72" cy="277.8590909090909" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 10K, 50.85</title></circle><circle cx="445" cy="280.09272727272725" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 50K, 50.46</title></circle><circle cx="818" cy="281.0090909090909" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: Full, 50.3</title></circle><path d="M72,240.91818181818184 L445,163.60000000000002 L818,80.55454545454546" fill="none" stroke="#ff915b" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="240.91818181818184" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 10K, 57.3</title></circle><circle cx="445" cy="163.60000000000002" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 50K, 70.8</title></circle><circle cx="818" cy="80.55454545454546" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: Full, 85.3</title></circle><path d="M72,103.46363636363637 L445,82.84545454545452 L818,59.07727272727277" fill="none" stroke="#507ca7" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="103.46363636363637" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 10K, 81.3</title></circle><circle cx="445" cy="82.84545454545452" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 50K, 84.9</title></circle><circle cx="818" cy="59.07727272727277" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: Full, 89.05</title></circle></svg></div></template><template data-chart-option="1" data-chart-target="project-chart-0"><div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>Base</span><span><i style="--series-color: #ff915b;"></i>+ EC</span><span><i style="--series-color: #507ca7;"></i>+ NL</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="SNLI-VE accuracy across training-set sizes"><svg viewbox="0 0 850 410" role="img" aria-label="SNLI-VE accuracy across training-set sizes: Test accuracy (%)"><line x1="72" x2="818" y1="340" y2="340" class="studio-grid"></line><text x="60" y="344" text-anchor="end">40</text><line x1="72" x2="818" y1="261.25" y2="261.25" class="studio-grid"></line><text x="60" y="265.25" text-anchor="end">53.75</text><line x1="72" x2="818" y1="182.5" y2="182.5" class="studio-grid"></line><text x="60" y="186.5" text-anchor="end">67.5</text><line x1="72" x2="818" y1="103.75" y2="103.75" class="studio-grid"></line><text x="60" y="107.75" text-anchor="end">81.25</text><line x1="72" x2="818" y1="25" y2="25" class="studio-grid"></line><text x="60" y="29" text-anchor="end">95</text><text x="72" y="364" text-anchor="middle">10K</text><text x="445" y="364" text-anchor="middle">50K</text><text x="818" y="364" text-anchor="middle">Full</text><line x1="72" x2="818" y1="340" y2="340" class="studio-axis"></line><text x="445" y="395" text-anchor="middle">Training-set size</text><text x="18" y="182.5" transform="rotate(-90 18 182.5)" text-anchor="middle">Test accuracy (%)</text><path d="M72,294.1818181818182 L445,291.3181818181818 L818,283.0709090909091" fill="none" stroke="#83afd9" stroke-width="2.5" stroke-dasharray="6 4"></path><circle cx="72" cy="294.1818181818182" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 10K, 48</title></circle><circle cx="445" cy="291.3181818181818" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: 50K, 48.5</title></circle><circle cx="818" cy="283.0709090909091" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Base: Full, 49.94</title></circle><path d="M72,240.91818181818184 L445,166.46363636363637 L818,82.21545454545452" fill="none" stroke="#ff915b" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="240.91818181818184" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 10K, 57.3</title></circle><circle cx="445" cy="166.46363636363637" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: 50K, 70.3</title></circle><circle cx="818" cy="82.21545454545452" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>+ EC: Full, 85.01</title></circle><path d="M72,109.19090909090912 L445,86.85454545454544 L818,59.64999999999998" fill="none" stroke="#507ca7" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="109.19090909090912" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 10K, 80.3</title></circle><circle cx="445" cy="86.85454545454544" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: 50K, 84.2</title></circle><circle cx="818" cy="59.64999999999998" r="4" fill="#507ca7" opacity="0.9" tabindex="0"><title>+ NL: Full, 88.95</title></circle></svg></div></template></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/instruc-following.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Instruction-following evaluation</h3>
+<p class="studio-result-description">Multimodal instruction-following results, with model size and training data reported alongside benchmark scores.</p>
+<div class="ecvlm-result-explanation">
+<p>LLaVA-1.5-EC uses 558K images for EC pretraining and 665K fine-tuning examples. Relative to BLIP-2 (13B), the reported gains are 104.23% on VizWiz, 34.8% on GQA, and 10.8% on VQAv2.</p>
+<p>LLaVA-1.5-EC exceeds InstructBLIP (13B) on GQA, VizWiz, and SciQA-IMG, and Qwen-VL on VizWiz (40.03 vs. 35.2), despite Qwen-VL’s much larger pretraining corpus. InstructBLIP retains a higher TextVQA score. Standard LLaVA-1.5 remains stronger on these five instruction-following tasks.</p>
+<p class="ecvlm-ranking-caption">Best scores are <strong>bold</strong>; second-best scores are <u>underlined</u>.</p>
+</div>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Instruction-following evaluation"><table class="studio-native-table">
+<caption class="studio-sr-only">Instruction-following evaluation</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">LLM</th>
+<th scope="col">Image size</th>
+<th scope="col">Pretrain</th>
+<th scope="col">Finetune</th>
+<th scope="col">VQAv2</th>
+<th scope="col">GQA</th>
+<th scope="col">VizWiz</th>
+<th scope="col">SciQA IMG</th>
+<th scope="col">TextVQA</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">BLIP-2</th>
+<td>Vicuna-13B</td>
+<td>224²</td>
+<td>129M</td>
+<td>—</td>
+<td class="studio-numeric-cell">65.0</td>
+<td class="studio-numeric-cell">41</td>
+<td class="studio-numeric-cell">19.6</td>
+<td class="studio-numeric-cell">61</td>
+<td class="studio-numeric-cell">42.5</td>
+</tr>
+<tr>
+<th scope="row">InstructBLIP</th>
+<td>Vicuna-7B</td>
+<td>224²</td>
+<td>129M</td>
+<td>1.2M</td>
+<td>—</td>
+<td class="studio-numeric-cell">49.2</td>
+<td class="studio-numeric-cell">34.5</td>
+<td class="studio-numeric-cell">60.5</td>
+<td class="studio-numeric-cell">50.1</td>
+</tr>
+<tr>
+<th scope="row">InstructBLIP</th>
+<td>Vicuna-13B</td>
+<td>224²</td>
+<td>129M</td>
+<td>1.2M</td>
+<td>—</td>
+<td class="studio-numeric-cell">49.5</td>
+<td class="studio-numeric-cell">33.4</td>
+<td class="studio-numeric-cell">63.1</td>
+<td class="studio-numeric-cell">50.7</td>
+</tr>
+<tr>
+<th scope="row">Shikra</th>
+<td>Vicuna-13B</td>
+<td>224²</td>
+<td>600K</td>
+<td>5.5M</td>
+<td class="studio-numeric-cell">77.4</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">IDEFICS-9B</th>
+<td>LLaMA-7B</td>
+<td>224²</td>
+<td>353M</td>
+<td>1M</td>
+<td class="studio-numeric-cell">50.9</td>
+<td class="studio-numeric-cell">38.4</td>
+<td class="studio-numeric-cell">35.5</td>
+<td>—</td>
+<td class="studio-numeric-cell">25.9</td>
+</tr>
+<tr>
+<th scope="row">IDEFICS-80B</th>
+<td>LLaMA-65B</td>
+<td>224²</td>
+<td>353M</td>
+<td>1M</td>
+<td class="studio-numeric-cell">60.0</td>
+<td class="studio-numeric-cell">45.2</td>
+<td class="studio-numeric-cell">36.0</td>
+<td>—</td>
+<td class="studio-numeric-cell">30.9</td>
+</tr>
+<tr>
+<th scope="row">Qwen-VL</th>
+<td>Qwen-7B</td>
+<td>448²</td>
+<td>1.4B</td>
+<td>50M</td>
+<td class="studio-numeric-cell"><strong class="ecvlm-best">78.8</strong></td>
+<td class="studio-numeric-cell"><u class="ecvlm-second">59.3</u></td>
+<td class="studio-numeric-cell">35.2</td>
+<td class="studio-numeric-cell"><u class="ecvlm-second">67.1</u></td>
+<td class="studio-numeric-cell"><strong class="ecvlm-best">63.8</strong></td>
+</tr>
+<tr>
+<th scope="row">Qwen-VL-Chat</th>
+<td>Qwen-7B</td>
+<td>448²</td>
+<td>1.4B</td>
+<td>50M</td>
+<td class="studio-numeric-cell">78.2</td>
+<td class="studio-numeric-cell">57.5</td>
+<td class="studio-numeric-cell">38.9</td>
+<td class="studio-numeric-cell"><strong class="ecvlm-best">68.2</strong></td>
+<td class="studio-numeric-cell"><u class="ecvlm-second">61.5</u></td>
+</tr>
+<tr>
+<th scope="row">LLaVA-1.5</th>
+<td>Vicuna-7B</td>
+<td>336²</td>
+<td>558K</td>
+<td>665K</td>
+<td class="studio-numeric-cell"><u class="ecvlm-second">78.5</u></td>
+<td class="studio-numeric-cell"><strong class="ecvlm-best">62.0</strong></td>
+<td class="studio-numeric-cell"><strong class="ecvlm-best">50.0</strong></td>
+<td class="studio-numeric-cell">66.8</td>
+<td class="studio-numeric-cell">58.2</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">LLaVA-1.5-EC</th>
+<td>Vicuna-7B</td>
+<td>336²</td>
+<td>558K</td>
+<td>665K</td>
+<td class="studio-numeric-cell">72.03</td>
+<td class="studio-numeric-cell">55.27</td>
+<td class="studio-numeric-cell"><u class="ecvlm-second">40.03</u></td>
+<td class="studio-numeric-cell">64.45</td>
+<td class="studio-numeric-cell">48.61</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/mmbench.png" aria-labelledby="studio-result-2"><h3 class="studio-result-title" id="studio-result-2">MMBench evaluation</h3>
+<p class="studio-result-description">Multimodal understanding on MMBench, comparing standard pretraining with emergent-communication pretraining.</p>
+<div class="ecvlm-result-explanation"><p>LLaVA-1.5-EC leads the listed models with 67.3% on MMBench English and 64.01% on MMBench Chinese. Compared with standard LLaVA-1.5, these are gains of 3.0 and 5.71 percentage points, respectively. Orange bars mark LLaVA-1.5-EC.</p></div>
+<div>
+<div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>MMBench (EN)</span><span><i style="--series-color: #b2c9e1;"></i>MMBench (CN)</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="MMBench evaluation"><svg viewbox="0 0 850 682" role="img" aria-label="MMBench evaluation: Accuracy (%) ↑"><line x1="220" x2="220" y1="25" y2="647" class="studio-grid"></line><text x="220" y="670" text-anchor="middle">0</text><line x1="356.25" x2="356.25" y1="25" y2="647" class="studio-grid"></line><text x="356.25" y="670" text-anchor="middle">20</text><line x1="492.5" x2="492.5" y1="25" y2="647" class="studio-grid"></line><text x="492.5" y="670" text-anchor="middle">40</text><line x1="628.75" x2="628.75" y1="25" y2="647" class="studio-grid"></line><text x="628.75" y="670" text-anchor="middle">60</text><line x1="765" x2="765" y1="25" y2="647" class="studio-grid"></line><text x="765" y="670" text-anchor="middle">80</text><text x="206" y="47" text-anchor="end">InstructBLIP-8B</text><rect x="220" y="35" width="245.25" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>InstructBLIP-8B · MMBench (EN): 36</title></rect><text x="473.25" y="47">36</text><rect x="220" y="58" width="161.45625" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>InstructBLIP-8B · MMBench (CN): 23.7</title></rect><text x="389.45625" y="70">23.7</text><text x="206" y="115" text-anchor="end">Qwen-VL</text><rect x="220" y="103" width="260.2375" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>Qwen-VL · MMBench (EN): 38.2</title></rect><text x="488.2375" y="115">38.2</text><rect x="220" y="126" width="50.4125" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>Qwen-VL · MMBench (CN): 7.4</title></rect><text x="278.4125" y="138">7.4</text><text x="206" y="183" text-anchor="end">IDEFICS-9B</text><rect x="220" y="171" width="328.3625" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>IDEFICS-9B · MMBench (EN): 48.2</title></rect><text x="556.3625" y="183">48.2</text><rect x="220" y="194" width="171.675" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>IDEFICS-9B · MMBench (CN): 25.2</title></rect><text x="399.675" y="206">25.2</text><text x="206" y="251" text-anchor="end">IDEFICS-80B</text><rect x="220" y="239" width="371.28125" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>IDEFICS-80B · MMBench (EN): 54.5</title></rect><text x="599.28125" y="251">54.5</text><rect x="220" y="262" width="259.55625" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>IDEFICS-80B · MMBench (CN): 38.1</title></rect><text x="487.55625" y="274">38.1</text><text x="206" y="319" text-anchor="end">Qwen-VL-Chat</text><rect x="220" y="307" width="412.83750000000003" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>Qwen-VL-Chat · MMBench (EN): 60.6</title></rect><text x="640.8375000000001" y="319">60.6</text><rect x="220" y="330" width="386.26875" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>Qwen-VL-Chat · MMBench (CN): 56.7</title></rect><text x="614.26875" y="342">56.7</text><text x="206" y="387" text-anchor="end">LLaVA-7B</text><rect x="220" y="375" width="263.64375" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>LLaVA-7B · MMBench (EN): 38.7</title></rect><text x="491.64375" y="387">38.7</text><rect x="220" y="398" width="247.97499999999997" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>LLaVA-7B · MMBench (CN): 36.4</title></rect><text x="475.97499999999997" y="410">36.4</text><text x="206" y="455" text-anchor="end">LLaVA-1.5-CLIP-7B</text><rect x="220" y="443" width="344.44" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>LLaVA-1.5-CLIP-7B · MMBench (EN): 50.56</title></rect><text x="572.44" y="455">50.56</text><rect x="220" y="466" width="330.338125" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>LLaVA-1.5-CLIP-7B · MMBench (CN): 48.49</title></rect><text x="558.338125" y="478">48.49</text><text x="206" y="523" text-anchor="end">LLaVA-1.5-7B</text><rect x="220" y="511" width="438.04375" height="16" rx="3" fill="#83afd9" class="studio-bar" tabindex="0"><title>LLaVA-1.5-7B · MMBench (EN): 64.3</title></rect><text x="666.04375" y="523">64.3</text><rect x="220" y="534" width="397.16875" height="16" rx="3" fill="#b2c9e1" class="studio-bar" tabindex="0"><title>LLaVA-1.5-7B · MMBench (CN): 58.3</title></rect><text x="625.16875" y="546">58.3</text><text x="206" y="591" text-anchor="end" class="ecvlm-ours-label">LLaVA-1.5-EC-7B</text><rect x="220" y="579" width="458.48125" height="16" rx="3" fill="#83afd9" class="studio-bar ecvlm-ours-bar" tabindex="0"><title>LLaVA-1.5-EC-7B · MMBench (EN): 67.3</title></rect><text x="686.48125" y="591">67.3</text><rect x="220" y="602" width="436.06812500000007" height="16" rx="3" fill="#b2c9e1" class="studio-bar ecvlm-ours-bar" tabindex="0"><title>LLaVA-1.5-EC-7B · MMBench (CN): 64.01</title></rect><text x="664.068125" y="614">64.01</text><text x="12" y="670">Accuracy (%) ↑</text></svg></div>
+</div></figure>
+</div>
+</div>
 
-  <section class="section">
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Quantitative Results on the Visual Entailment Task </h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/snlive%20result.png" class="interpolation-image" alt="Calico results." width="85%">
-              <p class="has-text-justified">
-                <span style="font-weight: bold;">Visual Entailment (VE) Accuracy.</span> EC 
-                pretraining substantially improves VE accuracy compared to the baseline across all training sizes, and 
-                approaches NL pretraining performance as more downstream data becomes available.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
+          <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Instruction Following LVLM Tasks</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/instruc-following.png" class="interpolation-image" alt="Calico results." width="85%">
-              <p class="has-text-justified">
-                We compare LLaVA-1.5-EC, which is trained exclusively on EC tokens, against a range of state-of-the-art 
-                LVLMs across five benchmarks: VQAv2, GQA, VizWiz, SciQA-IMG, and TextVQA. Despite using only 558K images
-                 and no natural language supervision, LLaVA-1.5-EC achieves competitive performance, outperforming 
-                 well-established models such as BLIP-2 (13B) and InstructBLIP (13B) across most datasets. 
-                 For instance, relative to BLIP-2, LLaVA-1.5-EC achieves a 104.23% gain on VizWiz, 34.8% on GQA, and
-                 10.8% on VQAv2.
-              </p>
-              <p class="has-text-justified">
-                 LLaVA-1.5-EC also outperforms InstructBLIP, which is trained on 129M captioned image-text pairs
-                 and fine-tuned on 1.2M additional examples, highlighting the impressive representational capacity of EC pretraining. 
-                 While LLaVA-1.5-EC does not on some benchmarks surpass Qwen-VL -- trained with over a billion curated image-text pairs -- LLaVA-1.5-EC achieves
-                 strong results despite having seen 2–3 orders of magnitude fewer samples and no human-written captions. 
-                 For example, on VizWiz, LLaVA-1.5-EC even outperforms Qwen-VL (40.03 vs. 35.2), showing its effectiveness on visually grounded tasks. 
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Results on MMBench</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/mmbench.png" class="interpolation-image" alt="Calico results." width="85%">
-              <p class="has-text-justified">
-                <span style="font-weight: bold;">Comparison of LLaVA-1.5-EC with SoTA Instruction-Following Models on the MM-
-                  Bench Benchmark.</span>  LLaVA-1.5-EC, pretrained using Emergent Communication 
-                  tokens, surpasses all baselines, highlighting the potential of EC-based pretraining.
-              </p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Qualitative Results</h2>
-  
           <p class="has-text-justified" style="padding-bottom: 30px;">
-            We conduct an in-depth qualitative analysis to uncover potential patterns in the generated Emergent 
+            We conduct an in-depth qualitative analysis to uncover potential patterns in the generated Emergent
             Communication (EC) text. We show some interesting insights below.
           </p>
-  
+
           <!-- Image 1 -->
-          <figure class="qual-example" style="margin-bottom: 40px;">
-            <img loading="lazy" decoding="async" src="static/images/brocolli-qual1.png" alt="Image 1" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>EC Sequences Exhibiting Semantic Clustering.</strong> (a) The repeated 
-              occurrence of token 2430 is consistently associated with images containing broccoli. (b) Token 222 
-              functions as a higher-level food category marker. (c) Varying the tokens that follow 222 refines the 
-              type of food being described, suggesting contextual disambiguation. (d) The bigram 222 3967 remains 
-              food-associated but often appears in scenes involving people interacting with food, such as eating or 
+          <figure class="qual-example ecvlm-example">
+            <img loading="lazy" decoding="async" src="static/images/brocolli-qual1.png" alt="EC token patterns associated with broccoli and food-related image groups.">
+            <figcaption class="caption has-text-justified">
+              <strong>EC Sequences Exhibiting Semantic Clustering.</strong> (a) The repeated
+              occurrence of token 2430 is consistently associated with images containing broccoli. (b) Token 222
+              functions as a higher-level food category marker. (c) Varying the tokens that follow 222 refines the
+              type of food being described, suggesting contextual disambiguation. (d) The bigram 222 3967 remains
+              food-associated but often appears in scenes involving people interacting with food, such as eating or
               holding it, indicating compositional encoding of both object and action.
             </figcaption>
           </figure>
-  
+
           <!-- Image 2 -->
-          <figure class="qual-example" style="margin-bottom: 40px;">
-            <img loading="lazy" decoding="async" src="static/images/zebra-qual.png" alt="Image 2" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>EC Sequences Reveal Visual Grounding, Compositionality, and Latent Structure.</strong> (a) Token 3293 
-              consistently appears in zebra-related images, demonstrating strong visual grounding. (b) A variation in the third 
-              token of the trigram suggests fine-grained visual distinctions between zebra scenes, pointing to contextual 
-              compositionality. (c) The same trigram from (a) appears at a different sequence position, indicating positional 
-              flexibility and implying that EC meaning is carried by token patterns rather than fixed positions — a possible 
-              marker of syntactic invariance. Occasional co-occurrence with giraffes suggests token reuse across visually 
-              related concepts and hints at fuzzy semantic boundaries between visually similar classes. (d) The trigram from 
-              (b), when shifted to position 1, remains strongly correlated with zebra images, reinforcing compositional 
+          <figure class="qual-example ecvlm-example">
+            <img loading="lazy" decoding="async" src="static/images/zebra-qual.png" alt="EC token patterns associated with zebra images across different sequence positions.">
+            <figcaption class="caption has-text-justified">
+              <strong>EC Sequences Reveal Visual Grounding, Compositionality, and Latent Structure.</strong> (a) Token 3293
+              consistently appears in zebra-related images, demonstrating strong visual grounding. (b) A variation in the third
+              token of the trigram suggests fine-grained visual distinctions between zebra scenes, pointing to contextual
+              compositionality. (c) The same trigram from (a) appears at a different sequence position, indicating positional
+              flexibility and implying that EC meaning is carried by token patterns rather than fixed positions — a possible
+              marker of syntactic invariance. Occasional co-occurrence with giraffes suggests token reuse across visually
+              related concepts and hints at fuzzy semantic boundaries between visually similar classes. (d) The trigram from
+              (b), when shifted to position 1, remains strongly correlated with zebra images, reinforcing compositional
               consistency and semantic robustness.
             </figcaption>
           </figure>
-  
+
           <!-- Image 3 -->
-          <figure class="qual-example">
-            <img loading="lazy" decoding="async" src="static/images/vehicle-qual.png" alt="Image 3" style="border-radius: 8px;">
-            <figcaption class="caption has-text-justified" style="margin-top: 20px;">
-              <strong>EC Sequences Exhibit Semantic Specificity and Structural Roles.</strong> (a) Token 309 is associated with vehicles, and 
-              its position appears to modulate meaning, <i>e.g.</i> at position 2, it tends to refer to motorbikes. (b) The same token 
-              in different positions corresponds to trucks, suggesting context-dependent semantic refinement. (c) Token 2512 may 
-              denote giraffes, while (d) token 1915 appears to generalize to a broader animal category. Notably, token 3355 
-              occurs across all examples, suggesting a structural or functional role, potentially indicating count, emphasis, 
+          <figure class="qual-example ecvlm-example">
+            <img loading="lazy" decoding="async" src="static/images/vehicle-qual.png" alt="EC token patterns associated with vehicles and animals, illustrating positional and structural roles.">
+            <figcaption class="caption has-text-justified">
+              <strong>EC Sequences Exhibit Semantic Specificity and Structural Roles.</strong> (a) Token 309 is associated with vehicles, and
+              its position appears to modulate meaning, <i>e.g.</i> at position 2, it tends to refer to motorbikes. (b) The same token
+              in different positions corresponds to trucks, suggesting context-dependent semantic refinement. (c) Token 2512 may
+              denote giraffes, while (d) token 1915 appears to generalize to a broader animal category. Notably, token 3355
+              occurs across all examples, suggesting a structural or functional role, potentially indicating count, emphasis,
               or grouping within the sequence.
             </figcaption>
           </figure>
-  
+
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="studio-poster" data-studio-section="poster" aria-labelledby="ecvlm-poster-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="ecvlm-poster-title">Poster</h2>
+<figure class="ecvlm-figure ecvlm-poster-figure"><img src="static/images/ecvlm-poster-preview.jpg" alt="EC-VLM research poster: emergent-communication pretraining, experiments, and qualitative token analysis." loading="lazy" width="1800" height="1343"></figure><a class="button is-rounded ecvlm-poster-link" href="static/images/ecvlm-poster.pdf" target="_blank" rel="noopener">Open poster PDF</a>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title is-3" id="BibTeX-title">BibTeX</h2>
       <pre><code>@article{ogunleye2025ecvlm,
   title={EC-VLM: Emergent Corpus Pre-training Benefits Vision Language Models},
   author={Ogunleye, Makanjuola A. and Vickery, Chase and Lourentzou, Ismini},
@@ -651,33 +461,22 @@
   year={2025}
 }</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://openreview.net/pdf?id=bivKGSaXkD">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a> for open-sourcing their models
               and code.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

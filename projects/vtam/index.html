@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -11,19 +10,18 @@
 
     gtag('config', 'G-48J3PYKGQ6');
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs.">
   <title>VTAM | PLAN Lab</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
   <style>
     .page-project .vtam-grid-2 {
@@ -209,80 +207,20 @@
       }
     }
   </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "VTAM",
-    "teaserSummary": true,
-    "tldr": [
-      "We introduce VTAM, a video–tactile–action model for contact-rich robotic manipulation. By combining visual observations with touch, VTAM predicts actions and object dynamics while capturing contact and deformation, providing physically grounded guidance for tasks where vision alone is insufficient."
-    ],
-    "contributions": [
-      "VTAM grounds contact-rich manipulation in visual and tactile signals. We introduce a Video-Tactile Action Model that augments a pretrained video transformer with tactile perception. This complements visual observations with force and contact information that vision alone cannot reliably encode.",
-      "Modality transfer fine-tuning adds tactile perception efficiently. The model learns cross-modal representations without tactile–language paired data or independent tactile pretraining. Its first stage learns joint visuo-tactile predictive dynamics through multi-view diffusion over two RGB views and one GelSight stream.",
-      "Tactile regularization and joint action–state–force prediction preserve sensitivity. A regularization loss balances cross-modal attention to prevent visual latents from dominating. In the control stage, conditional diffusion jointly predicts actions, states, and a deformation-derived virtual force proxy, preserving tactile sensitivity during multimodal optimization.",
-      "Real-world experiments demonstrate improved contact-rich control. VTAM achieves 90% average success across chip pick-and-place, cucumber peeling, and whiteboard wiping, with task success rates of 90%, 85%, and 95%, respectively. On potato chip pick-and-place, it exceeds the vision-only pi 0.5 baseline by 80 percentage points."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "splits": [
-      {
-        "heading": "Video Comparisons",
-        "label": "Qualitative Results"
-      }
-    ],
-    "quantitative": {
-      "source": "Results and Analysis"
-    },
-    "contributionLeads": [
-      "VTAM grounds contact-rich manipulation in visual and tactile signals.",
-      "Modality transfer fine-tuning adds tactile perception efficiently.",
-      "Tactile regularization and joint action–state–force prediction preserve sensitivity.",
-      "Real-world experiments demonstrate improved contact-rich control."
-    ],
-    "opening": {
-      "media": [
-        {
-          "type": "iframe",
-          "source": "504763a39872834ba8b508e7ac69a79f",
-          "label": "Chip pick-and-place",
-          "caption": "VTAM uses touch to guide precise contact during chip manipulation."
-        },
-        {
-          "type": "iframe",
-          "source": "a5c32edaa275609be8aeed060d527fb7",
-          "label": "Cucumber peeling",
-          "caption": "VTAM uses visual and tactile feedback to guide contact while peeling a cucumber."
-        },
-        {
-          "type": "iframe",
-          "source": "9ac52cca684a3b48b51b130951bd74ba",
-          "label": "Whiteboard wiping",
-          "caption": "Visual and tactile feedback guide sustained contact during wiping."
-        }
-      ]
-    }
-  },
-  "resultPanels": {
-    "htmlTable:0": {
-      "title": "Contact-rich manipulation",
-      "description": "Success rates on chip pick-and-place, cucumber peeling, and whiteboard wiping, with 80 trials per model."
-    }
-  },
-  "results": {}
-}
-  </script>
+<body class="page-project project-studio studio-vtam" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
   <nav class="glass-nav">
     <a href="../../index.html#hero" class="nav-logo">
-      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
     </a>
     <div class="nav-menu">
       <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -309,49 +247,66 @@
   </nav>
 
   <main>
-    <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+  <section class="hero studio-header">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="publication-title">VTAM: Video-Tactile-Action Models for <br>Complex Physical Interaction Beyond VLAs
-              </h1>
+              <h1 class="publication-title">
+<span class="studio-name">VTAM</span><span class="studio-subtitle">Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs</span>
+</h1>
 
-              <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Haoran Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*‡</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Weigang Yi<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="stanford">Zhenyu Zhang<sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Wendi Chen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><sup class="studio-contribution-marker">*</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiashi Yin<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xiangyu Zeng<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="sjtu">Chuan Wen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Cewu Lu<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Katherine Driggs-Campbell<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
+              <div class="publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Haoran Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*‡</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Weigang Yi<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="stanford">Zhenyu Zhang<sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Wendi Chen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><sup class="studio-contribution-marker">*</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiashi Yin<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xiangyu Zeng<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="sjtu">Chuan Wen<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="sjtu">Cewu Lu<sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Katherine Driggs-Campbell<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span>
+</div>
+</div>
 
-              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="stanford"><sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><span class="studio-affiliation-name">Stanford University</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span></div>
+              <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="stanford"><sup class="studio-affiliation-marker" title="Stanford University" aria-label="Stanford University">♠</sup><span class="studio-affiliation-name">Stanford University</span></span><span class="studio-affiliation" data-institution="sjtu"><sup class="studio-affiliation-marker" title="Shanghai Jiao Tong University" aria-label="Shanghai Jiao Tong University">♥</sup><span class="studio-affiliation-name">Shanghai Jiao Tong University</span></span>
+</div>
 
               <div class="publication-authors notes studio-contribution-note" style="justify-content: center;">
-                <span class="author-block"><sup>&#8225;</sup>Project lead</span>
+                <span class="author-block"><sup>‡</sup>Project lead</span>
                 <span class="author-block"><sup>*</sup>Equal contribution</span>
-                <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
+                <span class="author-block"><sup>†</sup>Corresponding author</span>
               </div>
 
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2603.23481" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.23481" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2603.23481" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.23481" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a>
+</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="hero teaser">
+    </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce VTAM, a video–tactile–action model for contact-rich robotic manipulation. By combining visual observations with touch, VTAM predicts actions and object dynamics while capturing contact and deformation, providing physically grounded guidance for tasks where vision alone <span class="studio-tldr-tail">is insufficient.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="VTAM examples"><div class="container"><div class="studio-example-grid">
+<figure class="studio-example-card"><div class="studio-example-media"><iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/504763a39872834ba8b508e7ac69a79f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F504763a39872834ba8b508e7ac69a79f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="eager" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM: Chip pick-and-place"></iframe></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Chip pick-and-place</strong><p>VTAM uses touch to guide precise contact during chip manipulation.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/a5c32edaa275609be8aeed060d527fb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fa5c32edaa275609be8aeed060d527fb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="eager" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM: Cucumber peeling"></iframe></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Cucumber peeling</strong><p>VTAM uses visual and tactile feedback to guide contact while peeling a cucumber.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9ac52cca684a3b48b51b130951bd74ba/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9ac52cca684a3b48b51b130951bd74ba%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="eager" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM: Whiteboard wiping"></iframe></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Whiteboard wiping</strong><p>Visual and tactile feedback guide sustained contact during wiping.</p></figcaption></figure>
+</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">VTAM Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
       <div class="container is-max-desktop">
-        <div class="hero-body">
-          <div class="content vtam-tldr">
-            <strong>We propose <span class="vtam-k1"><strong><em>VTAM</em></strong></span>, a new
-            <span class="vtam-k2">video-tactile world action model</span> for <span class="vtam-k3">contact-rich
-              robotic manipulation</span>. Given multi-view visual observations, tactile signals, and robot
-            state/action context, our method predicts interaction dynamics and generates physically grounded actions for
-            complex real-world tasks.</strong>
-          </div>
-          <img src="./static/images/teaser.png" class="interpolation-image" alt="VTAM teaser figure" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Video-Action Models (VAMs) have emerged as a promising framework for embodied intelligence, learning
@@ -374,203 +329,191 @@
           </p>
         </div>
       </div>
-    </section>
-
-    <section class="section">
+    </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">VTAM grounds contact-rich manipulation in visual and tactile signals.</strong> We introduce a Video-Tactile Action Model that augments a pretrained video transformer with tactile perception. This complements visual observations with force and contact information that vision alone cannot reliably encode.</li>
+<li>
+<strong class="studio-contribution-lead">Modality transfer fine-tuning adds tactile perception efficiently.</strong> The model learns cross-modal representations without tactile–language paired data or independent tactile pretraining. Its first stage learns joint visuo-tactile predictive dynamics through multi-view diffusion over two RGB views and one GelSight stream.</li>
+<li>
+<strong class="studio-contribution-lead">Tactile regularization and joint action–state–force prediction preserve sensitivity.</strong> A regularization loss balances cross-modal attention to prevent visual latents from dominating. In the control stage, conditional diffusion jointly predicts actions, states, and a deformation-derived virtual force proxy, preserving tactile sensitivity during multimodal optimization.</li>
+<li>
+<strong class="studio-contribution-lead">Real-world experiments demonstrate improved contact-rich control.</strong> VTAM achieves 90% average success across chip pick-and-place, cucumber peeling, and whiteboard wiping, with task success rates of 90%, 85%, and 95%, respectively. On potato chip pick-and-place, it exceeds the vision-only pi 0.5 baseline by 80 percentage points.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-          <p>
-            VTAM uses a two-stage training strategy. In Stage I, the model learns joint visuo-tactile predictive
-            dynamics in latent space using multi-view diffusion over two RGB views and one GelSight stream. In Stage
-            II, the model learns control with conditional diffusion and jointly predicts action, state, and a
-            deformation-derived virtual force proxy. This force proxy preserves tactile sensitivity and stabilizes
-            multimodal optimization.
-          </p>
-          <img src="./static/images/method_arch.png" class="interpolation-image"
-            alt="VTAM method architecture overview" />
-          <p class="vtam-caption">
-            VTAM architecture: shared visuo-tactile latent world modeling + action-state-force diffusion head.
-          </p>
-
-          <div class="vtam-grid-2">
-            <img src="./static/images/experiment_setup.jpg" class="interpolation-image" alt="Robot experiment setup" />
-            <img src="./static/images/data_acquisition.png" class="interpolation-image"
-              alt="Data acquisition setup for VTAM" />
-          </div>
-          <p class="vtam-caption">Real-world setup and teleoperation data collection pipeline.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">VTAM</span> Method</h2>
+<p class="vtam-method-intro">VTAM adds tactile perception to a pretrained video model and uses the resulting interaction representation to predict actions. Two RGB views and a GelSight stream capture the scene and contact state; the control model conditions on these features together with past robot actions and states.</p>
+<figure class="vtam-architecture"><img src="./static/images/method_arch.png" alt="VTAM architecture: first-person, third-person, and GelSight tactile inputs condition a joint action, state, and force diffusion model"></figure><ol class="vtam-training-stages">
+<li>
+<h3>Stage I · Learn visuo-tactile dynamics</h3>
+<p>Multi-view diffusion learns joint predictive dynamics from first-person video, third-person video, and tactile observations in latent space. Modality transfer fine-tuning adds touch without requiring tactile–language paired data or independent tactile pretraining.</p>
+</li>
+<li>
+<h3>Stage II · Learn contact-aware control</h3>
+<p>Conditional diffusion jointly predicts future actions, states, and a deformation-derived virtual force proxy. Tactile regularization balances cross-modal attention, preserving sensitivity to contact while preventing visual latents from dominating the optimization.</p>
+</li>
+</ol>
+</div>
+    </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="results-section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3" id="results-section">Results and Analysis</h2>
-        <div class="content has-text-justified">
-          <p>
-            VTAM is evaluated on three contact-rich real-world tasks with 80 total trials per model (20 trials per
-            task setting). It consistently outperforms strong baselines including Genie Envisioner and vision-only
-            <em>pi<sub>0.5</sub></em> variants.
-          </p>
-
-          <table class="vtam-table" aria-label="Overall VTAM performance">
+<h2 class="title is-3" id="results-section">Quantitative Results</h2>
+<div class="studio-result-stack"><figure class="studio-native-result vtam-success-results studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Contact-rich manipulation</h3>
+<p class="studio-result-description">Task success rates for chip pick-and-place, cucumber peeling, and whiteboard wiping. VTAM reaches 90%, 85%, and 95%, respectively. Each model is evaluated over 80 trials.</p>
+<div class="vtam-success-grid">
+<div class="vtam-success-panel">
+<h4>Chip pick-and-place</h4>
+<svg viewbox="0 0 400 305" role="img" aria-label="Chip pick-and-place: success rate from 0 to 100 percent"><line x1="16" x2="16" y1="38" y2="269" class="studio-grid"></line><text x="16" y="295" text-anchor="start" class="vtam-axis-tick">0%</text><line x1="108" x2="108" y1="38" y2="269" class="studio-grid"></line><text x="108" y="295" text-anchor="middle" class="vtam-axis-tick">25%</text><line x1="200" x2="200" y1="38" y2="269" class="studio-grid"></line><text x="200" y="295" text-anchor="middle" class="vtam-axis-tick">50%</text><line x1="292" x2="292" y1="38" y2="269" class="studio-grid"></line><text x="292" y="295" text-anchor="middle" class="vtam-axis-tick">75%</text><line x1="384" x2="384" y1="38" y2="269" class="studio-grid"></line><text x="384" y="295" text-anchor="end" class="vtam-axis-tick">100%</text><text x="16" y="27" class="vtam-model-label">Genie Envisioner</text><text x="384" y="27" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="38" width="0" height="18" rx="3" fill="#597d9f" class="studio-bar" data-value="0"><title>Chip pick-and-place · Genie Envisioner: 0%</title></rect><text x="16" y="91" class="vtam-model-label">pi0.5 (Vision)</text><text x="384" y="91" text-anchor="end" class="vtam-value-label">10%</text><rect x="16" y="102" width="36.8" height="18" rx="3" fill="#83afd9" class="studio-bar" data-value="10"><title>Chip pick-and-place · pi0.5 (Vision): 10%</title></rect><text x="16" y="155" class="vtam-model-label">pi0.5 + Tactile</text><text x="384" y="155" text-anchor="end" class="vtam-value-label">5%</text><rect x="16" y="166" width="18.4" height="18" rx="3" fill="#b2c9e1" class="studio-bar" data-value="5"><title>Chip pick-and-place · pi0.5 + Tactile: 5%</title></rect><text x="16" y="219" class="vtam-model-label">VTAM (Ours)</text><text x="384" y="219" text-anchor="end" class="vtam-value-label">90%</text><rect x="16" y="230" width="331.2" height="18" rx="3" fill="#ff915b" class="studio-bar" data-value="90"><title>Chip pick-and-place · VTAM (Ours): 90%</title></rect></svg>
+</div>
+<div class="vtam-success-panel">
+<h4>Cucumber peeling</h4>
+<svg viewbox="0 0 400 305" role="img" aria-label="Cucumber peeling: success rate from 0 to 100 percent"><line x1="16" x2="16" y1="38" y2="269" class="studio-grid"></line><text x="16" y="295" text-anchor="start" class="vtam-axis-tick">0%</text><line x1="108" x2="108" y1="38" y2="269" class="studio-grid"></line><text x="108" y="295" text-anchor="middle" class="vtam-axis-tick">25%</text><line x1="200" x2="200" y1="38" y2="269" class="studio-grid"></line><text x="200" y="295" text-anchor="middle" class="vtam-axis-tick">50%</text><line x1="292" x2="292" y1="38" y2="269" class="studio-grid"></line><text x="292" y="295" text-anchor="middle" class="vtam-axis-tick">75%</text><line x1="384" x2="384" y1="38" y2="269" class="studio-grid"></line><text x="384" y="295" text-anchor="end" class="vtam-axis-tick">100%</text><text x="16" y="27" class="vtam-model-label">Genie Envisioner</text><text x="384" y="27" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="38" width="0" height="18" rx="3" fill="#597d9f" class="studio-bar" data-value="0"><title>Cucumber peeling · Genie Envisioner: 0%</title></rect><text x="16" y="91" class="vtam-model-label">pi0.5 (Vision)</text><text x="384" y="91" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="102" width="0" height="18" rx="3" fill="#83afd9" class="studio-bar" data-value="0"><title>Cucumber peeling · pi0.5 (Vision): 0%</title></rect><text x="16" y="155" class="vtam-model-label">pi0.5 + Tactile</text><text x="384" y="155" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="166" width="0" height="18" rx="3" fill="#b2c9e1" class="studio-bar" data-value="0"><title>Cucumber peeling · pi0.5 + Tactile: 0%</title></rect><text x="16" y="219" class="vtam-model-label">VTAM (Ours)</text><text x="384" y="219" text-anchor="end" class="vtam-value-label">85%</text><rect x="16" y="230" width="312.8" height="18" rx="3" fill="#ff915b" class="studio-bar" data-value="85"><title>Cucumber peeling · VTAM (Ours): 85%</title></rect></svg>
+</div>
+<div class="vtam-success-panel">
+<h4>Whiteboard wiping</h4>
+<svg viewbox="0 0 400 305" role="img" aria-label="Whiteboard wiping: success rate from 0 to 100 percent"><line x1="16" x2="16" y1="38" y2="269" class="studio-grid"></line><text x="16" y="295" text-anchor="start" class="vtam-axis-tick">0%</text><line x1="108" x2="108" y1="38" y2="269" class="studio-grid"></line><text x="108" y="295" text-anchor="middle" class="vtam-axis-tick">25%</text><line x1="200" x2="200" y1="38" y2="269" class="studio-grid"></line><text x="200" y="295" text-anchor="middle" class="vtam-axis-tick">50%</text><line x1="292" x2="292" y1="38" y2="269" class="studio-grid"></line><text x="292" y="295" text-anchor="middle" class="vtam-axis-tick">75%</text><line x1="384" x2="384" y1="38" y2="269" class="studio-grid"></line><text x="384" y="295" text-anchor="end" class="vtam-axis-tick">100%</text><text x="16" y="27" class="vtam-model-label">Genie Envisioner</text><text x="384" y="27" text-anchor="end" class="vtam-value-label">2.5%</text><rect x="16" y="38" width="9.2" height="18" rx="3" fill="#597d9f" class="studio-bar" data-value="2.5"><title>Whiteboard wiping · Genie Envisioner: 2.5%</title></rect><text x="16" y="91" class="vtam-model-label">pi0.5 (Vision)</text><text x="384" y="91" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="102" width="0" height="18" rx="3" fill="#83afd9" class="studio-bar" data-value="0"><title>Whiteboard wiping · pi0.5 (Vision): 0%</title></rect><text x="16" y="155" class="vtam-model-label">pi0.5 + Tactile</text><text x="384" y="155" text-anchor="end" class="vtam-value-label">0%</text><rect x="16" y="166" width="0" height="18" rx="3" fill="#b2c9e1" class="studio-bar" data-value="0"><title>Whiteboard wiping · pi0.5 + Tactile: 0%</title></rect><text x="16" y="219" class="vtam-model-label">VTAM (Ours)</text><text x="384" y="219" text-anchor="end" class="vtam-value-label">95%</text><rect x="16" y="230" width="349.6" height="18" rx="3" fill="#ff915b" class="studio-bar" data-value="95"><title>Whiteboard wiping · VTAM (Ours): 95%</title></rect></svg>
+</div>
+</div>
+<details class="vtam-full-scores"><summary>All success rates</summary><div class="studio-table-scroll" tabindex="0" role="region" aria-label="Contact-rich manipulation"><table class="vtam-table studio-native-table" aria-label="Overall VTAM performance">
             <thead>
               <tr>
-                <th>Model</th>
-                <th>Chip</th>
-                <th>Peel</th>
-                <th>Wipe</th>
+                <th scope="col">Model</th>
+                <th scope="col">Chip</th>
+                <th scope="col">Peel</th>
+                <th scope="col">Wipe</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Genie Envisioner</td>
-                <td>0%</td>
-                <td>0%</td>
-                <td>2.5%</td>
+                <th scope="row">Genie Envisioner</th>
+                <td class="studio-numeric-cell">0%</td>
+                <td class="studio-numeric-cell">0%</td>
+                <td class="studio-numeric-cell">2.5%</td>
               </tr>
               <tr>
-                <td>pi<sub>0.5</sub> (Vision)</td>
-                <td>10%</td>
-                <td>0%</td>
-                <td>0%</td>
+                <th scope="row">pi<sub>0.5</sub> (Vision)</th>
+                <td class="studio-numeric-cell">10%</td>
+                <td class="studio-numeric-cell">0%</td>
+                <td class="studio-numeric-cell">0%</td>
               </tr>
               <tr>
-                <td>pi<sub>0.5</sub> + Tactile</td>
-                <td>5%</td>
-                <td>0%</td>
-                <td>0%</td>
+                <th scope="row">pi<sub>0.5</sub> + Tactile</th>
+                <td class="studio-numeric-cell">5%</td>
+                <td class="studio-numeric-cell">0%</td>
+                <td class="studio-numeric-cell">0%</td>
               </tr>
-              <tr>
-                <td>VTAM (Ours)</td>
-                <td>90%</td>
-                <td>85%</td>
-                <td>95%</td>
+              <tr class="studio-ours">
+                <th scope="row">VTAM (Ours)</th>
+                <td class="studio-numeric-cell">90%</td>
+                <td class="studio-numeric-cell">85%</td>
+                <td class="studio-numeric-cell">95%</td>
               </tr>
             </tbody>
-          </table>
-          <br>
-          <h3 class="title is-4" id="video-comparisons">Video Comparisons</h3>
-          <br>
-
-          <h4 class="title is-5"><span class="vtam-ours">Chip Pick-and-Place</span></h4>
-          <div class="vtam-video-grid">
+          </table></div></details></figure></div>
+</div>
+    </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="video-comparisons"><div class="container is-max-desktop">
+<h2 class="title is-3" id="video-comparisons">Qualitative Results</h2>
+<div class="vtam-playback-bar">
+<button class="studio-control" type="button" disabled>Pause all</button><label for="vtam-playback-rate"><span>Playback speed</span><select id="vtam-playback-rate" disabled><option value="0.5">0.5×</option>
+<option value="1">1×</option>
+<option value="1.5">1.5×</option>
+<option value="2" selected>2×</option></select></label><span class="vtam-playback-status" role="status"></span>
+</div>
+<div class="vtam-task-groups">
+<article class="vtam-task-group"><h3>Chip Pick-and-Place</h3>
+<div class="vtam-video-grid" style="--vtam-video-columns: 4;">
             <div class="vtam-video-card">
               <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/504763a39872834ba8b508e7ac69a79f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F504763a39872834ba8b508e7ac69a79f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/504763a39872834ba8b508e7ac69a79f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F504763a39872834ba8b508e7ac69a79f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM (Ours)"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">Genie Envisioner</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/8c5e1c7d87963c7b30525ecf1e8053cf/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F8c5e1c7d87963c7b30525ecf1e8053cf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/8c5e1c7d87963c7b30525ecf1e8053cf/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F8c5e1c7d87963c7b30525ecf1e8053cf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="Genie Envisioner"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">pi<sub>0.5</sub> (Vision)</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/bccda452c54626308141d5a7fd7a6e81/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fbccda452c54626308141d5a7fd7a6e81%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/bccda452c54626308141d5a7fd7a6e81/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fbccda452c54626308141d5a7fd7a6e81%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="pi0.5 (Vision)"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9df048f246187987f238f2fb34ab45d1/iframe?muted=true&poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9df048f246187987f238f2fb34ab45d1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9df048f246187987f238f2fb34ab45d1/iframe?muted=true&amp;poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9df048f246187987f238f2fb34ab45d1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="pi0.5 + Tactile"></iframe>
               </div>
             </div>
-          </div>
-
-          <h4 class="title is-5"><span class="vtam-ours">Cucumber Peeling</span></h4>
-          <div class="vtam-video-grid">
+          </div></article><article class="vtam-task-group"><h3>Cucumber Peeling</h3>
+<div class="vtam-video-grid" style="--vtam-video-columns: 4;">
             <div class="vtam-video-card">
               <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/a5c32edaa275609be8aeed060d527fb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fa5c32edaa275609be8aeed060d527fb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/a5c32edaa275609be8aeed060d527fb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fa5c32edaa275609be8aeed060d527fb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM (Ours)"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">Genie Envisioner</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f4f1d17ccc56709048fc76f0af02cd10/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff4f1d17ccc56709048fc76f0af02cd10%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f4f1d17ccc56709048fc76f0af02cd10/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff4f1d17ccc56709048fc76f0af02cd10%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="Genie Envisioner"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">pi<sub>0.5</sub> (Vision)</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/6a4b06f810b6e5b1ea6b23e3b876f698/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F6a4b06f810b6e5b1ea6b23e3b876f698%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/6a4b06f810b6e5b1ea6b23e3b876f698/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F6a4b06f810b6e5b1ea6b23e3b876f698%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="pi0.5 (Vision)"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">pi<sub>0.5</sub> + Tactile</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/3ff6bbcee67ab88665e53a10071d4c9f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F3ff6bbcee67ab88665e53a10071d4c9f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/3ff6bbcee67ab88665e53a10071d4c9f/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F3ff6bbcee67ab88665e53a10071d4c9f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="pi0.5 + Tactile"></iframe>
               </div>
             </div>
-          </div>
-
-          <h4 class="title is-5"><span class="vtam-ours">Whiteboard Wiping</span></h4>
-          <div class="vtam-video-grid vtam-video-grid-3">
+          </div></article><article class="vtam-task-group"><h3>Whiteboard Wiping</h3>
+<div class="vtam-video-grid vtam-video-grid-3" style="--vtam-video-columns: 3;">
             <div class="vtam-video-card">
               <div class="vtam-video-title vtam-ours">VTAM (Ours)</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9ac52cca684a3b48b51b130951bd74ba/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9ac52cca684a3b48b51b130951bd74ba%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9ac52cca684a3b48b51b130951bd74ba/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9ac52cca684a3b48b51b130951bd74ba%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM (Ours)"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">Genie Envisioner</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f1203b66bb3ae9b536d58a650b0d3801/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff1203b66bb3ae9b536d58a650b0d3801%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/f1203b66bb3ae9b536d58a650b0d3801/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Ff1203b66bb3ae9b536d58a650b0d3801%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="Genie Envisioner"></iframe>
               </div>
             </div>
             <div class="vtam-video-card">
               <div class="vtam-video-title">pi<sub>0.5</sub> (Vision) / pi<sub>0.5</sub> + Tactile</div>
               <div class="vtam-video-wrap">
-                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/96980153395c1e125221030c3dccd26c/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F96980153395c1e125221030c3dccd26c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/96980153395c1e125221030c3dccd26c/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F96980153395c1e125221030c3dccd26c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="pi0.5 (Vision) / pi0.5 + Tactile"></iframe>
               </div>
             </div>
-          </div>
-
-          <div class="vtam-two-split">
-            <div>
-              <h4 class="title is-6">Model Behavior Diversity</h4>
-              <div class="vtam-video-grid vtam-video-grid-2">
+          </div></article>
+</div>
+<div class="vtam-case-groups"><article class="vtam-task-group"><h3>Model Behavior Diversity</h3>
+<div class="vtam-video-grid vtam-video-grid-2">
                 <div class="vtam-video-card">
                   <div class="vtam-video-title vtam-ours">VTAM (Ours) - Failure Case</div>
                   <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/84ca952d630a75db452d2c69fc53c940/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F84ca952d630a75db452d2c69fc53c940%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/84ca952d630a75db452d2c69fc53c940/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F84ca952d630a75db452d2c69fc53c940%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM (Ours) - Failure Case"></iframe>
                   </div>
                 </div>
                 <div class="vtam-video-card">
                   <div class="vtam-video-title vtam-ours">VTAM (Ours) - Retrial Recovery</div>
                   <div class="vtam-video-wrap">
-                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/947e7d646127a1ff19594cd2a4b527b2/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F947e7d646127a1ff19594cd2a4b527b2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+                    <iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/947e7d646127a1ff19594cd2a4b527b2/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F947e7d646127a1ff19594cd2a4b527b2%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM (Ours) - Retrial Recovery"></iframe>
                   </div>
                 </div>
-              </div>
-            </div>
-
-          </div>
-          <br>
-          <h3 class="title is-5">Prediction Visualization</h3>
-          <br>
-          <div class="vtam-grid-3 vtam-pred-grid">
-            <img src="./static/images/pred_camera_1.png" class="interpolation-image" alt="Camera 1 prediction" />
-            <img src="./static/images/pred_camera_2.png" class="interpolation-image" alt="Camera 2 prediction" />
-            <img src="./static/images/pred_tactile.png" class="interpolation-image" alt="Tactile prediction" />
-            <p class="vtam-caption">
-              <strong>Prediction visualization of the backbone video model.</strong> From top to bottom: Camera-1 view,
-  Camera-2 view, Tactile stream prediction. Ground-truth (top rows) and VTAM predictions (bottom rows).
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="BibTeX">
+              </div></article></div>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
       <div class="container is-max-desktop content">
-        <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+        <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
         <pre><code>@article{vtam2026,
   title={VTAM: Video-Tactile-Action Models for Complex Physical Interaction Beyond VLAs},
   author={Yuan, Haoran and Yi, Weigang and Zhang, Zhenyu and Chen, Wendi and Mo, Yuchen and Yin, Jiashi and Li, Xinzhuo and Zeng, Xiangyu and Wen, Chuan and Lu, Cewu and Driggs-Campbell, Katherine and Lourentzou, Ismini},
@@ -578,8 +521,18 @@
   year={2026}
 }</code></pre>
       </div>
-    </section>
-  </main>
-</body>
+    </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
+
+
+</body>
 </html>

@@ -1,30 +1,28 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-48J3PYKGQ6');
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="LaTtE-Flow: an efficient unified multimodal model that adds flow-matching image generation to a pretrained VLM, achieving competitive quality with around 6x faster inference via Layerwise Timestep Experts." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LaTtE-Flow: an efficient unified multimodal model that adds flow-matching image generation to a pretrained VLM, achieving competitive quality with around 6x faster inference via Layerwise Timestep Experts.">
   <title>LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer | PLAN Lab</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
-  <link rel="icon" type="image/png" href="static/images/favicon.png" />
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
 
   <style>
     /* ── LaTtE-Flow coffee accent palette (sits beside the lab orange) ── */
@@ -258,215 +256,20 @@
       }
     }
   </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "LaTtE-Flow",
-    "tldr": [
-      "We introduce LaTtE-Flow, which adds image generation to a frozen vision-language model through Layerwise Timestep Experts. Each transformer layer group handles a distinct flow-matching timestep range, so only that group runs at each sampling step. Timestep-Conditioned Residual Attention reuses and refines attention across layers, delivering competitive generation quality with about six times faster inference while preserving multimodal understanding."
-    ],
-    "contributions": [
-      "Layerwise Timestep Experts make unified flow-based generation more efficient. We introduce LaTtE-Flow, which inherits multimodal understanding from a frozen pretrained VLM and adds a trainable generation pathway. Transformer layers are divided into non-overlapping groups, each responsible for a distinct flow-matching timestep interval, so only the current group runs at each sampling step instead of the full stack.",
-      "Timestep-Conditioned Residual Attention reuses attention across layers. A lightweight, head-wise gate controls how much image self-attention each layer reuses from the previous layer as a function of the current timestep. Gradually refining attention speeds up training convergence and improves generation quality without additional inference cost.",
-      "Experiments demonstrate faster generation while preserving understanding. By retaining the frozen VLM backbone, LaTtE-Flow maintains strong multimodal understanding and competitive image generation quality while reaching approximately six times faster inference than recent unified multimodal models."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "splits": [
-      {
-        "heading": "Qualitative Samples",
-        "label": "Qualitative Results"
-      },
-      {
-        "heading": "Ablations",
-        "label": "Ablation Studies"
-      }
-    ],
-    "quantitative": {
-      "source": "Results"
-    },
-    "contributionLeads": [
-      "Layerwise Timestep Experts make unified flow-based generation more efficient.",
-      "Timestep-Conditioned Residual Attention reuses attention across layers.",
-      "Experiments demonstrate faster generation while preserving understanding."
-    ],
-    "opening": {
-      "source": "diffusion_process_fig.png",
-      "label": "Layerwise timestep experts",
-      "alt": "Standard diffusion repeats the full transformer at every sampling step; LaTtE-Flow assigns different timestep ranges to different layer groups.",
-      "caption": "Left: conventional diffusion and flow-matching models run every transformer layer at every sampling step. Right: LaTtE-Flow assigns layer groups to different timestep ranges, activating only the group needed at each step to reduce generation cost."
-    }
-  },
-  "resultPanels": {
-    "htmlTable:0": {
-      "title": "ImageNet-50K image generation",
-      "description": "Generation quality and inference cost on ImageNet-50K. Active parameters and relative runtime show the cost per sampling step."
-    },
-    "htmlTable:1": {
-      "title": "Multimodal understanding",
-      "description": "Understanding benchmarks compare LaTtE-Flow with other multimodal models after adding image generation."
-    }
-  },
-  "results": {
-    "performance_vs_training_steps.png": {
-      "type": "line",
-      "title": "Performance as training progresses",
-      "source": "static/images/performance_vs_training_steps.png",
-      "xLabel": "Training steps (K)",
-      "yLabel": "FID-50K ↓",
-      "xTicks": [
-        20,
-        40,
-        60,
-        80,
-        120,
-        160
-      ],
-      "yMin": 5,
-      "yMax": 38,
-      "approximate": true,
-      "series": [
-        {
-          "name": "Vanilla",
-          "points": [
-            [
-              20,
-              36
-            ],
-            [
-              40,
-              20
-            ],
-            [
-              60,
-              16.1
-            ],
-            [
-              80,
-              13
-            ],
-            [
-              120,
-              10.8
-            ],
-            [
-              160,
-              8.8
-            ]
-          ]
-        },
-        {
-          "name": "LaTtE-Flows",
-          "color": "#ff915b",
-          "points": [
-            [
-              20,
-              18.3
-            ],
-            [
-              40,
-              11.9
-            ],
-            [
-              60,
-              10
-            ],
-            [
-              80,
-              9.3
-            ],
-            [
-              120,
-              8.5
-            ],
-            [
-              160,
-              7.2
-            ]
-          ]
-        }
-      ],
-      "note": ""
-    },
-    "group_size.png": {
-      "type": "scatter",
-      "title": "Group size: speed and generation quality",
-      "source": "static/images/group_size.png",
-      "xLabel": "Inference time (ms)",
-      "yLabel": "FID-50K ↓",
-      "xMin": 20,
-      "xMax": 180,
-      "xTicks": [
-        20,
-        60,
-        100,
-        140,
-        180
-      ],
-      "yMin": 0,
-      "yMax": 30,
-      "approximate": true,
-      "series": [
-        {
-          "name": "LaTtE-Flows",
-          "points": [
-            [
-              39,
-              25.5
-            ],
-            [
-              51,
-              8.5
-            ],
-            [
-              91,
-              7.3
-            ]
-          ],
-          "radii": [
-            7.75,
-            10,
-            14.14
-          ],
-          "labels": [
-            "Group 4 · 0.3B",
-            "Group 7 · 0.5B",
-            "Group 14 · 1B"
-          ]
-        },
-        {
-          "name": "Vanilla · 2B",
-          "color": "#ff915b",
-          "points": [
-            [
-              158,
-              10.7
-            ]
-          ],
-          "radii": [
-            20
-          ],
-          "labels": [
-            "Vanilla · 2B"
-          ]
-        }
-      ],
-      "note": "Bubble areas indicate model size."
-    }
-  }
-}
-  </script>
+<body class="page-project project-studio studio-latte-flow" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
   <nav class="glass-nav">
     <a href="../../index.html#hero" class="nav-logo">
-      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
     </a>
     <div class="nav-menu">
       <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -495,77 +298,79 @@
   <main>
 
     <!-- ── Hero ── -->
-    <section class="hero">
+
+
+    <!-- ── Teaser ── -->
+
+
+    <!-- ── Abstract ── -->
+
+
+    <!-- ── Method ── -->
+
+
+    <!-- ── Results ── -->
+
+
+    <!-- ── BibTeX ── -->
+
+
+
+
+  <section class="hero studio-header">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
 
               <h1 class="title is-2 publication-title">
-                <img src="static/images/latte_icon.png" alt="" class="title-cup" />
-                <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>:
-                Layerwise Timestep-Expert Flow-based Transformer
-              </h1>
+<span class="studio-name">LaTtE-Flow</span><span class="studio-subtitle">Layerwise Timestep-Expert Flow-based Transformer</span>
+</h1>
 
-              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="vt">Zhiyang Xu<sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="maryland">Jiuhai Chen<sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup>, </span><span class="author-block studio-author" data-affiliations="nvidia">Shizhe Diao<sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup>, </span><span class="author-block studio-author" data-affiliations="salesforce">Jiaxin Zhang<sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="intuit">Yuguang Yao<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="intuit">Joy Rimchala<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="ucdavis">Lifu Huang<sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
+              <div class="is-size-5 publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="vt">Zhiyang Xu<sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><sup class="studio-contribution-marker">*</sup>, </span><span class="author-block studio-author" data-affiliations="maryland">Jiuhai Chen<sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup>, </span><span class="author-block studio-author" data-affiliations="nvidia">Shizhe Diao<sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup>, </span><span class="author-block studio-author" data-affiliations="salesforce">Jiaxin Zhang<sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="intuit">Yuguang Yao<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="intuit">Joy Rimchala<sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="ucdavis">Lifu Huang<sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><sup class="studio-contribution-marker">†</sup></span>
+</div>
+</div>
 
-              <div class="equal-note">
-                <sup>*</sup>Equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup>Co-corresponding authors
-              </div>
+              <div class="equal-note studio-contribution-note">
+<sup>*</sup>Equal contribution  ·  <sup>†</sup>Co-corresponding authors</div>
 
-              <div class="publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="maryland"><sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup><span class="studio-affiliation-name">University of Maryland</span></span><span class="studio-affiliation" data-institution="nvidia"><sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup><span class="studio-affiliation-name">NVIDIA</span></span><span class="studio-affiliation" data-institution="salesforce"><sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup><span class="studio-affiliation-name">Salesforce AI Research</span></span><span class="studio-affiliation" data-institution="intuit"><sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup><span class="studio-affiliation-name">Intuit AI Research</span></span><span class="studio-affiliation" data-institution="ucdavis"><sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><span class="studio-affiliation-name">UC Davis</span></span></div>
+              <div class="publication-authors studio-affiliations">
+<div class="latte-affiliation-row">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span><span class="studio-affiliation" data-institution="maryland"><sup class="studio-affiliation-marker" title="University of Maryland" aria-label="University of Maryland">♣</sup><span class="studio-affiliation-name">University of Maryland</span></span><span class="studio-affiliation" data-institution="nvidia"><sup class="studio-affiliation-marker" title="NVIDIA" aria-label="NVIDIA">♠</sup><span class="studio-affiliation-name">NVIDIA</span></span>
+</div>
+<div class="latte-affiliation-row">
+<span class="studio-affiliation" data-institution="salesforce"><sup class="studio-affiliation-marker" title="Salesforce AI Research" aria-label="Salesforce AI Research">♥</sup><span class="studio-affiliation-name">Salesforce AI Research</span></span><span class="studio-affiliation" data-institution="intuit"><sup class="studio-affiliation-marker" title="Intuit AI Research" aria-label="Intuit AI Research">★</sup><span class="studio-affiliation-name">Intuit AI Research</span></span><span class="studio-affiliation" data-institution="ucdavis"><sup class="studio-affiliation-marker" title="UC Davis" aria-label="UC Davis">▲</sup><span class="studio-affiliation-name">UC Davis</span></span>
+</div>
+</div>
 
               <div class="has-text-centered" style="margin: 8px 0;">
-                <h1 class="title is-3 publication-venue" style="color:#FF5F05;">
+                <h1 class="title is-3 publication-venue" style="">
                   ICML 2026
                 </h1>
               </div>
 
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2506.06952" target="_blank" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.06952" target="_blank" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2506.06952" target="_blank" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.06952" target="_blank" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a>
+</div>
 
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ── Teaser ── -->
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-
-          <div class="content has-text-justified" style="margin-bottom: 18px;">
-            <span style="font-weight: bold;">TL;DR:</span>
-            <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> adds
-            flow-matching image generation on top of a frozen, pretrained vision-language model. It splits the
-            transformer layers into <strong class="accent-caramel">timestep-specialized expert groups</strong>, so
-            only a small slice of the network runs at each sampling step. The result keeps strong understanding,
-            matches recent unified models on generation quality, and runs about
-            <strong class="accent-golden">6&times; faster</strong> at inference.
-          </div>
-
-          <div class="fig-block">
-            <img src="static/images/diffusion_process_fig.png"
-              alt="Standard diffusion / flow-matching runs every layer at every timestep; LaTtE-Flow activates only a subset of layers per step." />
-            <div class="fig-caption">
-              <strong>The core idea.</strong> Standard diffusion / flow-matching models (left) run the full network at
-              every sampling step, with cost that scales as <em>O(L &times; T)</em>. <span class="latte-name"><span
-                  class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> (right) assigns each group of
-              layers to a specific range of timesteps and activates only that group at each step, cutting per-step
-              compute.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Abstract ── -->
-    <section class="section">
+    </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce LaTtE-Flow, which adds image generation to a frozen vision-language model through Layerwise Timestep Experts. Each transformer layer group handles a distinct flow-matching timestep range, so only that group runs at each sampling step. Timestep-Conditioned Residual Attention reuses and refines attention across layers, delivering competitive generation quality with about six times faster inference while preserving <span class="studio-tldr-tail">multimodal understanding.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="LaTtE-Flow examples"><div class="container"><div class="studio-example-grid studio-example-single"><figure class="studio-example-card"><div class="studio-example-media"><img src="static/images/diffusion_process_fig.png" alt="Standard diffusion repeats the full transformer at every sampling step; LaTtE-Flow assigns different timestep ranges to different layer groups." loading="eager" decoding="async"></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Layerwise timestep experts</strong><p>Left: conventional diffusion and flow-matching models run every transformer layer at every sampling step. Right: LaTtE-Flow assigns layer groups to different timestep ranges, activating only the group needed at each step to reduce generation cost.</p></figcaption></figure></div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">LaTtE-Flow Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-ablations" data-section="ablations">Ablation Studies</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column">
-            <h2 class="title is-3">Abstract</h2>
+            <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
             <div class="content has-text-justified">
               <p>
                 Unified multimodal models that handle both image understanding and generation in a single framework
@@ -574,36 +379,41 @@
                 resource-constrained settings.
               </p>
               <p>
-                We introduce <strong>Layerwise Timestep-Expert Flow-based Transformer</strong> (<span
-                  class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>), an
+                We introduce <strong>Layerwise Timestep-Expert Flow-based Transformer</strong> (<span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>), an
                 architecture that makes diffusion/flow-based transformers more efficient inside the unified setting.
                 <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> builds
                 on a powerful pretrained vision-language model (VLM) to inherit strong understanding, and extends it
                 with a new <strong class="accent-caramel">Layerwise Timestep Experts</strong> design for image
                 generation. It spreads the flow-matching process across groups of transformer layers, where each group
                 handles a distinct subset of timesteps. Because only a small set of layers runs at each step, sampling
-                becomes much cheaper. To push performance further, we add a <strong
-                  class="accent-caramel">Timestep-Conditioned Residual Attention</strong> mechanism that lets later
+                becomes much cheaper. To push performance further, we add a <strong class="accent-caramel">Timestep-Conditioned Residual Attention</strong> mechanism that lets later
                 layers reuse attention computed earlier.
               </p>
               <p>
-                In experiments, <span class="latte-name"><span class="a-la">LaTtE</span>-<span
-                    class="a-flow">Flow</span></span> keeps strong multimodal understanding while reaching competitive
-                image generation quality with around <strong class="accent-golden">6&times; faster</strong> inference
+                In experiments, <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> keeps strong multimodal understanding while reaching competitive
+                image generation quality with around <strong class="accent-golden">6× faster</strong> inference
                 than recent unified multimodal models.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ── Method ── -->
-    <section class="section">
+    </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Layerwise Timestep Experts make unified flow-based generation more efficient.</strong> We introduce LaTtE-Flow, which inherits multimodal understanding from a frozen pretrained VLM and adds a trainable generation pathway. Transformer layers are divided into non-overlapping groups, each responsible for a distinct flow-matching timestep interval, so only the current group runs at each sampling step instead of the full stack.</li>
+<li>
+<strong class="studio-contribution-lead">Timestep-Conditioned Residual Attention reuses attention across layers.</strong> A lightweight, head-wise gate controls how much image self-attention each layer reuses from the previous layer as a function of the current timestep. Gradually refining attention speeds up training convergence and improves generation quality without additional inference cost.</li>
+<li>
+<strong class="studio-contribution-lead">Experiments demonstrate faster generation while preserving understanding.</strong> By retaining the frozen VLM backbone, LaTtE-Flow maintains strong multimodal understanding and competitive image generation quality while reaching approximately six times faster inference than recent unified multimodal models.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column">
-            <h2 class="title is-3">Method</h2>
+            <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">LaTtE-Flow</span> Method</h2>
 
             <div class="content has-text-justified" style="margin-bottom: 6px;">
               <p>
@@ -613,16 +423,18 @@
               </p>
             </div>
 
-            <div class="feature-grid">
-              <div class="feature-card">
+            <div class="feature-grid studio-explainer-grid">
+              <div class="feature-card studio-explainer-card">
+<i class="fa-solid fa-link" aria-hidden="true"></i>
                 <h4>1. Layerwise Timestep Experts</h4>
                 <p>
                   We split the <em>L</em> transformer layers into <em>K</em> non-overlapping groups. Each group is
                   trained to denoise one timestep interval of the flow-matching process. At inference, only the group
-                  for the current timestep runs &mdash; about <em>L/K</em> layers per step instead of all <em>L</em>.
+                  for the current timestep runs — about <em>L/K</em> layers per step instead of all <em>L</em>.
                 </p>
               </div>
-              <div class="feature-card">
+              <div class="feature-card studio-explainer-card">
+<i class="fa-solid fa-crosshairs" aria-hidden="true"></i>
                 <h4>2. Timestep-Conditioned Residual Attention</h4>
                 <p>
                   A lightweight, head-wise gate lets each layer reuse the image self-attention map from the previous
@@ -634,13 +446,10 @@
             </div>
 
             <div class="fig-block" style="margin-top: 28px;">
-              <img src="static/images/diff_vlm_arch_single.png"
-                alt="LaTtE-Flow architecture: a frozen VLM path (purple) and a trainable generation path (blue) with LaTtE-Flow Attention, a timestep-conditioned residual-attention gate, and shared multimodal context." />
+              <img src="static/images/diff_vlm_arch_single.png" alt="LaTtE-Flow architecture: a frozen VLM path (purple) and a trainable generation path (blue) with LaTtE-Flow Attention, a timestep-conditioned residual-attention gate, and shared multimodal context.">
               <div class="fig-caption">
-                <strong>Architecture.</strong> The frozen VLM layers (<span style="color:#b794f6;">purple</span>) keep
-                understanding intact. A trainable replica plus flow-matching components (<span
-                  style="color:#63b3ed;">blue</span>) handle generation. The <span class="latte-name"><span
-                    class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> Attention module lets noisy image
+                <strong>Architecture.</strong> The frozen VLM layers (<span style="">purple</span>) keep
+                understanding intact. A trainable replica plus flow-matching components (<span style="">blue</span>) handle generation. The <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> Attention module lets noisy image
                 latents attend to the multimodal context, and a timestep-conditioned gate controls how much attention
                 is reused from the previous layer.
               </div>
@@ -648,330 +457,302 @@
 
           </div>
         </div>
-      </div>
-    </section>
+      <div class="studio-subsection studio-teaser-context">
 
-    <!-- ── Results ── -->
-    <section class="section">
+
+
+
+
+        </div>
+</div>
+    </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3">Results</h2>
-
-            <!-- Headline stats -->
-            <div class="stat-strip">
-              <div class="stat-card">
-                <div class="num">~6&times;</div>
-                <div class="lbl">faster inference vs. recent unified models</div>
-              </div>
-              <div class="stat-card">
-                <div class="num">500M</div>
-                <div class="lbl">activated params per generation step</div>
-              </div>
-              <div class="stat-card">
-                <div class="num">5.79</div>
-                <div class="lbl">FID on ImageNet-50K (256&times;256)</div>
-              </div>
-              <div class="stat-card">
-                <div class="num">7.08</div>
-                <div class="lbl">TFLOPs / forward pass (vs. 28.3 for the baseline)</div>
-              </div>
-            </div>
-
-            <div class="content has-text-justified" style="margin: 18px 0 6px;">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="content has-text-justified studio-results-intro" style="margin: 18px 0 6px;">
               <p>
                 <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> is
-                built on Qwen2-VL-2B-Instruct (28 layers) with a DC-AE image encoder, split into <em>K</em>&nbsp;=&nbsp;4
-                expert groups of <em>M</em>&nbsp;=&nbsp;7 layers, and trained on 1.2M ImageNet images at 256&times;256.
+                built on Qwen2-VL-2B-Instruct (28 layers) with a DC-AE image encoder, split into <em>K</em> = 4
+                expert groups of <em>M</em> = 7 layers, and trained on 1.2M ImageNet <span class="studio-ending">images at 256×256.</span>
               </p>
             </div>
-
-            <!-- Generation table -->
-            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Image Generation &mdash; ImageNet-50K</h3>
-            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">ImageNet-50K image generation</h3>
+<div class="content has-text-justified studio-result-description" style="margin-bottom:12px; font-size:0.92em;">
               <p>
                 <strong>#Params</strong> is the number of parameters active per sampling step. <strong>Rel.
-                  Time</strong> is inference time relative to <span class="latte-name"><span class="a-la">LaTtE</span>-<span
-                    class="a-flow">Flow</span></span>.
+                  Time</strong> is inference time relative to <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>.
               </p>
             </div>
-            <div style="overflow-x:auto; margin-bottom:24px;">
-              <table class="quant-table">
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="ImageNet-50K image generation">
+              <table class="quant-table studio-native-table">
                 <thead>
                   <tr>
-                    <th>Model</th>
-                    <th>FID &darr;</th>
-                    <th>IS &uarr;</th>
-                    <th>Pre &uarr;</th>
-                    <th>Rec &uarr;</th>
-                    <th>#Params</th>
-                    <th>#Step</th>
-                    <th>Time (s/img)</th>
-                    <th>Rel. Time</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">FID ↓</th>
+                    <th scope="col">IS ↑</th>
+                    <th scope="col">Pre ↑</th>
+                    <th scope="col">Rec ↑</th>
+                    <th scope="col">#Params</th>
+                    <th scope="col">#Step</th>
+                    <th scope="col">Time (s/img)</th>
+                    <th scope="col">Rel. Time</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="group-head">
+                  <tr class="group-head studio-group">
                     <td colspan="9">Diffusion models</td>
                   </tr>
                   <tr class="base-row">
-                    <td>ADM</td>
-                    <td>10.94</td>
-                    <td>101.0</td>
-                    <td>0.69</td>
-                    <td>0.63</td>
+                    <th scope="row">ADM</th>
+                    <td class="studio-numeric-cell">10.94</td>
+                    <td class="studio-numeric-cell">101.0</td>
+                    <td class="studio-numeric-cell">0.69</td>
+                    <td class="studio-numeric-cell">0.63</td>
                     <td>554M</td>
-                    <td>250</td>
-                    <td>9.677</td>
-                    <td>168&times;</td>
+                    <td class="studio-numeric-cell">250</td>
+                    <td class="studio-numeric-cell">9.677</td>
+                    <td>168×</td>
                   </tr>
                   <tr class="base-row">
-                    <td>DiT-XL/2</td>
-                    <td><span>2.27</span></td>
-                    <td><span>278.2</span></td>
-                    <td><span>0.83</span></td>
-                    <td>0.57</td>
+                    <th scope="row">DiT-XL/2</th>
+                    <td class="studio-numeric-cell"><span>2.27</span></td>
+                    <td class="studio-numeric-cell"><span>278.2</span></td>
+                    <td class="studio-numeric-cell"><span>0.83</span></td>
+                    <td class="studio-numeric-cell">0.57</td>
                     <td>675M</td>
-                    <td>250</td>
-                    <td>2.592</td>
-                    <td>45&times;</td>
+                    <td class="studio-numeric-cell">250</td>
+                    <td class="studio-numeric-cell">2.592</td>
+                    <td>45×</td>
                   </tr>
-                  <tr class="group-head">
+                  <tr class="group-head studio-group">
                     <td colspan="9">Masked models</td>
                   </tr>
                   <tr class="base-row">
-                    <td>MaskGIT</td>
-                    <td>6.18</td>
-                    <td>182.1</td>
-                    <td>0.80</td>
-                    <td>0.51</td>
+                    <th scope="row">MaskGIT</th>
+                    <td class="studio-numeric-cell">6.18</td>
+                    <td class="studio-numeric-cell">182.1</td>
+                    <td class="studio-numeric-cell">0.80</td>
+                    <td class="studio-numeric-cell">0.51</td>
                     <td>227M</td>
-                    <td>8</td>
-                    <td>0.029</td>
-                    <td>0.5&times;</td>
+                    <td class="studio-numeric-cell">8</td>
+                    <td class="studio-numeric-cell">0.029</td>
+                    <td>0.5×</td>
                   </tr>
-                  <tr class="group-head">
+                  <tr class="group-head studio-group">
                     <td colspan="9">Autoregressive models</td>
                   </tr>
                   <tr class="base-row">
-                    <td>ViT-VQGAN</td>
-                    <td>4.17</td>
-                    <td>175.1</td>
-                    <td>&mdash;</td>
-                    <td>&mdash;</td>
+                    <th scope="row">ViT-VQGAN</th>
+                    <td class="studio-numeric-cell">4.17</td>
+                    <td class="studio-numeric-cell">175.1</td>
+                    <td>—</td>
+                    <td>—</td>
                     <td>1.7B</td>
-                    <td>1024</td>
-                    <td>1.382</td>
-                    <td>24&times;</td>
+                    <td class="studio-numeric-cell">1024</td>
+                    <td class="studio-numeric-cell">1.382</td>
+                    <td>24×</td>
                   </tr>
                   <tr class="base-row">
-                    <td>RQTransformer</td>
-                    <td>7.55</td>
-                    <td>134.0</td>
-                    <td>&mdash;</td>
-                    <td>&mdash;</td>
+                    <th scope="row">RQTransformer</th>
+                    <td class="studio-numeric-cell">7.55</td>
+                    <td class="studio-numeric-cell">134.0</td>
+                    <td>—</td>
+                    <td>—</td>
                     <td>3.8B</td>
-                    <td>68</td>
-                    <td>1.210</td>
-                    <td>21&times;</td>
+                    <td class="studio-numeric-cell">68</td>
+                    <td class="studio-numeric-cell">1.210</td>
+                    <td>21×</td>
                   </tr>
-                  <tr class="group-head">
+                  <tr class="group-head studio-group">
                     <td colspan="9">Unified models</td>
                   </tr>
                   <tr class="base-row">
-                    <td>Show-o</td>
-                    <td>31.26</td>
-                    <td>98.7</td>
-                    <td>0.55</td>
-                    <td>0.69</td>
+                    <th scope="row">Show-o</th>
+                    <td class="studio-numeric-cell">31.26</td>
+                    <td class="studio-numeric-cell">98.7</td>
+                    <td class="studio-numeric-cell">0.55</td>
+                    <td class="studio-numeric-cell">0.69</td>
                     <td>1.3B</td>
-                    <td>50</td>
-                    <td>2.493</td>
-                    <td>48&times;</td>
+                    <td class="studio-numeric-cell">50</td>
+                    <td class="studio-numeric-cell">2.493</td>
+                    <td>48×</td>
                   </tr>
                   <tr class="base-row">
-                    <td>Janus Pro</td>
-                    <td>23.68</td>
-                    <td>105.2</td>
-                    <td>0.58</td>
-                    <td>0.49</td>
+                    <th scope="row">Janus Pro</th>
+                    <td class="studio-numeric-cell">23.68</td>
+                    <td class="studio-numeric-cell">105.2</td>
+                    <td class="studio-numeric-cell">0.58</td>
+                    <td class="studio-numeric-cell">0.49</td>
                     <td>1.5B</td>
-                    <td>576</td>
-                    <td>0.311</td>
-                    <td>6&times;</td>
+                    <td class="studio-numeric-cell">576</td>
+                    <td class="studio-numeric-cell">0.311</td>
+                    <td>6×</td>
                   </tr>
-                  <tr class="base-row">
-                    <td>Vanilla (Ours, baseline)</td>
-                    <td>6.33</td>
-                    <td>192.4</td>
-                    <td>0.80</td>
-                    <td>0.67</td>
+                  <tr class="base-row studio-ours">
+                    <th scope="row">Vanilla (Ours, baseline)</th>
+                    <td class="studio-numeric-cell">6.33</td>
+                    <td class="studio-numeric-cell">192.4</td>
+                    <td class="studio-numeric-cell">0.80</td>
+                    <td class="studio-numeric-cell">0.67</td>
                     <td>2.0B</td>
-                    <td>40</td>
-                    <td>0.158</td>
-                    <td>3&times;</td>
+                    <td class="studio-numeric-cell">40</td>
+                    <td class="studio-numeric-cell">0.158</td>
+                    <td>3×</td>
                   </tr>
-                  <tr class="ours-row">
-                    <td>LaTtE-Flow (Ours)</td>
-                    <td>5.79</td>
-                    <td>213.1</td>
-                    <td>0.78</td>
-                    <td>0.69</td>
+                  <tr class="ours-row studio-ours">
+                    <th scope="row">LaTtE-Flow (Ours)</th>
+                    <td class="studio-numeric-cell">5.79</td>
+                    <td class="studio-numeric-cell">213.1</td>
+                    <td class="studio-numeric-cell">0.78</td>
+                    <td class="studio-numeric-cell">0.69</td>
                     <td>500M</td>
-                    <td>40</td>
-                    <td>0.052</td>
-                    <td>1&times;</td>
+                    <td class="studio-numeric-cell">40</td>
+                    <td class="studio-numeric-cell">0.052</td>
+                    <td>1×</td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-
-            <!-- Understanding table -->
-            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Multimodal Understanding</h3>
-            <div class="content has-text-justified" style="margin-bottom:12px; font-size:0.92em;">
+            </div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Multimodal understanding</h3>
+<div class="content has-text-justified studio-result-description" style="margin-bottom:12px; font-size:0.92em;">
               <p>
-               <span class="latte-name"><span class="a-la">LaTtE</span>-<span
-                    class="a-flow">Flow</span></span>  LaTtE-Flow preserves Qwen2-VL-2B’s
+               <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span>  LaTtE-Flow preserves Qwen2-VL-2B’s
 strong understanding performance while adding generation capabilities.
               </p>
             </div>
-            <div style="overflow-x:auto; margin-bottom:24px;">
-              <table class="quant-table">
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Multimodal understanding">
+              <table class="quant-table studio-native-table">
                 <thead>
                   <tr>
-                    <th>Model</th>
-                    <th>MMBench</th>
-                    <th>SEED</th>
-                    <th>POPE</th>
-                    <th>MM-Vet</th>
-                    <th>MME-P</th>
-                    <th>MMMU</th>
-                    <th>RWQA</th>
-                    <th>TextVQA</th>
-                    <th>#Params</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">MMBench</th>
+                    <th scope="col">SEED</th>
+                    <th scope="col">POPE</th>
+                    <th scope="col">MM-Vet</th>
+                    <th scope="col">MME-P</th>
+                    <th scope="col">MMMU</th>
+                    <th scope="col">RWQA</th>
+                    <th scope="col">TextVQA</th>
+                    <th scope="col">#Params</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="base-row">
-                    <td>Chameleon</td>
-                    <td>32.7</td>
-                    <td>&mdash;</td>
-                    <td>59.8</td>
-                    <td>9.7</td>
-                    <td>604.5</td>
-                    <td>38.8</td>
-                    <td>39.2</td>
-                    <td>0.0</td>
+                    <th scope="row">Chameleon</th>
+                    <td class="studio-numeric-cell">32.7</td>
+                    <td>—</td>
+                    <td class="studio-numeric-cell">59.8</td>
+                    <td class="studio-numeric-cell">9.7</td>
+                    <td class="studio-numeric-cell">604.5</td>
+                    <td class="studio-numeric-cell">38.8</td>
+                    <td class="studio-numeric-cell">39.2</td>
+                    <td class="studio-numeric-cell">0.0</td>
                     <td>34B</td>
                   </tr>
                   <tr class="base-row">
-                    <td>EMU3</td>
-                    <td>58.5</td>
-                    <td>68.2</td>
-                    <td>85.2</td>
-                    <td>37.2</td>
-                    <td>1243.8</td>
-                    <td>31.6</td>
-                    <td>57.4</td>
-                    <td>64.7</td>
+                    <th scope="row">EMU3</th>
+                    <td class="studio-numeric-cell">58.5</td>
+                    <td class="studio-numeric-cell">68.2</td>
+                    <td class="studio-numeric-cell">85.2</td>
+                    <td class="studio-numeric-cell">37.2</td>
+                    <td class="studio-numeric-cell">1243.8</td>
+                    <td class="studio-numeric-cell">31.6</td>
+                    <td class="studio-numeric-cell">57.4</td>
+                    <td class="studio-numeric-cell">64.7</td>
                     <td>8B</td>
                   </tr>
                   <tr class="base-row">
-                    <td>Janus</td>
-                    <td>69.4</td>
-                    <td>63.7</td>
-                    <td>87.0</td>
-                    <td>34.3</td>
-                    <td>1338.0</td>
-                    <td>30.5</td>
-                    <td>&mdash;</td>
-                    <td>&mdash;</td>
+                    <th scope="row">Janus</th>
+                    <td class="studio-numeric-cell">69.4</td>
+                    <td class="studio-numeric-cell">63.7</td>
+                    <td class="studio-numeric-cell">87.0</td>
+                    <td class="studio-numeric-cell">34.3</td>
+                    <td class="studio-numeric-cell">1338.0</td>
+                    <td class="studio-numeric-cell">30.5</td>
+                    <td>—</td>
+                    <td>—</td>
                     <td>1.5B</td>
                   </tr>
                   <tr class="base-row">
-                    <td>Janus Pro</td>
-                    <td><span class="best">75.5</span></td>
-                    <td>68.3</td>
-                    <td>86.2</td>
-                    <td>39.8</td>
-                    <td>1444.0</td>
-                    <td>36.3</td>
-                    <td>&mdash;</td>
-                    <td>&mdash;</td>
+                    <th scope="row">Janus Pro</th>
+                    <td class="studio-numeric-cell"><span class="best">75.5</span></td>
+                    <td class="studio-numeric-cell">68.3</td>
+                    <td class="studio-numeric-cell">86.2</td>
+                    <td class="studio-numeric-cell">39.8</td>
+                    <td class="studio-numeric-cell">1444.0</td>
+                    <td class="studio-numeric-cell">36.3</td>
+                    <td>—</td>
+                    <td>—</td>
                     <td>1.5B</td>
                   </tr>
                   <tr class="base-row">
-                    <td>Qwen2-VL-2B (backbone)</td>
-                    <td>74.9</td>
-                    <td><span class="best">72.4</span></td>
-                    <td><span class="best">87.3</span></td>
-                    <td><span class="best">51.5</span></td>
-                    <td><span class="best">1501.4</span></td>
-                    <td>41.1</td>
-                    <td><span class="best">60.7</span></td>
-                    <td><span class="best">79.7</span></td>
+                    <th scope="row">Qwen2-VL-2B (backbone)</th>
+                    <td class="studio-numeric-cell">74.9</td>
+                    <td class="studio-numeric-cell"><span class="best">72.4</span></td>
+                    <td class="studio-numeric-cell"><span class="best">87.3</span></td>
+                    <td class="studio-numeric-cell"><span class="best">51.5</span></td>
+                    <td class="studio-numeric-cell"><span class="best">1501.4</span></td>
+                    <td class="studio-numeric-cell">41.1</td>
+                    <td class="studio-numeric-cell"><span class="best">60.7</span></td>
+                    <td class="studio-numeric-cell"><span class="best">79.7</span></td>
                     <td>2B</td>
                   </tr>
-                  <tr class="ours-row">
-                    <td>LaTtE-Flow (Ours)</td>
-                    <td>74.9</td>
-                    <td>72.4</td>
-                    <td>87.3</td>
-                    <td>51.5</td>
-                    <td>1501.4</td>
-                    <td>41.1</td>
-                    <td>60.7</td>
-                    <td>79.7</td>
+                  <tr class="ours-row studio-ours">
+                    <th scope="row">LaTtE-Flow (Ours)</th>
+                    <td class="studio-numeric-cell">74.9</td>
+                    <td class="studio-numeric-cell">72.4</td>
+                    <td class="studio-numeric-cell">87.3</td>
+                    <td class="studio-numeric-cell">51.5</td>
+                    <td class="studio-numeric-cell">1501.4</td>
+                    <td class="studio-numeric-cell">41.1</td>
+                    <td class="studio-numeric-cell">60.7</td>
+                    <td class="studio-numeric-cell">79.7</td>
                     <td>2B</td>
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div></figure>
+</div>
+</div>
+    </section><section class="section" data-studio-section="ablations" id="studio-ablations" aria-labelledby="studio-ablations-title"><div class="container is-max-desktop"><div class="columns is-centered has-text-centered studio-result-host"><div class="column studio-result-host">
+<h2 class="title is-3" id="studio-ablations-title">Ablation Studies</h2>
 
-            <!-- Ablations -->
-            <h3 class="title is-5" style="text-align:left; margin-top:1.2rem;">Ablations</h3>
-
-            <div class="fig-row" style="margin-top: 10px;">
-              <div class="fig-block">
-                <img src="static/images/performance_vs_training_steps.png"
-                  alt="FID over training steps: LaTtE-Flow converges faster than the Vanilla baseline." />
-                <div class="fig-caption">
-                  <strong>Faster convergence.</strong> Layerwise timestep experts reach a lower FID in fewer training
-                  steps than the Vanilla baseline.
-                </div>
-              </div>
-              <div class="fig-block">
-                <img src="static/images/group_size.png"
-                  alt="Effect of expert group size on FID and inference speed." />
-                <div class="fig-caption">
-                  <strong>Group size trade-off.</strong> Larger groups improve FID but run slower. <em>M</em>&nbsp;=&nbsp;7
-                  gives the best balance and is used in the main results.
-                </div>
-              </div>
-            </div>
+            <div class="fig-row studio-result-host latte-ablation-panels" style="margin-top: 10px;">
+<figure class="studio-native-result" data-result-source="static/images/performance_vs_training_steps.png"><h3>Performance as training progresses</h3>
+<p class="studio-result-description">Layerwise timestep experts reach a lower FID in fewer training steps than the Vanilla baseline.</p>
+<div>
+<div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>Vanilla</span><span><i style="--series-color: #ff915b;"></i>LaTtE-Flows</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="Performance as training progresses"><svg viewbox="0 0 850 410" role="img" aria-label="Performance as training progresses: FID-50K ↓"><line x1="72" x2="818" y1="340" y2="340" class="studio-grid"></line><text x="60" y="344" text-anchor="end">5</text><line x1="72" x2="818" y1="261.25" y2="261.25" class="studio-grid"></line><text x="60" y="265.25" text-anchor="end">13.25</text><line x1="72" x2="818" y1="182.5" y2="182.5" class="studio-grid"></line><text x="60" y="186.5" text-anchor="end">21.5</text><line x1="72" x2="818" y1="103.75" y2="103.75" class="studio-grid"></line><text x="60" y="107.75" text-anchor="end">29.75</text><line x1="72" x2="818" y1="25" y2="25" class="studio-grid"></line><text x="60" y="29" text-anchor="end">38</text><text x="72" y="364" text-anchor="middle">20</text><text x="178.57142857142856" y="364" text-anchor="middle">40</text><text x="285.1428571428571" y="364" text-anchor="middle">60</text><text x="391.7142857142857" y="364" text-anchor="middle">80</text><text x="604.8571428571429" y="364" text-anchor="middle">120</text><text x="818" y="364" text-anchor="middle">160</text><line x1="72" x2="818" y1="340" y2="340" class="studio-axis"></line><text x="445" y="395" text-anchor="middle">Training steps (K)</text><text x="18" y="182.5" transform="rotate(-90 18 182.5)" text-anchor="middle">FID-50K ↓</text><path d="M72,44.090909090909065 L178.57142857142856,196.8181818181818 L285.1428571428571,234.04545454545453 L391.7142857142857,263.6363636363636 L604.8571428571429,284.6363636363636 L818,303.72727272727275" fill="none" stroke="#83afd9" stroke-width="2.5" stroke-dasharray="6 4"></path><circle cx="72" cy="44.090909090909065" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 20, 36</title></circle><circle cx="178.57142857142856" cy="196.8181818181818" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 40, 20</title></circle><circle cx="285.1428571428571" cy="234.04545454545453" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 60, 16.1</title></circle><circle cx="391.7142857142857" cy="263.6363636363636" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 80, 13</title></circle><circle cx="604.8571428571429" cy="284.6363636363636" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 120, 10.8</title></circle><circle cx="818" cy="303.72727272727275" r="4" fill="#83afd9" opacity="0.9" tabindex="0"><title>Vanilla: approximately 160, 8.8</title></circle><path d="M72,213.04545454545453 L178.57142857142856,274.1363636363636 L285.1428571428571,292.27272727272725 L391.7142857142857,298.95454545454544 L604.8571428571429,306.5909090909091 L818,319" fill="none" stroke="#ff915b" stroke-width="2.5" stroke-dasharray=""></path><circle cx="72" cy="213.04545454545453" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 20, 18.3</title></circle><circle cx="178.57142857142856" cy="274.1363636363636" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 40, 11.9</title></circle><circle cx="285.1428571428571" cy="292.27272727272725" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 60, 10</title></circle><circle cx="391.7142857142857" cy="298.95454545454544" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 80, 9.3</title></circle><circle cx="604.8571428571429" cy="306.5909090909091" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 120, 8.5</title></circle><circle cx="818" cy="319" r="4" fill="#ff915b" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 160, 7.2</title></circle></svg></div>
+</div></figure><figure class="studio-native-result" data-result-source="static/images/group_size.png"><h3>Group size: speed and generation quality</h3>
+<p class="studio-result-description">Larger expert groups improve FID but take longer to run. A group of seven layers is used in the main results. Bubble area represents model size.</p>
+<div>
+<div class="studio-legend">
+<span><i style="--series-color: #83afd9;"></i>LaTtE-Flows</span><span><i style="--series-color: #ff915b;"></i>Vanilla · 2B</span>
+</div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="Group size: speed and generation quality"><svg viewbox="0 0 850 410" role="img" aria-label="Group size: speed and generation quality: FID-50K ↓"><line x1="72" x2="818" y1="340" y2="340" class="studio-grid"></line><text x="60" y="344" text-anchor="end">0</text><line x1="72" x2="818" y1="261.25" y2="261.25" class="studio-grid"></line><text x="60" y="265.25" text-anchor="end">7.5</text><line x1="72" x2="818" y1="182.5" y2="182.5" class="studio-grid"></line><text x="60" y="186.5" text-anchor="end">15</text><line x1="72" x2="818" y1="103.75" y2="103.75" class="studio-grid"></line><text x="60" y="107.75" text-anchor="end">22.5</text><line x1="72" x2="818" y1="25" y2="25" class="studio-grid"></line><text x="60" y="29" text-anchor="end">30</text><text x="72" y="364" text-anchor="middle">20</text><text x="258.5" y="364" text-anchor="middle">60</text><text x="445" y="364" text-anchor="middle">100</text><text x="631.5" y="364" text-anchor="middle">140</text><text x="818" y="364" text-anchor="middle">180</text><line x1="72" x2="818" y1="340" y2="340" class="studio-axis"></line><text x="445" y="395" text-anchor="middle">Inference time (ms)</text><text x="18" y="182.5" transform="rotate(-90 18 182.5)" text-anchor="middle">FID-50K ↓</text><circle cx="160.58749999999998" cy="72.25" r="7.75" fill="#83afd9" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 39, 25.5</title></circle><text x="160.58749999999998" y="62.25" text-anchor="middle">Group 4 · 0.3B</text><circle cx="216.5375" cy="250.75" r="10" fill="#83afd9" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 51, 8.5</title></circle><text x="216.5375" y="240.75" text-anchor="middle">Group 7 · 0.5B</text><circle cx="403.03749999999997" cy="263.35" r="14.14" fill="#83afd9" opacity="0.9" tabindex="0"><title>LaTtE-Flows: approximately 91, 7.3</title></circle><text x="403.03749999999997" y="253.35000000000002" text-anchor="middle">Group 14 · 1B</text><circle cx="715.4250000000001" cy="227.65" r="20" fill="#ff915b" opacity="0.9" tabindex="0"><title>Vanilla · 2B: approximately 158, 10.7</title></circle><text x="715.4250000000001" y="217.65" text-anchor="middle">Vanilla · 2B</text></svg></div>
+</div></figure>
+</div>
 
 
 
             <!-- Qualitative -->
-            <h3 class="title is-5" style="text-align:left; margin-top:1.6rem;">Qualitative Samples</h3>
+            </div></div></div></section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title"><div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered studio-result-host">
+<div class="column studio-result-host">
+<h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
             <div class="fig-block" style="margin-top: 10px;">
-              <img src="static/images/qualitative_fig.png"
-                alt="256x256 image samples generated by LaTtE-Flow trained on ImageNet." />
+              <img src="static/images/qualitative_fig.png" alt="256x256 image samples generated by LaTtE-Flow trained on ImageNet.">
               <div class="fig-caption">
-                256&times;256 samples generated by <span class="latte-name"><span class="a-la">LaTtE</span>-<span
-                    class="a-flow">Flow</span></span> trained on ImageNet.
+                256×256 samples generated by <span class="latte-name"><span class="a-la">LaTtE</span>-<span class="a-flow">Flow</span></span> trained on ImageNet.
               </div>
             </div>
 
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ── BibTeX ── -->
-    <section class="section" id="BibTeX">
+      </div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
       <div class="container is-max-desktop content">
-        <h2 class="title" style="display:flex; justify-content:left;">BibTeX</h2>
+        <h2 class="title is-3" style="display:flex; justify-content:left;" id="BibTeX-title">BibTeX</h2>
         <pre><code>@inproceedings{shen2026latteflow,
   title={LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer},
   author={Shen, Ying and Xu, Zhiyang and Chen, Jiuhai and Diao, Shizhe and Zhang, Jiaxin and Yao, Yuguang and Rimchala, Joy and Lourentzou, Ismini and Huang, Lifu},
@@ -979,35 +760,24 @@ strong understanding performance while adding generation capabilities.
   year={2026}
 }</code></pre>
       </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="content has-text-centered">
-          <a class="icon-link" href="https://arxiv.org/abs/2506.06952" target="_blank">
-            <i class="fas fa-file-pdf"></i>
-          </a>
-          <a class="icon-link" href="https://github.com/PLAN-Lab">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
+    </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
                 This site is built upon the template from
                 <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
                 made available under the
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                   Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+              </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
-  </main>
+
+
 </body>
-
 </html>

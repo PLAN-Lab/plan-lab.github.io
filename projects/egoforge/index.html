@@ -1,28 +1,27 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-48J3PYKGQ6');
     </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="EgoForge: Goal-Directed Egocentric World Simulator" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EgoForge: Goal-Directed Egocentric World Simulator">
     <title>EgoForge: Goal-Directed Egocentric World Simulator | PLAN Lab</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
-    <link rel="stylesheet" href="static/css/studio.css?v=project-pages-inline-data-v2" />
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
+    <link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
     <style>
         .page-project .interpolation-image {
             width: 90%;
@@ -108,69 +107,20 @@
             }
         }
     </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "EgoForge",
-    "splits": [
-      {
-        "heading": "Ablations",
-        "label": "Ablation Studies"
-      }
-    ],
-    "tldr": [
-      "We introduce EgoForge, a framework for generating goal-directed first-person video from an image and an instruction, with an optional external view providing additional context. Reward-guided refinement aligns the video with the intended goal while preserving scene consistency and coherent motion."
-    ],
-    "contributions": [
-      "EgoForge generates goal-directed first-person rollouts from minimal static inputs. We introduce an egocentric world simulator conditioned on a single egocentric image, a high-level instruction, and an optional auxiliary exocentric view. It models scene evolution and hand–object interactions without requiring camera trajectories, pose signals, or synchronized multi-view streams at inference time.",
-      "Geometry weak supervision improves spatial consistency. Intermediate diffusion-transformer representations are aligned with geometry features from a pretrained VGGT encoder. Angular alignment matches feature directions, while scale alignment prevents scale collapse and encourages spatially stable video rollouts.",
-      "GRAFT refines complete trajectories using complementary rewards. We propose trajectory-level reward-guided refinement for goal completion, scene consistency, temporal causality, and perceptual fidelity. Evaluating these signals over entire trajectories encourages the intended outcome while reducing scene drift and inconsistent motion.",
-      "Experiments test both benchmark performance and real-world use. EgoForge shows consistent improvements in semantic alignment, geometric stability, and motion fidelity over strong baselines and maintains robust performance in real-world smart-glasses experiments."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "qualitative": {
-      "source": "Qualitative Results: Comparison with Baselines",
-      "additionalSources": [
-        "Qualitative Results: With vs. Without Exocentric Input",
-        "Qualitative Results: Long-Duration Sequences"
-      ]
-    },
-    "contributionLeads": [
-      "EgoForge generates goal-directed first-person rollouts from minimal static inputs.",
-      "Geometry weak supervision improves spatial consistency.",
-      "GRAFT refines complete trajectories using complementary rewards.",
-      "Experiments test both benchmark performance and real-world use."
-    ]
-  },
-  "resultPanels": {
-    "htmlTable:0": {
-      "title": "X-Ego benchmark",
-      "description": "Semantic, perceptual, and temporal quality on the X-Ego benchmark. Arrows indicate the preferred direction of each metric."
-    },
-    "htmlTable:1": {
-      "title": "Enhanced baseline variants",
-      "description": "Comparisons with external-view conditioning (+EV), text-only adaptation (+TT), and the proposed conditioning inputs (+CI)."
-    },
-    "htmlTable:2": {
-      "title": "User study",
-      "description": "Ratings on a 1–5 scale from 20 annotators over 25 video groups. Higher scores are better; asterisks mark enhanced baseline variants."
-    }
-  },
-  "results": {}
-}
-  </script>
+<body class="page-project project-studio studio-egoforge" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
     <nav class="glass-nav">
         <a href="../../index.html#hero" class="nav-logo">
-            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
         </a>
         <div class="nav-menu">
             <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -198,381 +148,29 @@
 
     <main>
         <!-- ============ HERO / TITLE ============ -->
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container is-max-desktop">
-                    <div class="columns is-centered">
-                        <div class="column has-text-centered">
-                            <h1 class="publication-title">EgoForge: Goal-Directed Egocentric World Simulator</h1>
 
-                            <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiateng Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Bingxuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Houze Yang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Wenqi Jia<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ucsd">Yijiang Li<sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">James Matthew Rehg<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span></div></div>
-
-                            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ucsd"><sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup><span class="studio-affiliation-name">University of California San Diego</span></span></div>
-
-                        
-                            <div class="publication-links"><a href="https://arxiv.org/pdf/2603.20169" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.20169" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ============ FIGURE 1 — TEASER (智能眼镜实验 rollout) ============ -->
-        <section class="hero teaser">
-            <div class="container is-max-desktop">
-                <div class="hero-body">
-                    <img src="./static/images/teaser.jpg" class="interpolation-image"
-                        alt="Egocentric video rollouts produced by EgoForge in real-world smart-glasses experiments." />
-                    <p class="has-text-justified">
-                        Egocentric video rollouts produced by EgoForge in real-world
-                        smart-glasses experiments. Given a single smart-glasses egocentric image, a high-level goal
-                        instruction, and an auxiliary exocentric view, EgoForge generates egocentric rollouts that
-                        follow user intent and preserve scene structure, without requiring dense supervision such as
-                        camera trajectories, pose, video, or synchronized multi-view capture streams.
-                    </p>
-                </div>
-            </div>
-        </section>
+
 
         <!-- ============ ABSTRACT ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
-                        <p>
-                            Generative world models have shown promise for simulating dynamic environments, yet
-                            egocentric video remains challenging due to rapid viewpoint changes, frequent hand–object
-                            interactions, and goal-directed procedures whose evolution depends on latent human intent.
-                            Existing approaches either focus on hand-centric instructional synthesis with limited scene
-                            evolution, perform static view translation without modeling action dynamics, or rely on
-                            dense supervision such as camera trajectories, long video prefixes, or synchronized
-                            multi-camera capture.
-                        </p>
-                        <p>
-                            In this work, we introduce <strong>EgoForge</strong>, an egocentric goal-directed world
-                            simulator that generates coherent, first-person video rollouts from minimal static inputs:
-                            a single egocentric image, a high-level instruction, and an optional auxiliary exocentric
-                            view. To improve intent alignment and temporal consistency, we propose
-                            <strong>GRAFT</strong>, a trajectory-level reward-guided refinement that
-                            optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity
-                            during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains
-                            in semantic alignment, geometric stability, and motion fidelity over strong baselines,
-                            and robust performance in real-world smart-glasses experiments.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- ============ METHOD ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Method</h2>
-                    <div class="content has-text-justified">
 
-                        <!-- Figure 2: 模型整体架构图 -->
-                        <img loading="lazy" decoding="async" src="./static/images/method.jpg"
-                            class="interpolation-image"
-                            alt="EgoForge Overview." />
-                        <p class="has-text-justified">
-                            <strong>EgoForge Overview.</strong> Given a single egocentric
-                            observation, a high-level (instruction) intent, and an auxiliary exo-view reference,
-                            EgoForge fuses encoded visual features with noisy video latents at each DiT block to guide
-                            generation. Geometry alignment weakly supervises intermediate features using angular and
-                            scale consistency to encourage spatially stable rollouts. The resulting rollout videos are
-                            further refined via the proposed GRAFT alignment policy that optimizes goal
-                            completion, scene consistency, temporal causality, and perceptual fidelity.
-                        </p>
-
-                        <h3 class="egoforge-section-header illini-orange">Diffusion-Based Egocentric Generator</h3>
-                        <p>
-                            EgoForge models egocentric video generation in the latent space of a pretrained video
-                            autoencoder, conditioned on context
-                            <strong>𝒞 = {ego&nbsp;image, instruction&nbsp;y, exo&nbsp;reference}</strong>
-                            through adaptive normalization and cross-attention. Unlike prior work, EgoForge does
-                            <em>not</em> require camera trajectories, pose signals, or synchronized multi-view streams
-                            at inference time.
-                        </p>
-
-                        <h3 class="egoforge-section-header illini-orange">Geometry Weak Supervision</h3>
-                        <p>
-                            To inject 3D reasoning into the diffusion backbone, EgoForge aligns intermediate DiT
-                            representations with geometry features from a pretrained VGGT encoder via two losses:
-                        </p>
-                        <ul class="egoforge-feature-list">
-                            <li><strong>Angular Alignment (ℒ<sub>ang</sub>):</strong> Cosine similarity loss that
-                                encourages diffusion features to match the <em>direction</em> of VGGT geometry
-                                features at each spatial–temporal token.</li>
-                            <li><strong>Scale Alignment (ℒ<sub>sca</sub>):</strong> MSE loss between projected
-                                diffusion features and VGGT features to prevent scale collapse.</li>
-                        </ul>
-
-                        <h3 class="egoforge-section-header illini-orange">GRAFT Alignment</h3>
-
-                        
-
-                        <p>
-                            GRAFT performs
-                            negative-aware finetuning with four fine-grained reward functions evaluated on
-                            entire video trajectories:
-                        </p>
-                        <ul class="egoforge-feature-list">
-                            <li><strong>Goal Completion (ℛ<sub>goal</sub>):</strong> Evaluates whether the trajectory
-                                successfully achieves the task outcome, measured by similarity of the final state to
-                                the target reference.</li>
-                            <li><strong>Scene Consistency (ℛ<sub>env</sub>):</strong> Measures consistency with the
-                                initial scene, penalizing drift, misplaced objects, or transitions into unrelated
-                                environments.</li>
-                            <li><strong>Temporal Causality (ℛ<sub>temp</sub>):</strong> Assesses whether motion
-                                evolves in a physically plausible, coherent, and causal manner without temporal
-                                artifacts.</li>
-                            <li><strong>Perceptual Fidelity (ℛ<sub>per</sub>):</strong> Captures overall visual
-                                clarity, stability, and absence of distortions or artifacts (PSNR + FVD +
-                                LPIPS).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ============ QUANTITATIVE RESULTS ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Quantitative Results</h2>
-                    <div class="content has-text-justified">
 
-                        <h3 class="egoforge-result-heading">X-Ego benchmark</h3>
-                        <p>
-                            Quantitative comparisons on the X-Ego benchmark.
-                            EgoForge outperforms all baselines across semantic, perceptual, and temporal metrics.
-                        </p>
-                        <div style="overflow-x:auto;">
-                            <table class="results-table">
-                                <thead>
-                                    <tr>
-                                        <th>Model</th>
-                                        <th>DINO-Score↑</th>
-                                        <th>CLIP-Score↑</th>
-                                        <th>SSIM↑</th>
-                                        <th>LPIPS↓</th>
-                                        <th>FVD↓</th>
-                                        <th>Flow MSE↓</th>
-                                        <th>PSNR↑</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>EgoDreamer</td><td>42.35</td><td>25.40</td><td>0.58</td><td>0.35</td><td>580.45</td><td>8.15</td><td>15.20</td></tr>
-                                    <tr><td>Handi</td><td>31.12</td><td>18.25</td><td>0.42</td><td>0.52</td><td>912.30</td><td>14.50</td><td>12.85</td></tr>
-                                    <tr><td>Cosmos</td><td>49.42</td><td>29.77</td><td>0.70</td><td>0.26</td><td>448.12</td><td>6.40</td><td>18.73</td></tr>
-                                    <tr><td>HunyuanVideo</td><td>53.54</td><td>29.43</td><td>0.71</td><td>0.26</td><td>384.31</td><td>6.10</td><td>18.88</td></tr>
-                                    <tr><td>WAN2.2</td><td>53.99</td><td>35.69</td><td>0.72</td><td>0.23</td><td>322.17</td><td>5.78</td><td>20.44</td></tr>
-                                    <tr class="highlight-row studio-ours">
-                                        <td><strong>EgoForge (Ours)</strong></td>
-                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td>
-                                        <td><strong>0.79</strong></td><td><strong>0.15</strong></td>
-                                        <td><strong>182.25</strong></td><td><strong>2.83</strong></td>
-                                        <td><strong>24.08</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h3 class="egoforge-result-heading">Enhanced baseline variants</h3>
-                        <p>
-                            Quantitative comparisons with enhanced baseline variants
-                            (+EV: exo-view image; +TT: text-only domain adaptation;
-                            +CI: our conditioning inputs with Geometry Weak Supervision).
-                            EgoForge still achieves best results across all seven metrics.
-                        </p>
-                        <div style="overflow-x:auto;">
-                            <table class="results-table">
-                                <thead>
-                                    <tr>
-                                        <th>Model</th>
-                                        <th>DINO-Score↑</th>
-                                        <th>CLIP-Score↑</th>
-                                        <th>SSIM↑</th>
-                                        <th>LPIPS↓</th>
-                                        <th>FVD↓</th>
-                                        <th>Flow MSE↓</th>
-                                        <th>PSNR↑</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Cosmos+EV</td><td>48.60</td><td>29.60</td><td>0.67</td><td>0.28</td><td>485.75</td><td>6.82</td><td>18.30</td></tr>
-                                    <tr><td>Cosmos+TT</td><td>50.80</td><td>30.40</td><td>0.71</td><td>0.25</td><td>433.90</td><td>6.31</td><td>18.88</td></tr>
-                                    <tr><td>HunyuanVideo+EV</td><td>52.80</td><td>29.20</td><td>0.70</td><td>0.27</td><td>405.87</td><td>6.30</td><td>18.61</td></tr>
-                                    <tr><td>HunyuanVideo+TT</td><td>54.10</td><td>29.86</td><td>0.72</td><td>0.24</td><td>365.80</td><td>5.95</td><td>19.10</td></tr>
-                                    <tr><td>WAN2.2+EV</td><td>52.91</td><td>35.11</td><td>0.71</td><td>0.27</td><td>352.41</td><td>6.25</td><td>20.05</td></tr>
-                                    <tr><td>WAN2.2+TT</td><td>54.80</td><td>36.20</td><td>0.73</td><td>0.25</td><td>310.57</td><td>5.60</td><td>20.64</td></tr>
-                                    <tr><td>WAN2.2+CI</td><td>58.92</td><td>38.05</td><td>0.76</td><td>0.18</td><td>218.72</td><td>3.92</td><td>22.87</td></tr>
-                                    <tr class="highlight-row studio-ours">
-                                        <td><strong>EgoForge (Ours)</strong></td>
-                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td>
-                                        <td><strong>0.79</strong></td><td><strong>0.15</strong></td>
-                                        <td><strong>182.25</strong></td><td><strong>2.83</strong></td>
-                                        <td><strong>24.08</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h3 class="egoforge-result-heading">User study</h3>
-                        <p>
-                            User study (1–5 scale, 20 annotators, 25 video groups).
-                            EgoForge achieves substantial gains in Alignment (4.75) and Fidelity (4.71).
-                            * denotes the best enhanced baseline variants.
-                        </p>
-                        <div style="overflow-x:auto;">
-                            <table class="results-table">
-                                <thead>
-                                    <tr>
-                                        <th>Model</th>
-                                        <th>Quality↑</th>
-                                        <th>Fidelity↑</th>
-                                        <th>Smooth Motion↑</th>
-                                        <th>Smooth Env.↑</th>
-                                        <th>Alignment↑</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Cosmos*</td><td>3.29</td><td>2.54</td><td>3.07</td><td>2.47</td><td>2.19</td></tr>
-                                    <tr><td>Hunyuan*</td><td>3.46</td><td>2.86</td><td>3.72</td><td>3.16</td><td>3.08</td></tr>
-                                    <tr><td>WAN2.2*</td><td>3.22</td><td>3.48</td><td>3.82</td><td>4.07</td><td>3.15</td></tr>
-                                    <tr class="highlight-row studio-ours">
-                                        <td><strong>EgoForge (Ours)</strong></td>
-                                        <td><strong>4.58</strong></td><td><strong>4.71</strong></td>
-                                        <td><strong>4.25</strong></td><td><strong>4.48</strong></td>
-                                        <td><strong>4.75</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h3 class="egoforge-result-heading">Ablations</h3>
-                        <p>
-                            Ablation on EgoForge modules (FT = Denoising Fine-Tuning,
-                            GWS = Geometry Weak Supervision). Each component consistently improves performance,
-                            with the full model achieving best results.
-                        </p>
-                        <div style="overflow-x:auto;">
-                            <table class="results-table">
-                                <thead>
-                                    <tr>
-                                        <th>FT</th><th>GWS</th><th>GRAFT</th>
-                                        <th>DINO↑</th><th>CLIP↑</th><th>SSIM↑</th>
-                                        <th>LPIPS↓</th><th>FVD↓</th><th>Flow MSE↓</th><th>PSNR↑</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>✓</td><td>✗</td><td>✗</td><td>56.81</td><td>37.10</td><td>0.74</td><td>0.21</td><td>260.89</td><td>4.82</td><td>21.92</td></tr>
-                                    <tr><td>✓</td><td>✓</td><td>✗</td><td>58.92</td><td>38.05</td><td>0.76</td><td>0.18</td><td>218.72</td><td>3.92</td><td>22.87</td></tr>
-                                    <tr class="highlight-row studio-ours">
-                                        <td>✓</td><td>✓</td><td>✓</td>
-                                        <td><strong>61.25</strong></td><td><strong>39.30</strong></td><td><strong>0.79</strong></td>
-                                        <td><strong>0.15</strong></td><td><strong>182.25</strong></td><td><strong>2.83</strong></td><td><strong>24.08</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ============ FIGURE 3 — 定性对比 (咖啡倒水 & 篮球) ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Comparison with Baselines</span></h2>
-                    <div class="content egoforge-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_expample.jpg"
-                            class="interpolation-image"
-                            alt="Qualitative Comparison between EgoForge and baselines." />
-                        <p class="has-text-justified">
-                            Qualitative comparison between EgoForge and baselines.
-                            EgoForge accurately reconstructs multi-step, causally ordered actions, preserving
-                            hand–object geometry, temporal consistency, and goal alignment. In the first example
-                            (coffee pouring), Cosmos erroneously generates a third hand, Hunyuan depicts a
-                            disconnected arm, and Wan2.2 fails to complete the task. In the second example
-                            (basketball), Cosmos generates multiple balls, while Hunyuan and Wan2.2 generate
-                            an incorrect person. EgoForge accurately completes both tasks.
-                        </p>
 
-                        <!-- Figure 4 — 洗手 & 踢球 -->
-                        <img loading="lazy" decoding="async" src="./static/images/quali2.jpg"
-                            class="interpolation-image"
-                            alt="Qualitative Comparison between EgoForge and baselines (hand-washing and soccer)." />
-                        <p class="has-text-justified">
-                            Qualitative comparison: hand-washing task (top) and soccer
-                            task (bottom). In the hand-washing task, baselines struggle with object consistency
-                            (Cosmos hallucinates the soap source; Wan2.2 bypasses the on-table soap), while
-                            EgoForge successfully executes the action using existing objects. In the soccer task,
-                            baselines exhibit ghosting (Cosmos) or fail to follow precise instructions (Hunyuan,
-                            Wan2.2). EgoForge accurately traps with the left leg and shoots with the right.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+
 
         <!-- ============ FIGURE 6 — With / Without Exo-View ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">With vs. Without Exocentric Input</span></h2>
-                    <div class="content egoforge-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/vis.drawio.jpg"
-                            class="interpolation-image"
-                            alt="EgoForge with vs. without exocentric input." />
-                        <p class="has-text-justified">
-                            Qualitative comparison of EgoForge with vs. without
-                            exocentric input. Rows 1 &amp; 3 ("Without Exo-View") use text prompt alone; Rows 2
-                            &amp; 4 ("With Exo-View") additionally provide an auxiliary exocentric image. The
-                            kitchen scene (Row 2) correctly incorporates the potted plants on the windowsill from
-                            the reference image; the basketball court scene (Row 4) adopts the red and green
-                            rubberized surface. EgoForge can be successfully steered toward simulations that
-                            inherit key semantic and stylistic properties from the reference exo-view.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- ============ FIGURE 5 & 7 — 密集帧序列 ============ -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Long-Duration Sequences</span></h2>
-                    <div class="content egoforge-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/long_seq.jpg"
-                            class="interpolation-image"
-                            alt="Qualitative egocentric video rollouts." />
-                        <p class="has-text-justified">
-                            <!-- Qualitative egocentric video rollouts. EgoForge generates
-                            temporally coherent first-person video trajectories that follow the intended activity
-                            (hand-washing, soccer juggling, opening a refrigerator, indoor bouldering) while
-                            preserving scene structure and realistic hand–object interactions across diverse
-                            environments. Dense frame sequences are provided to visualize video results. -->
-                        </p>
-                        <img loading="lazy" decoding="async" src="./static/images/long_seq1.jpg"
-                            class="interpolation-image"
-                            alt="Dense visualization of long-duration sequences." />
-                        <p class="has-text-justified">
-                            Dense visualization of long-duration sequences. We present
-                            26 frames from each of 8 videos generated by EgoForge — cracking an egg, folding a
-                            blanket, tearing adhesive tape, rock climbing, placing a package, shooting a basketball,
-                            chopping onions, and installing a drawer handle — to highlight seamless transitions
-                            and stable dynamics in complex egocentric tasks.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
 
         <!-- ============ REAL-WORLD SMART GLASSES ============ -->
@@ -608,9 +206,531 @@
         </section> -->
 
         <!-- ============ BIBTEX ============ -->
-        <section class="section" id="BibTeX">
+
+    <section class="hero studio-header">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="publication-title">
+<span class="studio-name">EgoForge</span><span class="studio-subtitle">Goal-Directed Egocentric World Simulator</span>
+</h1>
+
+                            <div class="publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Jiateng Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xinzhuo Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Bingxuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Houze Yang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Wenqi Jia<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ucsd">Yijiang Li<sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">James Matthew Rehg<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><sup class="studio-contribution-marker">†</sup></span>
+</div>
+</div>
+
+                            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ucsd"><sup class="studio-affiliation-marker" title="University of California San Diego" aria-label="University of California San Diego">♣</sup><span class="studio-affiliation-name">University of California San Diego</span></span>
+</div>
+
+
+                            <div class="publication-links">
+<a href="https://arxiv.org/pdf/2603.20169" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2603.20169" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce EgoForge, a framework for generating goal-directed first-person video from an image and an instruction, with an optional external view providing additional context. Reward-guided refinement aligns the video with the intended goal while preserving scene consistency and <span class="studio-tldr-tail">coherent motion.</span></p></div>
+</div></section><section class="section studio-opening-examples egoforge-video-examples" aria-labelledby="egoforge-examples-title" data-studio-section="examples"><div class="container is-max-desktop">
+<div class="egoforge-video-grid">
+<article class="egoforge-video-case" data-example="pour"><div class="egoforge-output"><video src="static/videos/examples/pour/generated.mp4" poster="static/videos/examples/pour/first_frame.png" loop="" playsinline="" controls="" preload="metadata" aria-label="EgoForge generated video: Pour the Pepsi into the cup and put the can back." data-studio-autoplay="true" muted="" autoplay=""></video></div>
+<div class="egoforge-case-copy">
+<h3>Pouring a drink</h3>
+<p class="egoforge-instruction">Pour the Pepsi into the cup and put the can back.</p>
+<div class="egoforge-inputs">
+<figure><img src="static/videos/examples/pour/first_frame.png" alt="Egocentric input for the pouring a drink example" loading="lazy"><figcaption>Egocentric input</figcaption></figure><figure><img src="static/videos/examples/pour/exo.png" alt="External reference for the pouring a drink example" loading="lazy"><figcaption>External reference</figcaption></figure>
+</div>
+</div></article><article class="egoforge-video-case" data-example="basketball_1"><div class="egoforge-output"><video src="static/videos/examples/basketball_1/generated.mp4" poster="static/videos/examples/basketball_1/first_frame.jpg" loop="" playsinline="" controls="" preload="metadata" aria-label="EgoForge generated video: Take two shots at the basketball hoop." data-studio-autoplay="true" muted="" autoplay=""></video></div>
+<div class="egoforge-case-copy">
+<h3>Basketball shots</h3>
+<p class="egoforge-instruction">Take two shots at the basketball hoop.</p>
+<div class="egoforge-inputs">
+<figure><img src="static/videos/examples/basketball_1/first_frame.jpg" alt="Egocentric input for the basketball shots example" loading="lazy"><figcaption>Egocentric input</figcaption></figure><figure><img src="static/videos/examples/basketball_1/exo.jpg" alt="External reference for the basketball shots example" loading="lazy"><figcaption>External reference</figcaption></figure>
+</div>
+</div></article><article class="egoforge-video-case" data-example="household_1"><div class="egoforge-output"><video src="static/videos/examples/household_1/generated.mp4" poster="static/videos/examples/household_1/first_frame.jpg" loop="" playsinline="" controls="" preload="metadata" aria-label="EgoForge generated video: Put the pack into the bag and place the bag on the bed." data-studio-autoplay="true" muted="" autoplay=""></video></div>
+<div class="egoforge-case-copy">
+<h3>Packing a bag</h3>
+<p class="egoforge-instruction">Put the pack into the bag and place the bag on the bed.</p>
+<div class="egoforge-inputs">
+<figure><img src="static/videos/examples/household_1/first_frame.jpg" alt="Egocentric input for the packing a bag example" loading="lazy"><figcaption>Egocentric input</figcaption></figure><figure><img src="static/videos/examples/household_1/exo.jpg" alt="External reference for the packing a bag example" loading="lazy"><figcaption>External reference</figcaption></figure>
+</div>
+</div></article>
+</div>
+<div class="studio-opening-caption">
+<h2 class="studio-opening-label" id="egoforge-examples-title">Goal-directed first-person rollouts</h2>
+<p>An egocentric image, a goal instruction, and an external reference guide each generated first-person rollout.</p>
+</div>
+</div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">EgoForge Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-ablations" data-section="ablations">Ablation Studies</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Generative world models have shown promise for simulating dynamic environments, yet
+                            egocentric video remains challenging due to rapid viewpoint changes, frequent hand–object
+                            interactions, and goal-directed procedures whose evolution depends on latent human intent.
+                            Existing approaches either focus on hand-centric instructional synthesis with limited scene
+                            evolution, perform static view translation without modeling action dynamics, or rely on
+                            dense supervision such as camera trajectories, long video prefixes, or synchronized
+                            multi-camera capture.
+                        </p>
+                        <p>
+                            In this work, we introduce <strong>EgoForge</strong>, an egocentric goal-directed world
+                            simulator that generates coherent, first-person video rollouts from minimal static inputs:
+                            a single egocentric image, a high-level instruction, and an optional auxiliary exocentric
+                            view. To improve intent alignment and temporal consistency, we propose
+                            <strong>GRAFT</strong>, a trajectory-level reward-guided refinement that
+                            optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity
+                            during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains
+                            in semantic alignment, geometric stability, and motion fidelity over strong baselines,
+                            and robust performance in real-world smart-glasses experiments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">EgoForge generates goal-directed first-person rollouts from minimal static inputs.</strong> We introduce an egocentric world simulator conditioned on a single egocentric image, a high-level instruction, and an optional auxiliary exocentric view. It models scene evolution and hand–object interactions without requiring camera trajectories, pose signals, or synchronized multi-view streams at inference time.</li>
+<li>
+<strong class="studio-contribution-lead">Geometry weak supervision improves spatial consistency.</strong> Intermediate diffusion-transformer representations are aligned with geometry features from a pretrained VGGT encoder. Angular alignment matches feature directions, while scale alignment prevents scale collapse and encourages spatially stable video rollouts.</li>
+<li>
+<strong class="studio-contribution-lead">GRAFT refines complete trajectories using complementary rewards.</strong> We propose trajectory-level reward-guided refinement for goal completion, scene consistency, temporal causality, and perceptual fidelity. Evaluating these signals over entire trajectories encourages the intended outcome while reducing scene drift and inconsistent motion.</li>
+<li>
+<strong class="studio-contribution-lead">Experiments test both benchmark performance and real-world use.</strong> EgoForge shows consistent improvements in semantic alignment, geometric stability, and motion fidelity over strong baselines and maintains robust performance in real-world smart-glasses experiments.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">EgoForge</span> Method</h2>
+                    <div class="content has-text-justified">
+<p class="egoforge-method-intro">EgoForge turns a single first-person image and a goal instruction into a video rollout. An optional external view adds scene context, while geometry alignment and GRAFT trajectory rewards strengthen spatial consistency and goal alignment.</p>
+<ol class="studio-explainer-grid egoforge-method-steps" aria-label="EgoForge method components">
+<li class="studio-explainer-card">
+<i class="fa-solid fa-image" aria-hidden="true"></i><h3>Condition the generator</h3>
+<p>The egocentric image, instruction, and optional external reference condition the diffusion transformer through adaptive normalization and cross-attention. A pretrained video autoencoder maps between video frames and latent representations.</p>
+</li>
+<li class="studio-explainer-card">
+<i class="fa-solid fa-cubes" aria-hidden="true"></i><h3>Align the geometry</h3>
+<p>Geometry features from a pretrained VGGT encoder guide intermediate diffusion features. Angular alignment matches feature direction, while scale alignment matches feature magnitude and prevents scale collapse.</p>
+</li>
+<li class="studio-explainer-card">
+<i class="fa-solid fa-route" aria-hidden="true"></i><h3>Refine whole trajectories</h3>
+<p>GRAFT uses negative-aware fine-tuning with rewards evaluated over complete video trajectories, aligning the rollout with the requested goal and its visual context.</p>
+</li>
+</ol>
+<figure class="egoforge-method-figure"><img loading="lazy" decoding="async" src="./static/images/method.jpg" class="interpolation-image" alt="EgoForge architecture: static visual inputs and a goal instruction condition the video diffusion model, with VGGT geometry alignment and trajectory-level reward training."><figcaption>Static visual context and the goal instruction guide generation, while geometry supervision and GRAFT rewards align the rollout with the scene and intended outcome.</figcaption></figure><h3 class="egoforge-reward-title">GRAFT trajectory rewards</h3>
+<dl class="egoforge-rewards">
+<div>
+<dt>Goal completion</dt>
+<dd>Does the final state achieve the requested outcome?</dd>
+</div>
+<div>
+<dt>Scene consistency</dt>
+<dd>Does the rollout preserve the initial environment and object layout?</dd>
+</div>
+<div>
+<dt>Temporal causality</dt>
+<dd>Do actions and motion evolve in a coherent, physically plausible sequence?</dd>
+</div>
+<div>
+<dt>Perceptual fidelity</dt>
+<dd>Are the frames clear and stable? PSNR, FVD, and LPIPS measure visual quality.</dd>
+</div>
+</dl>
+</div>
+                </div>
+            </div>
+        </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+            <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">X-Ego benchmark</h3>
+<p class="studio-result-description">
+                            Quantitative comparisons on the X-Ego benchmark.
+                            EgoForge outperforms all baselines across semantic, perceptual, and temporal metrics.
+                        </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="X-Ego benchmark">
+                            <table class="results-table studio-native-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">DINO-Score↑</th>
+                                        <th scope="col">CLIP-Score↑</th>
+                                        <th scope="col">SSIM↑</th>
+                                        <th scope="col">LPIPS↓</th>
+                                        <th scope="col">FVD↓</th>
+                                        <th scope="col">Flow MSE↓</th>
+                                        <th scope="col">PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+<th scope="row">EgoDreamer</th>
+<td class="studio-numeric-cell">42.35</td>
+<td class="studio-numeric-cell">25.40</td>
+<td class="studio-numeric-cell">0.58</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">580.45</td>
+<td class="studio-numeric-cell">8.15</td>
+<td class="studio-numeric-cell">15.20</td>
+</tr>
+                                    <tr>
+<th scope="row">Handi</th>
+<td class="studio-numeric-cell">31.12</td>
+<td class="studio-numeric-cell">18.25</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">912.30</td>
+<td class="studio-numeric-cell">14.50</td>
+<td class="studio-numeric-cell">12.85</td>
+</tr>
+                                    <tr>
+<th scope="row">Cosmos</th>
+<td class="studio-numeric-cell">49.42</td>
+<td class="studio-numeric-cell">29.77</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.26</td>
+<td class="studio-numeric-cell">448.12</td>
+<td class="studio-numeric-cell">6.40</td>
+<td class="studio-numeric-cell">18.73</td>
+</tr>
+                                    <tr>
+<th scope="row">HunyuanVideo</th>
+<td class="studio-numeric-cell">53.54</td>
+<td class="studio-numeric-cell">29.43</td>
+<td class="studio-numeric-cell">0.71</td>
+<td class="studio-numeric-cell">0.26</td>
+<td class="studio-numeric-cell">384.31</td>
+<td class="studio-numeric-cell">6.10</td>
+<td class="studio-numeric-cell">18.88</td>
+</tr>
+                                    <tr>
+<th scope="row">WAN2.2</th>
+<td class="studio-numeric-cell">53.99</td>
+<td class="studio-numeric-cell">35.69</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.23</td>
+<td class="studio-numeric-cell">322.17</td>
+<td class="studio-numeric-cell">5.78</td>
+<td class="studio-numeric-cell">20.44</td>
+</tr>
+                                    <tr class="highlight-row studio-ours">
+                                        <th scope="row"><strong>EgoForge (Ours)</strong></th>
+                                        <td class="studio-numeric-cell"><strong>61.25</strong></td>
+<td class="studio-numeric-cell"><strong>39.30</strong></td>
+                                        <td class="studio-numeric-cell"><strong>0.79</strong></td>
+<td class="studio-numeric-cell"><strong>0.15</strong></td>
+                                        <td class="studio-numeric-cell"><strong>182.25</strong></td>
+<td class="studio-numeric-cell"><strong>2.83</strong></td>
+                                        <td class="studio-numeric-cell"><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Enhanced baseline variants</h3>
+<p class="studio-result-description">
+                            Quantitative comparisons with enhanced baseline variants
+                            (+EV: exo-view image; +TT: text-only domain adaptation;
+                            +CI: our conditioning inputs with Geometry Weak Supervision).
+                            EgoForge still achieves best results across <span class="studio-ending">all seven metrics.</span>
+                        </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Enhanced baseline variants">
+                            <table class="results-table studio-native-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">DINO-Score↑</th>
+                                        <th scope="col">CLIP-Score↑</th>
+                                        <th scope="col">SSIM↑</th>
+                                        <th scope="col">LPIPS↓</th>
+                                        <th scope="col">FVD↓</th>
+                                        <th scope="col">Flow MSE↓</th>
+                                        <th scope="col">PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+<th scope="row">Cosmos+EV</th>
+<td class="studio-numeric-cell">48.60</td>
+<td class="studio-numeric-cell">29.60</td>
+<td class="studio-numeric-cell">0.67</td>
+<td class="studio-numeric-cell">0.28</td>
+<td class="studio-numeric-cell">485.75</td>
+<td class="studio-numeric-cell">6.82</td>
+<td class="studio-numeric-cell">18.30</td>
+</tr>
+                                    <tr>
+<th scope="row">Cosmos+TT</th>
+<td class="studio-numeric-cell">50.80</td>
+<td class="studio-numeric-cell">30.40</td>
+<td class="studio-numeric-cell">0.71</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">433.90</td>
+<td class="studio-numeric-cell">6.31</td>
+<td class="studio-numeric-cell">18.88</td>
+</tr>
+                                    <tr>
+<th scope="row">HunyuanVideo+EV</th>
+<td class="studio-numeric-cell">52.80</td>
+<td class="studio-numeric-cell">29.20</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.27</td>
+<td class="studio-numeric-cell">405.87</td>
+<td class="studio-numeric-cell">6.30</td>
+<td class="studio-numeric-cell">18.61</td>
+</tr>
+                                    <tr>
+<th scope="row">HunyuanVideo+TT</th>
+<td class="studio-numeric-cell">54.10</td>
+<td class="studio-numeric-cell">29.86</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.24</td>
+<td class="studio-numeric-cell">365.80</td>
+<td class="studio-numeric-cell">5.95</td>
+<td class="studio-numeric-cell">19.10</td>
+</tr>
+                                    <tr>
+<th scope="row">WAN2.2+EV</th>
+<td class="studio-numeric-cell">52.91</td>
+<td class="studio-numeric-cell">35.11</td>
+<td class="studio-numeric-cell">0.71</td>
+<td class="studio-numeric-cell">0.27</td>
+<td class="studio-numeric-cell">352.41</td>
+<td class="studio-numeric-cell">6.25</td>
+<td class="studio-numeric-cell">20.05</td>
+</tr>
+                                    <tr>
+<th scope="row">WAN2.2+TT</th>
+<td class="studio-numeric-cell">54.80</td>
+<td class="studio-numeric-cell">36.20</td>
+<td class="studio-numeric-cell">0.73</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">310.57</td>
+<td class="studio-numeric-cell">5.60</td>
+<td class="studio-numeric-cell">20.64</td>
+</tr>
+                                    <tr>
+<th scope="row">WAN2.2+CI</th>
+<td class="studio-numeric-cell">58.92</td>
+<td class="studio-numeric-cell">38.05</td>
+<td class="studio-numeric-cell">0.76</td>
+<td class="studio-numeric-cell">0.18</td>
+<td class="studio-numeric-cell">218.72</td>
+<td class="studio-numeric-cell">3.92</td>
+<td class="studio-numeric-cell">22.87</td>
+</tr>
+                                    <tr class="highlight-row studio-ours">
+                                        <th scope="row"><strong>EgoForge (Ours)</strong></th>
+                                        <td class="studio-numeric-cell"><strong>61.25</strong></td>
+<td class="studio-numeric-cell"><strong>39.30</strong></td>
+                                        <td class="studio-numeric-cell"><strong>0.79</strong></td>
+<td class="studio-numeric-cell"><strong>0.15</strong></td>
+                                        <td class="studio-numeric-cell"><strong>182.25</strong></td>
+<td class="studio-numeric-cell"><strong>2.83</strong></td>
+                                        <td class="studio-numeric-cell"><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-2"><h3 class="studio-result-title" id="studio-result-2">User study</h3>
+<p class="studio-result-description">
+                            User study (1–5 scale, 20 annotators, 25 video groups).
+                            EgoForge achieves substantial gains in Alignment (4.75) and Fidelity (4.71).
+                            * denotes the best enhanced baseline variants.
+                        </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="User study">
+                            <table class="results-table studio-native-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Quality↑</th>
+                                        <th scope="col">Fidelity↑</th>
+                                        <th scope="col">Smooth Motion↑</th>
+                                        <th scope="col">Smooth Env.↑</th>
+                                        <th scope="col">Alignment↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+<th scope="row">Cosmos*</th>
+<td class="studio-numeric-cell">3.29</td>
+<td class="studio-numeric-cell">2.54</td>
+<td class="studio-numeric-cell">3.07</td>
+<td class="studio-numeric-cell">2.47</td>
+<td class="studio-numeric-cell">2.19</td>
+</tr>
+                                    <tr>
+<th scope="row">Hunyuan*</th>
+<td class="studio-numeric-cell">3.46</td>
+<td class="studio-numeric-cell">2.86</td>
+<td class="studio-numeric-cell">3.72</td>
+<td class="studio-numeric-cell">3.16</td>
+<td class="studio-numeric-cell">3.08</td>
+</tr>
+                                    <tr>
+<th scope="row">WAN2.2*</th>
+<td class="studio-numeric-cell">3.22</td>
+<td class="studio-numeric-cell">3.48</td>
+<td class="studio-numeric-cell">3.82</td>
+<td class="studio-numeric-cell">4.07</td>
+<td class="studio-numeric-cell">3.15</td>
+</tr>
+                                    <tr class="highlight-row studio-ours">
+                                        <th scope="row"><strong>EgoForge (Ours)</strong></th>
+                                        <td class="studio-numeric-cell"><strong>4.58</strong></td>
+<td class="studio-numeric-cell"><strong>4.71</strong></td>
+                                        <td class="studio-numeric-cell"><strong>4.25</strong></td>
+<td class="studio-numeric-cell"><strong>4.48</strong></td>
+                                        <td class="studio-numeric-cell"><strong>4.75</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div></figure>
+</div>
+</div>
+        </section><section class="section" data-studio-section="ablations" id="studio-ablations" aria-labelledby="studio-ablations-title"><div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered">
+<div class="content has-text-justified">
+<h2 class="title is-3" id="studio-ablations-title">Ablation Studies</h2>
+                        <p>
+                            Ablation on EgoForge modules (FT = Denoising Fine-Tuning,
+                            GWS = Geometry Weak Supervision). Each component consistently improves performance,
+                            with the full model achieving best results.
+                        </p>
+                        <div style="overflow-x:auto;" class="studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>FT</th>
+<th>GWS</th>
+<th>GRAFT</th>
+                                        <th>DINO↑</th>
+<th>CLIP↑</th>
+<th>SSIM↑</th>
+                                        <th>LPIPS↓</th>
+<th>FVD↓</th>
+<th>Flow MSE↓</th>
+<th>PSNR↑</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td class="studio-numeric-cell">56.81</td>
+<td class="studio-numeric-cell">37.10</td>
+<td class="studio-numeric-cell">0.74</td>
+<td class="studio-numeric-cell">0.21</td>
+<td class="studio-numeric-cell">260.89</td>
+<td class="studio-numeric-cell">4.82</td>
+<td class="studio-numeric-cell">21.92</td>
+</tr>
+                                    <tr>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+<td class="studio-numeric-cell">58.92</td>
+<td class="studio-numeric-cell">38.05</td>
+<td class="studio-numeric-cell">0.76</td>
+<td class="studio-numeric-cell">0.18</td>
+<td class="studio-numeric-cell">218.72</td>
+<td class="studio-numeric-cell">3.92</td>
+<td class="studio-numeric-cell">22.87</td>
+</tr>
+                                    <tr class="highlight-row studio-ours">
+                                        <td>✓</td>
+<td>✓</td>
+<td>✓</td>
+                                        <td class="studio-numeric-cell"><strong>61.25</strong></td>
+<td class="studio-numeric-cell"><strong>39.30</strong></td>
+<td class="studio-numeric-cell"><strong>0.79</strong></td>
+                                        <td class="studio-numeric-cell"><strong>0.15</strong></td>
+<td class="studio-numeric-cell"><strong>182.25</strong></td>
+<td class="studio-numeric-cell"><strong>2.83</strong></td>
+<td class="studio-numeric-cell"><strong>24.08</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div></section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/qual_expample.jpg" class="interpolation-image" alt="Qualitative Comparison between EgoForge and baselines.">
+                        <p class="has-text-justified">
+                            Qualitative comparison between EgoForge and baselines.
+                            EgoForge accurately reconstructs multi-step, causally ordered actions, preserving
+                            hand–object geometry, temporal consistency, and goal alignment. In the first example
+                            (coffee pouring), Cosmos erroneously generates a third hand, Hunyuan depicts a
+                            disconnected arm, and Wan2.2 fails to complete the task. In the second example
+                            (basketball), Cosmos generates multiple balls, while Hunyuan and Wan2.2 generate
+                            an incorrect person. EgoForge accurately <span class="studio-ending">completes both tasks.</span>
+                        </p>
+
+                        <!-- Figure 4 — 洗手 & 踢球 -->
+                        <img loading="lazy" decoding="async" src="./static/images/quali2.jpg" class="interpolation-image" alt="Qualitative Comparison between EgoForge and baselines (hand-washing and soccer).">
+                        <p class="has-text-justified">
+                            Qualitative comparison: hand-washing task (top) and soccer
+                            task (bottom). In the hand-washing task, baselines struggle with object consistency
+                            (Cosmos hallucinates the soap source; Wan2.2 bypasses the on-table soap), while
+                            EgoForge successfully executes the action using existing objects. In the soccer task,
+                            baselines exhibit ghosting (Cosmos) or fail to follow precise instructions (Hunyuan,
+                            Wan2.2). EgoForge accurately traps with the left leg and shoots <span class="studio-ending">with the right.</span>
+                        </p>
+                    </div>
+                </div>
+            <div class="studio-subsection">
+                <div class="columns is-centered has-text-centered">
+                    <h3 class="title is-4">Qualitative Results: With vs. Without Exocentric Input</h3>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/vis.drawio.jpg" class="interpolation-image" alt="EgoForge with vs. without exocentric input.">
+                        <p class="has-text-justified">
+                            Qualitative comparison of EgoForge with vs. without
+                            exocentric input. Rows 1 &amp; 3 ("Without Exo-View") use text prompt alone; Rows 2
+                            &amp; 4 ("With Exo-View") additionally provide an auxiliary exocentric image. The
+                            kitchen scene (Row 2) correctly incorporates the potted plants on the windowsill from
+                            the reference image; the basketball court scene (Row 4) adopts the red and green
+                            rubberized surface. EgoForge can be successfully steered toward simulations that
+                            inherit key semantic and stylistic properties from <span class="studio-ending">the reference exo-view.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<div class="studio-subsection">
+                <div class="columns is-centered has-text-centered">
+                    <h3 class="title is-4">Qualitative Results: Long-Duration Sequences</h3>
+                    <div class="content egoforge-qualitative">
+                        <img loading="lazy" decoding="async" src="./static/images/long_seq.jpg" class="interpolation-image" alt="Qualitative egocentric video rollouts.">
+
+                        <img loading="lazy" decoding="async" src="./static/images/long_seq1.jpg" class="interpolation-image" alt="Dense visualization of long-duration sequences.">
+                        <p class="has-text-justified">
+                            Dense visualization of long-duration sequences. We present
+                            26 frames from each of 8 videos generated by EgoForge — cracking an egg, folding a
+                            blanket, tearing adhesive tape, rock climbing, placing a package, shooting a basketball,
+                            chopping onions, and installing a drawer handle — to highlight seamless transitions
+                            and stable dynamics in <span class="studio-ending">complex egocentric tasks.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+</div>
+        </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
             <div class="container is-max-desktop content">
-                <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+                <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
                 <pre><code>@article{shen2025egoforge,
   title={EgoForge: Goal-Directed Egocentric World Simulator},
   author={Shen, Yifan and Liu, Jiateng and Li, Xinzhuo and Liu, Yuanzhe and Li, Bingxuan and Yang, Houze and Jia, Wenqi and Li, Yijiang and Yu, Tianjiao and Rehg, James Matthew and Cao, Xu and Lourentzou, Ismini},
@@ -618,8 +738,18 @@
   year={2026}
 }</code></pre>
             </div>
-        </section>
-    </main>
-</body>
+        </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
+
+
+</body>
 </html>

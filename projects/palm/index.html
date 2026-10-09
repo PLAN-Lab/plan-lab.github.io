@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -11,25 +10,25 @@
     gtag('config', 'G-48J3PYKGQ6');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation.">
   <title>PALM | PLAN Lab</title>
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="PLAN Lab" />
-  <meta property="og:title" content="PALM | Progress-Aware Policy Learning via Affordance Reasoning" />
-  <meta property="og:description" content="PALM couples structured affordance reasoning with subtask progress estimation for reliable long-horizon robotic manipulation." />
-  <meta property="og:image" content="https://plan-lab.github.io/projects/palm/static/images/teaser.png" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PLAN Lab">
+  <meta property="og:title" content="PALM | Progress-Aware Policy Learning via Affordance Reasoning">
+  <meta property="og:description" content="PALM couples structured affordance reasoning with subtask progress estimation for reliable long-horizon robotic manipulation.">
+  <meta property="og:image" content="https://plan-lab.github.io/projects/palm/static/images/teaser.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
-  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg" />
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
 
   <style>
     .page-project .palm-accent { color: #ff9f43; font-weight: 800; }
@@ -147,200 +146,20 @@
       .page-project .palm-video-grid { grid-template-columns: 1fr; }
     }
   </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "PALM",
-    "teaserSummary": true,
-    "tldr": [
-      "We introduce PALM, a vision-language-action (VLA) model for long-horizon robotic manipulation that anticipates future interactions and tracks subtask progress. By combining visual cues about objects, contact, and motion with progress-aware action generation, PALM helps robots carry out coherent multi-step tasks."
-    ],
-    "contributions": [
-      "Structured affordance foresight anticipates future interaction needs. PALM predicts factorized affordances for object relevance, contact geometry, spatial placement, and motion dynamics. These global, local, spatial, and dynamic cues help the policy reason about which object matters, where to interact, where to place or move it, and how the next interaction should unfold.",
-      "A progress-aware diffusion policy coordinates long-horizon subtasks. The policy conditions on the predicted affordances and jointly estimates actions and continuous within-subtask progress. These estimates guide continuation, transition, and termination decisions, reducing repeated or skipped actions during multi-step manipulation.",
-      "Simulation and real-world evaluations demonstrate long-horizon robustness. PALM reaches 91.8% success on LIBERO-LONG, improves average length on CALVIN ABCD by 12.5%, and achieves a twofold improvement over real-world baselines across three generalization settings: object relocation, unseen lighting, and visual distractors."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "quantitative": {
-      "source": "Results and Analysis"
-    },
-    "qualitative": {
-      "source": "Qualitative Videos"
-    },
-    "contributionLeads": [
-      "Structured affordance foresight anticipates future interaction needs.",
-      "A progress-aware diffusion policy coordinates long-horizon subtasks.",
-      "Simulation and real-world evaluations demonstrate long-horizon robustness."
-    ],
-    "opening": {
-      "media": [
-        {
-          "source": "./static/videos/original.mp4",
-          "type": "video",
-          "label": "Multi-step manipulation",
-          "caption": "PALM tracks progress through the original task."
-        },
-        {
-          "source": "./static/videos/unseen-lighting.mp4",
-          "type": "video",
-          "label": "Unseen lighting",
-          "caption": "The policy executes the task under changed illumination."
-        },
-        {
-          "source": "./static/videos/random-relocation.mp4",
-          "type": "video",
-          "label": "Object relocation",
-          "caption": "PALM responds when objects are moved during execution."
-        }
-      ]
-    }
-  },
-  "resultPanels": {
-    "Robustness in real-world manipulation": {
-      "description": "Long-horizon task completion under relocation, unfamiliar lighting, and visual distractions."
-    },
-    "image:real_world_setup.png": {
-      "title": "Real-world evaluation setup",
-      "description": "The six-step manipulation task is evaluated with an xArm6 robot and two RealSense cameras."
-    },
-    "image:robustness_settings.png": {
-      "title": "Real-world robustness settings",
-      "description": "Evaluation introduces object relocation, unfamiliar lighting, and multi-object visual distractions."
-    }
-  },
-  "results": {
-    "real_world_results.png": {
-      "type": "table",
-      "title": "Robustness in real-world manipulation",
-      "columns": [
-        "Method",
-        "1 task",
-        "2 tasks",
-        "3 tasks",
-        "4 tasks",
-        "5 tasks",
-        "6 tasks",
-        "Average length ↑"
-      ],
-      "rows": [
-        {
-          "group": "Random localization"
-        },
-        [
-          "OpenVLA [55]",
-          "0.45",
-          "0.30",
-          "0.15",
-          "0.05",
-          "0.00",
-          "0.00",
-          "0.95"
-        ],
-        [
-          "Octo [111]",
-          "0.35",
-          "0.20",
-          "0.10",
-          "0.00",
-          "0.00",
-          "0.00",
-          "0.65"
-        ],
-        [
-          "PALM",
-          "0.70",
-          "0.65",
-          "0.55",
-          "0.45",
-          "0.40",
-          "0.30",
-          "3.05"
-        ],
-        {
-          "group": "Visual distraction"
-        },
-        [
-          "OpenVLA [55]",
-          "0.65",
-          "0.50",
-          "0.25",
-          "0.15",
-          "0.05",
-          "0.00",
-          "1.60"
-        ],
-        [
-          "Octo [111]",
-          "0.45",
-          "0.35",
-          "0.15",
-          "0.00",
-          "0.00",
-          "0.00",
-          "0.95"
-        ],
-        [
-          "PALM",
-          "0.85",
-          "0.80",
-          "0.65",
-          "0.60",
-          "0.50",
-          "0.40",
-          "3.80"
-        ],
-        {
-          "group": "Unseen lighting"
-        },
-        [
-          "OpenVLA [55]",
-          "0.55",
-          "0.35",
-          "0.25",
-          "0.10",
-          "0.00",
-          "0.00",
-          "1.25"
-        ],
-        [
-          "Octo [111]",
-          "0.50",
-          "0.35",
-          "0.15",
-          "0.05",
-          "0.00",
-          "0.00",
-          "1.05"
-        ],
-        [
-          "PALM",
-          "0.80",
-          "0.70",
-          "0.60",
-          "0.60",
-          "0.45",
-          "0.40",
-          "3.55"
-        ]
-      ],
-      "note": "Task columns report the probability of completing that many tasks in a row.",
-      "source": "static/images/real_world_results.png"
-    }
-  }
-}
-  </script>
+<body class="page-project project-studio" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
   <div class="project-bg"></div>
   <div class="project-grid"></div>
 
   <nav class="glass-nav">
     <a href="../../index.html#hero" class="nav-logo">
-      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+      <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
     </a>
     <div class="nav-menu">
       <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -367,146 +186,274 @@
   </nav>
 
   <main>
-    <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="hero studio-header">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="publication-title">PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation</h1>
+              <h1 class="publication-title">
+<span class="studio-name">PALM</span><span class="studio-subtitle">Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation</span>
+</h1>
 
-              <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="penn,uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn">Jingyuan Zhu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ntu">Gen Li<sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="oxford">Jin Jin<sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Zhengyuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Wenzhen Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="mit">Fangqiang Ding<sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+              <div class="publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="penn,uiuc">Yuanzhe Liu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="penn">Jingyuan Zhu<sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Yuchen Mo<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="ntu">Gen Li<sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Xu Cao<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="oxford">Jin Jin<sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Yifan Shen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Zhengyuan Li<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Wenzhen Yuan<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="mit">Fangqiang Ding<sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div>
+</div>
 
-              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ntu"><sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup><span class="studio-affiliation-name">Nanyang Technological University</span></span><span class="studio-affiliation" data-institution="oxford"><sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup><span class="studio-affiliation-name">University of Oxford</span></span><span class="studio-affiliation" data-institution="mit"><sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup><span class="studio-affiliation-name">Massachusetts Institute of Technology</span></span></div>
+              <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="penn"><sup class="studio-affiliation-marker" title="University of Pennsylvania" aria-label="University of Pennsylvania">♣</sup><span class="studio-affiliation-name">University of Pennsylvania</span></span><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="ntu"><sup class="studio-affiliation-marker" title="Nanyang Technological University" aria-label="Nanyang Technological University">♠</sup><span class="studio-affiliation-name">Nanyang Technological University</span></span><span class="studio-affiliation" data-institution="oxford"><sup class="studio-affiliation-marker" title="University of Oxford" aria-label="University of Oxford">♥</sup><span class="studio-affiliation-name">University of Oxford</span></span><span class="studio-affiliation" data-institution="mit"><sup class="studio-affiliation-marker" title="Massachusetts Institute of Technology" aria-label="Massachusetts Institute of Technology">★</sup><span class="studio-affiliation-name">Massachusetts Institute of Technology</span></span>
+</div>
 
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
             </div>
 
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2601.07060" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.07060" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2601.07060" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.07060" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/PLAN-Lab/PALM" class="button is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a>
+</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="hero teaser">
+    </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce PALM, a vision-language-action (VLA) model for long-horizon robotic manipulation that anticipates future interactions and tracks subtask progress. By combining visual cues about objects, contact, and motion with progress-aware action generation, PALM helps robots carry out coherent <span class="studio-tldr-tail">multi-step tasks.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="PALM examples"><div class="container"><div class="studio-example-grid">
+<figure class="studio-example-card"><div class="studio-example-media"><video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/original.mp4" aria-label="Multi-step manipulation" data-studio-autoplay="true" autoplay=""></video></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Multi-step manipulation</strong><p>PALM tracks progress through the original task.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/unseen-lighting.mp4" aria-label="Unseen lighting" data-studio-autoplay="true" autoplay=""></video></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Unseen lighting</strong><p>The policy executes the task under changed illumination.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/random-relocation.mp4" aria-label="Object relocation" data-studio-autoplay="true" autoplay=""></video></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Object relocation</strong><p>PALM responds when objects are moved during execution.</p></figcaption></figure>
+</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#method" data-section="method">PALM Method</a><a href="#results" data-section="quantitative">Quantitative Results</a><a href="#videos" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
       <div class="container is-max-desktop">
-        <div class="hero-body">
-          <div class="content palm-tldr">
-            <strong><span class="palm-accent">PALM</span> couples structured affordance reasoning with <span class="palm-blue">continuous subtask progress estimation</span>, enabling vision-language-action policies to remain temporally coherent across <span class="palm-green">long-horizon robotic manipulation</span>.</strong>
-          </div>
-          <img src="./static/images/teaser.png" class="palm-figure" alt="PALM teaser showing progress-aware affordance reasoning for long-horizon manipulation" />
-          <p class="palm-caption">PALM uses future affordance cues and progress prediction to guide long-horizon action generation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Recent vision-language-action models show strong promise for robotic manipulation, but they remain brittle in long-horizon, multi-step tasks. PALM addresses this limitation by structuring policy learning around interaction-centric affordance reasoning and subtask progress cues. It predicts structured future affordances that capture object relevance, contact geometry, spatial placements, and motion dynamics, then conditions a progress-aware diffusion policy on these affordance representations. The resulting policy jointly predicts actions and continuous within-subtask progress values, helping the robot decide when to continue, transition, or terminate a subtask. Across simulation and real-world experiments, PALM improves long-horizon manipulation performance, reaching a 91.8% success rate on LIBERO-LONG, improving average length on CALVIN ABCD by 12.5%, and achieving a 2× improvement over real-world baselines across three generalization settings.
           </p>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="method">
+    </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Structured affordance foresight anticipates future interaction needs.</strong> PALM predicts factorized affordances for object relevance, contact geometry, spatial placement, and motion dynamics. These global, local, spatial, and dynamic cues help the policy reason about which object matters, where to interact, where to place or move it, and how the next interaction should unfold.</li>
+<li>
+<strong class="studio-contribution-lead">A progress-aware diffusion policy coordinates long-horizon subtasks.</strong> The policy conditions on the predicted affordances and jointly estimates actions and continuous within-subtask progress. These estimates guide continuation, transition, and termination decisions, reducing repeated or skipped actions during multi-step manipulation.</li>
+<li>
+<strong class="studio-contribution-lead">Simulation and real-world evaluations demonstrate long-horizon robustness.</strong> PALM reaches 91.8% success on LIBERO-LONG, improves average length on CALVIN ABCD by 12.5%, and achieves a twofold improvement over real-world baselines across three generalization settings: object relocation, unseen lighting, and visual distractors.</li>
+</ul></div>
+</div></section><section class="section" id="method" data-studio-section="method" aria-labelledby="method-title">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3" id="method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">PALM</span> Method</h2>
         <div class="content has-text-justified">
           <p>
             PALM introduces two complementary query sets on top of a multimodal VLA backbone: <strong>affordance queries</strong> that anticipate task-relevant future interaction cues, and <strong>action-progress queries</strong> that generate actions while estimating subtask completion. The affordance representation is factorized into global, local, spatial, and dynamic components, encouraging the policy to reason about what object matters, where to interact, where to place or move, and how the next interaction should unfold.
           </p>
 
-          <div class="palm-card-grid">
-            <div class="palm-card">
+          <div class="palm-card-grid studio-explainer-grid">
+            <div class="palm-card studio-explainer-card">
+<i class="fa-solid fa-link" aria-hidden="true"></i>
               <h3>Structured affordance foresight</h3>
               <p>Predicts future interaction cues for object relevance, contact geometry, spatial placement, and motion dynamics.</p>
             </div>
-            <div class="palm-card">
+            <div class="palm-card studio-explainer-card">
+<i class="fa-solid fa-crosshairs" aria-hidden="true"></i>
               <h3>Progress-aware control</h3>
               <p>Jointly predicts action and continuous progress to stabilize subtask transitions and reduce repeated or skipped actions.</p>
             </div>
-            <div class="palm-card">
+            <div class="palm-card studio-explainer-card">
+<i class="fa-solid fa-layer-group" aria-hidden="true"></i>
               <h3>Long-horizon robustness</h3>
               <p>Maintains coherent behavior under object relocation, unseen lighting, and visual distractors in real-world rollouts.</p>
             </div>
           </div>
 
-          <img src="./static/images/method_architecture.png" class="palm-figure" alt="PALM architecture overview" />
+          <img src="./static/images/method_architecture.png" class="palm-figure" alt="PALM architecture overview">
           <p class="palm-caption">PALM architecture: multimodal encoding, structured affordance queries, and action-progress diffusion decoding.</p>
         </div>
-      </div>
-    </section>
+      <div class="studio-subsection studio-teaser-context">
 
-    <section class="section" id="results">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Results and Analysis</h2>
-        <div class="content has-text-justified">
-          <p>
-            PALM completes an average of 3.05 subtasks under random object relocation, 3.80 with visual distractions, and 3.55 under unseen lighting. OpenVLA completes 0.95, 1.60, and 1.25 subtasks, respectively; Octo completes 0.65, 0.95, and 1.05.
-          </p>
-
-          <div class="palm-result-grid">
-            <div class="palm-result-card">
-              <div class="palm-result-value">91.8%</div>
-              <div class="palm-result-label">success rate on LIBERO-LONG</div>
-            </div>
-            <div class="palm-result-card">
-              <div class="palm-result-value">+12.5%</div>
-              <div class="palm-result-label">average-length gain on CALVIN ABCD</div>
-            </div>
-            <div class="palm-result-card">
-              <div class="palm-result-value">2×</div>
-              <div class="palm-result-label">real-world improvement over baselines</div>
-            </div>
-          </div>
-
-          <img src="./static/images/real_world_results.png" class="palm-figure tight" alt="PALM real-world results" />
+          <img src="./static/images/teaser.png" class="palm-figure" alt="PALM teaser showing progress-aware affordance reasoning for long-horizon manipulation">
+          <p class="palm-caption">PALM uses future affordance cues and progress prediction to guide long-horizon action generation.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="videos">
+</div>
+    </section><section class="section studio-quantitative" id="results" data-studio-section="quantitative" aria-labelledby="results-title">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Qualitative Videos</h2>
+<h2 class="title is-3" id="results-title">Quantitative Results</h2>
+<div class="studio-result-stack"><figure class="studio-native-result studio-result-card" data-result-source="static/images/real_world_results.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Robustness in real-world manipulation</h3>
+<p class="studio-result-description">
+            PALM completes an average of 3.05 subtasks under random object relocation, 3.80 with visual distractions, and 3.55 under unseen lighting. OpenVLA completes 0.95, 1.60, and 1.25 subtasks, respectively; Octo completes 0.65, <span class="studio-ending">0.95, and 1.05.</span>
+          </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Robustness in real-world manipulation"><table class="studio-native-table">
+<caption class="studio-sr-only">Robustness in real-world manipulation</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">1 task</th>
+<th scope="col">2 tasks</th>
+<th scope="col">3 tasks</th>
+<th scope="col">4 tasks</th>
+<th scope="col">5 tasks</th>
+<th scope="col">6 tasks</th>
+<th scope="col">Average length ↑</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Random localization</th></tr>
+<tr>
+<th scope="row">OpenVLA</th>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.95</td>
+</tr>
+<tr>
+<th scope="row">Octo</th>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.20</td>
+<td class="studio-numeric-cell">0.10</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.65</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PALM</th>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.65</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">0.40</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">3.05</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Visual distraction</th></tr>
+<tr>
+<th scope="row">OpenVLA</th>
+<td class="studio-numeric-cell">0.65</td>
+<td class="studio-numeric-cell">0.50</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">1.60</td>
+</tr>
+<tr>
+<th scope="row">Octo</th>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.95</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PALM</th>
+<td class="studio-numeric-cell">0.85</td>
+<td class="studio-numeric-cell">0.80</td>
+<td class="studio-numeric-cell">0.65</td>
+<td class="studio-numeric-cell">0.60</td>
+<td class="studio-numeric-cell">0.50</td>
+<td class="studio-numeric-cell">0.40</td>
+<td class="studio-numeric-cell">3.80</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Unseen lighting</th></tr>
+<tr>
+<th scope="row">OpenVLA</th>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">0.10</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">1.25</td>
+</tr>
+<tr>
+<th scope="row">Octo</th>
+<td class="studio-numeric-cell">0.50</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">1.05</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PALM</th>
+<td class="studio-numeric-cell">0.80</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.60</td>
+<td class="studio-numeric-cell">0.60</td>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">0.40</td>
+<td class="studio-numeric-cell">3.55</td>
+</tr>
+</tbody>
+</table></div>
+<figcaption class="studio-result-note">Task columns report the probability of completing that many tasks in a row.</figcaption></figure></div>
+</div>
+    </section><section class="section" id="videos" data-studio-section="qualitative" aria-labelledby="videos-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3" id="videos-title">Qualitative Results</h2>
         <div class="content has-text-justified">
           <p>
-            A UFACTORY xArm6 with a Gripper G2 and two RealSense D455 cameras executes a six-step manipulation sequence. These PALM rollouts show the original task and three generalization settings: unseen lighting, visual distractions, and random object relocation.
+            A UFACTORY xArm6 with a Gripper G2 and two RealSense D455 cameras executes a six-step manipulation sequence. These PALM rollouts show the original task and three generalization settings: unseen lighting, visual distractions, and <span class="studio-ending">random object relocation.</span>
           </p>
 
           <div class="palm-video-grid">
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Original</div>
               <div class="palm-video-wrap">
-                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/original.mp4"></video>
+                <video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/original.mp4" data-studio-autoplay="true" autoplay=""></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Unseen Lighting</div>
               <div class="palm-video-wrap">
-                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/unseen-lighting.mp4"></video>
+                <video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/unseen-lighting.mp4" data-studio-autoplay="true" autoplay=""></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Visual Distraction</div>
               <div class="palm-video-wrap">
-                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/visual-distraction.mp4"></video>
+                <video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/visual-distraction.mp4" data-studio-autoplay="true" autoplay=""></video>
               </div>
             </div>
             <div class="palm-video-card">
               <div class="palm-video-title palm-accent">Random Relocation</div>
               <div class="palm-video-wrap">
-                <video autoplay muted loop controls playsinline preload="metadata" src="./static/videos/random-relocation.mp4"></video>
+                <video muted="" loop="" controls="" playsinline="" preload="metadata" src="./static/videos/random-relocation.mp4" data-studio-autoplay="true" autoplay=""></video>
               </div>
             </div>
-    </section>
-
-    <section class="section" id="BibTeX">
+    </div>
+</div>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
       <div class="container is-max-desktop content palm-bibtex">
-        <h2 class="title" style="justify-content: left; display:flex;">BibTeX</h2>
+        <h2 class="title is-3" style="justify-content: left; display:flex;" id="BibTeX-title">BibTeX</h2>
         <pre><code>@inproceedings{liu2026palm,
   title={PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation},
   author={Liu, Yuanzhe and Zhu, Jingyuan and Mo, Yuchen and Li, Gen and Cao, Xu and Jin, Jin and Shen, Yifan and Li, Zhengyuan and Yu, Tianjiao and Yuan, Wenzhen and Ding, Fangqiang and Lourentzou, Ismini},
@@ -514,8 +461,18 @@
   year={2026}
 }</code></pre>
       </div>
-    </section>
-  </main>
-</body>
+    </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
+
+
+</body>
 </html>

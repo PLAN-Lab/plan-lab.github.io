@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<head>
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-48J3PYKGQ6');
     </script>
-<meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="GraphVid is an ECCV 2026 graph-conditioned image-to-video generation framework for interactive multi-object control through directed interaction graphs." name="description"/>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="GraphVid is an ECCV 2026 graph-conditioned image-to-video generation framework for interactive multi-object control through directed interaction graphs." name="description">
 <title>GraphVid: Interactive Graph-Controllable Video Generation | PLAN Lab</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link href="../../assets/vendor/fontawesome/css/all.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect">
+<link href="../../assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
 <link href="../../assets/css/style.css" rel="stylesheet">
-<link href="../../assets/css/projects.css?v=project-pages-inline-data-v2" rel="stylesheet">
-<script defer="" src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2"></script>
+<link href="../../assets/css/projects.css?v=project-pages-static-v4" rel="stylesheet">
+<script defer src="../../assets/js/project-pages.js?v=project-pages-static-v4"></script>
 <style>
       html, body { max-width: 100%; overflow-x: hidden; }
 
@@ -232,7 +231,7 @@
           grid-template-columns: 1fr;
         }
       }
-    
+
       /* Ensure readability over the inherited animated dark background. */
       .page-project,
       .page-project main,
@@ -358,621 +357,19 @@
         }
       }
 </style>
-<link href="../../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
-</link></link></head>
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "GraphVid",
-    "method": {
-      "source": "Graph Vid Method"
-    },
-    "dataset": {
-      "name": "GraphVid-Bench",
-      "source": "GraphVid -Bench Dataset"
-    },
-    "headingName": [
-      {
-        "text": "Graph",
-        "color": "#a9ccff"
-      },
-      {
-        "text": "Vid",
-        "color": "#ff915b"
-      }
-    ],
-    "contributions": [
-      "Interactive graph-based control. GraphVid enables multi-object image-to-video control through directed interaction scene graphs constructed from a single image, replacing dense trajectory authoring with intuitive object-level interaction edits.",
-      "Edge-Aware Graph Reasoning. A GINEConv-based graph module injects directed edge semantics into message passing so that node representations capture both object identity and interaction-driven dynamics.",
-      "Parameter-efficient graph-to-video adaptation. A lightweight graph-to-token adapter and LoRA modules condition a frozen LTX-Video 2B backbone and frozen VAE while preserving pretrained generative priors.",
-      "GraphVid-Bench and efficient performance. We curate approximately 27K interaction-centric clips with structured graphs. GraphVid uses 0.6B trainable parameters and achieves the fastest inference among the compared methods at 200 seconds."
-    ],
-    "contributionLeads": [
-      "Interactive graph-based control.",
-      "Edge-Aware Graph Reasoning.",
-      "Parameter-efficient graph-to-video adaptation.",
-      "GraphVid-Bench and efficient performance."
-    ],
-    "tldr": [
-      "We introduce GraphVid, a framework for controlling image-to-video generation through object interactions. Users edit a graph to specify how objects push, pull, lift, or move relative to one another, guiding coherent multi-object motion."
-    ]
-  },
-  "resultPanels": {
-    "htmlTable:0": {
-      "title": "Interaction-centric MoveBench",
-      "description": "Video quality and motion control on the interaction-centric MoveBench subset, with training data, trainable parameters, and inference time."
-    },
-    "htmlTable:1": {
-      "title": "Multi-object MoveBench",
-      "description": "Perceptual, reconstruction, temporal, and motion quality on the harder multi-object subset."
-    }
-  },
-  "results": {
-    "gvc_data_tax.png": {
-      "type": "bars",
-      "title": "GraphVideoCorpus interaction counts",
-      "source": "static/images/gvc_data_tax.png",
-      "categories": [
-        "Holding",
-        "Pushing",
-        "Supporting",
-        "Pulling",
-        "Lifting",
-        "Rotating",
-        "Colliding",
-        "Resting",
-        "Pressing",
-        "Compressing",
-        "Sliding",
-        "Standing",
-        "Reflecting",
-        "Moving",
-        "Reaching",
-        "Placing",
-        "Rolling",
-        "Falling",
-        "Swimming",
-        "Walking"
-      ],
-      "yLabel": "Interaction count",
-      "max": 45000,
-      "series": [
-        {
-          "name": "Annotated occurrences",
-          "values": [
-            40466,
-            32849,
-            21864,
-            4281,
-            2651,
-            2268,
-            2035,
-            1393,
-            1251,
-            987,
-            945,
-            866,
-            813,
-            690,
-            625,
-            581,
-            561,
-            554,
-            455,
-            437
-          ],
-          "color": "#ff915b"
-        }
-      ],
-      "note": "",
-      "compact": true
-    },
-    "gvc_corr.png": {
-      "type": "heatmap",
-      "title": "Which interactions occur together?",
-      "source": "static/images/gvc_corr.png",
-      "columns": [
-        "holding",
-        "pushing",
-        "supporting",
-        "pulling",
-        "lifting",
-        "rotating",
-        "colliding",
-        "resting",
-        "pressing",
-        "compressing",
-        "sliding",
-        "standing",
-        "reflecting",
-        "moving",
-        "reaching",
-        "placing",
-        "rolling",
-        "falling",
-        "swimming",
-        "walking"
-      ],
-      "rows": [
-        "holding",
-        "pushing",
-        "supporting",
-        "pulling",
-        "lifting",
-        "rotating",
-        "colliding",
-        "resting",
-        "pressing",
-        "compressing",
-        "sliding",
-        "standing",
-        "reflecting",
-        "moving",
-        "reaching",
-        "placing",
-        "rolling",
-        "falling",
-        "swimming",
-        "walking"
-      ],
-      "values": [
-        [
-          10.6,
-          9.4,
-          9.1,
-          7.7,
-          7.2,
-          7.2,
-          6.3,
-          6.6,
-          6.6,
-          6.3,
-          6.0,
-          6.2,
-          6.0,
-          5.9,
-          5.9,
-          5.7,
-          5.1,
-          4.8,
-          4.4,
-          5.3
-        ],
-        [
-          9.4,
-          10.4,
-          9.1,
-          7.6,
-          7.1,
-          6.9,
-          6.5,
-          6.7,
-          6.4,
-          6.2,
-          6.3,
-          5.7,
-          5.9,
-          5.8,
-          5.9,
-          5.7,
-          5.4,
-          4.9,
-          4.4,
-          5.0
-        ],
-        [
-          9.1,
-          9.1,
-          10.0,
-          7.3,
-          7.0,
-          6.7,
-          6.2,
-          6.4,
-          6.3,
-          6.0,
-          5.9,
-          5.6,
-          5.7,
-          5.6,
-          5.7,
-          5.5,
-          5.2,
-          4.6,
-          4.4,
-          5.2
-        ],
-        [
-          7.7,
-          7.6,
-          7.3,
-          8.4,
-          4.9,
-          4.8,
-          4.1,
-          4.7,
-          4.5,
-          4.3,
-          4.5,
-          4.1,
-          3.2,
-          4.0,
-          4.4,
-          3.0,
-          2.5,
-          2.7,
-          2.1,
-          3.0
-        ],
-        [
-          7.2,
-          7.1,
-          7.0,
-          4.9,
-          7.9,
-          3.8,
-          3.6,
-          4.8,
-          3.9,
-          3.5,
-          3.6,
-          3.7,
-          2.1,
-          3.6,
-          4.2,
-          3.1,
-          1.4,
-          2.5,
-          1.9,
-          1.4
-        ],
-        [
-          7.2,
-          6.9,
-          6.7,
-          4.8,
-          3.8,
-          7.7,
-          3.6,
-          4.1,
-          4.0,
-          4.0,
-          3.4,
-          3.5,
-          3.5,
-          3.7,
-          3.8,
-          2.3,
-          2.2,
-          1.6,
-          0.0,
-          1.1
-        ],
-        [
-          6.3,
-          6.5,
-          6.2,
-          4.1,
-          3.6,
-          3.6,
-          7.6,
-          3.7,
-          3.0,
-          3.0,
-          3.2,
-          3.1,
-          1.4,
-          2.6,
-          3.0,
-          3.1,
-          3.4,
-          3.3,
-          1.4,
-          1.1
-        ],
-        [
-          6.6,
-          6.7,
-          6.4,
-          4.7,
-          4.8,
-          4.1,
-          3.7,
-          7.2,
-          4.0,
-          3.5,
-          3.7,
-          3.0,
-          3.0,
-          3.3,
-          3.0,
-          4.1,
-          2.9,
-          2.4,
-          1.1,
-          2.5
-        ],
-        [
-          6.6,
-          6.4,
-          6.3,
-          4.5,
-          3.9,
-          4.0,
-          3.0,
-          4.0,
-          7.2,
-          4.3,
-          3.2,
-          2.6,
-          1.9,
-          3.0,
-          3.2,
-          2.5,
-          2.5,
-          2.2,
-          2.4,
-          2.4
-        ],
-        [
-          6.3,
-          6.2,
-          6.0,
-          4.3,
-          3.5,
-          4.0,
-          3.0,
-          3.5,
-          4.3,
-          6.9,
-          2.3,
-          2.5,
-          2.1,
-          3.3,
-          3.0,
-          1.9,
-          2.4,
-          1.9,
-          1.1,
-          2.5
-        ],
-        [
-          6.0,
-          6.3,
-          5.9,
-          4.5,
-          3.6,
-          3.4,
-          3.2,
-          3.7,
-          3.2,
-          2.3,
-          6.9,
-          2.4,
-          1.6,
-          2.6,
-          2.6,
-          2.4,
-          1.8,
-          1.8,
-          0.7,
-          1.4
-        ],
-        [
-          6.2,
-          5.7,
-          5.6,
-          4.1,
-          3.7,
-          3.5,
-          3.1,
-          3.0,
-          2.6,
-          2.5,
-          2.4,
-          6.8,
-          3.8,
-          3.0,
-          1.8,
-          1.4,
-          1.9,
-          1.1,
-          2.1,
-          2.8
-        ],
-        [
-          6.0,
-          5.9,
-          5.7,
-          3.2,
-          2.1,
-          3.5,
-          1.4,
-          3.0,
-          1.9,
-          2.1,
-          1.6,
-          3.8,
-          6.7,
-          2.1,
-          1.1,
-          0.0,
-          0.7,
-          1.8,
-          1.1,
-          2.3
-        ],
-        [
-          5.9,
-          5.8,
-          5.6,
-          4.0,
-          3.6,
-          3.7,
-          2.6,
-          3.3,
-          3.0,
-          3.3,
-          2.6,
-          3.0,
-          2.1,
-          6.5,
-          2.1,
-          1.4,
-          1.8,
-          1.9,
-          1.1,
-          2.1
-        ],
-        [
-          5.9,
-          5.9,
-          5.7,
-          4.4,
-          4.2,
-          3.8,
-          3.0,
-          3.0,
-          3.2,
-          3.0,
-          2.6,
-          1.8,
-          1.1,
-          2.1,
-          6.4,
-          2.4,
-          0.7,
-          1.6,
-          0.7,
-          1.4
-        ],
-        [
-          5.7,
-          5.7,
-          5.5,
-          3.0,
-          3.1,
-          2.3,
-          3.1,
-          4.1,
-          2.5,
-          1.9,
-          2.4,
-          1.4,
-          0.0,
-          1.4,
-          2.4,
-          6.3,
-          0.7,
-          1.4,
-          0.0,
-          0.7
-        ],
-        [
-          5.1,
-          5.4,
-          5.2,
-          2.5,
-          1.4,
-          2.2,
-          3.4,
-          2.9,
-          2.5,
-          2.4,
-          1.8,
-          1.9,
-          0.7,
-          1.8,
-          0.7,
-          0.7,
-          6.3,
-          1.4,
-          0.0,
-          0.0
-        ],
-        [
-          4.8,
-          4.9,
-          4.6,
-          2.7,
-          2.5,
-          1.6,
-          3.3,
-          2.4,
-          2.2,
-          1.9,
-          1.8,
-          1.1,
-          1.8,
-          1.9,
-          1.6,
-          1.4,
-          1.4,
-          6.3,
-          0.7,
-          0.7
-        ],
-        [
-          4.4,
-          4.4,
-          4.4,
-          2.1,
-          1.9,
-          0.0,
-          1.4,
-          1.1,
-          2.4,
-          1.1,
-          0.7,
-          2.1,
-          1.1,
-          1.1,
-          0.7,
-          0.0,
-          0.0,
-          0.7,
-          6.1,
-          1.8
-        ],
-        [
-          5.3,
-          5.0,
-          5.2,
-          3.0,
-          1.4,
-          1.1,
-          1.1,
-          2.5,
-          2.4,
-          2.5,
-          1.4,
-          2.8,
-          2.3,
-          2.1,
-          1.4,
-          0.7,
-          0.0,
-          0.7,
-          1.8,
-          6.0
-        ]
-      ],
-      "min": 0,
-      "max": 11,
-      "unit": "log(count + 1)",
-      "approximate": true,
-      "note": ""
-    }
-  }
-}
-  </script>
+<link href="../../assets/images/favicon.svg" rel="icon" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
+</head>
+<body class="page-project project-studio studio-graphvid" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
 <div class="project-bg"></div>
 <div class="project-grid"></div>
 <nav class="glass-nav">
 <a class="nav-logo" href="../../index.html#hero">
-<img alt="PLAN Lab Logo" src="../../assets/images/logo.svg"/>
+<img alt="PLAN Lab Logo" src="../../assets/images/logo.svg">
 </a>
 <div class="nav-menu">
 <a aria-label="Publications" class="nav-item" href="../../publications.html">
@@ -999,50 +396,76 @@
 </nav>
 <main>
 <!-- Hero -->
-<section class="hero">
+
+<!-- Teaser: placed immediately after the hero so the figure appears before long text. -->
+
+<!-- TL;DR -->
+
+<!-- Why GraphVid? -->
+
+<!-- Abstract -->
+
+<!-- Contributions -->
+
+<!-- Method -->
+
+<!-- Dataset -->
+
+<!-- Quantitative Results -->
+
+<!-- Qualitative Results -->
+
+
+<section class="hero studio-header">
 <div class="hero-body">
 <div class="container is-max-desktop">
 <div class="columns is-centered">
 <div class="column has-text-centered">
 <h1 class="title is-2 publication-title">
-<span class="model-name"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></span>: Interactive Graph-Controllable Video Generation
-                </h1>
-<div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
-<div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span></div>
+<span class="studio-name">GraphVid</span><span class="studio-subtitle">Interactive Graph-Controllable Video Generation</span>
+</h1>
+<div class="is-size-5 publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Vedant Shah<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Tianjiao Yu<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Muntasir Wahed<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div>
+</div>
+<div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span>
+</div>
 <div class="has-text-centered" style="margin: 5px 0;">
 <h1 class="title is-3 publication-venue">ECCV 2026</h1>
 </div>
 <div class="column has-text-centered" style="padding-top:0;">
-<div class="publication-links"><a href="https://arxiv.org/pdf/2607.21580" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2607.21580" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://github.com/PLAN-Lab/GraphVid" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
+<div class="publication-links">
+<a href="https://arxiv.org/pdf/2607.21580" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2607.21580" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://github.com/PLAN-Lab/GraphVid" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/PLAN-Lab/GraphVid" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/GraphVid/tree/main/gvc_ckpt_folder"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<!-- Teaser: placed immediately after the hero so the figure appears before long text. -->
-<section class="section quick-teaser">
+</div>
+</section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title">
 <div class="container is-max-desktop">
-<div class="media-wrap-teaser">
-<div class="media-card" data-loaded="false">
-<img alt="GraphVid teaser figure showing image input, graph construction, graph editing, and graph-conditioned generated video" decoding="async" loading="eager" src="./static/images/gvc_teaser.png"/>
-<div class="media-skeleton">Loading...</div>
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content has-text-justified tldr-box studio-tldr-box"><p>We introduce GraphVid, a framework for controlling image-to-video generation through object interactions. Users edit a graph to specify how objects push, pull, lift, or move relative to one another, guiding coherent <span class="studio-tldr-tail">multi-object motion.</span></p></div>
 </div>
+</section><section class="studio-feature" aria-label="Graph-guided motion control" data-studio-section="examples"><div class="studio-trio">
+<div class="studio-media-card">
+<div class="studio-media-label">Intended motion</div>
+<div class="studio-media-frame"><img src="static/videos/intent_gif/12.gif" alt="Intended motion for GraphVid example 1" decoding="async"></div>
 </div>
-<p class="caption has-text-justified">
-<strong>GraphVid interactive control pipeline.</strong> Starting from an input frame, GraphVid constructs a scene graph over detected entities and their interactions. Users indirectly modify the graph by interacting with our interface to specify desired relational dynamics. The edited interaction graph is then translated into conditioning tokens that guide a frozen video diffusion backbone to generate a coherent video sequence.
-</p>
+<div class="studio-media-card">
+<div class="studio-media-label">Interaction graph</div>
+<div class="studio-media-frame graph"><img src="static/videos/gen_graph/12.svg" alt="Edited interaction graph for GraphVid example 1" decoding="async"></div>
 </div>
-</section>
-<!-- TL;DR -->
-<section class="section">
-<div class="container is-max-desktop">
-<h2 class="title is-3">TL;DR</h2>
-<div class="content has-text-justified tldr-box"><ul><li><strong>GraphVid makes controllable image-to-video generation an interaction driven graph editing problem.</strong></li><li>Users specify object-level relational dynamics—such as <em>push</em>, <em>pull</em>, <em>lift</em>, or <em>move relative to</em>—instead of authoring dense, "literal" trajectories for every object.</li><li>An Edge-Aware GNN converts directed interaction graphs into conditioning tokens for a frozen <strong>LTX-Video 2B</strong> diffusion transformer.</li><li>Using approximately <strong>27K curated clips</strong>, <strong>0.6B trainable parameters</strong>, and <strong>200-second inference</strong>, GraphVid delivers strong interaction control with substantially less data and trainable capacity than large motion-control systems.</li></ul></div>
+<div class="studio-media-card">
+<div class="studio-media-label">GraphVid output</div>
+<div class="studio-media-frame"><video src="static/videos/gen_video/12.mp4" loop="" playsinline="" controls="" preload="metadata" data-studio-autoplay="true" aria-label="GraphVid output" muted="" autoplay=""></video></div>
 </div>
-</section>
-<!-- Why GraphVid? -->
-<section class="section">
+</div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-section-3" data-section="supplement">Why Graph-Based Video Control?</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">GraphVid Method</a><a href="#dataset" data-section="dataset">GraphVid-Bench Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section studio-explanation-panel" data-studio-section="motivation" id="studio-section-3">
 <div class="container is-max-desktop">
 <h2 class="title is-3">Why Graph-Based Video Control?</h2>
 <!-- <div class="content has-text-justified">
@@ -1056,74 +479,60 @@
               GraphVid instead represents user intent as a <strong>directed relational interaction graph</strong>. This provides a higher-level semantic interface for single- and multi-object control while still grounding the requested dynamics in detected objects and spatial structure.
             </p>
 </div> -->
-<div class="why-grid">
-<div class="why-card">
+<div class="why-grid studio-explainer-grid">
+<div class="why-card studio-explainer-card">
+<i class="fa-solid fa-link" aria-hidden="true"></i>
 <h3>Trajectory control is low-level</h3>
 <p>Dense "literal" paths are hard to author for multi-object scenes, especially under occlusion, overlap, or contact.</p>
 </div>
-<div class="why-card">
+<div class="why-card studio-explainer-card">
+<i class="fa-solid fa-crosshairs" aria-hidden="true"></i>
 <h3>Users think in interactions</h3>
 <p>Many desired motions are naturally relational: one object pushes, follows, lifts, supports, or moves relative to another.</p>
 </div>
-<div class="why-card">
+<div class="why-card studio-explainer-card">
+<i class="fa-solid fa-layer-group" aria-hidden="true"></i>
 <h3>Graphs preserve structure</h3>
 <p>Directed nodes and edges bind the requested dynamics to the correct entities and interactions.</p>
 </div>
 </div>
 </div>
-</section>
-<!-- Abstract -->
-<section class="section">
+</section><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
 <div class="container is-max-desktop">
-<h2 class="title is-3">Abstract</h2>
-<div class="content has-text-justified"><p>Controllable video generation remains challenging because precise multi-object interactions are difficult to specify using text prompts or motion-control inputs that primarily constrain pixel displacement. Trajectory-based control requires accurate tracks for multiple objects, which scales poorly with scene complexity and becomes ambiguous under occlusion or overlap.</p><p>We introduce <strong><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></strong>, a graph-conditioned image-to-video generation framework that enables interactive control through structured directed interaction graphs. Starting from a single input frame, GraphVid constructs a scene graph over detected entities, allows users to edit object-level interactions, and translates the edited graph into conditioning tokens for a frozen video diffusion transformer.</p><p>To support this paradigm, we curate <strong>GraphVid-Bench</strong>, an interaction-centric dataset of approximately <strong>27K</strong> videos paired with structured relational annotations. Despite using substantially less training data and fewer trainable parameters than prior motion-control methods, GraphVid achieves strong controllability and video quality. Compared with Motion-I2V, it reduces FID by up to <strong>39.9%</strong> and FVD by <strong>37.6%</strong>, while improving PSNR from <strong>9.87 to 15.98</strong> and SSIM from <strong>0.38 to 0.61</strong>.</p></div>
+<h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
+<div class="content has-text-justified">
+<p>Controllable video generation remains challenging because precise multi-object interactions are difficult to specify using text prompts or motion-control inputs that primarily constrain pixel displacement. Trajectory-based control requires accurate tracks for multiple objects, which scales poorly with scene complexity and becomes ambiguous under occlusion or overlap.</p>
+<p>We introduce <strong><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span></strong>, a graph-conditioned image-to-video generation framework that enables interactive control through structured directed interaction graphs. Starting from a single input frame, GraphVid constructs a scene graph over detected entities, allows users to edit object-level interactions, and translates the edited graph into conditioning tokens for a frozen video diffusion transformer.</p>
+<p>To support this paradigm, we curate <strong>GraphVid-Bench</strong>, an interaction-centric dataset of approximately <strong>27K</strong> videos paired with structured relational annotations. Despite using substantially less training data and fewer trainable parameters than prior motion-control methods, GraphVid achieves strong controllability and video quality. Compared with Motion-I2V, it reduces FID by up to <strong>39.9%</strong> and FVD by <strong>37.6%</strong>, while improving PSNR from <strong>9.87 to 15.98</strong> and SSIM from <strong>0.38 to 0.61</strong>.</p>
 </div>
-</section>
-<!-- Contributions -->
-<section class="section">
-<div class="container is-max-desktop">
-<h2 class="title is-3">✅ Contributions</h2>
-<div class="content has-text-justified"><ul class="fa-ul"><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Interactive graph-based control. </b>GraphVid enables multi-object image-to-video control through directed interaction scene graphs constructed from a single image, replacing dense trajectory authoring with intuitive object-level interaction edits.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Edge-Aware Graph Reasoning. </b>A GINEConv-based graph module injects directed edge semantics into message passing so that node representations capture both object identity and interaction-driven dynamics.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>Parameter-efficient graph-to-video adaptation. </b>A lightweight graph-to-token adapter and LoRA modules condition a frozen LTX-Video 2B backbone and frozen VAE while preserving pretrained generative priors.</li><li><span class="fa-li"><i class="fa fa-star" style=""></i></span><b>GraphVid-Bench and efficient performance. </b>We curate approximately 27K interaction-centric clips with structured graphs. GraphVid uses 0.6B trainable parameters and achieves the fastest inference among the compared methods at 200 seconds.</li></ul></div>
 </div>
-</section>
-<!-- Method -->
-<section class="section">
+</section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
 <div class="container is-max-desktop">
-<h2 class="title is-3"><span class="graphvid-accent-blue">Graph</span><span class="graphvid-accent-orange">Vid</span> Method</h2>
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content has-text-justified"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Interactive graph-based control.</strong> GraphVid enables multi-object image-to-video control through directed interaction scene graphs constructed from a single image, replacing dense trajectory authoring with intuitive object-level interaction edits.</li>
+<li>
+<strong class="studio-contribution-lead">Edge-Aware Graph Reasoning.</strong> A GINEConv-based graph module injects directed edge semantics into message passing so that node representations capture both object identity and interaction-driven dynamics.</li>
+<li>
+<strong class="studio-contribution-lead">Parameter-efficient graph-to-video adaptation.</strong> A lightweight graph-to-token adapter and LoRA modules condition a frozen <span class="studio-inline-name">LTX-Video 2B</span> backbone and frozen VAE while preserving pretrained generative priors.</li>
+<li>
+<strong class="studio-contribution-lead">GraphVid-Bench and efficient performance.</strong> We curate approximately 27K interaction-centric clips with structured graphs. GraphVid uses 0.6B trainable parameters and achieves the fastest inference among the compared methods at 200 seconds.</li>
+</ul></div>
+</div>
+</section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
+<div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(169, 204, 255);">Graph</span><span class="studio-method-name" style="color: rgb(255, 145, 91);">Vid</span> Method</h2>
 <div class="content has-text-justified">
 <p>GraphVid is a controllable image-to-video framework that interfaces a structured directed interaction graph with a pretrained <strong>LTX-Video 2B</strong> diffusion transformer. Each node represents a detected entity, and each directed edge describes how one entity influences another. Unary actions such as rotate, move, or scale are represented as self-loop edges. The LTX DiT and VAE remain frozen; GraphVid trains only the Edge-Aware GNN, graph-to-video adapter, and LoRA modules.</p>
 </div>
-<div class="model-spec-grid">
-<div class="model-spec-card">
-<span class="spec-value">LTX-Video 2B</span>
-<span class="spec-label">Frozen video diffusion backbone</span>
-</div>
-<div class="model-spec-card">
-<span class="spec-value">0.6B</span>
-<span class="spec-label">Trainable parameters</span>
-</div>
-<div class="model-spec-card">
-<span class="spec-value">LoRA rank 128</span>
-<span class="spec-label">Q, K, V, and output projections</span>
-</div>
-<div class="model-spec-card">
-<span class="spec-value">30 nodes</span>
-<span class="spec-label">Maximum graph capacity (Trainable)</span>
-</div>
-<div class="model-spec-card">
-<span class="spec-value">512 → 4096</span>
-<span class="spec-label">GNN hidden size to LTX token size</span>
-</div>
-<div class="model-spec-card">
-<span class="spec-value">121 frames · 24 FPS</span>
-<span class="spec-label">Standard generation setting</span>
-</div>
-</div>
+
 
 <div style="text-align: center; padding: 0 0 20px 0;">
 <div class="media-wrap-wide">
-<div class="media-card" data-loaded="false">
-<img alt="GraphVid method overview" decoding="async" loading="lazy" src="./static/images/gvc_arc.png"/>
+<div class="media-card" data-loaded="false" style="position: relative;">
+<img alt="GraphVid method overview" decoding="async" loading="lazy" src="./static/images/gvc_arc.png">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
@@ -1131,24 +540,41 @@
 <strong>GraphVid overview.</strong> Objects are detected from the input image and encoded into node embeddings. An MLLM extracts relational edges to construct an initial interaction graph. Users edit interactions through the image interface, and the resulting graph is converted into conditioning tokens that guide the frozen video diffusion transformer.
             </p>
 </div>
-<div class="content has-text-justified"><p><strong>Node representations.</strong> Qwen3-VL detects objects and provides an 8192-dimensional visual embedding from mean and max pooling over each object crop. A 2560-dimensional text embedding of the object label and four normalized bounding-box coordinates are concatenated to form a 10,756-dimensional node feature.</p><p><strong>Edge representations.</strong> Each directed edge contains an open-vocabulary textual description of the intended interaction. Qwen3-Embedding encodes this description into a 2560-dimensional edge feature.</p><p><strong>Edge-aware graph reasoning.</strong> Node and edge features are projected to a shared 512-dimensional hidden space and processed using GINEConv layers, which inject semantic edge attributes directly into message passing.</p><p><strong>Graph-to-video conditioning.</strong> Interaction-aware node embeddings are mapped through a three-layer MLP into 4096-dimensional LTX conditioning tokens. LoRA modules of rank 128 are inserted into the transformer's attention projections, while the original DiT and VAE weights remain frozen.</p></div>
+<div class="content has-text-justified">
+<p><strong>Node representations.</strong> Qwen3-VL detects objects and provides an 8192-dimensional visual embedding from mean and max pooling over each object crop. A 2560-dimensional text embedding of the object label and four normalized bounding-box coordinates are concatenated to form a 10,756-dimensional node feature.</p>
+<p><strong>Edge representations.</strong> Each directed edge contains an open-vocabulary textual description of the intended interaction. Qwen3-Embedding encodes this description into a 2560-dimensional edge feature.</p>
+<p><strong>Edge-aware graph reasoning.</strong> Node and edge features are projected to a shared 512-dimensional hidden space and processed using GINEConv layers, which inject semantic edge attributes directly into message passing.</p>
+<p><strong>Graph-to-video conditioning.</strong> Interaction-aware node embeddings are mapped through a three-layer MLP into 4096-dimensional LTX conditioning tokens. LoRA modules of rank 128 are inserted into the transformer's attention projections, while the original DiT and VAE weights remain frozen.</p>
+</div>
 <div style="text-align: center; padding: 0 0 20px 0;">
 <div class="media-wrap">
-<div class="media-card" data-loaded="false">
-<img alt="GraphVid edge-aware graph reasoning module" decoding="async" loading="lazy" src="./static/images/gvc_gnn.png"/>
+<div class="media-card" data-loaded="false" style="position: relative;">
+<img alt="GraphVid edge-aware graph reasoning module" decoding="async" loading="lazy" src="./static/images/gvc_gnn.png">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 </div>
+<div class="studio-subsection studio-teaser-context">
+<div class="media-wrap-teaser">
+<div class="media-card" data-loaded="true" style="position: relative;">
+<img alt="GraphVid teaser figure showing image input, graph construction, graph editing, and graph-conditioned generated video" decoding="async" loading="eager" src="./static/images/gvc_teaser.png">
+<div class="media-skeleton">Loading...</div>
 </div>
-</section>
-<!-- Dataset -->
-<section class="section" id="dataset">
+</div>
+<p class="caption has-text-justified">
+<strong>GraphVid interactive control pipeline.</strong> Starting from an input frame, GraphVid constructs a scene graph over detected entities and their interactions. Users indirectly modify the graph by interacting with our interface to specify desired relational dynamics. The edited interaction graph is then translated into conditioning tokens that guide a frozen video diffusion backbone to generate a <span class="studio-ending">coherent video sequence.</span>
+</p>
+</div>
+</div>
+</section><section class="section" id="dataset" data-studio-section="dataset" aria-labelledby="dataset-title">
 <div class="container is-max-desktop">
-<h2 class="title is-3"><span class="graphvid-accent-blue">GraphVid</span><span class="graphvid-accent-orange">-Bench</span> Dataset</h2>
-<div class="content has-text-justified"><p>GraphVid-Bench pairs interaction-centric videos with directed scene graphs. Nodes represent scene entities, while edges encode the type, direction, and textual context of interactions that influence scene dynamics.</p><p>The dataset contains <strong>27,504 curated clips</strong> drawn from WISA-80K, Something-Something v2, and MagicData. Clips are standardized to <strong>512 × 288</strong>, <strong>81 frames</strong>, and <strong>16 FPS</strong>. Dynamic letterboxing preserves aspect ratio, and motion-energy windowing selects the most interaction-active segment.</p></div>
+<h2 class="title is-3" id="dataset-title">GraphVid-Bench Dataset</h2>
+<div class="content has-text-justified">
+<p>GraphVid-Bench pairs interaction-centric videos with directed scene graphs. Nodes represent scene entities, while edges encode the type, direction, and textual context of interactions that influence scene dynamics.</p>
+<p>The dataset contains <strong>27,504 curated clips</strong> drawn from WISA-80K, Something-Something v2, and MagicData. Clips are standardized to <strong>512 × 288</strong>, <strong>81 frames</strong>, and <strong>16 FPS</strong>. Dynamic letterboxing preserves aspect ratio, and motion-energy windowing selects the <span class="studio-ending">most interaction-active segment.</span></p>
+</div>
 
-<div class="metric-table-wrapper">
+<div class="metric-table-wrapper studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
 <table class="metric-table">
 <thead>
 <tr>
@@ -1159,12 +585,22 @@
 </tr>
 </thead>
 <tbody>
-<tr><td>Nodes / Graph</td><td>7.76</td><td>5.0</td><td>8.03</td></tr>
-<tr><td>Edges / Graph</td><td>4.85</td><td>4.0</td><td>3.46</td></tr>
+<tr>
+<td>Nodes / Graph</td>
+<td class="studio-numeric-cell">7.76</td>
+<td class="studio-numeric-cell">5.0</td>
+<td class="studio-numeric-cell">8.03</td>
+</tr>
+<tr>
+<td>Edges / Graph</td>
+<td class="studio-numeric-cell">4.85</td>
+<td class="studio-numeric-cell">4.0</td>
+<td class="studio-numeric-cell">3.46</td>
+</tr>
 </tbody>
 </table>
 </div>
-<div class="metric-table-wrapper">
+<div class="metric-table-wrapper studio-table-scroll" tabindex="0" role="region" aria-label="Scrollable project results table">
 <table class="metric-table">
 <thead>
 <tr>
@@ -1173,26 +609,34 @@
 </tr>
 </thead>
 <tbody>
-<tr><td>No explicit interaction</td><td>3,881</td></tr>
-<tr><td>Single interaction</td><td>10,982</td></tr>
-<tr><td>Multi-interaction</td><td>12,641</td></tr>
+<tr>
+<td>No explicit interaction</td>
+<td class="studio-numeric-cell">3,881</td>
+</tr>
+<tr>
+<td>Single interaction</td>
+<td class="studio-numeric-cell">10,982</td>
+</tr>
+<tr>
+<td>Multi-interaction</td>
+<td class="studio-numeric-cell">12,641</td>
+</tr>
 </tbody>
 </table>
 </div>
-<div style="text-align: center; padding: 0 0 20px 0;">
-<div class="media-wrap-wide">
+<div style="text-align: center; padding: 0 0 20px 0;" class="studio-result-host">
+<div class="media-wrap-wide studio-result-host">
 <div style="display:grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap:24px;
-        align-items:start;">
-<div class="media-card" data-loaded="false">
-<img alt="Co-occurrence statistics in GraphVid-Bench" decoding="async" loading="lazy" src="./static/images/gvc_corr.png"/>
-<div class="media-skeleton">Loading...</div>
-</div>
-<div class="media-card" data-loaded="false">
-<img alt="Interaction taxonomy in GraphVid-Bench" decoding="async" loading="lazy" src="./static/images/gvc_data_tax.png"/>
-<div class="media-skeleton">Loading...</div>
-</div>
+        align-items:start;" class="studio-result-host studio-graphvid-statistics">
+<figure class="studio-native-result" data-result-source="static/images/gvc_corr.png"><h3>Which interactions occur together?</h3>
+<div class="studio-svg-scroll" tabindex="0"><svg viewbox="0 0 760 760" role="img" aria-label="Which interactions occur together?"><text x="175" y="108" transform="rotate(-55 175 108)">holding</text><text x="203" y="108" transform="rotate(-55 203 108)">pushing</text><text x="231" y="108" transform="rotate(-55 231 108)">supporting</text><text x="259" y="108" transform="rotate(-55 259 108)">pulling</text><text x="287" y="108" transform="rotate(-55 287 108)">lifting</text><text x="315" y="108" transform="rotate(-55 315 108)">rotating</text><text x="343" y="108" transform="rotate(-55 343 108)">colliding</text><text x="371" y="108" transform="rotate(-55 371 108)">resting</text><text x="399" y="108" transform="rotate(-55 399 108)">pressing</text><text x="427" y="108" transform="rotate(-55 427 108)">compressing</text><text x="455" y="108" transform="rotate(-55 455 108)">sliding</text><text x="483" y="108" transform="rotate(-55 483 108)">standing</text><text x="511" y="108" transform="rotate(-55 511 108)">reflecting</text><text x="539" y="108" transform="rotate(-55 539 108)">moving</text><text x="567" y="108" transform="rotate(-55 567 108)">reaching</text><text x="595" y="108" transform="rotate(-55 595 108)">placing</text><text x="623" y="108" transform="rotate(-55 623 108)">rolling</text><text x="651" y="108" transform="rotate(-55 651 108)">falling</text><text x="679" y="108" transform="rotate(-55 679 108)">swimming</text><text x="707" y="108" transform="rotate(-55 707 108)">walking</text><text x="148" y="139" text-anchor="end">holding</text><rect x="160" y="120" width="27" height="27" fill="rgb(131,171,216)" tabindex="0" aria-label="holding · holding: approximately 10.6 log(count + 1)"><title>holding · holding: approximately 10.6 log(count + 1)</title></rect><rect x="188" y="120" width="27" height="27" fill="rgb(118,155,198)" tabindex="0" aria-label="holding · pushing: approximately 9.4 log(count + 1)"><title>holding · pushing: approximately 9.4 log(count + 1)</title></rect><rect x="216" y="120" width="27" height="27" fill="rgb(114,151,193)" tabindex="0" aria-label="holding · supporting: approximately 9.1 log(count + 1)"><title>holding · supporting: approximately 9.1 log(count + 1)</title></rect><rect x="244" y="120" width="27" height="27" fill="rgb(99,133,172)" tabindex="0" aria-label="holding · pulling: approximately 7.7 log(count + 1)"><title>holding · pulling: approximately 7.7 log(count + 1)</title></rect><rect x="272" y="120" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="holding · lifting: approximately 7.2 log(count + 1)"><title>holding · lifting: approximately 7.2 log(count + 1)</title></rect><rect x="300" y="120" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="holding · rotating: approximately 7.2 log(count + 1)"><title>holding · rotating: approximately 7.2 log(count + 1)</title></rect><rect x="328" y="120" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="holding · colliding: approximately 6.3 log(count + 1)"><title>holding · colliding: approximately 6.3 log(count + 1)</title></rect><rect x="356" y="120" width="27" height="27" fill="rgb(87,119,156)" tabindex="0" aria-label="holding · resting: approximately 6.6 log(count + 1)"><title>holding · resting: approximately 6.6 log(count + 1)</title></rect><rect x="384" y="120" width="27" height="27" fill="rgb(87,119,156)" tabindex="0" aria-label="holding · pressing: approximately 6.6 log(count + 1)"><title>holding · pressing: approximately 6.6 log(count + 1)</title></rect><rect x="412" y="120" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="holding · compressing: approximately 6.3 log(count + 1)"><title>holding · compressing: approximately 6.3 log(count + 1)</title></rect><rect x="440" y="120" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="holding · sliding: approximately 6 log(count + 1)"><title>holding · sliding: approximately 6 log(count + 1)</title></rect><rect x="468" y="120" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="holding · standing: approximately 6.2 log(count + 1)"><title>holding · standing: approximately 6.2 log(count + 1)</title></rect><rect x="496" y="120" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="holding · reflecting: approximately 6 log(count + 1)"><title>holding · reflecting: approximately 6 log(count + 1)</title></rect><rect x="524" y="120" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="holding · moving: approximately 5.9 log(count + 1)"><title>holding · moving: approximately 5.9 log(count + 1)</title></rect><rect x="552" y="120" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="holding · reaching: approximately 5.9 log(count + 1)"><title>holding · reaching: approximately 5.9 log(count + 1)</title></rect><rect x="580" y="120" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="holding · placing: approximately 5.7 log(count + 1)"><title>holding · placing: approximately 5.7 log(count + 1)</title></rect><rect x="608" y="120" width="27" height="27" fill="rgb(71,99,133)" tabindex="0" aria-label="holding · rolling: approximately 5.1 log(count + 1)"><title>holding · rolling: approximately 5.1 log(count + 1)</title></rect><rect x="636" y="120" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="holding · falling: approximately 4.8 log(count + 1)"><title>holding · falling: approximately 4.8 log(count + 1)</title></rect><rect x="664" y="120" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="holding · swimming: approximately 4.4 log(count + 1)"><title>holding · swimming: approximately 4.4 log(count + 1)</title></rect><rect x="692" y="120" width="27" height="27" fill="rgb(73,102,136)" tabindex="0" aria-label="holding · walking: approximately 5.3 log(count + 1)"><title>holding · walking: approximately 5.3 log(count + 1)</title></rect><text x="148" y="167" text-anchor="end">pushing</text><rect x="160" y="148" width="27" height="27" fill="rgb(118,155,198)" tabindex="0" aria-label="pushing · holding: approximately 9.4 log(count + 1)"><title>pushing · holding: approximately 9.4 log(count + 1)</title></rect><rect x="188" y="148" width="27" height="27" fill="rgb(128,168,213)" tabindex="0" aria-label="pushing · pushing: approximately 10.4 log(count + 1)"><title>pushing · pushing: approximately 10.4 log(count + 1)</title></rect><rect x="216" y="148" width="27" height="27" fill="rgb(114,151,193)" tabindex="0" aria-label="pushing · supporting: approximately 9.1 log(count + 1)"><title>pushing · supporting: approximately 9.1 log(count + 1)</title></rect><rect x="244" y="148" width="27" height="27" fill="rgb(98,132,171)" tabindex="0" aria-label="pushing · pulling: approximately 7.6 log(count + 1)"><title>pushing · pulling: approximately 7.6 log(count + 1)</title></rect><rect x="272" y="148" width="27" height="27" fill="rgb(92,125,163)" tabindex="0" aria-label="pushing · lifting: approximately 7.1 log(count + 1)"><title>pushing · lifting: approximately 7.1 log(count + 1)</title></rect><rect x="300" y="148" width="27" height="27" fill="rgb(90,123,160)" tabindex="0" aria-label="pushing · rotating: approximately 6.9 log(count + 1)"><title>pushing · rotating: approximately 6.9 log(count + 1)</title></rect><rect x="328" y="148" width="27" height="27" fill="rgb(86,118,154)" tabindex="0" aria-label="pushing · colliding: approximately 6.5 log(count + 1)"><title>pushing · colliding: approximately 6.5 log(count + 1)</title></rect><rect x="356" y="148" width="27" height="27" fill="rgb(88,120,157)" tabindex="0" aria-label="pushing · resting: approximately 6.7 log(count + 1)"><title>pushing · resting: approximately 6.7 log(count + 1)</title></rect><rect x="384" y="148" width="27" height="27" fill="rgb(85,116,153)" tabindex="0" aria-label="pushing · pressing: approximately 6.4 log(count + 1)"><title>pushing · pressing: approximately 6.4 log(count + 1)</title></rect><rect x="412" y="148" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="pushing · compressing: approximately 6.2 log(count + 1)"><title>pushing · compressing: approximately 6.2 log(count + 1)</title></rect><rect x="440" y="148" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="pushing · sliding: approximately 6.3 log(count + 1)"><title>pushing · sliding: approximately 6.3 log(count + 1)</title></rect><rect x="468" y="148" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="pushing · standing: approximately 5.7 log(count + 1)"><title>pushing · standing: approximately 5.7 log(count + 1)</title></rect><rect x="496" y="148" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="pushing · reflecting: approximately 5.9 log(count + 1)"><title>pushing · reflecting: approximately 5.9 log(count + 1)</title></rect><rect x="524" y="148" width="27" height="27" fill="rgb(78,108,144)" tabindex="0" aria-label="pushing · moving: approximately 5.8 log(count + 1)"><title>pushing · moving: approximately 5.8 log(count + 1)</title></rect><rect x="552" y="148" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="pushing · reaching: approximately 5.9 log(count + 1)"><title>pushing · reaching: approximately 5.9 log(count + 1)</title></rect><rect x="580" y="148" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="pushing · placing: approximately 5.7 log(count + 1)"><title>pushing · placing: approximately 5.7 log(count + 1)</title></rect><rect x="608" y="148" width="27" height="27" fill="rgb(74,103,137)" tabindex="0" aria-label="pushing · rolling: approximately 5.4 log(count + 1)"><title>pushing · rolling: approximately 5.4 log(count + 1)</title></rect><rect x="636" y="148" width="27" height="27" fill="rgb(68,97,130)" tabindex="0" aria-label="pushing · falling: approximately 4.9 log(count + 1)"><title>pushing · falling: approximately 4.9 log(count + 1)</title></rect><rect x="664" y="148" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="pushing · swimming: approximately 4.4 log(count + 1)"><title>pushing · swimming: approximately 4.4 log(count + 1)</title></rect><rect x="692" y="148" width="27" height="27" fill="rgb(70,98,131)" tabindex="0" aria-label="pushing · walking: approximately 5 log(count + 1)"><title>pushing · walking: approximately 5 log(count + 1)</title></rect><text x="148" y="195" text-anchor="end">supporting</text><rect x="160" y="176" width="27" height="27" fill="rgb(114,151,193)" tabindex="0" aria-label="supporting · holding: approximately 9.1 log(count + 1)"><title>supporting · holding: approximately 9.1 log(count + 1)</title></rect><rect x="188" y="176" width="27" height="27" fill="rgb(114,151,193)" tabindex="0" aria-label="supporting · pushing: approximately 9.1 log(count + 1)"><title>supporting · pushing: approximately 9.1 log(count + 1)</title></rect><rect x="216" y="176" width="27" height="27" fill="rgb(124,163,207)" tabindex="0" aria-label="supporting · supporting: approximately 10 log(count + 1)"><title>supporting · supporting: approximately 10 log(count + 1)</title></rect><rect x="244" y="176" width="27" height="27" fill="rgb(95,128,166)" tabindex="0" aria-label="supporting · pulling: approximately 7.3 log(count + 1)"><title>supporting · pulling: approximately 7.3 log(count + 1)</title></rect><rect x="272" y="176" width="27" height="27" fill="rgb(91,124,162)" tabindex="0" aria-label="supporting · lifting: approximately 7 log(count + 1)"><title>supporting · lifting: approximately 7 log(count + 1)</title></rect><rect x="300" y="176" width="27" height="27" fill="rgb(88,120,157)" tabindex="0" aria-label="supporting · rotating: approximately 6.7 log(count + 1)"><title>supporting · rotating: approximately 6.7 log(count + 1)</title></rect><rect x="328" y="176" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="supporting · colliding: approximately 6.2 log(count + 1)"><title>supporting · colliding: approximately 6.2 log(count + 1)</title></rect><rect x="356" y="176" width="27" height="27" fill="rgb(85,116,153)" tabindex="0" aria-label="supporting · resting: approximately 6.4 log(count + 1)"><title>supporting · resting: approximately 6.4 log(count + 1)</title></rect><rect x="384" y="176" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="supporting · pressing: approximately 6.3 log(count + 1)"><title>supporting · pressing: approximately 6.3 log(count + 1)</title></rect><rect x="412" y="176" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="supporting · compressing: approximately 6 log(count + 1)"><title>supporting · compressing: approximately 6 log(count + 1)</title></rect><rect x="440" y="176" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="supporting · sliding: approximately 5.9 log(count + 1)"><title>supporting · sliding: approximately 5.9 log(count + 1)</title></rect><rect x="468" y="176" width="27" height="27" fill="rgb(76,106,141)" tabindex="0" aria-label="supporting · standing: approximately 5.6 log(count + 1)"><title>supporting · standing: approximately 5.6 log(count + 1)</title></rect><rect x="496" y="176" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="supporting · reflecting: approximately 5.7 log(count + 1)"><title>supporting · reflecting: approximately 5.7 log(count + 1)</title></rect><rect x="524" y="176" width="27" height="27" fill="rgb(76,106,141)" tabindex="0" aria-label="supporting · moving: approximately 5.6 log(count + 1)"><title>supporting · moving: approximately 5.6 log(count + 1)</title></rect><rect x="552" y="176" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="supporting · reaching: approximately 5.7 log(count + 1)"><title>supporting · reaching: approximately 5.7 log(count + 1)</title></rect><rect x="580" y="176" width="27" height="27" fill="rgb(75,105,139)" tabindex="0" aria-label="supporting · placing: approximately 5.5 log(count + 1)"><title>supporting · placing: approximately 5.5 log(count + 1)</title></rect><rect x="608" y="176" width="27" height="27" fill="rgb(72,101,134)" tabindex="0" aria-label="supporting · rolling: approximately 5.2 log(count + 1)"><title>supporting · rolling: approximately 5.2 log(count + 1)</title></rect><rect x="636" y="176" width="27" height="27" fill="rgb(65,93,125)" tabindex="0" aria-label="supporting · falling: approximately 4.6 log(count + 1)"><title>supporting · falling: approximately 4.6 log(count + 1)</title></rect><rect x="664" y="176" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="supporting · swimming: approximately 4.4 log(count + 1)"><title>supporting · swimming: approximately 4.4 log(count + 1)</title></rect><rect x="692" y="176" width="27" height="27" fill="rgb(72,101,134)" tabindex="0" aria-label="supporting · walking: approximately 5.2 log(count + 1)"><title>supporting · walking: approximately 5.2 log(count + 1)</title></rect><text x="148" y="223" text-anchor="end">pulling</text><rect x="160" y="204" width="27" height="27" fill="rgb(99,133,172)" tabindex="0" aria-label="pulling · holding: approximately 7.7 log(count + 1)"><title>pulling · holding: approximately 7.7 log(count + 1)</title></rect><rect x="188" y="204" width="27" height="27" fill="rgb(98,132,171)" tabindex="0" aria-label="pulling · pushing: approximately 7.6 log(count + 1)"><title>pulling · pushing: approximately 7.6 log(count + 1)</title></rect><rect x="216" y="204" width="27" height="27" fill="rgb(95,128,166)" tabindex="0" aria-label="pulling · supporting: approximately 7.3 log(count + 1)"><title>pulling · supporting: approximately 7.3 log(count + 1)</title></rect><rect x="244" y="204" width="27" height="27" fill="rgb(107,142,183)" tabindex="0" aria-label="pulling · pulling: approximately 8.4 log(count + 1)"><title>pulling · pulling: approximately 8.4 log(count + 1)</title></rect><rect x="272" y="204" width="27" height="27" fill="rgb(68,97,130)" tabindex="0" aria-label="pulling · lifting: approximately 4.9 log(count + 1)"><title>pulling · lifting: approximately 4.9 log(count + 1)</title></rect><rect x="300" y="204" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="pulling · rotating: approximately 4.8 log(count + 1)"><title>pulling · rotating: approximately 4.8 log(count + 1)</title></rect><rect x="328" y="204" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="pulling · colliding: approximately 4.1 log(count + 1)"><title>pulling · colliding: approximately 4.1 log(count + 1)</title></rect><rect x="356" y="204" width="27" height="27" fill="rgb(66,94,127)" tabindex="0" aria-label="pulling · resting: approximately 4.7 log(count + 1)"><title>pulling · resting: approximately 4.7 log(count + 1)</title></rect><rect x="384" y="204" width="27" height="27" fill="rgb(64,92,124)" tabindex="0" aria-label="pulling · pressing: approximately 4.5 log(count + 1)"><title>pulling · pressing: approximately 4.5 log(count + 1)</title></rect><rect x="412" y="204" width="27" height="27" fill="rgb(62,89,121)" tabindex="0" aria-label="pulling · compressing: approximately 4.3 log(count + 1)"><title>pulling · compressing: approximately 4.3 log(count + 1)</title></rect><rect x="440" y="204" width="27" height="27" fill="rgb(64,92,124)" tabindex="0" aria-label="pulling · sliding: approximately 4.5 log(count + 1)"><title>pulling · sliding: approximately 4.5 log(count + 1)</title></rect><rect x="468" y="204" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="pulling · standing: approximately 4.1 log(count + 1)"><title>pulling · standing: approximately 4.1 log(count + 1)</title></rect><rect x="496" y="204" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="pulling · reflecting: approximately 3.2 log(count + 1)"><title>pulling · reflecting: approximately 3.2 log(count + 1)</title></rect><rect x="524" y="204" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="pulling · moving: approximately 4 log(count + 1)"><title>pulling · moving: approximately 4 log(count + 1)</title></rect><rect x="552" y="204" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="pulling · reaching: approximately 4.4 log(count + 1)"><title>pulling · reaching: approximately 4.4 log(count + 1)</title></rect><rect x="580" y="204" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="pulling · placing: approximately 3 log(count + 1)"><title>pulling · placing: approximately 3 log(count + 1)</title></rect><rect x="608" y="204" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="pulling · rolling: approximately 2.5 log(count + 1)"><title>pulling · rolling: approximately 2.5 log(count + 1)</title></rect><rect x="636" y="204" width="27" height="27" fill="rgb(44,68,97)" tabindex="0" aria-label="pulling · falling: approximately 2.7 log(count + 1)"><title>pulling · falling: approximately 2.7 log(count + 1)</title></rect><rect x="664" y="204" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="pulling · swimming: approximately 2.1 log(count + 1)"><title>pulling · swimming: approximately 2.1 log(count + 1)</title></rect><rect x="692" y="204" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="pulling · walking: approximately 3 log(count + 1)"><title>pulling · walking: approximately 3 log(count + 1)</title></rect><text x="148" y="251" text-anchor="end">lifting</text><rect x="160" y="232" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="lifting · holding: approximately 7.2 log(count + 1)"><title>lifting · holding: approximately 7.2 log(count + 1)</title></rect><rect x="188" y="232" width="27" height="27" fill="rgb(92,125,163)" tabindex="0" aria-label="lifting · pushing: approximately 7.1 log(count + 1)"><title>lifting · pushing: approximately 7.1 log(count + 1)</title></rect><rect x="216" y="232" width="27" height="27" fill="rgb(91,124,162)" tabindex="0" aria-label="lifting · supporting: approximately 7 log(count + 1)"><title>lifting · supporting: approximately 7 log(count + 1)</title></rect><rect x="244" y="232" width="27" height="27" fill="rgb(68,97,130)" tabindex="0" aria-label="lifting · pulling: approximately 4.9 log(count + 1)"><title>lifting · pulling: approximately 4.9 log(count + 1)</title></rect><rect x="272" y="232" width="27" height="27" fill="rgb(101,136,175)" tabindex="0" aria-label="lifting · lifting: approximately 7.9 log(count + 1)"><title>lifting · lifting: approximately 7.9 log(count + 1)</title></rect><rect x="300" y="232" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="lifting · rotating: approximately 3.8 log(count + 1)"><title>lifting · rotating: approximately 3.8 log(count + 1)</title></rect><rect x="328" y="232" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="lifting · colliding: approximately 3.6 log(count + 1)"><title>lifting · colliding: approximately 3.6 log(count + 1)</title></rect><rect x="356" y="232" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="lifting · resting: approximately 4.8 log(count + 1)"><title>lifting · resting: approximately 4.8 log(count + 1)</title></rect><rect x="384" y="232" width="27" height="27" fill="rgb(58,84,115)" tabindex="0" aria-label="lifting · pressing: approximately 3.9 log(count + 1)"><title>lifting · pressing: approximately 3.9 log(count + 1)</title></rect><rect x="412" y="232" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="lifting · compressing: approximately 3.5 log(count + 1)"><title>lifting · compressing: approximately 3.5 log(count + 1)</title></rect><rect x="440" y="232" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="lifting · sliding: approximately 3.6 log(count + 1)"><title>lifting · sliding: approximately 3.6 log(count + 1)</title></rect><rect x="468" y="232" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="lifting · standing: approximately 3.7 log(count + 1)"><title>lifting · standing: approximately 3.7 log(count + 1)</title></rect><rect x="496" y="232" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="lifting · reflecting: approximately 2.1 log(count + 1)"><title>lifting · reflecting: approximately 2.1 log(count + 1)</title></rect><rect x="524" y="232" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="lifting · moving: approximately 3.6 log(count + 1)"><title>lifting · moving: approximately 3.6 log(count + 1)</title></rect><rect x="552" y="232" width="27" height="27" fill="rgb(61,88,119)" tabindex="0" aria-label="lifting · reaching: approximately 4.2 log(count + 1)"><title>lifting · reaching: approximately 4.2 log(count + 1)</title></rect><rect x="580" y="232" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="lifting · placing: approximately 3.1 log(count + 1)"><title>lifting · placing: approximately 3.1 log(count + 1)</title></rect><rect x="608" y="232" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="lifting · rolling: approximately 1.4 log(count + 1)"><title>lifting · rolling: approximately 1.4 log(count + 1)</title></rect><rect x="636" y="232" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="lifting · falling: approximately 2.5 log(count + 1)"><title>lifting · falling: approximately 2.5 log(count + 1)</title></rect><rect x="664" y="232" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="lifting · swimming: approximately 1.9 log(count + 1)"><title>lifting · swimming: approximately 1.9 log(count + 1)</title></rect><rect x="692" y="232" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="lifting · walking: approximately 1.4 log(count + 1)"><title>lifting · walking: approximately 1.4 log(count + 1)</title></rect><text x="148" y="279" text-anchor="end">rotating</text><rect x="160" y="260" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="rotating · holding: approximately 7.2 log(count + 1)"><title>rotating · holding: approximately 7.2 log(count + 1)</title></rect><rect x="188" y="260" width="27" height="27" fill="rgb(90,123,160)" tabindex="0" aria-label="rotating · pushing: approximately 6.9 log(count + 1)"><title>rotating · pushing: approximately 6.9 log(count + 1)</title></rect><rect x="216" y="260" width="27" height="27" fill="rgb(88,120,157)" tabindex="0" aria-label="rotating · supporting: approximately 6.7 log(count + 1)"><title>rotating · supporting: approximately 6.7 log(count + 1)</title></rect><rect x="244" y="260" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="rotating · pulling: approximately 4.8 log(count + 1)"><title>rotating · pulling: approximately 4.8 log(count + 1)</title></rect><rect x="272" y="260" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="rotating · lifting: approximately 3.8 log(count + 1)"><title>rotating · lifting: approximately 3.8 log(count + 1)</title></rect><rect x="300" y="260" width="27" height="27" fill="rgb(99,133,172)" tabindex="0" aria-label="rotating · rotating: approximately 7.7 log(count + 1)"><title>rotating · rotating: approximately 7.7 log(count + 1)</title></rect><rect x="328" y="260" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="rotating · colliding: approximately 3.6 log(count + 1)"><title>rotating · colliding: approximately 3.6 log(count + 1)</title></rect><rect x="356" y="260" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="rotating · resting: approximately 4.1 log(count + 1)"><title>rotating · resting: approximately 4.1 log(count + 1)</title></rect><rect x="384" y="260" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="rotating · pressing: approximately 4 log(count + 1)"><title>rotating · pressing: approximately 4 log(count + 1)</title></rect><rect x="412" y="260" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="rotating · compressing: approximately 4 log(count + 1)"><title>rotating · compressing: approximately 4 log(count + 1)</title></rect><rect x="440" y="260" width="27" height="27" fill="rgb(52,77,107)" tabindex="0" aria-label="rotating · sliding: approximately 3.4 log(count + 1)"><title>rotating · sliding: approximately 3.4 log(count + 1)</title></rect><rect x="468" y="260" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="rotating · standing: approximately 3.5 log(count + 1)"><title>rotating · standing: approximately 3.5 log(count + 1)</title></rect><rect x="496" y="260" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="rotating · reflecting: approximately 3.5 log(count + 1)"><title>rotating · reflecting: approximately 3.5 log(count + 1)</title></rect><rect x="524" y="260" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="rotating · moving: approximately 3.7 log(count + 1)"><title>rotating · moving: approximately 3.7 log(count + 1)</title></rect><rect x="552" y="260" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="rotating · reaching: approximately 3.8 log(count + 1)"><title>rotating · reaching: approximately 3.8 log(count + 1)</title></rect><rect x="580" y="260" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="rotating · placing: approximately 2.3 log(count + 1)"><title>rotating · placing: approximately 2.3 log(count + 1)</title></rect><rect x="608" y="260" width="27" height="27" fill="rgb(39,62,89)" tabindex="0" aria-label="rotating · rolling: approximately 2.2 log(count + 1)"><title>rotating · rolling: approximately 2.2 log(count + 1)</title></rect><rect x="636" y="260" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="rotating · falling: approximately 1.6 log(count + 1)"><title>rotating · falling: approximately 1.6 log(count + 1)</title></rect><rect x="664" y="260" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="rotating · swimming: approximately 0 log(count + 1)"><title>rotating · swimming: approximately 0 log(count + 1)</title></rect><rect x="692" y="260" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="rotating · walking: approximately 1.1 log(count + 1)"><title>rotating · walking: approximately 1.1 log(count + 1)</title></rect><text x="148" y="307" text-anchor="end">colliding</text><rect x="160" y="288" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="colliding · holding: approximately 6.3 log(count + 1)"><title>colliding · holding: approximately 6.3 log(count + 1)</title></rect><rect x="188" y="288" width="27" height="27" fill="rgb(86,118,154)" tabindex="0" aria-label="colliding · pushing: approximately 6.5 log(count + 1)"><title>colliding · pushing: approximately 6.5 log(count + 1)</title></rect><rect x="216" y="288" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="colliding · supporting: approximately 6.2 log(count + 1)"><title>colliding · supporting: approximately 6.2 log(count + 1)</title></rect><rect x="244" y="288" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="colliding · pulling: approximately 4.1 log(count + 1)"><title>colliding · pulling: approximately 4.1 log(count + 1)</title></rect><rect x="272" y="288" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="colliding · lifting: approximately 3.6 log(count + 1)"><title>colliding · lifting: approximately 3.6 log(count + 1)</title></rect><rect x="300" y="288" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="colliding · rotating: approximately 3.6 log(count + 1)"><title>colliding · rotating: approximately 3.6 log(count + 1)</title></rect><rect x="328" y="288" width="27" height="27" fill="rgb(98,132,171)" tabindex="0" aria-label="colliding · colliding: approximately 7.6 log(count + 1)"><title>colliding · colliding: approximately 7.6 log(count + 1)</title></rect><rect x="356" y="288" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="colliding · resting: approximately 3.7 log(count + 1)"><title>colliding · resting: approximately 3.7 log(count + 1)</title></rect><rect x="384" y="288" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="colliding · pressing: approximately 3 log(count + 1)"><title>colliding · pressing: approximately 3 log(count + 1)</title></rect><rect x="412" y="288" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="colliding · compressing: approximately 3 log(count + 1)"><title>colliding · compressing: approximately 3 log(count + 1)</title></rect><rect x="440" y="288" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="colliding · sliding: approximately 3.2 log(count + 1)"><title>colliding · sliding: approximately 3.2 log(count + 1)</title></rect><rect x="468" y="288" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="colliding · standing: approximately 3.1 log(count + 1)"><title>colliding · standing: approximately 3.1 log(count + 1)</title></rect><rect x="496" y="288" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="colliding · reflecting: approximately 1.4 log(count + 1)"><title>colliding · reflecting: approximately 1.4 log(count + 1)</title></rect><rect x="524" y="288" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="colliding · moving: approximately 2.6 log(count + 1)"><title>colliding · moving: approximately 2.6 log(count + 1)</title></rect><rect x="552" y="288" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="colliding · reaching: approximately 3 log(count + 1)"><title>colliding · reaching: approximately 3 log(count + 1)</title></rect><rect x="580" y="288" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="colliding · placing: approximately 3.1 log(count + 1)"><title>colliding · placing: approximately 3.1 log(count + 1)</title></rect><rect x="608" y="288" width="27" height="27" fill="rgb(52,77,107)" tabindex="0" aria-label="colliding · rolling: approximately 3.4 log(count + 1)"><title>colliding · rolling: approximately 3.4 log(count + 1)</title></rect><rect x="636" y="288" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="colliding · falling: approximately 3.3 log(count + 1)"><title>colliding · falling: approximately 3.3 log(count + 1)</title></rect><rect x="664" y="288" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="colliding · swimming: approximately 1.4 log(count + 1)"><title>colliding · swimming: approximately 1.4 log(count + 1)</title></rect><rect x="692" y="288" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="colliding · walking: approximately 1.1 log(count + 1)"><title>colliding · walking: approximately 1.1 log(count + 1)</title></rect><text x="148" y="335" text-anchor="end">resting</text><rect x="160" y="316" width="27" height="27" fill="rgb(87,119,156)" tabindex="0" aria-label="resting · holding: approximately 6.6 log(count + 1)"><title>resting · holding: approximately 6.6 log(count + 1)</title></rect><rect x="188" y="316" width="27" height="27" fill="rgb(88,120,157)" tabindex="0" aria-label="resting · pushing: approximately 6.7 log(count + 1)"><title>resting · pushing: approximately 6.7 log(count + 1)</title></rect><rect x="216" y="316" width="27" height="27" fill="rgb(85,116,153)" tabindex="0" aria-label="resting · supporting: approximately 6.4 log(count + 1)"><title>resting · supporting: approximately 6.4 log(count + 1)</title></rect><rect x="244" y="316" width="27" height="27" fill="rgb(66,94,127)" tabindex="0" aria-label="resting · pulling: approximately 4.7 log(count + 1)"><title>resting · pulling: approximately 4.7 log(count + 1)</title></rect><rect x="272" y="316" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="resting · lifting: approximately 4.8 log(count + 1)"><title>resting · lifting: approximately 4.8 log(count + 1)</title></rect><rect x="300" y="316" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="resting · rotating: approximately 4.1 log(count + 1)"><title>resting · rotating: approximately 4.1 log(count + 1)</title></rect><rect x="328" y="316" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="resting · colliding: approximately 3.7 log(count + 1)"><title>resting · colliding: approximately 3.7 log(count + 1)</title></rect><rect x="356" y="316" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="resting · resting: approximately 7.2 log(count + 1)"><title>resting · resting: approximately 7.2 log(count + 1)</title></rect><rect x="384" y="316" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="resting · pressing: approximately 4 log(count + 1)"><title>resting · pressing: approximately 4 log(count + 1)</title></rect><rect x="412" y="316" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="resting · compressing: approximately 3.5 log(count + 1)"><title>resting · compressing: approximately 3.5 log(count + 1)</title></rect><rect x="440" y="316" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="resting · sliding: approximately 3.7 log(count + 1)"><title>resting · sliding: approximately 3.7 log(count + 1)</title></rect><rect x="468" y="316" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="resting · standing: approximately 3 log(count + 1)"><title>resting · standing: approximately 3 log(count + 1)</title></rect><rect x="496" y="316" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="resting · reflecting: approximately 3 log(count + 1)"><title>resting · reflecting: approximately 3 log(count + 1)</title></rect><rect x="524" y="316" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="resting · moving: approximately 3.3 log(count + 1)"><title>resting · moving: approximately 3.3 log(count + 1)</title></rect><rect x="552" y="316" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="resting · reaching: approximately 3 log(count + 1)"><title>resting · reaching: approximately 3 log(count + 1)</title></rect><rect x="580" y="316" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="resting · placing: approximately 4.1 log(count + 1)"><title>resting · placing: approximately 4.1 log(count + 1)</title></rect><rect x="608" y="316" width="27" height="27" fill="rgb(47,71,100)" tabindex="0" aria-label="resting · rolling: approximately 2.9 log(count + 1)"><title>resting · rolling: approximately 2.9 log(count + 1)</title></rect><rect x="636" y="316" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="resting · falling: approximately 2.4 log(count + 1)"><title>resting · falling: approximately 2.4 log(count + 1)</title></rect><rect x="664" y="316" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="resting · swimming: approximately 1.1 log(count + 1)"><title>resting · swimming: approximately 1.1 log(count + 1)</title></rect><rect x="692" y="316" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="resting · walking: approximately 2.5 log(count + 1)"><title>resting · walking: approximately 2.5 log(count + 1)</title></rect><text x="148" y="363" text-anchor="end">pressing</text><rect x="160" y="344" width="27" height="27" fill="rgb(87,119,156)" tabindex="0" aria-label="pressing · holding: approximately 6.6 log(count + 1)"><title>pressing · holding: approximately 6.6 log(count + 1)</title></rect><rect x="188" y="344" width="27" height="27" fill="rgb(85,116,153)" tabindex="0" aria-label="pressing · pushing: approximately 6.4 log(count + 1)"><title>pressing · pushing: approximately 6.4 log(count + 1)</title></rect><rect x="216" y="344" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="pressing · supporting: approximately 6.3 log(count + 1)"><title>pressing · supporting: approximately 6.3 log(count + 1)</title></rect><rect x="244" y="344" width="27" height="27" fill="rgb(64,92,124)" tabindex="0" aria-label="pressing · pulling: approximately 4.5 log(count + 1)"><title>pressing · pulling: approximately 4.5 log(count + 1)</title></rect><rect x="272" y="344" width="27" height="27" fill="rgb(58,84,115)" tabindex="0" aria-label="pressing · lifting: approximately 3.9 log(count + 1)"><title>pressing · lifting: approximately 3.9 log(count + 1)</title></rect><rect x="300" y="344" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="pressing · rotating: approximately 4 log(count + 1)"><title>pressing · rotating: approximately 4 log(count + 1)</title></rect><rect x="328" y="344" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="pressing · colliding: approximately 3 log(count + 1)"><title>pressing · colliding: approximately 3 log(count + 1)</title></rect><rect x="356" y="344" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="pressing · resting: approximately 4 log(count + 1)"><title>pressing · resting: approximately 4 log(count + 1)</title></rect><rect x="384" y="344" width="27" height="27" fill="rgb(94,127,165)" tabindex="0" aria-label="pressing · pressing: approximately 7.2 log(count + 1)"><title>pressing · pressing: approximately 7.2 log(count + 1)</title></rect><rect x="412" y="344" width="27" height="27" fill="rgb(62,89,121)" tabindex="0" aria-label="pressing · compressing: approximately 4.3 log(count + 1)"><title>pressing · compressing: approximately 4.3 log(count + 1)</title></rect><rect x="440" y="344" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="pressing · sliding: approximately 3.2 log(count + 1)"><title>pressing · sliding: approximately 3.2 log(count + 1)</title></rect><rect x="468" y="344" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="pressing · standing: approximately 2.6 log(count + 1)"><title>pressing · standing: approximately 2.6 log(count + 1)</title></rect><rect x="496" y="344" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="pressing · reflecting: approximately 1.9 log(count + 1)"><title>pressing · reflecting: approximately 1.9 log(count + 1)</title></rect><rect x="524" y="344" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="pressing · moving: approximately 3 log(count + 1)"><title>pressing · moving: approximately 3 log(count + 1)</title></rect><rect x="552" y="344" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="pressing · reaching: approximately 3.2 log(count + 1)"><title>pressing · reaching: approximately 3.2 log(count + 1)</title></rect><rect x="580" y="344" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="pressing · placing: approximately 2.5 log(count + 1)"><title>pressing · placing: approximately 2.5 log(count + 1)</title></rect><rect x="608" y="344" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="pressing · rolling: approximately 2.5 log(count + 1)"><title>pressing · rolling: approximately 2.5 log(count + 1)</title></rect><rect x="636" y="344" width="27" height="27" fill="rgb(39,62,89)" tabindex="0" aria-label="pressing · falling: approximately 2.2 log(count + 1)"><title>pressing · falling: approximately 2.2 log(count + 1)</title></rect><rect x="664" y="344" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="pressing · swimming: approximately 2.4 log(count + 1)"><title>pressing · swimming: approximately 2.4 log(count + 1)</title></rect><rect x="692" y="344" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="pressing · walking: approximately 2.4 log(count + 1)"><title>pressing · walking: approximately 2.4 log(count + 1)</title></rect><text x="148" y="391" text-anchor="end">compressing</text><rect x="160" y="372" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="compressing · holding: approximately 6.3 log(count + 1)"><title>compressing · holding: approximately 6.3 log(count + 1)</title></rect><rect x="188" y="372" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="compressing · pushing: approximately 6.2 log(count + 1)"><title>compressing · pushing: approximately 6.2 log(count + 1)</title></rect><rect x="216" y="372" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="compressing · supporting: approximately 6 log(count + 1)"><title>compressing · supporting: approximately 6 log(count + 1)</title></rect><rect x="244" y="372" width="27" height="27" fill="rgb(62,89,121)" tabindex="0" aria-label="compressing · pulling: approximately 4.3 log(count + 1)"><title>compressing · pulling: approximately 4.3 log(count + 1)</title></rect><rect x="272" y="372" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="compressing · lifting: approximately 3.5 log(count + 1)"><title>compressing · lifting: approximately 3.5 log(count + 1)</title></rect><rect x="300" y="372" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="compressing · rotating: approximately 4 log(count + 1)"><title>compressing · rotating: approximately 4 log(count + 1)</title></rect><rect x="328" y="372" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="compressing · colliding: approximately 3 log(count + 1)"><title>compressing · colliding: approximately 3 log(count + 1)</title></rect><rect x="356" y="372" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="compressing · resting: approximately 3.5 log(count + 1)"><title>compressing · resting: approximately 3.5 log(count + 1)</title></rect><rect x="384" y="372" width="27" height="27" fill="rgb(62,89,121)" tabindex="0" aria-label="compressing · pressing: approximately 4.3 log(count + 1)"><title>compressing · pressing: approximately 4.3 log(count + 1)</title></rect><rect x="412" y="372" width="27" height="27" fill="rgb(90,123,160)" tabindex="0" aria-label="compressing · compressing: approximately 6.9 log(count + 1)"><title>compressing · compressing: approximately 6.9 log(count + 1)</title></rect><rect x="440" y="372" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="compressing · sliding: approximately 2.3 log(count + 1)"><title>compressing · sliding: approximately 2.3 log(count + 1)</title></rect><rect x="468" y="372" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="compressing · standing: approximately 2.5 log(count + 1)"><title>compressing · standing: approximately 2.5 log(count + 1)</title></rect><rect x="496" y="372" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="compressing · reflecting: approximately 2.1 log(count + 1)"><title>compressing · reflecting: approximately 2.1 log(count + 1)</title></rect><rect x="524" y="372" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="compressing · moving: approximately 3.3 log(count + 1)"><title>compressing · moving: approximately 3.3 log(count + 1)</title></rect><rect x="552" y="372" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="compressing · reaching: approximately 3 log(count + 1)"><title>compressing · reaching: approximately 3 log(count + 1)</title></rect><rect x="580" y="372" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="compressing · placing: approximately 1.9 log(count + 1)"><title>compressing · placing: approximately 1.9 log(count + 1)</title></rect><rect x="608" y="372" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="compressing · rolling: approximately 2.4 log(count + 1)"><title>compressing · rolling: approximately 2.4 log(count + 1)</title></rect><rect x="636" y="372" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="compressing · falling: approximately 1.9 log(count + 1)"><title>compressing · falling: approximately 1.9 log(count + 1)</title></rect><rect x="664" y="372" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="compressing · swimming: approximately 1.1 log(count + 1)"><title>compressing · swimming: approximately 1.1 log(count + 1)</title></rect><rect x="692" y="372" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="compressing · walking: approximately 2.5 log(count + 1)"><title>compressing · walking: approximately 2.5 log(count + 1)</title></rect><text x="148" y="419" text-anchor="end">sliding</text><rect x="160" y="400" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="sliding · holding: approximately 6 log(count + 1)"><title>sliding · holding: approximately 6 log(count + 1)</title></rect><rect x="188" y="400" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="sliding · pushing: approximately 6.3 log(count + 1)"><title>sliding · pushing: approximately 6.3 log(count + 1)</title></rect><rect x="216" y="400" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="sliding · supporting: approximately 5.9 log(count + 1)"><title>sliding · supporting: approximately 5.9 log(count + 1)</title></rect><rect x="244" y="400" width="27" height="27" fill="rgb(64,92,124)" tabindex="0" aria-label="sliding · pulling: approximately 4.5 log(count + 1)"><title>sliding · pulling: approximately 4.5 log(count + 1)</title></rect><rect x="272" y="400" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="sliding · lifting: approximately 3.6 log(count + 1)"><title>sliding · lifting: approximately 3.6 log(count + 1)</title></rect><rect x="300" y="400" width="27" height="27" fill="rgb(52,77,107)" tabindex="0" aria-label="sliding · rotating: approximately 3.4 log(count + 1)"><title>sliding · rotating: approximately 3.4 log(count + 1)</title></rect><rect x="328" y="400" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="sliding · colliding: approximately 3.2 log(count + 1)"><title>sliding · colliding: approximately 3.2 log(count + 1)</title></rect><rect x="356" y="400" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="sliding · resting: approximately 3.7 log(count + 1)"><title>sliding · resting: approximately 3.7 log(count + 1)</title></rect><rect x="384" y="400" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="sliding · pressing: approximately 3.2 log(count + 1)"><title>sliding · pressing: approximately 3.2 log(count + 1)</title></rect><rect x="412" y="400" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="sliding · compressing: approximately 2.3 log(count + 1)"><title>sliding · compressing: approximately 2.3 log(count + 1)</title></rect><rect x="440" y="400" width="27" height="27" fill="rgb(90,123,160)" tabindex="0" aria-label="sliding · sliding: approximately 6.9 log(count + 1)"><title>sliding · sliding: approximately 6.9 log(count + 1)</title></rect><rect x="468" y="400" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="sliding · standing: approximately 2.4 log(count + 1)"><title>sliding · standing: approximately 2.4 log(count + 1)</title></rect><rect x="496" y="400" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="sliding · reflecting: approximately 1.6 log(count + 1)"><title>sliding · reflecting: approximately 1.6 log(count + 1)</title></rect><rect x="524" y="400" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="sliding · moving: approximately 2.6 log(count + 1)"><title>sliding · moving: approximately 2.6 log(count + 1)</title></rect><rect x="552" y="400" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="sliding · reaching: approximately 2.6 log(count + 1)"><title>sliding · reaching: approximately 2.6 log(count + 1)</title></rect><rect x="580" y="400" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="sliding · placing: approximately 2.4 log(count + 1)"><title>sliding · placing: approximately 2.4 log(count + 1)</title></rect><rect x="608" y="400" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="sliding · rolling: approximately 1.8 log(count + 1)"><title>sliding · rolling: approximately 1.8 log(count + 1)</title></rect><rect x="636" y="400" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="sliding · falling: approximately 1.8 log(count + 1)"><title>sliding · falling: approximately 1.8 log(count + 1)</title></rect><rect x="664" y="400" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="sliding · swimming: approximately 0.7 log(count + 1)"><title>sliding · swimming: approximately 0.7 log(count + 1)</title></rect><rect x="692" y="400" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="sliding · walking: approximately 1.4 log(count + 1)"><title>sliding · walking: approximately 1.4 log(count + 1)</title></rect><text x="148" y="447" text-anchor="end">standing</text><rect x="160" y="428" width="27" height="27" fill="rgb(83,114,150)" tabindex="0" aria-label="standing · holding: approximately 6.2 log(count + 1)"><title>standing · holding: approximately 6.2 log(count + 1)</title></rect><rect x="188" y="428" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="standing · pushing: approximately 5.7 log(count + 1)"><title>standing · pushing: approximately 5.7 log(count + 1)</title></rect><rect x="216" y="428" width="27" height="27" fill="rgb(76,106,141)" tabindex="0" aria-label="standing · supporting: approximately 5.6 log(count + 1)"><title>standing · supporting: approximately 5.6 log(count + 1)</title></rect><rect x="244" y="428" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="standing · pulling: approximately 4.1 log(count + 1)"><title>standing · pulling: approximately 4.1 log(count + 1)</title></rect><rect x="272" y="428" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="standing · lifting: approximately 3.7 log(count + 1)"><title>standing · lifting: approximately 3.7 log(count + 1)</title></rect><rect x="300" y="428" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="standing · rotating: approximately 3.5 log(count + 1)"><title>standing · rotating: approximately 3.5 log(count + 1)</title></rect><rect x="328" y="428" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="standing · colliding: approximately 3.1 log(count + 1)"><title>standing · colliding: approximately 3.1 log(count + 1)</title></rect><rect x="356" y="428" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="standing · resting: approximately 3 log(count + 1)"><title>standing · resting: approximately 3 log(count + 1)</title></rect><rect x="384" y="428" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="standing · pressing: approximately 2.6 log(count + 1)"><title>standing · pressing: approximately 2.6 log(count + 1)</title></rect><rect x="412" y="428" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="standing · compressing: approximately 2.5 log(count + 1)"><title>standing · compressing: approximately 2.5 log(count + 1)</title></rect><rect x="440" y="428" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="standing · sliding: approximately 2.4 log(count + 1)"><title>standing · sliding: approximately 2.4 log(count + 1)</title></rect><rect x="468" y="428" width="27" height="27" fill="rgb(89,121,159)" tabindex="0" aria-label="standing · standing: approximately 6.8 log(count + 1)"><title>standing · standing: approximately 6.8 log(count + 1)</title></rect><rect x="496" y="428" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="standing · reflecting: approximately 3.8 log(count + 1)"><title>standing · reflecting: approximately 3.8 log(count + 1)</title></rect><rect x="524" y="428" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="standing · moving: approximately 3 log(count + 1)"><title>standing · moving: approximately 3 log(count + 1)</title></rect><rect x="552" y="428" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="standing · reaching: approximately 1.8 log(count + 1)"><title>standing · reaching: approximately 1.8 log(count + 1)</title></rect><rect x="580" y="428" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="standing · placing: approximately 1.4 log(count + 1)"><title>standing · placing: approximately 1.4 log(count + 1)</title></rect><rect x="608" y="428" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="standing · rolling: approximately 1.9 log(count + 1)"><title>standing · rolling: approximately 1.9 log(count + 1)</title></rect><rect x="636" y="428" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="standing · falling: approximately 1.1 log(count + 1)"><title>standing · falling: approximately 1.1 log(count + 1)</title></rect><rect x="664" y="428" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="standing · swimming: approximately 2.1 log(count + 1)"><title>standing · swimming: approximately 2.1 log(count + 1)</title></rect><rect x="692" y="428" width="27" height="27" fill="rgb(46,69,98)" tabindex="0" aria-label="standing · walking: approximately 2.8 log(count + 1)"><title>standing · walking: approximately 2.8 log(count + 1)</title></rect><text x="148" y="475" text-anchor="end">reflecting</text><rect x="160" y="456" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="reflecting · holding: approximately 6 log(count + 1)"><title>reflecting · holding: approximately 6 log(count + 1)</title></rect><rect x="188" y="456" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="reflecting · pushing: approximately 5.9 log(count + 1)"><title>reflecting · pushing: approximately 5.9 log(count + 1)</title></rect><rect x="216" y="456" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="reflecting · supporting: approximately 5.7 log(count + 1)"><title>reflecting · supporting: approximately 5.7 log(count + 1)</title></rect><rect x="244" y="456" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="reflecting · pulling: approximately 3.2 log(count + 1)"><title>reflecting · pulling: approximately 3.2 log(count + 1)</title></rect><rect x="272" y="456" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="reflecting · lifting: approximately 2.1 log(count + 1)"><title>reflecting · lifting: approximately 2.1 log(count + 1)</title></rect><rect x="300" y="456" width="27" height="27" fill="rgb(53,79,109)" tabindex="0" aria-label="reflecting · rotating: approximately 3.5 log(count + 1)"><title>reflecting · rotating: approximately 3.5 log(count + 1)</title></rect><rect x="328" y="456" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="reflecting · colliding: approximately 1.4 log(count + 1)"><title>reflecting · colliding: approximately 1.4 log(count + 1)</title></rect><rect x="356" y="456" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="reflecting · resting: approximately 3 log(count + 1)"><title>reflecting · resting: approximately 3 log(count + 1)</title></rect><rect x="384" y="456" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="reflecting · pressing: approximately 1.9 log(count + 1)"><title>reflecting · pressing: approximately 1.9 log(count + 1)</title></rect><rect x="412" y="456" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="reflecting · compressing: approximately 2.1 log(count + 1)"><title>reflecting · compressing: approximately 2.1 log(count + 1)</title></rect><rect x="440" y="456" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="reflecting · sliding: approximately 1.6 log(count + 1)"><title>reflecting · sliding: approximately 1.6 log(count + 1)</title></rect><rect x="468" y="456" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="reflecting · standing: approximately 3.8 log(count + 1)"><title>reflecting · standing: approximately 3.8 log(count + 1)</title></rect><rect x="496" y="456" width="27" height="27" fill="rgb(88,120,157)" tabindex="0" aria-label="reflecting · reflecting: approximately 6.7 log(count + 1)"><title>reflecting · reflecting: approximately 6.7 log(count + 1)</title></rect><rect x="524" y="456" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="reflecting · moving: approximately 2.1 log(count + 1)"><title>reflecting · moving: approximately 2.1 log(count + 1)</title></rect><rect x="552" y="456" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="reflecting · reaching: approximately 1.1 log(count + 1)"><title>reflecting · reaching: approximately 1.1 log(count + 1)</title></rect><rect x="580" y="456" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="reflecting · placing: approximately 0 log(count + 1)"><title>reflecting · placing: approximately 0 log(count + 1)</title></rect><rect x="608" y="456" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="reflecting · rolling: approximately 0.7 log(count + 1)"><title>reflecting · rolling: approximately 0.7 log(count + 1)</title></rect><rect x="636" y="456" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="reflecting · falling: approximately 1.8 log(count + 1)"><title>reflecting · falling: approximately 1.8 log(count + 1)</title></rect><rect x="664" y="456" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="reflecting · swimming: approximately 1.1 log(count + 1)"><title>reflecting · swimming: approximately 1.1 log(count + 1)</title></rect><rect x="692" y="456" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="reflecting · walking: approximately 2.3 log(count + 1)"><title>reflecting · walking: approximately 2.3 log(count + 1)</title></rect><text x="148" y="503" text-anchor="end">moving</text><rect x="160" y="484" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="moving · holding: approximately 5.9 log(count + 1)"><title>moving · holding: approximately 5.9 log(count + 1)</title></rect><rect x="188" y="484" width="27" height="27" fill="rgb(78,108,144)" tabindex="0" aria-label="moving · pushing: approximately 5.8 log(count + 1)"><title>moving · pushing: approximately 5.8 log(count + 1)</title></rect><rect x="216" y="484" width="27" height="27" fill="rgb(76,106,141)" tabindex="0" aria-label="moving · supporting: approximately 5.6 log(count + 1)"><title>moving · supporting: approximately 5.6 log(count + 1)</title></rect><rect x="244" y="484" width="27" height="27" fill="rgb(59,85,116)" tabindex="0" aria-label="moving · pulling: approximately 4 log(count + 1)"><title>moving · pulling: approximately 4 log(count + 1)</title></rect><rect x="272" y="484" width="27" height="27" fill="rgb(54,80,110)" tabindex="0" aria-label="moving · lifting: approximately 3.6 log(count + 1)"><title>moving · lifting: approximately 3.6 log(count + 1)</title></rect><rect x="300" y="484" width="27" height="27" fill="rgb(55,81,112)" tabindex="0" aria-label="moving · rotating: approximately 3.7 log(count + 1)"><title>moving · rotating: approximately 3.7 log(count + 1)</title></rect><rect x="328" y="484" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="moving · colliding: approximately 2.6 log(count + 1)"><title>moving · colliding: approximately 2.6 log(count + 1)</title></rect><rect x="356" y="484" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="moving · resting: approximately 3.3 log(count + 1)"><title>moving · resting: approximately 3.3 log(count + 1)</title></rect><rect x="384" y="484" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="moving · pressing: approximately 3 log(count + 1)"><title>moving · pressing: approximately 3 log(count + 1)</title></rect><rect x="412" y="484" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="moving · compressing: approximately 3.3 log(count + 1)"><title>moving · compressing: approximately 3.3 log(count + 1)</title></rect><rect x="440" y="484" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="moving · sliding: approximately 2.6 log(count + 1)"><title>moving · sliding: approximately 2.6 log(count + 1)</title></rect><rect x="468" y="484" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="moving · standing: approximately 3 log(count + 1)"><title>moving · standing: approximately 3 log(count + 1)</title></rect><rect x="496" y="484" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="moving · reflecting: approximately 2.1 log(count + 1)"><title>moving · reflecting: approximately 2.1 log(count + 1)</title></rect><rect x="524" y="484" width="27" height="27" fill="rgb(86,118,154)" tabindex="0" aria-label="moving · moving: approximately 6.5 log(count + 1)"><title>moving · moving: approximately 6.5 log(count + 1)</title></rect><rect x="552" y="484" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="moving · reaching: approximately 2.1 log(count + 1)"><title>moving · reaching: approximately 2.1 log(count + 1)</title></rect><rect x="580" y="484" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="moving · placing: approximately 1.4 log(count + 1)"><title>moving · placing: approximately 1.4 log(count + 1)</title></rect><rect x="608" y="484" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="moving · rolling: approximately 1.8 log(count + 1)"><title>moving · rolling: approximately 1.8 log(count + 1)</title></rect><rect x="636" y="484" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="moving · falling: approximately 1.9 log(count + 1)"><title>moving · falling: approximately 1.9 log(count + 1)</title></rect><rect x="664" y="484" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="moving · swimming: approximately 1.1 log(count + 1)"><title>moving · swimming: approximately 1.1 log(count + 1)</title></rect><rect x="692" y="484" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="moving · walking: approximately 2.1 log(count + 1)"><title>moving · walking: approximately 2.1 log(count + 1)</title></rect><text x="148" y="531" text-anchor="end">reaching</text><rect x="160" y="512" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="reaching · holding: approximately 5.9 log(count + 1)"><title>reaching · holding: approximately 5.9 log(count + 1)</title></rect><rect x="188" y="512" width="27" height="27" fill="rgb(79,110,145)" tabindex="0" aria-label="reaching · pushing: approximately 5.9 log(count + 1)"><title>reaching · pushing: approximately 5.9 log(count + 1)</title></rect><rect x="216" y="512" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="reaching · supporting: approximately 5.7 log(count + 1)"><title>reaching · supporting: approximately 5.7 log(count + 1)</title></rect><rect x="244" y="512" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="reaching · pulling: approximately 4.4 log(count + 1)"><title>reaching · pulling: approximately 4.4 log(count + 1)</title></rect><rect x="272" y="512" width="27" height="27" fill="rgb(61,88,119)" tabindex="0" aria-label="reaching · lifting: approximately 4.2 log(count + 1)"><title>reaching · lifting: approximately 4.2 log(count + 1)</title></rect><rect x="300" y="512" width="27" height="27" fill="rgb(56,82,113)" tabindex="0" aria-label="reaching · rotating: approximately 3.8 log(count + 1)"><title>reaching · rotating: approximately 3.8 log(count + 1)</title></rect><rect x="328" y="512" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="reaching · colliding: approximately 3 log(count + 1)"><title>reaching · colliding: approximately 3 log(count + 1)</title></rect><rect x="356" y="512" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="reaching · resting: approximately 3 log(count + 1)"><title>reaching · resting: approximately 3 log(count + 1)</title></rect><rect x="384" y="512" width="27" height="27" fill="rgb(50,75,104)" tabindex="0" aria-label="reaching · pressing: approximately 3.2 log(count + 1)"><title>reaching · pressing: approximately 3.2 log(count + 1)</title></rect><rect x="412" y="512" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="reaching · compressing: approximately 3 log(count + 1)"><title>reaching · compressing: approximately 3 log(count + 1)</title></rect><rect x="440" y="512" width="27" height="27" fill="rgb(43,67,95)" tabindex="0" aria-label="reaching · sliding: approximately 2.6 log(count + 1)"><title>reaching · sliding: approximately 2.6 log(count + 1)</title></rect><rect x="468" y="512" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="reaching · standing: approximately 1.8 log(count + 1)"><title>reaching · standing: approximately 1.8 log(count + 1)</title></rect><rect x="496" y="512" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="reaching · reflecting: approximately 1.1 log(count + 1)"><title>reaching · reflecting: approximately 1.1 log(count + 1)</title></rect><rect x="524" y="512" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="reaching · moving: approximately 2.1 log(count + 1)"><title>reaching · moving: approximately 2.1 log(count + 1)</title></rect><rect x="552" y="512" width="27" height="27" fill="rgb(85,116,153)" tabindex="0" aria-label="reaching · reaching: approximately 6.4 log(count + 1)"><title>reaching · reaching: approximately 6.4 log(count + 1)</title></rect><rect x="580" y="512" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="reaching · placing: approximately 2.4 log(count + 1)"><title>reaching · placing: approximately 2.4 log(count + 1)</title></rect><rect x="608" y="512" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="reaching · rolling: approximately 0.7 log(count + 1)"><title>reaching · rolling: approximately 0.7 log(count + 1)</title></rect><rect x="636" y="512" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="reaching · falling: approximately 1.6 log(count + 1)"><title>reaching · falling: approximately 1.6 log(count + 1)</title></rect><rect x="664" y="512" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="reaching · swimming: approximately 0.7 log(count + 1)"><title>reaching · swimming: approximately 0.7 log(count + 1)</title></rect><rect x="692" y="512" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="reaching · walking: approximately 1.4 log(count + 1)"><title>reaching · walking: approximately 1.4 log(count + 1)</title></rect><text x="148" y="559" text-anchor="end">placing</text><rect x="160" y="540" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="placing · holding: approximately 5.7 log(count + 1)"><title>placing · holding: approximately 5.7 log(count + 1)</title></rect><rect x="188" y="540" width="27" height="27" fill="rgb(77,107,142)" tabindex="0" aria-label="placing · pushing: approximately 5.7 log(count + 1)"><title>placing · pushing: approximately 5.7 log(count + 1)</title></rect><rect x="216" y="540" width="27" height="27" fill="rgb(75,105,139)" tabindex="0" aria-label="placing · supporting: approximately 5.5 log(count + 1)"><title>placing · supporting: approximately 5.5 log(count + 1)</title></rect><rect x="244" y="540" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="placing · pulling: approximately 3 log(count + 1)"><title>placing · pulling: approximately 3 log(count + 1)</title></rect><rect x="272" y="540" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="placing · lifting: approximately 3.1 log(count + 1)"><title>placing · lifting: approximately 3.1 log(count + 1)</title></rect><rect x="300" y="540" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="placing · rotating: approximately 2.3 log(count + 1)"><title>placing · rotating: approximately 2.3 log(count + 1)</title></rect><rect x="328" y="540" width="27" height="27" fill="rgb(49,73,103)" tabindex="0" aria-label="placing · colliding: approximately 3.1 log(count + 1)"><title>placing · colliding: approximately 3.1 log(count + 1)</title></rect><rect x="356" y="540" width="27" height="27" fill="rgb(60,86,118)" tabindex="0" aria-label="placing · resting: approximately 4.1 log(count + 1)"><title>placing · resting: approximately 4.1 log(count + 1)</title></rect><rect x="384" y="540" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="placing · pressing: approximately 2.5 log(count + 1)"><title>placing · pressing: approximately 2.5 log(count + 1)</title></rect><rect x="412" y="540" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="placing · compressing: approximately 1.9 log(count + 1)"><title>placing · compressing: approximately 1.9 log(count + 1)</title></rect><rect x="440" y="540" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="placing · sliding: approximately 2.4 log(count + 1)"><title>placing · sliding: approximately 2.4 log(count + 1)</title></rect><rect x="468" y="540" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="placing · standing: approximately 1.4 log(count + 1)"><title>placing · standing: approximately 1.4 log(count + 1)</title></rect><rect x="496" y="540" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="placing · reflecting: approximately 0 log(count + 1)"><title>placing · reflecting: approximately 0 log(count + 1)</title></rect><rect x="524" y="540" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="placing · moving: approximately 1.4 log(count + 1)"><title>placing · moving: approximately 1.4 log(count + 1)</title></rect><rect x="552" y="540" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="placing · reaching: approximately 2.4 log(count + 1)"><title>placing · reaching: approximately 2.4 log(count + 1)</title></rect><rect x="580" y="540" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="placing · placing: approximately 6.3 log(count + 1)"><title>placing · placing: approximately 6.3 log(count + 1)</title></rect><rect x="608" y="540" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="placing · rolling: approximately 0.7 log(count + 1)"><title>placing · rolling: approximately 0.7 log(count + 1)</title></rect><rect x="636" y="540" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="placing · falling: approximately 1.4 log(count + 1)"><title>placing · falling: approximately 1.4 log(count + 1)</title></rect><rect x="664" y="540" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="placing · swimming: approximately 0 log(count + 1)"><title>placing · swimming: approximately 0 log(count + 1)</title></rect><rect x="692" y="540" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="placing · walking: approximately 0.7 log(count + 1)"><title>placing · walking: approximately 0.7 log(count + 1)</title></rect><text x="148" y="587" text-anchor="end">rolling</text><rect x="160" y="568" width="27" height="27" fill="rgb(71,99,133)" tabindex="0" aria-label="rolling · holding: approximately 5.1 log(count + 1)"><title>rolling · holding: approximately 5.1 log(count + 1)</title></rect><rect x="188" y="568" width="27" height="27" fill="rgb(74,103,137)" tabindex="0" aria-label="rolling · pushing: approximately 5.4 log(count + 1)"><title>rolling · pushing: approximately 5.4 log(count + 1)</title></rect><rect x="216" y="568" width="27" height="27" fill="rgb(72,101,134)" tabindex="0" aria-label="rolling · supporting: approximately 5.2 log(count + 1)"><title>rolling · supporting: approximately 5.2 log(count + 1)</title></rect><rect x="244" y="568" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="rolling · pulling: approximately 2.5 log(count + 1)"><title>rolling · pulling: approximately 2.5 log(count + 1)</title></rect><rect x="272" y="568" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="rolling · lifting: approximately 1.4 log(count + 1)"><title>rolling · lifting: approximately 1.4 log(count + 1)</title></rect><rect x="300" y="568" width="27" height="27" fill="rgb(39,62,89)" tabindex="0" aria-label="rolling · rotating: approximately 2.2 log(count + 1)"><title>rolling · rotating: approximately 2.2 log(count + 1)</title></rect><rect x="328" y="568" width="27" height="27" fill="rgb(52,77,107)" tabindex="0" aria-label="rolling · colliding: approximately 3.4 log(count + 1)"><title>rolling · colliding: approximately 3.4 log(count + 1)</title></rect><rect x="356" y="568" width="27" height="27" fill="rgb(47,71,100)" tabindex="0" aria-label="rolling · resting: approximately 2.9 log(count + 1)"><title>rolling · resting: approximately 2.9 log(count + 1)</title></rect><rect x="384" y="568" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="rolling · pressing: approximately 2.5 log(count + 1)"><title>rolling · pressing: approximately 2.5 log(count + 1)</title></rect><rect x="412" y="568" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="rolling · compressing: approximately 2.4 log(count + 1)"><title>rolling · compressing: approximately 2.4 log(count + 1)</title></rect><rect x="440" y="568" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="rolling · sliding: approximately 1.8 log(count + 1)"><title>rolling · sliding: approximately 1.8 log(count + 1)</title></rect><rect x="468" y="568" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="rolling · standing: approximately 1.9 log(count + 1)"><title>rolling · standing: approximately 1.9 log(count + 1)</title></rect><rect x="496" y="568" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="rolling · reflecting: approximately 0.7 log(count + 1)"><title>rolling · reflecting: approximately 0.7 log(count + 1)</title></rect><rect x="524" y="568" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="rolling · moving: approximately 1.8 log(count + 1)"><title>rolling · moving: approximately 1.8 log(count + 1)</title></rect><rect x="552" y="568" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="rolling · reaching: approximately 0.7 log(count + 1)"><title>rolling · reaching: approximately 0.7 log(count + 1)</title></rect><rect x="580" y="568" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="rolling · placing: approximately 0.7 log(count + 1)"><title>rolling · placing: approximately 0.7 log(count + 1)</title></rect><rect x="608" y="568" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="rolling · rolling: approximately 6.3 log(count + 1)"><title>rolling · rolling: approximately 6.3 log(count + 1)</title></rect><rect x="636" y="568" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="rolling · falling: approximately 1.4 log(count + 1)"><title>rolling · falling: approximately 1.4 log(count + 1)</title></rect><rect x="664" y="568" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="rolling · swimming: approximately 0 log(count + 1)"><title>rolling · swimming: approximately 0 log(count + 1)</title></rect><rect x="692" y="568" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="rolling · walking: approximately 0 log(count + 1)"><title>rolling · walking: approximately 0 log(count + 1)</title></rect><text x="148" y="615" text-anchor="end">falling</text><rect x="160" y="596" width="27" height="27" fill="rgb(67,95,128)" tabindex="0" aria-label="falling · holding: approximately 4.8 log(count + 1)"><title>falling · holding: approximately 4.8 log(count + 1)</title></rect><rect x="188" y="596" width="27" height="27" fill="rgb(68,97,130)" tabindex="0" aria-label="falling · pushing: approximately 4.9 log(count + 1)"><title>falling · pushing: approximately 4.9 log(count + 1)</title></rect><rect x="216" y="596" width="27" height="27" fill="rgb(65,93,125)" tabindex="0" aria-label="falling · supporting: approximately 4.6 log(count + 1)"><title>falling · supporting: approximately 4.6 log(count + 1)</title></rect><rect x="244" y="596" width="27" height="27" fill="rgb(44,68,97)" tabindex="0" aria-label="falling · pulling: approximately 2.7 log(count + 1)"><title>falling · pulling: approximately 2.7 log(count + 1)</title></rect><rect x="272" y="596" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="falling · lifting: approximately 2.5 log(count + 1)"><title>falling · lifting: approximately 2.5 log(count + 1)</title></rect><rect x="300" y="596" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="falling · rotating: approximately 1.6 log(count + 1)"><title>falling · rotating: approximately 1.6 log(count + 1)</title></rect><rect x="328" y="596" width="27" height="27" fill="rgb(51,76,106)" tabindex="0" aria-label="falling · colliding: approximately 3.3 log(count + 1)"><title>falling · colliding: approximately 3.3 log(count + 1)</title></rect><rect x="356" y="596" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="falling · resting: approximately 2.4 log(count + 1)"><title>falling · resting: approximately 2.4 log(count + 1)</title></rect><rect x="384" y="596" width="27" height="27" fill="rgb(39,62,89)" tabindex="0" aria-label="falling · pressing: approximately 2.2 log(count + 1)"><title>falling · pressing: approximately 2.2 log(count + 1)</title></rect><rect x="412" y="596" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="falling · compressing: approximately 1.9 log(count + 1)"><title>falling · compressing: approximately 1.9 log(count + 1)</title></rect><rect x="440" y="596" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="falling · sliding: approximately 1.8 log(count + 1)"><title>falling · sliding: approximately 1.8 log(count + 1)</title></rect><rect x="468" y="596" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="falling · standing: approximately 1.1 log(count + 1)"><title>falling · standing: approximately 1.1 log(count + 1)</title></rect><rect x="496" y="596" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="falling · reflecting: approximately 1.8 log(count + 1)"><title>falling · reflecting: approximately 1.8 log(count + 1)</title></rect><rect x="524" y="596" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="falling · moving: approximately 1.9 log(count + 1)"><title>falling · moving: approximately 1.9 log(count + 1)</title></rect><rect x="552" y="596" width="27" height="27" fill="rgb(32,54,80)" tabindex="0" aria-label="falling · reaching: approximately 1.6 log(count + 1)"><title>falling · reaching: approximately 1.6 log(count + 1)</title></rect><rect x="580" y="596" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="falling · placing: approximately 1.4 log(count + 1)"><title>falling · placing: approximately 1.4 log(count + 1)</title></rect><rect x="608" y="596" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="falling · rolling: approximately 1.4 log(count + 1)"><title>falling · rolling: approximately 1.4 log(count + 1)</title></rect><rect x="636" y="596" width="27" height="27" fill="rgb(84,115,151)" tabindex="0" aria-label="falling · falling: approximately 6.3 log(count + 1)"><title>falling · falling: approximately 6.3 log(count + 1)</title></rect><rect x="664" y="596" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="falling · swimming: approximately 0.7 log(count + 1)"><title>falling · swimming: approximately 0.7 log(count + 1)</title></rect><rect x="692" y="596" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="falling · walking: approximately 0.7 log(count + 1)"><title>falling · walking: approximately 0.7 log(count + 1)</title></rect><text x="148" y="643" text-anchor="end">swimming</text><rect x="160" y="624" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="swimming · holding: approximately 4.4 log(count + 1)"><title>swimming · holding: approximately 4.4 log(count + 1)</title></rect><rect x="188" y="624" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="swimming · pushing: approximately 4.4 log(count + 1)"><title>swimming · pushing: approximately 4.4 log(count + 1)</title></rect><rect x="216" y="624" width="27" height="27" fill="rgb(63,90,122)" tabindex="0" aria-label="swimming · supporting: approximately 4.4 log(count + 1)"><title>swimming · supporting: approximately 4.4 log(count + 1)</title></rect><rect x="244" y="624" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="swimming · pulling: approximately 2.1 log(count + 1)"><title>swimming · pulling: approximately 2.1 log(count + 1)</title></rect><rect x="272" y="624" width="27" height="27" fill="rgb(36,58,85)" tabindex="0" aria-label="swimming · lifting: approximately 1.9 log(count + 1)"><title>swimming · lifting: approximately 1.9 log(count + 1)</title></rect><rect x="300" y="624" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="swimming · rotating: approximately 0 log(count + 1)"><title>swimming · rotating: approximately 0 log(count + 1)</title></rect><rect x="328" y="624" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="swimming · colliding: approximately 1.4 log(count + 1)"><title>swimming · colliding: approximately 1.4 log(count + 1)</title></rect><rect x="356" y="624" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="swimming · resting: approximately 1.1 log(count + 1)"><title>swimming · resting: approximately 1.1 log(count + 1)</title></rect><rect x="384" y="624" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="swimming · pressing: approximately 2.4 log(count + 1)"><title>swimming · pressing: approximately 2.4 log(count + 1)</title></rect><rect x="412" y="624" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="swimming · compressing: approximately 1.1 log(count + 1)"><title>swimming · compressing: approximately 1.1 log(count + 1)</title></rect><rect x="440" y="624" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="swimming · sliding: approximately 0.7 log(count + 1)"><title>swimming · sliding: approximately 0.7 log(count + 1)</title></rect><rect x="468" y="624" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="swimming · standing: approximately 2.1 log(count + 1)"><title>swimming · standing: approximately 2.1 log(count + 1)</title></rect><rect x="496" y="624" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="swimming · reflecting: approximately 1.1 log(count + 1)"><title>swimming · reflecting: approximately 1.1 log(count + 1)</title></rect><rect x="524" y="624" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="swimming · moving: approximately 1.1 log(count + 1)"><title>swimming · moving: approximately 1.1 log(count + 1)</title></rect><rect x="552" y="624" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="swimming · reaching: approximately 0.7 log(count + 1)"><title>swimming · reaching: approximately 0.7 log(count + 1)</title></rect><rect x="580" y="624" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="swimming · placing: approximately 0 log(count + 1)"><title>swimming · placing: approximately 0 log(count + 1)</title></rect><rect x="608" y="624" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="swimming · rolling: approximately 0 log(count + 1)"><title>swimming · rolling: approximately 0 log(count + 1)</title></rect><rect x="636" y="624" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="swimming · falling: approximately 0.7 log(count + 1)"><title>swimming · falling: approximately 0.7 log(count + 1)</title></rect><rect x="664" y="624" width="27" height="27" fill="rgb(82,112,148)" tabindex="0" aria-label="swimming · swimming: approximately 6.1 log(count + 1)"><title>swimming · swimming: approximately 6.1 log(count + 1)</title></rect><rect x="692" y="624" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="swimming · walking: approximately 1.8 log(count + 1)"><title>swimming · walking: approximately 1.8 log(count + 1)</title></rect><text x="148" y="671" text-anchor="end">walking</text><rect x="160" y="652" width="27" height="27" fill="rgb(73,102,136)" tabindex="0" aria-label="walking · holding: approximately 5.3 log(count + 1)"><title>walking · holding: approximately 5.3 log(count + 1)</title></rect><rect x="188" y="652" width="27" height="27" fill="rgb(70,98,131)" tabindex="0" aria-label="walking · pushing: approximately 5 log(count + 1)"><title>walking · pushing: approximately 5 log(count + 1)</title></rect><rect x="216" y="652" width="27" height="27" fill="rgb(72,101,134)" tabindex="0" aria-label="walking · supporting: approximately 5.2 log(count + 1)"><title>walking · supporting: approximately 5.2 log(count + 1)</title></rect><rect x="244" y="652" width="27" height="27" fill="rgb(48,72,101)" tabindex="0" aria-label="walking · pulling: approximately 3 log(count + 1)"><title>walking · pulling: approximately 3 log(count + 1)</title></rect><rect x="272" y="652" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="walking · lifting: approximately 1.4 log(count + 1)"><title>walking · lifting: approximately 1.4 log(count + 1)</title></rect><rect x="300" y="652" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="walking · rotating: approximately 1.1 log(count + 1)"><title>walking · rotating: approximately 1.1 log(count + 1)</title></rect><rect x="328" y="652" width="27" height="27" fill="rgb(27,47,73)" tabindex="0" aria-label="walking · colliding: approximately 1.1 log(count + 1)"><title>walking · colliding: approximately 1.1 log(count + 1)</title></rect><rect x="356" y="652" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="walking · resting: approximately 2.5 log(count + 1)"><title>walking · resting: approximately 2.5 log(count + 1)</title></rect><rect x="384" y="652" width="27" height="27" fill="rgb(41,64,92)" tabindex="0" aria-label="walking · pressing: approximately 2.4 log(count + 1)"><title>walking · pressing: approximately 2.4 log(count + 1)</title></rect><rect x="412" y="652" width="27" height="27" fill="rgb(42,66,94)" tabindex="0" aria-label="walking · compressing: approximately 2.5 log(count + 1)"><title>walking · compressing: approximately 2.5 log(count + 1)</title></rect><rect x="440" y="652" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="walking · sliding: approximately 1.4 log(count + 1)"><title>walking · sliding: approximately 1.4 log(count + 1)</title></rect><rect x="468" y="652" width="27" height="27" fill="rgb(46,69,98)" tabindex="0" aria-label="walking · standing: approximately 2.8 log(count + 1)"><title>walking · standing: approximately 2.8 log(count + 1)</title></rect><rect x="496" y="652" width="27" height="27" fill="rgb(40,63,91)" tabindex="0" aria-label="walking · reflecting: approximately 2.3 log(count + 1)"><title>walking · reflecting: approximately 2.3 log(count + 1)</title></rect><rect x="524" y="652" width="27" height="27" fill="rgb(38,60,88)" tabindex="0" aria-label="walking · moving: approximately 2.1 log(count + 1)"><title>walking · moving: approximately 2.1 log(count + 1)</title></rect><rect x="552" y="652" width="27" height="27" fill="rgb(30,51,77)" tabindex="0" aria-label="walking · reaching: approximately 1.4 log(count + 1)"><title>walking · reaching: approximately 1.4 log(count + 1)</title></rect><rect x="580" y="652" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="walking · placing: approximately 0.7 log(count + 1)"><title>walking · placing: approximately 0.7 log(count + 1)</title></rect><rect x="608" y="652" width="27" height="27" fill="rgb(15,33,56)" tabindex="0" aria-label="walking · rolling: approximately 0 log(count + 1)"><title>walking · rolling: approximately 0 log(count + 1)</title></rect><rect x="636" y="652" width="27" height="27" fill="rgb(23,42,67)" tabindex="0" aria-label="walking · falling: approximately 0.7 log(count + 1)"><title>walking · falling: approximately 0.7 log(count + 1)</title></rect><rect x="664" y="652" width="27" height="27" fill="rgb(35,56,83)" tabindex="0" aria-label="walking · swimming: approximately 1.8 log(count + 1)"><title>walking · swimming: approximately 1.8 log(count + 1)</title></rect><rect x="692" y="652" width="27" height="27" fill="rgb(80,111,147)" tabindex="0" aria-label="walking · walking: approximately 6 log(count + 1)"><title>walking · walking: approximately 6 log(count + 1)</title></rect><rect x="160" y="712" width="6.6" height="8" fill="rgb(15,33,56)"></rect><rect x="165.6" y="712" width="6.6" height="8" fill="rgb(16,34,58)"></rect><rect x="171.2" y="712" width="6.6" height="8" fill="rgb(17,36,59)"></rect><rect x="176.8" y="712" width="6.6" height="8" fill="rgb(19,37,61)"></rect><rect x="182.4" y="712" width="6.6" height="8" fill="rgb(20,39,63)"></rect><rect x="188" y="712" width="6.6" height="8" fill="rgb(21,40,64)"></rect><rect x="193.6" y="712" width="6.6" height="8" fill="rgb(22,42,66)"></rect><rect x="199.2" y="712" width="6.6" height="8" fill="rgb(23,43,68)"></rect><rect x="204.8" y="712" width="6.6" height="8" fill="rgb(25,45,69)"></rect><rect x="210.4" y="712" width="6.6" height="8" fill="rgb(26,46,71)"></rect><rect x="216" y="712" width="6.6" height="8" fill="rgb(27,47,73)"></rect><rect x="221.6" y="712" width="6.6" height="8" fill="rgb(28,49,74)"></rect><rect x="227.2" y="712" width="6.6" height="8" fill="rgb(30,50,76)"></rect><rect x="232.8" y="712" width="6.6" height="8" fill="rgb(31,52,78)"></rect><rect x="238.4" y="712" width="6.6" height="8" fill="rgb(32,53,79)"></rect><rect x="244" y="712" width="6.6" height="8" fill="rgb(33,55,81)"></rect><rect x="249.6" y="712" width="6.6" height="8" fill="rgb(34,56,83)"></rect><rect x="255.2" y="712" width="6.6" height="8" fill="rgb(36,58,85)"></rect><rect x="260.8" y="712" width="6.6" height="8" fill="rgb(37,59,86)"></rect><rect x="266.4" y="712" width="6.6" height="8" fill="rgb(38,60,88)"></rect><rect x="272" y="712" width="6.6" height="8" fill="rgb(39,62,90)"></rect><rect x="277.6" y="712" width="6.6" height="8" fill="rgb(40,63,91)"></rect><rect x="283.2" y="712" width="6.6" height="8" fill="rgb(42,65,93)"></rect><rect x="288.8" y="712" width="6.6" height="8" fill="rgb(43,66,95)"></rect><rect x="294.4" y="712" width="6.6" height="8" fill="rgb(44,68,96)"></rect><rect x="300" y="712" width="6.6" height="8" fill="rgb(45,69,98)"></rect><rect x="305.6" y="712" width="6.6" height="8" fill="rgb(47,71,100)"></rect><rect x="311.2" y="712" width="6.6" height="8" fill="rgb(48,72,101)"></rect><rect x="316.8" y="712" width="6.6" height="8" fill="rgb(49,73,103)"></rect><rect x="322.4" y="712" width="6.6" height="8" fill="rgb(50,75,105)"></rect><rect x="328" y="712" width="6.6" height="8" fill="rgb(51,76,106)"></rect><rect x="333.6" y="712" width="6.6" height="8" fill="rgb(53,78,108)"></rect><rect x="339.2" y="712" width="6.6" height="8" fill="rgb(54,79,110)"></rect><rect x="344.8" y="712" width="6.6" height="8" fill="rgb(55,81,111)"></rect><rect x="350.4" y="712" width="6.6" height="8" fill="rgb(56,82,113)"></rect><rect x="356" y="712" width="6.6" height="8" fill="rgb(57,84,115)"></rect><rect x="361.6" y="712" width="6.6" height="8" fill="rgb(59,85,116)"></rect><rect x="367.2" y="712" width="6.6" height="8" fill="rgb(60,86,118)"></rect><rect x="372.8" y="712" width="6.6" height="8" fill="rgb(61,88,120)"></rect><rect x="378.4" y="712" width="6.6" height="8" fill="rgb(62,89,121)"></rect><rect x="384" y="712" width="6.6" height="8" fill="rgb(63,91,123)"></rect><rect x="389.6" y="712" width="6.6" height="8" fill="rgb(65,92,125)"></rect><rect x="395.2" y="712" width="6.6" height="8" fill="rgb(66,94,126)"></rect><rect x="400.8" y="712" width="6.6" height="8" fill="rgb(67,95,128)"></rect><rect x="406.4" y="712" width="6.6" height="8" fill="rgb(68,97,130)"></rect><rect x="412" y="712" width="6.6" height="8" fill="rgb(70,98,131)"></rect><rect x="417.6" y="712" width="6.6" height="8" fill="rgb(71,99,133)"></rect><rect x="423.2" y="712" width="6.6" height="8" fill="rgb(72,101,135)"></rect><rect x="428.8" y="712" width="6.6" height="8" fill="rgb(73,102,136)"></rect><rect x="434.4" y="712" width="6.6" height="8" fill="rgb(74,104,138)"></rect><rect x="440" y="712" width="6.6" height="8" fill="rgb(76,105,140)"></rect><rect x="445.6" y="712" width="6.6" height="8" fill="rgb(77,107,142)"></rect><rect x="451.2" y="712" width="6.6" height="8" fill="rgb(78,108,143)"></rect><rect x="456.8" y="712" width="6.6" height="8" fill="rgb(79,110,145)"></rect><rect x="462.4" y="712" width="6.6" height="8" fill="rgb(80,111,147)"></rect><rect x="468" y="712" width="6.6" height="8" fill="rgb(82,112,148)"></rect><rect x="473.6" y="712" width="6.6" height="8" fill="rgb(83,114,150)"></rect><rect x="479.2" y="712" width="6.6" height="8" fill="rgb(84,115,152)"></rect><rect x="484.8" y="712" width="6.6" height="8" fill="rgb(85,117,153)"></rect><rect x="490.4" y="712" width="6.6" height="8" fill="rgb(87,118,155)"></rect><rect x="496" y="712" width="6.6" height="8" fill="rgb(88,120,157)"></rect><rect x="501.6" y="712" width="6.6" height="8" fill="rgb(89,121,158)"></rect><rect x="507.2" y="712" width="6.6" height="8" fill="rgb(90,123,160)"></rect><rect x="512.8" y="712" width="6.6" height="8" fill="rgb(91,124,162)"></rect><rect x="518.4" y="712" width="6.6" height="8" fill="rgb(93,125,163)"></rect><rect x="524" y="712" width="6.6" height="8" fill="rgb(94,127,165)"></rect><rect x="529.6" y="712" width="6.6" height="8" fill="rgb(95,128,167)"></rect><rect x="535.2" y="712" width="6.6" height="8" fill="rgb(96,130,168)"></rect><rect x="540.8" y="712" width="6.6" height="8" fill="rgb(97,131,170)"></rect><rect x="546.4" y="712" width="6.6" height="8" fill="rgb(99,133,172)"></rect><rect x="552" y="712" width="6.6" height="8" fill="rgb(100,134,173)"></rect><rect x="557.6" y="712" width="6.6" height="8" fill="rgb(101,136,175)"></rect><rect x="563.2" y="712" width="6.6" height="8" fill="rgb(102,137,177)"></rect><rect x="568.8" y="712" width="6.6" height="8" fill="rgb(103,138,178)"></rect><rect x="574.4" y="712" width="6.6" height="8" fill="rgb(105,140,180)"></rect><rect x="580" y="712" width="6.6" height="8" fill="rgb(106,141,182)"></rect><rect x="585.6" y="712" width="6.6" height="8" fill="rgb(107,143,183)"></rect><rect x="591.2" y="712" width="6.6" height="8" fill="rgb(108,144,185)"></rect><rect x="596.8" y="712" width="6.6" height="8" fill="rgb(110,146,187)"></rect><rect x="602.4" y="712" width="6.6" height="8" fill="rgb(111,147,188)"></rect><rect x="608" y="712" width="6.6" height="8" fill="rgb(112,149,190)"></rect><rect x="613.6" y="712" width="6.6" height="8" fill="rgb(113,150,192)"></rect><rect x="619.2" y="712" width="6.6" height="8" fill="rgb(114,151,193)"></rect><rect x="624.8" y="712" width="6.6" height="8" fill="rgb(116,153,195)"></rect><rect x="630.4" y="712" width="6.6" height="8" fill="rgb(117,154,197)"></rect><rect x="636" y="712" width="6.6" height="8" fill="rgb(118,156,199)"></rect><rect x="641.6" y="712" width="6.6" height="8" fill="rgb(119,157,200)"></rect><rect x="647.2" y="712" width="6.6" height="8" fill="rgb(120,159,202)"></rect><rect x="652.8" y="712" width="6.6" height="8" fill="rgb(122,160,204)"></rect><rect x="658.4" y="712" width="6.6" height="8" fill="rgb(123,162,205)"></rect><rect x="664" y="712" width="6.6" height="8" fill="rgb(124,163,207)"></rect><rect x="669.6" y="712" width="6.6" height="8" fill="rgb(125,164,209)"></rect><rect x="675.2" y="712" width="6.6" height="8" fill="rgb(127,166,210)"></rect><rect x="680.8" y="712" width="6.6" height="8" fill="rgb(128,167,212)"></rect><rect x="686.4" y="712" width="6.6" height="8" fill="rgb(129,169,214)"></rect><rect x="692" y="712" width="6.6" height="8" fill="rgb(130,170,215)"></rect><rect x="697.6" y="712" width="6.6" height="8" fill="rgb(131,172,217)"></rect><rect x="703.2" y="712" width="6.6" height="8" fill="rgb(133,173,219)"></rect><rect x="708.8" y="712" width="6.6" height="8" fill="rgb(134,175,220)"></rect><rect x="714.4" y="712" width="6.6" height="8" fill="rgb(135,176,222)"></rect><text x="160" y="739" text-anchor="middle">0</text><text x="300" y="739" text-anchor="middle">2.75</text><text x="440" y="739" text-anchor="middle">5.5</text><text x="580" y="739" text-anchor="middle">8.25</text><text x="720" y="739" text-anchor="middle">11</text><text x="18" y="720">log(count + 1)</text></svg></div></figure>
+<figure class="studio-native-result" data-result-source="static/images/gvc_data_tax.png"><h3>GraphVideoCorpus interaction counts</h3>
+<div>
+<div class="studio-legend"><span><i style="--series-color: #ff915b;"></i>Annotated occurrences</span></div>
+<div class="studio-svg-scroll" tabindex="0" aria-label="GraphVideoCorpus interaction counts"><svg viewbox="0 0 850 590" role="img" aria-label="GraphVideoCorpus interaction counts: Interaction count"><line x1="180" x2="180" y1="25" y2="555" class="studio-grid"></line><text x="180" y="578" text-anchor="middle">0</text><line x1="330" x2="330" y1="25" y2="555" class="studio-grid"></line><text x="330" y="578" text-anchor="middle">11250</text><line x1="480" x2="480" y1="25" y2="555" class="studio-grid"></line><text x="480" y="578" text-anchor="middle">22500</text><line x1="630" x2="630" y1="25" y2="555" class="studio-grid"></line><text x="630" y="578" text-anchor="middle">33750</text><line x1="780" x2="780" y1="25" y2="555" class="studio-grid"></line><text x="780" y="578" text-anchor="middle">45000</text><text x="166" y="47" text-anchor="end">Holding</text><rect x="180" y="35" width="539.5466666666666" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Holding · Annotated occurrences: 40466</title></rect><text x="727.5466666666666" y="47">40466</text><text x="166" y="73" text-anchor="end">Pushing</text><rect x="180" y="61" width="437.9866666666666" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Pushing · Annotated occurrences: 32849</title></rect><text x="625.9866666666667" y="73">32849</text><text x="166" y="99" text-anchor="end">Supporting</text><rect x="180" y="87" width="291.52" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Supporting · Annotated occurrences: 21864</title></rect><text x="479.52" y="99">21864</text><text x="166" y="125" text-anchor="end">Pulling</text><rect x="180" y="113" width="57.08" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Pulling · Annotated occurrences: 4281</title></rect><text x="245.07999999999998" y="125">4281</text><text x="166" y="151" text-anchor="end">Lifting</text><rect x="180" y="139" width="35.346666666666664" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Lifting · Annotated occurrences: 2651</title></rect><text x="223.34666666666666" y="151">2651</text><text x="166" y="177" text-anchor="end">Rotating</text><rect x="180" y="165" width="30.240000000000002" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Rotating · Annotated occurrences: 2268</title></rect><text x="218.24" y="177">2268</text><text x="166" y="203" text-anchor="end">Colliding</text><rect x="180" y="191" width="27.133333333333333" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Colliding · Annotated occurrences: 2035</title></rect><text x="215.13333333333333" y="203">2035</text><text x="166" y="229" text-anchor="end">Resting</text><rect x="180" y="217" width="18.573333333333334" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Resting · Annotated occurrences: 1393</title></rect><text x="206.57333333333332" y="229">1393</text><text x="166" y="255" text-anchor="end">Pressing</text><rect x="180" y="243" width="16.68" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Pressing · Annotated occurrences: 1251</title></rect><text x="204.68" y="255">1251</text><text x="166" y="281" text-anchor="end">Compressing</text><rect x="180" y="269" width="13.16" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Compressing · Annotated occurrences: 987</title></rect><text x="201.16" y="281">987</text><text x="166" y="307" text-anchor="end">Sliding</text><rect x="180" y="295" width="12.600000000000001" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Sliding · Annotated occurrences: 945</title></rect><text x="200.6" y="307">945</text><text x="166" y="333" text-anchor="end">Standing</text><rect x="180" y="321" width="11.546666666666667" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Standing · Annotated occurrences: 866</title></rect><text x="199.54666666666668" y="333">866</text><text x="166" y="359" text-anchor="end">Reflecting</text><rect x="180" y="347" width="10.840000000000002" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Reflecting · Annotated occurrences: 813</title></rect><text x="198.84" y="359">813</text><text x="166" y="385" text-anchor="end">Moving</text><rect x="180" y="373" width="9.2" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Moving · Annotated occurrences: 690</title></rect><text x="197.2" y="385">690</text><text x="166" y="411" text-anchor="end">Reaching</text><rect x="180" y="399" width="8.333333333333332" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Reaching · Annotated occurrences: 625</title></rect><text x="196.33333333333334" y="411">625</text><text x="166" y="437" text-anchor="end">Placing</text><rect x="180" y="425" width="7.746666666666667" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Placing · Annotated occurrences: 581</title></rect><text x="195.74666666666667" y="437">581</text><text x="166" y="463" text-anchor="end">Rolling</text><rect x="180" y="451" width="7.4799999999999995" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Rolling · Annotated occurrences: 561</title></rect><text x="195.48" y="463">561</text><text x="166" y="489" text-anchor="end">Falling</text><rect x="180" y="477" width="7.386666666666667" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Falling · Annotated occurrences: 554</title></rect><text x="195.38666666666666" y="489">554</text><text x="166" y="515" text-anchor="end">Swimming</text><rect x="180" y="503" width="6.066666666666666" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Swimming · Annotated occurrences: 455</title></rect><text x="194.06666666666666" y="515">455</text><text x="166" y="541" text-anchor="end">Walking</text><rect x="180" y="529" width="5.826666666666667" height="13" rx="3" fill="#ff915b" class="studio-bar" tabindex="0"><title>Walking · Annotated occurrences: 437</title></rect><text x="193.82666666666665" y="541">437</text><text x="12" y="578">Interaction count</text></svg></div>
+</div></figure>
 </div>
 </div>
 <p class="caption has-text-justified">
@@ -1200,189 +644,193 @@
     GraphVid-Bench covers force and manipulation, kinematics and motion,
     physical contact, and support and position relations. Co-occurrence
     statistics show that real-world dynamics often combine multiple interaction
-    primitives, motivating graph-structured video control.
+    primitives, motivating <span class="studio-ending">graph-structured video control.</span>
   </p>
 </div>
 </div>
-</section>
-<!-- Quantitative Results -->
-<section class="section">
+</section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
 <div class="container is-max-desktop">
-<!-- Local styling for quantitative result emphasis. 
-              Keep this inside the section since you are not using a separate CSS file. -->
-<style>
-            .metric-table tbody tr.sota-row {
-              font-weight: 700;
-              background: rgba(44, 95, 172, 0.075);
-            }
-
-            .metric-table tbody tr.efficient-row {
-              font-weight: 800;
-              background: rgba(255, 95, 5, 0.10);
-            }
-
-            .metric-table tbody tr.sota-row td:first-child {
-              color: #0febe0;
-            }
-
-            .metric-table tbody tr.efficient-row td:first-child {
-              color: #FF5F05;
-            }
-
-            .result-tag {
-              display: inline-block;
-              margin-left: 0.35rem;
-              padding: 0.12rem 0.45rem;
-              border-radius: 999px;
-              font-size: 0.72rem;
-              font-weight: 800;
-              line-height: 1.35;
-              white-space: nowrap;
-              vertical-align: middle;
-            }
-
-            .sota-tag {
-              color: #0febe0;
-              background: rgba(44, 95, 172, 0.075);
-              border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-
-            .ours-tag {
-              color: #FF5F05;
-              background: rgba(255, 95, 5, 0.15);
-              border: 1px solid rgba(255, 95, 5, 0.24);
-            }
-
-            .efficiency-callout {
-              margin: 1rem 0 1.5rem 0;
-              padding: 0.95rem 1rem;
-              border-left: 4px solid #FF5F05;
-              border-radius: 10px;
-              background: rgba(255, 95, 5, 0.06);
-              color: rgba(193, 245, 7, 0.932);
-              font-size: 0.95rem;
-              line-height: 1.55;
-            }
-
-            .efficiency-callout strong {
-              color: #13294B;
-            }
-
-            @media (max-width: 768px) {
-              .result-tag {
-                display: block;
-                width: fit-content;
-                margin-left: 0;
-                margin-top: 0.25rem;
-              }
-            }
-          </style>
-<h2 class="title is-3">Quantitative Results</h2>
-<div class="content has-text-justified"><p>GraphVid is evaluated on an interaction-centric MoveBench subset against trajectory-based, physics-aware, and motion-control baselines. It uses only <strong>27K training clips</strong> and <strong>0.6B trainable parameters</strong>, while achieving the fastest inference in the comparison at <strong>200 seconds</strong>. We report perceptual, reconstruction, temporal, and motion-accuracy metrics, including End-Point Error (EPE).</p></div>
-<div class="efficiency-callout"><strong>Efficiency at a glance:</strong> GraphVid uses approximately <strong>24× fewer trainable parameters</strong> than Wan-Move and nearly two orders of magnitude less training data, while outperforming all comparable-scale methods on several core quality and motion metrics.</div>
-<h3 class="title is-4">Interaction-Centric MoveBench</h3>
-<div class="metric-table-wrapper">
-<table class="metric-table">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="content has-text-justified studio-results-intro"><p>GraphVid is evaluated on an interaction-centric MoveBench subset against trajectory-based, physics-aware, and motion-control baselines. It uses only <strong>27K training clips</strong> and <strong>0.6B trainable parameters</strong>, while achieving the fastest inference in the comparison at <strong>200 seconds</strong>. We report perceptual, reconstruction, temporal, and motion-accuracy metrics, including <span class="studio-ending">End-Point Error (EPE).</span></p></div>
+<div class="studio-result-stack">
+<div class="efficiency-callout">
+<strong>Efficiency at a glance:</strong> GraphVid uses approximately <strong>24× fewer trainable parameters</strong> than Wan-Move and nearly two orders of magnitude less training data, while outperforming all comparable-scale methods on several core quality and motion metrics.</div>
+<figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Interaction-centric MoveBench</h3>
+<p ,="" class="has-text-justified small-note studio-result-description" style="">GraphVid is second-best overall on FID, FVD, PSNR, SSIM, and EPE while using the fewest trainable parameters and the fastest inference. Compared with WISA, it improves FID by <strong>34.5%</strong>, FVD by <strong>7.8%</strong>, PSNR by <strong>5.9%</strong>, SSIM by <strong>15.0%</strong>, and <span class="studio-ending">EPE by <strong>29.3%</strong>.</span></p>
+<div class="metric-table-wrapper studio-table-scroll" tabindex="0" role="region" aria-label="Interaction-centric MoveBench">
+<table class="metric-table studio-native-table">
 <thead>
 <tr>
-<th>Method</th>
-<th>Train Data</th>
-<th>Trainable Params</th>
-<th>Inference ↓</th>
-<th>FID ↓</th>
-<th>FVD ↓</th>
-<th>PSNR ↑</th>
-<th>SSIM ↑</th>
-<th>EPE ↓</th>
+<th scope="col">Method</th>
+<th scope="col">Train Data</th>
+<th scope="col">Trainable Params</th>
+<th scope="col">Inference ↓</th>
+<th scope="col">FID ↓</th>
+<th scope="col">FVD ↓</th>
+<th scope="col">PSNR ↑</th>
+<th scope="col">SSIM ↑</th>
+<th scope="col">EPE ↓</th>
 </tr>
 </thead>
 <tbody>
-<tr class="sota-row">
-<td>Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span></td>
-<td>2M</td><td>14.5B</td><td>1800s</td>
-<td><strong>15.56</strong></td><td><strong>82.17</strong></td>
-<td><strong>17.21</strong></td><td><strong>0.61</strong></td><td><strong>2.6</strong></td>
+<tr class="sota-row studio-context-baseline">
+<th scope="row">Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span>
+</th>
+<td>2M</td>
+<td>14.5B</td>
+<td>1800s</td>
+<td class="studio-numeric-cell"><strong>15.56</strong></td>
+<td class="studio-numeric-cell"><strong>82.17</strong></td>
+<td class="studio-numeric-cell"><strong>17.21</strong></td>
+<td class="studio-numeric-cell"><strong>0.61</strong></td>
+<td class="studio-numeric-cell"><strong>2.6</strong></td>
 </tr>
 <tr>
-<td>Motion-I2V</td><td>10M</td><td>1.2B</td><td>790s</td>
-<td>28.32</td><td>159.32</td><td>9.87</td><td>0.38</td><td>3.9</td>
+<th scope="row">Motion-I2V</th>
+<td>10M</td>
+<td>1.2B</td>
+<td>790s</td>
+<td class="studio-numeric-cell">28.32</td>
+<td class="studio-numeric-cell">159.32</td>
+<td class="studio-numeric-cell">9.87</td>
+<td class="studio-numeric-cell">0.38</td>
+<td class="studio-numeric-cell">3.9</td>
 </tr>
 <tr>
-<td>Tora</td><td>630K</td><td>5B</td><td>1200s</td>
-<td>24.45</td><td>110.47</td><td>11.27</td><td>0.54</td><td>3.3</td>
+<th scope="row">Tora</th>
+<td>630K</td>
+<td>5B</td>
+<td>1200s</td>
+<td class="studio-numeric-cell">24.45</td>
+<td class="studio-numeric-cell">110.47</td>
+<td class="studio-numeric-cell">11.27</td>
+<td class="studio-numeric-cell">0.54</td>
+<td class="studio-numeric-cell">3.3</td>
 </tr>
 <tr>
-<td>MagicMotion</td><td>23K</td><td>1.5B</td><td>750s</td>
-<td>26.57</td><td>105.12</td><td>12.04</td><td>0.51</td><td>3.2</td>
+<th scope="row">MagicMotion</th>
+<td>23K</td>
+<td>1.5B</td>
+<td>750s</td>
+<td class="studio-numeric-cell">26.57</td>
+<td class="studio-numeric-cell">105.12</td>
+<td class="studio-numeric-cell">12.04</td>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">3.2</td>
 </tr>
 <tr>
-<td>WISA</td><td>80K</td><td>1B</td><td>1000s</td>
-<td>25.98</td><td>107.89</td><td>15.08</td><td>0.53</td><td>4.1</td>
+<th scope="row">WISA</th>
+<td>80K</td>
+<td>1B</td>
+<td>1000s</td>
+<td class="studio-numeric-cell">25.98</td>
+<td class="studio-numeric-cell">107.89</td>
+<td class="studio-numeric-cell">15.08</td>
+<td class="studio-numeric-cell">0.53</td>
+<td class="studio-numeric-cell">4.1</td>
 </tr>
 <tr>
-<td>FlashMotion</td><td>23K</td><td>13B</td><td>677s</td>
-<td>19.02</td><td>104.12</td><td>14.04</td><td>0.56</td><td>3.8</td>
+<th scope="row">FlashMotion</th>
+<td>23K</td>
+<td>13B</td>
+<td>677s</td>
+<td class="studio-numeric-cell">19.02</td>
+<td class="studio-numeric-cell">104.12</td>
+<td class="studio-numeric-cell">14.04</td>
+<td class="studio-numeric-cell">0.56</td>
+<td class="studio-numeric-cell">3.8</td>
 </tr>
-<tr class="efficient-row">
-<td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
-<td>27K</td><td>0.6B</td><td><strong>200s</strong></td>
-<td><strong>17.02</strong></td><td><strong>99.42</strong></td>
-<td><strong>15.98</strong></td><td><strong>0.61</strong></td><td><strong>2.9</strong></td>
+<tr class="efficient-row studio-ours">
+<th scope="row">GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span>
+</th>
+<td>27K</td>
+<td>0.6B</td>
+<td><strong>200s</strong></td>
+<td class="studio-numeric-cell"><strong>17.02</strong></td>
+<td class="studio-numeric-cell"><strong>99.42</strong></td>
+<td class="studio-numeric-cell"><strong>15.98</strong></td>
+<td class="studio-numeric-cell"><strong>0.61</strong></td>
+<td class="studio-numeric-cell"><strong>2.9</strong></td>
 </tr>
 </tbody>
 </table>
-</div>
-<p ,="" class="has-text-justified small-note" style="">GraphVid is second-best overall on FID, FVD, PSNR, SSIM, and EPE while using the fewest trainable parameters and the fastest inference. Compared with WISA, it improves FID by <strong>34.5%</strong>, FVD by <strong>7.8%</strong>, PSNR by <strong>5.9%</strong>, SSIM by <strong>15.0%</strong>, and EPE by <strong>29.3%</strong>.</p>
-<h3 class="title is-4">Multi-Object MoveBench Subset</h3>
-<div class="metric-table-wrapper">
-<table class="metric-table">
+</div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Multi-object MoveBench</h3>
+<p ,="" class="has-text-justified small-note studio-result-description" style="">On the harder multi-object subset, GraphVid achieves the best FID, FVD, and EPE among comparable-scale methods. It improves FID over FlashMotion by <strong>10.1%</strong> and FVD by <strong>6.4%</strong>, while using approximately <strong>21.7× </strong><span class="studio-ending"><strong>fewer trainable parameters</strong>.</span></p>
+<div class="metric-table-wrapper studio-table-scroll" tabindex="0" role="region" aria-label="Multi-object MoveBench">
+<table class="metric-table studio-native-table">
 <thead>
 <tr>
-<th>Method</th>
-<th>Train Data</th>
-<th>Trainable Params</th>
-<th>FID ↓</th>
-<th>FVD ↓</th>
-<th>PSNR ↑</th>
-<th>SSIM ↑</th>
-<th>EPE ↓</th>
+<th scope="col">Method</th>
+<th scope="col">Train Data</th>
+<th scope="col">Trainable Params</th>
+<th scope="col">FID ↓</th>
+<th scope="col">FVD ↓</th>
+<th scope="col">PSNR ↑</th>
+<th scope="col">SSIM ↑</th>
+<th scope="col">EPE ↓</th>
 </tr>
 </thead>
 <tbody>
-<tr class="sota-row">
-<td>Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span></td>
-<td>2M</td><td>14.5B</td><td><strong>31.29</strong></td>
-<td><strong>252</strong></td><td><strong>16.69</strong></td>
-<td><strong>0.61</strong></td><td><strong>2.2</strong></td>
+<tr class="sota-row studio-context-baseline">
+<th scope="row">Wan-Move <span class="result-tag sota-tag">Large-scale baseline</span>
+</th>
+<td>2M</td>
+<td>14.5B</td>
+<td class="studio-numeric-cell"><strong>31.29</strong></td>
+<td class="studio-numeric-cell"><strong>252</strong></td>
+<td class="studio-numeric-cell"><strong>16.69</strong></td>
+<td class="studio-numeric-cell"><strong>0.61</strong></td>
+<td class="studio-numeric-cell"><strong>2.2</strong></td>
 </tr>
 <tr>
-<td>Tora</td><td>630K</td><td>5B</td>
-<td>56.04</td><td>369</td><td>14.98</td><td>0.52</td><td>3.5</td>
+<th scope="row">Tora</th>
+<td>630K</td>
+<td>5B</td>
+<td class="studio-numeric-cell">56.04</td>
+<td class="studio-numeric-cell">369</td>
+<td class="studio-numeric-cell">14.98</td>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">3.5</td>
 </tr>
 <tr>
-<td>WISA</td><td>80K</td><td>1B</td>
-<td>60.12</td><td>341</td><td>13.13</td><td>0.55</td><td>3.9</td>
+<th scope="row">WISA</th>
+<td>80K</td>
+<td>1B</td>
+<td class="studio-numeric-cell">60.12</td>
+<td class="studio-numeric-cell">341</td>
+<td class="studio-numeric-cell">13.13</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">3.9</td>
 </tr>
 <tr>
-<td>FlashMotion</td><td>23K</td><td>13B</td>
-<td>55.03</td><td>311</td><td>12.12</td><td>0.52</td><td>3.9</td>
+<th scope="row">FlashMotion</th>
+<td>23K</td>
+<td>13B</td>
+<td class="studio-numeric-cell">55.03</td>
+<td class="studio-numeric-cell">311</td>
+<td class="studio-numeric-cell">12.12</td>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">3.9</td>
 </tr>
-<tr class="efficient-row">
-<td>GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span></td>
-<td>27K</td><td>0.6B</td>
-<td><strong>49.45</strong></td><td><strong>291</strong></td>
-<td>14.44</td><td><strong>0.55</strong></td><td><strong>3.0</strong></td>
+<tr class="efficient-row studio-ours">
+<th scope="row">GraphVid (Ours) <span class="result-tag ours-tag">Efficient</span>
+</th>
+<td>27K</td>
+<td>0.6B</td>
+<td class="studio-numeric-cell"><strong>49.45</strong></td>
+<td class="studio-numeric-cell"><strong>291</strong></td>
+<td class="studio-numeric-cell">14.44</td>
+<td class="studio-numeric-cell"><strong>0.55</strong></td>
+<td class="studio-numeric-cell"><strong>3.0</strong></td>
 </tr>
 </tbody>
 </table>
+</div></figure>
 </div>
-<p ,="" class="has-text-justified small-note" style="">On the harder multi-object subset, GraphVid achieves the best FID, FVD, and EPE among comparable-scale methods. It improves FID over FlashMotion by <strong>10.1%</strong> and FVD by <strong>6.4%</strong>, while using approximately <strong>21.7× fewer trainable parameters</strong>.</p>
 </div>
-</section>
-<!-- Qualitative Results -->
-<section class="section">
+</section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
 <div class="container is-max-desktop">
-<h2 class="title is-3">Qualitative Results</h2>
+<h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
 <div class="content has-text-justified">
 <!-- </div>
 <div style="text-align: center; margin-bottom: 30px;">
@@ -1455,24 +903,24 @@
 <div class="graphvid-example-grid">
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Intended Motion</div>
-<div class="media-card" data-loaded="false">
-<img alt="Intent motion for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/intent_gif/12.gif"/>
+<div class="media-card" data-loaded="false" style="position: relative;">
+<img alt="Intent motion for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/intent_gif/12.gif">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Edited Interaction Graph</div>
-<div class="media-card graphvid-graph-card" data-loaded="false">
-<img alt="Edited interaction graph for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/gen_graph/12.svg"/>
+<div class="media-card graphvid-graph-card" data-loaded="false" style="position: relative;">
+<img alt="Edited interaction graph for GraphVid example 1" decoding="async" loading="lazy" src="./static/videos/gen_graph/12.svg">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">GraphVid Output</div>
-<div class="media-card" data-loaded="false">
-<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
-<source src="./static/videos/gen_video/12.mp4" type="video/mp4"/>
-</video>
+<div class="media-card" data-loaded="true">
+<video loop="" muted="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay="">
+<source src="./static/videos/gen_video/12.mp4" type="video/mp4">
+</source></video>
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
@@ -1481,24 +929,24 @@
 <div class="graphvid-example-grid">
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Intended Motion</div>
-<div class="media-card" data-loaded="false">
-<img alt="Intent motion for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/intent_gif/6.gif"/>
+<div class="media-card" data-loaded="false" style="position: relative;">
+<img alt="Intent motion for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/intent_gif/6.gif">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Edited Interaction Graph</div>
-<div class="media-card graphvid-graph-card" data-loaded="false">
-<img alt="Edited interaction graph for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/gen_graph/6.svg"/>
+<div class="media-card graphvid-graph-card" data-loaded="false" style="position: relative;">
+<img alt="Edited interaction graph for GraphVid example 2" decoding="async" loading="lazy" src="./static/videos/gen_graph/6.svg">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">GraphVid Output</div>
-<div class="media-card" data-loaded="false">
-<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
-<source src="./static/videos/gen_video/6.mp4" type="video/mp4"/>
-</video>
+<div class="media-card" data-loaded="true">
+<video loop="" muted="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay="">
+<source src="./static/videos/gen_video/6.mp4" type="video/mp4">
+</source></video>
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
@@ -1507,36 +955,36 @@
 <div class="graphvid-example-grid">
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Intended Motion</div>
-<div class="media-card" data-loaded="false">
-<img alt="Intent motion for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/intent_gif/4.gif"/>
+<div class="media-card" data-loaded="false" style="position: relative;">
+<img alt="Intent motion for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/intent_gif/4.gif">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">Edited Interaction Graph</div>
-<div class="media-card graphvid-graph-card" data-loaded="false">
-<img alt="Edited interaction graph for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/gen_graph/4.svg"/>
+<div class="media-card graphvid-graph-card" data-loaded="false" style="position: relative;">
+<img alt="Edited interaction graph for GraphVid example 3" decoding="async" loading="lazy" src="./static/videos/gen_graph/4.svg">
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 <div class="graphvid-example-card">
 <div class="graphvid-example-title">GraphVid Output</div>
-<div class="media-card" data-loaded="false">
-<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
-<source src="./static/videos/gen_video/4.mp4" type="video/mp4"/>
-</video>
+<div class="media-card" data-loaded="true">
+<video loop="" muted="" playsinline="" preload="metadata" controls="" data-studio-autoplay="true" autoplay="">
+<source src="./static/videos/gen_video/4.mp4" type="video/mp4">
+</source></video>
 <div class="media-skeleton">Loading...</div>
 </div>
 </div>
 </div>
 <p class="caption has-text-justified">
-            Each example shows the user's intended motion, the corresponding edited interaction graph, and the generated GraphVid output. The side-by-side layout illustrates how GraphVid translates graph-level relational edits into coordinated video dynamics while preserving scene appearance and object identity.
+            Each example shows the user's intended motion, the corresponding edited interaction graph, and the generated GraphVid output. The side-by-side layout illustrates how GraphVid translates graph-level relational edits into coordinated video dynamics while preserving scene appearance <span class="studio-ending">and object identity.</span>
           </p>
 </div>
-</div></section>
-<section class="section" id="BibTeX">
+</div>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
 <div class="container is-max-desktop content">
-<h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+<h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
 <pre><code>@inproceedings{shah2026graphvid,
   title={GraphVid: Interactive Graph-Controllable Video Generation},
   author={Shah, Vedant and Susladkar, Onkar and Prakash, Tushar and Nguyen, Kiet A. and Yu, Tianjiao and Juvekar, Adheesh and Wahed, Muntasir and Lourentzou, Ismini},
@@ -1544,8 +992,16 @@
   year={2026}
 }</code></pre>
 </div>
-</section>
-</main>
+</section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 <script>
       document.addEventListener('DOMContentLoaded', () => {
         const markLoaded = (media) => {
@@ -1574,5 +1030,7 @@
         });
       });
     </script>
+
+
 </body>
 </html>

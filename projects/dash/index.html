@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,423 +10,34 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing." />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing.">
     <title>DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
 
 <script>
       MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "DaSH",
-    "openingCaption": "DaSH selects useful training data from a heterogeneous pool by learning which dataset groups and individual datasets improve a target model. Hierarchical selection prioritizes relevant sources under a limited exploration budget.",
-    "tldr": [
-      "We introduce DaSH, a method for selecting useful datasets from diverse repositories or institutions under limited exploration budgets. By learning which groups and datasets improve a target model, DaSH finds relevant training data efficiently while avoiding less useful sources."
-    ],
-    "method": {
-      "source": "DaSH Overview"
-    },
-    "quantitative": {
-      "source": "Quantitative Results"
-    },
-    "qualitative": {
-      "source": "Qualitative Examples"
-    },
-    "contributions": [
-      "We formalize the task of dataset selection from a heterogeneous pool of external datasets, a setting common in real-world workflows such as public data acquisition and cross-institutional collaboration, where data is organized into discrete, variably relevant sources.",
-      "We propose DaSH, the first dataset selection method that models dataset utility through hierarchical inference over groups and datasets, enabling efficient and robust selection under limited feedback.",
-      "We benchmark DaSH against four state-of-the-art data selection methods across two public datasets, demonstrating consistent performance improvements of up to 26.2% on Digit-Five and 10.8% on DomainNet. Ablation studies show DaSH remains robust to grouping noise and scales effectively to large dataset pools, whereas existing methods frequently select irrelevant or low-utility data samples."
-    ],
-    "contributionLeads": [
-      "We formalize the task of dataset selection",
-      "We propose DaSH",
-      "We benchmark DaSH"
-    ]
-  },
-  "resultPanels": {
-    "DIGIT-FIVE accuracy": {
-      "description": "Target-domain accuracy on DIGIT-FIVE, averaged over five runs. Higher scores are better; reported gains compare DaSH with competing selectors."
-    },
-    "DomainNet accuracy": {
-      "description": "Target-domain accuracy across DomainNet domains, averaged over five runs. Higher scores are better."
-    }
-  },
-  "results": {
-    "table1.png": {
-      "type": "table",
-      "title": "DIGIT-FIVE accuracy",
-      "columns": [
-        "Method",
-        "Hierarchical",
-        "MNIST",
-        "SVHN",
-        "USPS",
-        "MNIST-M",
-        "SYN",
-        "Average"
-      ],
-      "rows": [
-        [
-          "Local",
-          "No",
-          "52.7 ±6.5",
-          "50.9 ±3.4",
-          "52.2 ±3.2",
-          "49.4 ±2.4",
-          "50.9 ±5.1",
-          "51.2 ±4.1"
-        ],
-        [
-          "Global",
-          "No",
-          "89.3 ±1.1",
-          "69.7 ±1.4",
-          "92.2 ±0.7",
-          "80.2 ±1.1",
-          "62.8 ±2.8",
-          "78.8 ±1.4"
-        ],
-        [
-          "Core-sets (Sener and Savarese 2018)",
-          "No",
-          "75.7 ±2.3 ↓13.8",
-          "52.8 ±2.7 ↓16.4",
-          "74.0 ±3.6 ↓17.2",
-          "60.8 ±2.1 ↓18.1",
-          "40.8 ±1.9 ↓22.1",
-          "60.8 ±2.5 ↓17.5"
-        ],
-        [
-          "FreeSel (Xie et al. 2023a)",
-          "No",
-          "87.6 ±1.2 ↓1.9",
-          "39.3 ±4.0 ↓29.9",
-          "29.3 ±3.1 ↓61.9",
-          "65.4 ±2.2 ↓13.5",
-          "40.7 ±2.9 ↓22.2",
-          "52.5 ±2.7 ↓25.8"
-        ],
-        [
-          "ActiveFT (Xie et al. 2023b)",
-          "No",
-          "58.2 ±1.6 ↓31.3",
-          "53.6 ±1.6 ↓15.6",
-          "59.2 ±1.3 ↓32.0",
-          "48.3 ±0.9 ↓30.6",
-          "41.4 ±1.5 ↓21.5",
-          "52.1 ±1.4 ↓26.2"
-        ],
-        [
-          "BiLAF (Lu et al. 2024)",
-          "No",
-          "62.6 ±0.5 ↓26.9",
-          "56.8 ±0.4 ↓12.4",
-          "67.3 ±0.5 ↓23.9",
-          "50.1 ±0.5 ↓28.8",
-          "52.6 ±1.0 ↓10.3",
-          "57.9 ±0.6 ↓20.4"
-        ],
-        [
-          "DaSH",
-          "Yes",
-          "89.5 ±0.6",
-          "69.2 ±3.4",
-          "91.2 ±0.9",
-          "78.9 ±0.5",
-          "62.9 ±1.6",
-          "78.3 ±1.4"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/table1.png"
-    },
-    "table2.png": {
-      "type": "table",
-      "title": "DomainNet accuracy",
-      "columns": [
-        "Method",
-        "Hierarchical",
-        "CLIPART",
-        "QUICKDRAW",
-        "REAL",
-        "SKETCH",
-        "Average"
-      ],
-      "rows": [
-        [
-          "Local",
-          "No",
-          "40.0 ±2.4",
-          "64.0 ±2.1",
-          "61.0 ±1.1",
-          "67.5 ±1.1",
-          "58.1 ±1.7"
-        ],
-        [
-          "Global",
-          "No",
-          "78.5 ±0.6",
-          "86.7 ±0.5",
-          "88.4 ±0.6",
-          "72.3 ±0.8",
-          "81.6 ±1.1"
-        ],
-        [
-          "Core-sets (Sener and Savarese 2018)",
-          "No",
-          "59.1 ±0.9 ↓18.2",
-          "74.1 ±0.3 ↓12.3",
-          "80.1 ±0.6 ↓8.3",
-          "67.6 ±0.4 ↓4.2",
-          "70.2 ±0.6 ↓10.8"
-        ],
-        [
-          "FreeSel (Xie et al. 2023a)",
-          "No",
-          "70.1 ±2.1 ↓7.2",
-          "81.7 ±0.8 ↓4.6",
-          "85.6 ±0.7 ↓2.8",
-          "67.2 ±1.3 ↓4.6",
-          "77.7 ±1.2 ↓3.3"
-        ],
-        [
-          "ActiveFT (Xie et al. 2023b)",
-          "No",
-          "67.6 ±1.8 ↓9.7",
-          "78.0 ±1.0 ↓8.3",
-          "83.8 ±1.1 ↓4.6",
-          "67.8 ±1.1 ↓4.0",
-          "74.3 ±1.3 ↓6.7"
-        ],
-        [
-          "BiLAF (Lu et al. 2024)",
-          "No",
-          "69.0 ±1.6 ↓8.3",
-          "81.3 ±0.5 ↓5.0",
-          "85.8 ±0.5 ↓2.6",
-          "67.8 ±0.7 ↓4.0",
-          "76.0 ±0.8 ↓5.0"
-        ],
-        [
-          "DaSH",
-          "Yes",
-          "77.3 ±0.8",
-          "86.3 ±1.1",
-          "88.4 ±0.8",
-          "71.8 ±0.9",
-          "81.0 ±0.9"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/table2.png"
-    },
-    "pareto.png": {
-      "type": "scatter",
-      "title": "Communication cost versus accuracy",
-      "source": "static/images/pareto.png",
-      "xLabel": "Communication steps (fewer is better)",
-      "xMin": 120,
-      "xMax": 240,
-      "xTicks": [
-        120,
-        150,
-        180,
-        210,
-        240
-      ],
-      "approximate": true,
-      "metrics": [
-        {
-          "label": "DIGIT-FIVE · accuracy (%)",
-          "min": 50,
-          "max": 95,
-          "series": [
-            {
-              "name": "MNIST",
-              "points": [
-                [
-                  166,
-                  88.6
-                ],
-                [
-                  137,
-                  89.5
-                ],
-                [
-                  133,
-                  88.5
-                ]
-              ]
-            },
-            {
-              "name": "SVHN",
-              "points": [
-                [
-                  224,
-                  69.9
-                ],
-                [
-                  183,
-                  69.2
-                ],
-                [
-                  173,
-                  69.8
-                ]
-              ]
-            },
-            {
-              "name": "USPS",
-              "points": [
-                [
-                  163,
-                  91.1
-                ],
-                [
-                  140,
-                  91.3
-                ],
-                [
-                  143,
-                  90.6
-                ]
-              ]
-            },
-            {
-              "name": "MNIST-M",
-              "points": [
-                [
-                  188,
-                  77.6
-                ],
-                [
-                  154,
-                  78.9
-                ],
-                [
-                  165,
-                  77.8
-                ]
-              ]
-            },
-            {
-              "name": "SYN",
-              "points": [
-                [
-                  208,
-                  58.7
-                ],
-                [
-                  194,
-                  62.9
-                ],
-                [
-                  187,
-                  58.6
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "label": "DomainNet · accuracy (%)",
-          "min": 65,
-          "max": 92,
-          "series": [
-            {
-              "name": "CLIPART",
-              "points": [
-                [
-                  215,
-                  77.5
-                ],
-                [
-                  184,
-                  77.3
-                ],
-                [
-                  186,
-                  77.3
-                ]
-              ]
-            },
-            {
-              "name": "QUICKDRAW",
-              "points": [
-                [
-                  180,
-                  87
-                ],
-                [
-                  166,
-                  86.3
-                ],
-                [
-                  150,
-                  86.9
-                ]
-              ]
-            },
-            {
-              "name": "REAL",
-              "points": [
-                [
-                  175,
-                  88.5
-                ],
-                [
-                  164,
-                  88.6
-                ],
-                [
-                  190,
-                  89
-                ]
-              ]
-            },
-            {
-              "name": "SKETCH",
-              "points": [
-                [
-                  177,
-                  70.8
-                ],
-                [
-                  168,
-                  71.8
-                ],
-                [
-                  158,
-                  70.5
-                ]
-              ]
-            }
-          ]
-        }
-      ],
-      "note": ""
-    }
-  }
-}
-  </script>
+  <body class="page-project project-studio studio-dash" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -460,66 +71,77 @@
 </nav>
 
     <main>
-<section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">DaSH: Hierarchical Dataset Selection for High-Quality Data Sharing</h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="cincinnati"><a href="https://yyzeng43.github.io/">Yingyan Zeng</a><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="https://www.ise.vt.edu/people/faculty/jin.html">Ran Jin</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+            <h1 class="title is-1 publication-title">
+<span class="studio-name">DaSH</span><span class="studio-subtitle"><span class="dash-title-line">Hierarchical Dataset Selection </span><span class="dash-title-line">for <span class="dash-title-phrase">High-Quality</span> <span class="dash-title-phrase">Data Sharing</span></span></span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xiaona-zhou">Xiaona Zhou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="cincinnati"><a href="https://yyzeng43.github.io/">Yingyan Zeng</a><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup>, </span><span class="author-block studio-author" data-affiliations="vt"><a href="https://www.ise.vt.edu/people/faculty/jin.html">Ran Jin</a><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div></div>
 
-            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="cincinnati"><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup><span class="studio-affiliation-name">University of Cincinnati</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span></div>
-            
-            <p class="publication-venue">AAAI 2026 (Oral)</p>
+            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="cincinnati"><sup class="studio-affiliation-marker" title="University of Cincinnati" aria-label="University of Cincinnati">♣</sup><span class="studio-affiliation-name">University of Cincinnati</span></span><span class="studio-affiliation" data-institution="vt"><sup class="studio-affiliation-marker" title="Virginia Tech" aria-label="Virginia Tech">●</sup><span class="studio-affiliation-name">Virginia Tech</span></span>
+</div>
+<p class="publication-venue">AAAI 2026 (Oral)</p>
+
+
             <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40139" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2512.10952" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/DaSH" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a></div>
+              <div class="publication-links">
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/40139" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2512.10952" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/DaSH" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a>
+</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span> We introduce <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies 
-          (<strong>DaSH</strong>), a method for selecting entire datasets from large, heterogeneous multi-source collections. 
-          <strong>DaSH</strong> models utility at both dataset and group levels to guide efficient selection under resource constraints, 
-          achieving up to 26.2% accuracy improvements on <strong>Digit-Five</strong> and <strong>DomainNet</strong> while using fewer exploration steps.
-          </div>
-        <img src="./static/images/DaSH_teaser.png" class="interpolation-image" alt="Interpolate start reference image.">
-        <div class="content has-text-justified">
-          <p>Dataset selection aims to select entire datasets from external sources to improve local model performance. 
-            Instance-level methods, such as active learning and subset selection, ignore dataset structure and often select 
-            irrelevant or misleading samples. In contrast, <b>DaSH</b> leverages hierarchical grouping to efficiently identify 
-            relevant datasets, avoiding noisy sources and achieving higher downstream accuracy.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
+  </div></section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce DaSH, a method for selecting useful datasets from diverse repositories or institutions under limited exploration budgets. By learning which groups and datasets improve a target model, DaSH finds relevant training data efficiently while avoiding less <span class="studio-tldr-tail">useful sources.</span></p></div>
+</div></section><section class="studio-feature dash-feature studio-figure-opening" aria-labelledby="dash-feature-title" data-studio-section="examples"><figure class="dash-figure"><img src="./static/images/DaSH_teaser.png" class="interpolation-image" alt="DaSH selects relevant datasets by reasoning over groups and datasets, compared with instance-level active learning and subset selection." loading="eager"><figcaption class="studio-opening-caption"><h2 id="dash-feature-title" class="studio-opening-label">Dataset Selection via Hierarchies</h2>
+<p>DaSH selects useful training data from a heterogeneous pool by learning which dataset groups and individual datasets improve a target model. Hierarchical selection prioritizes relevant sources under a limited exploration budget.</p></figcaption></figure></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">DaSH Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">📝 Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios, 
-              such as acquiring data from public repositories or sharing across institutions, data is naturally organized into 
-              discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to 
-              search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions, 
-              yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences 
-              between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire 
-              datasets from a large, heterogeneous pool to improve downstream performance under resource constraints. 
-              We propose <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies 
-              (<strong>DaSH</strong>), a dataset selection method that models utility at both 
-              dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations. 
-              Across two public benchmarks (<i>Digit-Five</i> and <i>DomainNet</i>), <b>DaSH</b> outperforms state-of-the-art data 
-              selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps. 
-              Ablations show <b>DaSH</b> is robust to low-resource settings and lack of relevant datasets, making it suitable for 
+              The success of modern machine learning hinges on access to high-quality training data. In many real-world scenarios,
+              such as acquiring data from public repositories or sharing across institutions, data is naturally organized into
+              discrete datasets that vary in relevance, quality, and utility. Selecting which repositories or institutions to
+              search for useful datasets, and which datasets to incorporate into model training are therefore critical decisions,
+              yet most existing methods select individual samples and treat all data as equally relevant, ignoring differences
+              between datasets and their sources. In this work, we formalize the task of dataset selection: selecting entire
+              datasets from a large, heterogeneous pool to improve downstream performance under resource constraints.
+              We propose <u><strong>D</strong></u>ataset <u><strong>S</strong></u>election via <u><strong>H</strong></u>ierarchies
+              (<strong>DaSH</strong>), a dataset selection method that models utility at both
+              dataset and group (e.g., collections, institutions) levels, enabling efficient generalization from limited observations.
+              Across two public benchmarks (<i>Digit-Five</i> and <i>DomainNet</i>), <b>DaSH</b> outperforms state-of-the-art data
+              selection baselines by up to 26.2% in accuracy, while requiring significantly fewer exploration steps.
+              Ablations show <b>DaSH</b> is robust to low-resource settings and lack of relevant datasets, making it suitable for
               scalable and adaptive dataset selection in practical multi-source learning workflows.
             </p>
           </div>
@@ -527,44 +149,34 @@
       </div>
       <!--/ Abstract. -->
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
       <!-- Contributions. -->
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">💡 Contributions</h2>
+          <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
           <div class="content has-text-justified">
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We formalize the task of dataset selection from a heterogeneous pool of external datasets, 
-                a setting common in real-world workflows such as public data acquisition and cross-institutional collaboration, where data is organized into discrete, variably relevant sources.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We propose <b>DaSH</b>, the first dataset selection method that models dataset utility 
-                through hierarchical inference over groups and datasets, enabling efficient and robust selection under limited feedback.
-              </li>
-              <br>
-              <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span>We benchmark <b>DaSH</b> against four state-of-the-art data selection methods across two public datasets, 
-                demonstrating consistent performance improvements, improves accuracy by up to 26.2% <i>Digit-Five</i> and 10.8\% on <i>DomainNet</i>. Ablation studies show DaSH remains robust to grouping noise 
-                and scales effectively to large dataset pools, whereas existing methods frequently select irrelevant or low-utility data samples.
-              </li>
-              
-          </ul></div>
+            <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">We formalize the task of dataset selection</strong> from a heterogeneous pool of external datasets, a setting common in real-world workflows such as public data acquisition and cross-institutional collaboration, where data is organized into discrete, variably relevant sources.</li>
+<li>
+<strong class="studio-contribution-lead">We propose DaSH</strong>, the first dataset selection method that models dataset utility through hierarchical inference over groups and datasets, enabling efficient and robust selection under limited feedback.</li>
+<li>
+<strong class="studio-contribution-lead">We benchmark DaSH</strong> against four state-of-the-art data selection methods across two public datasets, demonstrating consistent performance improvements of up to 26.2% on Digit-Five and 10.8% on DomainNet. Ablation studies show DaSH remains robust to grouping noise and scales effectively to large dataset pools, whereas existing methods frequently select irrelevant or low-utility data samples.</li>
+</ul>
+</div>
         </div>
       </div>
       <!--/ Contributions. -->
     </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span style="font-weight: bold;"> DaSH</span> Overview</h2>
+          <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name dash-model-name" style="color: rgb(255, 145, 91);">DaSH</span> Method</h2>
           <div class="content has-text-justified">
-            <img loading="lazy" decoding="async" src="./static/images/DaSH_overview.png" class="interpolation-image" alt="PRIMA Model Architecture.">
+            <img loading="lazy" decoding="async" src="./static/images/DaSH_overview.png" class="interpolation-image" alt="DaSH selects a group and a dataset, observes a reward, and updates both utility distributions.">
             <p>
               Each dataset and its corresponding group are modeled using Gaussian distributions
               N(θ<sub>i</sub>, σ̂<sub>i</sub><sup>2</sup>) and
@@ -579,91 +191,218 @@
         </div>
       </div>
     </div>
-  </section>
+  </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+    <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/table1.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">DIGIT-FIVE accuracy</h3>
+<p class="has-text-justified dash-result-caption studio-result-description">
+                <b>Performance comparison on <span style="font-variant: small-caps;">Digit-Five</span> </b>against baselines (averaged over 5 runs).
+                DaSH results are <b>bold</b>.
+                Orange downward arrows beside scores (<span style="" class="dash-model-name">↓</span>) indicate accuracy drops relative to DaSH, in percentage points.
+                Across all five domains, <b class="dash-model-name">DaSH</b> matches the global model, achieving an average accuracy of 78.3%,
+                which is only 0.5 percentage points below the global upper bound (78.8%) and significantly higher than the local lower bound (51.2%).
+              </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="DIGIT-FIVE accuracy"><table class="studio-native-table">
+<caption class="studio-sr-only">DIGIT-FIVE accuracy</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Hierarchical</th>
+<th scope="col">MNIST</th>
+<th scope="col">SVHN</th>
+<th scope="col">USPS</th>
+<th scope="col">MNIST-M</th>
+<th scope="col">SYN</th>
+<th scope="col">Average</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Local</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.7 ±6.5</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">50.9 ±3.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.2 ±3.2</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">49.4 ±2.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">50.9 ±5.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">51.2 ±4.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Global</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">89.3 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">69.7 ±1.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">92.2 ±0.7</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">80.2 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">62.8 ±2.8</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">78.8 ±1.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Core-sets</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">75.7 ±2.3</span><span class="studio-metric-gain"> ↓13.8</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.8 ±2.7</span><span class="studio-metric-gain"> ↓16.4</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">74.0 ±3.6</span><span class="studio-metric-gain"> ↓17.2</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">60.8 ±2.1</span><span class="studio-metric-gain"> ↓18.1</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">40.8 ±1.9</span><span class="studio-metric-gain"> ↓22.1</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">60.8 ±2.5</span><span class="studio-metric-gain"> ↓17.5</span></span></td>
+</tr>
+<tr>
+<th scope="row">FreeSel</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">87.6 ±1.2</span><span class="studio-metric-gain"> ↓1.9</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">39.3 ±4.0</span><span class="studio-metric-gain"> ↓29.9</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">29.3 ±3.1</span><span class="studio-metric-gain"> ↓61.9</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">65.4 ±2.2</span><span class="studio-metric-gain"> ↓13.5</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">40.7 ±2.9</span><span class="studio-metric-gain"> ↓22.2</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.5 ±2.7</span><span class="studio-metric-gain"> ↓25.8</span></span></td>
+</tr>
+<tr>
+<th scope="row">ActiveFT</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">58.2 ±1.6</span><span class="studio-metric-gain"> ↓31.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">53.6 ±1.6</span><span class="studio-metric-gain"> ↓15.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">59.2 ±1.3</span><span class="studio-metric-gain"> ↓32.0</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">48.3 ±0.9</span><span class="studio-metric-gain"> ↓30.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">41.4 ±1.5</span><span class="studio-metric-gain"> ↓21.5</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.1 ±1.4</span><span class="studio-metric-gain"> ↓26.2</span></span></td>
+</tr>
+<tr>
+<th scope="row">BiLAF</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">62.6 ±0.5</span><span class="studio-metric-gain"> ↓26.9</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">56.8 ±0.4</span><span class="studio-metric-gain"> ↓12.4</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.3 ±0.5</span><span class="studio-metric-gain"> ↓23.9</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">50.1 ±0.5</span><span class="studio-metric-gain"> ↓28.8</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">52.6 ±1.0</span><span class="studio-metric-gain"> ↓10.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">57.9 ±0.6</span><span class="studio-metric-gain"> ↓20.4</span></span></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">DaSH</th>
+<td>Yes</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">89.5 ±0.6</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">69.2 ±3.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">91.2 ±0.9</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">78.9 ±0.5</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">62.9 ±1.6</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">78.3 ±1.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/table2.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">DomainNet accuracy</h3>
+<p class="has-text-justified dash-result-caption studio-result-description">
+                <b>Performance comparison on <span style="font-variant: small-caps;">DomainNet</span> </b>against baselines
+                (averaged over 5 runs). DaSH results are <b>bold</b>.
+                Orange downward arrows beside scores (<span style="" class="dash-model-name">↓</span>) indicate accuracy drops relative to DaSH, in percentage points. While performance margins are narrower than in <span style="font-variant: small-caps;">Digit-Five</span>
+                <b class="dash-model-name">DaSH</b> still outperforms all baselines by 3.3–10.8 percentage points.
 
-  <section class="section">
+              </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="DomainNet accuracy"><table class="studio-native-table">
+<caption class="studio-sr-only">DomainNet accuracy</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Hierarchical</th>
+<th scope="col">CLIPART</th>
+<th scope="col">QUICKDRAW</th>
+<th scope="col">REAL</th>
+<th scope="col">SKETCH</th>
+<th scope="col">Average</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Local</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">40.0 ±2.4</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">64.0 ±2.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">61.0 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.5 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">58.1 ±1.7</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Global</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">78.5 ±0.6</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">86.7 ±0.5</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">88.4 ±0.6</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">72.3 ±0.8</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">81.6 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+<tr>
+<th scope="row">Core-sets</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">59.1 ±0.9</span><span class="studio-metric-gain"> ↓18.2</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">74.1 ±0.3</span><span class="studio-metric-gain"> ↓12.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">80.1 ±0.6</span><span class="studio-metric-gain"> ↓8.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.6 ±0.4</span><span class="studio-metric-gain"> ↓4.2</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">70.2 ±0.6</span><span class="studio-metric-gain"> ↓10.8</span></span></td>
+</tr>
+<tr>
+<th scope="row">FreeSel</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">70.1 ±2.1</span><span class="studio-metric-gain"> ↓7.2</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">81.7 ±0.8</span><span class="studio-metric-gain"> ↓4.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">85.6 ±0.7</span><span class="studio-metric-gain"> ↓2.8</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.2 ±1.3</span><span class="studio-metric-gain"> ↓4.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">77.7 ±1.2</span><span class="studio-metric-gain"> ↓3.3</span></span></td>
+</tr>
+<tr>
+<th scope="row">ActiveFT</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.6 ±1.8</span><span class="studio-metric-gain"> ↓9.7</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">78.0 ±1.0</span><span class="studio-metric-gain"> ↓8.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">83.8 ±1.1</span><span class="studio-metric-gain"> ↓4.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.8 ±1.1</span><span class="studio-metric-gain"> ↓4.0</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">74.3 ±1.3</span><span class="studio-metric-gain"> ↓6.7</span></span></td>
+</tr>
+<tr>
+<th scope="row">BiLAF</th>
+<td>No</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">69.0 ±1.6</span><span class="studio-metric-gain"> ↓8.3</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">81.3 ±0.5</span><span class="studio-metric-gain"> ↓5.0</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">85.8 ±0.5</span><span class="studio-metric-gain"> ↓2.6</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">67.8 ±0.7</span><span class="studio-metric-gain"> ↓4.0</span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">76.0 ±0.8</span><span class="studio-metric-gain"> ↓5.0</span></span></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">DaSH</th>
+<td>Yes</td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">77.3 ±0.8</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">86.3 ±1.1</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">88.4 ±0.8</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4ch;"><span class="studio-metric-pair"><span class="studio-metric-value">71.8 ±0.9</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+<td class="studio-numeric-cell" style="--studio-score-width: 9ch; --studio-gain-width: 4.800000000000001ch;"><span class="studio-metric-pair"><span class="studio-metric-value">81.0 ±0.9</span><span class="studio-gain-slot" aria-hidden="true"></span></span></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">📊 Quantitative Results</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/table1.png" class="interpolation-image" alt="PRIMA results." width="95%">
-              <p class="has-text-justified">
-                <b>Performance comparison on <span style="font-variant: small-caps;">Digit-Five</span> </b>against baselines (averaged over 5 runs). 
-                Best performance is <b>bold</b>. 
-                Red downward arrows (<span style="color: red;">↓</span>) indicate absolute drops in accuracy relative to the best-performing method.
-                Across all five domains, <b>DaSH</b> matches the global model, achieving an average accuracy of 78.3%, 
-                which is only 0.5% below the global upper bound (78.8%) and significantly higher than the local lower bound (51.2%). 
-              </p>
-
-              <img loading="lazy" decoding="async" src="./static/images/table2.png" class="interpolation-image" alt="PRIMA results." width="95%">
-              <p class="has-text-justified">
-                <b>Performance comparison on <span style="font-variant: small-caps;">DomainNet</span> </b>against baselines 
-                (averaged over 5 runs). Best performance is <b>bold</b>. 
-                Red downward arrows (<span style="color: red;">↓</span>) indicate absolute drops in accuracy 
-                relative to the best-performing method. While performance margins are narrower than in <span style="font-variant: small-caps;">Digit-Five</span> 
-                <b>DaSH</b> still outperforms all baselines by 3.3–10.8%.
-                  
-              </p>
-
-              <img loading="lazy" decoding="async" src="./static/images/pareto.png" class="interpolation-image" alt="PRIMA results." width="95%">
-              <p class="has-text-justified">
-                <b>Pareto trade-offs between accuracy and selection cost.</b> Each point is a method–domain result 
-                (<span style="font-variant: small-caps;">Digit-Five</span> left, 
-                <span style="font-variant: small-caps;">DomainNet</span> right). 
-                Marker shape encodes the domain, while color distinguishes the methods: 
-                <b><span style="color: #F5A36C;">DaSH-Flat</span></b>, 
-                <b><span style="color: #4AA6A8;">DaSH (mixed)</span></b>, and 
-                <b><span style="color: #4A79D1;">DaSH</span></b>. 
-                Points toward the upper-right represent better trade-offs (higher accuracy, fewer steps). 
-                Across both benchmarks, the upper-right region is occupied by hierarchical variants, with 
-                <b><span style="color: #4A79D1;">DaSH</span></b> contributing most of the frontier on 
-                <span style="font-variant: small-caps;">Digit-Five</span> and sharing the frontier with 
-                <b><span style="color: #4AA6A8;">DaSH (mixed)</span></b> on 
-                <span style="font-variant: small-caps;">DomainNet</span>.
-              </p>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">🔎 Qualitative Examples</h2>
+          <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
           <div class="content has-text-justified">
             <div style="text-align: center; padding: 0 0 20px 0;">
               <img loading="lazy" decoding="async" src="./static/images/qualitative.png" class="interpolation-image" alt="Qualitative Examples.">
             </div>
           </div>
           <div class="content has-text-justified">
-            <b>Qualitative comparisons on <span style="font-variant: small-caps;">Digit-Five</span> 
-            (target: <span style="font-variant: small-caps;">MNIST</span>) and 
-            <span style="font-variant: small-caps;">DomainNet</span> 
+            <b>Qualitative comparisons on <span style="font-variant: small-caps;">Digit-Five</span>
+            (target: <span style="font-variant: small-caps;">MNIST</span>) and
+            <span style="font-variant: small-caps;">DomainNet</span>
             (target: <span style="font-variant: small-caps;">SKETCH</span>).</b>
-            Each selected image is labeled by its source domain (above), with green borders indicating a correct domain 
-            match to the target and red borders indicating a mismatch. 
-            Unlike prior methods, which frequently select subsets from mismatched domains in the first exploration step, 
-            <b>DaSH</b> consistently identifies subsets from the correct domain, even in challenging settings with visually 
+            Each selected image is labeled by its source domain (above), with green borders indicating a correct domain
+            match to the target and red borders indicating a mismatch.
+            Unlike prior methods, which frequently select subsets from mismatched domains in the first exploration step,
+            <b>DaSH</b> consistently identifies subsets from the correct domain, even in challenging settings with visually
             similar categories.
 
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <section class="section" id="BibTeX">
+  </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
       <pre><code>@inproceedings{xzhou2025dash,
   title={Hierarchical Dataset Selection for High-Quality Data Sharing},
   author={Zhou, Xiaona and Zeng, Yingyan and Jin, Ran and Lourentzou, Ismini},
@@ -671,34 +410,23 @@
   year={2026}
 }</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2512.10952.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
               <a href="https://arxiv.org/abs/2304.10592">MiniGPT-4</a>,
               <a href="https://arxiv.org/abs/2302.13971">LLaMa</a>, and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion 2</a> for open-sourcing their models and code.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

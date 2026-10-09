@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,21 +10,21 @@
 
   gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="PyraTok project page for PLAN Lab." />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PyraTok project page for PLAN Lab.">
     <title>PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
     <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <style>
       .media-card {
         position: relative;
@@ -79,221 +79,12 @@
       }
     </style>
     <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-  </head>
-  <body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "PyraTok",
-    "tldr": [
-      "We introduce PyraTok, a video tokenizer whose Language-aligned Pyramidal Quantization (LaPQ) discretizes features at multiple encoder depths into a shared binary codebook of approximately 48K tokens. Text guidance aligns each pyramid level locally, while an autoregressive objective aligns the token hierarchy globally. This dual alignment preserves semantic consistency across scales and time, supporting high-resolution reconstruction, generation, and zero-shot video understanding."
-    ],
-    "method": {
-      "paragraphs": [
-        "PyraTok builds on a pretrained video VAE and applies Language-aligned Pyramidal Quantization (LaPQ) at multiple encoder depths. A shared large binary codebook discretizes the resulting hierarchy into compact, semantically structured video tokens. Text-guided quantization provides local alignment at each scale, while an autoregressive objective over the token hierarchy enforces global sequence coherence. A hierarchical semantic codebook loss links the shared codebook to text embeddings and regularizes consistency across pyramid levels."
-      ],
-      "image": {
-        "source": "teaser.png",
-        "src": "./static/images/architecture.png",
-        "alt": "PyraTok architecture with multi-scale Language-aligned Pyramidal Quantization, text conditioning, and autoregressive semantic alignment"
-      }
-    },
-    "contributions": [
-      "Multi-scale semantically aligned VAE. We introduce PyraTok, a multi-scale semantically aligned Video VAE that couples spatiotemporal quantization with dual semantic alignment, enabling coarse-to-fine understanding and efficient video generation.",
-      "LaPQ quantization. PyraTok leverages LaPQ, a novel language-aligned pyramidal quantization framework, designed to hierarchically encode multi-scale video representations through lateral encoder connections at each stage. Our design enables efficient use of a large ∼48K token vocabulary, with up to 95% codebook utilization.",
-      "Dual semantic alignment. We propose a dual semantic alignment strategy that injects text-conditioned priors at every LaPQ level (local alignment) and refines them with an autoregressive objective over the sequence of quantized tokens (global alignment). This jointly enforces token-level grounding and sequence-level coherence, preventing semantic drift across scales and time.",
-      "Hierarchical semantic codebook loss. We further introduce a hierarchical semantic codebook loss that ties a shared binary codebook to text embeddings and preserves semantic consistency across pyramid levels through stage-wise KL regularization."
-    ],
-    "contributionLeads": [
-      "Multi-scale semantically aligned VAE.",
-      "LaPQ quantization.",
-      "Dual semantic alignment.",
-      "Hierarchical semantic codebook loss."
-    ],
-    "opening": {
-      "media": [
-        {
-          "type": "video",
-          "source": "./static/videos/recon/recon-1080p-1.mp4",
-          "label": "1080p reconstruction comparison",
-          "poster": "./static/images/recon-1080p-1-poster.jpg"
-        },
-        {
-          "type": "video",
-          "source": "./static/videos/recon/recon-4k-1.mp4",
-          "label": "4K reconstruction comparison",
-          "poster": "./static/images/recon-4k-1-poster.jpg"
-        },
-        {
-          "type": "video",
-          "source": "./static/videos/recon/recon-4k-4.mp4",
-          "label": "4K reconstruction comparison",
-          "poster": "./static/images/recon-4k-4-poster.jpg"
-        }
-      ],
-      "caption": ""
-    }
-  },
-  "resultPanels": {
-    "Reconstruction quality": {
-      "description": "Reconstruction quality and inference cost on WebVid-10M and COCO-Val. Latency is measured on 25 frames at 256 × 256 using one V100 GPU."
-    }
-  },
-  "results": {
-    "quantitative-results.png": {
-      "type": "table",
-      "title": "Reconstruction quality",
-      "columns": [
-        "Method",
-        "Parameters",
-        "Latency (ms)",
-        "WebVid · PSNR ↑",
-        "WebVid · SSIM ↑",
-        "WebVid · LPIPS ↓",
-        "COCO · PSNR ↑",
-        "COCO · SSIM ↑",
-        "COCO · LPIPS ↓"
-      ],
-      "rows": [
-        [
-          "CogVideoX [67]",
-          "288M",
-          "712",
-          "29.92",
-          "0.811",
-          "0.141",
-          "30.11",
-          "0.833",
-          "0.111"
-        ],
-        [
-          "3D-MBQ-VAE [44]",
-          "317M",
-          "650",
-          "33.00",
-          "0.848",
-          "0.092",
-          "32.11",
-          "0.858",
-          "0.108"
-        ],
-        [
-          "WAN 2.2 [53]",
-          "222M",
-          "449",
-          "32.94",
-          "0.841",
-          "0.101",
-          "33.43",
-          "0.861",
-          "0.103"
-        ],
-        [
-          "OmniTokenizer [57]",
-          "82M",
-          "444",
-          "32.03",
-          "0.812",
-          "0.152",
-          "32.09",
-          "0.845",
-          "0.141"
-        ],
-        [
-          "LARP [55]",
-          "183M",
-          "689",
-          "33.03",
-          "0.851",
-          "0.091",
-          "34.26",
-          "0.853",
-          "0.089"
-        ],
-        [
-          "TokenFlow [37]",
-          "176M",
-          "600",
-          "28.21",
-          "0.799",
-          "0.189",
-          "30.11",
-          "0.811",
-          "0.177"
-        ],
-        [
-          "VideoVae+ [63]",
-          "192M",
-          "555",
-          "29.17",
-          "0.812",
-          "0.201",
-          "31.45",
-          "0.832",
-          "0.162"
-        ],
-        [
-          "TexTok [71]",
-          "173M",
-          "661",
-          "27.42",
-          "0.831",
-          "0.222",
-          "29.29",
-          "0.841",
-          "0.181"
-        ],
-        [
-          "LG-VQ [13]",
-          "168M",
-          "598",
-          "30.23",
-          "0.807",
-          "0.173",
-          "31.32",
-          "0.836",
-          "0.152"
-        ],
-        [
-          "TokLIP [28]",
-          "207M",
-          "604",
-          "31.28",
-          "0.837",
-          "0.152",
-          "33.42",
-          "0.849",
-          "0.105"
-        ],
-        [
-          "SweetTok [46]",
-          "128M",
-          "432",
-          "32.32",
-          "0.842",
-          "0.137",
-          "32.78",
-          "0.847",
-          "0.123"
-        ],
-        [
-          "PyraTok (Ours)",
-          "192M",
-          "492",
-          "35.72",
-          "0.879",
-          "0.066",
-          "36.05",
-          "0.885",
-          "0.071"
-        ]
-      ],
-      "note": "Latency measured on 25 frames at 256×256 with one V100 GPU.",
-      "source": "static/images/quantitative-results.png"
-    }
-  }
-}
-  </script>
+  <link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
+</head>
+  <body class="page-project project-studio studio-pyratok" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
@@ -327,31 +118,50 @@
 </nav>
 
     <main>
-  <section class="hero">
+
+
+
+
+
+
+
+
+  <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</h1>
-            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
-            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span></div>
+            <h1 class="title is-2 publication-title">
+<span class="studio-name">PyraTok</span><span class="studio-subtitle">Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc">Onkar Susladkar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="sony">Tushar Prakash<sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Adheesh Juvekar<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Kiet A. Nguyen<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Dong-Hwan Jang<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc">Ismini Lourentzou<sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div></div>
+            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="sony"><sup class="studio-affiliation-marker" title="Sony Research India" aria-label="Sony Research India">♣</sup><span class="studio-affiliation-name">Sony Research India</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span>
+</div>
 
              <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue">CVPR 2026</h1>
             </div>
 
              <div class="column has-text-centered">
-              <div class="publication-links"><a href="https://arxiv.org/pdf/2601.16210" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PyraTok" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/PyraTok"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
+              <div class="publication-links">
+<a href="https://arxiv.org/pdf/2601.16210" class="external-link button is-normal is-rounded is-dark studio-primary" target="_blank" rel="noreferrer" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2601.16210" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/PyraTok" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noreferrer" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a class="button is-rounded" data-resource="Checkpoint" href="https://huggingface.co/PLAN-Lab/PyraTok"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a>
+</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce PyraTok, a video tokenizer whose Language-aligned Pyramidal Quantization (LaPQ) discretizes features at multiple encoder depths into a shared binary codebook of approximately 48K tokens. Text guidance aligns each pyramid level locally, while an autoregressive objective aligns the token hierarchy globally. This dual alignment preserves semantic consistency across scales and time, supporting high-resolution reconstruction, generation, and zero-shot <span class="studio-tldr-tail">video understanding.</span></p></div>
+</div></section><section class="section studio-opening-examples pyratok-opening" data-studio-section="examples"><div class="container is-max-desktop"><div class="pyratok-reconstruction-grid">
+<figure class="pyratok-video-card"><video src="static/videos/recon/recon-1080p-1.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="1080p · example 1" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>1080p · example 1</figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/recon/recon-1080p-3.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="1080p · example 2" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>1080p · example 2</figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/recon/recon-4k-1.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="4K · example 1" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>4K · example 1</figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/recon/recon-4k-4.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="4K · example 2" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>4K · example 2</figcaption></figure>
+</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">PyraTok Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Abstract</h2>
+      <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
       <div class="content has-text-justified">
         <p>
           Discrete video VAEs underpin modern text-to-video generation and video understanding systems, yet existing tokenizers typically learn visual codebooks at a single scale with limited vocabularies and shallow language supervision, leading to poor cross-modal alignment and zero-shot transfer. We introduce PyraTok, a language-aligned pyramidal tokenizer that learns semantically structured discrete latents across multiple spatiotemporal resolutions.
@@ -363,169 +173,603 @@
           Across ten benchmarks, PyraTok delivers state-of-the-art video reconstruction, consistently improves text-to-video quality, and sets new zero-shot performance on video segmentation, temporal action localization, and video understanding, scaling robustly to up to 4K/8K resolutions.
         </p>
         <div style="margin-top:1.5rem; text-align:center;">
-          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-            <img loading="lazy" decoding="async" src="./static/images/teaser.png" class="interpolation-image" alt="PyraTok teaser figure" loading="lazy">
-            <div class="media-skeleton">Loading...</div>
-          </div>
+
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">✅ Contributions</h2>
+      <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
       <div class="content has-text-justified">
-        <ul class="fa-ul">
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Multi-scale semantically aligned VAE.</b> We introduce PyraTok, a multi-scale semantically aligned Video VAE that couples spatiotemporal quantization with dual semantic alignment, enabling coarse-to-fine understanding and efficient video generation.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>LaPQ quantization.</b> PyraTok leverages LaPQ, a novel language-aligned pyramidal quantization framework, designed to hierarchically encode multi-scale video representations through lateral encoder connections at each stage. Our design enables efficient use of a large ∼48K token vocabulary, with up to 95% codebook utilization.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Dual semantic alignment.</b> We propose a dual semantic alignment strategy that injects text-conditioned priors at every LaPQ level (local alignment) and refines them with an autoregressive objective over the sequence of quantized tokens (global alignment). This jointly enforces token-level grounding and sequence-level coherence, preventing semantic drift across scales and time.</li>
-          <br>
-          <li><span class="fa-li"><i class="fa fa-star" style="color:#FFD700"></i></span><b>Hierarchical semantic codebook loss.</b> We further introduce a hierarchical semantic codebook loss that ties a shared binary codebook to text embeddings and preserves semantic consistency across pyramid levels through stage-wise KL regularization.</li>
-        </ul>
+        <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Multi-scale semantically aligned VAE.</strong> We introduce PyraTok, a multi-scale semantically aligned Video VAE that couples spatiotemporal quantization with dual semantic alignment, enabling coarse-to-fine understanding and efficient video generation.</li>
+<li>
+<strong class="studio-contribution-lead">LaPQ quantization.</strong> PyraTok leverages LaPQ, a novel language-aligned pyramidal quantization framework, designed to hierarchically encode multi-scale video representations through lateral encoder connections at each stage. Our design enables efficient use of a large ∼48K token vocabulary, with up to 95% codebook utilization.</li>
+<li>
+<strong class="studio-contribution-lead">Dual semantic alignment.</strong> We propose a dual semantic alignment strategy that injects text-conditioned priors at every LaPQ level (local alignment) and refines them with an autoregressive objective over the sequence of quantized tokens (global alignment). This jointly enforces token-level grounding and sequence-level coherence, preventing semantic drift across scales and time.</li>
+<li>
+<strong class="studio-contribution-lead">Hierarchical semantic codebook loss.</strong> We further introduce a hierarchical semantic codebook loss that ties a shared binary codebook to text embeddings and preserves semantic consistency across pyramid levels through stage-wise KL regularization.</li>
+</ul>
       </div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Quantitative Results</h2>
-      <div class="content has-text-justified">
-        <div style="text-align: center; padding: 0 0 20px 0;">
-          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-            <img loading="lazy" decoding="async" src="./static/images/quantitative-results.png" class="interpolation-image" alt="PyraTok quantitative results table">
+  </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">PyraTok</span> Method</h2>
+<div class="content"><p>PyraTok builds on a pretrained video VAE and applies Language-aligned Pyramidal Quantization (LaPQ) at multiple encoder depths. A shared large binary codebook discretizes the resulting hierarchy into compact, semantically structured video tokens. Text-guided quantization provides local alignment at each scale, while an autoregressive objective over the token hierarchy enforces global sequence coherence. A hierarchical semantic codebook loss links the shared codebook to text embeddings and regularizes consistency across pyramid levels.</p></div>
+<div class="media-card" data-loaded="true" style="width: 85%; margin: 0px auto; position: relative;">
+            <img loading="lazy" decoding="async" src="./static/images/architecture.png" class="interpolation-image" alt="PyraTok architecture with multi-scale Language-aligned Pyramidal Quantization, text conditioning, and autoregressive semantic alignment">
             <div class="media-skeleton">Loading...</div>
           </div>
-          <p class="has-text-justified">
+</div></section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+    <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/quantitative-results.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Reconstruction quality</h3>
+<p class="has-text-justified studio-result-description">
             Reconstruction quality on WebVid-10M and COCO-Val, with parameter counts and inference latency.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Reconstruction quality"><table class="studio-native-table">
+<caption class="studio-sr-only">Reconstruction quality</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Parameters</th>
+<th scope="col">Latency (ms)</th>
+<th scope="col">WebVid · PSNR ↑</th>
+<th scope="col">WebVid · SSIM ↑</th>
+<th scope="col">WebVid · LPIPS ↓</th>
+<th scope="col">COCO · PSNR ↑</th>
+<th scope="col">COCO · SSIM ↑</th>
+<th scope="col">COCO · LPIPS ↓</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">CogVideoX</th>
+<td>288M</td>
+<td class="studio-numeric-cell">712</td>
+<td class="studio-numeric-cell">29.92</td>
+<td class="studio-numeric-cell">0.811</td>
+<td class="studio-numeric-cell">0.141</td>
+<td class="studio-numeric-cell">30.11</td>
+<td class="studio-numeric-cell">0.833</td>
+<td class="studio-numeric-cell">0.111</td>
+</tr>
+<tr>
+<th scope="row">3D-MBQ-VAE [44]</th>
+<td>317M</td>
+<td class="studio-numeric-cell">650</td>
+<td class="studio-numeric-cell">33.00</td>
+<td class="studio-numeric-cell">0.848</td>
+<td class="studio-numeric-cell">0.092</td>
+<td class="studio-numeric-cell">32.11</td>
+<td class="studio-numeric-cell">0.858</td>
+<td class="studio-numeric-cell">0.108</td>
+</tr>
+<tr>
+<th scope="row">WAN 2.2</th>
+<td>222M</td>
+<td class="studio-numeric-cell">449</td>
+<td class="studio-numeric-cell">32.94</td>
+<td class="studio-numeric-cell">0.841</td>
+<td class="studio-numeric-cell">0.101</td>
+<td class="studio-numeric-cell">33.43</td>
+<td class="studio-numeric-cell">0.861</td>
+<td class="studio-numeric-cell">0.103</td>
+</tr>
+<tr>
+<th scope="row">OmniTokenizer</th>
+<td>82M</td>
+<td class="studio-numeric-cell">444</td>
+<td class="studio-numeric-cell">32.03</td>
+<td class="studio-numeric-cell">0.812</td>
+<td class="studio-numeric-cell">0.152</td>
+<td class="studio-numeric-cell">32.09</td>
+<td class="studio-numeric-cell">0.845</td>
+<td class="studio-numeric-cell">0.141</td>
+</tr>
+<tr>
+<th scope="row">LARP</th>
+<td>183M</td>
+<td class="studio-numeric-cell">689</td>
+<td class="studio-numeric-cell">33.03</td>
+<td class="studio-numeric-cell">0.851</td>
+<td class="studio-numeric-cell">0.091</td>
+<td class="studio-numeric-cell">34.26</td>
+<td class="studio-numeric-cell">0.853</td>
+<td class="studio-numeric-cell">0.089</td>
+</tr>
+<tr>
+<th scope="row">TokenFlow</th>
+<td>176M</td>
+<td class="studio-numeric-cell">600</td>
+<td class="studio-numeric-cell">28.21</td>
+<td class="studio-numeric-cell">0.799</td>
+<td class="studio-numeric-cell">0.189</td>
+<td class="studio-numeric-cell">30.11</td>
+<td class="studio-numeric-cell">0.811</td>
+<td class="studio-numeric-cell">0.177</td>
+</tr>
+<tr>
+<th scope="row">VideoVae+</th>
+<td>192M</td>
+<td class="studio-numeric-cell">555</td>
+<td class="studio-numeric-cell">29.17</td>
+<td class="studio-numeric-cell">0.812</td>
+<td class="studio-numeric-cell">0.201</td>
+<td class="studio-numeric-cell">31.45</td>
+<td class="studio-numeric-cell">0.832</td>
+<td class="studio-numeric-cell">0.162</td>
+</tr>
+<tr>
+<th scope="row">TexTok</th>
+<td>173M</td>
+<td class="studio-numeric-cell">661</td>
+<td class="studio-numeric-cell">27.42</td>
+<td class="studio-numeric-cell">0.831</td>
+<td class="studio-numeric-cell">0.222</td>
+<td class="studio-numeric-cell">29.29</td>
+<td class="studio-numeric-cell">0.841</td>
+<td class="studio-numeric-cell">0.181</td>
+</tr>
+<tr>
+<th scope="row">LG-VQ</th>
+<td>168M</td>
+<td class="studio-numeric-cell">598</td>
+<td class="studio-numeric-cell">30.23</td>
+<td class="studio-numeric-cell">0.807</td>
+<td class="studio-numeric-cell">0.173</td>
+<td class="studio-numeric-cell">31.32</td>
+<td class="studio-numeric-cell">0.836</td>
+<td class="studio-numeric-cell">0.152</td>
+</tr>
+<tr>
+<th scope="row">TokLIP</th>
+<td>207M</td>
+<td class="studio-numeric-cell">604</td>
+<td class="studio-numeric-cell">31.28</td>
+<td class="studio-numeric-cell">0.837</td>
+<td class="studio-numeric-cell">0.152</td>
+<td class="studio-numeric-cell">33.42</td>
+<td class="studio-numeric-cell">0.849</td>
+<td class="studio-numeric-cell">0.105</td>
+</tr>
+<tr>
+<th scope="row">SweetTok</th>
+<td>128M</td>
+<td class="studio-numeric-cell">432</td>
+<td class="studio-numeric-cell">32.32</td>
+<td class="studio-numeric-cell">0.842</td>
+<td class="studio-numeric-cell">0.137</td>
+<td class="studio-numeric-cell">32.78</td>
+<td class="studio-numeric-cell">0.847</td>
+<td class="studio-numeric-cell">0.123</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PyraTok (Ours)</th>
+<td>192M</td>
+<td class="studio-numeric-cell">492</td>
+<td class="studio-numeric-cell">35.72</td>
+<td class="studio-numeric-cell">0.879</td>
+<td class="studio-numeric-cell">0.066</td>
+<td class="studio-numeric-cell">36.05</td>
+<td class="studio-numeric-cell">0.885</td>
+<td class="studio-numeric-cell">0.071</td>
+</tr>
+</tbody>
+</table></div>
+<figcaption class="studio-result-note">Latency measured on 25 frames at 256×256 with one V100 GPU.</figcaption></figure><figure class="studio-native-result pyratok-benchmark-dashboard studio-result-card" data-result-source="paper:2601.16210:tables-2-5" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Beyond reconstruction: generation and understanding</h3>
+<p class="studio-result-description">Ten benchmarks cover reconstruction, generation, segmentation, action localization, and video understanding. The reconstruction comparison appears above. Choose a task below to explore the remaining results.</p>
+<div class="pyratok-task-tabs" role="tablist" aria-label="PyraTok evaluation tasks">
+<button type="button" id="pyratok-task-generation" role="tab" aria-controls="pyratok-task-panel" aria-selected="true" tabindex="0" data-panel-template="panel-pyratok-task-generation">Text-to-video generation</button><button type="button" id="pyratok-task-segmentation" role="tab" aria-controls="pyratok-task-panel" aria-selected="false" tabindex="-1" data-panel-template="panel-pyratok-task-segmentation">Zero-shot video segmentation</button><button type="button" id="pyratok-task-localization" role="tab" aria-controls="pyratok-task-panel" aria-selected="false" tabindex="-1" data-panel-template="panel-pyratok-task-localization">Temporal action localization</button><button type="button" id="pyratok-task-understanding" role="tab" aria-controls="pyratok-task-panel" aria-selected="false" tabindex="-1" data-panel-template="panel-pyratok-task-understanding">Video understanding and classification</button>
+</div>
+<div class="pyratok-task-panel" role="tabpanel" id="pyratok-task-panel" aria-labelledby="pyratok-task-generation">
+<h4>Text-to-video generation</h4>
+<p class="pyratok-task-description">Replacing the tokenizer improves generation quality across three backbones on WebVid-10M. Compare each model with and without PyraTok.</p>
+<div class="pyratok-metric-controls">
+<label for="pyratok-benchmark-metric">Benchmark / metric</label><select id="pyratok-benchmark-metric" data-chart-target="project-chart-0"><option value="1" selected>FVD ↓</option>
+<option value="2">TC ↑</option></select>
+</div>
+<div class="studio-svg-scroll pyratok-comparison-chart" tabindex="0" id="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — FVD ↓"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">121.2</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">242.5</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">363.7</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">485</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="401.0227647641043" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 374</title></rect><text x="676.0227647641043" y="46">374</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="391.3724843286043" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 365</title></rect><text x="666.3724843286043" y="88">365</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 433</title></rect><text x="739.2857142857142" y="130">433</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="440.6961398878258" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 411</title></rect><text x="715.6961398878258" y="172">411</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="426.7568459254371" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 398</title></rect><text x="701.7568459254371" y="214">398</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="404.2395249092708" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 377</title></rect><text x="679.2395249092708" y="256">377</text></svg></div>
+<details class="pyratok-full-scores"><summary>All model scores</summary><div class="studio-table-scroll" tabindex="0"><table class="studio-native-table" data-benchmark-source="paper:2601.16210:table-2">
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">FVD ↓</th>
+<th scope="col">TC ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">MotionAura</th>
+<td>374</td>
+<td>204</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">MotionAura + PyraTok</th>
+<td>365</td>
+<td>246</td>
+</tr>
+<tr>
+<th scope="row">Open MAGVITv2</th>
+<td>433</td>
+<td>191</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Open MAGVITv2 + PyraTok</th>
+<td>411</td>
+<td>214</td>
+</tr>
+<tr>
+<th scope="row">OmniGenV2</th>
+<td>398</td>
+<td>185</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">OmniGenV2 + PyraTok</th>
+<td>377</td>
+<td>208</td>
+</tr>
+</tbody>
+</table></div></details><template data-chart-option="1" data-chart-target="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — FVD ↓"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">121.2</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">242.5</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">363.7</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">485</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="401.0227647641043" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 374</title></rect><text x="676.0227647641043" y="46">374</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="391.3724843286043" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 365</title></rect><text x="666.3724843286043" y="88">365</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 433</title></rect><text x="739.2857142857142" y="130">433</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="440.6961398878258" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 411</title></rect><text x="715.6961398878258" y="172">411</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="426.7568459254371" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 398</title></rect><text x="701.7568459254371" y="214">398</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="404.2395249092708" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 377</title></rect><text x="679.2395249092708" y="256">377</text></svg></template><template data-chart-option="2" data-chart-target="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — TC ↑"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">68.9</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">137.8</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">206.6</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">275.5</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="385.0174216027874" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 204</title></rect><text x="660.0174216027874" y="46">204</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 246</title></rect><text x="739.2857142857142" y="88">246</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="360.4819976771196" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 191</title></rect><text x="635.4819976771196" y="130">191</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="403.8908246225319" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 214</title></rect><text x="678.8908246225319" y="172">214</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="349.1579558652729" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 185</title></rect><text x="624.1579558652729" y="214">185</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="392.56678281068525" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 208</title></rect><text x="667.5667828106853" y="256">208</text></svg></template>
+</div>
+<template id="panel-pyratok-task-generation"><h4>Text-to-video generation</h4>
+<p class="pyratok-task-description">Replacing the tokenizer improves generation quality across three backbones on WebVid-10M. Compare each model with and without PyraTok.</p>
+<div class="pyratok-metric-controls">
+<label for="pyratok-benchmark-metric">Benchmark / metric</label><select id="pyratok-benchmark-metric" data-chart-target="project-chart-0"><option value="1" selected>FVD ↓</option>
+<option value="2">TC ↑</option></select>
+</div>
+<div class="studio-svg-scroll pyratok-comparison-chart" tabindex="0" id="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — FVD ↓"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">121.2</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">242.5</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">363.7</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">485</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="401.0227647641043" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 374</title></rect><text x="676.0227647641043" y="46">374</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="391.3724843286043" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 365</title></rect><text x="666.3724843286043" y="88">365</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 433</title></rect><text x="739.2857142857142" y="130">433</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="440.6961398878258" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 411</title></rect><text x="715.6961398878258" y="172">411</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="426.7568459254371" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 398</title></rect><text x="701.7568459254371" y="214">398</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="404.2395249092708" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 377</title></rect><text x="679.2395249092708" y="256">377</text></svg></div>
+<details class="pyratok-full-scores"><summary>All model scores</summary><div class="studio-table-scroll" tabindex="0"><table class="studio-native-table" data-benchmark-source="paper:2601.16210:table-2">
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">FVD ↓</th>
+<th scope="col">TC ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">MotionAura</th>
+<td>374</td>
+<td>204</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">MotionAura + PyraTok</th>
+<td>365</td>
+<td>246</td>
+</tr>
+<tr>
+<th scope="row">Open MAGVITv2</th>
+<td>433</td>
+<td>191</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Open MAGVITv2 + PyraTok</th>
+<td>411</td>
+<td>214</td>
+</tr>
+<tr>
+<th scope="row">OmniGenV2</th>
+<td>398</td>
+<td>185</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">OmniGenV2 + PyraTok</th>
+<td>377</td>
+<td>208</td>
+</tr>
+</tbody>
+</table></div></details><template data-chart-option="1" data-chart-target="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — FVD ↓"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">121.2</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">242.5</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">363.7</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">485</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="401.0227647641043" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 374</title></rect><text x="676.0227647641043" y="46">374</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="391.3724843286043" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 365</title></rect><text x="666.3724843286043" y="88">365</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 433</title></rect><text x="739.2857142857142" y="130">433</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="440.6961398878258" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 411</title></rect><text x="715.6961398878258" y="172">411</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="426.7568459254371" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 398</title></rect><text x="701.7568459254371" y="214">398</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="404.2395249092708" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 377</title></rect><text x="679.2395249092708" y="256">377</text></svg></template><template data-chart-option="2" data-chart-target="project-chart-0"><svg viewbox="0 0 850 325" role="img" aria-label="Text-to-video generation — TC ↑"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">68.9</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">137.8</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">206.6</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">275.5</text><text x="253" y="46" text-anchor="end">MotionAura</text><rect x="265" y="28" width="385.0174216027874" height="24" rx="4" fill="#83afd9" tabindex="0"><title>MotionAura: 204</title></rect><text x="660.0174216027874" y="46">204</text><text x="253" y="88" text-anchor="end">MotionAura + PyraTok</text><rect x="265" y="70" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>MotionAura + PyraTok: 246</title></rect><text x="739.2857142857142" y="88">246</text><text x="253" y="130" text-anchor="end">Open MAGVITv2</text><rect x="265" y="112" width="360.4819976771196" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Open MAGVITv2: 191</title></rect><text x="635.4819976771196" y="130">191</text><text x="253" y="172" text-anchor="end">Open MAGVITv2 + PyraTok</text><rect x="265" y="154" width="403.8908246225319" height="24" rx="4" fill="#ff915b" tabindex="0"><title>Open MAGVITv2 + PyraTok: 214</title></rect><text x="678.8908246225319" y="172">214</text><text x="253" y="214" text-anchor="end">OmniGenV2</text><rect x="265" y="196" width="349.1579558652729" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniGenV2: 185</title></rect><text x="624.1579558652729" y="214">185</text><text x="253" y="256" text-anchor="end">OmniGenV2 + PyraTok</text><rect x="265" y="238" width="392.56678281068525" height="24" rx="4" fill="#ff915b" tabindex="0"><title>OmniGenV2 + PyraTok: 208</title></rect><text x="667.5667828106853" y="256">208</text></svg></template></template><template id="panel-pyratok-task-segmentation"><h4>Zero-shot video segmentation</h4>
+<p class="pyratok-task-description">Text-guided segmentation on YouTube-VIS 2021 and OVIS. Training settings are shown for each method so supervised, unsupervised, and zero-shot results remain distinguishable.</p>
+<div class="pyratok-metric-controls">
+<label for="pyratok-benchmark-metric">Benchmark / metric</label><select id="pyratok-benchmark-metric" data-chart-target="project-chart-1"><option value="2" selected>YouTube-VIS 2021 · mAP ↑</option>
+<option value="3">YouTube-VIS 2021 · Jaccard ↑</option>
+<option value="4">OVIS · mAP ↑</option>
+<option value="5">OVIS · Jaccard ↑</option></select>
+</div>
+<div class="studio-svg-scroll pyratok-comparison-chart" tabindex="0" id="project-chart-1"><svg viewbox="0 0 850 367" role="img" aria-label="Zero-shot video segmentation — YouTube-VIS 2021 · mAP ↑"><line x1="265" x2="265" y1="16" y2="327" class="studio-grid"></line><text x="265" y="352" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="327" class="studio-grid"></line><text x="395" y="352" text-anchor="middle">12.4</text><line x1="525" x2="525" y1="16" y2="327" class="studio-grid"></line><text x="525" y="352" text-anchor="middle">24.8</text><line x1="655" x2="655" y1="16" y2="327" class="studio-grid"></line><text x="655" y="352" text-anchor="middle">37.1</text><line x1="785" x2="785" y1="16" y2="327" class="studio-grid"></line><text x="785" y="352" text-anchor="middle">49.5</text><text x="253" y="46" text-anchor="end">CLIP-VIS · Supervised</text><rect x="265" y="28" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>CLIP-VIS · Supervised: 44.2</title></rect><text x="739.2857142857142" y="46">44.2</text><text x="253" y="88" text-anchor="end">VideoCutLER · Unsupervised</text><rect x="265" y="70" width="179.62184873949582" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoCutLER · Unsupervised: 17.1</title></rect><text x="454.6218487394958" y="88">17.1</text><text x="253" y="130" text-anchor="end">UVIS · Unsupervised</text><rect x="265" y="112" width="183.8235294117647" height="24" rx="4" fill="#83afd9" tabindex="0"><title>UVIS · Unsupervised: 17.5</title></rect><text x="458.8235294117647" y="130">17.5</text><text x="253" y="172" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="154" width="129.51680672268907" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 12.33</title></rect><text x="404.51680672268907" y="172">12.33</text><text x="253" y="214" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="196" width="110.50420168067228" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 10.52</title></rect><text x="385.5042016806723" y="214">10.52</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="152.7310924369748" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 14.54</title></rect><text x="427.7310924369748" y="256">14.54</text><text x="253" y="298" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="280" width="257.7731092436975" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 24.54</title></rect><text x="532.7731092436975" y="298">24.54</text></svg></div>
+<details class="pyratok-full-scores"><summary>All model scores</summary><div class="studio-table-scroll" tabindex="0"><table class="studio-native-table" data-benchmark-source="paper:2601.16210:table-3">
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Training</th>
+<th scope="col">YouTube-VIS 2021 · mAP ↑</th>
+<th scope="col">YouTube-VIS 2021 · Jaccard ↑</th>
+<th scope="col">OVIS · mAP ↑</th>
+<th scope="col">OVIS · Jaccard ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">CLIP-VIS</th>
+<td>Supervised</td>
+<td>44.2</td>
+<td>76.31</td>
+<td>18.6</td>
+<td>60.09</td>
+</tr>
+<tr>
+<th scope="row">VideoCutLER</th>
+<td>Unsupervised</td>
+<td>17.1</td>
+<td>62.23</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">UVIS</th>
+<td>Unsupervised</td>
+<td>17.5</td>
+<td>63.11</td>
+<td>3.5</td>
+<td>36.71</td>
+</tr>
+<tr>
+<th scope="row">VideoVAE+</th>
+<td>Zero-shot</td>
+<td>12.33</td>
+<td>51.21</td>
+<td>2.8</td>
+<td>29.91</td>
+</tr>
+<tr>
+<th scope="row">LARP</th>
+<td>Zero-shot</td>
+<td>10.52</td>
+<td>49.37</td>
+<td>1.7</td>
+<td>28.45</td>
+</tr>
+<tr>
+<th scope="row">OmniTokenizer</th>
+<td>Zero-shot</td>
+<td>14.54</td>
+<td>51.12</td>
+<td>2.8</td>
+<td>33.27</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PyraTok</th>
+<td>Zero-shot</td>
+<td>24.54</td>
+<td>66.56</td>
+<td>8.9</td>
+<td>49.44</td>
+</tr>
+</tbody>
+</table></div></details><template data-chart-option="2" data-chart-target="project-chart-1"><svg viewbox="0 0 850 367" role="img" aria-label="Zero-shot video segmentation — YouTube-VIS 2021 · mAP ↑"><line x1="265" x2="265" y1="16" y2="327" class="studio-grid"></line><text x="265" y="352" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="327" class="studio-grid"></line><text x="395" y="352" text-anchor="middle">12.4</text><line x1="525" x2="525" y1="16" y2="327" class="studio-grid"></line><text x="525" y="352" text-anchor="middle">24.8</text><line x1="655" x2="655" y1="16" y2="327" class="studio-grid"></line><text x="655" y="352" text-anchor="middle">37.1</text><line x1="785" x2="785" y1="16" y2="327" class="studio-grid"></line><text x="785" y="352" text-anchor="middle">49.5</text><text x="253" y="46" text-anchor="end">CLIP-VIS · Supervised</text><rect x="265" y="28" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>CLIP-VIS · Supervised: 44.2</title></rect><text x="739.2857142857142" y="46">44.2</text><text x="253" y="88" text-anchor="end">VideoCutLER · Unsupervised</text><rect x="265" y="70" width="179.62184873949582" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoCutLER · Unsupervised: 17.1</title></rect><text x="454.6218487394958" y="88">17.1</text><text x="253" y="130" text-anchor="end">UVIS · Unsupervised</text><rect x="265" y="112" width="183.8235294117647" height="24" rx="4" fill="#83afd9" tabindex="0"><title>UVIS · Unsupervised: 17.5</title></rect><text x="458.8235294117647" y="130">17.5</text><text x="253" y="172" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="154" width="129.51680672268907" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 12.33</title></rect><text x="404.51680672268907" y="172">12.33</text><text x="253" y="214" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="196" width="110.50420168067228" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 10.52</title></rect><text x="385.5042016806723" y="214">10.52</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="152.7310924369748" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 14.54</title></rect><text x="427.7310924369748" y="256">14.54</text><text x="253" y="298" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="280" width="257.7731092436975" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 24.54</title></rect><text x="532.7731092436975" y="298">24.54</text></svg></template><template data-chart-option="3" data-chart-target="project-chart-1"><svg viewbox="0 0 850 367" role="img" aria-label="Zero-shot video segmentation — YouTube-VIS 2021 · Jaccard ↑"><line x1="265" x2="265" y1="16" y2="327" class="studio-grid"></line><text x="265" y="352" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="327" class="studio-grid"></line><text x="395" y="352" text-anchor="middle">21.4</text><line x1="525" x2="525" y1="16" y2="327" class="studio-grid"></line><text x="525" y="352" text-anchor="middle">42.7</text><line x1="655" x2="655" y1="16" y2="327" class="studio-grid"></line><text x="655" y="352" text-anchor="middle">64.1</text><line x1="785" x2="785" y1="16" y2="327" class="studio-grid"></line><text x="785" y="352" text-anchor="middle">85.5</text><text x="253" y="46" text-anchor="end">CLIP-VIS · Supervised</text><rect x="265" y="28" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>CLIP-VIS · Supervised: 76.31</title></rect><text x="739.2857142857142" y="46">76.31</text><text x="253" y="88" text-anchor="end">VideoCutLER · Unsupervised</text><rect x="265" y="70" width="378.62010221465073" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoCutLER · Unsupervised: 62.23</title></rect><text x="653.6201022146507" y="88">62.23</text><text x="253" y="130" text-anchor="end">UVIS · Unsupervised</text><rect x="265" y="112" width="383.9742029690922" height="24" rx="4" fill="#83afd9" tabindex="0"><title>UVIS · Unsupervised: 63.11</title></rect><text x="658.9742029690922" y="130">63.11</text><text x="253" y="172" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="154" width="311.5721586760769" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 51.21</title></rect><text x="586.5721586760769" y="172">51.21</text><text x="253" y="214" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="196" width="300.37722073497196" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 49.37</title></rect><text x="575.377220734972" y="214">49.37</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="311.02458018982713" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 51.12</title></rect><text x="586.0245801898271" y="256">51.12</text><text x="253" y="298" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="280" width="404.96471160866395" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 66.56</title></rect><text x="679.964711608664" y="298">66.56</text></svg></template><template data-chart-option="4" data-chart-target="project-chart-1"><svg viewbox="0 0 850 325" role="img" aria-label="Zero-shot video segmentation — OVIS · mAP ↑"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">5.2</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">10.4</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">15.6</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">20.8</text><text x="253" y="46" text-anchor="end">CLIP-VIS · Supervised</text><rect x="265" y="28" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>CLIP-VIS · Supervised: 18.6</title></rect><text x="739.2857142857142" y="46">18.6</text><text x="253" y="88" text-anchor="end">UVIS · Unsupervised</text><rect x="265" y="70" width="87.36559139784947" height="24" rx="4" fill="#83afd9" tabindex="0"><title>UVIS · Unsupervised: 3.5</title></rect><text x="362.36559139784947" y="88">3.5</text><text x="253" y="130" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="112" width="69.89247311827955" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 2.8</title></rect><text x="344.89247311827955" y="130">2.8</text><text x="253" y="172" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="154" width="42.434715821812574" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 1.7</title></rect><text x="317.4347158218126" y="172">1.7</text><text x="253" y="214" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="196" width="69.89247311827955" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 2.8</title></rect><text x="344.89247311827955" y="214">2.8</text><text x="253" y="256" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="238" width="222.15821812596005" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 8.9</title></rect><text x="497.15821812596005" y="256">8.9</text></svg></template><template data-chart-option="5" data-chart-target="project-chart-1"><svg viewbox="0 0 850 325" role="img" aria-label="Zero-shot video segmentation — OVIS · Jaccard ↑"><line x1="265" x2="265" y1="16" y2="285" class="studio-grid"></line><text x="265" y="310" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="285" class="studio-grid"></line><text x="395" y="310" text-anchor="middle">16.8</text><line x1="525" x2="525" y1="16" y2="285" class="studio-grid"></line><text x="525" y="310" text-anchor="middle">33.7</text><line x1="655" x2="655" y1="16" y2="285" class="studio-grid"></line><text x="655" y="310" text-anchor="middle">50.5</text><line x1="785" x2="785" y1="16" y2="285" class="studio-grid"></line><text x="785" y="310" text-anchor="middle">67.3</text><text x="253" y="46" text-anchor="end">CLIP-VIS · Supervised</text><rect x="265" y="28" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>CLIP-VIS · Supervised: 60.09</title></rect><text x="739.2857142857142" y="46">60.09</text><text x="253" y="88" text-anchor="end">UVIS · Unsupervised</text><rect x="265" y="70" width="283.6400161662268" height="24" rx="4" fill="#83afd9" tabindex="0"><title>UVIS · Unsupervised: 36.71</title></rect><text x="558.6400161662268" y="88">36.71</text><text x="253" y="130" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="112" width="231.0997789030739" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 29.91</title></rect><text x="506.0997789030739" y="130">29.91</text><text x="253" y="172" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="154" width="219.81908090245577" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 28.45</title></rect><text x="494.81908090245577" y="172">28.45</text><text x="253" y="214" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="196" width="257.0608373154554" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 33.27</title></rect><text x="532.0608373154554" y="214">33.27</text><text x="253" y="256" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="238" width="381.998430925041" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 49.44</title></rect><text x="656.998430925041" y="256">49.44</text></svg></template></template><template id="panel-pyratok-task-localization"><h4>Temporal action localization</h4>
+<p class="pyratok-task-description">Average mAP under a 50% seen / 50% unseen split on THUMOS14 and ActivityNet v1.3. The comparison includes supervised and zero-shot methods.</p>
+<div class="pyratok-metric-controls">
+<label for="pyratok-benchmark-metric">Benchmark / metric</label><select id="pyratok-benchmark-metric" data-chart-target="project-chart-2"><option value="2" selected>THUMOS14 · Avg. mAP ↑</option>
+<option value="3">ActivityNet v1.3 · Avg. mAP ↑</option></select>
+</div>
+<div class="studio-svg-scroll pyratok-comparison-chart" tabindex="0" id="project-chart-2"><svg viewbox="0 0 850 451" role="img" aria-label="Temporal action localization — THUMOS14 · Avg. mAP ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">13.7</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">27.3</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">41</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">54.7</text><text x="253" y="46" text-anchor="end">STALE · Supervised</text><rect x="265" y="28" width="211.21194379391102" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STALE · Supervised: 22.2</title></rect><text x="486.211943793911" y="46">22.2</text><text x="253" y="88" text-anchor="end">DeTAL · Supervised</text><rect x="265" y="70" width="229.2886416861827" height="24" rx="4" fill="#83afd9" tabindex="0"><title>DeTAL · Supervised: 24.1</title></rect><text x="504.2886416861827" y="88">24.1</text><text x="253" y="130" text-anchor="end">STOV-TAL · Supervised</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Supervised: 48.8</title></rect><text x="739.2857142857142" y="130">48.8</text><text x="253" y="172" text-anchor="end">STOV-TAL · Zero-shot</text><rect x="265" y="154" width="299.69262295081967" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Zero-shot: 31.5</title></rect><text x="574.6926229508197" y="172">31.5</text><text x="253" y="214" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="196" width="219.96487119437938" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 23.12</title></rect><text x="494.9648711943794" y="214">23.12</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="223.2947892271663" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 23.47</title></rect><text x="498.2947892271663" y="256">23.47</text><text x="253" y="298" text-anchor="end">SweetTok · Zero-shot</text><rect x="265" y="280" width="240.89578454332553" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok · Zero-shot: 25.32</title></rect><text x="515.8957845433256" y="298">25.32</text><text x="253" y="340" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="322" width="260.8752927400469" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 27.42</title></rect><text x="535.8752927400469" y="340">27.42</text><text x="253" y="382" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="364" width="315.5810889929743" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 33.17</title></rect><text x="590.5810889929743" y="382">33.17</text></svg></div>
+<details class="pyratok-full-scores"><summary>All model scores</summary><div class="studio-table-scroll" tabindex="0"><table class="studio-native-table" data-benchmark-source="paper:2601.16210:table-4">
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Training</th>
+<th scope="col">THUMOS14 · Avg. mAP ↑</th>
+<th scope="col">ActivityNet v1.3 · Avg. mAP ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">STALE</th>
+<td>Supervised</td>
+<td>22.2</td>
+<td>20.5</td>
+</tr>
+<tr>
+<th scope="row">DeTAL</th>
+<td>Supervised</td>
+<td>24.1</td>
+<td>22.4</td>
+</tr>
+<tr>
+<th scope="row">STOV-TAL</th>
+<td>Supervised</td>
+<td>48.8</td>
+<td>29.6</td>
+</tr>
+<tr>
+<th scope="row">STOV-TAL</th>
+<td>Zero-shot</td>
+<td>31.5</td>
+<td>28</td>
+</tr>
+<tr>
+<th scope="row">VideoVAE+</th>
+<td>Zero-shot</td>
+<td>23.12</td>
+<td>21.37</td>
+</tr>
+<tr>
+<th scope="row">OmniTokenizer</th>
+<td>Zero-shot</td>
+<td>23.47</td>
+<td>22.48</td>
+</tr>
+<tr>
+<th scope="row">SweetTok</th>
+<td>Zero-shot</td>
+<td>25.32</td>
+<td>24.53</td>
+</tr>
+<tr>
+<th scope="row">LARP</th>
+<td>Zero-shot</td>
+<td>27.42</td>
+<td>25.53</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PyraTok</th>
+<td>Zero-shot</td>
+<td>33.17</td>
+<td>29.11</td>
+</tr>
+</tbody>
+</table></div></details><template data-chart-option="2" data-chart-target="project-chart-2"><svg viewbox="0 0 850 451" role="img" aria-label="Temporal action localization — THUMOS14 · Avg. mAP ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">13.7</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">27.3</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">41</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">54.7</text><text x="253" y="46" text-anchor="end">STALE · Supervised</text><rect x="265" y="28" width="211.21194379391102" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STALE · Supervised: 22.2</title></rect><text x="486.211943793911" y="46">22.2</text><text x="253" y="88" text-anchor="end">DeTAL · Supervised</text><rect x="265" y="70" width="229.2886416861827" height="24" rx="4" fill="#83afd9" tabindex="0"><title>DeTAL · Supervised: 24.1</title></rect><text x="504.2886416861827" y="88">24.1</text><text x="253" y="130" text-anchor="end">STOV-TAL · Supervised</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Supervised: 48.8</title></rect><text x="739.2857142857142" y="130">48.8</text><text x="253" y="172" text-anchor="end">STOV-TAL · Zero-shot</text><rect x="265" y="154" width="299.69262295081967" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Zero-shot: 31.5</title></rect><text x="574.6926229508197" y="172">31.5</text><text x="253" y="214" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="196" width="219.96487119437938" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 23.12</title></rect><text x="494.9648711943794" y="214">23.12</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="223.2947892271663" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 23.47</title></rect><text x="498.2947892271663" y="256">23.47</text><text x="253" y="298" text-anchor="end">SweetTok · Zero-shot</text><rect x="265" y="280" width="240.89578454332553" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok · Zero-shot: 25.32</title></rect><text x="515.8957845433256" y="298">25.32</text><text x="253" y="340" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="322" width="260.8752927400469" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 27.42</title></rect><text x="535.8752927400469" y="340">27.42</text><text x="253" y="382" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="364" width="315.5810889929743" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 33.17</title></rect><text x="590.5810889929743" y="382">33.17</text></svg></template><template data-chart-option="3" data-chart-target="project-chart-2"><svg viewbox="0 0 850 451" role="img" aria-label="Temporal action localization — ActivityNet v1.3 · Avg. mAP ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">8.3</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">16.6</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">24.9</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">33.2</text><text x="253" y="46" text-anchor="end">STALE · Supervised</text><rect x="265" y="28" width="321.54922779922776" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STALE · Supervised: 20.5</title></rect><text x="596.5492277992278" y="46">20.5</text><text x="253" y="88" text-anchor="end">DeTAL · Supervised</text><rect x="265" y="70" width="351.35135135135124" height="24" rx="4" fill="#83afd9" tabindex="0"><title>DeTAL · Supervised: 22.4</title></rect><text x="626.3513513513512" y="88">22.4</text><text x="253" y="130" text-anchor="end">STOV-TAL · Supervised</text><rect x="265" y="112" width="464.2857142857142" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Supervised: 29.6</title></rect><text x="739.2857142857142" y="130">29.6</text><text x="253" y="172" text-anchor="end">STOV-TAL · Zero-shot</text><rect x="265" y="154" width="439.18918918918916" height="24" rx="4" fill="#83afd9" tabindex="0"><title>STOV-TAL · Zero-shot: 28</title></rect><text x="714.1891891891892" y="172">28</text><text x="253" y="214" text-anchor="end">VideoVAE+ · Zero-shot</text><rect x="265" y="196" width="335.1954633204632" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+ · Zero-shot: 21.37</title></rect><text x="610.1954633204632" y="214">21.37</text><text x="253" y="256" text-anchor="end">OmniTokenizer · Zero-shot</text><rect x="265" y="238" width="352.60617760617754" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer · Zero-shot: 22.48</title></rect><text x="627.6061776061775" y="256">22.48</text><text x="253" y="298" text-anchor="end">SweetTok · Zero-shot</text><rect x="265" y="280" width="384.7611003861002" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok · Zero-shot: 24.53</title></rect><text x="659.7611003861002" y="298">24.53</text><text x="253" y="340" text-anchor="end">LARP · Zero-shot</text><rect x="265" y="322" width="400.44642857142844" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP · Zero-shot: 25.53</title></rect><text x="675.4464285714284" y="340">25.53</text><text x="253" y="382" text-anchor="end">PyraTok · Zero-shot</text><rect x="265" y="364" width="456.5999034749034" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok · Zero-shot: 29.11</title></rect><text x="731.5999034749034" y="382">29.11</text></svg></template></template><template id="panel-pyratok-task-understanding"><h4>Video understanding and classification</h4>
+<p class="pyratok-task-description">Accuracy on MVBench and Kinetics-400, Kinetics-600, and Kinetics-700. The VAE column identifies models that use a video autoencoder.</p>
+<div class="pyratok-metric-controls">
+<label for="pyratok-benchmark-metric">Benchmark / metric</label><select id="pyratok-benchmark-metric" data-chart-target="project-chart-3"><option value="2" selected>MVBench · Accuracy ↑</option>
+<option value="3">Kinetics-400 · Accuracy ↑</option>
+<option value="4">Kinetics-600 · Accuracy ↑</option>
+<option value="5">Kinetics-700 · Accuracy ↑</option></select>
+</div>
+<div class="studio-svg-scroll pyratok-comparison-chart" tabindex="0" id="project-chart-3"><svg viewbox="0 0 850 451" role="img" aria-label="Video understanding and classification — MVBench · Accuracy ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">24.1</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">48.2</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">72.3</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">96.4</text><text x="253" y="46" text-anchor="end">InternVL3-78B</text><rect x="265" y="28" width="427.4256488600322" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL3-78B: 79.2</title></rect><text x="702.4256488600322" y="46">79.2</text><text x="253" y="88" text-anchor="end">Qwen2.5-72B</text><rect x="265" y="70" width="384.791019743943" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5-72B: 71.3</title></rect><text x="659.791019743943" y="88">71.3</text><text x="253" y="130" text-anchor="end">InternVL3-38B</text><rect x="265" y="112" width="410.15592567376825" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL3-38B: 76</title></rect><text x="685.1559256737683" y="130">76</text><text x="253" y="172" text-anchor="end">Qwen2.5VL-7B</text><rect x="265" y="154" width="362.6641869115424" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5VL-7B: 67.2</title></rect><text x="637.6641869115424" y="172">67.2</text><text x="253" y="214" text-anchor="end">Qwen2.5VL-3B</text><rect x="265" y="196" width="361.584829212401" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5VL-3B: 67</title></rect><text x="636.584829212401" y="214">67</text><text x="253" y="256" text-anchor="end">VILA-U</text><rect x="265" y="238" width="438.2731937364042" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VILA-U: 81.21</title></rect><text x="713.2731937364042" y="256">81.21</text><text x="253" y="298" text-anchor="end">OmniTokenizer</text><rect x="265" y="280" width="428.7208780990019" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer: 79.44</title></rect><text x="703.7208780990019" y="298">79.44</text><text x="253" y="340" text-anchor="end">LARP</text><rect x="265" y="322" width="449.0667707278192" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP: 83.21</title></rect><text x="724.0667707278192" y="340">83.21</text><text x="253" y="382" text-anchor="end">PyraTok</text><rect x="265" y="364" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok: 86.03</title></rect><text x="739.2857142857142" y="382">86.03</text></svg></div>
+<details class="pyratok-full-scores"><summary>All model scores</summary><div class="studio-table-scroll" tabindex="0"><table class="studio-native-table" data-benchmark-source="paper:2601.16210:table-5">
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">VAE</th>
+<th scope="col">MVBench · Accuracy ↑</th>
+<th scope="col">Kinetics-400 · Accuracy ↑</th>
+<th scope="col">Kinetics-600 · Accuracy ↑</th>
+<th scope="col">Kinetics-700 · Accuracy ↑</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">InternVL3-78B</th>
+<td>No</td>
+<td>79.2</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">Qwen2.5-72B</th>
+<td>No</td>
+<td>71.3</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">InternVL3-38B</th>
+<td>No</td>
+<td>76</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">Qwen2.5VL-7B</th>
+<td>No</td>
+<td>67.2</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">Qwen2.5VL-3B</th>
+<td>No</td>
+<td>67</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">InternVL</th>
+<td>No</td>
+<td>—</td>
+<td>69.1</td>
+<td>68.9</td>
+<td>60.6</td>
+</tr>
+<tr>
+<th scope="row">InternVideo2</th>
+<td>No</td>
+<td>—</td>
+<td>73.1</td>
+<td>72.8</td>
+<td>64.9</td>
+</tr>
+<tr>
+<th scope="row">VideoPrism-g</th>
+<td>No</td>
+<td>—</td>
+<td>76.4</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">SigLIP2-g-opt</th>
+<td>No</td>
+<td>—</td>
+<td>69.8</td>
+<td>67</td>
+<td>61.8</td>
+</tr>
+<tr>
+<th scope="row">PEcoreG</th>
+<td>No</td>
+<td>—</td>
+<td>76.9</td>
+<td>76.1</td>
+<td>69.1</td>
+</tr>
+<tr>
+<th scope="row">VILA-U</th>
+<td>Yes</td>
+<td>81.21</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">VideoVAE+</th>
+<td>Yes</td>
+<td>—</td>
+<td>63.32</td>
+<td>61.27</td>
+<td>55.55</td>
+</tr>
+<tr>
+<th scope="row">OmniTokenizer</th>
+<td>Yes</td>
+<td>79.44</td>
+<td>65.03</td>
+<td>62.75</td>
+<td>58.71</td>
+</tr>
+<tr>
+<th scope="row">SweetTok</th>
+<td>Yes</td>
+<td>—</td>
+<td>67.54</td>
+<td>65.01</td>
+<td>61.45</td>
+</tr>
+<tr>
+<th scope="row">LARP</th>
+<td>Yes</td>
+<td>83.21</td>
+<td>69.27</td>
+<td>68.52</td>
+<td>66.89</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">PyraTok</th>
+<td>Yes</td>
+<td>86.03</td>
+<td>78.43</td>
+<td>77.11</td>
+<td>74.08</td>
+</tr>
+</tbody>
+</table></div></details><template data-chart-option="2" data-chart-target="project-chart-3"><svg viewbox="0 0 850 451" role="img" aria-label="Video understanding and classification — MVBench · Accuracy ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">24.1</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">48.2</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">72.3</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">96.4</text><text x="253" y="46" text-anchor="end">InternVL3-78B</text><rect x="265" y="28" width="427.4256488600322" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL3-78B: 79.2</title></rect><text x="702.4256488600322" y="46">79.2</text><text x="253" y="88" text-anchor="end">Qwen2.5-72B</text><rect x="265" y="70" width="384.791019743943" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5-72B: 71.3</title></rect><text x="659.791019743943" y="88">71.3</text><text x="253" y="130" text-anchor="end">InternVL3-38B</text><rect x="265" y="112" width="410.15592567376825" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL3-38B: 76</title></rect><text x="685.1559256737683" y="130">76</text><text x="253" y="172" text-anchor="end">Qwen2.5VL-7B</text><rect x="265" y="154" width="362.6641869115424" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5VL-7B: 67.2</title></rect><text x="637.6641869115424" y="172">67.2</text><text x="253" y="214" text-anchor="end">Qwen2.5VL-3B</text><rect x="265" y="196" width="361.584829212401" height="24" rx="4" fill="#83afd9" tabindex="0"><title>Qwen2.5VL-3B: 67</title></rect><text x="636.584829212401" y="214">67</text><text x="253" y="256" text-anchor="end">VILA-U</text><rect x="265" y="238" width="438.2731937364042" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VILA-U: 81.21</title></rect><text x="713.2731937364042" y="256">81.21</text><text x="253" y="298" text-anchor="end">OmniTokenizer</text><rect x="265" y="280" width="428.7208780990019" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer: 79.44</title></rect><text x="703.7208780990019" y="298">79.44</text><text x="253" y="340" text-anchor="end">LARP</text><rect x="265" y="322" width="449.0667707278192" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP: 83.21</title></rect><text x="724.0667707278192" y="340">83.21</text><text x="253" y="382" text-anchor="end">PyraTok</text><rect x="265" y="364" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok: 86.03</title></rect><text x="739.2857142857142" y="382">86.03</text></svg></template><template data-chart-option="3" data-chart-target="project-chart-3"><svg viewbox="0 0 850 493" role="img" aria-label="Video understanding and classification — Kinetics-400 · Accuracy ↑"><line x1="265" x2="265" y1="16" y2="453" class="studio-grid"></line><text x="265" y="478" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="453" class="studio-grid"></line><text x="395" y="478" text-anchor="middle">22</text><line x1="525" x2="525" y1="16" y2="453" class="studio-grid"></line><text x="525" y="478" text-anchor="middle">43.9</text><line x1="655" x2="655" y1="16" y2="453" class="studio-grid"></line><text x="655" y="478" text-anchor="middle">65.9</text><line x1="785" x2="785" y1="16" y2="453" class="studio-grid"></line><text x="785" y="478" text-anchor="middle">87.8</text><text x="253" y="46" text-anchor="end">InternVL</text><rect x="265" y="28" width="409.0544798819692" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL: 69.1</title></rect><text x="684.0544798819692" y="46">69.1</text><text x="253" y="88" text-anchor="end">InternVideo2</text><rect x="265" y="70" width="432.7334656927924" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVideo2: 73.1</title></rect><text x="707.7334656927924" y="88">73.1</text><text x="253" y="130" text-anchor="end">VideoPrism-g</text><rect x="265" y="112" width="452.2686289867215" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoPrism-g: 76.4</title></rect><text x="727.2686289867215" y="130">76.4</text><text x="253" y="172" text-anchor="end">SigLIP2-g-opt</text><rect x="265" y="154" width="413.19830239886335" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SigLIP2-g-opt: 69.8</title></rect><text x="688.1983023988633" y="172">69.8</text><text x="253" y="214" text-anchor="end">PEcoreG</text><rect x="265" y="196" width="455.2285022130744" height="24" rx="4" fill="#83afd9" tabindex="0"><title>PEcoreG: 76.9</title></rect><text x="730.2285022130744" y="214">76.9</text><text x="253" y="256" text-anchor="end">VideoVAE+</text><rect x="265" y="238" width="374.83834538532994" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+: 63.32</title></rect><text x="649.83834538533" y="256">63.32</text><text x="253" y="298" text-anchor="end">OmniTokenizer</text><rect x="265" y="280" width="384.96111181945685" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer: 65.03</title></rect><text x="659.9611118194568" y="298">65.03</text><text x="253" y="340" text-anchor="end">SweetTok</text><rect x="265" y="322" width="399.8196754157484" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok: 67.54</title></rect><text x="674.8196754157484" y="340">67.54</text><text x="253" y="382" text-anchor="end">LARP</text><rect x="265" y="364" width="410.06083677892934" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP: 69.27</title></rect><text x="685.0608367789293" y="382">69.27</text><text x="253" y="424" text-anchor="end">PyraTok</text><rect x="265" y="406" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok: 78.43</title></rect><text x="739.2857142857142" y="424">78.43</text></svg></template><template data-chart-option="4" data-chart-target="project-chart-3"><svg viewbox="0 0 850 451" role="img" aria-label="Video understanding and classification — Kinetics-600 · Accuracy ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">21.6</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">43.2</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">64.8</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">86.4</text><text x="253" y="46" text-anchor="end">InternVL</text><rect x="265" y="28" width="414.85262241325006" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL: 68.9</title></rect><text x="689.8526224132501" y="46">68.9</text><text x="253" y="88" text-anchor="end">InternVideo2</text><rect x="265" y="70" width="438.334846323434" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVideo2: 72.8</title></rect><text x="713.334846323434" y="88">72.8</text><text x="253" y="130" text-anchor="end">SigLIP2-g-opt</text><rect x="265" y="112" width="403.41256461085277" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SigLIP2-g-opt: 67</title></rect><text x="678.4125646108528" y="130">67</text><text x="253" y="172" text-anchor="end">PEcoreG</text><rect x="265" y="154" width="458.20442040128194" height="24" rx="4" fill="#83afd9" tabindex="0"><title>PEcoreG: 76.1</title></rect><text x="733.2044204012819" y="172">76.1</text><text x="253" y="214" text-anchor="end">VideoVAE+</text><rect x="265" y="196" width="368.91175871204405" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+: 61.27</title></rect><text x="643.911758712044" y="214">61.27</text><text x="253" y="256" text-anchor="end">OmniTokenizer</text><rect x="265" y="238" width="377.82296163180615" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer: 62.75</title></rect><text x="652.8229616318062" y="256">62.75</text><text x="253" y="298" text-anchor="end">SweetTok</text><rect x="265" y="280" width="391.43060933360505" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok: 65.01</title></rect><text x="666.430609333605" y="298">65.01</text><text x="253" y="340" text-anchor="end">LARP</text><rect x="265" y="322" width="412.56461085277056" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP: 68.52</title></rect><text x="687.5646108527706" y="340">68.52</text><text x="253" y="382" text-anchor="end">PyraTok</text><rect x="265" y="364" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok: 77.11</title></rect><text x="739.2857142857142" y="382">77.11</text></svg></template><template data-chart-option="5" data-chart-target="project-chart-3"><svg viewbox="0 0 850 451" role="img" aria-label="Video understanding and classification — Kinetics-700 · Accuracy ↑"><line x1="265" x2="265" y1="16" y2="411" class="studio-grid"></line><text x="265" y="436" text-anchor="middle">0</text><line x1="395" x2="395" y1="16" y2="411" class="studio-grid"></line><text x="395" y="436" text-anchor="middle">20.7</text><line x1="525" x2="525" y1="16" y2="411" class="studio-grid"></line><text x="525" y="436" text-anchor="middle">41.5</text><line x1="655" x2="655" y1="16" y2="411" class="studio-grid"></line><text x="655" y="436" text-anchor="middle">62.2</text><line x1="785" x2="785" y1="16" y2="411" class="studio-grid"></line><text x="785" y="436" text-anchor="middle">83</text><text x="253" y="46" text-anchor="end">InternVL</text><rect x="265" y="28" width="379.80175871644565" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVL: 60.6</title></rect><text x="654.8017587164456" y="46">60.6</text><text x="253" y="88" text-anchor="end">InternVideo2</text><rect x="265" y="70" width="406.7513884603518" height="24" rx="4" fill="#83afd9" tabindex="0"><title>InternVideo2: 64.9</title></rect><text x="681.7513884603518" y="88">64.9</text><text x="253" y="130" text-anchor="end">SigLIP2-g-opt</text><rect x="265" y="112" width="387.3225856217216" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SigLIP2-g-opt: 61.8</title></rect><text x="662.3225856217216" y="130">61.8</text><text x="253" y="172" text-anchor="end">PEcoreG</text><rect x="265" y="154" width="433.0742826288183" height="24" rx="4" fill="#83afd9" tabindex="0"><title>PEcoreG: 69.1</title></rect><text x="708.0742826288183" y="172">69.1</text><text x="253" y="214" text-anchor="end">VideoVAE+</text><rect x="265" y="196" width="348.15161215674175" height="24" rx="4" fill="#83afd9" tabindex="0"><title>VideoVAE+: 55.55</title></rect><text x="623.1516121567417" y="214">55.55</text><text x="253" y="256" text-anchor="end">OmniTokenizer</text><rect x="265" y="238" width="367.95645634063567" height="24" rx="4" fill="#83afd9" tabindex="0"><title>OmniTokenizer: 58.71</title></rect><text x="642.9564563406357" y="256">58.71</text><text x="253" y="298" text-anchor="end">SweetTok</text><rect x="265" y="280" width="385.1290111076828" height="24" rx="4" fill="#83afd9" tabindex="0"><title>SweetTok: 61.45</title></rect><text x="660.1290111076828" y="298">61.45</text><text x="253" y="340" text-anchor="end">LARP</text><rect x="265" y="322" width="419.2234264116014" height="24" rx="4" fill="#83afd9" tabindex="0"><title>LARP: 66.89</title></rect><text x="694.2234264116014" y="340">66.89</text><text x="253" y="382" text-anchor="end">PyraTok</text><rect x="265" y="364" width="464.2857142857142" height="24" rx="4" fill="#ff915b" tabindex="0"><title>PyraTok: 74.08</title></rect><text x="739.2857142857142" y="382">74.08</text></svg></template></template></figure>
+</div>
+</div>
+  </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Qualitative Results</h2>
-      <div class="content has-text-justified">
-        PyraTok outputs high-resolution reconstructions while remaining text-aware, which is essential for grounded video understanding and generation tasks.
-      </div>
-      <div style="text-align: center; margin-bottom: 30px;">
-        <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-          <img loading="lazy" decoding="async" src="./static/images/qualitative-main.png" alt="Main qualitative visualization">
-          <div class="media-skeleton">Loading...</div>
-        </div>
-      </div>
-
-            <div style="margin-bottom: 2rem;">
-        <h3 class="title is-4">High-resolution reconstructions</h3>
-        <div style="display:flex; flex-direction:column; gap:1.5rem;">
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/recon/recon-1080p-1.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption has-text-centered" style="margin-top:0.5rem;">1080p reconstruction</p>
-            </div>
-          </div>
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/recon/recon-1080p-3.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption has-text-centered" style="margin-top:0.5rem;">1080p reconstruction</p>
-            </div>
-          </div>
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/recon/recon-4k-1.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption has-text-centered" style="margin-top:0.5rem;">4K reconstruction</p>
-            </div>
-          </div>
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/recon/recon-4k-4.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption has-text-centered" style="margin-top:0.5rem;">4K reconstruction</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="margin-bottom: 2rem; text-align:center;">
-        <h3 class="title is-4">Zero-shot segmentation</h3>
-        <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-          <img loading="lazy" decoding="async" src="./static/images/qualitative-segmentation.png" alt="Segmentation examples">
-          <div class="media-skeleton">Loading...</div>
-        </div>
-        <p class="caption has-text-centered">
-          PyraTok’s language-aligned hierarchy yields sharper zero-shot segmentation masks compared to single-scale tokenizers.
-        </p>
-      </div>
-
-            <div style="margin-bottom: 2rem;">
-        <h3 class="title is-4">Text-to-video generation</h3>
-        <div style="text-align:center; margin:0 auto 1rem;">
-          <div class="media-card" data-loaded="false" style="width:85%; margin:0 auto;">
-            <img loading="lazy" decoding="async" src="./static/images/qualitative-text2video.png" alt="Text-to-video samples">
-            <div class="media-skeleton">Loading...</div>
-          </div>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:1.25rem;">
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/t2v/t2v-magvit.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption">MagvitV2 + PyraTok</p>
-            </div>
-          </div>
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/t2v/t2v-motionaura.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption">MotionAura + PyraTok</p>
-            </div>
-          </div>
-          <div style="width:100%;">
-            <div style="width:85%; margin:0 auto; text-align:center;">
-              <div class="media-card" data-loaded="false">
-                <video controls loop muted playsinline>
-                  <source src="./static/videos/t2v/t2v-omnigen.mp4" type="video/mp4">
-                </video>
-                <div class="media-skeleton">Loading...</div>
-              </div>
-              <p class="caption">OmniGenV2 + PyraTok</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  <section class="section" id="BibTeX">
+<h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
+<h3>Text-to-video generation</h3>
+<div class="pyratok-generation-grid">
+<figure class="pyratok-video-card"><video src="static/videos/t2v/t2v-motionaura.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="MotionAura + PyraTok" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>MotionAura + PyraTok</figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/t2v/t2v-magvit.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="MAGVITv2 + PyraTok" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>MAGVITv2 + PyraTok</figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/t2v/t2v-omnigen.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="OmniGenV2 + PyraTok" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption>OmniGenV2 + PyraTok</figcaption></figure>
+</div>
+<h3 class="pyratok-attention-title">Text-guided video localization</h3>
+<p class="pyratok-attention-intro">PyraTok’s attention maps highlight the objects named in a text query. The clips below show responses to bikes, Nike shoes, and a football.</p>
+<div class="pyratok-attention-grid">
+<figure class="pyratok-video-card"><video src="static/videos/attention/bikes.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="Bikes" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption><h4 class="pyratok-attention-target">Bikes</h4>
+<p class="pyratok-text-query"><strong>Prompt: </strong>Two bikes cruising on the road.</p></figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/attention/nike-shoes.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="Nike shoes" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption><h4 class="pyratok-attention-target">Nike shoes</h4>
+<p class="pyratok-text-query"><strong>Prompt: </strong>Player in Nike shoes kicking a football.</p></figcaption></figure><figure class="pyratok-video-card"><video src="static/videos/attention/football.mp4" loop="" controls="" playsinline="" preload="metadata" aria-label="Football" data-studio-autoplay="true" muted="" autoplay=""></video><figcaption><h4 class="pyratok-attention-target">Football</h4>
+<p class="pyratok-text-query"><strong>Prompt: </strong>Player in Nike shoes kicking a football.</p></figcaption></figure>
+</div>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+      <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
       <pre><code>@inproceedings{susladkar2026pyratok,
   title={PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation},
   author={Susladkar, Onkar and Prakash, Tushar and Juvekar, Adheesh and Nguyen, Kiet A. and Jang, Dong-Hwan and Dhillon, Inderjit S and Lourentzou, Ismini},
@@ -533,8 +777,16 @@
   year={2026}
 }</code></pre>
     </div>
-  </section>
-    </main>
+  </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const markLoaded = (media) => {
@@ -559,5 +811,7 @@
       });
     });
   </script>
-  </body>
+
+
+</body>
 </html>

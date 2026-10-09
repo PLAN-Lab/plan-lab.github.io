@@ -420,17 +420,3 @@
     pdfObjectUrlCache.clear();
   });
 })();
-
-// Reviewed project pages load their approved presentation at the existing URLs.
-if (document.body?.dataset.projectPresentation === 'reviewed' ||
-    new URLSearchParams(window.location.search).get('design') === 'studio') {
-  const version = 'project-pages-inline-data-v2';
-  window.PLAN_PROJECT_ASSET_VERSION = version;
-  const style = document.createElement('link');
-  style.rel = 'stylesheet';
-  style.href = '../../assets/css/project-studio.css?v=' + version;
-  document.head.appendChild(style);
-  const script = document.createElement('script');
-  script.src = '../../assets/js/project-studio.js?v=' + version;
-  document.head.appendChild(script);
-}

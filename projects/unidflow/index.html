@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -11,19 +10,18 @@
 
         gtag('config', 'G-48J3PYKGQ6');
     </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Best of Both Worlds: Multimodal Reasoning and Generation via Unified Discrete Flow Matching" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Best of Both Worlds: Multimodal Reasoning and Generation via Unified Discrete Flow Matching">
     <title>Best of Both Worlds: Multimodal Reasoning and Generation via Unified Discrete Flow Matching | PLAN Lab</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-    <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
     <link rel="icon" type="image/svg+xml" href="./static/images/unidflow_logo.svg">
     <style>
         .page-project .interpolation-image {
@@ -78,319 +76,20 @@
             }
         }
     </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "UniDFlow",
-    "tldr": [
-      "We introduce UniDFlow, a discrete flow-matching model that unifies image understanding, generation, and reasoning-guided editing. Separate text and image LoRA adapters preserve specialized capabilities, while a lightweight Mixture-of-LoRA router composes them during diffusion. Multimodal Reference-based DPO (mRef-DPO) uses a visual reference and structured reflection traces to align edits with instructions, geometry, and physical transformations."
-    ],
-    "contributions": [
-      "UniDFlow unifies multimodal understanding, generation, and editing. We introduce a discrete flow-matching framework that bridges high-level visual reasoning and high-fidelity image synthesis within a unified model.",
-      "Task-specific adapters prevent interference between understanding and generation. Separate text and image LoRA adapters are trained while keeping the backbone frozen; KL regularization helps preserve linguistic ability. A lightweight Mixture-of-LoRA (MoRA) router dynamically composes the adapters during diffusion, combining their specialized capabilities.",
-      "Multimodal reference-based preference alignment improves faithful editing. mRef-DPO compares outcomes under identical conditioning against a frozen reference policy and a visual reference image. Structured reflection traces help the model reason through geometric, physical, and temporal transformations before generating the edited image.",
-      "Evaluation demonstrates broad performance and zero-shot generalization. UniDFlow achieves state-of-the-art performance across eight benchmarks and generalizes to inpainting, in-context image generation, reference-based editing, and compositional generation without explicit task-specific training for those tasks."
-    ],
-    "method": {
-      "source": "Method"
-    },
-    "qualitative": {
-      "source": "Qualitative Results: Image Editing",
-      "additionalSources": [
-        "Qualitative Results: Text-to-Image Generation",
-        "Qualitative Results: Reasoning-Based Image Editing",
-        "Qualitative Results: Image Understanding"
-      ]
-    },
-    "contributionLeads": [
-      "UniDFlow unifies multimodal understanding, generation, and editing.",
-      "Task-specific adapters prevent interference between understanding and generation.",
-      "Multimodal reference-based preference alignment improves faithful editing.",
-      "Evaluation demonstrates broad performance and zero-shot generalization."
-    ],
-    "opening": {
-      "source": "teaser.jpg",
-      "alt": "UniDFlow examples of image understanding, generation, and reasoning-guided editing.",
-      "caption": "One model supports visual understanding, text-to-image generation, and edits guided by reasoning."
-    },
-    "heroTitle": {
-      "name": "UniDFlow",
-      "subtitle": "Multimodal Reasoning and Generation via Unified Discrete Flow Matching"
-    }
-  },
-  "resultPanels": {
-    "Multimodal understanding": {
-      "description": "Multimodal understanding across general, mathematical, and visual reasoning benchmarks."
-    },
-    "Text-to-image generation": {}
-  },
-  "results": {
-    "quant_understanding.png": {
-      "type": "table",
-      "title": "Multimodal understanding",
-      "columns": [
-        "Model",
-        "Parameters",
-        "MME-P",
-        "MME-S",
-        "MMBench",
-        "MMMU",
-        "MM-Vet",
-        "MathVista",
-        "MMVP"
-      ],
-      "rows": [
-        [
-          "Qwen2.5-VL (Bai et al., 2025b)",
-          "3B",
-          "—",
-          "2157",
-          "79.1",
-          "53.1",
-          "61.8",
-          "62.3",
-          "—"
-        ],
-        [
-          "BLIP-3 (Xue et al., 2024)",
-          "4B",
-          "—",
-          "—",
-          "76.8",
-          "41.1",
-          "—",
-          "39.6",
-          "—"
-        ],
-        [
-          "DeepSeek-VL2 (Wu et al., 2024b)",
-          "4B",
-          "—",
-          "—",
-          "51.1",
-          "60.0",
-          "62.8",
-          "—",
-          "—"
-        ],
-        [
-          "Qwen3-VL (Bai et al., 2025c)",
-          "4B",
-          "—",
-          "—",
-          "85.1",
-          "64.1",
-          "72.5",
-          "—",
-          "—"
-        ],
-        [
-          "VILA-U (Wu et al., 2024a)",
-          "7B",
-          "1336",
-          "—",
-          "66.6",
-          "32.2",
-          "27.7",
-          "—",
-          "22.0"
-        ],
-        [
-          "Chameleon (Team, 2024a)",
-          "7B",
-          "—",
-          "—",
-          "35.7",
-          "28.4",
-          "8.3",
-          "—",
-          "0.0"
-        ],
-        [
-          "Janus-Pro (Chen et al., 2025a)",
-          "7B",
-          "1567",
-          "—",
-          "79.2",
-          "41.0",
-          "50.0",
-          "—",
-          "—"
-        ],
-        [
-          "TokenFlow-XL (Geyer et al., 2023)",
-          "13B",
-          "1546",
-          "—",
-          "68.9",
-          "38.7",
-          "40.7",
-          "—",
-          "—"
-        ],
-        [
-          "BAGEL (Deng et al., 2025)",
-          "7B",
-          "1687",
-          "2388",
-          "85.0",
-          "55.3",
-          "67.2",
-          "73.1",
-          "69.3"
-        ],
-        [
-          "OmniGen-v2 (Wu et al., 2025)",
-          "8B",
-          "—",
-          "—",
-          "53.1",
-          "61.5",
-          "—",
-          "—",
-          "—"
-        ],
-        [
-          "EMMA (He et al., 2025)",
-          "4B",
-          "—",
-          "—",
-          "85.8",
-          "65.1",
-          "73.0",
-          "75.8",
-          "—"
-        ],
-        [
-          "MammothModa-2 (Shen et al., 2025)",
-          "4B",
-          "1753",
-          "1998",
-          "86.6",
-          "71.23",
-          "79.4",
-          "81.8",
-          "77.5"
-        ],
-        [
-          "Muddit (Shi et al., 2025)",
-          "4B",
-          "1700",
-          "1832",
-          "82.8",
-          "66.6",
-          "76.2",
-          "79.1",
-          "74.1"
-        ],
-        [
-          "UniDFlow",
-          "4B",
-          "1803",
-          "2555",
-          "91.2",
-          "74.3",
-          "82.7",
-          "85.9",
-          "80.2"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/quant_understanding.png"
-    },
-    "quant_generation.png": {
-      "type": "table",
-      "title": "Text-to-image generation",
-      "columns": [
-        "Model",
-        "Parameters",
-        "GenEval",
-        "DPGBench"
-      ],
-      "rows": [
-        [
-          "DALL-E 3 (Betker et al., 2023)",
-          "—",
-          "0.67",
-          "83.50"
-        ],
-        [
-          "SD3-Medium (Esser et al., 2024)",
-          "2B",
-          "0.74",
-          "80.43"
-        ],
-        [
-          "Qwen-Image(-RL) (et al., 2025)",
-          "7B+20B",
-          "0.91",
-          "88.32"
-        ],
-        [
-          "TokenFlow-XL (Geyer et al., 2023)",
-          "14B",
-          "0.55",
-          "—"
-        ],
-        [
-          "Janus-Pro-7B (Chen et al., 2025a)",
-          "7B",
-          "0.80",
-          "84.19"
-        ],
-        [
-          "Bagel (Deng et al., 2025)",
-          "7B+7B",
-          "0.88",
-          "87.74"
-        ],
-        [
-          "OmniGen2/V2 (Wu et al., 2025)",
-          "3B+4B",
-          "0.78",
-          "83.57"
-        ],
-        [
-          "MammothModa-2 (Shen et al., 2025)",
-          "8B+3B+2B",
-          "0.87",
-          "87.20"
-        ],
-        [
-          "EMMA (He et al., 2025)",
-          "4B",
-          "0.93",
-          "85.63"
-        ],
-        [
-          "MUDDIT (Shi et al., 2025)",
-          "8B",
-          "0.90",
-          "86.37"
-        ],
-        [
-          "UniDFlow",
-          "4B",
-          "0.95",
-          "91.19"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/quant_generation.png"
-    }
-  }
-}
-  </script>
+<body class="page-project project-studio studio-unidflow" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
     <nav class="glass-nav">
         <a href="../../index.html#hero" class="nav-logo">
-            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo" />
+            <img src="../../assets/images/logo.svg" alt="PLAN Lab Logo">
         </a>
         <div class="nav-menu">
             <a href="../../publications.html" class="nav-item" aria-label="Publications">
@@ -417,53 +116,67 @@
     </nav>
 
     <main>
-        <section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
             <div class="hero-body">
                 <div class="container is-max-desktop">
                     <div class="columns is-centered">
                         <div class="column has-text-centered">
                             <div style="display: flex;align-items: center;justify-content: center;">
-                                <img src="static/images/unidflow_logo.svg" alt="UniDFlow logo" width="80px">
-                                <h1 class="publication-title">Best of Both Worlds: Multimodal Reasoning and Generation
-                                    via
-                                    <br>
-                                    Unified Discrete Flow Matching
-                                </h1>
+
+                                <h1 class="publication-title">
+<span class="studio-name">UniDFlow</span><span class="studio-subtitle">Multimodal Reasoning and Generation via Unified Discrete Flow Matching</span>
+</h1>
                             </div>
 
-                            <div class="publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Tushar Prakash<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Gayatri Deshmukh<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jiaxun-zhang">Jiaxun Zhang</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span></div><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="google">Tianshu Bao<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="google">Lin Chai<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="iit">Sparsh Mittal<sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span></div></div>
+                            <div class="publication-authors studio-author-list">
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Tushar Prakash<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="independent">Gayatri Deshmukh<sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=jiaxun-zhang">Jiaxun Zhang</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup>, </span>
+</div>
+<div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="google">Tianshu Bao<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="google">Lin Chai<sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="iit">Sparsh Mittal<sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup>, </span><span class="author-block studio-author" data-affiliations="texas,google">Inderjit S Dhillon<sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><sup class="studio-marker-separator">,</sup><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup></span>
+</div>
+</div>
 
-                            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="independent"><sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup><span class="studio-affiliation-name">Independent Researcher</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span><span class="studio-affiliation" data-institution="iit"><sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup><span class="studio-affiliation-name">IIT Roorkee</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span></div>
+                            <div class="is-size-5 publication-authors studio-affiliations">
+<span class="studio-affiliation" data-institution="uiuc"><sup class="studio-affiliation-marker studio-plan-marker" title="University of Illinois Urbana-Champaign" aria-label="University of Illinois Urbana-Champaign">♦</sup><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span><span class="studio-affiliation" data-institution="independent"><sup class="studio-affiliation-marker" title="Independent Researcher" aria-label="Independent Researcher">♣</sup><span class="studio-affiliation-name">Independent Researcher</span></span><span class="studio-affiliation" data-institution="google"><sup class="studio-affiliation-marker" title="Google" aria-label="Google">♠</sup><span class="studio-affiliation-name">Google</span></span><span class="studio-affiliation" data-institution="iit"><sup class="studio-affiliation-marker" title="IIT Roorkee" aria-label="IIT Roorkee">♥</sup><span class="studio-affiliation-name">IIT Roorkee</span></span><span class="studio-affiliation" data-institution="texas"><sup class="studio-affiliation-marker" title="University of Texas at Austin" aria-label="University of Texas at Austin">★</sup><span class="studio-affiliation-name">University of Texas at Austin</span></span>
+</div>
 
                             <p class="publication-venue illini-orange">ICML 2026</p>
 
-                            <div class="publication-links"><a href="https://arxiv.org/pdf/2602.12221" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2602.12221" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Checkpoint" aria-disabled="true" title="Checkpoint is not available yet."><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint (coming soon)</span></a></div>
+                            <div class="publication-links">
+<a href="https://arxiv.org/pdf/2602.12221" class="button is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2602.12221" class="button is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a class="button is-rounded is-dark" data-resource="Code" aria-disabled="true" title="Code is not available yet."><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code (coming soon)</span></a><a class="button is-rounded is-dark" data-resource="Checkpoint" aria-disabled="true" title="Checkpoint is not available yet."><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint (coming soon)</span></a>
+</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="hero teaser">
-            <div class="container is-max-desktop">
-                <div class="hero-body">
-                    <div class="content has-text-justified">
-                        <strong>TL;DR:</strong> We propose UniDFlow, a unified multimodal diffusion framework that
-                        supports image understanding, generation, and thinking-based editing. The model performs visual
-                        reasoning for question answering, produces high-quality text-to-image generations across diverse
-                        scenes and subjects, and enables instruction-driven, multi-step image editing through structured
-                        reasoning.
-                    </div>
-
-                    <img src="./static/images/teaser.jpg" class="interpolation-image" alt="Project teaser image" />
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
+        </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce UniDFlow, a discrete flow-matching model that unifies image understanding, generation, and reasoning-guided editing. Separate text and image LoRA adapters preserve specialized capabilities, while a lightweight Mixture-of-LoRA router composes them during diffusion. Multimodal Reference-based DPO (mRef-DPO) uses a visual reference and structured reflection traces to align edits with instructions, geometry, and <span class="studio-tldr-tail">physical transformations.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="UniDFlow examples"><div class="container"><div class="studio-example-grid studio-example-single"><figure class="studio-example-card"><div class="studio-example-media"><img src="./static/images/teaser.jpg" alt="UniDFlow examples of image understanding, generation, and reasoning-guided editing." loading="eager" decoding="async"></div>
+<figcaption class="studio-example-caption"><p>One model supports visual understanding, text-to-image generation, and edits guided by reasoning.</p></figcaption></figure></div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">UniDFlow Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Abstract</h2>
+                    <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>We propose UniDFlow, a unified discrete flow-matching framework for multimodal understanding,
                             generation, and editing. UniDFlow decouples understanding and generation via task-specific
@@ -477,173 +190,349 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section">
+        </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">UniDFlow unifies multimodal understanding, generation, and editing.</strong> We introduce a discrete flow-matching framework that bridges high-level visual reasoning and high-fidelity image synthesis within a unified model.</li>
+<li>
+<strong class="studio-contribution-lead">Task-specific adapters prevent interference between understanding and generation.</strong> Separate text and image LoRA adapters are trained while keeping the backbone frozen; KL regularization helps preserve linguistic ability. A lightweight Mixture-of-LoRA (MoRA) router dynamically composes the adapters during diffusion, combining their specialized capabilities.</li>
+<li>
+<strong class="studio-contribution-lead">Multimodal reference-based preference alignment improves faithful editing.</strong> mRef-DPO compares outcomes under identical conditioning against a frozen reference policy and a visual reference image. Structured reflection traces help the model reason through geometric, physical, and temporal transformations before generating the edited image.</li>
+<li>
+<strong class="studio-contribution-lead">Evaluation demonstrates broad performance and zero-shot generalization.</strong> UniDFlow achieves state-of-the-art performance across eight benchmarks and generalizes to inpainting, in-context image generation, reference-based editing, and compositional generation without explicit task-specific training for those tasks.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
+            <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">UniDFlow</span> Method</h2>
+<p class="unidflow-method-intro">UniDFlow learns understanding and generation through separate adapters on a frozen backbone, then combines them for reasoning-guided editing. The three training stages isolate the two objectives before aligning their joint behavior.</p>
+<div class="unidflow-alignment">
+<figure class="unidflow-alignment-figure"><img loading="lazy" decoding="async" src="./static/images/arch_stage_1_2.jpg" alt="UniDFlow text and vision alignment: separate text and image LoRA adapters trained with discrete flow matching"></figure><div class="unidflow-alignment-copy">
+<article class="unidflow-training-stage"><h3>Stage I · Text alignment</h3>
+<p>Text LoRA adapters learn to answer visual instructions using discrete flow matching. The backbone remains frozen, and KL regularization preserves linguistic ability while the model develops multimodal reasoning.</p>
+<p>This stage establishes the understanding pathway that later guides image editing.</p></article><article class="unidflow-training-stage"><h3>Stage II · Vision alignment</h3>
+<p>A separate image LoRA learns conditional generation in discrete visual-token space. The text adapters remain frozen, preserving their reasoning capability while image generation is trained.</p>
+<p>Separating the adapters prevents the understanding and generation objectives from competing for the same parameters.</p></article>
+</div>
+</div>
+<article class="unidflow-training-stage unidflow-preference"><h3>Stage III · Multimodal preference alignment</h3>
+<p>A lightweight Mixture-of-LoRA (MoRA) router dynamically composes the text and image adapters during diffusion. The model can combine visual reasoning with image synthesis at each step.</p>
+<p>Multimodal Reference-based DPO (mRef-DPO) compares outcomes under identical conditioning against a frozen reference policy and a visual reference image. Structured reflection traces train the model to reason through geometric, physical, and temporal changes before producing the edit.</p>
+<figure class="unidflow-preference-figure"><img loading="lazy" decoding="async" src="./static/images/arch_stage_3.jpg" alt="UniDFlow multimodal preference alignment with a Mixture-of-LoRA router, reference image, edited image, and reflection"></figure></article>
+</div>
+        </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+            <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/quant_understanding.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Multimodal understanding</h3>
+<p class="studio-result-description">UniDFlow (4B) is evaluated on general multimodal question answering and visual reasoning. Compared with BAGEL, it achieves gains of +6.9% on MME-P and +7.0% on MME-S.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Multimodal understanding"><table class="studio-native-table">
+<caption class="studio-sr-only">Multimodal understanding</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Parameters</th>
+<th scope="col">MME-P</th>
+<th scope="col">MME-S</th>
+<th scope="col">MMBench</th>
+<th scope="col">MMMU</th>
+<th scope="col">MM-Vet</th>
+<th scope="col">MathVista</th>
+<th scope="col">MMVP</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Qwen2.5-VL (Bai et al., 2025b)</th>
+<td>3B</td>
+<td>—</td>
+<td class="studio-numeric-cell">2157</td>
+<td class="studio-numeric-cell">79.1</td>
+<td class="studio-numeric-cell">53.1</td>
+<td class="studio-numeric-cell">61.8</td>
+<td class="studio-numeric-cell">62.3</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">BLIP-3 (Xue et al., 2024)</th>
+<td>4B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">76.8</td>
+<td class="studio-numeric-cell">41.1</td>
+<td>—</td>
+<td class="studio-numeric-cell">39.6</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">DeepSeek-VL2 (Wu et al., 2024b)</th>
+<td>4B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">51.1</td>
+<td class="studio-numeric-cell">60.0</td>
+<td class="studio-numeric-cell">62.8</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">Qwen3-VL (Bai et al., 2025c)</th>
+<td>4B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">85.1</td>
+<td class="studio-numeric-cell">64.1</td>
+<td class="studio-numeric-cell">72.5</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">VILA-U (Wu et al., 2024a)</th>
+<td>7B</td>
+<td class="studio-numeric-cell">1336</td>
+<td>—</td>
+<td class="studio-numeric-cell">66.6</td>
+<td class="studio-numeric-cell">32.2</td>
+<td class="studio-numeric-cell">27.7</td>
+<td>—</td>
+<td class="studio-numeric-cell">22.0</td>
+</tr>
+<tr>
+<th scope="row">Chameleon (Team, 2024a)</th>
+<td>7B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">35.7</td>
+<td class="studio-numeric-cell">28.4</td>
+<td class="studio-numeric-cell">8.3</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.0</td>
+</tr>
+<tr>
+<th scope="row">Janus-Pro (Chen et al., 2025a)</th>
+<td>7B</td>
+<td class="studio-numeric-cell">1567</td>
+<td>—</td>
+<td class="studio-numeric-cell">79.2</td>
+<td class="studio-numeric-cell">41.0</td>
+<td class="studio-numeric-cell">50.0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">TokenFlow-XL (Geyer et al., 2023)</th>
+<td>13B</td>
+<td class="studio-numeric-cell">1546</td>
+<td>—</td>
+<td class="studio-numeric-cell">68.9</td>
+<td class="studio-numeric-cell">38.7</td>
+<td class="studio-numeric-cell">40.7</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">BAGEL (Deng et al., 2025)</th>
+<td>7B</td>
+<td class="studio-numeric-cell">1687</td>
+<td class="studio-numeric-cell">2388</td>
+<td class="studio-numeric-cell">85.0</td>
+<td class="studio-numeric-cell">55.3</td>
+<td class="studio-numeric-cell">67.2</td>
+<td class="studio-numeric-cell">73.1</td>
+<td class="studio-numeric-cell">69.3</td>
+</tr>
+<tr>
+<th scope="row">OmniGen-v2 (Wu et al., 2025)</th>
+<td>8B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">53.1</td>
+<td class="studio-numeric-cell">61.5</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">EMMA (He et al., 2025)</th>
+<td>4B</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">85.8</td>
+<td class="studio-numeric-cell">65.1</td>
+<td class="studio-numeric-cell">73.0</td>
+<td class="studio-numeric-cell">75.8</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">MammothModa-2 (Shen et al., 2025)</th>
+<td>4B</td>
+<td class="studio-numeric-cell">1753</td>
+<td class="studio-numeric-cell">1998</td>
+<td class="studio-numeric-cell">86.6</td>
+<td class="studio-numeric-cell">71.23</td>
+<td class="studio-numeric-cell">79.4</td>
+<td class="studio-numeric-cell">81.8</td>
+<td class="studio-numeric-cell">77.5</td>
+</tr>
+<tr>
+<th scope="row">Muddit (Shi et al., 2025)</th>
+<td>4B</td>
+<td class="studio-numeric-cell">1700</td>
+<td class="studio-numeric-cell">1832</td>
+<td class="studio-numeric-cell">82.8</td>
+<td class="studio-numeric-cell">66.6</td>
+<td class="studio-numeric-cell">76.2</td>
+<td class="studio-numeric-cell">79.1</td>
+<td class="studio-numeric-cell">74.1</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">UniDFlow</th>
+<td>4B</td>
+<td class="studio-numeric-cell">1803</td>
+<td class="studio-numeric-cell">2555</td>
+<td class="studio-numeric-cell">91.2</td>
+<td class="studio-numeric-cell">74.3</td>
+<td class="studio-numeric-cell">82.7</td>
+<td class="studio-numeric-cell">85.9</td>
+<td class="studio-numeric-cell">80.2</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/quant_generation.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Text-to-image generation</h3>
+<p class="studio-result-description">UniDFlow (4B) outperforms same-scale unified competitors and larger generative models on text-to-image generation.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Text-to-image generation"><table class="studio-native-table">
+<caption class="studio-sr-only">Text-to-image generation</caption>
+<thead><tr>
+<th scope="col">Model</th>
+<th scope="col">Parameters</th>
+<th scope="col">GenEval</th>
+<th scope="col">DPGBench</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">DALL-E 3 (Betker et al., 2023)</th>
+<td>—</td>
+<td class="studio-numeric-cell">0.67</td>
+<td class="studio-numeric-cell">83.50</td>
+</tr>
+<tr>
+<th scope="row">SD3-Medium (Esser et al., 2024)</th>
+<td>2B</td>
+<td class="studio-numeric-cell">0.74</td>
+<td class="studio-numeric-cell">80.43</td>
+</tr>
+<tr>
+<th scope="row">Qwen-Image(-RL) (et al., 2025)</th>
+<td>7B+20B</td>
+<td class="studio-numeric-cell">0.91</td>
+<td class="studio-numeric-cell">88.32</td>
+</tr>
+<tr>
+<th scope="row">TokenFlow-XL (Geyer et al., 2023)</th>
+<td>14B</td>
+<td class="studio-numeric-cell">0.55</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">Janus-Pro-7B (Chen et al., 2025a)</th>
+<td>7B</td>
+<td class="studio-numeric-cell">0.80</td>
+<td class="studio-numeric-cell">84.19</td>
+</tr>
+<tr>
+<th scope="row">Bagel (Deng et al., 2025)</th>
+<td>7B+7B</td>
+<td class="studio-numeric-cell">0.88</td>
+<td class="studio-numeric-cell">87.74</td>
+</tr>
+<tr>
+<th scope="row">OmniGen2/V2 (Wu et al., 2025)</th>
+<td>3B+4B</td>
+<td class="studio-numeric-cell">0.78</td>
+<td class="studio-numeric-cell">83.57</td>
+</tr>
+<tr>
+<th scope="row">MammothModa-2 (Shen et al., 2025)</th>
+<td>8B+3B+2B</td>
+<td class="studio-numeric-cell">0.87</td>
+<td class="studio-numeric-cell">87.20</td>
+</tr>
+<tr>
+<th scope="row">EMMA (He et al., 2025)</th>
+<td>4B</td>
+<td class="studio-numeric-cell">0.93</td>
+<td class="studio-numeric-cell">85.63</td>
+</tr>
+<tr>
+<th scope="row">MUDDIT (Shi et al., 2025)</th>
+<td>8B</td>
+<td class="studio-numeric-cell">0.90</td>
+<td class="studio-numeric-cell">86.37</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">UniDFlow</th>
+<td>4B</td>
+<td class="studio-numeric-cell">0.95</td>
+<td class="studio-numeric-cell">91.19</td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+        </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Method</h2>
-                    <div class="content has-text-justified">
-                        <p>
-                            UniDFlow is trained with a three-stage pipeline designed to bridge the gap between
-                            high-level reasoning and high-fidelity generation.
-                        </p>
-                        <img loading="lazy" decoding="async" src="./static/images/arch_stage_1_2.jpg"
-                            class="interpolation-image unidflow-stage12-image" alt="UniDFlow Stage I and II.">
-                        <h3 class="unidflow-stage-header illini-orange">Stage I: Text Alignment (Reasoning Foundation)
-                        </h3>
-                        <p>
-                            The first stage focuses exclusively on multimodal understanding to establish a strong
-                            reasoning foundation.
-                        </p>
-                        <ul class="unidflow-stage-list">
-                            <li><strong>Objective:</strong> We align a frozen vision-language backbone to follow
-                                visual instructions using a discrete flow-matching objective.</li>
-                            <li><strong>Mechanism:</strong> We introduce and train specialized LoRA<sub>text</sub>
-                                adapters while keeping the base model parameters frozen.</li>
-                            <li><strong>Stabilization:</strong> To prevent semantic drift and ensure our model
-                                retained its original linguistic intelligence, we regularize the training with a KL
-                                divergence loss.</li>
-                        </ul>
-
-                        <h3 class="unidflow-stage-header illini-orange">Stage II: Vision Alignment (Generative
-                            Capability)</h3>
-                        <p>
-                            Stage II endows the model with the
-                            ability to synthesize images.
-                        </p>
-                        <ul class="unidflow-stage-list">
-                            <li><strong>Objective:</strong> We adapt the model for conditional generation within a
-                                discrete visual token space. By operating in a discrete latent space, we
-                                enable high-fidelity image synthesis that seamlessly integrates with the backbone's
-                                token-based architecture.</li>
-                            <li><strong>Isolation:</strong> To avoid objective interference, we keep Stage I
-                                reasoning adapters frozen and introduce a separate set of LoRA<sub>image</sub>
-                                adapters.</li>
-                        </ul>
-                        <div class="unidflow-stage12-clear"></div>
-                        <img loading="lazy" decoding="async" src="./static/images/arch_stage_3.jpg"
-                            class="interpolation-image" alt="UniDFlow Stage III.">
-                        <h3 class="unidflow-stage-header illini-orange">Stage III: Multimodal Preference Alignment
-                            (Refined Editing)</h3>
-                        <p>
-                            Stage III improves reasoning-based capabilities to enable instruction-based image
-                            editing and complex reasoning tasks.
-                        </p>
-                        <ul class="unidflow-stage-list">
-                            <li><strong>Dynamic routing (MoRA):</strong> Since understanding and generation
-                                require different specializations, we propose a lightweight Mixture-of-LoRA (MoRA)
-                                router, which dynamically composes our task-specific adapters at
-                                every step of the diffusion process.</li>
-                            <li><strong>mRef-DPO alignment:</strong> We introduce a novel multimodal Reference-based
-                                Direct Preference Optimization (mRef-DPO) method to teach
-                                the model to distinguish between faithful edits and subtle errors by comparing outcomes
-                                against a frozen reference policy and a visual reference image.</li>
-                            <li><strong>Structured reasoning:</strong> We incorporate reflection traces into this
-                                stage, requiring the model to "think through" the editing process before generating
-                                pixels, which significantly improves its ability to handle geometric, physical, and
-                                temporal transformations.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Quantitative Results</h2>
-                    <div class="content has-text-justified">
-                        <img loading="lazy" decoding="async" src="./static/images/quant_understanding.png"
-                            class="interpolation-image" alt="Understanding quantitative results.">
-
-                        Multimodal understanding results report UniDFlow’s performance across a broad suite of benchmarks,
-                        covering both perception- and reasoning-oriented evaluations. For UniDFlow (4B),
-                        we observe strong results across all benchmarks, demonstrating competitive performance on
-                        both general multimodal QA and more reasoning-intensive visual tasks. We further
-                        show that UniDFlow consistently outperforms comparable unified baselines. For example, UniDFlow
-                        achieves
-                        gains over BAGEL of +6.9% on MME-P and +7.0% on MME-S, indicating improved perceptual and
-                        reasoning consistency.
-
-                        <img loading="lazy" decoding="async" src="./static/images/quant_generation.png"
-                            class="interpolation-image" alt="Generation quantitative results.">
-
-                        Text-to-image generation results show that UniDFlow (4B) outperforms
-                        same-scale unified competitors and even larger generative models.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Image Editing</span></h2>
+                    <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
                     <div class="content unidflow-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_editing.jpg"
-                            class="interpolation-image" alt="Editing qualitative results.">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_editing2.jpg"
-                            class="interpolation-image" alt="Editing qualitative results.">
-                        <p class="unidflow-qual-caption">
+<p class="unidflow-qual-caption">
                             Qualitative comparison of compositional text-to-image generation and editing. Prompts
                             require precise grounding of attributes and spatial relations (red text). UniDFlow
                             consistently adheres to these constraints while maintaining realistic structure and visual
-                            fidelity, outperforming prior unified baselines.
+                            fidelity, outperforming <span class="studio-ending">prior unified baselines.</span>
                         </p>
+                        <img loading="lazy" decoding="async" src="./static/images/qual_editing.jpg" class="interpolation-image" alt="Editing qualitative results.">
+                        <img loading="lazy" decoding="async" src="./static/images/qual_editing2.jpg" class="interpolation-image" alt="Editing qualitative results.">
+
+                    </div>
+                </div>
+            <div class="studio-subsection">
+                <div class="columns is-centered has-text-centered">
+                    <h3 class="title is-4">Qualitative Results: Text-to-Image
+                            Generation</h3>
+                    <div class="content unidflow-qualitative">
+<p class="unidflow-qual-caption">Image generation with UniDFlow.</p>
+                        <img loading="lazy" decoding="async" src="./static/images/qual_generation_examples.jpg" class="interpolation-image" alt="Generation qualitative results.">
+
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
+<div class="studio-subsection">
                 <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Text-to-Image
-                            Generation</span></h2>
+                    <h3 class="title is-4">Qualitative Results: Reasoning-Based Image
+                            Editing</h3>
                     <div class="content unidflow-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_generation_examples.jpg"
-                            class="interpolation-image" alt="Generation qualitative results.">
-                        <p class="unidflow-qual-caption">Image generation with UniDFlow.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Reasoning-Based Image
-                            Editing</span></h2>
-                    <div class="content unidflow-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_understanding.jpg"
-                            class="interpolation-image" alt="Understanding qualitative results.">
-                        <p class="unidflow-qual-caption">
+<p class="unidflow-qual-caption">
                             Reasoning-driven image editing, highlighting temporal, geometric, and physical
                             transformations handled by UniDFlow.
                         </p>
+                        <img loading="lazy" decoding="async" src="./static/images/qual_understanding.jpg" class="interpolation-image" alt="Understanding qualitative results.">
+
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
+<div class="studio-subsection">
                 <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-3">Qualitative Results: <span class="illini-orange">Image Understanding</span>
-                    </h2>
+                    <h3 class="title is-4">Qualitative Results: Image Understanding
+                    </h3>
                     <div class="content unidflow-qualitative">
-                        <img loading="lazy" decoding="async" src="./static/images/qual_understanding2.jpg"
-                            class="interpolation-image" alt="Understanding qualitative results 2.">
-                        <p class="unidflow-qual-caption">Image-to-text generated results with UniDFlow.</p>
+<p class="unidflow-qual-caption">Image-to-text generated results with UniDFlow.</p>
+                        <img loading="lazy" decoding="async" src="./static/images/qual_understanding2.jpg" class="interpolation-image" alt="Understanding qualitative results 2.">
+
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section" id="BibTeX">
+</div>
+        </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
             <div class="container is-max-desktop content">
-                <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
+                <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
                 <pre><code>@inproceedings{susladkar2026best,
   title={Best of Both Worlds: Multimodal Reasoning and Generation via Unified Discrete Flow Matching},
   author={Susladkar, Onkar and Prakash, Tushar and Deshmukh, Gayatri and Nguyen, Kiet A. and Zhang, Jiaxun and Juvekar, Adheesh and Bao, Tianshu and Chai, Lin and Mittal, Sparsh and Dhillon, Inderjit S and Lourentzou, Ismini},
@@ -651,8 +540,18 @@
   year={2026}
 }</code></pre>
             </div>
-        </section>
-    </main>
-</body>
+        </section></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
 
+
+
+</body>
 </html>

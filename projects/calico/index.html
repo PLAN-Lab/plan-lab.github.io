@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -11,21 +10,21 @@
 
     gtag('config', 'G-48J3PYKGQ6');
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models">
   <title>CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models | PLAN Lab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
   <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-inline-data-v2" />
-  <script src="../../assets/js/project-pages.js?v=project-pages-inline-data-v2" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+  <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <style>
     .calico-arch-split {
@@ -178,285 +177,14 @@
       background-color: #a8f24a80;
     }
   </style>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
 
-<body class="page-project" data-project-presentation="reviewed">
-  <script id="project-data" type="application/json">
-{
-  "sections": {
-    "name": "Calico",
-    "openingCaption": "Across two images, Calico segments the common object (top), shared parts (middle), and parts unique to each image (bottom). The colored masks ground each answer in the corresponding pixels.",
-    "tldr": [
-      "We introduce Calico, a vision-language model that compares multiple images to identify and segment common objects and shared or unique parts. Calico learns fine-grained correspondences across images, supporting reasoning about similarities and differences with pixel-level grounding."
-    ],
-    "method": {
-      "source": "Calico Architecture"
-    },
-    "dataset": {
-      "name": "MixedParts",
-      "source": "MixedParts Dataset"
-    },
-    "contributions": [
-      "Novel Task. We introduce the novel task of part-focused semantic co-segmentation which aims to co-segment and label common and unique parts between objects across images for granular object comparison. To the best of our knowledge, this is the first work to formalize this multi-image object/part co-segmentation task.",
-      "New Multi-Image Pixel-Grounded LVLM. We propose Calico (Component-Focused Adaptive Learning for Multi-Image Co-Localization of Objects), an LVLM designed for part-focused semantic co-segmentation. Calico incorporates a novel correspondence extraction module to learn cross-image semantic correspondences and an adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient manner.",
-      "New Dataset. We introduce the MixedParts dataset for part-focused semantic co-segmentation, compiled from diverse part segmentation datasets and featuring images of logically comparable objects and parts."
-    ],
-    "contributionLeads": [
-      "Novel Task.",
-      "New Multi-Image Pixel-Grounded LVLM.",
-      "New Dataset."
-    ]
-  },
-  "resultPanels": {
-    "MixedParts benchmark": {
-      "description": "Average performance across common objects, common parts, and unique parts. The first three metrics measure segmentation; SS and S-IoU measure semantic labeling."
-    }
-  },
-  "results": {
-    "results.png": {
-      "type": "table",
-      "title": "MixedParts benchmark",
-      "columns": [
-        "Method",
-        "AP50",
-        "mIoU",
-        "Recall",
-        "SS",
-        "S-IoU"
-      ],
-      "rows": [
-        [
-          "Cascade [1, 22, 27]",
-          "5.7",
-          "27.9",
-          "19.0",
-          "32.2",
-          "14.8"
-        ],
-        [
-          "Multi-Image PartGLEE [32]",
-          "1.2",
-          "29.3",
-          "9.7",
-          "78.5",
-          "63.3"
-        ],
-        [
-          "Multi-Image VLPart [60]",
-          "13.4",
-          "42.8",
-          "34.6",
-          "59.1",
-          "46.5"
-        ],
-        [
-          "Multi-Image GLaMM [50]",
-          "42.9",
-          "59.9",
-          "54.9",
-          "76.8",
-          "71.2"
-        ],
-        [
-          "Multi-Image LISA [27]",
-          "41.4",
-          "59.7",
-          "55.5",
-          "78.7",
-          "72.5"
-        ],
-        [
-          "CALICO",
-          "45.9",
-          "63.7",
-          "59.7",
-          "82.7",
-          "77.1"
-        ]
-      ],
-      "note": "",
-      "source": "static/images/results.png"
-    },
-    "@per-task-results": {
-      "type": "table",
-      "appendTo": "quantitative",
-      "title": "MixedParts results by task",
-      "description": "Separate comparisons for common objects, shared parts, and unique parts. AP50, mIoU, and recall evaluate segmentation; semantic similarity (SS) and semantic IoU (S-IoU) evaluate labels. Higher scores are better.",
-      "columns": [
-        "Method",
-        "AP50 ↑",
-        "mIoU ↑",
-        "Recall ↑",
-        "SS ↑",
-        "S-IoU ↑"
-      ],
-      "rows": [
-        {
-          "group": "Common objects"
-        },
-        [
-          "Cascade",
-          "7.9",
-          "37.0",
-          "28.2",
-          "38.1",
-          "29.6"
-        ],
-        [
-          "Multi-Image PartGLEE",
-          "1.5",
-          "33.5",
-          "9.7",
-          "87.2",
-          "82.8"
-        ],
-        [
-          "Multi-Image VLPart",
-          "18.2",
-          "42.4",
-          "45.6",
-          "58.8",
-          "55.2"
-        ],
-        [
-          "Multi-Image GLaMM",
-          "63.2",
-          "71.6",
-          "73.3",
-          "86.5",
-          "86.2"
-        ],
-        [
-          "Multi-Image LISA",
-          "60.2",
-          "70.0",
-          "71.9",
-          "86.0",
-          "85.3"
-        ],
-        [
-          "CALICO (ours)",
-          "69.2",
-          "75.2",
-          "78.5",
-          "93.7",
-          "93.4"
-        ],
-        {
-          "group": "Common parts"
-        },
-        [
-          "Cascade",
-          "3.5",
-          "18.6",
-          "11.7",
-          "25.6",
-          "6.5"
-        ],
-        [
-          "Multi-Image PartGLEE",
-          "1.9",
-          "32.0",
-          "10.5",
-          "78.4",
-          "63.3"
-        ],
-        [
-          "Multi-Image VLPart",
-          "15.7",
-          "44.5",
-          "29.1",
-          "54.4",
-          "39.9"
-        ],
-        [
-          "Multi-Image GLaMM",
-          "36.7",
-          "52.7",
-          "48.4",
-          "68.5",
-          "59.0"
-        ],
-        [
-          "Multi-Image LISA",
-          "37.3",
-          "54.2",
-          "50.5",
-          "73.9",
-          "63.4"
-        ],
-        [
-          "CALICO (ours)",
-          "38.4",
-          "56.9",
-          "51.9",
-          "74.4",
-          "64.4"
-        ],
-        {
-          "group": "Unique parts"
-        },
-        [
-          "Cascade",
-          "5.7",
-          "28.1",
-          "17.2",
-          "32.8",
-          "8.2"
-        ],
-        [
-          "Multi-Image PartGLEE",
-          "0.1",
-          "22.3",
-          "8.8",
-          "69.9",
-          "43.9"
-        ],
-        [
-          "Multi-Image VLPart",
-          "6.4",
-          "41.5",
-          "29.0",
-          "64.0",
-          "44.4"
-        ],
-        [
-          "Multi-Image GLaMM",
-          "28.9",
-          "55.3",
-          "43.1",
-          "75.3",
-          "68.4"
-        ],
-        [
-          "Multi-Image LISA",
-          "26.6",
-          "55.0",
-          "44.1",
-          "76.2",
-          "68.7"
-        ],
-        [
-          "CALICO (ours)",
-          "30.2",
-          "59.1",
-          "48.8",
-          "80.1",
-          "73.4"
-        ]
-      ],
-      "rankMetrics": true,
-      "source": "paper:calico:supplement-table-5",
-      "provenance": {
-        "url": "https://openaccess.thecvf.com/content/CVPR2025/supplemental/Nguyen_CALICO_Part-Focused_Semantic_CVPR_2025_supplemental.pdf",
-        "table": "5",
-        "page": 5
-      },
-      "note": ""
-    }
-  }
-}
-  </script>
+<body class="page-project project-studio studio-calico" data-project-presentation="static">
+<div id="canvas-container"></div>
+
 
   <div class="project-bg"></div>
   <div class="project-grid"></div>
@@ -491,418 +219,31 @@
 
   <main>
     <!-- {% include navbar.html %} -->
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-2 publication-title"><img src="static/images/calico.svg" alt="CALICO cat"
-                  width="80px"><span class="model-name">Calico</span>: Part-Focused Semantic Co-Segmentation with Large
-                Vision-Language Models</h1>
-              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row"><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span></div></div>
-
-              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
-
-              <div class="has-text-centered" style="margin: 5px 0;">
-                <h1 class="title is-3 publication-venue illini-orange">CVPR 2025</h1>
-              </div>
-
-              <div class="column has-text-centered">
-                <div class="publication-links"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2412.19331" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/datasets/PLAN-Lab/MixedParts" class="external-link button is-normal is-rounded is-dark" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a href="https://huggingface.co/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a></div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <div class="content has-text-justified">
-            <span style="font-weight: bold;">TL;DR:</span> We present <span class="model-name">Calico</span> the first
-            LVLM
-            designed for <span style="font-style: italic;">part-focused semantic co-segmentation</span> a new task that
-            identifies and
-            segments common and unique object parts across multiple images. Trained on <span
-              class="model-name">MixedParts</span> our new dataset with ~2.4M samples across ~44K images,
-            <span class="model-name">Calico</span> achieves strong
-            performance in this domain with just 0.3% of its architecture finetuned.
-          </div>
-          <img src="./static/images/calico_teaser.svg" class="interpolation-image"
-            alt="Interpolate start reference image.">
-          <div class="content has-text-justified">
-            Our proposed <span style="font-style: italic;">part-focused semantic
-              co-segmentation</span> task, where the goal is to identify, segment, and label
-            common objects, as well as common and unique object parts across multiple images.
-          </div>
-        </div>
-      </div>
-    </section>
 
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Recent advances in Large Vision-Language Models (LVLMs) have enabled general-purpose vision tasks
-                through
-                visual instruction tuning.
-                While existing LVLMs can generate segmentation masks from text prompts for single images, they struggle
-                with segmentation-grounded reasoning across images, especially at finer granularities such as object
-                parts. In this paper, we introduce the new task of
-                <span style="font-style: italic; font-weight: bold;">part-focused semantic co-segmentation</span> which
-                involves identifying and segmenting common objects, as well as common and unique object parts across
-                images.
-              </p>
-
-              <p>To address this task, we present <span class="model-name">Calico</span> the first LVLM
-                designed for multi-image part-level reasoning segmentation. <span class="model-name">Calico</span>
-                features two proposed components, a novel
-                Correspondence Extraction
-                Module that identifies semantic part-level correspondences, and Correspondence Adaptation Modules that
-                embed this information into the LVLM to facilitate multi-image understanding in a parameter-efficient
-                manner. To support training and evaluation, we curate
-                <span class="model-name">MixedParts</span> a large-scale multi-image segmentation dataset containing
-                ~2.4M samples across
-                ~44K images spanning diverse object and part categories. With just 0.3% of its parameters finetuned,
-                <span class="model-name">Calico</span> achieves strong
-                performance on this challenging task.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Video</h2>
-            <div class="publication-video">
-              <iframe loading="lazy" src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <!--/ Paper video. -->
-
-        <div class="columns is-centered has-text-centered">
-          <div class="container">
-            <h2 class="title is-3">Poster</h2>
-            <iframe loading="lazy" src="about:blank" data-pdf-src="static/calicoposter.pdf" width="100%"
-              height="550"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3">✅ Contributions</h2>
-            <div class="content has-text-justified">
-              <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>Novel Task</b>. We introduce
-                  the novel task of <span style="font-style: italic;">part-focused
-                    semantic co-segmentation</span> which aims to co-segment and label common and unique parts between
-                  objects across images for granular object comparison. To the best of our
-                  knowledge, this is the first work to formalize this multi-image object/part co-segmentation task.
-                </li>
-                <br>
-                <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Multi-Image
-                    Pixel-Grounded LVLM</b>. We propose <span class="model-name">Calico</span> (<u
-                    style="font-weight: bold;">C</u>omponent-Focused <u style="font-weight: bold;">A</u>daptive
-                  <u style="font-weight: bold;">L</u>earning for Multi-<u style="font-weight: bold;">I</u>mage <u
-                    style="font-weight: bold;">C</u>o-Localization of <u style="font-weight: bold;">O</u>bjects),
-                  an LVLM designed for part-focused semantic co-segmentation. <span class="model-name">Calico</span>
-                  incorporates a novel correspondence
-                  extraction module to learn cross-image semantic correspondences and an
-                  adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient
-                  manner.
-                </li>
-                <br>
-                <li><span class="fa-li"><i class="fa fa-paw"></i></span><b>New Dataset</b>. We
-                  introduce the <span class="model-name">MixedParts</span> dataset for
-                  part-focused
-                  semantic co-segmentation, compiled from diverse part
-                  segmentation datasets and featuring images of logically
-                  comparable objects and parts.</li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3"><span class="model-name">Calico</span> Architecture</h2>
-            <div class="content has-text-justified">
-              <img loading="lazy" decoding="async" src="./static/images/calico_arch.svg" class="interpolation-image"
-                alt="CALICO Model Architecture.">
-              <div class="calico-arch-split">
-                <div class="calico-arch-text">
-                  <p><span class="model-name">Calico</span> uses a Q-Former cross-attention module to query efficient
-                    image
-                    embeddings from a pretrained image encoder, which are passed
-                    into a Vicuna-based LLM
-                    as image features. We extract <code>[SEG]</code> tokens from the output text, which are used to
-                    prompt a
-                    SAM decoder to output corresponding
-                    segmentation masks. <br> <br> We propose two modules, the Correspondence Extraction Module (CEM) and
-                    the
-                    Correspondence Adaptation
-                    Module (CAM), to enable the learning of semantic-rich features for multi-image correspondence. In
-                    <span class="model-name">Calico</span> k CAMs are strategically placed every N/k layers within the
-                    N-layered LLM. CEM focuses on
-                    extracting fine-grained semantic information at the part level, capturing correspondences across
-                    similar
-                    yet distinct object categories by leveraging self-supervised DINO features. CAMs then reintegrate
-                    this
-                    part-level correspondence information back into the next layer of the model.
-                  </p>
-                </div>
-                <div class="calico-arch-figure">
-                  <img loading="lazy" decoding="async" src="./static/images/cemcam.svg"
-                    alt="CALICO novel modules CEM and CAM.">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3"><span class="model-name">MixedParts</span> Dataset</h2>
-            <div class="content has-text-justified">
-              <p>To support training and evaluation for part-focused co-segmentation, we introduce a novel dataset named
-                <span class="model-name">MixedParts</span> curated from publicly available part segmentation datasets:
-                <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a
-                  href="https://github.com/facebookresearch/paco">PACO</a>, and <a
-                  href="https://github.com/TACJu/PartImageNet">PartImageNet</a>.
-              </p>
-              <img loading="lazy" decoding="async" src="./static/images/mixed_parts_example.png"
-                class="interpolation-image" alt="MixedParts dataset examples.">
-
-              <p>Example image pairs in <span class="model-name">MixedParts</span> with objects, common parts, and
-                unique
-                parts segmented and labeled. Each
-                column represents a different image pair, derived from a set of diverse datasets with various levels of
-                detail, PACO, PartImageNet, and
-                ADE20K-Part-234, covering both rigid and non-rigid objects and parts. Each image pair is displayed
-                across
-                3 rows to illustrate (i) the
-                (possibly common) object, (ii) the common object parts, and (iii) the unique object parts in each pair.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3">Quantitative Results</h2>
-            <div class="content has-text-justified">
-              <div style="text-align: center; padding: 0 0 20px 0;">
-                <img loading="lazy" decoding="async" src="./static/images/results.png" class="interpolation-image"
-                  alt="Calico results." width="85%">
-                <p class="has-text-justified">
-                  Experimental Results on <span class="model-name">MixedParts</span>. The first three
-                  metrics are segmentation-based, while the last two are text-based.
-                  <span class="model-name">Calico</span> outperforms baselines across all metrics.
-                </p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
 
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3">Qualitative Results</h2>
-            <p class="has-text-justified" style="padding-bottom:30px;">
-              <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid
-              (e.g.,
-              humans, animals)
-              and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and
-              pocket
-              of a pool table):
-            </p>
-            <div class="qual-example qual-left-aspect">
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_0.png"
-                  alt="Image 1" class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_1.png"
-                  alt="Image 2" class="image">
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                common object is <span class="highlight one">the person</span>.
-              </p>
-            </div>
-
-            <div class="qual-example">
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_2.png"
-                  alt="Image 1" class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_3.png"
-                  alt="Image 2" class="image">
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                images include
-                <span class="highlight two">a car</span>.
-              </p>
-            </div>
-
-            <div class="qual-example">
-              <div class="image-container-container">
-                <div class="image-container">
-                  <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_0.png"
-                    alt="Image 1" class="image">
-                  <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_1.png"
-                    alt="Image 2" class="image">
-                </div>
-                <div class="image-container">
-                  <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_0.png"
-                    alt="Image 1" class="image">
-                  <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_1.png"
-                    alt="Image 2" class="image">
-                </div>
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                images show <span class="highlight three">a snake</span> and <span
-                  class="highlight four">a dog</span>.<br>The
-                detected common parts are <span class="highlight five">a body</span> and <span
-                  class="highlight six">a head</span>.
-              </p>
-            </div>
-
-            <div class="qual-example qual-left-aspect">
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_0.png"
-                  alt="Image 1" class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_1.png"
-                  alt="Image 2" class="image">
-              </div>
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_0.png"
-                  alt="Image 1" class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_1.png"
-                  alt="Image 2" class="image">
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                images show <span class="highlight seven">a bed</span> and <span
-                  class="highlight eight">a pool table</span>.<br>The
-                unique parts present are <span class="highlight nine">a headboard</span>
-                <span class="highlight ten">a bed</span> and <span class="highlight eleven">a pocket</span>.
-              </p>
-            </div>
-            <p class="has-text-justified" style="padding-bottom:30px;">
-              <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
-              across
-              images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
-              model to segment different objects accordingly, rather than
-              defaulting to the most salient object in each image:
-            </p>
-            <div class="qual-example">
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_0.png" alt="Image 1"
-                  class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_1.png" alt="Image 2"
-                  class="image">
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                images show <span class="highlight twelve">a dog</span>.
-              </p>
-              <hr>
-              <div class="image-container">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_0.png" alt="Image 1"
-                  class="image">
-                <img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_1.png" alt="Image 2"
-                  class="image">
-              </div>
-              <p class="caption has-text-centered">
-                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
-                images include <span class="highlight thirteen">a car</span>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
-    </section>
 
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>@inproceedings{nguyen2025calico,
-  title={CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models},
-  author={Nguyen, Kiet A. and Juvekar, Adheesh and Yu, Tianjiao and Wahed, Muntasir and Lourentzou, Ismini},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2025}
-}</code></pre>
-      </div>
-    </section>
 
 
-    <footer class="footer">
-      <div class="container">
-        <div class="content has-text-centered">
-          <a class="icon-link" href="https://arxiv.org/pdf/2412.19331">
-            <i class="fas fa-file-pdf"></i>
-          </a>
-          <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
-                made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                  Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a
-                  href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
-                <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
-                <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a
-                  href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a
-                  href="https://arxiv.org/pdf/2308.04152">Cheetah</a> for open-sourcing their models
-                and code.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
+
+
+
+
+
+
+
+
+
+
     <script>
       (function () {
         function syncQualHeights() {
@@ -939,7 +280,560 @@
         }
       })();
     </script>
-  </main>
-</body>
+  <section class="hero studio-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-2 publication-title">
+<span class="studio-name">Calico</span><span class="studio-subtitle">Part-Focused Semantic Co-Segmentation with Large Vision-Language Models</span>
+</h1>
+              <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div></div>
 
+              <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
+<p class="publication-venue">CVPR 2025</p>
+
+              <div class="has-text-centered" style="margin: 5px 0;">
+
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+<a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Nguyen_CALICO_Part-Focused_Semantic_Co-Segmentation_with_Large_Vision-Language_Models_CVPR_2025_paper.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2412.19331" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a><a href="https://huggingface.co/datasets/PLAN-Lab/MixedParts" class="external-link button is-normal is-rounded is-dark" data-resource="Dataset"><span class="icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span><span>Dataset</span></a><a href="https://huggingface.co/PLAN-Lab/CALICO" class="external-link button is-normal is-rounded is-dark" data-resource="Checkpoint"><span class="icon studio-hf-icon" aria-hidden="true">🤗</span><span>Checkpoint</span></a>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce Calico, a vision-language model that compares multiple images to identify and segment common objects and shared or unique parts. Calico learns fine-grained correspondences across images, supporting reasoning about similarities and differences with <span class="studio-tldr-tail">pixel-level grounding.</span></p></div>
+</div></section><section class="studio-feature calico-feature studio-figure-opening" aria-labelledby="calico-feature-title" data-studio-section="examples"><figure class="calico-task-figure"><img src="./static/images/calico_teaser.svg" class="interpolation-image" alt="CALICO identifies and segments common objects, common parts, and unique parts across a pair of images."><figcaption class="studio-opening-caption"><h2 id="calico-feature-title" class="studio-opening-label">Multi-image co-segmentation</h2>
+<p>Across two images, Calico segments the common object (top), shared parts (middle), and parts unique to each image (bottom). The colored masks ground each answer in the corresponding pixels.</p></figcaption></figure></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">Calico Method</a><a href="#studio-dataset" data-section="dataset">MixedParts Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#studio-presentation" data-section="presentation">Video &amp; Poster</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Recent advances in Large Vision-Language Models (LVLMs) have enabled general-purpose vision tasks
+                through
+                visual instruction tuning.
+                While existing LVLMs can generate segmentation masks from text prompts for single images, they struggle
+                with segmentation-grounded reasoning across images, especially at finer granularities such as object
+                parts. In this paper, we introduce the new task of
+                <span style="font-style: italic; font-weight: bold;">part-focused semantic co-segmentation</span> which
+                involves identifying and segmenting common objects, as well as common and unique object parts across
+                images.
+              </p>
+
+              <p>To address this task, we present <span class="model-name">Calico</span> the first LVLM
+                designed for multi-image part-level reasoning segmentation. <span class="model-name">Calico</span>
+                features two proposed components, a novel
+                Correspondence Extraction
+                Module that identifies semantic part-level correspondences, and Correspondence Adaptation Modules that
+                embed this information into the LVLM to facilitate multi-image understanding in a parameter-efficient
+                manner. To support training and evaluation, we curate
+                <span class="model-name">MixedParts</span> a large-scale multi-image segmentation dataset containing
+                ~2.4M samples across
+                ~44K images spanning diverse object and part categories. With just 0.3% of its parameters finetuned,
+                <span class="model-name">Calico</span> achieves strong
+                performance on this challenging task.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paper video. -->
+
+        <!--/ Paper video. -->
+
+
+      </div>
+    </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+            <div class="content has-text-justified">
+              <ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">Novel Task.</strong> We introduce the novel task of part-focused semantic co-segmentation which aims to co-segment and label common and unique parts between objects across images for granular object comparison. To the best of our knowledge, this is the first work to formalize this multi-image object/part co-segmentation task.</li>
+<li>
+<strong class="studio-contribution-lead">New Multi-Image Pixel-Grounded LVLM.</strong> We propose Calico (Component-Focused Adaptive Learning for Multi-Image Co-Localization of Objects), an LVLM designed for part-focused semantic co-segmentation. Calico incorporates a novel correspondence extraction module to learn cross-image semantic correspondences and an adaptation module to enable localized co-segmentation across multiple images in a parameter-efficient manner.</li>
+<li>
+<strong class="studio-contribution-lead">New Dataset.</strong> We introduce the MixedParts dataset for part-focused semantic co-segmentation, compiled from diverse part segmentation datasets and featuring images of logically comparable objects and parts.</li>
+</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">Calico</span> Method</h2>
+            <div class="content has-text-justified">
+              <figure class="calico-figure"><img loading="lazy" decoding="async" src="./static/images/calico_arch.svg" class="interpolation-image" alt="CALICO Model Architecture."></figure>
+              <div class="calico-arch-split">
+                <div class="calico-arch-text">
+                  <p><span class="model-name">Calico</span> uses a Q-Former cross-attention module to query efficient
+                    image
+                    embeddings from a pretrained image encoder, which are passed
+                    into a Vicuna-based LLM
+                    as image features. We extract <code>[SEG]</code> tokens from the output text, which are used to
+                    prompt a
+                    SAM decoder to output corresponding
+                    segmentation masks. <br>  We propose two modules, the Correspondence Extraction Module (CEM) and
+                    the
+                    Correspondence Adaptation
+                    Module (CAM), to enable the learning of semantic-rich features for multi-image correspondence. In
+                    <span class="model-name">Calico</span> k CAMs are strategically placed every N/k layers within the
+                    N-layered LLM. CEM focuses on
+                    extracting fine-grained semantic information at the part level, capturing correspondences across
+                    similar
+                    yet distinct object categories by leveraging self-supervised DINO features. CAMs then reintegrate
+                    this
+                    part-level correspondence information back into the next layer of the model.
+                  </p>
+                </div>
+                <div class="calico-arch-figure">
+                  <img loading="lazy" decoding="async" src="./static/images/cemcam.svg" alt="CALICO novel modules CEM and CAM.">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section class="section" data-studio-section="dataset" id="studio-dataset" aria-labelledby="studio-dataset-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3" id="studio-dataset-title">MixedParts Dataset</h2>
+            <div class="content has-text-justified">
+              <p>To support training and evaluation for part-focused co-segmentation, we introduce a novel dataset named
+                <span class="model-name">MixedParts</span> curated from publicly available part segmentation datasets:
+                <a href="https://github.com/OpenRobotLab/OV_PARTS">ADE20K-Part234</a>, <a href="https://github.com/facebookresearch/paco">PACO</a>, and <a href="https://github.com/TACJu/PartImageNet">PartImageNet</a>.
+              </p>
+              <figure class="calico-figure"><img loading="lazy" decoding="async" src="./static/images/mixed_parts_example.png" class="interpolation-image" alt="MixedParts dataset examples."></figure>
+
+              <p>Example image pairs in <span class="model-name">MixedParts</span> with objects, common parts, and
+                unique
+                parts segmented and labeled. Each
+                column represents a different image pair, derived from a set of diverse datasets with various levels of
+                detail, PACO, PartImageNet, and
+                ADE20K-Part-234, covering both rigid and non-rigid objects and parts. Each image pair is displayed
+                across
+                3 rows to illustrate (i) the
+                (possibly common) object, (ii) the common object parts, and (iii) the unique object parts <span class="studio-ending">in each pair.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
+      <div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/results.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">MixedParts benchmark</h3>
+<p class="has-text-justified studio-result-description">
+                  Experimental Results on <span class="model-name">MixedParts</span>. The first three
+                  metrics are segmentation-based, while the last two are text-based.
+                  <span class="model-name">Calico</span> outperforms baselines across all metrics.
+                </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="MixedParts benchmark"><table class="studio-native-table">
+<caption class="studio-sr-only">MixedParts benchmark</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">AP50</th>
+<th scope="col">mIoU</th>
+<th scope="col">Recall</th>
+<th scope="col">SS</th>
+<th scope="col">S-IoU</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Cascade</th>
+<td class="studio-numeric-cell">5.7</td>
+<td class="studio-numeric-cell">27.9</td>
+<td class="studio-numeric-cell">19.0</td>
+<td class="studio-numeric-cell">32.2</td>
+<td class="studio-numeric-cell">14.8</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image PartGLEE</th>
+<td class="studio-numeric-cell">1.2</td>
+<td class="studio-numeric-cell">29.3</td>
+<td class="studio-numeric-cell">9.7</td>
+<td class="studio-numeric-cell">78.5</td>
+<td class="studio-numeric-cell">63.3</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image VLPart</th>
+<td class="studio-numeric-cell">13.4</td>
+<td class="studio-numeric-cell">42.8</td>
+<td class="studio-numeric-cell">34.6</td>
+<td class="studio-numeric-cell">59.1</td>
+<td class="studio-numeric-cell">46.5</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image GLaMM</th>
+<td class="studio-numeric-cell">42.9</td>
+<td class="studio-numeric-cell">59.9</td>
+<td class="studio-numeric-cell">54.9</td>
+<td class="studio-numeric-cell">76.8</td>
+<td class="studio-numeric-cell">71.2</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image LISA</th>
+<td class="studio-numeric-cell">41.4</td>
+<td class="studio-numeric-cell">59.7</td>
+<td class="studio-numeric-cell">55.5</td>
+<td class="studio-numeric-cell">78.7</td>
+<td class="studio-numeric-cell">72.5</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">CALICO</th>
+<td class="studio-numeric-cell"><strong>45.9</strong></td>
+<td class="studio-numeric-cell"><strong>63.7</strong></td>
+<td class="studio-numeric-cell"><strong>59.7</strong></td>
+<td class="studio-numeric-cell"><strong>82.7</strong></td>
+<td class="studio-numeric-cell"><strong>77.1</strong></td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="paper:calico:supplement-table-5" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">MixedParts results by task</h3>
+<p class="studio-result-description">Separate comparisons for common objects, shared parts, and unique parts. AP50, mIoU, and recall evaluate segmentation; semantic similarity (SS) and semantic IoU (S-IoU) evaluate labels. Higher scores are better.</p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="MixedParts results by task"><table class="studio-native-table" data-rank-metrics="true">
+<caption class="studio-sr-only">MixedParts results by task</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">AP50 ↑</th>
+<th scope="col">mIoU ↑</th>
+<th scope="col">Recall ↑</th>
+<th scope="col">SS ↑</th>
+<th scope="col">S-IoU ↑</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">Common objects</th></tr>
+<tr>
+<th scope="row">Cascade</th>
+<td class="studio-numeric-cell">7.9</td>
+<td class="studio-numeric-cell">37.0</td>
+<td class="studio-numeric-cell">28.2</td>
+<td class="studio-numeric-cell">38.1</td>
+<td class="studio-numeric-cell">29.6</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image PartGLEE</th>
+<td class="studio-numeric-cell">1.5</td>
+<td class="studio-numeric-cell">33.5</td>
+<td class="studio-numeric-cell">9.7</td>
+<td class="studio-numeric-cell"><u class="studio-second">87.2</u></td>
+<td class="studio-numeric-cell">82.8</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image VLPart</th>
+<td class="studio-numeric-cell">18.2</td>
+<td class="studio-numeric-cell">42.4</td>
+<td class="studio-numeric-cell">45.6</td>
+<td class="studio-numeric-cell">58.8</td>
+<td class="studio-numeric-cell">55.2</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image GLaMM</th>
+<td class="studio-numeric-cell"><u class="studio-second">63.2</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">71.6</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">73.3</u></td>
+<td class="studio-numeric-cell">86.5</td>
+<td class="studio-numeric-cell"><u class="studio-second">86.2</u></td>
+</tr>
+<tr>
+<th scope="row">Multi-Image LISA</th>
+<td class="studio-numeric-cell">60.2</td>
+<td class="studio-numeric-cell">70.0</td>
+<td class="studio-numeric-cell">71.9</td>
+<td class="studio-numeric-cell">86.0</td>
+<td class="studio-numeric-cell">85.3</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">CALICO (ours)</th>
+<td class="studio-numeric-cell"><strong class="studio-best">69.2</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">75.2</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">78.5</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">93.7</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">93.4</strong></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">Common parts</th></tr>
+<tr>
+<th scope="row">Cascade</th>
+<td class="studio-numeric-cell">3.5</td>
+<td class="studio-numeric-cell">18.6</td>
+<td class="studio-numeric-cell">11.7</td>
+<td class="studio-numeric-cell">25.6</td>
+<td class="studio-numeric-cell">6.5</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image PartGLEE</th>
+<td class="studio-numeric-cell">1.9</td>
+<td class="studio-numeric-cell">32.0</td>
+<td class="studio-numeric-cell">10.5</td>
+<td class="studio-numeric-cell"><strong class="studio-best">78.4</strong></td>
+<td class="studio-numeric-cell">63.3</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image VLPart</th>
+<td class="studio-numeric-cell">15.7</td>
+<td class="studio-numeric-cell">44.5</td>
+<td class="studio-numeric-cell">29.1</td>
+<td class="studio-numeric-cell">54.4</td>
+<td class="studio-numeric-cell">39.9</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image GLaMM</th>
+<td class="studio-numeric-cell">36.7</td>
+<td class="studio-numeric-cell">52.7</td>
+<td class="studio-numeric-cell">48.4</td>
+<td class="studio-numeric-cell">68.5</td>
+<td class="studio-numeric-cell">59.0</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image LISA</th>
+<td class="studio-numeric-cell"><u class="studio-second">37.3</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">54.2</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">50.5</u></td>
+<td class="studio-numeric-cell">73.9</td>
+<td class="studio-numeric-cell"><u class="studio-second">63.4</u></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">CALICO (ours)</th>
+<td class="studio-numeric-cell"><strong class="studio-best">38.4</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">56.9</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">51.9</strong></td>
+<td class="studio-numeric-cell"><u class="studio-second">74.4</u></td>
+<td class="studio-numeric-cell"><strong class="studio-best">64.4</strong></td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="6" scope="rowgroup">Unique parts</th></tr>
+<tr>
+<th scope="row">Cascade</th>
+<td class="studio-numeric-cell">5.7</td>
+<td class="studio-numeric-cell">28.1</td>
+<td class="studio-numeric-cell">17.2</td>
+<td class="studio-numeric-cell">32.8</td>
+<td class="studio-numeric-cell">8.2</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image PartGLEE</th>
+<td class="studio-numeric-cell">0.1</td>
+<td class="studio-numeric-cell">22.3</td>
+<td class="studio-numeric-cell">8.8</td>
+<td class="studio-numeric-cell">69.9</td>
+<td class="studio-numeric-cell">43.9</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image VLPart</th>
+<td class="studio-numeric-cell">6.4</td>
+<td class="studio-numeric-cell">41.5</td>
+<td class="studio-numeric-cell">29.0</td>
+<td class="studio-numeric-cell">64.0</td>
+<td class="studio-numeric-cell">44.4</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image GLaMM</th>
+<td class="studio-numeric-cell"><u class="studio-second">28.9</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">55.3</u></td>
+<td class="studio-numeric-cell">43.1</td>
+<td class="studio-numeric-cell">75.3</td>
+<td class="studio-numeric-cell">68.4</td>
+</tr>
+<tr>
+<th scope="row">Multi-Image LISA</th>
+<td class="studio-numeric-cell">26.6</td>
+<td class="studio-numeric-cell">55.0</td>
+<td class="studio-numeric-cell"><u class="studio-second">44.1</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">76.2</u></td>
+<td class="studio-numeric-cell"><u class="studio-second">68.7</u></td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">CALICO (ours)</th>
+<td class="studio-numeric-cell"><strong class="studio-best">30.2</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">59.1</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">48.8</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">80.1</strong></td>
+<td class="studio-numeric-cell"><strong class="studio-best">73.4</strong></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+
+    </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
+            <p class="has-text-justified" style="padding-bottom:30px;">
+              <span class="model-name">Calico</span> demonstrates pixel-grounded understanding of various non-rigid
+              (e.g.,
+              humans, animals)
+              and rigid objects (e.g., car, bed), including less common objects and their parts (e.g., the bed and
+              pocket
+              of <span class="studio-ending">a pool table):</span>
+            </p>
+            <div class="qual-example calico-example">
+<h3 class="calico-example-title">Common object · person</h3>
+              <div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_0.png" alt="CALICO common object · person, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_1.png" alt="CALICO common object · person, image 2" class=""></div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                common object is <span class="highlight one">the person</span>.
+              </p>
+            </div>
+
+            <div class="qual-example calico-example">
+<h3 class="calico-example-title">Common object · car</h3>
+              <div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_2.png" alt="CALICO common object · car, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_object_object_3.png" alt="CALICO common object · car, image 2" class=""></div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                images include
+                <span class="highlight two">a car</span>.
+              </p>
+            </div>
+
+            <div class="qual-example calico-example">
+<h3 class="calico-example-title">Common parts</h3>
+              <div class="image-container-container">
+                <div class="calico-pair-label">Objects</div>
+<div class="image-container">
+                  <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_0.png" alt="CALICO common parts, objects, image 1" class=""></div>
+                  <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_object_1.png" alt="CALICO common parts, objects, image 2" class=""></div>
+                </div>
+                <div class="calico-pair-label">Common parts</div>
+<div class="image-container">
+                  <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_0.png" alt="CALICO common parts, parts, image 1" class=""></div>
+                  <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_common_part_parts_1.png" alt="CALICO common parts, parts, image 2" class=""></div>
+                </div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                images show <span class="highlight three">a snake</span> and <span class="highlight four">a dog</span>.<br>The
+                detected common parts are <span class="highlight five">a body</span> and <span class="highlight six">a head</span>.
+              </p>
+            </div>
+
+            <div class="qual-example calico-example">
+<h3 class="calico-example-title">Unique parts</h3>
+              <div class="calico-pair-label">Objects</div>
+<div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_0.png" alt="CALICO unique parts, objects, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_object_1.png" alt="CALICO unique parts, objects, image 2" class=""></div>
+              </div>
+              <div class="calico-pair-label">Unique parts</div>
+<div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_0.png" alt="CALICO unique parts, parts, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/preds_unique_part_parts_1.png" alt="CALICO unique parts, parts, image 2" class=""></div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                images show <span class="highlight seven">a bed</span> and <span class="highlight eight">a pool table</span>.<br>The
+                unique parts present are <span class="highlight nine">a headboard</span>
+                <span class="highlight ten">a bed</span> and <span class="highlight eleven">a pocket</span>.
+              </p>
+            </div>
+            <p class="has-text-justified" style="padding-bottom:30px;">
+              <span class="model-name">Calico</span> outputs are highly context-driven when distinguishing objects
+              across
+              images, despite variations in angle, size, saliency, etc. Different image pairings prompt the
+              model to segment different objects accordingly, rather than
+              defaulting to the most salient object <span class="studio-ending">in each image:</span>
+            </p>
+            <div class="qual-example calico-example">
+<h3 class="calico-example-title">Context-dependent object · dog</h3>
+              <div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_0.png" alt="CALICO context-dependent object · dog, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_0_1.png" alt="CALICO context-dependent object · dog, image 2" class=""></div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                images show <span class="highlight twelve">a dog</span>.
+              </p>
+              </div>
+<div class="qual-example calico-example">
+<h3 class="calico-example-title">Context-dependent object · car</h3>
+              <div class="image-container">
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_0.png" alt="CALICO context-dependent object · car, image 1" class=""></div>
+                <div class="calico-example-frame"><img loading="lazy" decoding="async" src="static/images/qualitatives/in_context_1_1.png" alt="CALICO context-dependent object · car, image 2" class=""></div>
+              </div>
+              <p class="caption has-text-centered calico-example-answer">
+                <img loading="lazy" decoding="async" src="static/images/calico.svg" alt="CALICO cat" width="40px">: The
+                images include <span class="highlight thirteen">a car</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section><section class="section" id="studio-presentation" data-studio-section="presentation" aria-labelledby="calico-presentation-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="calico-presentation-title">Video &amp; Poster</h2>
+<div class="calico-presentation-block">
+          <div class="calico-presentation-content">
+            <h3>Video</h3>
+            <div class="publication-video">
+              <iframe loading="lazy" src="https://www.youtube.com/embed/xr0XIrpXG68?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" title="CALICO video"></iframe>
+            </div>
+          </div>
+        </div>
+<div class="calico-presentation-block">
+          <div class="calico-presentation-content">
+            <h3>Poster</h3>
+<a class="calico-poster-link" href="static/calicoposter.pdf" target="_blank" rel="noopener">Open poster PDF</a>
+            <iframe loading="lazy" src="about:blank" data-pdf-src="static/calicoposter.pdf" width="100%" height="550" title="CALICO poster" class="calico-poster"></iframe>
+          </div>
+        </div>
+</div></section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3" id="BibTeX-title">BibTeX</h2>
+        <pre><code>@inproceedings{nguyen2025calico,
+  title={CALICO: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models},
+  author={Nguyen, Kiet A. and Juvekar, Adheesh and Yu, Tianjiao and Wahed, Muntasir and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}</code></pre>
+      </div>
+    </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
+                This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+                made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2304.08485">LLaVA</a>,
+                <a href="https://arxiv.org/pdf/2311.03356">GLaMM</a>,
+                <a href="https://arxiv.org/pdf/2304.07193">DINOv2</a>, <a href="https://arxiv.org/pdf/2301.12597">Q-Former</a>, and <a href="https://arxiv.org/pdf/2308.04152">Cheetah</a> for open-sourcing their models
+                and code.
+              </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+
+</body>
 </html>
