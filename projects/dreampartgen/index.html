@@ -108,9 +108,9 @@
 <link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
 <link rel="stylesheet" href="static/css/studio.css?v=project-pages-static-v4">
 <script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
-<link rel="stylesheet" href="../../assets/css/glb-gallery.css?v=20261010-1">
-<script src="../../assets/js/glb-gallery.js?v=20261010-1" defer></script>
-<script>window.ModelViewerElement = {meshoptDecoderLocation: new URL('../../assets/vendor/meshoptimizer/meshopt_decoder.module.js', document.baseURI).href};</script>
+<link rel="stylesheet" href="../../assets/css/glb-gallery.css?v=20261010-2">
+<script src="../../assets/js/glb-gallery.js?v=20261010-2" defer></script>
+<script>window.ModelViewerElement = {meshoptDecoderLocation: new URL('../../assets/vendor/meshoptimizer/meshopt_decoder.js', document.baseURI).href};</script>
 </head>
   <body class="page-project project-studio studio-dreampartgen" data-project-presentation="static">
 <div id="canvas-container"></div>
@@ -223,23 +223,7 @@
                 </model-viewer><button class="studio-control" type="button" aria-label="Reset butterfly view" disabled data-camera-orbit="35deg 75deg 105%">Reset view</button></article><article class="dreampartgen-model-card"><model-viewer id="viewer12" src="./static/dreampart_glbs/car_r.glb" camera-controls="" shadow-intensity="1" loading="lazy" ar-status="not-presenting" camera-orbit="35deg 75deg 105%" touch-action="pan-y" interaction-prompt="none" alt="DreamPartGen: car. Drag or use the arrow keys to rotate; scroll or pinch to zoom.">
                 </model-viewer><button class="studio-control" type="button" aria-label="Reset car view" disabled data-camera-orbit="35deg 75deg 105%">Reset view</button></article>
 </div>
-</div></section><section class="section glb-examples" id="part-editing" aria-labelledby="part-editing-title"><div class="container is-max-desktop"><h2 class="title is-3" id="part-editing-title">Part Editing in 3D</h2><p class="glb-intro">Compare the original bird with seven hat edits. Choose a variation, then rotate and zoom to inspect it from any angle.</p><div class="glb-comparison"><article class="glb-gallery" data-glb-gallery>
-<div class="glb-heading"><h3>Original</h3><label for="bird-original-choice">Choose an example</label><select id="bird-original-choice" data-glb-choice><option value="static/models/part-editing/cute-birdy.glb">Original bird</option></select></div>
-<div class="glb-stage"><div class="glb-viewer-wrap"><model-viewer data-glb-viewer camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" touch-action="pan-y" interaction-prompt="none" alt="Original bird. Drag or use arrow keys to rotate; scroll or pinch to zoom."></model-viewer><button class="studio-control glb-load" data-glb-load type="button">Load 3D model</button></div></div>
-<div class="glb-toolbar"><p data-glb-status role="status" aria-live="polite">Load Original bird to explore it in 3D.</p><button data-glb-reset class="studio-control" type="button" disabled>Reset view</button><a data-glb-download class="studio-control" href="static/models/part-editing/cute-birdy.glb" download>Download GLB</a></div>
-<details class="glb-credit" data-glb-credit hidden><summary>Asset credits</summary><p><span data-glb-author></span> <span data-glb-license></span> <a data-glb-source target="_blank" rel="noreferrer">Source</a></p></details>
-</article><article class="glb-gallery" data-glb-gallery>
-<div class="glb-heading"><h3>Edited</h3><label for="bird-edited-choice">Choose an example</label><select id="bird-edited-choice" data-glb-choice><option value="static/models/part-editing/birdy_chef_hat.glb">Chef hat</option><option value="static/models/part-editing/birdy_chrismas_hat.glb">Christmas hat</option><option value="static/models/part-editing/birdy_clown_hat.glb">Clown hat</option><option value="static/models/part-editing/birdy_crown_hat.glb">Crown</option><option value="static/models/part-editing/birdy_high_hat.glb">Top hat</option><option value="static/models/part-editing/birdy_shark_hat.glb">Shark hat</option><option value="static/models/part-editing/birdy_witch_hat.glb">Witch hat</option></select></div>
-<div class="glb-stage"><div class="glb-viewer-wrap"><model-viewer data-glb-viewer camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" touch-action="pan-y" interaction-prompt="none" alt="Chef hat. Drag or use arrow keys to rotate; scroll or pinch to zoom."></model-viewer><button class="studio-control glb-load" data-glb-load type="button">Load 3D model</button></div></div>
-<div class="glb-toolbar"><p data-glb-status role="status" aria-live="polite">Load Chef hat to explore it in 3D.</p><button data-glb-reset class="studio-control" type="button" disabled>Reset view</button><a data-glb-download class="studio-control" href="static/models/part-editing/birdy_chef_hat.glb" download>Download GLB</a></div>
-<details class="glb-credit" data-glb-credit hidden><summary>Asset credits</summary><p><span data-glb-author></span> <span data-glb-license></span> <a data-glb-source target="_blank" rel="noreferrer">Source</a></p></details>
-</article></div></div></section>
-<section class="section glb-examples" id="mini-scenes" aria-labelledby="mini-scenes-title"><div class="container is-max-desktop"><h2 class="title is-3" id="mini-scenes-title">Mini-Scenes in 3D</h2><p class="glb-intro">Explore the assembled scene, switch between its three versions, or inspect individual scene parts. Drag to rotate; scroll or pinch to zoom.</p><article class="glb-gallery" data-glb-gallery>
-<div class="glb-heading"><h3>Scenes and parts</h3><label for="mini-scene-choice">Choose an example</label><select id="mini-scene-choice" data-glb-choice><option value="static/models/mini-scenes/scene2_texture.glb">Textured scene</option><option value="static/models/mini-scenes/scene2_v2.glb">Scene variation</option><option value="static/models/mini-scenes/scene2_full.glb">Full scene geometry</option><option value="static/models/mini-scenes/table.glb">Part: table</option><option value="static/models/mini-scenes/chair.glb">Part: chair</option><option value="static/models/mini-scenes/chair_v2.glb">Part: chair variation 2</option><option value="static/models/mini-scenes/chair_v2_merged.glb">Part: chair variation 2 (merged)</option><option value="static/models/mini-scenes/chair_v3.glb">Part: chair variation 3</option><option value="static/models/mini-scenes/bowl.glb">Part: bowl</option><option value="static/models/mini-scenes/cup.glb">Part: cup</option><option value="static/models/mini-scenes/wine_cup.glb">Part: wine glass</option><option value="static/models/mini-scenes/coke.glb">Part: soda</option><option value="static/models/mini-scenes/coke_can.glb">Part: soda can</option><option value="static/models/mini-scenes/wine.glb">Part: wine</option><option value="static/models/mini-scenes/fork.glb">Part: fork</option><option value="static/models/mini-scenes/knife.glb">Part: knife</option><option value="static/models/mini-scenes/spoon.glb">Part: spoon</option><option value="static/models/mini-scenes/surfacebook.glb">Part: laptop</option></select></div>
-<div class="glb-stage"><div class="glb-viewer-wrap"><model-viewer data-glb-viewer camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" touch-action="pan-y" interaction-prompt="none" alt="Textured scene. Drag or use arrow keys to rotate; scroll or pinch to zoom."></model-viewer><button class="studio-control glb-load" data-glb-load type="button">Load 3D model</button></div></div>
-<div class="glb-toolbar"><p data-glb-status role="status" aria-live="polite">Load Textured scene to explore it in 3D.</p><button data-glb-reset class="studio-control" type="button" disabled>Reset view</button><a data-glb-download class="studio-control" href="static/models/mini-scenes/scene2_texture.glb" download>Download GLB</a></div>
-<details class="glb-credit" data-glb-credit hidden><summary>Asset credits</summary><p><span data-glb-author></span> <span data-glb-license></span> <a data-glb-source target="_blank" rel="noreferrer">Source</a></p></details>
-</article><noscript><p>Enable JavaScript to use the viewers, or download a GLB to view it locally.</p></noscript></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">DreamPartGen Method</a><a href="#studio-interactive-models" data-section="interactive">Interactive 3D Models</a><a href="#part-editing">Part Editing</a><a href="#mini-scenes">Mini-Scenes</a><a href="#studio-dataset" data-section="dataset">PartRel3D Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
+</div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">DreamPartGen Method</a><a href="#studio-interactive-models" data-section="interactive">Interactive 3D Models</a><a href="#studio-dataset" data-section="dataset">PartRel3D Dataset</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
       <div class="content"><p>Understanding and generating 3D objects as compositions of meaningful parts is fundamental to human perception and reasoning. However, most text-to-3D methods overlook the semantic and functional structure of parts. While recent part-aware approaches introduce decomposition, they remain largely geometry-focused, lacking semantic grounding and failing to model how parts align with textual descriptions or their inter-part relations. We propose DreamPartGen, a framework for semantically grounded, part-aware text-to-3D generation. DreamPartGen introduces Duplex Part Latents (DPLs) that jointly model each part's geometry and appearance, and Relational Semantic Latents (RSLs) that capture inter-part dependencies derived from language. A synchronized co-denoising process enforces mutual geometric and semantic consistency, enabling coherent, interpretable, and text-aligned 3D synthesis. Across multiple benchmarks, DreamPartGen delivers state-of-the-art performance in geometric fidelity and text-shape alignment.</p></div>
@@ -514,6 +498,104 @@
 
   </section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title"><div class="container is-max-desktop">
 <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
+<div class="studio-subsection glb-results" id="part-editing" aria-labelledby="part-editing-title">
+<h3 class="title is-4" id="part-editing-title">Part Editing</h3>
+<div class="glb-edit-grid">
+<article class="glb-result-card glb-original" data-glb-card>
+<h4 class="glb-result-label">Original bird</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/cute-birdy.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Original bird. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/cute-birdy.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A chef’s hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_chef_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A chef’s hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_chef_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A Christmas hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_chrismas_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A Christmas hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_chrismas_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A clown hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_clown_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A clown hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_clown_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A crown”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_crown_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A crown”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_crown_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A top hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_high_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A top hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_high_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A shark hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_shark_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A shark hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_shark_hat.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">“A witch’s hat”</h4>
+<div class="glb-result-view"><model-viewer src="static/models/part-editing/birdy_witch_hat.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="“A witch’s hat”. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/part-editing/birdy_witch_hat.glb" download>Download GLB</a></div>
+</div></article>
+</div></div>
+<div class="studio-subsection glb-results" id="mini-scenes" aria-labelledby="mini-scenes-title">
+<h3 class="title is-4" id="mini-scenes-title">Mini-Scene</h3>
+<div class="glb-scene-comparison"><div class="glb-part-grid" aria-label="Scene parts">
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Table</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/table.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Table. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/table.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Chair</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/chair.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Chair. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/chair.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Cup</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/cup.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Cup. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/cup.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Bowl</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/bowl.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Bowl. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/bowl.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Wine glass</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/wine_cup.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Wine glass. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/wine_cup.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Wine bottle</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/wine.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Wine bottle. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/wine.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Soda bottle</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/coke.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Soda bottle. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/coke.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Soda can</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/coke_can.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Soda can. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/coke_can.glb" download>Download GLB</a></div>
+</div></article>
+<article class="glb-result-card " data-glb-card>
+<h4 class="glb-result-label">Laptop</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/surfacebook.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Laptop. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/surfacebook.glb" download>Download GLB</a></div>
+</div></article>
+</div><article class="glb-result-card glb-scene-result" data-glb-card>
+<h4 class="glb-result-label">Mini-scene</h4>
+<div class="glb-result-view"><model-viewer src="static/models/mini-scenes/scene2_texture.glb" camera-controls camera-orbit="35deg 75deg 105%" shadow-intensity="1" loading="lazy" touch-action="pan-y" interaction-prompt="none" alt="Mini-scene. Drag to rotate; scroll or pinch to zoom."></model-viewer>
+<div class="glb-result-error" data-glb-error hidden><span role="status">Unable to load this model.</span><button type="button" data-glb-retry>Retry</button><a href="static/models/mini-scenes/scene2_texture.glb" download>Download GLB</a></div>
+</div></article></div></div>
+
 <div class="columns is-centered has-text-centered studio-result-host">
 <div class="column studio-result-host">
 <div style="text-align: center; padding: 0 0 20px 0;" class="studio-result-host">

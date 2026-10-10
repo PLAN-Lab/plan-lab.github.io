@@ -11,7 +11,7 @@ const root=path.resolve(here,'../..');
 const source=path.resolve(process.argv[2]);
 await MeshoptEncoder.ready;await MeshoptDecoder.ready;
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
-const groups={dreampartgen_partedit:'projects/dreampartgen/static/models/part-editing',dreampartgen_miniscene:'projects/dreampartgen/static/models/mini-scenes',silsa_highres:'projects/silsa/static/models/high-resolution',silsa_imgto3d:'projects/silsa/static/models/image-to-3d'};
+const groups={dreampartgen_partedit:'projects/dreampartgen/static/models/part-editing',dreampartgen_miniscene:'projects/dreampartgen/static/models/mini-scenes'};
 const manifest=[];
 function stats(doc){
  const scenes=doc.getRoot().listScenes();
@@ -46,10 +46,10 @@ for(const [group,folder] of Object.entries(groups)){
  }
  for(const name of names.filter(n=>n.endsWith('.png')))await sharp(path.join(source,group,name)).webp({quality:94}).toFile(path.join(target,name.replace(/\.png$/,'.webp')));
 }
-if(manifest.length!==34)throw Error('Expected 34 GLBs, found '+manifest.length);
+if(manifest.length!==26)throw Error('Expected 26 GLBs, found '+manifest.length);
 await fs.mkdir(path.join(root,'assets/data'),{recursive:true});
 await fs.writeFile(path.join(root,'assets/data/glb-galleries.json'),JSON.stringify(manifest,null,2)+'\n');
 const vendor=path.join(root,'assets/vendor/meshoptimizer');await fs.mkdir(vendor,{recursive:true});
-for(const name of ['meshopt_decoder.module.js','LICENSE.md'])await fs.copyFile(path.join(here,'node_modules/meshoptimizer',name),path.join(vendor,name));
-await fs.writeFile(path.join(vendor,'README.md'),'# Meshoptimizer decoder\n\nVersion 0.24.0 (MIT), used by DreamPartGen and SILSA.\n');
+for(const name of ['meshopt_decoder.js','LICENSE.md'])await fs.copyFile(path.join(here,'node_modules/meshoptimizer',name),path.join(vendor,name));
+await fs.writeFile(path.join(vendor,'README.md'),'# Meshoptimizer decoder\n\nVersion 0.24.0 (MIT), used by DreamPartGen.\n');
 console.log('Validated',manifest.length,'models; total bytes:',manifest.reduce((n,x)=>n+x.bytes,0));

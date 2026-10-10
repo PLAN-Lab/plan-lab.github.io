@@ -1,4 +1,4 @@
-"""Fetch the four public, checksum-pinned GLB archives supplied for these pages."""
+"""Fetch the two public, checksum-pinned GLB archives supplied for DreamPartGen."""
 import concurrent.futures, hashlib, html, json, re, subprocess, sys, zipfile
 from pathlib import Path
 from urllib.parse import urlencode

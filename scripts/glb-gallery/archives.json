@@ -8,15 +8,5 @@
     "id": "1uSPurSlxrcHIhUE1yj7XN84XBhoIX-j5",
     "name": "dreampartgen_partedit",
     "sha256": "249855b581c3d8ac9782b9322c0238d4774afb1466dcc1c13ac545d7a18596cb"
-  },
-  {
-    "id": "1fvYB6DTylO5UH5JHgKmDydaHe2P_aE59",
-    "name": "silsa_highres",
-    "sha256": "ecf09447be6e02f1de43fab96d4918a41b143114e5c0c95d004954c8d75ad411"
-  },
-  {
-    "id": "1wauBsZcutt5yaMdYp59VUNH5CETO9cJI",
-    "name": "silsa_imgto3d",
-    "sha256": "b7fc6f45fb7149a20281fd7507ed2e3de5c78e51d3e13b416c3764f274c7e9ce"
   }
 ]
