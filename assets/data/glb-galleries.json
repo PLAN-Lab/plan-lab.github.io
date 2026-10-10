@@ -1,0 +1,348 @@
+[
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_chef_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_chef_hat.glb",
+    "bytes": 26760216,
+    "credits": {},
+    "converted": false,
+    "triangles": 531130
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_chrismas_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_chrismas_hat.glb",
+    "bytes": 26437832,
+    "credits": {},
+    "converted": false,
+    "triangles": 500586
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_clown_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_clown_hat.glb",
+    "bytes": 26528680,
+    "credits": {},
+    "converted": false,
+    "triangles": 513342
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_crown_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_crown_hat.glb",
+    "bytes": 26373876,
+    "credits": {},
+    "converted": false,
+    "triangles": 500094
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_high_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_high_hat.glb",
+    "bytes": 26389832,
+    "credits": {},
+    "converted": false,
+    "triangles": 500718
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_shark_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_shark_hat.glb",
+    "bytes": 26450792,
+    "credits": {},
+    "converted": false,
+    "triangles": 506630
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "birdy_witch_hat.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/birdy_witch_hat.glb",
+    "bytes": 26616748,
+    "credits": {},
+    "converted": false,
+    "triangles": 503094
+  },
+  {
+    "group": "dreampartgen_partedit",
+    "name": "cute-birdy.glb",
+    "path": "projects/dreampartgen/static/models/part-editing/cute-birdy.glb",
+    "bytes": 5734176,
+    "credits": {},
+    "converted": false,
+    "triangles": 499998
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "bowl.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/bowl.glb",
+    "bytes": 12884,
+    "credits": {},
+    "converted": false,
+    "triangles": 896
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "chair.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/chair.glb",
+    "bytes": 862680,
+    "credits": {},
+    "converted": false,
+    "triangles": 204
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "chair_v2.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/chair_v2.glb",
+    "bytes": 10805792,
+    "credits": {},
+    "converted": false,
+    "triangles": 999799
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "chair_v2_merged.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/chair_v2_merged.glb",
+    "bytes": 12050624,
+    "credits": {},
+    "converted": false,
+    "triangles": 999799
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "chair_v3.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/chair_v3.glb",
+    "bytes": 8228652,
+    "credits": {},
+    "converted": false,
+    "triangles": 91832
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "coke.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/coke.glb",
+    "bytes": 1190012,
+    "credits": {},
+    "converted": false,
+    "triangles": 28056
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "coke_can.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/coke_can.glb",
+    "bytes": 3835700,
+    "credits": {},
+    "converted": false,
+    "triangles": 3414
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "cup.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/cup.glb",
+    "bytes": 12572,
+    "credits": {},
+    "converted": false,
+    "triangles": 832
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "fork.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/fork.glb",
+    "bytes": 11588,
+    "credits": {},
+    "converted": false,
+    "triangles": 568
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "knife.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/knife.glb",
+    "bytes": 7592,
+    "credits": {},
+    "converted": false,
+    "triangles": 320
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "scene2_full.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/scene2_full.glb",
+    "bytes": 1621192,
+    "credits": {},
+    "converted": false,
+    "triangles": 77324
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "scene2_texture.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/scene2_texture.glb",
+    "bytes": 6520948,
+    "credits": {},
+    "converted": false,
+    "triangles": 77360
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "scene2_v2.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/scene2_v2.glb",
+    "bytes": 14742636,
+    "credits": {},
+    "converted": false,
+    "triangles": 443872
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "spoon.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/spoon.glb",
+    "bytes": 9872,
+    "credits": {},
+    "converted": false,
+    "triangles": 608
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "surfacebook.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/surfacebook.glb",
+    "bytes": 74908,
+    "credits": {},
+    "converted": false,
+    "triangles": 2256
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "table.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/table.glb",
+    "bytes": 862268,
+    "credits": {},
+    "converted": false,
+    "triangles": 112
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "wine.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/wine.glb",
+    "bytes": 28260,
+    "credits": {},
+    "converted": false,
+    "triangles": 892
+  },
+  {
+    "group": "dreampartgen_miniscene",
+    "name": "wine_cup.glb",
+    "path": "projects/dreampartgen/static/models/mini-scenes/wine_cup.glb",
+    "bytes": 50436,
+    "credits": {},
+    "converted": false,
+    "triangles": 1788
+  },
+  {
+    "group": "silsa_highres",
+    "name": "1.glb",
+    "path": "projects/silsa/static/models/high-resolution/1.glb",
+    "bytes": 1320580,
+    "credits": {
+      "author": "兰草茶 (https://sketchfab.com/mostima0521)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/asw-g-01-gundam-bael-875c1899b94f4739815d1909761baa9c",
+      "title": "ASW-G-01 Gundam Bael"
+    },
+    "converted": false,
+    "triangles": 56116
+  },
+  {
+    "group": "silsa_highres",
+    "name": "2.glb",
+    "path": "projects/silsa/static/models/high-resolution/2.glb",
+    "bytes": 2391516,
+    "credits": {
+      "author": "cosmos28 (https://sketchfab.com/cosmos28)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/gundam-freedom-02042775eda240c09d8a39ecc989ad29",
+      "title": "gundam freedom"
+    },
+    "converted": false,
+    "triangles": 115483
+  },
+  {
+    "group": "silsa_highres",
+    "name": "3.glb",
+    "path": "projects/silsa/static/models/high-resolution/3.glb",
+    "bytes": 3772584,
+    "credits": {
+      "author": "Kussa (https://sketchfab.com/Kussa)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/jsdf-mecha-2141e05e148c4bfcaf0844c80b24a720",
+      "title": "JSDF MECHA"
+    },
+    "converted": true,
+    "triangles": 211674
+  },
+  {
+    "group": "silsa_highres",
+    "name": "5.glb",
+    "path": "projects/silsa/static/models/high-resolution/5.glb",
+    "bytes": 19972,
+    "credits": {
+      "author": "patrick.young (https://sketchfab.com/patrick.young)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/cathay-pacific-b112351761701063a0-53a2bc3b950c4ecaaedba8960c3e7596",
+      "title": "Cathay Pacific B112351761701063A0"
+    },
+    "converted": false,
+    "triangles": 880
+  },
+  {
+    "group": "silsa_highres",
+    "name": "xeno.glb",
+    "path": "projects/silsa/static/models/high-resolution/xeno.glb",
+    "bytes": 197420,
+    "credits": {
+      "author": "Henrique Naspolini (https://sketchfab.com/henriquedw)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/xeno-raven-e444a88e999549d99eacb1ea0f8e04e4",
+      "title": "Xeno Raven"
+    },
+    "converted": false,
+    "triangles": 14307
+  },
+  {
+    "group": "silsa_imgto3d",
+    "name": "chess_rook.glb",
+    "path": "projects/silsa/static/models/image-to-3d/chess_rook.glb",
+    "bytes": 14723484,
+    "credits": {
+      "author": "Abrazafarolas (https://sketchfab.com/Abrazafarolas)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/chess-rook-3cee8060835648e8ab63ee132b998d0e",
+      "title": "CHESS ROOK"
+    },
+    "converted": false,
+    "triangles": 955864
+  },
+  {
+    "group": "silsa_imgto3d",
+    "name": "mars_car.glb",
+    "path": "projects/silsa/static/models/image-to-3d/mars_car.glb",
+    "bytes": 1221440,
+    "credits": {
+      "author": "Kotyambuss (https://sketchfab.com/k.suhoveev2000)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/xyzschool-hw11draft1-98dd2f1a5acb43548a5ddd771e37a076",
+      "title": "XYZSchool_HW11[DRAFT1]"
+    },
+    "converted": false,
+    "triangles": 50288
+  },
+  {
+    "group": "silsa_imgto3d",
+    "name": "saharahs_cart_-_animal_crossing_fanart.glb",
+    "path": "projects/silsa/static/models/image-to-3d/saharahs_cart_-_animal_crossing_fanart.glb",
+    "bytes": 2827028,
+    "credits": {
+      "author": "Florence Dubois (https://sketchfab.com/floeur)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/saharahs-cart-animal-crossing-fanart-f0523e8c741f406c85baffd0d6d19e6f",
+      "title": "Saharah's Cart - Animal Crossing Fanart"
+    },
+    "converted": false,
+    "triangles": 4050
+  }
+]
