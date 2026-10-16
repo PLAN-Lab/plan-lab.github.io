@@ -80,6 +80,16 @@
 .studio-coda .coda-details summary span { font-size:20px; line-height:1; color:var(--coda-mint); transition:transform .2s; }
 .studio-coda .coda-details[open] > summary span { transform:rotate(45deg); }
 .studio-coda .coda-details-body { padding:20px 0 0; }
+.page-project.studio-coda .publication-authors sup.studio-affiliation-marker { color:#a9c9e9 !important; }
+.studio-coda .studio-affiliation > sup { margin-right:4px; }
+.studio-coda .coda-verified-method { min-width:0; }
+.page-project.studio-coda .coda-method-source { font-size:11px; color:#93abc7; }
+.studio-coda .coda-method-source a { color:#b2dbc9; text-underline-offset:3px; }
+.studio-coda .coda-equation { max-width:100%; margin:22px 0 26px; padding:18px 20px; border:1px solid var(--coda-line); border-radius:8px; background:#071426; }
+.studio-coda .coda-equation-label { display:block; margin-bottom:16px; color:#9cddbc; font:500 10px/1.6 Inter,sans-serif; }
+.studio-coda .coda-equation-scroll { max-width:100%; overflow-x:auto; padding:8px 2px 12px; scrollbar-width:thin; scrollbar-color:#526c87 transparent; }
+.studio-coda .coda-equation-scroll:focus-visible { outline:2px solid var(--coda-mint); outline-offset:4px; border-radius:3px; }
+.studio-coda .coda-equation math { width:max-content; min-width:100%; margin:0; color:#e3edf9; font-family:"Cambria Math","STIX Two Math",math; font-size:clamp(15px,1.6vw,19px); line-height:1.5; }
 .studio-coda .coda-figure-zoom { display:block; position:relative; color:#dbe9f7; margin:20px 0; }
 .studio-coda .coda-figure-zoom img { display:block; max-width:100%; margin:0 auto !important; border-radius:8px; }
 .studio-coda .coda-figure-zoom > span { position:absolute; right:12px; bottom:12px; padding:8px 12px; background:#07121eeb; border:1px solid #ffffff35; border-radius:6px; color:#fff; font-size:10px; opacity:.85; }
