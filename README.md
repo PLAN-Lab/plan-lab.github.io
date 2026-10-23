@@ -49,7 +49,7 @@ This folder is a standalone static site. Team members, publications, and news ar
         "Firstname Lastname", # important to use this format for lab members to link to their profile
       ],
       "jointFirstAuthors": [
-        "Firstname Lastname" # optional; members listed here are prioritized like first authors on profile pages
+        "Firstname Lastname" # optional; rendered with * and prioritized like first authors on profile pages
       ],
       "year": YYYY,
       "date": "YYYY-MM-DD",
@@ -69,6 +69,9 @@ This folder is a standalone static site. Team members, publications, and news ar
     }
 ```
 - Make sure to remove the comments from above block after the edits, comments are not supported in json.
+- Keep `authors` as plain names, without contribution symbols. Declare roles using arrays of exact author names: `jointFirstAuthors` (*), `coreContributors` (*), `correspondingAuthors` (†), `jointSeniorAuthors` (†), and `equalContributors` (‡, for a separate equal-contribution group). The shared content loader adds superscripts and a note stating the precise roles; use only roles documented by the paper or its authors.
+- Set `"pinned": true` to keep a paper at the top of the publications list without changing its publication date.
+- Optional `coverAlt` describes the thumbnail for screen-reader users.
 - Add publication cover image under `assets/images/publications/` (ideally use a 4:3 aspect ratio)
 - For papers on home page, add card cover image under `assets/images/cards/`
 - Send a pull request
