@@ -156,7 +156,16 @@
       const marks = activeRoles.filter((role) => role.names.has(authorKey(author))).map((role) => role.mark);
       return author + [...new Set(marks)].join('');
     });
-    const roleNotes = activeRoles.map((role) =>
+    const correspondingRole = activeRoles.find((role) => role.field === 'correspondingAuthors');
+    const roleNotes = activeRoles.filter((role) => {
+      // The legend explains a lone corresponding-author marker.
+      if (role.field === 'correspondingAuthors') return role.names.size > 1;
+      // Avoid repeating the same group under both senior and corresponding roles.
+      if (role.field === 'jointSeniorAuthors' && correspondingRole &&
+          role.names.size === correspondingRole.names.size &&
+          [...role.names].every((name) => correspondingRole.names.has(name))) return false;
+      return true;
+    }).map((role) =>
       `${role.mark} ${role.names.size > 1 && role.plural ? role.plural : role.label}`
     );
     const note = [...roleNotes, pub.note].filter(Boolean).join('; ');
@@ -164,7 +173,7 @@
   }
 
   async function getPublications() {
-    const data = await loadJson('assets/data/publications.json?v=20261023-author-roles');
+    const data = await loadJson('assets/data/publications.json?v=20261023-author-notes');
     return (data.publications || []).map(withAuthorContributions);
   }
 
