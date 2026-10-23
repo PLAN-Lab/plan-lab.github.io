@@ -81,6 +81,7 @@
   }
 
   function byDateDesc(a, b) {
+    if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
     const ad = toDateValue(a);
     const bd = toDateValue(b);
     if (ad !== bd) return bd - ad;
@@ -192,7 +193,7 @@
       const img = document.createElement('img');
       img.className = 'pub-img';
       img.src = pub.cover;
-      img.alt = pub.projectName ? `${pub.projectName} cover` : 'Publication cover';
+      img.alt = pub.coverAlt || (pub.projectName ? `${pub.projectName} cover` : 'Publication cover');
       img.loading = 'lazy';
       img.decoding = 'async';
       const applyImageFit = () => {
@@ -488,3 +489,4 @@
     init();
   }
 })();
+
