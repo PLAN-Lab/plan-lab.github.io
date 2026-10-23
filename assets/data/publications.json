@@ -172,7 +172,7 @@
         "Wei Zhan"
       ]
     },
-    {
+       {
       "id": "2026-Yu-silsa-sliding-window-slice-latents",
       "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
       "projectName": "SILSA",
@@ -229,98 +229,98 @@
       "venueAbbr": "NeurIPS 2026"
     },
     {
-      "id": "2026-Venkatesh-ravel-rare-concept-generation",
-      "title": "RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance",
-      "projectName": "RAVEL",
-      "authors": [
-        "Kavana Venkatesh",
-        "Yusuf Dalva",
-        "Ismini Lourentzou",
-        "Pinar Yanardag"
-      ],
-      "year": "2026",
-      "date": "2026-09-19",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "type": "paper",
-      "cover": "assets/images/publications/ravel.webp",
-      "doi": "10.48550/arXiv.2412.09614",
-      "links": {
-        "website": "https://ravel-diffusion.github.io/",
-        "paper": "https://arxiv.org/pdf/2412.09614",
-        "code": "",
-        "video": "",
-        "data": ""
-      },
-      "venueAbbr": "NeurIPS 2026"
-    },
+  "id": "2026-Venkatesh-ravel-rare-concept-generation",
+  "title": "RAVEL: Rare Concept Generation and Editing via Graph-driven Relational Guidance",
+  "projectName": "RAVEL",
+  "authors": [
+    "Kavana Venkatesh",
+    "Yusuf Dalva",
+    "Ismini Lourentzou",
+    "Pinar Yanardag"
+  ],
+  "year": "2026",
+  "date":  "2026-09-19",
+  "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+  "type": "paper",
+  "cover": "assets/images/publications/ravel.webp",
+  "doi": "10.48550/arXiv.2412.09614",
+  "links": {
+    "website": "https://ravel-diffusion.github.io/",
+    "paper": "https://arxiv.org/pdf/2412.09614",
+    "code": "",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "NeurIPS 2026"
+},
+{
+  "id": "2026-Wang-fasa-frequency-aware-sparse-attention",
+  "title": "FASA: Frequency-aware Sparse Attention",
+  "projectName": "FASA",
+  "authors": [
+    "Yifei Wang",
+    "Yueqi Wang",
+    "Zhenrui Yue",
+    "Huimin Zeng",
+    "Yong Wang",
+    "Ismini Lourentzou",
+    "Zhengzhong Tu",
+    "Xiangxiang Chu",
+    "Julian McAuley"
+  ],
+  "year": 2026,
+  "date": "2026-02-03",
+  "venue": "International Conference on Learning Representations",
+  "type": "paper",
+  "cover": "assets/images/publications/fasa.webp",
+  "doi": "10.48550/arXiv.2602.03152",
+  "links": {
+    "website": "",
+    "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e839f274b3d3d682a0a82e5129d2cc4a-Paper-Conference.pdf",
+    "code": "https://github.com/AMAP-ML/FASA-ICLR2026",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "ICLR 2026"
+ },
     {
-      "id": "2026-Wang-fasa-frequency-aware-sparse-attention",
-      "title": "FASA: Frequency-aware Sparse Attention",
-      "projectName": "FASA",
-      "authors": [
-        "Yifei Wang",
-        "Yueqi Wang",
-        "Zhenrui Yue",
-        "Huimin Zeng",
-        "Yong Wang",
-        "Ismini Lourentzou",
-        "Zhengzhong Tu",
-        "Xiangxiang Chu",
-        "Julian McAuley"
-      ],
-      "year": 2026,
-      "date": "2026-02-03",
-      "venue": "International Conference on Learning Representations",
-      "type": "paper",
-      "cover": "assets/images/publications/fasa.webp",
-      "doi": "10.48550/arXiv.2602.03152",
-      "links": {
-        "website": "",
-        "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e839f274b3d3d682a0a82e5129d2cc4a-Paper-Conference.pdf",
-        "code": "https://github.com/AMAP-ML/FASA-ICLR2026",
-        "video": "",
-        "data": ""
-      },
-      "venueAbbr": "ICLR 2026"
-    },
-    {
-      "id": "2026-Zhang-libero-max",
-      "title": "LIBERO-MAX: Do Robot Policies Adapt When the World Changes?",
-      "projectName": "LIBERO-MAX",
-      "authors": [
-        "Yunbei Zhang",
-        "Zijian Jin",
-        "Yuanzhe Liu",
-        "Janet Wang",
-        "Xilun Zhang",
-        "Yuyou Zhang",
-        "Zhenyu Zhang",
-        "Daoan Zhang",
-        "Shuaicheng Niu",
-        "Gen Li",
-        "Jianfei Yang",
-        "Jihun Hamm",
-        "Ismini Lourentzou",
-        "Weirui Ye",
-        "Bo Liu",
-        "Peter Stone",
-        "Marco Pavone"
-      ],
-      "year": 2026,
-      "date": "2026-09-29",
-      "venue": "arXiv",
-      "type": "paper",
-      "cover": "assets/images/publications/libero-max.webp",
-      "doi": "10.48550/arXiv.2609.36518",
-      "links": {
-        "website": "https://liberomax.github.io",
-        "paper": "https://arxiv.org/pdf/2609.36518",
-        "code": "",
-        "video": "",
-        "data": ""
-      },
-      "venueAbbr": "arXiv"
-    },
+  "id": "2026-Zhang-libero-max",
+  "title": "LIBERO-MAX: Do Robot Policies Adapt When the World Changes?",
+  "projectName": "LIBERO-MAX",
+  "authors": [
+    "Yunbei Zhang",
+    "Zijian Jin",
+    "Yuanzhe Liu",
+    "Janet Wang",
+    "Xilun Zhang",
+    "Yuyou Zhang",
+    "Zhenyu Zhang",
+    "Daoan Zhang",
+    "Shuaicheng Niu",
+    "Gen Li",
+    "Jianfei Yang",
+    "Jihun Hamm",
+    "Ismini Lourentzou",
+    "Weirui Ye",
+    "Bo Liu",
+    "Peter Stone",
+    "Marco Pavone"
+  ],
+  "year": 2026,
+  "date": "2026-09-29",
+  "venue": "arXiv",
+  "type": "paper",
+  "cover": "assets/images/publications/libero-max.webp",
+  "doi": "10.48550/arXiv.2609.36518",
+  "links": {
+    "website": "https://liberomax.github.io",
+    "paper": "https://arxiv.org/pdf/2609.36518",
+    "code": "",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "arXiv"
+},
     {
       "id": "2026-Juvekar-editvid-one-editor-many-edits",
       "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
@@ -353,33 +353,33 @@
       "venueAbbr": "arXiv"
     },
     {
-      "id": "2026-Shen-evaluating-cognitive-age-alignment",
-      "title": "Evaluating Cognitive Age Alignment in Interactive AI Agents",
-      "projectName": "ChildAgentEval",
-      "authors": [
-        "Yifan Shen",
-        "Jiawen Zhang",
-        "Jian Xu",
-        "Junho Kim",
-        "Ismini Lourentzou",
-        "Xu Cao",
-        "Meihuan Huang"
-      ],
-      "year": 2026,
-      "date": "2026-05-18",
-      "venue": "arXiv",
-      "type": "paper",
-      "cover": "assets/images/publications/childagent-eval.webp",
-      "doi": "10.48550/arXiv.2605.17894",
-      "links": {
-        "website": "",
-        "paper": "https://arxiv.org/pdf/2605.17894",
-        "code": "https://github.com/PediaMedAI/ChildAgentEval",
-        "video": "",
-        "data": ""
-      },
-      "venueAbbr": "arXiv"
-    },
+  "id": "2026-Shen-evaluating-cognitive-age-alignment",
+  "title": "Evaluating Cognitive Age Alignment in Interactive AI Agents",
+  "projectName": "ChildAgentEval",
+  "authors": [
+    "Yifan Shen",
+    "Jiawen Zhang",
+    "Jian Xu",
+    "Junho Kim",
+    "Ismini Lourentzou",
+    "Xu Cao",
+    "Meihuan Huang"
+  ],
+  "year": 2026,
+  "date": "2026-05-18",
+  "venue": "arXiv",
+  "type": "paper",
+  "cover": "assets/images/publications/childagent-eval.webp",
+  "doi": "10.48550/arXiv.2605.17894",
+  "links": {
+    "website": "",
+    "paper": "https://arxiv.org/pdf/2605.17894",
+    "code": "https://github.com/PediaMedAI/ChildAgentEval",
+    "video": "",
+    "data": ""
+  },
+  "venueAbbr": "arXiv"
+},
     {
       "id": "2026-Shah-graphvid-interactive-graph-controllable",
       "title": "GraphVid: Interactive Graph-Controllable Video Generation",
@@ -1237,8 +1237,7 @@
       "projectName": "ELBA",
       "authors": [
         "Ying Shen",
-        "Daniel Biś",
-        "Cynthia Lu",
+        "Daniel Biś", "Cynthia Lu",
         "Ismini Lourentzou"
       ],
       "year": 2025,

@@ -149,4 +149,3 @@ Short links redirect through `404.html`. A slug map at the top of that file
 redirects known projects before the page paints. When adding a project,
 add its folder name to the `SLUGS` map in `404.html` (or leave it: unknown
 slugs are probed automatically with a short delay before redirecting).
-
