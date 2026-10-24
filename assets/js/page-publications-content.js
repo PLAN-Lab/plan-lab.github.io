@@ -81,7 +81,9 @@
   }
 
   function byDateDesc(a, b) {
-    if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
+    const aOrder = a.pinned ? (Number(a.pinnedOrder) || 1) : Infinity;
+    const bOrder = b.pinned ? (Number(b.pinnedOrder) || 1) : Infinity;
+    if (aOrder !== bOrder) return aOrder - bOrder;
     const ad = toDateValue(a);
     const bd = toDateValue(b);
     if (ad !== bd) return bd - ad;
@@ -281,7 +283,8 @@
       links.appendChild(makeLinkButton(projectUrl, 'Project', 'btn btn-primary', 'fa-solid fa-link'));
     } else {
       if (codeUrl) {
-        links.appendChild(makeLinkButton(codeUrl, pub.codeLabel || 'Code', 'btn btn-outline', 'fab fa-github'));
+        const codeClass = pub.highlightCode ? 'btn btn-outline btn-resource-highlight' : 'btn btn-outline';
+        links.appendChild(makeLinkButton(codeUrl, pub.codeLabel || 'Code', codeClass, 'fab fa-github'));
       }
       if (videoUrl) {
         links.appendChild(makeLinkButton(videoUrl, 'Video', 'btn btn-outline', 'fa-solid fa-video'));

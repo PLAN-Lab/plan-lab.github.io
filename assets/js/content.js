@@ -173,7 +173,7 @@
   }
 
   async function getPublications() {
-    const data = await loadJson('assets/data/publications.json?v=20261023-omni-link');
+    const data = await loadJson('assets/data/publications.json?v=20261023-omni-highlight');
     return (data.publications || []).map(withAuthorContributions);
   }
 

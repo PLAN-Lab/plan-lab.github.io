@@ -1088,6 +1088,26 @@ body {
             transform: translateY(-2px);
         }
 
+        .page-publications .pub-links .btn-resource-highlight {
+            background: var(--accent-teal);
+            color: var(--bg-color);
+            border-color: var(--accent-teal);
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(46, 209, 197, 0.25);
+            max-width: 100%;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+        .page-publications .pub-links .btn-resource-highlight:hover {
+            background: #67e5dc;
+            border-color: #67e5dc;
+            box-shadow: 0 6px 20px rgba(46, 209, 197, 0.35);
+        }
+        .page-publications .pub-links .btn-resource-highlight:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 4px;
+        }
+
         /* No Results State */
         .no-results {
             text-align: center; display: none; padding: 4rem;
