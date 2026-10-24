@@ -281,7 +281,7 @@
       links.appendChild(makeLinkButton(projectUrl, 'Project', 'btn btn-primary', 'fa-solid fa-link'));
     } else {
       if (codeUrl) {
-        links.appendChild(makeLinkButton(codeUrl, 'Code', 'btn btn-outline', 'fab fa-github'));
+        links.appendChild(makeLinkButton(codeUrl, pub.codeLabel || 'Code', 'btn btn-outline', 'fab fa-github'));
       }
       if (videoUrl) {
         links.appendChild(makeLinkButton(videoUrl, 'Video', 'btn btn-outline', 'fa-solid fa-video'));
