@@ -99,11 +99,8 @@ p{margin:0}
 .au{white-space:nowrap}
 .author-meta{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;color:var(--muted)}
 .affils{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 18px;margin-top:6px;padding-top:12px;padding-bottom:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.aff{display:grid;grid-template-columns:14px 40px minmax(0,1fr);align-items:center;gap:8px;font-size:12px;line-height:1.25;color:var(--ink)}
+.aff{display:grid;grid-template-columns:14px minmax(0,1fr);align-items:baseline;gap:6px;font-size:13px;line-height:1.35;color:var(--ink)}
 .aff-n{font:500 10px var(--f-mono);font-stretch:87.5%;color:var(--accent);text-align:right}
-.aff-mark{height:30px;display:grid;place-items:center;border-radius:6px;background:color-mix(in oklab,var(--tone) 13%,var(--surface));color:var(--tone);font:600 8.5px var(--f-display);letter-spacing:-.01em;overflow:hidden;padding:0 3px}
-.aff-mark.has-logo{background:#fff;border:1px solid var(--rule);padding:3px 4px}
-.aff-mark img{display:block;max-height:22px;max-width:100%;object-fit:contain}
 
 /* lanes strip */
 .strip{margin-top:34px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);overflow:hidden}
@@ -605,20 +602,6 @@ const CONFIG = {
   doi: "10.20944/preprints202610.1649.v1",
   // README sections (by anchor id) that the site leaves out
   hideSections: ["foundations"],
-  // Affiliation badges: logo file in assets/logos/ (short name shows if the file is missing).
-  affiliations: {
-    "University of Illinois Urbana-Champaign": { short: "UIUC", file: "uiuc.svg" },
-    "Carnegie Mellon University": { short: "CMU", file: "cmu.png" },
-    "Columbia University": { short: "Columbia", file: "columbia.png" },
-    "Northeastern University": { short: "NEU", file: "northeastern.png" },
-    "University of Pennsylvania": { short: "Penn", file: "penn.png" },
-    "Rutgers University": { short: "Rutgers", file: "rutgers.png" },
-    "University of California, San Diego": { short: "UCSD", file: "ucsd.png" },
-    "University of California, Berkeley": { short: "Berkeley", file: "berkeley.png" },
-    "Independent Researcher": { short: "", icon: "person" },
-    "Google": { short: "Google", file: "google.svg" },
-    "University of California, Merced": { short: "Merced", file: "ucmerced.png" }
-  },
   labUrl: "https://plan-lab.github.io",
   families: [
     { id: "models-cascaded-and-adapted-systems", name: "Cascaded real-time systems", lane: "muted",
@@ -871,25 +854,6 @@ function inlineMd(md) {
   s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[\s(])\*([^*]+)\*/g, "$1<em>$2</em>").replace(/`([^`]+)`/g, "<code>$1</code>");
   return s;
 }
-function initials(name) {
-  const w = String(name).replace(/,/g, " ").split(/[\s-]+/).filter(x => x && !/^(of|the|and|at|for|de|du)$/i.test(x));
-  return w.length === 1 ? w[0] : w.map(x => x[0].toUpperCase()).join("").slice(0, 5);
-}
-function loadLogos() {
-  document.querySelectorAll(".aff-mark[data-logo]").forEach(el => {
-    const base = el.dataset.logo, names = /\.(svg|png|jpe?g|webp)$/i.test(base) ? [base] : [base + ".svg", base + ".png"];
-    // Look next to the page first, then next to the README it was read from
-    const cands = [...new Set(names.flatMap(n => [new URL(n, location.href).href, resolveUrl(n, "asset")]))];
-    const tryAt = i => {
-      if (i >= cands.length) return;
-      const img = new Image();
-      img.onload = () => { el.classList.add("has-logo"); img.alt = el.dataset.name || ""; el.replaceChildren(img); };
-      img.onerror = () => tryAt(i + 1);
-      img.src = cands[i];
-    };
-    tryAt(0);
-  });
-}
 // Side dots: one per panel
 let dotObserver = null;
 function buildDots() {
@@ -1054,18 +1018,9 @@ function renderHeader() {
   }
   const affs = Object.entries(DATA.affiliations);
   if (affs.length) {
-    const tones = ["user", "accent", "video", "bgl"];
-    const person = `<svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="6.5" r="3.5" fill="currentColor"/><path d="M3 17.5c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" fill="currentColor"/></svg>`;
-    $("#affils").innerHTML = affs.map(([k, name], i) => {
-      const m = (CONFIG.affiliations || {})[name] || {};
-      const short = m.short != null ? m.short : initials(name);
-      const file = m.icon ? "" : (m.file || slugify(short || name));
-      return `<div class="aff" style="--tone:var(--${tones[i % tones.length]})"><span class="aff-n">${esc(k)}</span>` +
-        `<span class="aff-mark${m.icon ? " has-logo" : ""}"${file ? ` data-logo="assets/logos/${esc(file)}" data-name="${esc(name)}"` : ""}>${m.icon === "person" ? person : esc(short)}</span>` +
-        `<span>${esc(name)}</span></div>`;
-    }).join("");
+    $("#affils").innerHTML = affs.map(([k, name]) =>
+      `<div class="aff"><span class="aff-n">${esc(k)}</span><span>${esc(name)}</span></div>`).join("");
     $("#affils").hidden = false;
-    loadLogos();
   }
 
   // figure
