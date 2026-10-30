@@ -49,7 +49,7 @@ This folder is a standalone static site. Team members, publications, and news ar
         "Firstname Lastname", # important to use this format for lab members to link to their profile
       ],
       "jointFirstAuthors": [
-        "Firstname Lastname" # optional; members listed here are prioritized like first authors on profile pages
+        "Firstname Lastname" # optional; rendered with * and prioritized like first authors on profile pages
       ],
       "year": YYYY,
       "date": "YYYY-MM-DD",
@@ -69,6 +69,10 @@ This folder is a standalone static site. Team members, publications, and news ar
     }
 ```
 - Make sure to remove the comments from above block after the edits, comments are not supported in json.
+- Keep `authors` as plain names, without contribution symbols. Declare roles using arrays of exact author names: `jointFirstAuthors` (*), `coreContributors` (*), `correspondingAuthors` (†), `jointSeniorAuthors` (†), and `equalContributors` (‡, for a separate equal-contribution group). The shared content loader adds superscripts and a note stating the precise roles; use only roles documented by the paper or its authors.
+- A single corresponding author has no † marker or separate note; the role remains in the catalogue metadata. When the same group is both shared senior and co-corresponding authors, only the co-corresponding note is shown.
+- Set `"pinned": true` to keep a paper at the top of the publications list without changing its publication date.
+- Optional `coverAlt` describes the thumbnail for screen-reader users.
 - Add publication cover image under `assets/images/publications/` (ideally use a 4:3 aspect ratio)
 - For papers on home page, add card cover image under `assets/images/cards/`
 - Send a pull request
@@ -105,6 +109,28 @@ This folder is a standalone static site. Team members, publications, and news ar
 - Send a pull request
 
 ## Projects
+
+The 28 reviewed project pages are authored directly in their `index.html` files
+at the normal `/projects/<slug>/` URLs. Each file contains the complete reviewed
+presentation. The old layouts and browser-side layout conversion are removed.
+
+- Styling: `assets/css/projects.css`, `assets/css/project-studio.css`, and
+  project-specific stylesheets where present.
+- Author bylines, affiliations, resource buttons, and BibTeX citations live
+  directly in each project's `index.html`.
+- Section copy, result descriptions, tables, and initial charts are ordinary
+  HTML and SVG in the page. Metric and task alternatives are stored in local
+  HTML templates. `assets/js/project-interactions.js` connects their controls,
+  video playback, and 3D-viewer buttons; it does not construct the page layout.
+- The existing `assets/data/publications.json` remains the publication catalogue
+  for the lab homepage and publications page.
+- The footer is included directly in each reviewed page; browser libraries live
+  in `assets/vendor/`.
+- Asset versions are set in the project HTML's script/style URLs. Bump those
+  versions when publishing asset changes.
+
+Run `python3 -m http.server 8000` from the repository root to inspect the pages
+locally at `http://localhost:8000/projects/<slug>/`.
 
 To create a new project page:
 

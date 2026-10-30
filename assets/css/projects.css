@@ -331,12 +331,16 @@
   background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   overflow: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   word-break: normal;
+  text-align: left;
 }
 
 .page-project pre code {
   display: block;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .page-project kbd {

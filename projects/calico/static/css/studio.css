@@ -1,0 +1,47 @@
+/* Scoped to CALICO's opt-in preview. Scientific figures retain their aspect ratios. */
+.page-project.project-studio.studio-calico main { padding-top: 104px; }
+.studio-calico main > .studio-header { padding-bottom: 28px; }
+.studio-calico .studio-subtitle { max-width: 900px; margin-inline: auto; text-wrap: balance; }
+.studio-calico main > .section { padding-top: 16px; padding-bottom: 16px; }
+.studio-calico .section > .container.is-max-desktop { padding: clamp(24px,3vw,36px); }
+.studio-calico .section h2.title { margin-bottom: 20px; }
+.studio-calico .calico-feature { margin-top: 24px; margin-bottom: 16px; padding: 28px 32px; background: #09162bef; }
+.studio-calico .calico-label { color: #a9ccff; font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .075em; text-transform: uppercase; }
+.studio-calico .calico-feature h2 { color: #f1f5fc; margin: 10px 0 24px; font-size: clamp(23px,2.6vw,32px); line-height: 1.3; text-wrap: balance; }
+.studio-calico .calico-task-figure, .studio-calico .calico-figure { margin: 24px 0; padding: 0; }
+.studio-calico .calico-task-figure { margin: 0; }
+.studio-calico main .calico-task-figure > img, .studio-calico main .calico-figure > img { display: block; width: 100%; max-width: 100%; height: auto !important; margin: 0; border: 0; border-radius: 6px; box-shadow: none; }
+.studio-calico .calico-task-caption { margin-top: 14px; font-size: 14px; line-height: 1.8; color: #c2d0e3; text-align: left; }
+.studio-calico .calico-task-caption p { margin: 0; }
+.studio-calico .calico-figure-toolbar { display: flex; justify-content: flex-end; padding-top: 8px; }
+.studio-calico .calico-figure-toolbar .studio-zoom { position: static; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; }
+.studio-calico .calico-presentation-block + .calico-presentation-block { margin-top: 32px; padding-top: 24px; border-top: 1px solid #ffffff20; }
+.studio-calico .calico-presentation-block h3 { color: #f1f5fc; font-size: 21px; margin: 0 0 16px; }
+.studio-calico .calico-presentation-content { width: 100%; max-width: 100%; }
+.studio-calico .calico-poster { display: block; width: 100%; height: 550px; margin-top: 16px; border: 1px solid #ffffff20; border-radius: 8px; }
+.studio-calico .calico-poster-link { color: #a9ccff; font-size: 14px; }
+.studio-calico main .studio-native-result { margin: 24px 0 0; box-shadow: none; }
+.studio-calico main .studio-native-table thead th { background: #713c27 !important; color: #fff3e9 !important; border-bottom-color: #ff915b; }
+.studio-calico main .studio-native-table thead { border-bottom-color: #ff915b; }
+.studio-calico main .studio-native-table tr.studio-ours { background: #ff915b22 !important; }
+.studio-calico main .studio-native-table tr.studio-ours > th { color: #ff915b !important; font-weight: 700 !important; box-shadow: inset 3px 0 0 #ff915b; }
+.studio-calico main .studio-native-table tr.studio-ours > td { color: #f1f5fc !important; }
+.studio-calico .calico-example { margin: 24px 0 32px; padding: 20px; background: #071222; border: 1px solid #a9ccff26; border-radius: 12px; }
+.studio-calico .calico-example h3.calico-example-title { margin: 0 0 18px; color: #a9ccff; font-size: 15px; font-weight: 650; text-align: left; line-height: 1.6; }
+.studio-calico .calico-example .image-container-container { display: block; gap: 0; }
+.studio-calico .calico-example .image-container { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: 16px; margin: 0; }
+.studio-calico .calico-pair-label { margin: 18px 0 10px; color: #c2d0e3; font-size: 12px; font-weight: 600; text-align: left; }
+.studio-calico .calico-example-frame { min-width: 0; }
+.studio-calico main .calico-example-frame > img { display: block; width: 100%; height: auto !important; aspect-ratio: 4 / 3; object-fit: contain !important; border-radius: 6px; background: #0c1930; }
+.studio-calico .calico-example-frame .studio-zoom { min-height: 32px; padding: 6px 10px; font-size: 11px; }
+.studio-calico .calico-example p.calico-example-answer { margin: 18px 0 0 !important; padding-top: 16px; border-top: 1px solid #ffffff20; text-align: left !important; font-size: 15px; line-height: 1.9; }
+.studio-calico .calico-example-answer img { width: 32px; vertical-align: middle; margin-right: 4px; }
+@media (max-width: 768px) {
+ .page-project.project-studio.studio-calico main { padding-top: 45px; }
+ .studio-calico .calico-feature { padding: 20px; }
+ .studio-calico .calico-example { padding: 14px; }
+ .studio-calico .calico-example .image-container { gap: 10px; }
+ .studio-calico .calico-example p.calico-example-answer { font-size: 14px; }
+ .studio-calico .calico-task-caption { font-size: 13px; }
+ .studio-calico .calico-poster { height: 440px; }
+}

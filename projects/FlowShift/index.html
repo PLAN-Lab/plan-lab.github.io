@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-48J3PYKGQ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-48J3PYKGQ6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="vendor/nocturne/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<script src="vendor/nocturne/_ds_bundle.js"></script>
+<title>FlowShift — From Tokens to Trajectories (WACV 2027)</title>
+<meta name="description" content="FlowShift: parameter-efficient continuous adaptation of discrete unified multimodal models. WACV 2027.">
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; text-wrap: pretty; background: radial-gradient(1200px 720px at 82% -160px, color-mix(in srgb, var(--color-accent-900) 75%, transparent), transparent 60%), radial-gradient(1100px 800px at -10% 100%, color-mix(in srgb, black 30%, transparent), transparent 55%), var(--color-bg); }
+a { color: var(--color-accent); }
+a:hover { color: var(--color-accent-300); }
+</style>
+</helmet>
+
+<nav style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 84%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <div class="nav" style="max-width: 1200px; margin: 0 auto; padding: 12px clamp(20px, 5vw, 72px); gap: 24px;">
+    <a href="#top" class="nav-brand" style="font-size: 17px; color: var(--color-text);">FlowShift</a>
+    <div style="display: flex; gap: 20px; min-width: 0; overflow-x: auto; scrollbar-width: none;">
+      <a href="#abstract">Abstract</a>
+      <a href="#idea">Idea</a>
+      <a href="#method">Method</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <header data-screen-label="Hero" onPointerMove="{{ heroMove }}" onPointerLeave="{{ heroLeave }}" style="position: relative; overflow: hidden;">
+    <canvas ref="{{ heroRef }}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.3), #000 50%); mask-image: linear-gradient(to right, rgba(0,0,0,0.3), #000 50%);"></canvas>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(72px, 10vw, 136px) clamp(20px, 5vw, 72px) clamp(80px, 10vw, 140px); pointer-events: none;">
+      <div ref="{{ heroTextRef }}" style="max-width: 620px; pointer-events: auto;">
+        <span class="tag tag-outline" style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: color-mix(in srgb, var(--color-bg) 70%, transparent);">WACV 2027</span>
+        <h1 style="margin: 24px 0 0;">
+          <span style="display: block; font-size: clamp(42px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.03em; margin-left: -0.05em;">From Tokens to Trajectories</span>
+          <span style="display: block; margin-top: 18px; font-size: clamp(19px, 2.1vw, 26px); line-height: 1.35; letter-spacing: -0.01em; color: color-mix(in srgb, var(--color-text) 82%, transparent); max-width: 34ch;">Parameter-Efficient Continuous Adaptation of Unified Multimodal Models with <span style="color: var(--color-accent-300);">FlowShift</span></span>
+        </h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 34px; font-size: 17px; line-height: 1.5;">
+          <span>Gayatri Deshmukh</span>
+          <span>Onkar Susladkar</span>
+          <span>Adheesh Juvekar</span>
+          <span>Halil Kilicoglu<sup style="color: var(--color-accent);">*</sup></span>
+          <span>Ismini Lourentzou<sup style="color: var(--color-accent);">*</sup></span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 8px; font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">
+          <span>University of Illinois Urbana-Champaign</span>
+          <span><sup>*</sup> Corresponding authors</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;">
+          <a href="assets/FlowShift_WACV2027.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-file-pdf" style="font-size: 17px;"></i>Paper</a>
+          <!-- <a href="#" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-article" style="font-size: 17px;"></i>arXiv</a> -->
+          <a href="https://github.com/PLAN-Lab/FlowShift" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-github-logo" style="font-size: 17px;"></i>Code</a>
+          <a href="https://huggingface.co/onkarsus13/FlowShift/" target="_blank" rel="noopener" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><span style="font-size: 17px;">🤗</span>Model Weights</a>
+          <a href="#bibtex" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-quotes" style="font-size: 17px;"></i>BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Mosaic" aria-label="Samples generated with FlowShift" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(12px, 3vw, 40px);">
+    <div style="overflow-x: auto; scrollbar-width: none; border-radius: var(--radius-lg);">
+      <div class="lighten" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 6px; min-width: 760px;">
+        <div style="grid-column: 1 / 3; grid-row: 1 / 3; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/car.jpg" alt="Matte black sports car on a wet mountain road" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.04);"></div>
+        <div style="grid-column: 3; grid-row: 1; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/reef.jpg" alt="Sea turtle over a coral reef" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+        <div style="grid-column: 3; grid-row: 2; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/lake.jpg" alt="Mountain lake reflecting snowy peaks" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+        <div style="grid-column: 4 / 6; grid-row: 1 / 3; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/glasses.jpg" alt="Wine glasses and halved lemons on a marble table" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.04);"></div>
+        <div style="grid-column: 6; grid-row: 1; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/owl.jpg" alt="Snowy owl perched in falling snow" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+        <div style="grid-column: 6; grid-row: 2; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/apple.jpg" alt="Green apple splashing into water" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+        <div style="grid-column: 7; grid-row: 1; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/tents.jpg" alt="Two tents around a campfire at night" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+        <div style="grid-column: 7; grid-row: 2; aspect-ratio: 1 / 1; border-radius: var(--radius-md); overflow: hidden;"><img src="assets/hero/leaf.jpg" alt="Red maple leaf with dew drops on moss" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);" style-hover="transform: scale(1.06);"></div>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: 16px auto 0; padding: 0 clamp(8px, 2vw, 32px); font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 64%, transparent);">FlowShift turns discrete unified generators into continuous flow - higher fidelity, richer texture and lighting, with compositional control preserved.</p>
+  </section>
+
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+    <section aria-label="Highlights" style="margin-top: 96px; background: radial-gradient(900px 420px at 85% -40%, color-mix(in srgb, var(--color-section-glow) 70%, transparent), transparent 64%), var(--color-section); padding: 60px 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 40px 32px;">
+        <div>
+          <p style="margin: 0 0 0 -0.05em; font-size: clamp(40px, 4.2vw, 58px); line-height: 1; font-weight: 500; letter-spacing: -0.02em;">42.5%</p>
+          <p style="margin: 14px 0 0; font-size: 13px; line-height: 1.45; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Lower COCO-30K FID</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 0 -0.05em; font-size: clamp(40px, 4.2vw, 58px); line-height: 1; font-weight: 500; letter-spacing: -0.02em;">+1.78</p>
+          <p style="margin: 14px 0 0; font-size: 13px; line-height: 1.45; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Aesthetic score</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 0 -0.05em; font-size: clamp(40px, 4.2vw, 58px); line-height: 1; font-weight: 500; letter-spacing: -0.02em;">99.5%+</p>
+          <p style="margin: 14px 0 0; font-size: 13px; line-height: 1.45; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Understanding retained</p>
+        </div>
+        <!-- <div>
+          <p style="margin: 0 0 0 -0.05em; font-size: clamp(40px, 4.2vw, 58px); line-height: 1; font-weight: 500; letter-spacing: -0.02em;">0</p>
+          <p style="margin: 14px 0 0; font-size: 13px; line-height: 1.45; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Backbone weights retrained</p>
+        </div> -->
+      </div>
+    </section>
+  </sc-if>
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px);">
+    <section id="abstract" data-screen-label="Abstract" style="padding: 112px 0 24px; display: flex; flex-wrap: wrap; gap: 16px 72px;">
+      <div style="flex: 1 1 220px; max-width: 300px;">
+        <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent);"><span style="width: 24px; height: 1px; background: var(--color-accent);"></span>Abstract</div>
+      </div>
+      <p style="flex: 3 1 480px; max-width: 68ch; margin: 0; font-size: 17px; line-height: 1.75; text-align: justify; color: color-mix(in srgb, var(--color-text) 86%, transparent);">While discrete tokenization in Unified Multimodal Models (UMMs) establishes strong semantic reasoning, it introduces a strict quantization bottleneck that degrades fine-grained visual details, often resulting in structurally accurate but artifact-heavy images. We introduce <span style="color: var(--color-text); font-weight: 500;">FlowShift</span>, a parameter-efficient post-training framework that bypasses this bottleneck by converting pre-trained discrete UMMs into continuous rectified-flow generators. Instead of discarding the backbone’s semantic priors, FlowShift replaces discrete visual interfaces with continuous latent projections and applies LoRA to the attention layers. To efficiently boost visual quality without semantic drift, we propose Dual-Objective Velocity Vector Distillation (DOVD), which aligns the model with a high-fidelity continuous teacher and ground-truth continuous trajectories. This approach drastically improves perceptual quality while preserving prompt adherence and reasoning. When applied to leading discrete UMMs, FlowShift significantly improves COCO-30K FID and aesthetic scores, while retaining over 99.5% of multimodal understanding capabilities. Ablations confirm DOVD drives generation quality. Ultimately, FlowShift achieves high-fidelity continuous generation without sacrificing pre-trained semantic grounding.</p>
+    </section>
+
+    <section id="idea" data-screen-label="Bottleneck" style="padding: 120px 0 24px;">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px;"><span style="width: 24px; height: 1px; background: var(--color-accent);"></span>The bottleneck</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px 72px; align-items: start;">
+        <h2 style="flex: 1 1 300px; max-width: 420px; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.015em; margin: 0;">Why tokens lose detail</h2>
+        <p style="flex: 2 1 420px; max-width: 60ch; margin: 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Discrete models pass every visual feature through a fixed codebook. Smooth variation in texture and shading is snapped to the nearest entry, so features that differ only slightly come out as the same token.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-top: 44px;">
+        <div class="seg" role="radiogroup" aria-label="Codebook size">
+          <label class="seg-opt"><input type="radio" name="bnk" checked="{{ isK0 }}" onChange="{{ pickK0 }}">K = 8</label>
+          <label class="seg-opt"><input type="radio" name="bnk" checked="{{ isK1 }}" onChange="{{ pickK1 }}">K = 32</label>
+          <label class="seg-opt"><input type="radio" name="bnk" checked="{{ isK2 }}" onChange="{{ pickK2 }}">K = 128</label>
+        </div>
+        <span style="font-size: 13px; font-feature-settings: 'tnum' 1; color: color-mix(in srgb, var(--color-text) 66%, transparent);">12 continuous features → <span ref="{{ bnCountRef }}" style="color: var(--color-accent-300);">–</span> tokens</span>
+      </div>
+      <div style="position: relative; margin-top: 12px; height: clamp(300px, 36vw, 440px);">
+        <canvas ref="{{ bnRef }}" role="img" aria-label="Smooth glowing signals flow into a codebook and leave as stepped, merged token lines" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);"></canvas>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px 40px; margin-top: 28px;">
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <span style="flex: none; font-size: 14px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">01</span>
+          <div><h3 style="font-size: 18px; line-height: 1.3; margin: 0;">A fixed codebook</h3><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Every feature has to become one of K entries.</p></div>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <span style="flex: none; font-size: 14px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">02</span>
+          <div><h3 style="font-size: 18px; line-height: 1.3; margin: 0;">Many features, one token</h3><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Subtle differences collapse together.</p></div>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <span style="flex: none; font-size: 14px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">03</span>
+          <div><h3 style="font-size: 18px; line-height: 1.3; margin: 0;">Detail that can’t come back</h3><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent);">What the codebook rounds off, no decoder can recover.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" data-screen-label="Method" style="padding: 120px 0 24px;">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px;"><span style="width: 24px; height: 1px; background: var(--color-accent);"></span>Method</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px 72px; align-items: start;">
+        <h2 style="flex: 1 1 300px; max-width: 420px; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.015em; margin: 0;">Tokens in, trajectories out</h2>
+        <p style="flex: 2 1 420px; max-width: 60ch; margin: 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 80%, transparent);">FlowShift keeps a pretrained discrete model frozen and teaches it to predict continuous velocity in a VAE latent space shared with a frozen continuous teacher - post-training only, no retraining from scratch.</p>
+      </div>
+
+      <figure style="margin: 44px 0 0;">
+        <div style="border-radius: var(--radius-lg); padding: clamp(10px, 1.6vw, 22px); background: {{ panelBg }}; isolation: isolate; overflow-x: auto;">
+          <img src="assets/fig3-pipeline.jpg" alt="FlowShift pipeline: a frozen discrete backbone with lightweight trainable modules, distilled from a frozen continuous teacher." loading="lazy" style="display: block; width: 100%; min-width: 720px; height: auto; mix-blend-mode: multiply;">
+        </div>
+      </figure>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px; margin-top: 20px;">
+        <div class="card elev-sm" style="padding: 22px; gap: 12px;">
+          <i class="ph ph-snowflake" style="font-size: 24px; color: var(--color-accent);"></i>
+          <span class="card-title">Frozen discrete backbone</span>
+          <p class="card-body" style="font-size: 14px; line-height: 1.6;">Pretrained weights stay untouched, so semantic and compositional priors carry straight over.</p>
+        </div>
+        <div class="card elev-sm" style="padding: 22px; gap: 12px;">
+          <i class="ph ph-plugs-connected" style="font-size: 24px; color: var(--color-accent);"></i>
+          <span class="card-title">Lightweight continuous interfaces</span>
+          <p class="card-body" style="font-size: 14px; line-height: 1.6;">A latent projector, timestep MLP, attention LoRA and a velocity head replace the discrete token interface.</p>
+        </div>
+        <div class="card elev-sm" style="padding: 22px; gap: 12px;">
+          <i class="ph ph-wave-sine" style="font-size: 24px; color: var(--color-accent);"></i>
+          <span class="card-title">Dual-objective distillation</span>
+          <p class="card-body" style="font-size: 14px; line-height: 1.6;">DOVD matches both the ground-truth flow and a high-fidelity teacher’s velocity field.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="gallery" data-screen-label="Gallery" style="max-width: 1200px; margin: 0 auto; padding: 120px clamp(20px, 5vw, 72px) 24px;">
+    <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px;"><span style="width: 24px; height: 1px; background: var(--color-accent);"></span>Gallery</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 72px; align-items: start;">
+      <h2 style="flex: 1 1 300px; max-width: 420px; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.015em; margin: 0;">Same prompt, sharper result</h2>
+      <p style="flex: 2 1 420px; max-width: 60ch; margin: 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Each discrete model beside its FlowShift counterpart. Feathers, hair strands and pastry layers resolve, while the composition stays the same.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 24px; margin-top: 36px;">
+      <div class="seg" role="radiogroup" aria-label="Backbone">
+        <label class="seg-opt"><input type="radio" name="backbone" checked="{{ isUni }}" onChange="{{ pickUni }}">UniDFlow-4B</label>
+        <label class="seg-opt"><input type="radio" name="backbone" checked="{{ isFud }}" onChange="{{ pickFud }}">FUDOKI</label>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 14px; font-feature-settings: 'tnum' 1; color: color-mix(in srgb, var(--color-text) 70%, transparent);"><span style="color: var(--color-text);">{{ current }}</span> / {{ total }}</span>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-secondary btn-icon" aria-label="Previous example" onClick="{{ prev }}"><i class="ph ph-caret-left" style="font-size: 18px;"></i></button>
+          <button type="button" class="btn btn-secondary btn-icon" aria-label="Next example" onClick="{{ next }}"><i class="ph ph-caret-right" style="font-size: 18px;"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div tabindex="0" role="region" aria-roledescription="carousel" aria-label="Discrete vs. continuous comparisons" onKeyDown="{{ onKey }}" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" style="margin-top: 16px; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-sm);">
+      <div style="display: flex; transform: {{ trackTransform }}; transition: transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1);">
+        <sc-for list="{{ slides }}" as="s" hint-placeholder-count="0">
+          <div style="flex: 0 0 100%; min-width: 0; padding: clamp(12px, 2vw, 22px);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.4vw, 16px);">
+              <figure style="margin: 0; position: relative;">
+                <div role="img" aria-label="{{ s.altD }}" style="width: 100%; aspect-ratio: 1 / 1; border-radius: var(--radius-md); background: center / cover no-repeat; background-image: {{ s.bgD }};"></div>
+                <span class="tag tag-neutral" style="position: absolute; left: 10px; top: 10px; background: color-mix(in srgb, var(--color-neutral-900) 82%, transparent); backdrop-filter: blur(6px);">Discrete</span>
+              </figure>
+              <figure style="margin: 0; position: relative;">
+                <div role="img" aria-label="{{ s.altC }}" style="width: 100%; aspect-ratio: 1 / 1; border-radius: var(--radius-md); background: center / cover no-repeat; background-image: {{ s.bgC }};"></div>
+                <span class="tag tag-accent" style="position: absolute; left: 10px; top: 10px; background: color-mix(in srgb, var(--color-accent-800) 88%, transparent); backdrop-filter: blur(6px);">FlowShift · Continuous</span>
+              </figure>
+            </div>
+            <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent);"><span style="color: var(--color-text); font-weight: 500;">{{ s.title }}</span>  <span style="font-style: italic;">“{{ s.prompt }}”</span></p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="0">
+        <button type="button" aria-label="{{ t.label }}" onClick="{{ t.go }}" style="width: 64px; height: 64px; padding: 0; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer; background: var(--color-surface); box-shadow: {{ t.ring }}; opacity: {{ t.op }}; transition: opacity 200ms, box-shadow 200ms;">
+          <span style="display: block; width: 100%; height: 100%; background: center / cover no-repeat; background-image: {{ t.bg }};"></span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px);">
+    <section id="bibtex" data-screen-label="BibTeX" style="padding: 120px 0 96px;">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px;"><span style="width: 24px; height: 1px; background: var(--color-accent);"></span>Citation</div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 24px;">
+        <h2 style="font-size: clamp(28px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.015em; margin: 0;">BibTeX</h2>
+        <button type="button" class="btn btn-primary" onClick="{{ copy }}" style="min-height: 36px; padding-inline: 14px; min-width: 104px;"><i class="{{ copyIcon }}" style="font-size: 16px;"></i>{{ copyLabel }}</button>
+      </div>
+      <pre style="margin: 0; padding: 24px 28px; background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow-x: auto; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.75; color: var(--color-neutral-200); white-space: pre;">{{ bibtex }}</pre>
+    </section>
+
+    <footer style="padding: 28px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 13px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 60%, transparent); background: linear-gradient(to right, transparent, var(--color-divider) 48px calc(100% - 48px), transparent) no-repeat top / 100% 1px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 24px;">
+        <span>© 2027 The authors · University of Illinois Urbana-Champaign</span>
+        <span>Contact: <a href="mailto:gsd4@illinois.edu">gsd4@illinois.edu</a>, <a href="mailto:onkarks2@illinois.edu">onkarks2@illinois.edu</a></span>
+      </div>
+      <a href="#top" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none;"><i class="ph ph-arrow-up" style="font-size: 14px;"></i>Back to top</a>
+    </footer>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;panelTone&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Soft&quot;, &quot;Bright&quot;], &quot;default&quot;: &quot;Soft&quot;, &quot;tsType&quot;: &quot;'Soft' | 'Bright'&quot;, &quot;section&quot;: &quot;Figures&quot;}, &quot;showStats&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;autoplay&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Gallery&quot;}}">
+const BIBTEX = `@inproceedings{deshmukh2027flowshift,
+  title     = {From Tokens to Trajectories: Parameter-Efficient Continuous
+               Adaptation of Unified Multimodal Models with FlowShift},
+  author    = {Deshmukh, Gayatri and Susladkar, Onkar and Juvekar, Adheesh
+               and Kilicoglu, Halil and Lourentzou, Ismini},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on
+               Applications of Computer Vision (WACV)},
+  year      = {2027}
+}`;
+
+// ─────────────────────────────────────────────────────────────
+// GALLERY: edit the "Same prompt, sharper result" section here.
+// Each item: title, prompt, discrete image path, flowshift image path.
+// Put your images in assets/gallery/ (any .jpg/.png/.webp) and update the paths.
+// Add or remove items freely; the counter and thumbnails follow automatically.
+// ─────────────────────────────────────────────────────────────
+const SETS = {
+  uni: { name: "UniDFlow-4B", items: [
+    {
+      title: "Hummingbird",
+      discrete: "assets/gallery/uni-1-d.jpg",
+      flowshift: "assets/gallery/uni-1-c.jpg",
+      prompt: "hummingbird hovering beside a vivid red flower | green and turquoise feathers | fine feather structure | sharp glossy eye | long slender beak | rapidly moving wings with realistic translucent motion blur | tiny pollen particles float around the flower | soft sunlight produces subtle metallic highlights across the bird's neck",
+    },
+    {
+      title: "Portrait",
+      discrete: "assets/gallery/uni-2-d.jpg",
+      flowshift: "assets/gallery/uni-2-c.jpg",
+      prompt: "photorealistic close-up portrait | warm brown skin | expressive dark eyes | long wavy black hair | gold earrings | cream blazer over a black silk top | standing beside a large studio window | soft morning light falls across one side of her face creating gentle shadows | natural skin texture | individual hair strands | 85mm portrait lens",
+    },
+    {
+      title: "Raindrop city",
+      discrete: "assets/gallery/uni-3-d.jpg",
+      flowshift: "assets/gallery/uni-3-c.jpg",
+      prompt: "macro photograph of spherical raindrop suspended from the tip of a green leaf | inside the droplet reveal an inverted miniature city skyline with illuminated windows | moving traffic lights | glowing sunset between distant towers | surrounding leaf should show microscopic veins, fine hairs | surface wax and smaller droplets",
+    },
+    {
+      title: "Lighthouse",
+      discrete: "assets/gallery/uni-4-d.jpg",
+      flowshift: "assets/gallery/uni-4-c.jpg",
+      prompt: "coastal landscape showing an old stone lighthouse | large waves strike the surrounding black rocks | producing suspended sea spray | fragmented foam | and water streaming down the weathered masonry | lighthouse beam should remain visible | dark layered clouds | distant seabirds | rust on the metal railings",
+    },
+    {
+      title: "Flower market",
+      discrete: "assets/gallery/uni-5-d.jpg",
+      flowshift: "assets/gallery/uni-5-c.jpg",
+      prompt: "evening scene inside open-air flower market | dense arrangements of roses, tulips, sunflowers, and small white flowers | each with visible petals, stems, leaves, and water droplets | hanging warm bulbs reflected on transparent wrapping material | handwritten price cards | shoppers softly blurred in the background | wet pavement",
+    },
+    {
+      title: "Shipwreck",
+      discrete: "assets/gallery/uni-6-d.jpg",
+      flowshift: "assets/gallery/uni-6-c.jpg",
+      prompt: "underwater photograph of a century-old wooden shipwreck | beneath translucent Arctic sea ice | broken masts | corroded metal fittings | frayed rope | pale blue sunlight should filter through cracks | solitary diver with a flashlight for scale | fine suspended particles | bubbles collecting beneath the ice",
+    },
+  ]},
+  fud: { name: "FUDOKI", items: [
+    {
+      title: "Croissant",
+      discrete: "assets/gallery/fud-1-d.jpg",
+      flowshift: "assets/gallery/fud-1-c.jpg",
+      prompt: "croissant beside a ceramic cup of cappuccino | rustic wooden table | crisp flaky layers | butter highlights | leaf-shaped latte-art pattern | soft morning light passes through a nearby window, illuminating rising steam and subtle wood grain",
+    },
+    {
+      title: "Peregrine falcon",
+      discrete: "assets/gallery/fud-2-d.jpg",
+      flowshift: "assets/gallery/fud-2-c.jpg",
+      prompt: "peregrine falcon banking sharply above sunlit desert cliffs | wings fully extended | subtle motion blur at the tips | detailed talons | sharp hooked beak | focused eye | warm low-angle sunlight should illuminate the underside of the bird | authentic natural colors",
+    },
+    {
+      title: "Bioluminescent beach",
+      discrete: "assets/gallery/fud-3-d.jpg",
+      flowshift: "assets/gallery/fud-3-c.jpg",
+      prompt: "nighttime photograph | tropical beach | glowing with bioluminescent plankton | breaking wave should produce electric-blue light along the foam | wet sand reflecting the stars | faint footprints | dark palm silhouettes | small shells | clear Milky Way overhead",
+    },
+    {
+      title: "Jellyfish",
+      discrete: "assets/gallery/fud-4-d.jpg",
+      flowshift: "assets/gallery/fud-4-c.jpg",
+      prompt: "underwater image of a translucent giant jellyfish | finely textured bell | branching internal structures | hundreds of thin trailing tentacles | bioluminescent violet and cyan patterns should glow from within its body and illuminate nearby suspended particles | soft volumetric beams | deep black negative space",
+    },
+    {
+      title: "Monarch butterfly",
+      discrete: "assets/gallery/fud-5-d.jpg",
+      flowshift: "assets/gallery/fud-5-c.jpg",
+      prompt: "macro photograph of monarch butterfly | orange-and-black wings with intricate scales | delicate veins | slight moisture | naturally crumpled edges | fine hairs on the butterfly's body | droplets of morning dew on the surrounding leaves | creamy green bokeh",
+    },
+    {
+      title: "Glacier cave",
+      discrete: "assets/gallery/fud-6-d.jpg",
+      flowshift: "assets/gallery/fud-6-c.jpg",
+      prompt: "lone explorer walking through a vast blue glacier cave | walls should contain layered ice | trapped air bubbles | mineral streaks | cracks | translucent sections illuminated by daylight filtering through the surface | scattered ice crystals | reflective wet floor | frost accumulating on the explorer's clothing",
+    },
+  ]},
+};
+const pad = n => String(n).padStart(2, '0');
+const ease = x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const mix = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k].map(v => Math.round(v));
+const hexRgb = h => { h = (h || '').trim().replace('#', ''); if (h.length === 3) h = h.split('').map(c => c + c).join(''); const n = parseInt(h, 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+const rgba = (c, a) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
+const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+const BN_K = [8, 32, 128];
+
+class Component extends DCLogic {
+  state = { b: 'uni', i: 0, copied: false, paused: false, level: 0 };
+
+  componentDidMount() { this.syncTimer(); }
+  componentDidUpdate(pp) {
+    if (pp && pp.autoplay !== this.props.autoplay) this.syncTimer();
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.copyT); this.stopHero(); this.stopBn(); }
+
+  // ── hero: token cubes → prism → continuous light ──
+  heroRef = el => this.startHero(el);
+  heroTextRef = el => { this.heroText = el; };
+  heroMove = e => { const el = this._heroEl; if (!el) return; const r = el.getBoundingClientRect(); this.mouse = { x: (e.clientX - r.left) / r.width * 2 - 1, y: (e.clientY - r.top) / r.height * 2 - 1, active: true }; };
+  heroLeave = () => { if (this.mouse) this.mouse.active = false; };
+  stopHero() { cancelAnimationFrame(this.heroRaf); this.heroRO?.disconnect(); this.heroIO?.disconnect(); this._heroEl = null; }
+  startHero(el) {
+    if (this._heroEl === el) return;
+    this.stopHero(); if (!el) return; this._heroEl = el;
+    const ctx = el.getContext('2d');
+    const css = getComputedStyle(document.documentElement);
+    const A1 = hexRgb(css.getPropertyValue('--color-accent') || '#9184d9');
+    const A2 = hexRgb(css.getPropertyValue('--color-accent-200') || '#e7e5fe');
+    const A3 = hexRgb(css.getPropertyValue('--color-accent-300') || '#d2cefd');
+    const A9 = hexRgb(css.getPropertyValue('--color-accent-900') || '#2b2741');
+    const TXT = hexRgb(css.getPropertyValue('--color-text') || '#e9e9ed');
+    const BLUE = [111, 162, 240], CYAN = [118, 212, 232];
+    const OT = [246, 186, 128], OL = [226, 134, 66], OR = [178, 88, 34];
+    const C = 24;
+    const S = { W: 0, H: 0, dpr: 1, t: 0, visible: true, energy: 0, cubes: [], pulses: [], mx: 0, my: 0, init: false, textR: 0, measured: 0 };
+    const measure = () => { const r = el.getBoundingClientRect(), tr = this.heroText ? this.heroText.getBoundingClientRect() : null; S.textR = tr ? tr.right - r.left + 24 : S.W * 0.55; };
+    const resize = () => {
+      const r = el.getBoundingClientRect(); if (!r.width) return;
+      S.dpr = Math.min(2, window.devicePixelRatio || 1); S.W = r.width; S.H = r.height;
+      el.width = Math.round(S.W * S.dpr); el.height = Math.round(S.H * S.dpr); measure();
+    };
+    const geo = () => {
+      const W = S.W, H = S.H, mobile = W < 760;
+      let sc = mobile ? 0.7 : Math.min(1.15, Math.max(0.82, H / 640));
+      const room = W - S.textR, tight = !mobile && room < 1.6 * 196 * sc;
+      if (tight) sc *= 0.75;
+      const narrow = mobile || tight;
+      const h = 200 * sc, w = 196 * sc;
+      let cx;
+      if (mobile) cx = W * 0.82;
+      else if (tight) cx = Math.max(S.textR + w * 0.7, W - w * 0.8);
+      else cx = Math.min(W - w * 1.6, Math.max(W * 0.71, S.textR + w * 0.85));
+      const base = mobile ? 0.45 : tight ? 0.75 : 1;
+      const px = cx + S.mx * 14, py = H * (mobile ? 0.62 : tight ? 0.58 : 0.5) + Math.sin(S.t * 0.8) * 4 + S.my * 9;
+      const A = [px, py - h * 0.56], BL = [px - w / 2, py + h * 0.4], BR = [px + w / 2, py + h * 0.4], F = [px - w * 0.06, py + h * 0.52];
+      return { px, py, w, h, sc, narrow, base, A, BL, BR, F, E: [px - w * 0.22, py + h * 0.02], X: [px + w * 0.2, py + h * 0.02] };
+    };
+    const spawn = (g, anywhere) => {
+      const band = S.H * 0.3;
+      const x0 = anywhere ? Math.random() * (g.E[0] - C * 2) : -C * (1 + Math.random() * 4);
+      const y0 = g.py + (Math.random() * 2 - 1) * band;
+      return { x: Math.round(x0 / C) * C, y: Math.round(y0 / C) * C, hopT: Math.random() * 300, hopDur: 105 + Math.random() * 80, moving: false, sx: 0, sy: 0, tx: 0, ty: 0, mt: 0, absorb: -1, ax: 0, ay: 0, s: 0.75 + Math.random() * 0.45 };
+    };
+    const poly = pts => { ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]); ctx.closePath(); };
+    const cube = (x, y, e, a) => {
+      const k = 0.866 * e;
+      ctx.globalAlpha = a;
+      ctx.fillStyle = rgba(OT, 1); poly([[x, y - e], [x + k, y - e / 2], [x, y], [x - k, y - e / 2]]); ctx.fill();
+      ctx.fillStyle = rgba(OL, 1); poly([[x - k, y - e / 2], [x, y], [x, y + e], [x - k, y + e / 2]]); ctx.fill();
+      ctx.fillStyle = rgba(OR, 1); poly([[x, y], [x + k, y - e / 2], [x + k, y + e / 2], [x, y + e]]); ctx.fill();
+      ctx.globalAlpha = 1;
+    };
+    const step = (dt, g) => {
+      S.t += dt / 1000;
+      const m = this.mouse && this.mouse.active ? this.mouse : { x: 0, y: 0 };
+      S.mx += (m.x - S.mx) * 0.04; S.my += (m.y - S.my) * 0.04;
+      S.energy *= Math.pow(0.965, dt / 16.67);
+      const target = g.narrow ? 9 : 16;
+      if (!S.init) { for (let i = 0; i < target; i++) S.cubes.push(spawn(g, true)); S.init = true; }
+      while (S.cubes.length < target) S.cubes.push(spawn(g, false));
+      const E = g.E;
+      for (let i = S.cubes.length - 1; i >= 0; i--) {
+        const c = S.cubes[i];
+        if (c.absorb >= 0) { c.absorb += dt; if (c.absorb > 280) { S.cubes.splice(i, 1); S.energy = Math.min(2.5, S.energy + 0.9); S.pulses.push({ d: 0, i: Math.floor(Math.random() * 9) }); } continue; }
+        if (c.moving) {
+          c.mt += dt; const k = Math.min(1, c.mt / 105), e = easeOut(k);
+          c.x = c.sx + (c.tx - c.sx) * e; c.y = c.sy + (c.ty - c.sy) * e - Math.sin(Math.PI * k) * 6;
+          if (k >= 1) { c.moving = false; c.x = c.tx; c.y = c.ty; }
+          continue;
+        }
+        c.hopT -= dt; if (c.hopT > 0) continue;
+        const dx = E[0] - c.x, dy = E[1] - c.y;
+        if ((Math.abs(dx) < C * 1.2 && Math.abs(dy) < C * 2) || dx < -C) { c.absorb = 0; c.ax = c.x; c.ay = c.y; continue; }
+        let tx = c.x + C, ty = c.y;
+        if (Math.abs(dy) > C * 0.6 && Math.random() < Math.min(0.8, Math.abs(dy) / (Math.abs(dx) + 1) * 1.6)) { tx = c.x; ty = c.y + Math.sign(dy) * C; }
+        c.sx = c.x; c.sy = c.y; c.tx = tx; c.ty = ty; c.moving = true; c.mt = 0; c.hopT = c.hopDur;
+      }
+      for (let i = S.pulses.length - 1; i >= 0; i--) { S.pulses[i].d += dt * 0.32; if (S.pulses[i].d > S.W) S.pulses.splice(i, 1); }
+    };
+    const ribbonY = (u, d, phase) => {
+      const grow = Math.min(1, d / 220);
+      return (u - 0.5) * d * 0.2 * grow + Math.sin(d * 0.016 - S.t * 2.1 + phase) * (6 + 16 * grow) * grow * (1 + 0.18 * Math.min(1, S.energy));
+    };
+    const draw = g => {
+      const W = S.W, H = S.H;
+      ctx.setTransform(S.dpr, 0, 0, S.dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+      const base = g.base;
+      S.measured += 1; if (S.measured % 90 === 0) measure();
+      // cubes
+      const E = g.E, e0 = 9.5 * g.sc;
+      for (const c of S.cubes) {
+        let x = c.x, y = c.y, a = Math.min(1, (c.x + C * 3) / (C * 5)) * base * (0.12 + 0.88 * smooth(S.textR - 80, S.textR + 20, c.x)), sz = e0 * c.s;
+        if (c.absorb >= 0) { const k = easeOut(Math.min(1, c.absorb / 280)); x = c.ax + (E[0] - c.ax) * k; y = c.ay + (E[1] - c.ay) * k; sz *= 1 - 0.8 * k; a *= 1 - k; }
+        cube(x, y, sz, Math.max(0, a));
+      }
+      // light ribbons
+      const X = g.X, x0 = X[0] - 18, N = 9;
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < N; i++) {
+        const u = i / (N - 1), col = u < 0.5 ? mix(A1, BLUE, u * 2) : mix(BLUE, CYAN, (u - 0.5) * 2), ph = i * 0.72;
+        ctx.beginPath();
+        for (let x = x0; x <= W + 10; x += 5) { const d = x - x0, y = X[1] + ribbonY(u, d, ph); if (x === x0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
+        const gr = ctx.createLinearGradient(x0, 0, W, 0);
+        gr.addColorStop(0, rgba(col, 0)); gr.addColorStop(0.05, rgba(col, 0.9 * base)); gr.addColorStop(0.6, rgba(col, 0.5 * base)); gr.addColorStop(1, rgba(col, 0));
+        ctx.strokeStyle = gr;
+        ctx.globalAlpha = 0.14; ctx.lineWidth = 7; ctx.stroke();
+        ctx.globalAlpha = 1; ctx.lineWidth = 1.4; ctx.stroke();
+      }
+      for (const p of S.pulses) {
+        const u = p.i / (N - 1), x = x0 + p.d, y = X[1] + ribbonY(u, p.d, p.i * 0.72), fade = Math.max(0, 1 - p.d / (W - x0));
+        const rg = ctx.createRadialGradient(x, y, 0, x, y, 26);
+        rg.addColorStop(0, rgba(A2, 0.55 * fade * base)); rg.addColorStop(1, rgba(A2, 0));
+        ctx.fillStyle = rg; ctx.fillRect(x - 26, y - 26, 52, 52);
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      // prism
+      const { A, BL, BR, F, px, py, w } = g;
+      const glow = ctx.createRadialGradient(px, py, 0, px, py, w * 0.95);
+      glow.addColorStop(0, rgba(A1, (0.16 + 0.22 * Math.min(1, S.energy)) * base)); glow.addColorStop(1, rgba(A1, 0));
+      ctx.fillStyle = glow; ctx.fillRect(px - w, py - w, w * 2, w * 2);
+      ctx.setLineDash([3, 4]); ctx.strokeStyle = rgba(A3, 0.18 * base); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(BL[0], BL[1]); ctx.lineTo(BR[0], BR[1]); ctx.stroke(); ctx.setLineDash([]);
+      let gf = ctx.createLinearGradient(BL[0], A[1], F[0], BL[1]);
+      gf.addColorStop(0, rgba(A3, 0.2 * base)); gf.addColorStop(1, rgba(A1, 0.06 * base));
+      ctx.fillStyle = gf; poly([A, BL, F]); ctx.fill();
+      gf = ctx.createLinearGradient(F[0], A[1], BR[0], BR[1]);
+      gf.addColorStop(0, rgba(BLUE, 0.16 * base)); gf.addColorStop(1, rgba(A9, 0.25 * base));
+      ctx.fillStyle = gf; poly([A, F, BR]); ctx.fill();
+      const sw = (S.t % 5.5) / 5.5;
+      if (sw < 0.45) {
+        ctx.save(); poly([A, BL, F]); ctx.clip();
+        const sx = BL[0] + (F[0] - BL[0] + w * 0.6) * (sw / 0.45) - w * 0.2;
+        const sg = ctx.createLinearGradient(sx - 18, 0, sx + 18, 0);
+        sg.addColorStop(0, rgba(TXT, 0)); sg.addColorStop(0.5, rgba(TXT, 0.22 * base)); sg.addColorStop(1, rgba(TXT, 0));
+        ctx.fillStyle = sg; ctx.fillRect(sx - 18, A[1], 36, BL[1] - A[1] + 20); ctx.restore();
+      }
+      ctx.shadowColor = rgba(A1, 0.8); ctx.shadowBlur = 14;
+      ctx.strokeStyle = rgba(A2, 0.75 * base); ctx.lineWidth = 1.3; ctx.lineJoin = 'round';
+      ctx.beginPath(); ctx.moveTo(BL[0], BL[1]); ctx.lineTo(A[0], A[1]); ctx.lineTo(BR[0], BR[1]); ctx.lineTo(F[0], F[1]); ctx.closePath(); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(A[0], A[1]); ctx.lineTo(F[0], F[1]); ctx.stroke();
+      ctx.shadowBlur = 0;
+      const ig = ctx.createRadialGradient(px - w * 0.02, py + w * 0.05, 0, px, py, w * 0.22);
+      ig.addColorStop(0, rgba(A2, (0.35 + 0.35 * Math.min(1, S.energy)) * base)); ig.addColorStop(1, rgba(A2, 0));
+      ctx.fillStyle = ig; ctx.beginPath(); ctx.arc(px, py, w * 0.22, 0, 6.283); ctx.fill();
+      if (!g.narrow) {
+        ctx.font = '500 11px Inter, system-ui, sans-serif'; ctx.textBaseline = 'middle';
+        try { ctx.letterSpacing = '1.2px'; } catch (_) {}
+        const lw = ctx.measureText('DISCRETE TOKENS').width;
+        if (BL[0] - 18 - lw > S.textR) { ctx.fillStyle = rgba(OT, 0.75); ctx.textAlign = 'right'; ctx.fillText('DISCRETE TOKENS', BL[0] - 18, BL[1] + 26); }
+        if (BR[0] + 22 + lw < W) { ctx.fillStyle = rgba(A3, 0.8); ctx.textAlign = 'left'; ctx.fillText('CONTINUOUS FLOW', BR[0] + 22, BR[1] + 26); }
+        try { ctx.letterSpacing = '0px'; } catch (_) {}
+      }
+    };
+    resize();
+    this.heroRO = new ResizeObserver(resize); this.heroRO.observe(el);
+    this.heroIO = new IntersectionObserver(es => { S.visible = es[0].isIntersecting; }); this.heroIO.observe(el);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const once = () => { if (!S.W) { this.heroRaf = requestAnimationFrame(once); return; } const g = geo(); step(16, g); draw(g); };
+      this.heroRaf = requestAnimationFrame(once); return;
+    }
+    let last = performance.now();
+    const loop = now => {
+      this.heroRaf = requestAnimationFrame(loop);
+      const dt = Math.min(50, now - last); last = now;
+      if (!S.visible || document.hidden || !S.W) return;
+      const g = geo(); step(dt, g); draw(g);
+    };
+    this.heroRaf = requestAnimationFrame(loop);
+  }
+
+  // ── bottleneck: continuous signals through a codebook ──
+  bnRef = el => this.startBn(el);
+  bnCountRef = el => { this.bnCount = el; };
+  stopBn() { cancelAnimationFrame(this.bnRaf); this.bnRO?.disconnect(); this.bnIO?.disconnect(); this._bnEl = null; }
+  startBn(el) {
+    if (this._bnEl === el) return;
+    this.stopBn(); if (!el) return; this._bnEl = el;
+    const ctx = el.getContext('2d');
+    const css = getComputedStyle(document.documentElement);
+    const A1 = hexRgb(css.getPropertyValue('--color-accent') || '#9184d9');
+    const A2 = hexRgb(css.getPropertyValue('--color-accent-200') || '#e7e5fe');
+    const A3 = hexRgb(css.getPropertyValue('--color-accent-300') || '#d2cefd');
+    const BLUE = [111, 162, 240], CYAN = [118, 212, 232];
+    const OT = [246, 186, 128], OL = [226, 134, 66];
+    const N = 12;
+    const R = Array.from({ length: N }, (_, i) => ({ f1: 0.008 + Math.random() * 0.006, f2: 0.02 + Math.random() * 0.012, p1: Math.random() * 6.28, p2: Math.random() * 6.28, a: 0.6 + Math.random() * 0.5, col: (i / (N - 1)) < 0.5 ? mix(CYAN, BLUE, i / (N - 1) * 2) : mix(BLUE, A1, (i / (N - 1) - 0.5) * 2) }));
+    const S = { W: 0, H: 0, dpr: 1, t: 0, visible: true, last: '' };
+    const resize = () => { const r = el.getBoundingClientRect(); if (!r.width) return; S.dpr = Math.min(2, window.devicePixelRatio || 1); S.W = r.width; S.H = r.height; el.width = Math.round(S.W * S.dpr); el.height = Math.round(S.H * S.dpr); };
+    const draw = () => {
+      const W = S.W, H = S.H, K = BN_K[this.state.level] || 8, t = S.t;
+      ctx.setTransform(S.dpr, 0, 0, S.dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+      const y0 = H * 0.14, y1 = H * 0.88, band = y1 - y0, xP = W * 0.5, slot = band / K, gap = band / N;
+      const sig = (i, x) => { const r = R[i]; return y0 + (i + 0.5) * gap + Math.sin(x * r.f1 - t * 1.5 + r.p1) * gap * 0.9 * r.a + Math.sin(x * r.f2 + t * 0.8 + r.p2) * gap * 0.28; };
+      const q = y => y0 + (Math.min(K - 1, Math.max(0, Math.floor((y - y0) / slot))) + 0.5) * slot;
+      const glow = ctx.createRadialGradient(xP, H / 2, 0, xP, H / 2, band * 0.75);
+      glow.addColorStop(0, rgba(A1, 0.16)); glow.addColorStop(1, rgba(A1, 0));
+      ctx.fillStyle = glow; ctx.fillRect(xP - band, 0, band * 2, H);
+      ctx.globalCompositeOperation = 'lighter'; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      for (let i = 0; i < N; i++) {
+        const c = R[i].col;
+        ctx.beginPath();
+        for (let x = 0; x <= xP; x += 4) { const y = sig(i, x); if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
+        const gr = ctx.createLinearGradient(0, 0, xP, 0);
+        gr.addColorStop(0, rgba(c, 0.15)); gr.addColorStop(0.8, rgba(c, 0.85)); gr.addColorStop(1, rgba(c, 1));
+        ctx.strokeStyle = gr; ctx.globalAlpha = 0.14; ctx.lineWidth = 7; ctx.stroke(); ctx.globalAlpha = 1; ctx.lineWidth = 1.4; ctx.stroke();
+      }
+      const used = new Set(), step = Math.max(6, slot * 0.9);
+      const rg = ctx.createLinearGradient(xP, 0, W, 0);
+      rg.addColorStop(0, rgba(OL, 0.95)); rg.addColorStop(0.7, rgba(OL, 0.55)); rg.addColorStop(1, rgba(OL, 0.15));
+      for (let i = 0; i < N; i++) {
+        used.add(Math.floor((sig(i, xP) - y0) / slot));
+        ctx.beginPath(); let py = q(sig(i, xP)); ctx.moveTo(xP, py);
+        for (let x = xP + step; x <= W + step; x += step) { const y = q(sig(i, x)); ctx.lineTo(x, py); if (y !== py) ctx.lineTo(x, y); py = y; }
+        ctx.strokeStyle = rg; ctx.globalAlpha = 0.12; ctx.lineWidth = 6; ctx.stroke(); ctx.globalAlpha = 0.9; ctx.lineWidth = 1.3; ctx.stroke(); ctx.globalAlpha = 1;
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      const pw = 16;
+      const pg = ctx.createLinearGradient(xP - pw, 0, xP + pw, 0);
+      pg.addColorStop(0, rgba(A3, 0.04)); pg.addColorStop(0.5, rgba(A3, 0.13)); pg.addColorStop(1, rgba(A3, 0.04));
+      ctx.fillStyle = pg; ctx.fillRect(xP - pw, y0 - 14, pw * 2, band + 28);
+      ctx.strokeStyle = rgba(A2, K > 40 ? 0.12 : 0.3); ctx.lineWidth = 1;
+      for (let k = 0; k <= K; k++) { const y = y0 + k * slot; ctx.beginPath(); ctx.moveTo(xP - pw, y); ctx.lineTo(xP + pw, y); ctx.stroke(); }
+      ctx.shadowColor = rgba(A1, 0.8); ctx.shadowBlur = 12; ctx.strokeStyle = rgba(A2, 0.7); ctx.lineWidth = 1.2;
+      ctx.strokeRect(xP - pw, y0 - 14, pw * 2, band + 28); ctx.shadowBlur = 0;
+      ctx.globalCompositeOperation = 'lighter';
+      for (const j of used) { if (j < 0 || j >= K) continue; const y = y0 + (j + 0.5) * slot; const hg = ctx.createRadialGradient(xP, y, 0, xP, y, 16); hg.addColorStop(0, rgba(OT, 0.7)); hg.addColorStop(1, rgba(OT, 0)); ctx.fillStyle = hg; ctx.fillRect(xP - 16, y - 16, 32, 32); }
+      ctx.globalCompositeOperation = 'source-over';
+      if (W > 640) {
+        ctx.font = '500 11px Inter, system-ui, sans-serif'; ctx.textBaseline = 'middle';
+        try { ctx.letterSpacing = '1.2px'; } catch (_) {}
+        ctx.textAlign = 'left'; ctx.fillStyle = rgba(CYAN, 0.75); ctx.fillText('CONTINUOUS FEATURES', W * 0.09, y0 - 26);
+        ctx.textAlign = 'center'; ctx.fillStyle = rgba(A3, 0.85); ctx.fillText('CODEBOOK · K = ' + K, xP, y0 - 30);
+        ctx.textAlign = 'right'; ctx.fillStyle = rgba(OT, 0.8); ctx.fillText('DISCRETE TOKENS', W * 0.91, y0 - 26);
+        try { ctx.letterSpacing = '0px'; } catch (_) {}
+      }
+      const n = String([...used].filter(j => j >= 0 && j < K).length);
+      if (n !== S.last && this.bnCount) { S.last = n; this.bnCount.textContent = n; }
+    };
+    resize();
+    this.bnRO = new ResizeObserver(resize); this.bnRO.observe(el);
+    this.bnIO = new IntersectionObserver(es => { S.visible = es[0].isIntersecting; }); this.bnIO.observe(el);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { const once = () => { if (!S.W) { this.bnRaf = requestAnimationFrame(once); return; } draw(); }; this.bnRaf = requestAnimationFrame(once); this.bnRedraw = draw; return; }
+    let last = performance.now();
+    const loop = now => { this.bnRaf = requestAnimationFrame(loop); const dt = Math.min(50, now - last); last = now; if (!S.visible || document.hidden || !S.W) return; S.t += dt / 1000; draw(); };
+    this.bnRaf = requestAnimationFrame(loop);
+  }
+
+  syncTimer() {
+    clearInterval(this.timer);
+    if (this.props.autoplay ?? false) {
+      this.timer = setInterval(() => { if (!this.state.paused) this.go(this.state.i + 1); }, 5000);
+    }
+  }
+  go(n) { const N = SETS[this.state.b].items.length; this.setState({ i: ((n % N) + N) % N }); }
+  pick(b) { if (b !== this.state.b) this.setState({ b, i: 0 }); }
+
+  copy = async () => {
+    try { await navigator.clipboard.writeText(BIBTEX); }
+    catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = BIBTEX; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    this.setState({ copied: true });
+    clearTimeout(this.copyT);
+    this.copyT = setTimeout(() => this.setState({ copied: false }), 1800);
+  };
+
+  renderVals() {
+    const { b, i, copied } = this.state;
+    const set = SETS[b];
+    const N = set.items.length;
+    const slides = set.items.map(({ title, prompt, discrete, flowshift }) => ({
+      title, prompt,
+      d: discrete,
+      c: flowshift,
+      bgD: `url("${discrete}")`,
+      bgC: `url("${flowshift}")`,
+      altD: `${set.name} discrete output: ${title}`,
+      altC: `${set.name} + FlowShift continuous output: ${title}`,
+    }));
+    return {
+      panelBg: (this.props.panelTone ?? 'Soft') === 'Bright' ? 'var(--color-neutral-100)' : 'var(--color-neutral-300)',
+      showStats: this.props.showStats ?? true,
+      isUni: b === 'uni',
+      isFud: b === 'fud',
+      pickUni: () => this.pick('uni'),
+      pickFud: () => this.pick('fud'),
+      slides,
+      trackTransform: `translateX(-${i * 100}%)`,
+      current: pad(i + 1),
+      total: pad(N),
+      prev: () => this.go(i - 1),
+      next: () => this.go(i + 1),
+      onKey: e => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(i - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); this.go(i + 1); }
+      },
+      pause: () => this.setState({ paused: true }),
+      resume: () => this.setState({ paused: false }),
+      thumbs: slides.map((s, k) => ({
+        bg: s.bgC,
+        label: `Show ${s.title}`,
+        ring: k === i ? '0 0 0 2px var(--color-accent)' : '0 0 0 1px var(--color-neutral-800)',
+        op: k === i ? 1 : 0.55,
+        go: () => this.go(k),
+      })),
+      heroRef: this.heroRef,
+      heroTextRef: this.heroTextRef,
+      heroMove: this.heroMove,
+      heroLeave: this.heroLeave,
+      bnRef: this.bnRef,
+      bnCountRef: this.bnCountRef,
+      isK0: this.state.level === 0,
+      isK1: this.state.level === 1,
+      isK2: this.state.level === 2,
+      pickK0: () => { this.setState({ level: 0 }); setTimeout(() => this.bnRedraw && this.bnRedraw(), 0); },
+      pickK1: () => { this.setState({ level: 1 }); setTimeout(() => this.bnRedraw && this.bnRedraw(), 0); },
+      pickK2: () => { this.setState({ level: 2 }); setTimeout(() => this.bnRedraw && this.bnRedraw(), 0); },
+      bibtex: BIBTEX,
+      copy: this.copy,
+      copyLabel: copied ? 'Copied' : 'Copy',
+      copyIcon: copied ? 'ph ph-check' : 'ph ph-copy',
+    };
+  }
+}
+</script>
+</body>
+</html>

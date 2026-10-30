@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NK0GM1GM0Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-NK0GM1GM0Q');
+  gtag('config', 'G-48J3PYKGQ6');
 </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Part&lt;sup&gt;2&lt;/sup&gt;GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting" />
-    <title>Part²GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Part&lt;sup&gt;2&lt;/sup&gt;GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting">
+    <title>Part²GS: Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting | PLAN Lab</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/projects.css" />
-    <script src="../../assets/js/project-pages.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/projects.css?v=project-pages-static-v4">
+    <script src="../../assets/js/project-pages.js?v=project-pages-static-v4" defer></script>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
     <style>
       .gif-grid {
         display: grid;
@@ -40,9 +41,14 @@
       }
     </style>
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script type="module" src="../../assets/vendor/model-viewer/model-viewer.min.js?v=4.0.0"></script>
+<link rel="stylesheet" href="../../assets/css/project-studio.css?v=project-pages-static-v4">
+<script src="../../assets/js/project-interactions.js?v=project-pages-static-v4" defer></script>
 </head>
-  <body class="page-project">
+  <body class="page-project project-studio studio-part2gs" data-project-presentation="static">
+<div id="canvas-container"></div>
+
+
     <div class="project-bg"></div>
     <div class="project-grid"></div>
 
@@ -75,385 +81,1050 @@
 </nav>
 
     <main>
-<section class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero studio-header">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <div class="columns is-centered"><div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><span class="model-name"> <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>:
-               <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art</span>-Aware Modeling of <span style="color:rgb(183,55,35); font-weight:bold;">Art</span>iculated Objects Using 3D <span style="color:rgb(88,41,0); font-weight:bold;">G</span>aussian <span style="color:rgb(88,41,0); font-weight:bold;">S</span>platting</span></h1>
-            <div class="is-size-5 publication-authors">
-              <div>
-                <span class="author-block">
-                    <a href="/team/tianjiao(joey)-yu" class="illini-blue" >Tianjiao Yu</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/vedant-shah" class="illini-blue" >Vedant Shah</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/muntasir-wahed" class="illini-blue" >Muntasir Wahed</a>,
-                </span>
-                <span class="author-block">
-                  <a href="/team/ying-shen" class="illini-blue" >Ying Shen</a>,
-              </span>
-                <span class="author-block">
-                    <a href="/team/kiet-nguyen" class="illini-blue" >Kiet A. Nguyen</a>,
-                </span>
-                <span class="author-block">
-                    <a href="/team/ismini-lourentzou" class="illini-blue" >Ismini Lourentzou</a>
-                </span>
+        <div class="columns is-centered">
+<div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+<span class="studio-name">Part²GS</span><span class="studio-subtitle">Part-Aware Modeling of Articulated Objects Using 3D Gaussian Splatting</span>
+</h1>
+            <div class="is-size-5 publication-authors studio-author-list"><div class="studio-author-row">
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=vedant-shah">Vedant Shah</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=muntasir-wahed">Muntasir Wahed</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+</div></div>
 
-              </div>
-            </div>
+            <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">PLAN Lab</span>
-              <span class="author-block illini-orange">University of Illinois Urbana-Champaign</span>
-
-            </div>
-          
             <div class="has-text-centered" style="margin: 5px 0;">
               <h1 class="title is-3 publication-venue illini-orange">CVPR 2026</h1>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Part2GS_Part-aware_Modeling_of_Articulated_Objects_using_3D_Gaussian_Splatting_CVPR_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.17212" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/PLAN-Lab/Part2GS-CVPR2026" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (now available!)</span>
-                  </a>
-                </span>
-
-                <!-- Demo Link. -->
-                <!-- <span class="link-block">
-                  <a href="." class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-vr-cardboard"></i>
-                    </span>
-                    <span>Demo (coming soon)</span>
-                  </a>
-                </span> -->
-              </div>
+<a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Part2GS_Part-aware_Modeling_of_Articulated_Objects_using_3D_Gaussian_Splatting_CVPR_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark studio-primary" data-resource="Paper"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span></a><a href="https://arxiv.org/abs/2506.17212" class="external-link button is-normal is-rounded is-dark" data-resource="arXiv"><span class="icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span><span>arXiv</span></a><a href="https://github.com/PLAN-Lab/Part2GS-CVPR2026" class="external-link button is-normal is-rounded is-dark" data-resource="Code"><span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span><span>Code</span></a>
+</div>
 
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="content has-text-justified">
-          <span style="font-weight: bold;">TL;DR:</span>
-          <i class="fa fa-star" style="color:#ff8400;"></i>
-          We propose 
-          <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> 
-          a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and physically consistent articulation.
-          <i class="fa fa-star" style="color:#ff8400;"></i>
-          Our method introduces motion-aware canonical representation guided by physics-based constraints. Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths
-          <i class="fa fa-star" style="color:#ff8400;"></i>
-          <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
-          outperforms state-of-the-art baselines by up to 10× in Chamfer Distance for movable parts.
-        </div>
-        
-        <div style="text-align: center; padding: 0 0 20px 0;">
-          <img loading="lazy" decoding="async" src="./static/images/PartGS-main-3-resized.png" class="interpolation-image" alt="Part²GS overview.">
-          <p class="has-text-justified">
-            Given two sets of multi-view images of an object, we first reconstruct independent coarse 3D Gaussian models and learn a motion-informed, part-aware canonical Gaussian. We optimize the canonical Gaussian under physical constraints 
-            <strong style="color:#633E36;">𝓛<sub>phys</sub></strong> and part awareness 
-            <strong style="color:#633E36;">𝓛<sub>part</sub></strong>. Finally, we learn the articulation model with repel points 
-            <strong style="color:#B22222;">𝓕<sub>repel</sub></strong> and 
-            <strong style="color:#B22222;">𝓛<sub>articulation</sub></strong>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
+<div class="content studio-tldr-box"><p>We introduce Part²GS, which jointly discovers articulated parts and learns their motion from multi-view images at two object states. Each 3D Gaussian carries a learnable part identity in a motion-aware canonical representation. Contact, velocity, and vector-field constraints keep articulation coherent, while a field of repel points prevents collisions <span class="studio-tldr-tail">between parts.</span></p></div>
+</div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="Part²GS examples"><div class="container"><div class="studio-example-grid">
+<figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/part2gs_videos/2parts/blade_103706.gif" alt="Folding blade"></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Folding blade</strong></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="Laptop"></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Laptop</strong></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><img loading="eager" decoding="async" src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="Stapler"></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Stapler</strong></figcaption></figure>
+</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">Part²GS Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-ablations" data-section="ablations">Ablation Studies</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Articulated objects are common in the real world, yet modeling their structure and motion remains a challenging task for 3D reconstruction methods. 
-              In this work, we introduce <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and
+              Articulated objects are common in the real world, yet modeling their structure and motion remains a challenging task for 3D reconstruction methods.
+              In this work, we introduce <span style="font-weight: bold;">P</span><span style="font-weight: bold;">art²</span><span style="font-weight: bold;">GS</span> a novel framework for modeling articulated digital twins of multi-part objects with high-fidelity geometry and
                physically consistent articulation. Part²GS leverages a part-aware 3D Gaussian representation that encodes articulated components with learnable
                 attributes, enabling structured, disentangled transformations that preserve high-fidelity geometry. To ensure physically consistent motion, we propose
                  a motion-aware canonical representation guided by physics-based constraints, including contact enforcement, velocity consistency, and vector-field alignment.
                   Furthermore, we introduce a field of repel points to prevent part collisions and maintain stable articulation paths, significantly improving motion
                    coherence over baselines. Extensive evaluations on both synthetic and real-world datasets show that Part²GS consistently outperforms
-                    state-of-the-art methods by up to 10x in Chamfer Distance for movable parts. 
+                    state-of-the-art methods by up to 10x in Chamfer Distance for movable parts.
             </p>
           </div>
         </div>
       </div>
       <!--/ Abstract. -->
     </div>
-  </section>
-
-
-  <section class="section">
+  </section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
+<div class="content"><ul class="studio-contribution-list" role="list">
+<li>
+<strong class="studio-contribution-lead">A part-aware Gaussian representation models articulated digital twins.</strong> We introduce Part²GS, a framework for multi-part objects with high-fidelity geometry and physically consistent articulation. Articulated components carry learnable attributes that enable structured, disentangled transformations while preserving the reconstructed geometry.</li>
+<li>
+<strong class="studio-contribution-lead">A motion-aware canonical representation enforces physically consistent motion.</strong> Contact enforcement, velocity consistency, and vector-field alignment constrain articulation, encouraging components to move coherently while maintaining their spatial relationships.</li>
+<li>
+<strong class="studio-contribution-lead">A field of repel points prevents collisions between parts.</strong> Repulsion discourages inter-part collisions and stabilizes articulation paths, improving motion coherence over the evaluated baselines.</li>
+<li>
+<strong class="studio-contribution-lead">Synthetic and real-world evaluations assess geometry and articulation.</strong> Part²GS consistently outperforms state-of-the-art methods, with improvements of up to tenfold in Chamfer Distance for movable parts.</li>
+</ul></div>
+</div></section><section class="section" data-studio-section="method" id="studio-method" aria-labelledby="studio-method-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3"><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Architecture</h2>
+          <h2 class="title is-3" id="studio-method-title">
+<span class="studio-method-name" style="color: rgb(255, 145, 91);">Part²GS</span> Method</h2>
           <div class="content has-text-justified">
           <p>
             <strong>Part<sup>2</sup>GS</strong> constructs articulated 3D objects from multi-view images using 3D Gaussian Splatting for joint part discovery and motion modeling.
              The framework consists of two stages:
-              <strong style="color:#582900;">(1) Part-Aware Gaussian Generation</strong>: We generate canonical Gaussian representations independently for each joint state 
-              (𝓘₀, 𝓘₁) and subsequently infer per-Gaussian part identities implicitly through 
-              multi-view geometric cues. Specifically, each Gaussian 𝓖ᵢ is augmented with a compact, 
-              learnable part-identification parameter <i>ψ</i><sub>i</sub> that enables unsupervised clustering 
-              of Gaussians into meaningful, physically consistent parts. 
-              <strong style="color:#b73723;">(2) Articulation Learning</strong>: 
-              Once the part-aware canonical Gaussian representation is learned, we model the transformations 
+              <strong style="">(1) Part-Aware Gaussian Generation</strong>: We generate canonical Gaussian representations independently for each joint state
+              (𝓘₀, 𝓘₁) and subsequently infer per-Gaussian part identities implicitly through
+              multi-view geometric cues. Specifically, each Gaussian 𝓖ᵢ is augmented with a compact,
+              learnable part-identification parameter <i>ψ</i><sub>i</sub> that enables unsupervised clustering
+              of Gaussians into meaningful, physically consistent parts.
+              <strong style="">(2) Articulation Learning</strong>:
+              Once the part-aware canonical Gaussian representation is learned, we model the transformations
               of each articulated part using SE(3) rigid body motions.
             </p>
 
           <img loading="lazy" decoding="async" src="./static/images/phys_combined-4-resized.png" class="interpolation-image" alt="Part²GS physical constraints visualization.">
           <p>
-            To ensure stable and interpretable motion, we additionally introduce <strong>physical constraints</strong> including contact regularization, velocity consistency, and vector-field alignment. 
-            These physical constraints provide a simple yet effective regularization against self-collision while keeping per-part motion rigid and coherent. 
+            To ensure stable and interpretable motion, we additionally introduce <strong>physical constraints</strong> including contact regularization, velocity consistency, and vector-field alignment.
+            These physical constraints provide a simple yet effective regularization against self-collision while keeping per-part motion rigid and coherent.
           </p>
 
         </div>
         </div>
       </div>
-    </div>
-  </section>
+    <div class="studio-subsection studio-teaser-context">
 
-  <section class="section">
+
+        <div style="text-align: center; padding: 0 0 20px 0;">
+          <img loading="lazy" decoding="async" src="./static/images/PartGS-main-3-resized.png" class="interpolation-image" alt="Part²GS overview.">
+          <p class="has-text-justified">
+            Given two sets of multi-view images of an object, we first reconstruct independent coarse 3D Gaussian models and learn a motion-informed, part-aware canonical Gaussian. We optimize the canonical Gaussian under physical constraints
+            <strong style="">𝓛<sub>phys</sub></strong> and part awareness
+            <strong style="">𝓛<sub>part</sub></strong>. Finally, we learn the articulation model with repel points
+            <strong style="">𝓕<sub>repel</sub></strong> and
+            <strong style="">𝓛<sub>articulation</sub></strong>.
+          </p>
+        </div>
+      </div>
+</div>
+  </section><section class="section studio-quantitative" data-studio-section="quantitative" id="studio-quantitative" aria-labelledby="studio-quantitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Results</h2>
-          <div class="content has-text-justified">
-            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-
-              <!-- === Viewer 1 Block === -->
-              <div style="text-align: center;">
-                <model-viewer id="viewer1" src="./static/part2gs_glbs/oven_101908.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 400px; height: 300px;">
-                </model-viewer>
-          
-                <div class="checkbox-group">
-                  <label><input type="checkbox" name="anim1" value="start_1Action" checked onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 0</label><br>
-                  <label><input type="checkbox" name="anim1" value="start_2Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 1</label><br>
-                  <label><input type="checkbox" name="anim1" value="start_3Action" onchange="toggleAnimation('viewer1', 'anim1', this)"> Joint 2</label>
-                </div>
-              </div>
-          
-              <!-- === Viewer 2 Block === -->
-              <div style="text-align: center;">
-                <model-viewer id="viewer2" src="./static/part2gs_glbs/fridge_10489.glb" autoplay auto-rotate camera-controls animation-name="start_1Action" shadow-intensity="1" style="width: 400px; height: 300px;">
-                </model-viewer>
-          
-                <div class="checkbox-group">
-                  <label><input type="checkbox" name="anim2" value="start_1Action" checked onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 0</label><br>
-                  <label><input type="checkbox" name="anim2" value="start_2Action" onchange="toggleAnimation('viewer2', 'anim2', this)"> Joint 1</label><br>
-                </div>
-              </div>
-          
-
-              
-              <script>
-                function toggleAnimation(viewerId, groupName, checkbox) {
-                  const viewer = document.getElementById(viewerId);
-                  
-                  // Deselect all other checkboxes in the same group
-                  document.querySelectorAll(`input[name="${groupName}"]`).forEach(cb => {
-                    if (cb !== checkbox) cb.checked = false;
-                  });
-              
-                  // Set or pause animation based on checkbox state
-                  if (checkbox.checked) {
-                    viewer.animationName = checkbox.value;
-                    viewer.play();
-                  } else {
-                    viewer.pause();
-                  }
-                }
-              </script>
-              
-              <!-- <p class="has-text-justified">
-                <strong>Articulated Meshes in a Simulation.</strong>            
-              </p> -->
-
-            </div>
-              <br>
-              <br>
-
-            <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/main_result.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
+<h2 class="title is-3" id="studio-quantitative-title">Quantitative Results</h2>
+<div class="studio-result-stack">
+<figure class="studio-native-result studio-result-card" data-result-source="static/images/main_result.png" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Articulated reconstruction: simulation and real scenes</h3>
+<p class="has-text-justified studio-result-description">
                 <strong>Quantitative Results on <span style="font-variant: small-caps;">Paris</span>.</strong>
                 Lower (↓) is better across all metrics.
-                <span> </span>
-                highlights best performing results.
                 Objects with <strong>*</strong> are seen categories trained in Ditto.
                 <strong>F</strong> indicates wrong motion type predictions.
-                Pos Err is omitted for objects with only prismatic joints (Blade, Storage*, and Real-Storage).              
+                Pos Err is omitted for objects with only prismatic joints (Blade, <span class="studio-ending">Storage*, and Real-Storage).</span>
               </p>
-            </div>
-              <br>
-              <br>
-              <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/main_result2.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Articulated reconstruction: simulation and real scenes"><table class="studio-native-table">
+<caption class="studio-sr-only">Articulated reconstruction: simulation and real scenes</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Foldchair</th>
+<th scope="col">Fridge</th>
+<th scope="col">Laptop*</th>
+<th scope="col">Oven*</th>
+<th scope="col">Scissor</th>
+<th scope="col">Stapler</th>
+<th scope="col">USB</th>
+<th scope="col">Washer</th>
+<th scope="col">Blade</th>
+<th scope="col">Storage*</th>
+<th scope="col">Real-Fridge</th>
+<th scope="col">Real-Storage</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Angular error ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">89.35</td>
+<td class="studio-numeric-cell">89.30</td>
+<td class="studio-numeric-cell">3.12</td>
+<td class="studio-numeric-cell">0.96</td>
+<td class="studio-numeric-cell">4.50</td>
+<td class="studio-numeric-cell">89.86</td>
+<td class="studio-numeric-cell">89.77</td>
+<td class="studio-numeric-cell">89.51</td>
+<td class="studio-numeric-cell">79.54</td>
+<td class="studio-numeric-cell">6.32</td>
+<td class="studio-numeric-cell">1.71</td>
+<td class="studio-numeric-cell">5.88</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">19.05</td>
+<td class="studio-numeric-cell">7.87</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">9.21</td>
+<td class="studio-numeric-cell">22.34</td>
+<td class="studio-numeric-cell">8.89</td>
+<td class="studio-numeric-cell">0.82</td>
+<td class="studio-numeric-cell">22.18</td>
+<td class="studio-numeric-cell">50.45</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">9.92</td>
+<td class="studio-numeric-cell">77.83</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">0.07</td>
+<td class="studio-numeric-cell">0.22</td>
+<td class="studio-numeric-cell">0.10</td>
+<td class="studio-numeric-cell">0.07</td>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">0.36</td>
+<td class="studio-numeric-cell">0.20</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">2.08</td>
+<td class="studio-numeric-cell">13.64</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">2.09</td>
+<td class="studio-numeric-cell">3.47</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">1.24</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Position error ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">3.77</td>
+<td class="studio-numeric-cell">1.02</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">5.70</td>
+<td class="studio-numeric-cell">0.20</td>
+<td class="studio-numeric-cell">5.41</td>
+<td class="studio-numeric-cell">0.66</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">1.84</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">3.13</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.07</td>
+<td class="studio-numeric-cell">2.59</td>
+<td class="studio-numeric-cell">7.67</td>
+<td class="studio-numeric-cell">6.35</td>
+<td class="studio-numeric-cell">4.05</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">1.50</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.05</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.59</td>
+<td>—</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.47</td>
+<td>—</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td>—</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.13</td>
+<td>—</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Motion error ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">99.36</td>
+<td>F</td>
+<td class="studio-numeric-cell">5.18</td>
+<td class="studio-numeric-cell">2.09</td>
+<td class="studio-numeric-cell">19.28</td>
+<td class="studio-numeric-cell">56.61</td>
+<td class="studio-numeric-cell">80.60</td>
+<td class="studio-numeric-cell">55.72</td>
+<td>F</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">8.43</td>
+<td class="studio-numeric-cell">0.38</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">166.24</td>
+<td class="studio-numeric-cell">102.34</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">28.18</td>
+<td class="studio-numeric-cell">124.38</td>
+<td class="studio-numeric-cell">117.71</td>
+<td class="studio-numeric-cell">167.98</td>
+<td class="studio-numeric-cell">126.77</td>
+<td class="studio-numeric-cell">0.38</td>
+<td class="studio-numeric-cell">0.36</td>
+<td class="studio-numeric-cell">2.68</td>
+<td class="studio-numeric-cell">0.58</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.10</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">0.37</td>
+<td class="studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.28</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">1.85</td>
+<td class="studio-numeric-cell">0.14</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">1.94</td>
+<td class="studio-numeric-cell">0.04</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.72</td>
+<td class="studio-numeric-cell">0.02</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Static geometry: Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">33.79</td>
+<td class="studio-numeric-cell">3.05</td>
+<td class="studio-numeric-cell">0.25</td>
+<td class="studio-numeric-cell">2.52</td>
+<td class="studio-numeric-cell">39.07</td>
+<td class="studio-numeric-cell">41.64</td>
+<td class="studio-numeric-cell">2.64</td>
+<td class="studio-numeric-cell">10.32</td>
+<td class="studio-numeric-cell">46.90</td>
+<td class="studio-numeric-cell">9.18</td>
+<td class="studio-numeric-cell">47.01</td>
+<td class="studio-numeric-cell">16.09</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">11.21</td>
+<td class="studio-numeric-cell">11.78</td>
+<td class="studio-numeric-cell">0.17</td>
+<td class="studio-numeric-cell">3.58</td>
+<td class="studio-numeric-cell">17.88</td>
+<td class="studio-numeric-cell">4.79</td>
+<td class="studio-numeric-cell">2.41</td>
+<td class="studio-numeric-cell">15.92</td>
+<td class="studio-numeric-cell">2.24</td>
+<td class="studio-numeric-cell">9.83</td>
+<td class="studio-numeric-cell">13.79</td>
+<td class="studio-numeric-cell">23.92</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.18</td>
+<td class="studio-numeric-cell">0.62</td>
+<td class="studio-numeric-cell">0.30</td>
+<td class="studio-numeric-cell">4.60</td>
+<td class="studio-numeric-cell">3.55</td>
+<td class="studio-numeric-cell">2.91</td>
+<td class="studio-numeric-cell">2.32</td>
+<td class="studio-numeric-cell">4.56</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">4.90</td>
+<td class="studio-numeric-cell">2.36</td>
+<td class="studio-numeric-cell">10.98</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.26</td>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">0.63</td>
+<td class="studio-numeric-cell">3.88</td>
+<td class="studio-numeric-cell">0.61</td>
+<td class="studio-numeric-cell">3.83</td>
+<td class="studio-numeric-cell">2.25</td>
+<td class="studio-numeric-cell">6.43</td>
+<td class="studio-numeric-cell">0.54</td>
+<td class="studio-numeric-cell">7.31</td>
+<td class="studio-numeric-cell">1.64</td>
+<td class="studio-numeric-cell">2.93</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">0.41</td>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">2.91</td>
+<td class="studio-numeric-cell">0.48</td>
+<td class="studio-numeric-cell">2.36</td>
+<td class="studio-numeric-cell">1.84</td>
+<td class="studio-numeric-cell">3.92</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">3.58</td>
+<td class="studio-numeric-cell">1.29</td>
+<td class="studio-numeric-cell">2.12</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Movable geometry: Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">141.11</td>
+<td class="studio-numeric-cell">0.99</td>
+<td class="studio-numeric-cell">0.19</td>
+<td class="studio-numeric-cell">0.94</td>
+<td class="studio-numeric-cell">20.68</td>
+<td class="studio-numeric-cell">31.21</td>
+<td class="studio-numeric-cell">15.88</td>
+<td class="studio-numeric-cell">12.89</td>
+<td class="studio-numeric-cell">195.93</td>
+<td class="studio-numeric-cell">2.20</td>
+<td class="studio-numeric-cell">50.60</td>
+<td class="studio-numeric-cell">20.35</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">24.23</td>
+<td class="studio-numeric-cell">12.88</td>
+<td class="studio-numeric-cell">0.17</td>
+<td class="studio-numeric-cell">7.49</td>
+<td class="studio-numeric-cell">18.89</td>
+<td class="studio-numeric-cell">38.42</td>
+<td class="studio-numeric-cell">13.81</td>
+<td class="studio-numeric-cell">379.40</td>
+<td class="studio-numeric-cell">200.24</td>
+<td class="studio-numeric-cell">63.97</td>
+<td class="studio-numeric-cell">91.72</td>
+<td class="studio-numeric-cell">528.83</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.15</td>
+<td class="studio-numeric-cell">0.27</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">0.44</td>
+<td class="studio-numeric-cell">10.11</td>
+<td class="studio-numeric-cell">1.13</td>
+<td class="studio-numeric-cell">1.47</td>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">2.05</td>
+<td class="studio-numeric-cell">0.36</td>
+<td class="studio-numeric-cell">1.12</td>
+<td class="studio-numeric-cell">30.78</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.54</td>
+<td class="studio-numeric-cell">0.21</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">0.89</td>
+<td class="studio-numeric-cell">0.64</td>
+<td class="studio-numeric-cell">0.52</td>
+<td class="studio-numeric-cell">1.22</td>
+<td class="studio-numeric-cell">0.45</td>
+<td class="studio-numeric-cell">1.12</td>
+<td class="studio-numeric-cell">1.02</td>
+<td class="studio-numeric-cell">0.66</td>
+<td class="studio-numeric-cell">6.28</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">0.18</td>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">0.38</td>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">0.41</td>
+<td class="studio-numeric-cell">1.05</td>
+<td class="studio-numeric-cell">0.39</td>
+<td class="studio-numeric-cell">1.42</td>
+<td class="studio-numeric-cell">0.78</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">5.01</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="13" scope="rowgroup">Whole geometry: Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">Ditto</th>
+<td class="studio-numeric-cell">6.80</td>
+<td class="studio-numeric-cell">2.16</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">2.51</td>
+<td class="studio-numeric-cell">1.70</td>
+<td class="studio-numeric-cell">2.38</td>
+<td class="studio-numeric-cell">2.09</td>
+<td class="studio-numeric-cell">7.29</td>
+<td class="studio-numeric-cell">42.04</td>
+<td class="studio-numeric-cell">3.91</td>
+<td class="studio-numeric-cell">6.50</td>
+<td class="studio-numeric-cell">14.08</td>
+</tr>
+<tr>
+<th scope="row">PARIS</th>
+<td class="studio-numeric-cell">8.22</td>
+<td class="studio-numeric-cell">9.31</td>
+<td class="studio-numeric-cell">0.28</td>
+<td class="studio-numeric-cell">5.44</td>
+<td class="studio-numeric-cell">6.13</td>
+<td class="studio-numeric-cell">9.62</td>
+<td class="studio-numeric-cell">2.14</td>
+<td class="studio-numeric-cell">14.35</td>
+<td class="studio-numeric-cell">0.76</td>
+<td class="studio-numeric-cell">9.62</td>
+<td class="studio-numeric-cell">11.52</td>
+<td class="studio-numeric-cell">38.94</td>
+</tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.27</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">0.32</td>
+<td class="studio-numeric-cell">4.24</td>
+<td class="studio-numeric-cell">0.41</td>
+<td class="studio-numeric-cell">1.92</td>
+<td class="studio-numeric-cell">1.17</td>
+<td class="studio-numeric-cell">4.48</td>
+<td class="studio-numeric-cell">0.36</td>
+<td class="studio-numeric-cell">3.99</td>
+<td class="studio-numeric-cell">2.08</td>
+<td class="studio-numeric-cell">8.98</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.43</td>
+<td class="studio-numeric-cell">0.58</td>
+<td class="studio-numeric-cell">0.50</td>
+<td class="studio-numeric-cell">3.58</td>
+<td class="studio-numeric-cell">0.67</td>
+<td class="studio-numeric-cell">2.63</td>
+<td class="studio-numeric-cell">1.28</td>
+<td class="studio-numeric-cell">5.99</td>
+<td class="studio-numeric-cell">0.61</td>
+<td class="studio-numeric-cell">5.21</td>
+<td class="studio-numeric-cell">1.29</td>
+<td class="studio-numeric-cell">3.23</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.19</td>
+<td class="studio-numeric-cell">0.43</td>
+<td class="studio-numeric-cell">0.20</td>
+<td class="studio-numeric-cell">1.85</td>
+<td class="studio-numeric-cell">0.42</td>
+<td class="studio-numeric-cell">1.45</td>
+<td class="studio-numeric-cell">0.92</td>
+<td class="studio-numeric-cell">3.45</td>
+<td class="studio-numeric-cell">0.35</td>
+<td class="studio-numeric-cell">2.87</td>
+<td class="studio-numeric-cell">1.03</td>
+<td class="studio-numeric-cell">2.78</td>
+</tr>
+</tbody>
+</table></div></figure><figure class="studio-native-result studio-result-card" data-result-source="static/images/main_result2.png" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">Objects with multiple articulated parts</h3>
+<p class="has-text-justified studio-result-description">
                 <strong>Results on <span style="font-variant: small-caps;"><strong>DTA</strong>-Multi</span> and <span style="font-variant: small-caps;"><strong>ArtGS</strong>-Multi</span>.</strong>
                 Lower (↓) is better across all metrics.
-                <span> </span>
-                highlights best performing results.
-                Pos Err is omitted for for objects with only prismatic joints (Table 4 parts).   
+                Pos Err is omitted for objects with only prismatic joints.
+              </p>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Objects with multiple articulated parts"><table class="studio-native-table">
+<caption class="studio-sr-only">Objects with multiple articulated parts</caption>
+<thead><tr>
+<th scope="col">Method</th>
+<th scope="col">Fridge · 3 parts</th>
+<th scope="col">Table · 4 parts</th>
+<th scope="col">Table · 5 parts</th>
+<th scope="col">Storage · 3 parts</th>
+<th scope="col">Storage · 4 parts</th>
+<th scope="col">Storage · 7 parts</th>
+<th scope="col">Oven · 4 parts</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Angular error ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.16</td>
+<td class="studio-numeric-cell">24.35</td>
+<td class="studio-numeric-cell">20.62</td>
+<td class="studio-numeric-cell">0.29</td>
+<td class="studio-numeric-cell">51.18</td>
+<td class="studio-numeric-cell">19.07</td>
+<td class="studio-numeric-cell">17.83</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">1.16</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">0.04</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">0.03</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Position error ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.01</td>
+<td>—</td>
+<td class="studio-numeric-cell">4.2</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">2.44</td>
+<td class="studio-numeric-cell">0.31</td>
+<td class="studio-numeric-cell">6.51</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.00</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.01</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.00</td>
+<td>—</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Motion error ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.16</td>
+<td class="studio-numeric-cell">0.12</td>
+<td class="studio-numeric-cell">30.8</td>
+<td class="studio-numeric-cell">0.07</td>
+<td class="studio-numeric-cell">43.77</td>
+<td class="studio-numeric-cell">10.67</td>
+<td class="studio-numeric-cell">31.80</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.62</td>
+<td class="studio-numeric-cell">0.23</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.02</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">0.18</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Static Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.63</td>
+<td class="studio-numeric-cell">0.59</td>
+<td class="studio-numeric-cell">1.39</td>
+<td class="studio-numeric-cell">0.86</td>
+<td class="studio-numeric-cell">5.74</td>
+<td class="studio-numeric-cell">0.82</td>
+<td class="studio-numeric-cell">1.17</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.62</td>
+<td class="studio-numeric-cell">0.74</td>
+<td class="studio-numeric-cell">1.22</td>
+<td class="studio-numeric-cell">0.78</td>
+<td class="studio-numeric-cell">0.75</td>
+<td class="studio-numeric-cell">0.67</td>
+<td class="studio-numeric-cell">1.08</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.59</td>
+<td class="studio-numeric-cell">0.56</td>
+<td class="studio-numeric-cell">1.18</td>
+<td class="studio-numeric-cell">0.73</td>
+<td class="studio-numeric-cell">0.68</td>
+<td class="studio-numeric-cell">0.61</td>
+<td class="studio-numeric-cell">1.01</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Movable Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.48</td>
+<td class="studio-numeric-cell">104.38</td>
+<td class="studio-numeric-cell">230.38</td>
+<td class="studio-numeric-cell">0.23</td>
+<td class="studio-numeric-cell">246.63</td>
+<td class="studio-numeric-cell">476.91</td>
+<td class="studio-numeric-cell">359.16</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">3.53</td>
+<td class="studio-numeric-cell">3.09</td>
+<td class="studio-numeric-cell">0.23</td>
+<td class="studio-numeric-cell">0.13</td>
+<td class="studio-numeric-cell">3.70</td>
+<td class="studio-numeric-cell">0.25</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">1.95</td>
+<td class="studio-numeric-cell">1.85</td>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">0.07</td>
+<td class="studio-numeric-cell">1.83</td>
+<td class="studio-numeric-cell">0.11</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="8" scope="rowgroup">Whole-object Chamfer distance ↓</th></tr>
+<tr>
+<th scope="row">DTA</th>
+<td class="studio-numeric-cell">0.88</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">1.00</td>
+<td class="studio-numeric-cell">0.97</td>
+<td class="studio-numeric-cell">0.88</td>
+<td class="studio-numeric-cell">0.71</td>
+<td class="studio-numeric-cell">1.01</td>
+</tr>
+<tr>
+<th scope="row">ArtGS</th>
+<td class="studio-numeric-cell">0.75</td>
+<td class="studio-numeric-cell">0.74</td>
+<td class="studio-numeric-cell">1.16</td>
+<td class="studio-numeric-cell">0.93</td>
+<td class="studio-numeric-cell">0.88</td>
+<td class="studio-numeric-cell">0.70</td>
+<td class="studio-numeric-cell">1.03</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (Ours)</th>
+<td class="studio-numeric-cell">0.73</td>
+<td class="studio-numeric-cell">0.51</td>
+<td class="studio-numeric-cell">1.10</td>
+<td class="studio-numeric-cell">0.87</td>
+<td class="studio-numeric-cell">0.80</td>
+<td class="studio-numeric-cell">0.63</td>
+<td class="studio-numeric-cell">0.95</td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+</div>
+
+  </section><section class="section" data-studio-section="ablations" id="studio-ablations" aria-labelledby="studio-ablations-title"><div class="container is-max-desktop">
+<h2 class="title is-3" id="studio-ablations-title">Ablation Studies</h2>
+<div class="columns is-centered has-text-centered studio-result-host">
+<div class="column studio-result-host">
+<div style="text-align: center; padding: 0 0 20px 0;" class="studio-result-host">
+<figure class="studio-native-result" data-result-source="static/images/ablate.png"><h3>Component ablations</h3>
+<div class="studio-table-scroll" tabindex="0" role="region" aria-label="Component ablations"><table class="studio-native-table">
+<caption class="studio-sr-only">Component ablations</caption>
+<thead><tr>
+<th scope="col">Configuration</th>
+<th scope="col">Angular error ↓</th>
+<th scope="col">Position error ↓</th>
+<th scope="col">Motion error ↓</th>
+<th scope="col">Static CD ↓</th>
+<th scope="col">Movable CD ↓</th>
+<th scope="col">Whole CD ↓</th>
+</tr></thead>
+<tbody>
+<tr class="studio-group"><th colspan="7" scope="rowgroup">Table · 5 parts</th></tr>
+<tr>
+<th scope="row">Without part parameters</th>
+<td class="studio-numeric-cell">0.21</td>
+<td class="studio-numeric-cell">0.08</td>
+<td class="studio-numeric-cell">7.32</td>
+<td class="studio-numeric-cell">7.35</td>
+<td class="studio-numeric-cell">145.17</td>
+<td class="studio-numeric-cell">3.10</td>
+</tr>
+<tr>
+<th scope="row">Without repel points</th>
+<td class="studio-numeric-cell">0.09</td>
+<td class="studio-numeric-cell">0.16</td>
+<td class="studio-numeric-cell">0.48</td>
+<td class="studio-numeric-cell">1.19</td>
+<td class="studio-numeric-cell">4.82</td>
+<td class="studio-numeric-cell">1.85</td>
+</tr>
+<tr>
+<th scope="row">Without physical constraints</th>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.18</td>
+<td class="studio-numeric-cell">1.32</td>
+<td class="studio-numeric-cell">4.47</td>
+<td class="studio-numeric-cell">1.65</td>
+</tr>
+<tr>
+<th scope="row">Without canonical initialization</th>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">0.06</td>
+<td class="studio-numeric-cell">6.32</td>
+<td class="studio-numeric-cell">2.47</td>
+<td class="studio-numeric-cell">117.25</td>
+<td class="studio-numeric-cell">2.62</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (all)</th>
+<td class="studio-numeric-cell">0.03</td>
+<td class="studio-numeric-cell">0.00</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">1.18</td>
+<td class="studio-numeric-cell">1.85</td>
+<td class="studio-numeric-cell">1.10</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="studio-group"><th colspan="7" scope="rowgroup">Storage · 7 parts</th></tr>
+<tr>
+<th scope="row">Without part parameters</th>
+<td class="studio-numeric-cell">0.26</td>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">10.43</td>
+<td class="studio-numeric-cell">2.95</td>
+<td class="studio-numeric-cell">198.67</td>
+<td class="studio-numeric-cell">3.54</td>
+</tr>
+<tr>
+<th scope="row">Without repel points</th>
+<td class="studio-numeric-cell">0.16</td>
+<td class="studio-numeric-cell">0.14</td>
+<td class="studio-numeric-cell">1.32</td>
+<td class="studio-numeric-cell">0.93</td>
+<td class="studio-numeric-cell">7.43</td>
+<td class="studio-numeric-cell">2.04</td>
+</tr>
+<tr>
+<th scope="row">Without physical constraints</th>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">0.05</td>
+<td class="studio-numeric-cell">0.04</td>
+<td class="studio-numeric-cell">1.22</td>
+<td class="studio-numeric-cell">4.54</td>
+<td class="studio-numeric-cell">1.12</td>
+</tr>
+<tr>
+<th scope="row">Without canonical initialization</th>
+<td class="studio-numeric-cell">22.15</td>
+<td class="studio-numeric-cell">0.93</td>
+<td class="studio-numeric-cell">19.67</td>
+<td class="studio-numeric-cell">0.79</td>
+<td class="studio-numeric-cell">442.32</td>
+<td class="studio-numeric-cell">1.89</td>
+</tr>
+<tr class="studio-ours">
+<th scope="row">Part²GS (all)</th>
+<td class="studio-numeric-cell">0.11</td>
+<td class="studio-numeric-cell">0.01</td>
+<td class="studio-numeric-cell">0.55</td>
+<td class="studio-numeric-cell">0.61</td>
+<td class="studio-numeric-cell">1.83</td>
+<td class="studio-numeric-cell">0.63</td>
+</tr>
+</tbody>
+</table></div></figure>
+              <p class="has-text-justified">
+                <strong>Component ablations on Table (5 parts) and Storage (7 parts).</strong>
+                Lower values are better for all metrics. Removing individual components causes large errors
+                on these complex objects; severe failures exceed five times the full model’s error for <span class="studio-ending">the same object.</span>
               </p>
               </div>
           </div>
-    </div>
-    </div>
-  
-
-  <section class="section">
+        </div>
+      </div></section><section class="section" data-studio-section="qualitative" id="studio-qualitative" aria-labelledby="studio-qualitative-title">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Qualitative Results</h2>
+      <div class="columns is-centered has-text-centered studio-result-host">
+        <div class="column studio-result-host">
+          <h2 class="title is-3" id="studio-qualitative-title">Qualitative Results</h2>
 
           <div style="text-align: center; padding: 0 0 20px 0;">
             <div class="gif-grid">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/blade_103706.gif" alt="GIF 1">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="GIF 2">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="GIF 3">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/USB_100109.gif" alt="GIF 4">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/storage_45135.gif" alt="GIF 5">
-              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/washer_103776.gif" alt="GIF 6">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/blade_103706.gif" alt="Folding blade articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/laptop_10211.gif" alt="Laptop articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/stapler_103111.gif" alt="Stapler articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/USB_100109.gif" alt="USB cover articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/storage_45135.gif" alt="Storage unit articulation">
+              <img loading="lazy" decoding="async" src="./static/part2gs_videos/2parts/washer_103776.gif" alt="Washing machine articulation">
             </div>
             <p class="has-text-justified">
-              <strong>Rendering Results of Simple (two-parts) objets</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
-               Our method captures part-aware geometry and consistent transformations, even in minimal degrees of freedom, demonstrating the effectiveness of Part²GS in simple settings.          
+              <strong>Rendering Results of Simple (two-parts) objects</strong>. Each example shows smooth articulation between rigid parts with accurate motion boundaries and minimal distortion.
+               Our method captures part-aware geometry and consistent transformations, even in minimal degrees of freedom, demonstrating the effectiveness of Part²GS <span class="studio-ending">in simple settings.</span>
             </p>
             </div>
-            <br>
-            <br>
+
+
 
             <div style="text-align: center; padding: 0 0 20px 0;">
               <div class="gif-grid">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/fridge_10489.gif" alt="GIF 1">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_25493.gif" alt="GIF 2">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_31249.gif" alt="GIF 3">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/oven_101908.gif" alt="GIF 4">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47254.gif" alt="GIF 5">
-                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47648.gif" alt="GIF 6">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/fridge_10489.gif" alt="Refrigerator articulation">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_25493.gif" alt="Articulated table">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/table_31249.gif" alt="Multi-part articulated table">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/oven_101908.gif" alt="Oven articulation">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47254.gif" alt="Articulated storage unit">
+                <img loading="lazy" decoding="async" src="./static/part2gs_videos/storage_47648.gif" alt="Multi-part articulated storage unit">
               </div>
               <p class="has-text-justified">
-                <strong>Rendering Results of Complex (Multi-parts) objets</strong>. Our method captures accurate part-aware geometry and consistent transformations,
-                 even for complex objects, demonstrating the effectiveness of Part²GS.          
+                <strong>Rendering Results of Complex (Multi-parts) objects</strong>. Our method captures accurate part-aware geometry and consistent transformations,
+                 even for complex objects, demonstrating the effectiveness of Part²GS.
               </p>
               </div>
-              <br>
-              <br>
 
-              <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/part_result.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
-                <strong>Qualitative Comparison of Part Discovery Across Object States (columns) and Discovery Methods (rows).</strong>
-                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span>
-                accurately isolates moving parts across start, end, and canonical states.               
-              </p>
+
+
+
+              <div style="text-align: center; padding: 0 0 20px 0;" class="studio-result-host">
               </div>
-              <br>
-              <br>
-              <div style="text-align: center; padding: 0 0 20px 0;">
-              <img loading="lazy" decoding="async" src="./static/images/ablate.png" class="interpolation-image" alt="ece results." width="95%">
-              <p class="has-text-justified">
-                <strong><span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> Ablations</strong>
-                on the two most complex objects in our evaluation, <em>Table (5 parts)</em> and <em>Storage (7 parts)</em>.
-                Lower (↓) is better on all metrics.
-                <span> </span>
-                shows results with <strong>all <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> modules</strong>,
-                while
-                <span> </span>
-                highlights severe failures caused by removing components of our method.
-                Severe failures are defined as metrics that are more than 5× worse than the full 
-                <span style="color:rgb(88,41,0); font-weight:bold;">P</span><span style="color:rgb(183,55,35); font-weight:bold;">art²</span><span style="color:rgb(88,41,0); font-weight:bold;">GS</span> for the same object.
-              
-              </p>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section></div>
-    
-  </section>
-
-
-
-
-  <section class="section" id="BibTeX">
+</div>
+</div>
+</div>
+    </section><section class="section" id="BibTeX" data-studio-section="bibtex" aria-labelledby="BibTeX-title">
     <div class="container is-max-desktop content">
-      <h2 class="title" style="justify-content: left;display:flex;">BibTeX</h2>
-      <pre><code>@misc{yu2025part2gspartawaremodelingarticulated,
-        title={Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting}, 
-        author={Tianjiao Yu and Vedant Shah and Muntasir Wahed and Ying Shen and Kiet A. Nguyen and Ismini Lourentzou},
-        year={2025},
-        eprint={2506.17212},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2506.17212}, 
-        }</code></pre>
+      <h2 class="title is-3" style="justify-content: left;display:flex;" id="BibTeX-title">BibTeX</h2>
+      <pre><code>@inproceedings{yu2025part2gspartawaremodelingarticulated,
+  title={Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting},
+  author={Yu, Tianjiao and Shah, Vedant and Wahed, Muntasir and Shen, Ying and Nguyen, Kiet A. and Lourentzou, Ismini},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
     </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://arxiv.org/pdf/2412.15209">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/PLAN-Lab" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
+  </section><details class="studio-attribution"><summary>Template acknowledgements</summary><p>
               This site is built upon the work of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
               made available under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2308.04079">3DGS</a> and 
+                Commons Attribution-ShareAlike 4.0 International License</a>. We gratefully acknowledge <a href="https://arxiv.org/pdf/2308.04079">3DGS</a> and
               <a href="https://arxiv.org/pdf/2502.19459">ArtGS</a>
               for open-sourcing their projects.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </main>
-  </body>
+            </p></details></main><footer class="studio-footer">
+  <div class="footer-logo">PLAN Lab</div>
+  <div class="footer-socials">
+    <a href="https://github.com/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><i class="fa-brands fa-github footer-icon"></i><span>GitHub</span></a>
+    <a href="https://huggingface.co/PLAN-Lab" target="_blank" rel="noreferrer" class="footer-link"><span class="footer-icon">🤗</span><span>Hugging Face</span></a>
+  </div>
+  <div class="footer-copy">Website built by <a href="../../member.html?id=adheesh-juvekar">Adheesh Juvekar</a>, <a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, <a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a> | Logo Designed by <a href="../../member.html?id=kiet-nguyen">Kiet Nguyen</a>
+</div>
+  <div class="footer-copy">© 2026 PLAN Lab</div>
+</footer>
+
+
+</body>
 </html>

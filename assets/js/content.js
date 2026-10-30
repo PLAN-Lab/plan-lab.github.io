@@ -135,9 +135,46 @@
     return data.members || [];
   }
 
+  // Keep author names clean in the catalogue. All consumers share these markers.
+  function withAuthorContributions(pub) {
+    const roles = [
+      { field: 'jointFirstAuthors', mark: '*', label: 'Co-first authors (equal contribution)' },
+      { field: 'coreContributors', mark: '*', label: 'Core contributors' },
+      { field: 'equalContributors', mark: '‡', label: 'Equal contribution' },
+      { field: 'correspondingAuthors', mark: '†', label: 'Corresponding author', plural: 'Co-corresponding authors' },
+      { field: 'jointSeniorAuthors', mark: '†', label: 'Shared senior authors (equal advising)' },
+    ];
+    const authorKey = (name) => String(name || '').trim().toLowerCase();
+    const authors = Array.isArray(pub.authors) ? pub.authors : [];
+    // Only shared corresponding authors receive a marker and note.
+    const activeRoles = roles.map((role) => ({
+      ...role,
+      names: new Set((Array.isArray(pub[role.field]) ? pub[role.field] : []).map(authorKey)),
+    })).filter((role) => role.names.size &&
+      (role.field !== 'correspondingAuthors' || role.names.size > 1));
+    if (!activeRoles.length) return pub;
+
+    const markedAuthors = authors.map((author) => {
+      const marks = activeRoles.filter((role) => role.names.has(authorKey(author))).map((role) => role.mark);
+      return author + [...new Set(marks)].join('');
+    });
+    const correspondingRole = activeRoles.find((role) => role.field === 'correspondingAuthors');
+    const roleNotes = activeRoles.filter((role) => {
+      // Avoid repeating the same group under both senior and corresponding roles.
+      if (role.field === 'jointSeniorAuthors' && correspondingRole &&
+          role.names.size === correspondingRole.names.size &&
+          [...role.names].every((name) => correspondingRole.names.has(name))) return false;
+      return true;
+    }).map((role) =>
+      `${role.mark} ${role.names.size > 1 && role.plural ? role.plural : role.label}`
+    );
+    const note = [...roleNotes, pub.note].filter(Boolean).join('; ');
+    return { ...pub, authors: markedAuthors, note };
+  }
+
   async function getPublications() {
-    const data = await loadJson('assets/data/publications.json');
-    return data.publications || [];
+    const data = await loadJson('assets/data/publications.json?v=20261023-omni-highlight');
+    return (data.publications || []).map(withAuthorContributions);
   }
 
   async function getNews() {
@@ -202,6 +239,7 @@
     formatMemberName,
     getTeam,
     getPublications,
+    withAuthorContributions,
     getNews,
     newsDateValue,
     formatNewsDate,

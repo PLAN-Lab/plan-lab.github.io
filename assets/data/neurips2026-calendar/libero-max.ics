@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//NeurIPS 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LIBERO-MAX @ NeurIPS 2026
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VEVENT
+UID:libero-max-neurips2026@plan-lab.github.io
+DTSTAMP:20261009T120000Z
+DTSTART:20261210T210000Z
+DTEND:20261211T060000Z
+SUMMARY:Robot Learning with World Models workshop (LIBERO-MAX coauthor pape
+ r)
+LOCATION:Sydney · Parkside 2
+DESCRIPTION:LIBERO-MAX: Do Robot Policies Adapt When the World Changes?\n\n
+ Robot Learning with World Models: Capabilities\, Frontiers\, and Challenge
+ s\nFriday\, December 11\, 2026 · 8:00 a.m.–5:00 p.m. AEDT\nFull worksho
+ p hours only\; the individual paper’s presentation time is not listed.\n
+ \nProject page: https://liberomax.github.io\nPaper: https://arxiv.org/pdf/
+ 2609.36518\nOfficial NeurIPS page: https://neurips.cc/virtual/2026/loc/syd
+ ney/workshop/137517
+URL:https://neurips.cc/virtual/2026/loc/sydney/workshop/137517
+END:VEVENT
+END:VCALENDAR

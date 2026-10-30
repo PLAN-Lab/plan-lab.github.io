@@ -1,6 +1,146 @@
 {
   "publications": [
     {
+      "id": "2027-Deshmukh-flowshift",
+      "title": "From Tokens to Trajectories: Parameter-Efficient Continuous Adaptation of Unified Multimodal Models with FlowShift",
+      "projectName": "FlowShift",
+      "authors": [
+        "Gayatri Deshmukh",
+        "Onkar Susladkar",
+        "Adheesh Juvekar",
+        "Halil Kilicoglu",
+        "Ismini Lourentzou"
+      ],
+      "year": 2027,
+      "date": "2026-10-23",
+      "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "type": "paper",
+      "cover": "assets/images/publications/flowshift-result.webp",
+      "doi": "",
+      "links": {
+        "website": "/projects/FlowShift/",
+        "paper": "",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "WACV 2027",
+      "correspondingAuthors": [
+        "Halil Kilicoglu",
+        "Ismini Lourentzou"
+      ],
+      "coverAlt": "FlowShift-generated hummingbird and flower, with detail insets from the project gallery"
+    },
+    {
+      "id": "2026-Shen-native-interactive-omni",
+      "title": "Native Real-Time Interactive Omni Intelligence: A Unified Framework",
+      "projectName": "Interactive Omni Intelligence",
+      "codeLabel": "Awesome-Interactive-Omni",
+      "highlightCode": true,
+      "pinned": true,
+      "pinnedOrder": 2,
+      "authors": [
+        "Yifan Shen",
+        "Zhuoqing Zhong",
+        "Xinzhuo Li",
+        "Jiateng Liu",
+        "Bingxuan Li",
+        "Wei Cao",
+        "Pei Tian",
+        "Lin Zhu",
+        "Jian Xu",
+        "Zewei Chen",
+        "Tianjiao Yu",
+        "Haichao Zhang",
+        "Jiawen Zhang",
+        "Yuner Zhang",
+        "Brian Nlong Zhao",
+        "Sen Fang",
+        "Nan Huang",
+        "Bowen Fang",
+        "Chen Fang",
+        "Boyi Li",
+        "Onkar Susladkar",
+        "Frank Yang",
+        "Yuanzhe Liu",
+        "Jingyuan Zhu",
+        "Cheng Qian",
+        "Yijiang Li",
+        "Xinyang Han",
+        "Yuan Shen",
+        "Xiang Li",
+        "Bolin Lai",
+        "Xu Cao",
+        "Chengde Wan",
+        "Yiwen Song",
+        "Yue Guo",
+        "Heng Ji",
+        "Xuan Di",
+        "Yiwei Wang",
+        "Yaoyao Liu",
+        "Dimitris N. Metaxas",
+        "Yun Fu",
+        "James M. Rehg",
+        "Chengxiang Zhai",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-10-19",
+      "venue": "Preprints.org",
+      "type": "paper",
+      "cover": "assets/images/publications/interactive-omni.webp",
+      "doi": "10.20944/preprints202610.1649.v1",
+      "links": {
+        "website": "",
+        "paper": "https://www.preprints.org/frontend/manuscript/75542a83fb8c51b6870728e005f7ec01/download_pub",
+        "code": "https://github.com/ShenYifanS/Awesome-Interactive-Omni",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "Preprints.org",
+      "coreContributors": [
+        "Yifan Shen",
+        "Zhuoqing Zhong",
+        "Xinzhuo Li",
+        "Jiateng Liu",
+        "Bingxuan Li",
+        "Wei Cao"
+      ],
+      "correspondingAuthors": [
+        "Ismini Lourentzou"
+      ]
+    },
+    {
+      "id": "2026-Yu-coda",
+      "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+      "projectName": "CoDA",
+      "authors": [
+        "Tianjiao Yu",
+        "Zhilin Ou",
+        "Yifan Shen",
+        "Xinzhuo Li",
+        "Yuanzhe Liu",
+        "Onkar Kishor Susladkar",
+        "Fan Wang",
+        "Ismini Lourentzou"
+      ],
+      "year": 2026,
+      "date": "2026-10-15",
+      "venue": "arXiv",
+      "type": "paper",
+      "cover": "assets/images/publications/coda.webp",
+      "doi": "10.48550/arXiv.2610.22362",
+      "links": {
+        "website": "/projects/coda/",
+        "paper": "https://arxiv.org/pdf/2610.22362",
+        "code": "",
+        "video": "",
+        "data": ""
+      },
+      "venueAbbr": "arXiv",
+      "pinned": true
+    },
+    {
       "id": "2026-Yuan-dextacwam",
       "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
       "projectName": "DexTacWAM",
@@ -10,8 +150,8 @@
         "Boning Shao",
         "Haoran Lu",
         "Trevor Darrell",
-        "Ismini Lourentzou^",
-        "Wei Zhan^"
+        "Ismini Lourentzou",
+        "Wei Zhan"
       ],
       "year": 2026,
       "date": "2026-09-21",
@@ -26,7 +166,15 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "arXiv",
+      "correspondingAuthors": [
+        "Ismini Lourentzou",
+        "Wei Zhan"
+      ],
+      "jointSeniorAuthors": [
+        "Ismini Lourentzou",
+        "Wei Zhan"
+      ]
     },
        {
       "id": "2026-Yu-silsa-sliding-window-slice-latents",
@@ -37,7 +185,8 @@
         "Xinzhuo Li",
         "Yifan Shen",
         "Ying Shen",
-        "Onkar Susladkar",
+        "Kiet A. Nguyen",
+        "Adheesh Sunil Juvekar",
         "Ismini Lourentzou"
       ],
       "year": 2026,
@@ -295,41 +444,51 @@
       "venueAbbr": "ECCV 2026"
     },
     {
-  "id": "2026-Shen-childgait-decoding-childrens-gait",
-  "title": "Decoding Children's Gait Behavior",
-  "projectName": "ChildGait",
-  "authors": [
-    "Yifan Shen*",
-    "Boyi Li*",
-    "Meihuan Huang*",
-    "Yuanzhe Liu*",
-    "Xu Cao*",
-    "Jinyang Jin",
-    "Zhengyuan Li",
-    "Anglin Liu",
-    "Junho Kim",
-    "Jingyuan Zhu",
-    "Fangzhou Lan",
-    "Jianguo Cao",
-    "Jintai Chen",
-    "Ismini Lourentzou",
-    "James M. Rehg"
-  ],
-  "year": 2026,
-  "date": "2026-09-01",
-  "venue": "European Conference on Computer Vision",
-  "type": "paper",
-  "cover": "assets/images/publications/childgait.webp",
-  "doi": "10.1007/978-3-032-37577-3_7",
-  "links": {
-    "website": "https://pediamedai.com/ChildrenGait/",
-    "paper": "https://arxiv.org/pdf/2608.00371",
-    "code": "https://github.com/PediaMedAI/ChildrenGait",
-    "video": "",
-    "data": "https://huggingface.co/datasets/PediaMedAI/ChildGait"
-  },
-  "venueAbbr": "ECCV 2026"
-},
+      "id": "2026-Shen-childgait-decoding-childrens-gait",
+      "title": "Decoding Children's Gait Behavior",
+      "projectName": "ChildGait",
+      "authors": [
+        "Yifan Shen",
+        "Boyi Li",
+        "Meihuan Huang",
+        "Yuanzhe Liu",
+        "Xu Cao",
+        "Jinyang Jin",
+        "Zhengyuan Li",
+        "Anglin Liu",
+        "Junho Kim",
+        "Jingyuan Zhu",
+        "Fangzhou Lan",
+        "Jianguo Cao",
+        "Jintai Chen",
+        "Ismini Lourentzou",
+        "James M. Rehg"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "European Conference on Computer Vision",
+      "type": "paper",
+      "cover": "assets/images/publications/childgait.webp",
+      "doi": "10.1007/978-3-032-37577-3_7",
+      "links": {
+        "website": "https://pediamedai.com/ChildrenGait/",
+        "paper": "https://arxiv.org/pdf/2608.00371",
+        "code": "https://github.com/PediaMedAI/ChildrenGait",
+        "video": "",
+        "data": "https://huggingface.co/datasets/PediaMedAI/ChildGait"
+      },
+      "venueAbbr": "ECCV 2026",
+      "jointFirstAuthors": [
+        "Yifan Shen",
+        "Boyi Li",
+        "Meihuan Huang",
+        "Yuanzhe Liu",
+        "Xu Cao"
+      ],
+      "correspondingAuthors": [
+        "James M. Rehg"
+      ]
+    },
     {
       "id": "2025-Liu-palm-progress-aware",
       "title": "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation",
@@ -510,7 +669,16 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "arXiv",
+      "jointFirstAuthors": [
+        "Haoran Yuan",
+        "Weigang Yi",
+        "Zhenyu Zhang",
+        "Wendi Chen"
+      ],
+      "correspondingAuthors": [
+        "Ismini Lourentzou"
+      ]
     },
     {
       "id": "2026-Susladkar-best-of-both-worlds-unidflow",
@@ -550,15 +718,15 @@
       "title": "LaTtE-Flow: Layerwise Timestep-Expert Flow-based Transformer",
       "projectName": "LaTtE-Flow",
       "authors": [
-        "Ying Shen*",
-        "Zhiyang Xu*",
+        "Ying Shen",
+        "Zhiyang Xu",
         "Jiuhai Chen",
         "Shizhe Diao",
         "Jiaxin Zhang",
         "Yuguang Yao",
         "Joy Rimchala",
-        "Ismini Lourentzou^",
-        "Lifu Huang^"
+        "Ismini Lourentzou",
+        "Lifu Huang"
       ],
       "year": 2026,
       "date": "2026-06-02",
@@ -573,7 +741,15 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "ICML 2026"
+      "venueAbbr": "ICML 2026",
+      "jointFirstAuthors": [
+        "Ying Shen",
+        "Zhiyang Xu"
+      ],
+      "correspondingAuthors": [
+        "Ismini Lourentzou",
+        "Lifu Huang"
+      ]
     },
     {
       "id": "2021-Wahed-sauce-truncated-sparse-documen",
@@ -890,9 +1066,9 @@
         "Muntasir Wahed",
         "Kiet A. Nguyen"
       ],
-      "year": 2024,
-      "date": "2024-12-31",
-      "venue": "arXiv",
+      "year": 2027,
+      "date": "2026-10-23",
+      "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
       "type": "paper",
       "cover": "assets/images/publications/prima.webp",
       "doi": "10.48550/arXiv.2412.15209",
@@ -902,7 +1078,8 @@
         "code": "",
         "video": "",
         "data": ""
-      }
+      },
+      "venueAbbr": "WACV 2027"
     },
     {
       "id": "2024-Zhu-semi-supervised-code-translati",
@@ -962,7 +1139,11 @@
         "data": ""
       },
       "cardCover": "assets/images/cards/hallu_teaser.webp",
-      "venueAbbr": "CVPR 2026 (Findings)"
+      "venueAbbr": "CVPR 2026 (Findings)",
+      "equalContributors": [
+        "Jiaxun Zhang",
+        "Xingyou Liu"
+      ]
     },
     {
       "id": "2025-Liu-purpcode-reasoning-for-safer-c",
@@ -1341,7 +1522,11 @@
         "video": "",
         "data": ""
       },
-      "venueAbbr": "arXiv"
+      "venueAbbr": "arXiv",
+      "correspondingAuthors": [
+        "Xu Cao",
+        "Ismini Lourentzou"
+      ]
     },
     {
       "id": "2026-Shen-cogniroute-learning-to-route-social-evidence",
@@ -1377,12 +1562,12 @@
     },
     {
       "id": "2026-Li-toward-cognitive-supersensing-multimodal-llm",
-      "title": "Toward Cognitive Supersensing in Multimodal Large Language Model",
+      "title": "Toward Cognitive Supersensing in Multimodal Large Language Models",
       "projectName": "Cognitive Supersensing",
       "authors": [
-        "Boyi Li*",
-        "Yifan Shen*",
-        "Yuanzhe Liu*",
+        "Boyi Li",
+        "Yifan Shen",
+        "Yuanzhe Liu",
         "Yifan Xu",
         "Jiateng Liu",
         "Xinzhuo Li",
@@ -1393,8 +1578,8 @@
         "Jianguo Cao",
         "James Matthew Rehg",
         "Heng Ji",
-        "Ismini Lourentzou^",
-        "Xu Cao^"
+        "Ismini Lourentzou",
+        "Xu Cao"
       ],
       "year": 2026,
       "date": "2026-09-20",
@@ -1409,7 +1594,16 @@
         "video": "",
         "data": "https://huggingface.co/datasets/PediaMedAI/CogSense-Bench"
       },
-      "venueAbbr": "NeurIPS 2026"
+      "venueAbbr": "NeurIPS 2026",
+      "jointFirstAuthors": [
+        "Boyi Li",
+        "Yifan Shen",
+        "Yuanzhe Liu"
+      ],
+      "correspondingAuthors": [
+        "Ismini Lourentzou",
+        "Xu Cao"
+      ]
     }
   ]
 }

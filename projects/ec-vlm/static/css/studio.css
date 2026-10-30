@@ -1,0 +1,48 @@
+/* Scoped to EC-VLM's opt-in preview. Original scientific images remain uncropped. */
+.page-project.project-studio.studio-ec-vlm main { padding-top: 104px; }
+.studio-ec-vlm main > .studio-header { padding-bottom: 28px; }
+.studio-ec-vlm .studio-subtitle { max-width: 900px; margin-inline: auto; text-wrap: balance; }
+.studio-ec-vlm main > .section { padding-block: 16px; }
+.studio-ec-vlm .section > .container.is-max-desktop { padding: clamp(24px,3vw,36px); }
+.studio-ec-vlm .section h2.title { margin-bottom: 20px; }
+.studio-ec-vlm .ecvlm-feature { margin-top: 24px; margin-bottom: 16px; padding: 28px 32px; background: #09162bef; }
+.studio-ec-vlm .ecvlm-label { color: #a9ccff; font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .075em; text-transform: uppercase; }
+.studio-ec-vlm .ecvlm-feature h2 { color: #f1f5fc; font-size: clamp(23px,2.6vw,32px); line-height: 1.3; margin: 10px 0 14px; text-wrap: balance; }
+.studio-ec-vlm .ecvlm-feature-intro { color: #c2d0e3; font-size: 15px; line-height: 1.8; margin: 0 0 24px; }
+.studio-ec-vlm .ecvlm-figure { margin: 0; padding: 0; }
+.studio-ec-vlm main .ecvlm-figure img,
+.studio-ec-vlm main .ecvlm-example img { display: block; width: 100%; max-width: 100%; height: auto !important; margin: 0; padding: 0; border: 0; border-radius: 6px; box-shadow: none; }
+.studio-ec-vlm .ecvlm-figure figcaption { margin-top: 12px; color: #b5c4d9; font-size: 13px; line-height: 1.8; text-align: left; }
+.studio-ec-vlm .ecvlm-figure-toolbar { display: flex; justify-content: flex-end; padding-top: 12px; }
+.studio-ec-vlm .ecvlm-figure-toolbar .studio-zoom { position: static; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; }
+.studio-ec-vlm main .section[data-studio-section="method"] p,
+.studio-ec-vlm main .section[data-studio-section="quantitative"] p,
+.studio-ec-vlm main .section[data-studio-section="qualitative"] p { text-align: left !important; text-align-last: left; }
+.studio-ec-vlm .ecvlm-method-flow { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; list-style: none; margin: 24px 0 !important; padding: 0 !important; }
+.studio-ec-vlm .ecvlm-method-flow li { padding: 20px !important; background: #071222; border-top: 2px solid #ff915b; border-radius: 0 8px 8px 8px; }
+.studio-ec-vlm .ecvlm-method-flow h3 { margin: 0 0 10px !important; color: #ff915b; font-size: 17px !important; line-height: 1.5; }
+.studio-ec-vlm .ecvlm-method-flow p { margin: 0 !important; font-size: 14px; line-height: 1.8; }
+.studio-ec-vlm main .studio-native-result { margin: 24px 0 40px; padding: 24px; }
+.studio-ec-vlm .ecvlm-result-explanation { margin-bottom: 20px; font-size: 14px; line-height: 1.85; }
+.studio-ec-vlm .ecvlm-result-explanation p { margin: 0 0 14px !important; }
+.studio-ec-vlm main .studio-native-table { min-width: 970px; font-size: 13px; }
+.studio-ec-vlm main .studio-native-table thead th { background: #713c27 !important; color: #fff3e9 !important; border-bottom: 2px solid #ff915b; }
+.studio-ec-vlm main .studio-native-table tr.studio-ours { background: #ff915b22 !important; }
+.studio-ec-vlm main .studio-native-table tr.studio-ours > th { color: #ff915b !important; font-weight: 700 !important; box-shadow: inset 3px 0 0 #ff915b; }
+.studio-ec-vlm main .studio-native-table .ecvlm-best { color: #f1f5fc !important; font-weight: 800 !important; }
+.studio-ec-vlm main .studio-native-table .ecvlm-second { color: #e2e9f4; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.studio-ec-vlm .studio-bar.ecvlm-ours-bar { fill: #ff915b; }
+.studio-ec-vlm svg text.ecvlm-ours-label { fill: #ff915b; font-weight: 700; }
+.studio-ec-vlm .ecvlm-example { margin: 24px 0 32px; padding: 24px; background: #071222; border: 1px solid #a9ccff26; border-radius: 12px; }
+.studio-ec-vlm .ecvlm-example:last-child { margin-bottom: 0; }
+.studio-ec-vlm .ecvlm-example figcaption { margin: 16px 0 0; color: #c2d0e3; font-size: 14px; line-height: 1.85; text-align: left; }
+.studio-ec-vlm .ecvlm-poster-link { margin-top: 20px; color: #eaf1fc; background: #0d1c34; border: 1px solid #ffffff26; min-height: 44px; font-size: 13px; }
+.studio-ec-vlm .section[data-studio-section="bibtex"] pre,
+.studio-ec-vlm .section[data-studio-section="bibtex"] pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media(max-width:768px) {
+ .page-project.project-studio.studio-ec-vlm main { padding-top: 45px; }
+ .studio-ec-vlm .ecvlm-feature { padding: 20px; }
+ .studio-ec-vlm .ecvlm-method-flow { grid-template-columns: 1fr; gap: 14px; }
+ .studio-ec-vlm .ecvlm-example { padding: 16px; }
+ .studio-ec-vlm main .studio-native-result { padding: 18px; }
+}

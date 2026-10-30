@@ -1,0 +1,66 @@
+/* Scoped to CogniRoute's opt-in preview. */
+.page-project.project-studio.studio-cogniroute main { padding-top: 104px; }
+.studio-cogniroute main > .studio-header { padding-bottom: 28px; }
+.studio-cogniroute .studio-subtitle { max-width: 870px; margin-inline: auto; text-wrap: balance; }
+.studio-cogniroute main > .section { padding-block: 16px; }
+.studio-cogniroute .section > .container.is-max-desktop { padding: clamp(24px,3vw,36px); }
+.studio-cogniroute .section h2.title { margin-bottom: 20px; }
+.studio-cogniroute .cogniroute-feature { margin-top: 24px; margin-bottom: 16px; padding: 28px 32px; background: #09162bef; }
+.studio-cogniroute .cogniroute-label { color: #a9ccff; font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .075em; text-transform: uppercase; }
+.studio-cogniroute .cogniroute-feature h2 { color: #f1f5fc; font-size: clamp(23px,2.6vw,32px); line-height: 1.3; margin: 10px 0 14px; text-wrap: balance; }
+.studio-cogniroute .cogniroute-feature-intro { color: #c2d0e3; font-size: 15px; line-height: 1.8; max-width: 820px; margin: 0 0 24px; }
+.studio-cogniroute .cogniroute-figure { margin: 24px 0; padding: 0; }
+.studio-cogniroute .cogniroute-feature .cogniroute-figure { margin: 0; }
+.studio-cogniroute main .cogniroute-figure > img { display: block; width: 100%; max-width: 100%; height: auto !important; margin: 0; border: 0; border-radius: 6px; box-shadow: none; }
+.studio-cogniroute .cogniroute-figure figcaption { margin-top: 12px; color: #b5c4d9; font-size: 13px; line-height: 1.8; text-align: left; }
+.studio-cogniroute .cogniroute-figure-toolbar { display: flex; justify-content: flex-end; padding-top: 8px; }
+.studio-cogniroute .cogniroute-figure-toolbar .studio-zoom { position: static; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; }
+.studio-cogniroute .cogniroute-opening-result { border-top: 1px solid #ffffff20; padding-top: 16px; margin: 16px 0 0; color: #c2d0e3; font-size: 14px; line-height: 1.8; }
+.studio-cogniroute .cogniroute-opening-result strong { color: #ff915b; }
+.studio-cogniroute .studio-tldr-box p { margin: 0 !important; text-align: left !important; }
+.studio-cogniroute main .section[data-studio-section="method"] p { text-align: left !important; }
+.studio-cogniroute .section[data-studio-section="method"] h3 { color: #f1f5fc; margin: 28px 0 14px !important; font-size: 21px !important; }
+.studio-cogniroute .content .cogniroute-schema { margin: 20px 0 28px; }
+.studio-cogniroute .cogniroute-schema > li { display: flex; flex-direction: column; }
+.studio-cogniroute .cogniroute-schema > li > i { align-self: flex-start; }
+.studio-cogniroute .cogniroute-schema .cogniroute-schema-labels { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 0 !important; padding: 20px 0 0; list-style: none; }
+.studio-cogniroute .cogniroute-schema-labels > li { color: #c5d5ea; font-size: 12px; line-height: 1.5; margin: 0; padding: 5px 8px; border: 1px solid #43d9ff26; border-radius: 6px; }
+.studio-cogniroute .cogniroute-keep-together { white-space: nowrap; }
+.studio-cogniroute .cogniroute-dataset-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 24px 0; }
+.studio-cogniroute .cogniroute-dataset-fact { padding: 18px 22px; border: 1px solid #43d9ff26; border-radius: 12px; background: #07122280; }
+.studio-cogniroute .cogniroute-dataset-fact strong { display: block; color: #f1f5fc; font-size: 24px; line-height: 1.3; margin-bottom: 6px; }
+.studio-cogniroute .cogniroute-dataset-fact span { color: var(--studio-muted); font-size: 14px; }
+.studio-cogniroute .cogniroute-dataset-figure { padding: 16px; border: 1px solid #ffffff1c; border-radius: 16px; background: #07122280; }
+.studio-cogniroute .cogniroute-dataset-figure figcaption { font-size: 15px; }
+.studio-cogniroute .content .cogniroute-dataset-dimensions { margin: 24px 0; }
+.studio-cogniroute .cogniroute-dataset-details { border-top: 1px solid #ffffff1c; padding-top: 18px; }
+.studio-cogniroute .cogniroute-dataset-details summary { cursor: pointer; color: #c5d5ea; font-size: 14px; }
+.studio-cogniroute .cogniroute-dataset-details summary::marker { color: var(--studio-turquoise); }
+.studio-cogniroute .cogniroute-dataset-details summary:focus-visible { outline: 2px solid var(--studio-turquoise); outline-offset: 4px; }
+.studio-cogniroute .content .cogniroute-dataset-details p { margin: 14px 0 0 !important; font-size: 14px; }
+.studio-cogniroute .section .content p.cogniroute-training-note { padding: 16px 20px; background: #071222; border-left: 3px solid #83afd9; border-radius: 0 8px 8px 0; font-size: 15px; }
+.studio-cogniroute main table.results-table { font-size: 13px; min-width: 780px; margin: 0; }
+.studio-cogniroute main table.results-table thead th { background: #713c27 !important; color: #fff3e9 !important; border-bottom: 2px solid #ff915b; padding: 16px 12px; }
+.studio-cogniroute main table.results-table td { padding: 14px 12px; }
+.studio-cogniroute main table.results-table tr.studio-ours { background: #ff915b22 !important; }
+.studio-cogniroute main table.results-table tr.studio-ours > td:first-child { color: #ff915b !important; box-shadow: inset 3px 0 0 #ff915b; }
+.studio-cogniroute main table.results-table tr.studio-ours > td:first-child strong { color: inherit !important; }
+.studio-cogniroute .studio-table-scroll { margin: 24px 0 32px; }
+.studio-cogniroute .cogniroute-ablation-takeaway { padding: 22px 24px; margin: 0 0 24px; background: #ff915b12; border-left: 3px solid #ff915b; border-radius: 0 10px 10px 0; }
+.studio-cogniroute .cogniroute-ablation-takeaway h3 { color: #ff915b; font-size: 21px !important; line-height: 1.5; margin: 0 0 12px !important; }
+.studio-cogniroute .studio-bar.cogniroute-full { fill: #ff915b; }
+.studio-cogniroute .cogniroute-ablation-key { font-size: 14px; line-height: 1.8; }
+.studio-cogniroute .cogniroute-ablation-key dt { font-weight: 650; color: #a9ccff; margin: 16px 0 6px; }
+.studio-cogniroute .cogniroute-ablation-key dd { margin: 0; }
+.studio-cogniroute .section[data-studio-section="bibtex"] pre,
+.studio-cogniroute .section[data-studio-section="bibtex"] pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+ .page-project.project-studio.studio-cogniroute main { padding-top: 45px; }
+ .studio-cogniroute .cogniroute-feature { padding: 20px; }
+ .studio-cogniroute .cogniroute-ablation-takeaway { padding: 18px; }
+ .studio-cogniroute .cogniroute-opening-result { font-size: 13px; }
+}
+@media (max-width:480px) {
+ .studio-cogniroute .cogniroute-dataset-facts { grid-template-columns: 1fr; }
+ .studio-cogniroute .cogniroute-dataset-figure { padding: 12px; }
+}

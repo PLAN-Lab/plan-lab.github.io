@@ -1,6 +1,6 @@
 (function () {
   const ROOT_PREFIX = '../../';
-  const THREE_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  const THREE_CDN = ROOT_PREFIX + 'assets/vendor/three/build/three.min.js';
   const pdfObjectUrlCache = new Map();
   let threeLoadPromise = null;
 

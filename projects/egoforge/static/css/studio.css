@@ -1,0 +1,62 @@
+/* EgoForge's opt-in presentation uses the shared panel widths and palette. */
+.project-studio.studio-egoforge .studio-header .studio-subtitle { text-wrap: balance; }
+.project-studio.studio-egoforge .section > .container > .columns { display: block; margin: 0; }
+.project-studio.studio-egoforge .section > .container > .columns > .content { width: 100%; }
+.project-studio.studio-egoforge .studio-opening-examples > .container { padding: clamp(24px,4vw,48px) !important; }
+.project-studio.studio-egoforge .studio-opening-examples .hero-body { padding: 0; }
+.project-studio.studio-egoforge .studio-opening-examples p { margin: 20px 0 0; text-align: left; line-height: 1.8; }
+.project-studio.studio-egoforge .studio-egoforge-figure { position: relative; }
+.project-studio.studio-egoforge .studio-egoforge-figure img { display: block; width: 100%; margin: 0; border-radius: 8px; }
+.project-studio.studio-egoforge .section h3.egoforge-result-heading { margin: 32px 0 12px; font-size: 21px; font-weight: 750; color: #f1f5fc; }
+.project-studio.studio-egoforge .section h3.egoforge-result-heading:first-child { margin-top: 0; }
+.project-studio.studio-egoforge main h3.egoforge-result-heading.studio-next-result { margin-top: 36px !important; }
+.project-studio.studio-egoforge [data-studio-section="quantitative"] .studio-table-scroll { margin: 20px 0 0; }
+.project-studio.studio-egoforge [data-studio-section="quantitative"] .results-table { margin: 0; }
+.project-studio.studio-egoforge .results-table thead th { border-bottom: 2px solid #6682a6; }
+.project-studio.studio-egoforge .results-table tbody td { border-bottom: 1px solid #ffffff12 !important; }
+.project-studio.studio-egoforge .results-table .studio-ours td:first-child,
+.project-studio.studio-egoforge .results-table .studio-ours td:first-child strong { color: var(--studio-orange) !important; }
+.project-studio.studio-egoforge [data-studio-section="ablations"] .studio-ours td:nth-child(-n+3) { color: var(--studio-orange) !important; }
+.project-studio.studio-egoforge .results-table .studio-ours { background: #ff915b10 !important; }
+.project-studio.studio-egoforge .egoforge-qualitative img { display: block; width: 100%; margin: 24px 0 0; }
+.project-studio.studio-egoforge .egoforge-qualitative p { margin-top: 16px !important; margin-bottom: 32px !important; }
+.project-studio.studio-egoforge .egoforge-qualitative p:empty { display: none; }
+.page-project.project-studio.studio-egoforge main > .studio-section-nav { margin: 32px auto; padding: 18px 0; }
+.page-project.project-studio.studio-egoforge main > .egoforge-video-examples > .container { padding: 24px !important; }
+.studio-egoforge .egoforge-video-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.studio-egoforge .egoforge-video-case { min-width: 0; overflow: hidden; border: 1px solid #ffffff18; border-radius: 12px; background: #071222; }
+.studio-egoforge .egoforge-output { aspect-ratio: 1; background: #050a13; }
+.studio-egoforge .egoforge-output video { display: block; width: 100%; height: 100% !important; object-fit: contain; }
+.studio-egoforge .egoforge-case-copy { padding: 20px; }
+.studio-egoforge main .egoforge-case-copy h3 { margin: 0 0 10px; color: var(--studio-turquoise); font-size: 16px; line-height: 1.5; }
+.studio-egoforge main .egoforge-case-copy .egoforge-instruction { margin: 0 0 18px; min-height: 3.6em; font-size: 15px; line-height: 1.8; }
+.studio-egoforge .egoforge-inputs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.studio-egoforge .egoforge-inputs figure { min-width: 0; margin: 0; }
+.studio-egoforge .egoforge-inputs img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #050a13; border-radius: 6px; }
+.studio-egoforge .egoforge-inputs figcaption { margin-top: 6px; font-size: 11px; color: #a9ccff; line-height: 1.5; }
+.page-project.project-studio.studio-egoforge .egoforge-video-examples .studio-opening-caption { margin: 24px -24px -24px; padding: 24px; }
+.studio-egoforge main .egoforge-method-steps { list-style: none; padding: 0; margin: 24px 0; }
+.studio-egoforge main .egoforge-method-steps li { margin: 0; }
+.studio-egoforge main .egoforge-method-steps h3 { margin-top: 12px; }
+.studio-egoforge .egoforge-method-figure { position: relative; margin: 28px 0; padding: 16px; background: #071222; border: 1px solid #ffffff18; border-radius: 12px; }
+.studio-egoforge .egoforge-method-figure img { display: block; width: 100%; max-width: 960px; margin: 0 auto; background: #fff; border-radius: 6px; }
+.studio-egoforge .egoforge-method-figure figcaption { margin-top: 18px; color: #b5c4d9; font-size: 15px; line-height: 1.8; }
+.studio-egoforge .egoforge-method-figure .studio-zoom { position: static; display: block; margin: 12px 0 0 auto; width: fit-content; }
+.studio-egoforge main .egoforge-reward-title { font-size: 20px; margin: 28px 0 18px; }
+.studio-egoforge .egoforge-rewards { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; margin: 0; padding-top: 20px; border-top: 1px solid #ffffff20; }
+.studio-egoforge .egoforge-rewards dt { color: var(--studio-turquoise); font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.studio-egoforge .egoforge-rewards dd { margin: 0; color: #b5c4d9; font-size: 14px; line-height: 1.8; }
+@media(max-width:900px) {
+ .studio-egoforge .egoforge-video-grid { grid-template-columns: minmax(0,1fr); }
+ .studio-egoforge .egoforge-rewards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .studio-egoforge main .egoforge-case-copy .egoforge-instruction { min-height: 0; }
+}
+@media(max-width:768px) {
+ .page-project.project-studio.studio-egoforge main > .studio-section-nav { margin: 24px 16px; }
+ .page-project.project-studio.studio-egoforge main > .egoforge-video-examples > .container { padding: 16px !important; }
+ .page-project.project-studio.studio-egoforge .egoforge-video-examples .studio-opening-caption { margin: 20px -16px -16px; padding: 20px; }
+ .studio-egoforge .egoforge-case-copy { padding: 16px; }
+ .studio-egoforge .egoforge-method-figure { padding: 12px; }
+ .studio-egoforge .egoforge-method-figure figcaption { font-size: 14px; }
+}
+@media(max-width:480px) { .studio-egoforge .egoforge-rewards { grid-template-columns: minmax(0,1fr); } }
