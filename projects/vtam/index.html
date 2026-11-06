@@ -149,8 +149,14 @@
 
     .page-project .vtam-hanoi-grid {
       max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      justify-self: center;
+    }
+
+    .page-project .vtam-intro .studio-example-single {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .page-project .vtam-local-video {
@@ -313,7 +319,10 @@
           </div>
         </div>
       </div>
-    </section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
+    </section><section class="section studio-opening-examples vtam-intro" data-studio-section="video" id="studio-video" aria-label="VTAM overview video"><div class="container"><div class="studio-example-grid studio-example-single">
+<figure class="studio-example-card"><div class="studio-example-media"><video src="./static/videos/vtam_intro.mp4" poster="./static/videos/vtam_intro_poster.jpg" controls playsinline preload="metadata" title="VTAM overview video (with narration)"></video></div>
+<figcaption class="studio-example-caption"><strong class="studio-example-label">Overview video</strong><p>A two-minute introduction to VTAM with narration: the problem, real-robot rollouts against baselines, the method, and UniVTAC and latency results.</p></figcaption></figure>
+</div></div></section><section class="section studio-opening-summary" data-studio-section="tldr" id="studio-tldr" aria-labelledby="studio-tldr-title"><div class="container is-max-desktop">
 <h2 class="title is-3" id="studio-tldr-title">TL;DR</h2>
 <div class="content studio-tldr-box"><p>VTAM turns a pretrained video world model into a visuo-tactile one: with ~100 demonstrations per task and no tactile or action pretraining, it learns to predict future vision and touch and reads those predictions in a single forward pass. It matches tactile models pretrained on over 30K hours of visuo-tactile data while <span class="studio-tldr-tail">staying fast at inference.</span></p></div>
 </div></section><section class="section studio-opening-examples" data-studio-section="examples" aria-label="VTAM examples"><div class="container"><div class="studio-example-grid">
@@ -321,7 +330,7 @@
 <figcaption class="studio-example-caption"><strong class="studio-example-label">Chip pick-and-place</strong><p>VTAM uses touch to guide precise contact during chip manipulation.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/a5c32edaa275609be8aeed060d527fb7/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2Fa5c32edaa275609be8aeed060d527fb7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="eager" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM: Cucumber peeling"></iframe></div>
 <figcaption class="studio-example-caption"><strong class="studio-example-label">Cucumber peeling</strong><p>VTAM uses visual and tactile feedback to guide contact while peeling a cucumber.</p></figcaption></figure><figure class="studio-example-card"><div class="studio-example-media"><iframe src="https://customer-e6yqevii1fyp0fe6.cloudflarestream.com/9ac52cca684a3b48b51b130951bd74ba/iframe?poster=https%3A%2F%2Fcustomer-e6yqevii1fyp0fe6.cloudflarestream.com%2F9ac52cca684a3b48b51b130951bd74ba%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&amp;muted=true&amp;loop=true" loading="eager" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true" title="VTAM: Whiteboard wiping"></iframe></div>
 <figcaption class="studio-example-caption"><strong class="studio-example-label">Whiteboard wiping</strong><p>Visual and tactile feedback guide sustained contact during wiping.</p></figcaption></figure>
-</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">VTAM Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
+</div></div></section><nav class="studio-section-nav" aria-label="On this project page"><a href="#studio-video" data-section="video">Video</a><a href="#studio-tldr" data-section="tldr">TL;DR</a><a href="#studio-abstract" data-section="abstract">Abstract</a><a href="#studio-contributions" data-section="contributions">Contributions</a><a href="#studio-method" data-section="method">VTAM Method</a><a href="#studio-quantitative" data-section="quantitative">Quantitative Results</a><a href="#studio-qualitative" data-section="qualitative">Qualitative Results</a><a href="#BibTeX" data-section="bibtex">BibTeX</a></nav><section class="section" data-studio-section="abstract" id="studio-abstract" aria-labelledby="studio-abstract-title">
       <div class="container is-max-desktop">
         <h2 class="title is-3" id="studio-abstract-title">Abstract</h2>
         <div class="content has-text-justified">
