@@ -53,19 +53,23 @@ a:hover { color: var(--color-accent-300); }
           <span style="display: block; font-size: clamp(42px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.03em; margin-left: -0.05em;">From Tokens to Trajectories</span>
           <span style="display: block; margin-top: 18px; font-size: clamp(19px, 2.1vw, 26px); line-height: 1.35; letter-spacing: -0.01em; color: color-mix(in srgb, var(--color-text) 82%, transparent); max-width: 34ch;">Parameter-Efficient Continuous Adaptation of Unified Multimodal Models with <span style="color: var(--color-accent-300);">FlowShift</span></span>
         </h1>
-        <div style="display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 34px; font-size: 17px; line-height: 1.5;">
-          <span>Gayatri Deshmukh</span>
-          <span>Onkar Susladkar</span>
-          <span>Adheesh Juvekar</span>
-          <span>Halil Kilicoglu<sup style="color: var(--color-accent);">*</sup></span>
-          <span>Ismini Lourentzou<sup style="color: var(--color-accent);">*</sup></span>
+        <div class="flowshift-authors" style="display: flex; flex-direction: column; gap: 6px; width: fit-content; max-width: 100%; margin-top: 34px; font-size: 17px; line-height: 1.5; text-align: center;">
+          <div class="flowshift-author-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;">
+            <span style="white-space: nowrap;">Gayatri Deshmukh</span>
+            <span style="white-space: nowrap;">Onkar Susladkar</span>
+            <span style="white-space: nowrap;">Adheesh Juvekar</span>
+          </div>
+          <div class="flowshift-author-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;">
+            <span style="white-space: nowrap;">Halil Kilicoglu<sup style="color: var(--color-accent);">*</sup></span>
+            <span style="white-space: nowrap;">Ismini Lourentzou<sup style="color: var(--color-accent);">*</sup></span>
+          </div>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 8px; font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">
           <span>University of Illinois Urbana-Champaign</span>
           <span><sup>*</sup> Corresponding authors</span>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;">
-          <a href="https://arxiv.org/pdf/2611.05451" target="_blank" rel="noopener" class="btn btn-primary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-file-pdf" style="font-size: 17px;"></i>Paper</a>
+          <a href="https://arxiv.org/abs/2611.05451" target="_blank" rel="noopener" class="btn btn-primary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-file-pdf" style="font-size: 17px;"></i>Paper</a>
           <a href="https://arxiv.org/abs/2611.05451" target="_blank" rel="noopener" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-article" style="font-size: 17px;"></i>arXiv</a>
           <a href="https://github.com/PLAN-Lab/FlowShift" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><i class="ph ph-github-logo" style="font-size: 17px;"></i>Code</a>
           <a href="https://huggingface.co/onkarsus13/FlowShift/" target="_blank" rel="noopener" class="btn btn-secondary" style="min-height: 40px; padding-inline: 16px; background: color-mix(in srgb, var(--color-bg) 70%, transparent);"><span style="font-size: 17px;">🤗</span>Model Weights</a>
