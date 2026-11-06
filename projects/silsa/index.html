@@ -67,10 +67,10 @@
 
   <section class="hero project-hero studio-header" aria-labelledby="paper-title"><div class="hero-body"><div class="container is-max-desktop"><div class="has-text-centered">
       <h1 id="paper-title" class="publication-title">
-<span class="studio-name">SILSA</span><span class="studio-subtitle">Sliding-Window Slice Latents forTopology-Preserving High-Resolution 3D Generation</span>
+<span class="studio-name">SILSA</span><span class="studio-subtitle">Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation</span>
 </h1>
       <div class="is-size-5 publication-authors author-list studio-author-list"><div class="studio-author-row">
-<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=onkar-susladkar">Onkar Susladkar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
+<span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=tianjiao(joey)-yu">Tianjiao Yu</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=xinzhuo-li">Xinzhuo Li</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=yifan-shen">Yifan Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ying-shen">Ying Shen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=kiet-nguyen">Kiet A. Nguyen</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=adheesh-juvekar">Adheesh Sunil Juvekar</a>, </span><span class="author-block studio-author" data-affiliations="uiuc"><a href="../../member.html?id=ismini-lourentzou">Ismini Lourentzou</a></span>
 </div></div>
       <div class="is-size-5 publication-authors studio-affiliations"><span class="studio-affiliation" data-institution="uiuc"><a class="studio-lab-name" href="../../index.html">PLAN Lab</a> · <span class="studio-affiliation-name">University of Illinois Urbana-Champaign</span></span></div>
       <h2 class="publication-venue illini-orange">NeurIPS 2026</h2>
@@ -86,20 +86,18 @@
 <div><h2 id="abstract-title" class="title is-3">Abstract</h2></div>
 <div>
 <p>High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes.</p>
-<p>We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact <em>sliding-window slice latents</em>. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A <strong>Slice VAE</strong> encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a <strong>Volumetric Anchor Lattice</strong> coordinates directional slice streams through a shared 3D workspace. To preserve structural correctness, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices.</p>
-<p>Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by 8.7%, coverage by 5.96 absolute points, and Betti error by 9.2% over the strongest baseline, while using 70.0% fewer tokens than the next-most compact baseline and over 98% fewer tokens than sparse or hierarchical tokenizers, effectively reducing training memory by 40.4% and inference time by 58.5%. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.</p>
+<p>We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact <em>sliding-window slice latents</em>. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A <strong>Slice VAE</strong> encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a <strong>Volumetric Anchor Lattice</strong> coordinates directional slice streams through a shared 3D workspace. To encourage structural fidelity, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices.</p>
+<p>Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by 24.4%, coverage by 6.07 absolute points, and Betti error by 9.2% over the strongest baseline, while using 70.0% fewer tokens than the next-most compact baseline and over 98% fewer tokens than sparse or hierarchical tokenizers. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.</p>
 </div>
 </div></section><section class="section" data-studio-section="contributions" id="studio-contributions" aria-labelledby="studio-contributions-title"><div class="container is-max-desktop">
 <h2 class="title is-3" id="studio-contributions-title">Contributions</h2>
 <div class="content"><ul class="studio-contribution-list" role="list">
 <li>
-<strong class="studio-contribution-lead">Sliding-window slice latents provide a compact representation of 3D shapes.</strong> We introduce SILSA, a topology-aware generation framework that replaces expensive local voxel tokens with a fixed set of overlapping depth-window slices along the three canonical axes. The representation preserves cross-sectional continuity and supports single-stage rectified-flow generation.</li>
+<strong class="studio-contribution-lead">Compact, spatially grounded sliding-window slice latents.</strong> We introduce SILSA, a topology-aware image-to-3D generation framework that encodes shapes into overlapping slice latents across three canonical axes.</li>
 <li>
-<strong class="studio-contribution-lead">SliceVAE and a Volumetric Anchor Lattice coordinate reconstruction.</strong> A Slice VAE encodes oriented surface samples into multi-axis slice latents and reconstructs geometry with a sparse volumetric decoder. A shared 3D anchor workspace coordinates the directional slice streams.</li>
+<strong class="studio-contribution-lead">A topology-aware SliceVAE.</strong> Overlapping slice aggregation, sparse volumetric decoding, persistent-homology matching, and Betti-transition supervision preserve surface geometry, connected components, and hole structures.</li>
 <li>
-<strong class="studio-contribution-lead">Slice-level topology supervision preserves structural correctness.</strong> Persistence-diagram matching and Betti-transition alignment across neighboring slices encourage correct cross-sectional topology, preserving thin structures, repeated components, and long-range connectivity.</li>
-<li>
-<strong class="studio-contribution-lead">Experiments measure structural fidelity and generation cost.</strong> SILSA improves PSNR by 8.7%, coverage by 5.96 absolute points, and Betti error by 9.2% over the strongest baseline. It uses 70.0% fewer tokens than the next-most compact baseline and over 98% fewer than sparse or hierarchical tokenizers, reducing training memory by 40.4% and inference time by 58.5%.</li>
+<strong class="studio-contribution-lead">Single-stage rectified-flow generation with a Volumetric Anchor Lattice.</strong> Shared spatial memory enables cross-axis coordination and efficient image-conditioned 3D generation from only 384 slice tokens.</li>
 </ul></div>
 </div></section><section class="section" id="method" aria-labelledby="method-title" data-studio-section="method">
       <div class="container">
@@ -137,18 +135,17 @@
 <p class="studio-results-intro">Trained on Trellis-500K. Evaluated on 200 randomly sampled Toys4K assets and 50 in-the-wild images, with no training-set overlap.</p>
 <div class="studio-result-stack">
 <figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-0"><h3 class="studio-result-title" id="studio-result-0">Efficiency comparison</h3>
-<p class="table-note studio-result-description">Training memory and time: batch size 4 on one A100; training time is seconds per iteration. Inference is end-to-end seconds per shape. Variable-length token counts are mean ± standard deviation. ↓ Lower is better. <span class="hl-best">Best</span> and <span class="hl-second"></span><span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
+<p class="table-note studio-result-description">VAE training memory: batch size 4 on one A100. Parameter counts are for the VAE. Inference is end-to-end seconds per shape. Variable-length token counts are mean ± standard deviation. ↓ Lower is better. <span class="hl-best">Best</span> and <span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
 <div class="table-scroll studio-table-scroll" tabindex="0" role="region" aria-label="Efficiency comparison"><table class="results-table studio-native-table">
 <caption class="sr-only studio-sr-only">Efficiency comparison from the paper. Lower is better for all columns.</caption>
 <thead><tr>
 <th scope="col">Method</th>
 <th scope="col">Tokens ↓</th>
 <th scope="col">Stages ↓</th>
-<th scope="col">Parameters ↓</th>
+<th scope="col">VAE parameters ↓</th>
 <th scope="col">Train memory ↓</th>
-<th scope="col">Train time ↓</th>
 <th scope="col">Inference ↓</th>
-<th scope="col">CD ↓</th>
+<th scope="col">VAE CD ↓</th>
 </tr></thead>
 <tbody>
 <tr class="">
@@ -156,8 +153,7 @@
 <td class="second studio-numeric-cell">1,280</td>
 <td class="best studio-numeric-cell">1</td>
 <td class="studio-numeric-cell">124 M</td>
-<td class="second studio-numeric-cell">14.6 GB</td>
-<td class="second studio-numeric-cell">0.38 s</td>
+<td class="best studio-numeric-cell">14.6 GB</td>
 <td class="second studio-numeric-cell">0.82 s</td>
 <td class="studio-numeric-cell">9.76</td>
 </tr>
@@ -167,7 +163,6 @@
 <td class="studio-numeric-cell">2</td>
 <td class="best studio-numeric-cell">87 M</td>
 <td class="studio-numeric-cell">68.4 GB</td>
-<td class="studio-numeric-cell">1.18 s</td>
 <td class="studio-numeric-cell">2.74 s</td>
 <td class="studio-numeric-cell">3.21</td>
 </tr>
@@ -177,7 +172,6 @@
 <td class="studio-numeric-cell">2</td>
 <td class="studio-numeric-cell">347 M</td>
 <td class="studio-numeric-cell">42.7 GB</td>
-<td class="studio-numeric-cell">0.71 s</td>
 <td class="studio-numeric-cell">1.93 s</td>
 <td class="studio-numeric-cell">1.12</td>
 </tr>
@@ -187,23 +181,21 @@
 <td class="studio-numeric-cell">2</td>
 <td class="studio-numeric-cell">213 M</td>
 <td class="studio-numeric-cell">55.4 GB</td>
-<td class="studio-numeric-cell">1.47 s</td>
 <td class="studio-numeric-cell">1.15 s</td>
 <td class="second studio-numeric-cell">0.61</td>
 </tr>
 <tr class="ours studio-ours">
 <th scope="row">SILSA</th>
-<td class="best studio-numeric-cell">384</td>
+<td class="best studio-numeric-cell">384 (N = 128)</td>
 <td class="best studio-numeric-cell">1</td>
 <td class="second studio-numeric-cell">96 M</td>
-<td class="best studio-numeric-cell">8.7 GB</td>
-<td class="best studio-numeric-cell">0.21 s</td>
+<td class="second studio-numeric-cell">17.4 GB</td>
 <td class="best studio-numeric-cell">0.34 s</td>
 <td class="best studio-numeric-cell">0.59</td>
 </tr>
 </tbody>
 </table></div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-1"><h3 class="studio-result-title" id="studio-result-1">VAE reconstruction quality</h3>
-<p class="table-note studio-result-description">Betti error measures the average mismatch in connected components and holes. F-score thresholds are 0.01 and 0.005. ↓ Lower is better; ↑ higher is better. <span class="hl-best">Best</span> and <span class="hl-second"></span><span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
+<p class="table-note studio-result-description">Betti error measures the average mismatch in connected components and holes. F-score thresholds are 0.01 and 0.005. ↓ Lower is better; ↑ higher is better. <span class="hl-best">Best</span> and <span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
 <div class="table-scroll studio-table-scroll" tabindex="0" role="region" aria-label="VAE reconstruction quality"><table class="results-table studio-native-table">
 <caption class="sr-only studio-sr-only">VAE reconstruction quality from the paper.</caption>
 <thead><tr>
@@ -258,16 +250,16 @@
 </tbody>
 </table></div></figure><figure class="studio-native-result studio-result-card" aria-labelledby="studio-result-2"><h3 class="studio-result-title" id="studio-result-2">Image-to-3D generation</h3>
 <div class="content studio-result-description">
-<p class="table-note">CLIP measures image-output alignment; FD and KD measure generative quality; PSNR and LPIPS measure visual fidelity; COV and MMD measure distributional fidelity. ↓ Lower is better; ↑ higher is better. <span class="hl-best">Best</span> and <span class="hl-second"></span><span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
+<p class="table-note">CLIP measures image-output alignment; FD and KD measure generative quality; PSNR and LPIPS measure visual fidelity; COV and MMD measure distributional fidelity. ↓ Lower is better; ↑ higher is better. <span class="hl-best">Best</span> and <span class="studio-ending"><span class="hl-second">second best</span> highlighted.</span></p>
 <div class="result-highlights">
 <div class="result-highlight">
-<strong>+8.7% PSNR</strong><p>32.74 vs. 30.12 for SparseFlex in image-to-3D generation.</p>
+<strong>+24.4% PSNR</strong><p>32.74 dB vs. 26.31 dB for SAR3D, a gain of 6.43 dB.</p>
 </div>
 <div class="result-highlight">
-<strong>+5.96 points coverage</strong><p>79.08% vs. 73.12% for SparseFlex, an absolute gain.</p>
+<strong>+6.07 points coverage</strong><p>79.08% vs. 73.01% for XCube, an absolute gain in percentage points.</p>
 </div>
 <div class="result-highlight">
-<strong>40.4% less training memory</strong><p>8.7 GB vs. 14.6 GB for Dora under the reported A100 setup.</p>
+<strong>50% lower LPIPS</strong><p>0.05 vs. 0.10 for SAR3D, improving perceptual fidelity.</p>
 </div>
 </div>
 </div>
@@ -351,7 +343,7 @@
 <td class="second studio-numeric-cell">0.09</td>
 <td class="studio-numeric-cell">23.99</td>
 <td class="studio-numeric-cell">0.13</td>
-<td class="studio-numeric-cell">73.01</td>
+<td class="second studio-numeric-cell">73.01</td>
 <td class="studio-numeric-cell">14.92</td>
 </tr>
 <tr class="">
@@ -369,14 +361,14 @@
 <td class="studio-numeric-cell">84.67</td>
 <td class="studio-numeric-cell">22.12</td>
 <td class="studio-numeric-cell">0.18</td>
-<td class="studio-numeric-cell">26.31</td>
+<td class="second studio-numeric-cell">26.31</td>
 <td class="second studio-numeric-cell">0.10</td>
 <td class="studio-numeric-cell">70.30</td>
 <td class="studio-numeric-cell">15.12</td>
 </tr>
 <tr class="">
 <th scope="row">Trellis</th>
-<td class="studio-numeric-cell">85.03</td>
+<td class="second studio-numeric-cell">85.03</td>
 <td class="second studio-numeric-cell">10.31</td>
 <td class="best studio-numeric-cell">0.08</td>
 <td class="studio-numeric-cell">24.01</td>
@@ -384,19 +376,9 @@
 <td class="studio-numeric-cell">72.10</td>
 <td class="second studio-numeric-cell">14.36</td>
 </tr>
-<tr class="">
-<th scope="row">SparseFlex</th>
-<td class="best studio-numeric-cell">88.22</td>
-<td class="studio-numeric-cell">11.16</td>
-<td class="best studio-numeric-cell">0.08</td>
-<td class="second studio-numeric-cell">30.12</td>
-<td class="best studio-numeric-cell">0.05</td>
-<td class="second studio-numeric-cell">73.12</td>
-<td class="studio-numeric-cell">14.52</td>
-</tr>
 <tr class="ours studio-ours">
 <th scope="row">SILSA</th>
-<td class="second studio-numeric-cell">87.94</td>
+<td class="best studio-numeric-cell">87.94</td>
 <td class="best studio-numeric-cell">10.16</td>
 <td class="best studio-numeric-cell">0.08</td>
 <td class="best studio-numeric-cell">32.74</td>
@@ -455,7 +437,6 @@
 <span>Surface error</span><span>Low</span><span class="error-scale" aria-hidden="true"></span><span>High</span>
 </div>
 <figcaption class="figure-caption"><span><strong>Geometry, normals, and surface error.</strong> Normal maps appear in the upper insets; error maps appear in the lower insets.</span></figcaption></figure>
-        <details class="extra-results"><summary>More reconstruction examples</summary><img src="static/images/additional-reconstruction.webp" width="2400" height="1400" loading="lazy" alt="Additional reconstruction comparisons for a keyboard, animal, and chair across SILSA and four baseline tokenizers."></details>
       </div>
 </div>
     </section><section class="section citation-section" id="citation" aria-labelledby="citation-title" data-studio-section="bibtex"><div class="container">
@@ -482,3 +463,4 @@
 
 </body>
 </html>
+
