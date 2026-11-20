@@ -1,22 +1,25 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//PLAN Lab//NeurIPS 2026//EN
+PRODID:-//PLAN Lab//NeurIPS 2026 Posters//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:ELSA3D @ NeurIPS 2026
+X-WR-CALNAME:PLAN Lab @ NeurIPS 2026: Atlanta Posters
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
 UID:elsa3d-neurips2026@plan-lab.github.io
-DTSTAMP:20261009T120000Z
+DTSTAMP:20261120T230000Z
+LAST-MODIFIED:20261120T230000Z
+SEQUENCE:1
 DTSTART:20261211T150000Z
 DTEND:20261211T180000Z
 SUMMARY:PLAN Lab @ NeurIPS 2026: ELSA3D Poster
-LOCATION:Atlanta · Hall C1
+LOCATION:Hall C1\, Poster #A827\, Georgia World Congress Center\, Atlanta\,
+  GA
 DESCRIPTION:ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding
-  and Generation\n\nAtlanta Poster Session 5\nFriday\, December 11\, 2026
-  · 10:00 a.m.–1:00 p.m. EST\n\nProject page: https://plan-lab.github.io
- /projects/elsa3D/\nPaper: https://arxiv.org/pdf/2607.06565\nOfficial NeurI
- PS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/149339
-URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/149339
+  and Generation\n\nAtlanta Poster Session 5 · Poster #A827\nFriday\, Dece
+ mber 11\, 2026 · 10:00–13:00 EST\nPaper: https://arxiv.org/pdf/2607.065
+ 65\nOfficial NeurIPS page: https://neurips.cc/virtual/2026/poster/149339\n
+ Project: https://plan-lab.github.io/projects/elsa3D/
+URL:https://neurips.cc/virtual/2026/poster/149339
 END:VEVENT
 END:VCALENDAR

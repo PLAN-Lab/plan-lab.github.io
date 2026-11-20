@@ -21,7 +21,9 @@
         {
           "pubId": "2026-Li-toward-cognitive-supersensing-multimodal-llm"
         }
-      ]
+      ],
+      "link": "neurips2026.html",
+      "linkLabel": "Papers & poster schedule"
     },
     {
       "id": "2026-icml-seoul",
@@ -135,15 +137,15 @@
       ],
       "cardImage": "assets/images/news/logos/neurips-2025.png"
     },
-{
-  "id": "2025-amazon-nova-ai-challenge",
-  "date": "2025-07",
-  "title": "Team PurpCorn-PLAN wins the Amazon Nova AI Challenge!",
-  "description": "Team PurpCorn-PLAN (UIUC) was named the winning defending team in the first Amazon Nova AI Challenge on trusted AI, earning a $250,000 award.",
-  "link": "https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge",
-  "image": "https://cdn.amazon.science/dims4/default/a2cb44f/2147483647/strip/true/crop/4032x2268+0+0/resize/1748x983!/format/webp/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2F99%2F61%2Fc88f90664083abeea08c2e8da6ae%2Fnova-ai-challenge-defender-win.png",
-  "imageFit": "cover"
-},
+    {
+      "id": "2025-amazon-nova-ai-challenge",
+      "date": "2025-07",
+      "title": "Team PurpCorn-PLAN wins the Amazon Nova AI Challenge!",
+      "description": "Team PurpCorn-PLAN (UIUC) was named the winning defending team in the first Amazon Nova AI Challenge on trusted AI, earning a $250,000 award.",
+      "link": "https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge",
+      "image": "https://cdn.amazon.science/dims4/default/a2cb44f/2147483647/strip/true/crop/4032x2268+0+0/resize/1748x983!/format/webp/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2F99%2F61%2Fc88f90664083abeea08c2e8da6ae%2Fnova-ai-challenge-defender-win.png",
+      "imageFit": "cover"
+    },
     {
       "id": "2025-emnlp-findings",
       "date": "2025-11",
@@ -159,14 +161,14 @@
         }
       ]
     },
-{
-  "id": "2025-amazon-fellowship-jerry",
-  "date": "2025-09",
-  "title": "Jerry Xiong receives an Amazon AI PhD Fellowship!",
-  "description": "Congratulations to [Jerry Xiong](member.html?id=jerry-xiong) for receiving an Amazon AI PhD Fellowship.",
-  "image": "assets/images/team/jerry-xiong.webp",
-  "imageFit": "cover"
-},
+    {
+      "id": "2025-amazon-fellowship-jerry",
+      "date": "2025-09",
+      "title": "Jerry Xiong receives an Amazon AI PhD Fellowship!",
+      "description": "Congratulations to [Jerry Xiong](member.html?id=jerry-xiong) for receiving an Amazon AI PhD Fellowship.",
+      "image": "assets/images/team/jerry-xiong.webp",
+      "imageFit": "cover"
+    },
     {
       "id": "2025-cvpr-calico",
       "date": "2025-06",

@@ -1,0 +1,71 @@
+/* Reuse the ECCV conference design; these rules are scoped to the NeurIPS page. */
+.page-neurips [hidden] { display: none !important; }
+.page-neurips { font-size: 1rem; }
+.page-neurips .plan-hero { padding: 0; }
+.page-neurips .hero-atlas-card { background: linear-gradient(145deg,rgba(19,41,75,.68),rgba(19,41,75,.44)); }
+.page-neurips .atlas-eyebrow { color: #ffd2b6; font-size: .8125rem; }
+.page-neurips .hero-title { color: #fff; background: none; -webkit-text-fill-color: currentColor; font-size: clamp(3rem, 5.3vw, 5.5rem); line-height: 1.03; letter-spacing: -.055em; }
+.page-neurips .hero-title span { color: #ffd2b6; }
+.page-neurips .hero-copy { max-width: 43rem; font-weight: 600; }
+.page-neurips .hero-content { width: min(1650px,calc(100% - 112px)); padding-top: 112px; padding-bottom: 64px; }
+.page-neurips .hero-badge { font-size: .875rem; letter-spacing: .12em; }
+.page-neurips .hero-location { color: #fff; font-size: .9375rem; font-weight: 600; margin-top: 1.5rem; line-height: 1.8; }
+.page-neurips .hero-location .location-divider { color: #ffc79f; padding: 0 .4rem; }
+.page-neurips .atlas-day-name, .page-neurips .atlas-items { font-size: .9375rem; }
+.page-neurips .atlas-count { font-size: .8125rem; }
+.page-neurips .atlas-local-time { color: #fff; font-size: .875rem; margin: 1rem 0; }
+.page-neurips .section-title { text-align: left; }
+.page-neurips .section-note { color: #4b5a70; line-height: 1.6; margin: .65rem 0 0; font-size: 1rem; }
+.page-neurips .poster-grid { align-items: start; }
+.page-neurips .poster-grid[data-empty="true"] { grid-template-columns: 1fr; }
+.page-neurips .timeline-shell { height: auto; }
+.page-neurips .paper-short, .page-neurips .paper-time, .page-neurips .paper-area { display: block; }
+.page-neurips .paper-short { white-space: normal; font-size: 1.0625rem; line-height: 1.3; }
+.page-neurips .paper-area, .page-neurips .paper-time, .page-neurips .timeline-tip { font-size: .875rem; }
+.page-neurips .paper-cube-card { grid-template-columns: 68px minmax(0, 1fr); gap: .6rem; }
+.page-neurips .cube-wrap, .page-neurips .cube-wrap .cube-svg { width: 64px; height: 64px; }
+.page-neurips .paper-cube-card.active .cube-top { fill: #ff922f; }
+.page-neurips .paper-cube-card.active .cube-left { fill: #cb4500; }
+.page-neurips .paper-cube-card.active .cube-right { fill: #ff5f05; }
+.page-neurips .day-label { font-size: .875rem; letter-spacing: .06em; }
+.page-neurips .paper-heading { margin: 0; text-align: left; line-height: 1.15; }
+.page-neurips .paper-description, .page-neurips .authors-text { font-size: 1rem; }
+.page-neurips .info-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.page-neurips .info-label, .page-neurips .box-label, .page-neurips .media-title, .page-neurips .media-open { font-size: .875rem; letter-spacing: .03em; }
+.page-neurips .info-value { font-size: 1rem; line-height: 1.5; }
+.page-neurips .info-tile.highlight .info-value { font-size: 1.4rem; }
+.page-neurips .action-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.page-neurips .action-link, .page-neurips .copy-btn { padding: .75rem 1rem; font-size: .875rem; }
+.page-neurips .action-row .calendar-trigger { width: auto; }
+.page-neurips .glass-nav.scrolled-nav { background: rgba(19,41,75,.96); }
+.page-neurips .glass-nav.scrolled-nav .nav-item { color: #fff; }
+.page-neurips .schedule-calendar-toggle { text-decoration: none; }
+.page-neurips .contribution-note { font-size: .8125rem; margin: .65rem 0 0; color: #4b5a70; }
+.page-neurips .media-grid { grid-template-columns: 1fr; }
+.page-neurips .research-preview { display: block; background: #fff; padding: .5rem; }
+.page-neurips .research-preview img { display: block; width: 100%; max-height: 25rem; object-fit: contain; }
+.page-neurips .bibtex-box summary { cursor: pointer; padding: .3rem; }
+.page-neurips .bibtex-pre { font-size: .875rem; }
+.page-neurips .pager-btn:disabled { opacity: .5; cursor: default; }
+.page-neurips .schedule-subtitle { font-size: 1rem; line-height: 1.6; margin: .6rem 0 0; }
+.page-neurips .schedule-count, .page-neurips .schedule-calendar-toggle { font-size: .875rem; }
+.page-neurips .schedule-footnote { margin: 0; padding: 1rem 1.5rem; color: #4b5a70; font-size: .875rem; line-height: 1.5; }
+.page-neurips td, .page-neurips th { font-size: .875rem; }
+.page-neurips td .paper-title-link { font-size: 1rem; }
+.page-neurips .paper-number { font-size: .8125rem; }
+.page-neurips .table-link { font-size: .875rem; white-space: nowrap; }
+.page-neurips .workshop-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
+.page-neurips .workshop-badge { color: #9c3b00; font-size: .9375rem; font-weight: 800; margin-bottom: 1rem; }
+.page-neurips .workshop-context, .page-neurips .workshop-time { font-size: 1rem; color: #475569; line-height: 1.6; }
+.page-neurips .workshop-context a { color: #13294b; font-weight: 700; text-underline-offset: .2em; }
+.page-neurips .workshop-time { padding-left: 1rem; border-left: 3px solid #ff5f05; }
+.page-neurips .conference-footer { text-align: center; padding: 2.5rem 1rem; font-size: .875rem; line-height: 1.7; color: #4b5a70; }
+.page-neurips .conference-footer a { color: #13294b; font-weight: 700; }
+.page-neurips .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 10000; background: #fff; color: #13294b; padding: 1rem; border-radius: .5rem; }
+.page-neurips .skip-link:focus { top: 1rem; }
+.page-neurips :is(button,a,input,select,summary,[tabindex]):focus-visible { outline: 3px solid #1b72c8; outline-offset: 4px; }
+.page-neurips .controls select { appearance: none; padding-right: 2.8rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%2313294b' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+@media (max-width: 1180px) { .page-neurips .hero-content { grid-template-columns: minmax(0,1.25fr) minmax(320px,1fr); gap: 2rem; } .page-neurips .hero-title { font-size: clamp(3rem,5.8vw,4.8rem); } }
+@media (max-width: 900px) { .page-neurips .hero-content { width: calc(100% - 32px); grid-template-columns: 1fr; } .page-neurips .workshop-grid { grid-template-columns: 1fr; } .page-neurips .timeline-scroll { max-height: 30rem; } .page-neurips .detail-panel { padding: 1.35rem; } .page-neurips .hero-badge { max-width: 100%; line-height: 1.6; } .page-neurips .hero-title { font-size: clamp(2.8rem,8vw,4.5rem); } }
+@media (max-width: 560px) { .page-neurips .hero-content { padding: 108px 0 40px; } .page-neurips .hero-location .location-divider { display: none; } .page-neurips .hero-location .hero-city { display: block; } .page-neurips .hero-title { font-size: 2.9rem; } .page-neurips .hero-badge { font-size: .8125rem; letter-spacing: .07em; padding: .8rem 1rem; } .page-neurips .glass-nav .nav-menu { gap: .5rem; } .page-neurips .info-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .page-neurips .media-head { flex-wrap: wrap; } .page-neurips .paper-cube-card { grid-template-columns: 56px minmax(0,1fr); } .page-neurips .cube-wrap,.page-neurips .cube-wrap .cube-svg { width: 52px; height: 52px; } .page-neurips .controls input { font-size: 1rem; } .page-neurips .hero-atlas-card { padding: 1.2rem; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } .page-neurips *, .page-neurips *::before, .page-neurips *::after { animation: none !important; transition: none !important; } }

@@ -80,6 +80,7 @@
         await navigator.clipboard.writeText(citation.textContent);
         button.textContent = 'Copied';
       } catch {
+        citation.closest('details').open = true;
         const range = document.createRange();range.selectNodeContents(citation);
         const selection = window.getSelection();selection.removeAllRanges();selection.addRange(range);
         button.textContent = 'Citation selected';
@@ -88,19 +89,9 @@
     });
   });
 
-  const BASE = 'https://plan-lab.github.io/';
   const calendarPath = id => 'assets/data/neurips2026-calendar/' + encodeURIComponent(id) + '.ics';
   const stamp = iso => iso.replace(/[-:]/g, '');
   function calendarOptions(id) {
-    if (id === 'all') {
-      const path = 'assets/data/planlab_neurips2026_schedule.ics';
-      const url = BASE + path, webcal = url.replace('https:', 'webcal:');
-      return [
-        ['Google Calendar', 'https://www.google.com/calendar/render?cid=' + encodeURIComponent(webcal), true],
-        ['Outlook 365', 'https://outlook.office.com/calendar/addcalendar?url=' + encodeURIComponent(url) + '&name=' + encodeURIComponent('PLAN Lab NeurIPS 2026 Atlanta Posters'), true],
-        ['Apple / iCal', webcal], ['Download .ics', path, false, true]
-      ];
-    }
     const card = byId.get(id);if (!card) return [];
     const data = card.dataset, workshop = card.classList.contains('workshop-paper');
     const paper = card.querySelector('h2,h3').textContent.trim();
@@ -154,3 +145,4 @@
   const syncNav = () => nav.classList.toggle('scrolled-nav', scrollY > 20);
   window.addEventListener('scroll', syncNav, { passive: true });syncNav();
 })();
+
