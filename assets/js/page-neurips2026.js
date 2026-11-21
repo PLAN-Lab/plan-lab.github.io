@@ -64,7 +64,7 @@
     select(items[(index + offset + items.length) % items.length].dataset.paperId);
   }
   buttons.forEach(button => button.addEventListener('click', () => {
-    select(button.dataset.paper, { scroll: matchMedia('(max-width: 900px)').matches });
+    select(button.dataset.paper, { scroll: matchMedia('(max-width: 1180px)').matches });
   }));
   document.querySelectorAll('[data-paperlink]').forEach(button => {
     button.addEventListener('click', () => select(button.dataset.paperlink, { scroll: true }));
