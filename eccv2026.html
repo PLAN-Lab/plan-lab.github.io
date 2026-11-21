@@ -83,6 +83,8 @@
   ]
 }
     </script>
+<link rel="stylesheet" href="assets/css/conference-media.css">
+<script src="assets/js/conference-media.js" defer></script>
 </head>
 <body class="page-eccv">
 
@@ -571,18 +573,19 @@
           <p class="authors-text">${esc(p.authors)}</p>
         </div>
 
-        <div class="media-grid">
-          ${videoCardHtml}
-          <div class="media-card">
+        <div class="media-grid conference-media-grid">
+          <div class="media-card poster-media-card">
             <div class="media-head">
               <div class="media-head-left">
-                <div class="media-icon"><i class="fa-regular fa-image"></i></div>
-                <div><div class="media-kicker">Paper</div><div class="media-title">Research preview</div></div>
+                <div class="media-icon"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+                <div><div class="media-kicker">Paper</div><div class="media-title">Research overview</div></div>
               </div>
-              <a class="media-open" href="${esc(p.officialUrl)}" target="_blank" rel="noreferrer">ECCV page <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="media-open" href="${esc(p.coverUrl)}" data-poster-viewer data-poster-title="${esc(p.short)} research overview" aria-label="Enlarge ${esc(p.short)} research overview">Enlarge</a>
             </div>
-            <div class="pdf-box"><img src="${esc(p.coverUrl)}" alt="${esc(p.short)} paper preview"></div>
+            <a class="poster-preview" href="${esc(p.coverUrl)}" data-poster-viewer data-poster-title="${esc(p.short)} research overview" aria-label="View ${esc(p.short)} research overview in enlarged viewer"><img src="${esc(p.coverUrl)}" alt="${esc(p.short)} research overview" loading="lazy" decoding="async"></a>
+            <p class="poster-preview-note">Select the image to zoom. <a href="${esc(p.coverUrl)}" target="_blank" rel="noopener">Open original</a></p>
           </div>
+          ${videoCardHtml}
         </div>
 
         <div class="bibtex-box">
@@ -856,3 +859,4 @@
   </script>
 </body>
 </html>
+
