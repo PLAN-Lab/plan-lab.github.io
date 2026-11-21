@@ -2,8 +2,18 @@
    JavaScript connects paper selection, filtering, calendars, and copy controls. */
 (() => {
   'use strict';
+    function cubeSvg(id, variant = 'blue') {
+      const c = variant === 'orange'
+        ? { topA:'#ff8a18', topB:'#ff5f05', leftA:'#cc4700', leftB:'#ff6d00', rightA:'#f05a00', rightB:'#b93b00', stroke:'#ffb06a' }
+        : { topA:'#5f80a8', topB:'#355d88', leftA:'#1c3154', leftB:'#355d88', rightA:'#2b4d73', rightB:'#14294b', stroke:'#88a6c8' };
+      return `<svg class="cube-svg" viewBox="0 0 96 96" aria-hidden="true"><defs><linearGradient id="cubeTop-${id}-${variant}" x1="18" y1="8" x2="78" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="${c.topA}"/><stop offset="1" stop-color="${c.topB}"/></linearGradient><linearGradient id="cubeLeft-${id}-${variant}" x1="15" y1="28" x2="50" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="${c.leftA}"/><stop offset="1" stop-color="${c.leftB}"/></linearGradient><linearGradient id="cubeRight-${id}-${variant}" x1="82" y1="28" x2="48" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="${c.rightA}"/><stop offset="1" stop-color="${c.rightB}"/></linearGradient><filter id="cubeShadow-${id}-${variant}" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="7" flood-color="#13294B" flood-opacity="0.24"/></filter></defs><ellipse cx="48" cy="82" rx="29" ry="8" fill="#13294B" opacity="0.13"/><g filter="url(#cubeShadow-${id}-${variant})"><polygon points="48,8 82,27 48,46 14,27" fill="url(#cubeTop-${id}-${variant})"/><polygon points="14,27 48,46 48,83 14,63" fill="url(#cubeLeft-${id}-${variant})"/><polygon points="82,27 48,46 48,83 82,63" fill="url(#cubeRight-${id}-${variant})"/><path d="M48 8 L82 27 L48 46 L14 27 Z" fill="none" stroke="${c.stroke}" stroke-opacity="0.55" stroke-width="1.3"/><path d="M14 27 L48 46 L82 27 M48 46 L48 83" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.2"/><path d="M25 28 L48 16 L72 29" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.4" stroke-linecap="round"/></g></svg>`;
+    }
+
+
+  [['hero-main-cube','orange'],['hero-small-cube-a','blue'],['hero-small-cube-b','orange']].forEach(([id,color]) => { document.getElementById(id).innerHTML = cubeSvg(id,color); });
+
   const cards = [...document.querySelectorAll('.conference-paper')];
-  const allCards = [...cards, document.querySelector('.workshop-paper')];
+  const allCards = cards;
   const buttons = [...document.querySelectorAll('[data-paper]')];
   const search = document.getElementById('searchInput');
   const session = document.getElementById('sessionFilter');
@@ -14,7 +24,8 @@
     card.dataset.search.toLowerCase().includes(search.value.trim().toLowerCase())
   );
   const scrollTo = target => {
-    const offset = document.querySelector('.glass-nav').getBoundingClientRect().height + 18;
+    const nav = document.querySelector('.glass-nav');
+    const offset = getComputedStyle(nav).position === 'fixed' ? nav.getBoundingClientRect().height + 18 : 24;
     const top = target.getBoundingClientRect().top + scrollY - offset;
     window.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   };
@@ -26,6 +37,8 @@
       const active = visible && button.dataset.paper === activeId;
       button.hidden = !visible;
       button.classList.toggle('active', active);
+      const shape = button.querySelector('[data-cube]');
+      if (shape) shape.innerHTML = cubeSvg(button.dataset.paper, active ? 'orange' : 'blue');
       button.setAttribute('aria-pressed', String(active));
     });
     document.querySelectorAll('.day-separator').forEach(separator => {
@@ -40,7 +53,6 @@
   function select(id, { scroll = false, hash = true } = {}) {
     const card = byId.get(id);
     if (!card) return;
-    if (card.classList.contains('workshop-paper')) { scrollTo(document.getElementById('workshops')); return; }
     if (!matches().includes(card)) { search.value = '';session.value = 'All Sessions'; }
     activeId = id;refresh();
     if (hash) history.replaceState(null, '', '#' + encodeURIComponent(id));
@@ -52,7 +64,7 @@
     select(items[(index + offset + items.length) % items.length].dataset.paperId);
   }
   buttons.forEach(button => button.addEventListener('click', () => {
-    select(button.dataset.paper, { scroll: matchMedia('(max-width: 900px)').matches });
+    select(button.dataset.paper, { scroll: matchMedia('(max-width: 1180px)').matches });
   }));
   document.querySelectorAll('[data-paperlink]').forEach(button => {
     button.addEventListener('click', () => select(button.dataset.paperlink, { scroll: true }));
@@ -80,6 +92,7 @@
         await navigator.clipboard.writeText(citation.textContent);
         button.textContent = 'Copied';
       } catch {
+        citation.closest('details').open = true;
         const range = document.createRange();range.selectNodeContents(citation);
         const selection = window.getSelection();selection.removeAllRanges();selection.addRange(range);
         button.textContent = 'Citation selected';
@@ -88,25 +101,14 @@
     });
   });
 
-  const BASE = 'https://plan-lab.github.io/';
   const calendarPath = id => 'assets/data/neurips2026-calendar/' + encodeURIComponent(id) + '.ics';
   const stamp = iso => iso.replace(/[-:]/g, '');
   function calendarOptions(id) {
-    if (id === 'all') {
-      const path = 'assets/data/planlab_neurips2026_schedule.ics';
-      const url = BASE + path, webcal = url.replace('https:', 'webcal:');
-      return [
-        ['Google Calendar', 'https://www.google.com/calendar/render?cid=' + encodeURIComponent(webcal), true],
-        ['Outlook 365', 'https://outlook.office.com/calendar/addcalendar?url=' + encodeURIComponent(url) + '&name=' + encodeURIComponent('PLAN Lab NeurIPS 2026 Atlanta Posters'), true],
-        ['Apple / iCal', webcal], ['Download .ics', path, false, true]
-      ];
-    }
-    const card = byId.get(id);if (!card) return [];
-    const data = card.dataset, workshop = card.classList.contains('workshop-paper');
+    const card = byId.get(id);if (!card || !card.dataset.startUtc || !card.dataset.endUtc) return [];
+    const data = card.dataset;
     const paper = card.querySelector('h2,h3').textContent.trim();
-    const title = workshop ? data.session + ' workshop (LIBERO-MAX coauthor paper)' : 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
-    const note = workshop ? '\nFull workshop hours only; the individual paper’s presentation time is not listed.' : '';
-    const details = paper + '\n\n' + data.session + note + '\nOfficial NeurIPS page: ' + data.officialUrl;
+    const title = 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
+    const details = paper + '\n\n' + data.session + '\nOfficial NeurIPS page: ' + data.officialUrl;
     const google = new URL('https://calendar.google.com/calendar/render');
     google.search = new URLSearchParams({ action: 'TEMPLATE', text: title, dates: stamp(data.startUtc) + '/' + stamp(data.endUtc), ctz: data.timezone, details, location: data.location });
     const outlook = new URL('https://outlook.office.com/calendar/0/deeplink/compose');
@@ -154,3 +156,4 @@
   const syncNav = () => nav.classList.toggle('scrolled-nav', scrollY > 20);
   window.addEventListener('scroll', syncNav, { passive: true });syncNav();
 })();
+

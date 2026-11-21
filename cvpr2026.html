@@ -115,6 +115,8 @@
   ]
 }
     </script>
+<link rel="stylesheet" href="assets/css/conference-media.css">
+<script src="assets/js/conference-media.js" defer></script>
 </head>
 <body class="page-cvpr">
 
@@ -737,18 +739,19 @@
           <p class="authors-text">${esc(p.authors)}</p>
         </div>
 
-        <div class="media-grid">
-          ${videoCardHtml}
-          <div class="media-card">
+        <div class="media-grid conference-media-grid">
+          <div class="media-card poster-media-card">
             <div class="media-head">
               <div class="media-head-left">
-                <div class="media-icon"><i class="fa-regular fa-file-lines"></i></div>
+                <div class="media-icon"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
                 <div><div class="media-kicker">Poster</div><div class="media-title">Poster preview</div></div>
               </div>
-              <a class="media-open" href="${esc(p.posterPdfUrl)}" target="_blank" rel="noreferrer">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a class="media-open" href="${esc(p.posterPdfUrl)}" data-poster-viewer data-poster-title="${esc(p.short)} poster" aria-label="Enlarge ${esc(p.short)} poster">Enlarge</a>
             </div>
-            <div class="pdf-box"><iframe src="${esc(p.posterPdfUrl)}" title="${esc(p.short)} poster"></iframe></div>
+            <a class="poster-preview" href="${esc(p.posterPdfUrl)}" data-poster-viewer data-poster-title="${esc(p.short)} poster" aria-label="View ${esc(p.short)} poster in enlarged viewer"><img src="${esc(p.posterPdfUrl)}" alt="${esc(p.short)} poster" loading="lazy" decoding="async"></a>
+            <p class="poster-preview-note">Select the image to zoom. <a href="${esc(p.posterPdfUrl)}" target="_blank" rel="noopener">Open original</a></p>
           </div>
+          ${videoCardHtml}
         </div>
 
         <div class="bibtex-box">
@@ -1048,3 +1051,4 @@
   </script>
 </body>
 </html>
+

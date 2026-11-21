@@ -1,23 +1,25 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//PLAN Lab//NeurIPS 2026//EN
+PRODID:-//PLAN Lab//NeurIPS 2026 Posters//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:VisAnom @ NeurIPS 2026
+X-WR-CALNAME:PLAN Lab @ NeurIPS 2026: Atlanta Posters
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
 UID:visanom-neurips2026@plan-lab.github.io
-DTSTAMP:20261009T120000Z
-DTSTART:20261210T213000Z
-DTEND:20261211T003000Z
-SUMMARY:PLAN Lab @ NeurIPS 2026: VisAnom Poster
-LOCATION:Atlanta · Hall C1
+DTSTAMP:20261120T230000Z
+LAST-MODIFIED:20261120T230000Z
+SEQUENCE:1
+DTSTART:20261209T150000Z
+DTEND:20261209T180000Z
+SUMMARY:PLAN Lab @ NeurIPS 2026: Tiny but Trusted Poster
+LOCATION:Hall C1\, Poster #A811\, Georgia World Congress Center\, Atlanta\,
+  GA
 DESCRIPTION:Tiny but Trusted: Efficient Vision-Language Reasoning for Time-
- Series Anomaly Detection\n\nAtlanta Poster Session 4\nThursday\, December
-  10\, 2026 · 4:30 p.m.–7:30 p.m. EST\n\nProject page: https://plan-lab.
- github.io/projects/VisAnom/\nPaper: https://arxiv.org/pdf/2605.30344\nOffi
- cial NeurIPS page: https://neurips.cc/virtual/2026/loc/atlanta/poster/1514
- 60
-URL:https://neurips.cc/virtual/2026/loc/atlanta/poster/151460
+ Series Anomaly Detection\n\nAtlanta Poster Session 1 · Poster #A811\nWedn
+ esday\, December 9\, 2026 · 10:00–13:00 EST\nPaper: https://arxiv.org/p
+ df/2605.30344\nOfficial NeurIPS page: https://neurips.cc/virtual/2026/post
+ er/151460\nProject: https://plan-lab.github.io/projects/VisAnom/
+URL:https://neurips.cc/virtual/2026/poster/151460
 END:VEVENT
 END:VCALENDAR

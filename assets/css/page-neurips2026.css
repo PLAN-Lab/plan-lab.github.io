@@ -1,0 +1,79 @@
+/* NeurIPS inherits the lab's CVPR conference design. */
+.page-neurips [hidden] { display: none !important; }
+.page-neurips :is(#timeline,#schedule,#attendees,#partner) { scroll-margin-top: 100px; }
+.page-neurips .plan-hero { background: linear-gradient(115deg,#293447 0%,#13294b 48%,#294866 100%); box-shadow: 0 24px 64px #13294b25; }
+.page-neurips .plan-hero::before { content: none; }
+.page-neurips .plan-hero::after { opacity: .18; }
+.page-neurips .hero-premium-svg { opacity: .3; }
+.page-neurips .hero-atlas-card { background: linear-gradient(145deg,#ffffff20,#ffffff0c); box-shadow: 0 20px 50px #08182e33; }
+.page-neurips .atlas-city { font-size: .75rem; color: #dae5f2; font-weight: 500; }
+.page-neurips .section-header { width: 100%; gap: 28px; align-items: end; }
+.page-neurips .section-note { font-size: 1rem; line-height: 1.6; color: #657287; margin-top: 12px; max-width: 680px; }
+.page-neurips .controls { flex-shrink: 0; }
+.page-neurips .controls select { appearance: none; padding-right: 2.5rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%2313294b' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .8rem center; }
+.page-neurips .poster-grid[data-empty="true"] { grid-template-columns: 1fr; }
+.page-neurips .paper-short, .page-neurips .paper-area, .page-neurips .paper-time { display: block; }
+.page-neurips .paper-short { white-space: normal; font-size: 1.05rem; line-height: 1.25; }
+.page-neurips .paper-area { font-size: .875rem; font-weight: 500; line-height: 1.45; }
+.page-neurips .paper-time { font-size: .875rem; line-height: 1.5; }
+.page-neurips .day-label { font-size: .75rem; }
+.page-neurips .paper-heading { margin: 0; text-align: left; }
+.page-neurips .paper-detail-area { font-size: .875rem; }
+.page-neurips .paper-description { font-size: 1rem; font-weight: 500; }
+.page-neurips .workshop-context { font-size: 1rem; line-height: 1.6; color: #526177; margin-top: 10px; }
+.page-neurips .workshop-context a { color: #13294b; text-underline-offset: 3px; }
+.page-neurips .info-value { font-size: 1rem; }
+.page-neurips .authors-box { margin-top: 18px; }
+.page-neurips .authors-text { font-size: .9375rem; line-height: 1.7; }
+.page-neurips .contribution-note { color: #68778a; font-size: .8125rem; margin-top: 9px; }
+.page-neurips .bibtex-box summary { cursor: pointer; color: #fed7aa; }
+.page-neurips .bibtex-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.page-neurips .pager-btn:disabled { opacity: .45; cursor: default; }
+.page-neurips #schedule { margin-top: 20px; }
+.page-neurips .schedule-subtitle { font-size: .9375rem; line-height: 1.6; margin-top: 10px; color: #dbe7f5; }
+.page-neurips .schedule-calendar-toggle { text-decoration: none; display: inline-flex; }
+.page-neurips table { min-width: 950px; width: 100%; }
+.page-neurips td { vertical-align: top; }
+.page-neurips .schedule-city { font-weight: 750; display: block; }
+.page-neurips .schedule-place, .page-neurips .schedule-time-highlight, .page-neurips .paper-number { display: block; font-size: .8125rem; line-height: 1.6; margin-top: 5px; }
+.page-neurips .schedule-time-highlight { font-size: .875rem; }
+.page-neurips .workshop-schedule-row { background: #edf3fa; }
+.page-neurips .workshop-schedule-row .schedule-city { color: #9f430e; }
+.page-neurips .schedule-footnote { color: #64748b; padding: 18px 24px; font-size: .875rem; line-height: 1.6; }
+.page-neurips .attendees-head > p { font-size: 1rem; color: #526177; line-height: 1.7; }
+.page-neurips .attendee-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 24px; }
+.page-neurips .attendee-card, .page-neurips .attendee-card:hover { display: block; padding: 0; min-height: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; transform: none; }
+.page-neurips .attendee-card a { color: #13294b; text-decoration: none; }
+.page-neurips .attendee-photo { aspect-ratio: 1/1.08; border-radius: 18px; overflow: hidden; background: #d9e2ed; border-bottom: 3px solid #ff7b30; box-shadow: 0 10px 24px #13294b10; }
+.page-neurips .attendee-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 25%; }
+.page-neurips .attendee-card h3 { font-size: 1.0625rem; line-height: 1.4; font-weight: 750; margin: 17px 0 4px; }
+.page-neurips .attendee-card p { font-size: .875rem; color: #526177; line-height: 1.6; }
+.page-neurips .attendee-contact { display: inline-block; margin-top: 9px; font-size: .875rem; text-decoration: underline !important; text-underline-offset: 4px; }
+.page-neurips .conference-footer { text-align: center; padding: 32px 20px; color: #64748b; font-size: .875rem; line-height: 1.7; }
+.page-neurips .conference-footer a { font-weight: 700; color: #13294b; }
+.page-neurips .skip-link { position: fixed; top: -80px; left: 16px; z-index: 10000; padding: 14px; background: #fff; color: #13294b; }
+.page-neurips .skip-link:focus { top: 16px; }
+.page-neurips :is(button,a,input,select,summary,[tabindex]):focus-visible { outline: 3px solid #388be4; outline-offset: 3px; }
+@media(max-width:1180px) {
+ .page-neurips .timeline-shell { height: auto; }
+ .page-neurips .timeline-scroll { max-height: 400px; }
+ .page-neurips .section-header { flex-direction: column; align-items: start; }
+ .page-neurips .attendee-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:700px) {
+ .page-neurips :is(#timeline,#schedule,#attendees,#partner) { scroll-margin-top: 20px; }
+ .page-neurips .hero-badge { font-size: .65rem; letter-spacing: .12em; padding: .7rem 1rem; }
+ .page-neurips .controls { width: 100%; }
+ .page-neurips .info-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .page-neurips .info-value { font-size: .875rem; }
+ .page-neurips .info-label { letter-spacing: .07em; }
+ .page-neurips .paper-detail-area { letter-spacing: .05em; }
+ .page-neurips .attendees-head { display: block; }
+ .page-neurips .attendees-head > p { margin-top: 18px; }
+ .page-neurips .attendees-head > p br { display: none; }
+ .page-neurips .attendee-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 18px; }
+ .page-neurips .attendee-card h3 { font-size: 1rem; }
+ .page-neurips .schedule-head { flex-wrap: wrap; gap: 18px; }
+ .page-neurips .schedule-head-right { align-items: start; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto !important; } .page-neurips *, .page-neurips *::before, .page-neurips *::after { animation: none !important; transition: none !important; } }
