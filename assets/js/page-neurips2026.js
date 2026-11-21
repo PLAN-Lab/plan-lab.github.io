@@ -3,7 +3,7 @@
 (() => {
   'use strict';
   const cards = [...document.querySelectorAll('.conference-paper')];
-  const allCards = [...cards, document.querySelector('.workshop-paper')];
+  const allCards = cards;
   const buttons = [...document.querySelectorAll('[data-paper]')];
   const search = document.getElementById('searchInput');
   const session = document.getElementById('sessionFilter');
@@ -41,7 +41,6 @@
   function select(id, { scroll = false, hash = true } = {}) {
     const card = byId.get(id);
     if (!card) return;
-    if (card.classList.contains('workshop-paper')) { scrollTo(document.getElementById('workshops')); return; }
     if (!matches().includes(card)) { search.value = '';session.value = 'All Sessions'; }
     activeId = id;refresh();
     if (hash) history.replaceState(null, '', '#' + encodeURIComponent(id));
@@ -93,12 +92,11 @@
   const calendarPath = id => 'assets/data/neurips2026-calendar/' + encodeURIComponent(id) + '.ics';
   const stamp = iso => iso.replace(/[-:]/g, '');
   function calendarOptions(id) {
-    const card = byId.get(id);if (!card) return [];
-    const data = card.dataset, workshop = card.classList.contains('workshop-paper');
+    const card = byId.get(id);if (!card || !card.dataset.startUtc || !card.dataset.endUtc) return [];
+    const data = card.dataset;
     const paper = card.querySelector('h2,h3').textContent.trim();
-    const title = workshop ? data.session + ' workshop (LIBERO-MAX coauthor paper)' : 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
-    const note = workshop ? '\nFull workshop hours only; the individual paper’s presentation time is not listed.' : '';
-    const details = paper + '\n\n' + data.session + note + '\nOfficial NeurIPS page: ' + data.officialUrl;
+    const title = 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
+    const details = paper + '\n\n' + data.session + '\nOfficial NeurIPS page: ' + data.officialUrl;
     const google = new URL('https://calendar.google.com/calendar/render');
     google.search = new URLSearchParams({ action: 'TEMPLATE', text: title, dates: stamp(data.startUtc) + '/' + stamp(data.endUtc), ctz: data.timezone, details, location: data.location });
     const outlook = new URL('https://outlook.office.com/calendar/0/deeplink/compose');
