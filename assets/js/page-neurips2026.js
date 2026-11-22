@@ -25,7 +25,8 @@
   );
   const scrollTo = target => {
     const nav = document.querySelector('.glass-nav');
-    const offset = getComputedStyle(nav).position === 'fixed' ? nav.getBoundingClientRect().height + 18 : 24;
+    const navRect = nav.getBoundingClientRect();
+    const offset = getComputedStyle(nav).position === 'fixed' && navRect.top < innerHeight / 2 ? Math.max(96, navRect.bottom + 12) : 20;
     const top = target.getBoundingClientRect().top + scrollY - offset;
     window.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   };
@@ -56,7 +57,8 @@
     if (!matches().includes(card)) { search.value = '';session.value = 'All Sessions'; }
     activeId = id;refresh();
     if (hash) history.replaceState(null, '', '#' + encodeURIComponent(id));
-    if (scroll) scrollTo(document.getElementById('detailPanel'));
+    card.scrollTop = 0;
+    if (scroll) scrollTo(document.getElementById(matchMedia('(min-width: 1000px)').matches ? 'timeline' : 'detailPanel'));
   }
   function step(offset) {
     const items = matches();if (!items.length) return;
@@ -64,7 +66,7 @@
     select(items[(index + offset + items.length) % items.length].dataset.paperId);
   }
   buttons.forEach(button => button.addEventListener('click', () => {
-    select(button.dataset.paper, { scroll: matchMedia('(max-width: 1180px)').matches });
+    select(button.dataset.paper, { scroll: matchMedia('(max-width: 999px)').matches });
   }));
   document.querySelectorAll('[data-paperlink]').forEach(button => {
     button.addEventListener('click', event => {
@@ -76,8 +78,9 @@
   document.querySelector('[data-next]').addEventListener('click', () => step(1));
   search.addEventListener('input', refresh);session.addEventListener('change', refresh);
   document.getElementById('timeline').addEventListener('keydown', event => {
-    if (event.target.closest('input,select,textarea') || !['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(event.key)) return;
+    if (!event.target.closest('[data-paper]') || !['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(event.key)) return;
     event.preventDefault();step(['ArrowRight','ArrowDown'].includes(event.key) ? 1 : -1);
+    buttons.find(button => button.dataset.paper === activeId)?.focus();
   });
   function applyHash() {
     try {
@@ -165,7 +168,7 @@
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closePopup(true); });
   window.addEventListener('resize', positionPopup, { passive: true });
-  window.addEventListener('scroll', positionPopup, { passive: true });
+  window.addEventListener('scroll', positionPopup, { passive: true, capture: true });
   const nav = document.querySelector('.glass-nav');
   const syncNav = () => nav.classList.toggle('scrolled-nav', scrollY > 20);
   window.addEventListener('scroll', syncNav, { passive: true });syncNav();
