@@ -24,9 +24,7 @@
     card.dataset.search.toLowerCase().includes(search.value.trim().toLowerCase())
   );
   const scrollTo = target => {
-    const nav = document.querySelector('.glass-nav');
-    const navRect = nav.getBoundingClientRect();
-    const offset = getComputedStyle(nav).position === 'fixed' && navRect.top < innerHeight / 2 ? Math.max(96, navRect.bottom + 12) : 20;
+    const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--section-offset')) || 0;
     const top = target.getBoundingClientRect().top + scrollY - offset;
     window.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   };
