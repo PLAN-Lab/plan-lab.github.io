@@ -241,17 +241,19 @@
             inset: 0;
             opacity: 0;
             transform: translateY(9px);
-            animation: conferencePaperTicker 9s infinite;
+            animation: conferencePaperTicker 15s infinite;
         }
 
         .conference-paper-cycle span:nth-child(1) { animation-delay: 0s; }
         .conference-paper-cycle span:nth-child(2) { animation-delay: 3s; }
         .conference-paper-cycle span:nth-child(3) { animation-delay: 6s; }
+        .conference-paper-cycle span:nth-child(4) { animation-delay: 9s; }
+        .conference-paper-cycle span:nth-child(5) { animation-delay: 12s; }
 
         @keyframes conferencePaperTicker {
-            0%, 5% { opacity: 0; transform: translateY(9px); }
-            8%, 28% { opacity: 1; transform: translateY(0); }
-            33%, 100% { opacity: 0; transform: translateY(-9px); }
+            0%, 3% { opacity: 0; transform: translateY(9px); }
+            5%, 17% { opacity: 1; transform: translateY(0); }
+            20%, 100% { opacity: 0; transform: translateY(-9px); }
         }
 
         .conference-float-meta {
@@ -565,19 +567,21 @@
         </h1>
         <p> The Perception and LANguage (PLAN) Lab develops multimodal generative models that perceive, generate, and reason across language, vision, video, and 3D worlds. 
 			Our research spans vision-language models, 2D/3D generative models, and reasoning-centered methods for grounding AI in visual, physical, and interactive environments.</p>
-        <a class="conference-float-sign" href="eccv2026.html" aria-label="Explore PLAN Lab at ECCV 2026: 3 papers, poster schedule, project links, and presentation times">
+        <a class="conference-float-sign" href="neurips2026.html" aria-label="Explore PLAN Lab at NeurIPS 2026: 5 papers, poster schedule, project links, and presentation times">
             <div class="conference-float-card">
                 <div class="conference-float-topline">
-                    <span class="conference-float-kicker"><i class="fa-solid fa-location-dot"></i> ECCV'26</span>
-                    <span class="conference-float-count">3 papers</span>
+                    <span class="conference-float-kicker"><i class="fa-solid fa-location-dot"></i> NeurIPS'26</span>
+                    <span class="conference-float-count">5 papers</span>
                 </div>
-                <h2 class="conference-float-title">PLAN Lab in Malmö</h2>
-                <div class="conference-float-ticker" aria-label="Cycling through PLAN Lab ECCV 2026 paper names">
+                <h2 class="conference-float-title">PLAN Lab in Atlanta</h2>
+                <div class="conference-float-ticker" aria-label="Cycling through PLAN Lab NeurIPS 2026 paper names">
                     <span class="conference-ticker-label"></span>
                     <span class="conference-paper-cycle">
-                        <span>GraphVid</span>
-                        <span>DreamPartGen</span>
-                        <span>Children’s Gait</span>
+                        <span>Cognitive Supersensing</span>
+                        <span>Tiny but Trusted</span>
+                        <span>RAVEL</span>
+                        <span>ELSA3D</span>
+                        <span>SILSA</span>
                     </span>
                 </div>
                 <div class="conference-float-meta">
@@ -586,13 +590,15 @@
                 </div>
             </div>
             <div class="conference-float-hover-panel" aria-hidden="true">
-                <div class="conference-hover-schedule" aria-label="Compact PLAN Lab ECCV 2026 poster schedule">
-                    <div class="conference-hover-row"><span class="conference-hover-paper">GraphVid</span><span class="conference-hover-time">Fri Sep 11 · 10:30–12:30</span><span class="conference-hover-loc">ExHall · #410</span></div>
-                    <div class="conference-hover-row"><span class="conference-hover-paper">DreamPartGen</span><span class="conference-hover-time">Fri Sep 11 · 16:00–18:00</span><span class="conference-hover-loc">ExHall · #78</span></div>
-                    <div class="conference-hover-row"><span class="conference-hover-paper">Children’s Gait</span><span class="conference-hover-time">Fri Sep 11 · 16:00–18:00</span><span class="conference-hover-loc">ExHall · #320</span></div>
+                <div class="conference-hover-schedule" aria-label="Compact PLAN Lab NeurIPS 2026 poster schedule">
+                    <div class="conference-hover-row"><span class="conference-hover-paper">Supersensing</span><span class="conference-hover-time">Wed Dec 9 · 10:00–13:00</span><span class="conference-hover-loc">Hall C1 · #A808</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">Tiny but Trusted</span><span class="conference-hover-time">Wed Dec 9 · 10:00–13:00</span><span class="conference-hover-loc">Hall C1 · #A811</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">RAVEL</span><span class="conference-hover-time">Thu Dec 10 · 10:00–13:00</span><span class="conference-hover-loc">Hall C1 · #A819</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">ELSA3D</span><span class="conference-hover-time">Fri Dec 11 · 10:00–13:00</span><span class="conference-hover-loc">Hall C1 · #A827</span></div>
+                    <div class="conference-hover-row"><span class="conference-hover-paper">SILSA</span><span class="conference-hover-time">Fri Dec 11 · 16:30–19:30</span><span class="conference-hover-loc">Hall C1 · #A716</span></div>
                 </div>
                 <div class="conference-hover-footer">
-                    <span>Malmö local time (CEST)</span>
+                    <span>Atlanta local time (EST)</span>
                     <span class="conference-hover-open">Open full page →</span>
                 </div>
             </div>
