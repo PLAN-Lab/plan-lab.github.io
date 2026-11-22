@@ -67,7 +67,10 @@
     select(button.dataset.paper, { scroll: matchMedia('(max-width: 1180px)').matches });
   }));
   document.querySelectorAll('[data-paperlink]').forEach(button => {
-    button.addEventListener('click', () => select(button.dataset.paperlink, { scroll: true }));
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      select(button.dataset.paperlink, { scroll: true });
+    });
   });
   document.querySelector('[data-prev]').addEventListener('click', () => step(-1));
   document.querySelector('[data-next]').addEventListener('click', () => step(1));
@@ -104,11 +107,22 @@
   const calendarPath = id => 'assets/data/neurips2026-calendar/' + encodeURIComponent(id) + '.ics';
   const stamp = iso => iso.replace(/[-:]/g, '');
   function calendarOptions(id) {
+    if (id === 'all') {
+      const path = 'assets/data/planlab_neurips2026_schedule.ics';
+      const url = new URL(path, 'https://plan-lab.github.io/').href;
+      const webcal = url.replace(/^https?:/, 'webcal:');
+      return [
+        ['Google Calendar', 'https://www.google.com/calendar/render?cid=' + encodeURIComponent(webcal), true],
+        ['Outlook 365', 'https://outlook.office.com/calendar/addcalendar?url=' + encodeURIComponent(url) + '&name=' + encodeURIComponent('PLAN Lab NeurIPS 2026'), true],
+        ['Apple / iCal', webcal],
+        ['Download .ics', path, false, true]
+      ];
+    }
     const card = byId.get(id);if (!card || !card.dataset.startUtc || !card.dataset.endUtc) return [];
     const data = card.dataset;
     const paper = card.querySelector('h2,h3').textContent.trim();
-    const title = 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
-    const details = paper + '\n\n' + data.session + '\nOfficial NeurIPS page: ' + data.officialUrl;
+    const title = data.calendarTitle || 'PLAN Lab @ NeurIPS 2026: ' + data.short + ' Poster';
+    const details = paper + '\n\n' + (data.calendarDescription || data.session) + '\nOfficial NeurIPS page: ' + data.officialUrl;
     const google = new URL('https://calendar.google.com/calendar/render');
     google.search = new URLSearchParams({ action: 'TEMPLATE', text: title, dates: stamp(data.startUtc) + '/' + stamp(data.endUtc), ctz: data.timezone, details, location: data.location });
     const outlook = new URL('https://outlook.office.com/calendar/0/deeplink/compose');

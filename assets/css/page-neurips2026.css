@@ -23,6 +23,8 @@
 .page-neurips .workshop-context { font-size: 1rem; line-height: 1.6; color: #526177; margin-top: 10px; }
 .page-neurips .workshop-context a { color: #13294b; text-underline-offset: 3px; }
 .page-neurips .info-value { font-size: 1rem; }
+.page-neurips .action-row > :is(a,button) { width: 100%; min-width: 0; min-height: 48px; padding: 10px 8px; font-family: inherit; font-size: .86rem; font-weight: 1000; line-height: 1.2; white-space: nowrap; }
+.page-neurips .action-row > :is(a,button) i { flex-shrink: 0; }
 .page-neurips .authors-box { margin-top: 18px; }
 .page-neurips .authors-text { font-size: .9375rem; line-height: 1.7; }
 .page-neurips .contribution-note { color: #68778a; font-size: .8125rem; margin-top: 9px; }
@@ -30,27 +32,25 @@
 .page-neurips .bibtex-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .page-neurips .pager-btn:disabled { opacity: .45; cursor: default; }
 .page-neurips #schedule { margin-top: 20px; }
-.page-neurips .schedule-subtitle { font-size: .9375rem; line-height: 1.6; margin-top: 10px; color: #dbe7f5; }
-.page-neurips .schedule-calendar-toggle { text-decoration: none; display: inline-flex; }
 .page-neurips table { min-width: 950px; width: 100%; }
-.page-neurips td { vertical-align: top; }
-.page-neurips .schedule-city { font-weight: 750; display: block; }
-.page-neurips .schedule-place, .page-neurips .schedule-time-highlight, .page-neurips .paper-number { display: block; font-size: .8125rem; line-height: 1.6; margin-top: 5px; }
-.page-neurips .schedule-time-highlight { font-size: .875rem; }
-.page-neurips .workshop-schedule-row { background: #edf3fa; }
-.page-neurips .workshop-schedule-row .schedule-city { color: #9f430e; }
-.page-neurips .schedule-footnote { color: #64748b; padding: 18px 24px; font-size: .875rem; line-height: 1.6; }
-.page-neurips .attendees-head > p { font-size: 1rem; color: #526177; line-height: 1.7; }
+.page-neurips #schedule th:first-child { white-space: nowrap; }
+.page-neurips #schedule td:nth-child(2) { width: 45%; }
+.page-neurips .schedule-place { display: block; font-size: .8125rem; line-height: 1.5; margin-top: 5px; color: #64748b; }
+.page-neurips .schedule-time-highlight { white-space: nowrap; }
+.page-neurips .attendees-head { grid-template-columns: 1fr; }
+.page-neurips #team-title { text-align: left; }
 .page-neurips .attendee-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 24px; }
-.page-neurips .attendee-card, .page-neurips .attendee-card:hover { display: block; padding: 0; min-height: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; transform: none; }
+.page-neurips .attendee-card, .page-neurips .attendee-card:hover { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 0; min-height: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; transform: none; }
 .page-neurips .attendee-card a { color: #13294b; text-decoration: none; }
 .page-neurips .attendee-photo { aspect-ratio: 1/1.08; border-radius: 18px; overflow: hidden; background: #d9e2ed; border-bottom: 3px solid #ff7b30; box-shadow: 0 10px 24px #13294b10; }
 .page-neurips .attendee-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 25%; }
 .page-neurips .attendee-card h3 { font-size: 1.0625rem; line-height: 1.4; font-weight: 750; margin: 17px 0 4px; }
 .page-neurips .attendee-card p { font-size: .875rem; color: #526177; line-height: 1.6; }
-.page-neurips .attendee-contact { display: inline-block; margin-top: 9px; font-size: .875rem; text-decoration: underline !important; text-underline-offset: 4px; }
-.page-neurips .conference-footer { text-align: center; padding: 32px 20px; color: #64748b; font-size: .875rem; line-height: 1.7; }
-.page-neurips .conference-footer a { font-weight: 700; color: #13294b; }
+.page-neurips .attendee-role { min-height: 3.2em; margin-bottom: 10px; }
+.page-neurips .attendee-papers { margin-bottom: 14px; }
+.page-neurips .attendee-paper-pill { font-size: .78rem; line-height: 1.2; }
+.page-neurips .attendee-paper-pill.primary-pill { color: #c44700; }
+.page-neurips .attendee-contact { display: inline-block; align-self: flex-start; margin-top: auto; font-size: .875rem; text-decoration: underline !important; text-underline-offset: 4px; }
 .page-neurips .skip-link { position: fixed; top: -80px; left: 16px; z-index: 10000; padding: 14px; background: #fff; color: #13294b; }
 .page-neurips .skip-link:focus { top: 16px; }
 .page-neurips :is(button,a,input,select,summary,[tabindex]):focus-visible { outline: 3px solid #388be4; outline-offset: 3px; }
@@ -69,8 +69,6 @@
  .page-neurips .info-label { letter-spacing: .07em; }
  .page-neurips .paper-detail-area { letter-spacing: .05em; }
  .page-neurips .attendees-head { display: block; }
- .page-neurips .attendees-head > p { margin-top: 18px; }
- .page-neurips .attendees-head > p br { display: none; }
  .page-neurips .attendee-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 18px; }
  .page-neurips .attendee-card h3 { font-size: 1rem; }
  .page-neurips .schedule-head { flex-wrap: wrap; gap: 18px; }

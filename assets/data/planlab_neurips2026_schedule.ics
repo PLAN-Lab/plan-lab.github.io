@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//PLAN Lab//NeurIPS 2026 Posters//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:PLAN Lab @ NeurIPS 2026: Atlanta Posters
+X-WR-CALNAME:PLAN Lab @ NeurIPS 2026
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
 UID:cognitive-supersensing-neurips2026@plan-lab.github.io
@@ -88,5 +88,18 @@ DESCRIPTION:SILSA: Sliding-Window Slice Latents for Topology-Preserving Hig
  bs/2610.02201\nOfficial NeurIPS page: https://neurips.cc/virtual/2026/post
  er/149726\nProject: https://plan-lab.github.io/projects/silsa/
 URL:https://neurips.cc/virtual/2026/poster/149726
+END:VEVENT
+BEGIN:VEVENT
+UID:robowm-workshop-neurips2026@plan-lab.github.io
+DTSTAMP:20261122T010625Z
+SEQUENCE:0
+DTSTART:20261210T210000Z
+DTEND:20261211T060000Z
+SUMMARY:Robot Learning with World Models - NeurIPS 2026 Workshop
+LOCATION:Parkside 2\, Sydney
+DESCRIPTION:Full workshop hours: December 11\, 08:00-17:00 AEDT.\nLIBERO-MA
+ X is a workshop paper. Its individual presentation time and poster number
+  are to be announced.
+URL:https://neurips.cc/virtual/2026/loc/sydney/workshop/137517
 END:VEVENT
 END:VCALENDAR
