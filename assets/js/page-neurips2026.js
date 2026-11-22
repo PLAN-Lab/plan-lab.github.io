@@ -10,8 +10,6 @@
     }
 
 
-  [['hero-main-cube','orange'],['hero-small-cube-a','blue'],['hero-small-cube-b','orange']].forEach(([id,color]) => { document.getElementById(id).innerHTML = cubeSvg(id,color); });
-
   const cards = [...document.querySelectorAll('.conference-paper')];
   const allCards = cards;
   const buttons = [...document.querySelectorAll('[data-paper]')];
