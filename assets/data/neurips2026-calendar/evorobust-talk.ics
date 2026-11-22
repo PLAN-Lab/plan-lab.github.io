@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PLAN Lab//NeurIPS 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:PLAN Lab @ NeurIPS 2026: EvoRobust Invited Talk
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VEVENT
+UID:evorobust-talk-neurips2026@plan-lab.github.io
+DTSTAMP:20261122T001255Z
+SEQUENCE:0
+DTSTART:20261211T024000Z
+DTEND:20261211T032000Z
+SUMMARY:EvoRobust 2026: Invited talk by Ismini Lourentzou
+LOCATION:Sydney\, Australia (workshop venue TBA)
+DESCRIPTION:NeurIPS 2026 Workshop on Self-Evolving Diversity-Driven Search 
+ for Robust AI Systems (EvoRobust 2026).\nInvited speaker: Ismini Lourentzo
+ u. Talk title to be announced.\nSydney: December 11\, 2026\, 13:40–14:20
+  AEDT.\nAtlanta: December 10\, 2026\, 21:40–22:20 EST.\nWorkshop: https:
+ //liuj-2023.github.io/EvoRobust-NeurIPS2026/
+URL:https://liuj-2023.github.io/EvoRobust-NeurIPS2026/
+END:VEVENT
+END:VCALENDAR
