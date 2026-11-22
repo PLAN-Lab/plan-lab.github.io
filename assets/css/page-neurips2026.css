@@ -149,7 +149,9 @@ body.page-neurips { overflow-x: clip; overflow-y: visible; }
 .page-neurips .paper-cube-card:hover { transform: none; }
 .page-neurips .paper-cube-card.active { background: #fff; box-shadow: 0 3px 10px #13294b09; }
 .page-neurips .cube-wrap, .page-neurips .cube-svg { width: 32px; height: 32px; }
-.page-neurips .cube-wrap, .page-neurips .paper-cube-card.active .cube-wrap { animation: none; transform: none; filter: none; }
+.page-neurips .cube-wrap, .page-neurips .paper-cube-card.active .cube-wrap { animation: timelineCubeBob 4s ease-in-out infinite; transform: none; filter: none; }
+.page-neurips .paper-cube-card:nth-of-type(even) .cube-wrap { animation-delay: -2s; }
+@keyframes timelineCubeBob { 0%,100% { transform: translateY(2px); } 50% { transform: translateY(-2px); } }
 .page-neurips .cube-svg { transform: none; }
 .page-neurips .paper-short { font-size: .78125rem; font-weight: 700; line-height: 1.2; }
 .page-neurips .paper-area, .page-neurips .paper-time { font-size: .6875rem; line-height: 1.25; }
